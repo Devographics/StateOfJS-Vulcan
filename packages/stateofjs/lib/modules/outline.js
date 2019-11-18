@@ -12,11 +12,7 @@ const outline = `
 - template: statictext
   id: features_intro
   title: >
-      "For each of the following JavaScript feature, please pick one of the following options:
-
-      \n- 🤷 You've never heard about it, or are not sure what it is
-      \n- ✅ You've heard about it but *haven't* used it
-      \n- 👍 You've used it in a project"
+    For each of the following JavaScript feature, please pick one of the following options
 
 - title: Syntax
   description: The grammar of JavaScript
@@ -80,13 +76,7 @@ const outline = `
 - template: statictext
   id: tools_intro
   title: >
-      "For each of the following technology, framework, or library mentioned, please pick one of the following options:
-
-      \n- 🤷 You've never heard about it, or are not sure what it is
-      \n- ✅ You've heard about it and you *want* to learn it
-      \n- 🚫 You've heard about it, but *don't want* to learn it (or are *unsure*)
-      \n- 👍 You've used it and *want* to use it again
-      \n- 👎 You've used it but *don't* *want* to use it again"
+      For each of the following technology, framework, or library mentioned, please pick one of the following options:
 
 - title: JavaScript Flavors
   description: Languages that compile to JavaScript

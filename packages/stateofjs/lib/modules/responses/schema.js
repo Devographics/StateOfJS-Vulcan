@@ -157,6 +157,7 @@ parsedOutline.forEach(section => {
             }));
         questionSchema.input = allowmultiple ? 'checkboxgroup' : 'radiogroup';
       }
+      // questions that allow multiple responses should be stored as arrays of strings
       if (allowmultiple) {
         questionSchema.type = Array;
         schema[questionId] = questionSchema;
