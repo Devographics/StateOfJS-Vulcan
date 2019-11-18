@@ -5,6 +5,9 @@ const AdminResponses = () => (
   <div className="admin-responses">
     <Components.Datatable
       collectionName="Responses"
+      options={{
+        fragmentName: 'ResponseFragment'
+      }}
       // columns={['name', 'slug']}
     />
   </div>
