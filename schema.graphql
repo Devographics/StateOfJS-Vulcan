@@ -1,0 +1,1012 @@
+
+scalar JSON
+scalar Date
+
+# see https://docs.hasura.io/1.0/graphql/manual/queries/query-filters.html
+
+input String_Selector {
+  _eq: String
+  #_gt: String
+  #_gte: String
+  #_ilike: String
+  _in: [String!]
+  #_is_null: Boolean
+  #_like: String
+  #_lt: String
+  #_lte: String
+  #_neq: String
+  #_nilike: String
+  #_nin: [String!]
+  #_nlike: String
+  #_nsimilar: String
+  #_similar: String
+}
+
+input String_Array_Selector {
+  contains: String_Selector
+  # contains_all: [String_Selector]
+}
+
+input Int_Selector {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  #_is_null: Boolean
+  _lt: Int
+  _lte: Int
+  #_neq: Int
+  #_nin: [Int!]
+}
+
+input Int_Array_Selector {
+  contains: Int_Selector
+  # contains_all: [Int_Selector]
+}
+
+input Float_Selector {
+  _eq: Float
+  _gt: Float
+  _gte: Float
+  _in: [Float!]
+  #_is_null: Boolean
+  _lt: Float
+  _lte: Float
+  #_neq: Float
+  #_nin: [Float!]
+}
+
+input Float_Array_Selector {
+  contains: Float_Selector
+  # contains_all: [Float_Selector]
+}
+
+input Boolean_Selector {
+  _eq: Boolean
+  #_neq: Boolean
+}
+
+input Boolean_Array_Selector {
+  contains: Boolean_Selector
+  # contains_all: [Boolean_Selector]
+}
+
+input Date_Selector {
+  _eq: Date
+  _gt: Date
+  _gte: Date
+  _in: [Date!]
+  #_is_null: Boolean
+  _lt: Date
+  _lte: Date
+  #_neq: Date
+  #_nin: [Date!]
+}
+
+input Date_Array_Selector {
+  contains: Date_Selector
+  # contains_all: [Date_Selector]
+}
+
+# column ordering options
+enum SortOptions {
+  asc
+  desc
+}
+
+input OptionsInput {
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # For single document queries, return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+type Site {
+  title: String
+  url: String
+  logoUrl: String
+  sourceVersion: String
+}
+type IntlValue {
+  locale: String
+  value: String
+}
+input IntlValueInput{
+  locale: String
+  value: String
+}
+directive @intl on FIELD_DEFINITION
+
+# A user object
+type User {
+  _id: String 
+  username: String 
+  emails: [JSON] 
+  createdAt: Date 
+  isAdmin: Boolean 
+  locale: String 
+  profile: JSON 
+  services: JSON 
+  displayName: String 
+  email: String 
+  emailHash: String 
+  avatarUrl: String 
+  slug: String 
+  twitterUsername: String 
+  groups: [String] 
+  pageUrl: String 
+  pagePath: String 
+  editUrl: String 
+}
+
+
+input DeleteUserInput{
+  filter: UserFilterInput
+  id: String
+}
+
+input SingleUserInput {
+  # filtering
+  filter: UserFilterInput
+  sort: UserSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: UserSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiUserInput {
+
+  # filtering
+  filter: UserFilterInput
+  sort: UserSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleUserOutput{
+  result: User
+}
+
+type  MultiUserOutput{
+  results: [User]
+  totalCount: Int
+}
+
+type UserMutationOutput{
+  data: User
+}
+
+input CreateUserInput {
+  data: CreateUserDataInput!
+}
+
+input CreateUserDataInput {
+  username: String 
+  isAdmin: Boolean 
+  locale: String 
+  profile: JSON 
+  displayName: String 
+  email: String 
+  twitterUsername: String 
+  groups: [String] 
+}
+
+input UpdateUserInput{
+  filter: UserFilterInput
+  id: String
+  data: UpdateUserDataInput!
+}
+
+input UpsertUserInput{
+  filter: UserFilterInput
+  id: String
+  data: UpdateUserDataInput!
+}
+
+input UpdateUserDataInput {
+  username: String 
+  isAdmin: Boolean 
+  locale: String 
+  displayName: String 
+  email: String 
+  twitterUsername: String 
+  groups: [String] 
+}
+
+input UserFilterInput {
+  _and: [UserFilterInput]
+  _not: UserFilterInput
+  _or: [UserFilterInput]
+
+
+  _id: String_Selector
+  username: String_Selector
+
+  createdAt: Date_Selector
+  isAdmin: Boolean_Selector
+  locale: String_Selector
+
+  displayName: String_Selector
+  email: String_Selector
+  emailHash: String_Selector
+  avatarUrl: String_Selector
+  slug: String_Selector
+  twitterUsername: String_Selector
+
+  pageUrl: String_Selector
+  pagePath: String_Selector
+  editUrl: String_Selector
+}
+
+input UserSortInput {
+  _id: SortOptions
+  username: SortOptions
+  emails: SortOptions
+  createdAt: SortOptions
+  isAdmin: SortOptions
+  locale: SortOptions
+  services: SortOptions
+  displayName: SortOptions
+  email: SortOptions
+  emailHash: SortOptions
+  avatarUrl: SortOptions
+  slug: SortOptions
+  twitterUsername: SortOptions
+  groups: SortOptions
+  pageUrl: SortOptions
+  pagePath: SortOptions
+  editUrl: SortOptions
+}
+
+input UserSelectorInput {
+  _and: [UserSelectorInput]
+  _or: [UserSelectorInput]
+
+}
+
+input UserSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Emails
+type Email {
+  name: String 
+  template: String 
+  subject: String 
+  path: String 
+}
+
+
+input DeleteEmailInput{
+  filter: EmailFilterInput
+  id: String
+}
+
+input SingleEmailInput {
+  # filtering
+  filter: EmailFilterInput
+  sort: EmailSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: EmailSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiEmailInput {
+
+  # filtering
+  filter: EmailFilterInput
+  sort: EmailSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleEmailOutput{
+  result: Email
+}
+
+type  MultiEmailOutput{
+  results: [Email]
+  totalCount: Int
+}
+
+type EmailMutationOutput{
+  data: Email
+}
+
+input EmailFilterInput {
+  _and: [EmailFilterInput]
+  _not: EmailFilterInput
+  _or: [EmailFilterInput]
+
+
+  name: String_Selector
+  template: String_Selector
+  subject: String_Selector
+  path: String_Selector
+}
+
+input EmailSortInput {
+  name: SortOptions
+  template: SortOptions
+  subject: SortOptions
+  path: SortOptions
+}
+
+input EmailSelectorInput {
+  _and: [EmailSelectorInput]
+  _or: [EmailSelectorInput]
+
+}
+
+input EmailSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Settings
+type Setting {
+  name: String 
+  value: JSON 
+  defaultValue: JSON 
+  isPublic: Boolean 
+  description: String 
+}
+
+
+input DeleteSettingInput{
+  filter: SettingFilterInput
+  id: String
+}
+
+input SingleSettingInput {
+  # filtering
+  filter: SettingFilterInput
+  sort: SettingSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: SettingSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiSettingInput {
+
+  # filtering
+  filter: SettingFilterInput
+  sort: SettingSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleSettingOutput{
+  result: Setting
+}
+
+type  MultiSettingOutput{
+  results: [Setting]
+  totalCount: Int
+}
+
+type SettingMutationOutput{
+  data: Setting
+}
+
+input SettingFilterInput {
+  _and: [SettingFilterInput]
+  _not: SettingFilterInput
+  _or: [SettingFilterInput]
+
+
+  name: String_Selector
+
+
+  isPublic: Boolean_Selector
+  description: String_Selector
+}
+
+input SettingSortInput {
+  name: SortOptions
+  value: SortOptions
+  defaultValue: SortOptions
+  isPublic: SortOptions
+  description: SortOptions
+}
+
+input SettingSelectorInput {
+  _and: [SettingSelectorInput]
+  _or: [SettingSelectorInput]
+
+}
+
+input SettingSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Callbacks
+type Callback {
+  name: String 
+  iterator: JSON 
+  properties: [JSON] 
+  runs: String 
+  newSyntax: Boolean 
+  returns: String 
+  description: String 
+  hooks: [String] 
+}
+
+
+input DeleteCallbackInput{
+  filter: CallbackFilterInput
+  id: String
+}
+
+input SingleCallbackInput {
+  # filtering
+  filter: CallbackFilterInput
+  sort: CallbackSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: CallbackSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiCallbackInput {
+
+  # filtering
+  filter: CallbackFilterInput
+  sort: CallbackSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleCallbackOutput{
+  result: Callback
+}
+
+type  MultiCallbackOutput{
+  results: [Callback]
+  totalCount: Int
+}
+
+type CallbackMutationOutput{
+  data: Callback
+}
+
+input CallbackFilterInput {
+  _and: [CallbackFilterInput]
+  _not: CallbackFilterInput
+  _or: [CallbackFilterInput]
+
+
+  name: String_Selector
+
+
+  runs: String_Selector
+  newSyntax: Boolean_Selector
+  returns: String_Selector
+  description: String_Selector
+
+}
+
+input CallbackSortInput {
+  name: SortOptions
+  iterator: SortOptions
+  properties: SortOptions
+  runs: SortOptions
+  newSyntax: SortOptions
+  returns: SortOptions
+  description: SortOptions
+  hooks: SortOptions
+}
+
+input CallbackSelectorInput {
+  _and: [CallbackSelectorInput]
+  _or: [CallbackSelectorInput]
+
+}
+
+input CallbackSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Surveys
+type Survey {
+  _id: String 
+  createdAt: Date 
+  updatedAt: Date 
+  userId: String 
+  user: User 
+  name: String 
+  year: Float 
+  status: Float 
+}
+
+
+input DeleteSurveyInput{
+  filter: SurveyFilterInput
+  id: String
+}
+
+input SingleSurveyInput {
+  # filtering
+  filter: SurveyFilterInput
+  sort: SurveySortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: SurveySelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiSurveyInput {
+
+  # filtering
+  filter: SurveyFilterInput
+  sort: SurveySortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleSurveyOutput{
+  result: Survey
+}
+
+type  MultiSurveyOutput{
+  results: [Survey]
+  totalCount: Int
+}
+
+type SurveyMutationOutput{
+  data: Survey
+}
+
+input CreateSurveyInput {
+  data: CreateSurveyDataInput!
+}
+
+input CreateSurveyDataInput {
+  name: String 
+  year: Float 
+  status: Float 
+}
+
+input UpdateSurveyInput{
+  filter: SurveyFilterInput
+  id: String
+  data: UpdateSurveyDataInput!
+}
+
+input UpsertSurveyInput{
+  filter: SurveyFilterInput
+  id: String
+  data: UpdateSurveyDataInput!
+}
+
+input UpdateSurveyDataInput {
+  name: String 
+  year: Float 
+  status: Float 
+}
+
+input SurveyFilterInput {
+  _and: [SurveyFilterInput]
+  _not: SurveyFilterInput
+  _or: [SurveyFilterInput]
+
+
+  _id: String_Selector
+  createdAt: Date_Selector
+  updatedAt: Date_Selector
+  userId: String_Selector
+  name: String_Selector
+  year: Float_Selector
+  status: Float_Selector
+}
+
+input SurveySortInput {
+  _id: SortOptions
+  createdAt: SortOptions
+  updatedAt: SortOptions
+  userId: SortOptions
+  name: SortOptions
+  year: SortOptions
+  status: SortOptions
+}
+
+input SurveySelectorInput {
+  _and: [SurveySelectorInput]
+  _or: [SurveySelectorInput]
+
+}
+
+input SurveySelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Responses
+type Response {
+  _id: String 
+  createdAt: Date 
+  updatedAt: Date 
+  userId: String 
+  user: User 
+  surveyId: String 
+  survey: Survey 
+}
+
+
+input DeleteResponseInput{
+  filter: ResponseFilterInput
+  id: String
+}
+
+input SingleResponseInput {
+  # filtering
+  filter: ResponseFilterInput
+  sort: ResponseSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: ResponseSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiResponseInput {
+
+  # filtering
+  filter: ResponseFilterInput
+  sort: ResponseSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleResponseOutput{
+  result: Response
+}
+
+type  MultiResponseOutput{
+  results: [Response]
+  totalCount: Int
+}
+
+type ResponseMutationOutput{
+  data: Response
+}
+
+input CreateResponseInput {
+  data: CreateResponseDataInput!
+}
+
+input CreateResponseDataInput {
+  surveyId: String 
+}
+
+input UpdateResponseInput{
+  filter: ResponseFilterInput
+  id: String
+  data: UpdateResponseDataInput!
+}
+
+input UpsertResponseInput{
+  filter: ResponseFilterInput
+  id: String
+  data: UpdateResponseDataInput!
+}
+
+input UpdateResponseDataInput {
+  surveyId: String 
+}
+
+input ResponseFilterInput {
+  _and: [ResponseFilterInput]
+  _not: ResponseFilterInput
+  _or: [ResponseFilterInput]
+
+
+  _id: String_Selector
+  createdAt: Date_Selector
+  updatedAt: Date_Selector
+  userId: String_Selector
+  surveyId: String_Selector
+}
+
+input ResponseSortInput {
+  _id: SortOptions
+  createdAt: SortOptions
+  updatedAt: SortOptions
+  userId: SortOptions
+  surveyId: SortOptions
+}
+
+input ResponseSelectorInput {
+  _and: [ResponseSelectorInput]
+  _or: [ResponseSelectorInput]
+
+}
+
+input ResponseSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+
+
+type Query {
+  SiteData: Site
+  
+  currentUser: User
+  
+  # A single User document fetched by ID or slug
+  user(input: SingleUserInput!): SingleUserOutput
+  
+  # A list of User documents matching a set of query terms
+  users(input: MultiUserInput):  MultiUserOutput
+  
+  emails(input: MultiEmailInput):  MultiEmailOutput
+  
+  settings(input: MultiSettingInput):  MultiSettingOutput
+  
+  callbacks(input: MultiCallbackInput):  MultiCallbackOutput
+  
+  # A single Survey document fetched by ID or slug
+  survey(input: SingleSurveyInput!): SingleSurveyOutput
+  
+  # A list of Survey documents matching a set of query terms
+  surveys(input: MultiSurveyInput):  MultiSurveyOutput
+  
+  # A single Response document fetched by ID or slug
+  response(input: SingleResponseInput!): SingleResponseOutput
+  
+  # A list of Response documents matching a set of query terms
+  responses(input: MultiResponseInput):  MultiResponseOutput
+  
+}
+  
+
+type Mutation {
+  # Mutation for creating new User documents
+  createUser(
+  input: CreateUserInput,
+  "Deprecated (use 'input' field instead)."
+  data: CreateUserDataInput
+) : UserMutationOutput
+
+  # Mutation for updating a User document
+  updateUser(
+  input: UpdateUserInput,
+  "Deprecated (use 'input' field instead)."
+  selector: UserSelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateUserDataInput 
+) : UserMutationOutput
+
+  # Mutation for upserting a User document
+  upsertUser(
+  input: UpsertUserInput,
+  "Deprecated (use 'input' field instead)."
+  selector: UserSelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateUserDataInput
+) : UserMutationOutput
+
+  # Mutation for deleting a User document
+  deleteUser(
+  input: DeleteUserInput,
+  "Deprecated (use 'input' field instead)."
+  selector: UserSelectorUniqueInput
+) : UserMutationOutput
+
+  # Mutation for creating new Survey documents
+  createSurvey(
+  input: CreateSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  data: CreateSurveyDataInput
+) : SurveyMutationOutput
+
+  # Mutation for updating a Survey document
+  updateSurvey(
+  input: UpdateSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  selector: SurveySelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateSurveyDataInput 
+) : SurveyMutationOutput
+
+  # Mutation for upserting a Survey document
+  upsertSurvey(
+  input: UpsertSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  selector: SurveySelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateSurveyDataInput
+) : SurveyMutationOutput
+
+  # Mutation for deleting a Survey document
+  deleteSurvey(
+  input: DeleteSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  selector: SurveySelectorUniqueInput
+) : SurveyMutationOutput
+
+  # Mutation for creating new Response documents
+  createResponse(
+  input: CreateResponseInput,
+  "Deprecated (use 'input' field instead)."
+  data: CreateResponseDataInput
+) : ResponseMutationOutput
+
+  # Mutation for updating a Response document
+  updateResponse(
+  input: UpdateResponseInput,
+  "Deprecated (use 'input' field instead)."
+  selector: ResponseSelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateResponseDataInput 
+) : ResponseMutationOutput
+
+  # Mutation for upserting a Response document
+  upsertResponse(
+  input: UpsertResponseInput,
+  "Deprecated (use 'input' field instead)."
+  selector: ResponseSelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateResponseDataInput
+) : ResponseMutationOutput
+
+  # Mutation for deleting a Response document
+  deleteResponse(
+  input: DeleteResponseInput,
+  "Deprecated (use 'input' field instead)."
+  selector: ResponseSelectorUniqueInput
+) : ResponseMutationOutput
+
+}
+
+
