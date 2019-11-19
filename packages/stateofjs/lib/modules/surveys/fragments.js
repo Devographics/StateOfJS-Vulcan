@@ -9,10 +9,16 @@ registerFragment(/* GraphQL */`
     name
     year
     status
+    slug
+    pagePath
 
     user{
       _id
       displayName
+      pagePath
+    }
+
+    currentUserResponse{
       pagePath
     }
   }

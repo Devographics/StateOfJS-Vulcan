@@ -1,4 +1,6 @@
+import { Utils } from 'meteor/vulcan:core';
 import { statuses, statusesOptions } from '../constants.js';
+import {Responses} from '../responses';
 
 const schema = {
   // default properties
@@ -58,6 +60,45 @@ const schema = {
     canUpdate: ['admins'],
     defaultValue: statuses.preview,
     options: statusesOptions,
+  },
+  pagePath: {
+    type: String,
+    optional: true,
+    canRead: ['guests'],
+    resolveAs: {
+      resolver: survey => `/survey/${survey.slug}/${survey.year}/`,
+    },
+  },
+  slug: {
+    type: String,
+    optional: true,
+    canRead: ['guests'],
+    onCreate: ({ document }) => Utils.slugify(document.name),
+    onUpdate: ({ document }) => Utils.slugify(document.name),
+  },
+
+  // GraphQL-only fields
+
+  currentUserResponse: {
+    type: Object,
+    optional: true,
+    canRead: ['guests'],
+    resolveAs: {
+      type: 'Response',
+      resolver: (survey, args, context) => {
+        const { currentUser, Users } = context;
+        const response = Responses.findOne({
+          surveyId: survey._id,
+          userId: currentUser._id,
+        });
+        const restrictedResponse = Users.restrictDocuments({
+          user: currentUser,
+          collection: Responses,
+          documents: [response],
+        })[0];
+        return restrictedResponse;
+      },
+    },
   },
 };
 

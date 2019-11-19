@@ -1,4 +1,4 @@
-import '../components/Home'
+import '../components/Surveys'
 import '../components/Survey'
 import '../components/survey/SurveySection'
 

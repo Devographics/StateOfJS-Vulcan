@@ -1,20 +1,22 @@
 import { registerFragment } from 'meteor/vulcan:core';
 
-registerFragment(/* GraphQL */`
+registerFragment(/* GraphQL */ `
   fragment ResponseFragment on Response {
     _id
     createdAt
     updatedAt
 
-    ...ResponsesDefaultFragment
+    pagePath
 
-    user{
+    ...ResponsesDefaultFragment
+    
+    user {
       _id
       displayName
       pagePath
     }
 
-    survey{
+    survey {
       _id
       name
       year
@@ -22,4 +24,10 @@ registerFragment(/* GraphQL */`
   }
 `);
 
-
+registerFragment(/* GraphQL */ `
+  fragment CreateResponseOutputFragment on ResponseMutationOutput {
+    data {
+      ...ResponseFragment
+    }
+  }
+`);

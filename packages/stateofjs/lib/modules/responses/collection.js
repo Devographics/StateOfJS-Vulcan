@@ -1,7 +1,7 @@
 import { createCollection } from 'meteor/vulcan:core';
 import schema from './schema.js';
 
-const Responses = createCollection({
+export const Responses = createCollection({
   collectionName: 'Responses',
 
   typeName: 'Response',
