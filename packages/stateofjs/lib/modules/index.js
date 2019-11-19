@@ -1,3 +1,4 @@
+import './accounts.js';
 import './routes.js';
 import './components.js';
 import './outline.js';

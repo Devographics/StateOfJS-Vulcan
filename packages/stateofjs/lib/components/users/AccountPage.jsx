@@ -5,7 +5,8 @@ import Users from 'meteor/vulcan:users';
 
 const AccountPage = ({ currentUser }) => (
   <div className="account">
-    Account Page
+    <p>Logged in as {currentUser.email}</p>
+    <Components.AccountsLoginForm />
   </div>
 );
 

@@ -22,6 +22,7 @@ const Header = ({ currentUser }) => (
         <>
           <NavLink to="/admin/surveys" label="Surveys Dashboard" />{' '}
           <NavLink to="/admin/responses" label="Responses Dashboard" />
+          <NavLink to="/admin/users" label="Users Dashboard" />
         </>
       )}
     </Nav>

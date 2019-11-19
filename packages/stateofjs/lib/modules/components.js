@@ -9,3 +9,4 @@ import '../components/users/AccountPage'
 
 import '../components/admin/AdminResponses'
 import '../components/admin/AdminSurveys'
+import '../components/admin/AdminUsers'

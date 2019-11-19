@@ -6,3 +6,4 @@ addRoute({ name: 'surveyPage', path: '/survey/:slug/:year/', componentName: 'Sur
 addRoute({ name: 'responsePage', path: '/session/:responseId/:sectionNumber?', componentName: 'SurveySectionWithData' });
 addRoute({ name: 'adminSurveys', path: '/admin/surveys', componentName: 'AdminSurveys' });
 addRoute({ name: 'adminResponses', path: '/admin/responses', componentName: 'AdminResponses' });
+addRoute({ name: 'adminUsers', path: '/admin/users', componentName: 'AdminUsers' });

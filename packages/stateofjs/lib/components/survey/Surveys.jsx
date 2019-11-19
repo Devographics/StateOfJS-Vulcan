@@ -1,10 +1,10 @@
 import React from 'react';
 import { Components, registerComponent, withMulti2, withCurrentUser } from 'meteor/vulcan:core';
 // import SurveyItem from './SurveyItem.jsx';
+import Alert from 'react-bootstrap/Alert';
 
 const Surveys = ({ loading, results, currentUser }) => (
   <div className="surveys">
-    <Components.AccountsLoginForm />
     {currentUser ? (
       loading ? (
         <Components.Loading />
@@ -12,7 +12,10 @@ const Surveys = ({ loading, results, currentUser }) => (
         results.map(survey => <Components.SurveyItem key={survey._id} survey={survey} />)
       )
     ) : (
-      <p>Please log in or sign up to begin.</p>
+      <div>
+        <Alert variant="info">Please log in or sign up to begin.</Alert>
+        <Components.AccountsLoginForm />
+      </div>
     )}
   </div>
 );
