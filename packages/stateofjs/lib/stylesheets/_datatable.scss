@@ -4,7 +4,11 @@
 .datatable-sorter, .datatable-filter{
   cursor: pointer;
   margin-left: $spacing/2;
-  svg path{
-    fill: $white;
+}
+.datatable-list{
+  background: $greyLight;
+  overflow: scroll;
+  .btn{
+    color: $text-color-inverted;
   }
 }
