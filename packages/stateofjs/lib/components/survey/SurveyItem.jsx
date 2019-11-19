@@ -1,10 +1,10 @@
 import React from 'react';
-import { Components, registerComponent } from 'meteor/vulcan:core';
+import { Components, registerComponent, withCurrentUser } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';
 import get from 'lodash/get';
 import { withRouter } from 'react-router-dom';
 
-const SurveyItem = ({ survey, history }) => {
+const SurveyItem = ({ survey, history, currentUser }) => {
   const { name, year, currentUserResponse } = survey;
 
   return (
@@ -26,7 +26,7 @@ const SurveyItem = ({ survey, history }) => {
               args: { input: 'CreateResponseInput' },
               fragmentName: 'CreateResponseOutputFragment',
             }}
-            mutationArguments={{ input: { data: { surveyId: survey._id } } }}
+            mutationArguments={{ input: { data: { surveyId: survey._id, aboutyou_youremail: currentUser.email } } }}
             successCallback={result => {
               history.push(get(result, 'data.createResponse.data.pagePath'));
             }}
@@ -37,6 +37,6 @@ const SurveyItem = ({ survey, history }) => {
   );
 };
 
-registerComponent('SurveyItem', SurveyItem, withRouter);
+registerComponent('SurveyItem', SurveyItem, withRouter, withCurrentUser);
 
 export default SurveyItem;

@@ -609,6 +609,675 @@ input CallbackSelectorUniqueInput {
 }
 
 
+# Type for Responses
+type Response {
+  _id: String 
+  createdAt: Date 
+  updatedAt: Date 
+  userId: String 
+  user: User 
+  pagePath: String 
+  surveyId: String 
+  survey: Survey 
+  syntax_destructuringconstfoobar: String 
+  syntax_spreadoperatorarray1array2: String 
+  syntax_arrowfunctionsconstfoo: String 
+  language_proxies: String 
+  language_asyncawait: String 
+  language_promises: String 
+  language_decorators: String 
+  datastructures_maps: String 
+  datastructures_sets: String 
+  datastructures_typedarrays: String 
+  browserapis_serviceworkers: String 
+  browserapis_localstorage: String 
+  browserapis_i18n: String 
+  browserapis_webcomponents: String 
+  browserapis_webaudioapi: String 
+  browserapis_webgl: String 
+  browserapis_webanimationsapi: String 
+  browserapis_webrtc: String 
+  browserapis_webspeechapi: String 
+  browserapis_webvr: String 
+  browserapis_websocket: String 
+  browserapis_fetchapi: String 
+  other_progressivewebappspwa: String 
+  other_webassemblywasm: String 
+  patterns_objectorientedprogramming: String 
+  patterns_functionalprogramming: String 
+  patterns_reactiveprogramming: String 
+  javascriptflavors_typescript: String 
+  javascriptflavors_reason: String 
+  javascriptflavors_elm: String 
+  javascriptflavors_clojurescript: String 
+  javascriptflavors_purescript: String 
+  javascriptflavors_other: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of JavaScript flavors?
+  javascriptflavors_overallhappiness: Float 
+  frontendframeworks_react: String 
+  frontendframeworks_vue: String 
+  frontendframeworks_angular: String 
+  frontendframeworks_preact: String 
+  frontendframeworks_ember: String 
+  frontendframeworks_svelte: String 
+  frontendframeworks_other: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of front-end frameworks?
+  frontendframeworks_overallhappiness: Float 
+  datalayer_redux: String 
+  datalayer_apollo: String 
+  datalayer_graphql: String 
+  datalayer_mobx: String 
+  datalayer_relay: String 
+  datalayer_other: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of data layer technologies?
+  datalayer_overallhappiness: Float 
+  backendframeworks_express: String 
+  backendframeworks_nextjs: String 
+  backendframeworks_koa: String 
+  backendframeworks_meteor: String 
+  backendframeworks_sails: String 
+  backendframeworks_feathersjs: String 
+  backendframeworks_nuxtjs: String 
+  backendframeworks_gatsbyjs: String 
+  backendframeworks_other: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of back-end frameworks?
+  backendframeworks_overallhappiness: Float 
+  testing_jest: String 
+  testing_mocha: String 
+  testing_storybook: String 
+  testing_cypress: String 
+  testing_enzyme: String 
+  testing_ava: String 
+  testing_jasmine: String 
+  testing_puppeteer: String 
+  testing_other: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
+  testing_overallhappiness: Float 
+  mobiledesktop_electron: String 
+  mobiledesktop_reactnative: String 
+  mobiledesktop_nativeapps: String 
+  mobiledesktop_cordova: String 
+  mobiledesktop_ionic: String 
+  mobiledesktop_nwjs: String 
+  mobiledesktop_expo: String 
+  mobiledesktop_other: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
+  mobiledesktop_overallhappiness: Float 
+  # Which JavaScript utilities do you regularly use?
+  othertools_utilities: [String] 
+  # Which text editor(s) do you regularly use?
+  othertools_texteditors: [String] 
+  # Which browser(s) do you work in primarily during initial development?
+  othertools_browsers: [String] 
+  # Which build tools do you use to compile and bundle your code?
+  othertools_buildtools: [String] 
+  # Which other languages do you code in besides JavaScript and its flavors?
+  othertools_otherlanguages: [String] 
+  # Which JavaScript-related blogs/magazines/etc. do you read?
+  resources_blogsnewsmagazines: [String] 
+  # Which JavaScript-related sites/courses/etc. do you consult?
+  resources_sitescourses: [String] 
+  # Which JavaScript or programming-related podcasts do you listen to?
+  resources_podcasts: [String] 
+  opinionquestions_javascriptismovingintherightdirection: Float 
+  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
+  opinionquestions_javascriptisoverusedonline: Float 
+  opinionquestions_ienjoybuildingjavascriptapps: Float 
+  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
+  opinionquestions_thejavascriptecosystemischangingtoofast: Float 
+  # Features you'd like to see in JavaScript one day.
+  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
+  # How long you've been writing JavaScript.
+  aboutyou_yearsofexperience: String 
+  # How do you introduce yourself at parties?
+  aboutyou_jobtitle: String 
+  # How proficient are you at writing CSS? (pick the most advanced option corresponding to your skills)
+  aboutyou_cssproficiency: String 
+  # How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)
+  aboutyou_backendproficiency: String 
+  aboutyou_companysize: String 
+  # In USD
+  aboutyou_yearlysalary: String 
+  aboutyou_howdidyoufindoutaboutthissurvey: String 
+  aboutyou_yourgender: String 
+  # Note: if typing in your country doesn't work, please select it from the list directly instead.
+  aboutyou_yourcountry: String 
+  # If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
+  aboutyou_youremail: String 
+}
+
+
+input DeleteResponseInput{
+  filter: ResponseFilterInput
+  id: String
+}
+
+input SingleResponseInput {
+  # filtering
+  filter: ResponseFilterInput
+  sort: ResponseSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  "Deprecated (use 'filter/id' fields instead)."
+  selector: ResponseSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+}
+
+input MultiResponseInput {
+
+  # filtering
+  filter: ResponseFilterInput
+  sort: ResponseSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  "Deprecated (use 'filter/id' fields instead)."
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  
+}
+
+type SingleResponseOutput{
+  result: Response
+}
+
+type  MultiResponseOutput{
+  results: [Response]
+  totalCount: Int
+}
+
+type ResponseMutationOutput{
+  data: Response
+}
+
+input CreateResponseInput {
+  data: CreateResponseDataInput!
+}
+
+input CreateResponseDataInput {
+  surveyId: String 
+  syntax_destructuringconstfoobar: String 
+  syntax_spreadoperatorarray1array2: String 
+  syntax_arrowfunctionsconstfoo: String 
+  language_proxies: String 
+  language_asyncawait: String 
+  language_promises: String 
+  language_decorators: String 
+  datastructures_maps: String 
+  datastructures_sets: String 
+  datastructures_typedarrays: String 
+  browserapis_serviceworkers: String 
+  browserapis_localstorage: String 
+  browserapis_i18n: String 
+  browserapis_webcomponents: String 
+  browserapis_webaudioapi: String 
+  browserapis_webgl: String 
+  browserapis_webanimationsapi: String 
+  browserapis_webrtc: String 
+  browserapis_webspeechapi: String 
+  browserapis_webvr: String 
+  browserapis_websocket: String 
+  browserapis_fetchapi: String 
+  other_progressivewebappspwa: String 
+  other_webassemblywasm: String 
+  patterns_objectorientedprogramming: String 
+  patterns_functionalprogramming: String 
+  patterns_reactiveprogramming: String 
+  javascriptflavors_typescript: String 
+  javascriptflavors_reason: String 
+  javascriptflavors_elm: String 
+  javascriptflavors_clojurescript: String 
+  javascriptflavors_purescript: String 
+  javascriptflavors_other: String 
+  javascriptflavors_overallhappiness: Float 
+  frontendframeworks_react: String 
+  frontendframeworks_vue: String 
+  frontendframeworks_angular: String 
+  frontendframeworks_preact: String 
+  frontendframeworks_ember: String 
+  frontendframeworks_svelte: String 
+  frontendframeworks_other: String 
+  frontendframeworks_overallhappiness: Float 
+  datalayer_redux: String 
+  datalayer_apollo: String 
+  datalayer_graphql: String 
+  datalayer_mobx: String 
+  datalayer_relay: String 
+  datalayer_other: String 
+  datalayer_overallhappiness: Float 
+  backendframeworks_express: String 
+  backendframeworks_nextjs: String 
+  backendframeworks_koa: String 
+  backendframeworks_meteor: String 
+  backendframeworks_sails: String 
+  backendframeworks_feathersjs: String 
+  backendframeworks_nuxtjs: String 
+  backendframeworks_gatsbyjs: String 
+  backendframeworks_other: String 
+  backendframeworks_overallhappiness: Float 
+  testing_jest: String 
+  testing_mocha: String 
+  testing_storybook: String 
+  testing_cypress: String 
+  testing_enzyme: String 
+  testing_ava: String 
+  testing_jasmine: String 
+  testing_puppeteer: String 
+  testing_other: String 
+  testing_overallhappiness: Float 
+  mobiledesktop_electron: String 
+  mobiledesktop_reactnative: String 
+  mobiledesktop_nativeapps: String 
+  mobiledesktop_cordova: String 
+  mobiledesktop_ionic: String 
+  mobiledesktop_nwjs: String 
+  mobiledesktop_expo: String 
+  mobiledesktop_other: String 
+  mobiledesktop_overallhappiness: Float 
+  othertools_utilities: [String] 
+  othertools_texteditors: [String] 
+  othertools_browsers: [String] 
+  othertools_buildtools: [String] 
+  othertools_otherlanguages: [String] 
+  resources_blogsnewsmagazines: [String] 
+  resources_sitescourses: [String] 
+  resources_podcasts: [String] 
+  opinionquestions_javascriptismovingintherightdirection: Float 
+  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
+  opinionquestions_javascriptisoverusedonline: Float 
+  opinionquestions_ienjoybuildingjavascriptapps: Float 
+  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
+  opinionquestions_thejavascriptecosystemischangingtoofast: Float 
+  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
+  aboutyou_yearsofexperience: String 
+  aboutyou_jobtitle: String 
+  aboutyou_cssproficiency: String 
+  aboutyou_backendproficiency: String 
+  aboutyou_companysize: String 
+  aboutyou_yearlysalary: String 
+  aboutyou_howdidyoufindoutaboutthissurvey: String 
+  aboutyou_yourgender: String 
+  aboutyou_yourcountry: String 
+  aboutyou_youremail: String 
+}
+
+input UpdateResponseInput{
+  filter: ResponseFilterInput
+  id: String
+  data: UpdateResponseDataInput!
+}
+
+input UpsertResponseInput{
+  filter: ResponseFilterInput
+  id: String
+  data: UpdateResponseDataInput!
+}
+
+input UpdateResponseDataInput {
+  surveyId: String 
+  syntax_destructuringconstfoobar: String 
+  syntax_spreadoperatorarray1array2: String 
+  syntax_arrowfunctionsconstfoo: String 
+  language_proxies: String 
+  language_asyncawait: String 
+  language_promises: String 
+  language_decorators: String 
+  datastructures_maps: String 
+  datastructures_sets: String 
+  datastructures_typedarrays: String 
+  browserapis_serviceworkers: String 
+  browserapis_localstorage: String 
+  browserapis_i18n: String 
+  browserapis_webcomponents: String 
+  browserapis_webaudioapi: String 
+  browserapis_webgl: String 
+  browserapis_webanimationsapi: String 
+  browserapis_webrtc: String 
+  browserapis_webspeechapi: String 
+  browserapis_webvr: String 
+  browserapis_websocket: String 
+  browserapis_fetchapi: String 
+  other_progressivewebappspwa: String 
+  other_webassemblywasm: String 
+  patterns_objectorientedprogramming: String 
+  patterns_functionalprogramming: String 
+  patterns_reactiveprogramming: String 
+  javascriptflavors_typescript: String 
+  javascriptflavors_reason: String 
+  javascriptflavors_elm: String 
+  javascriptflavors_clojurescript: String 
+  javascriptflavors_purescript: String 
+  javascriptflavors_other: String 
+  javascriptflavors_overallhappiness: Float 
+  frontendframeworks_react: String 
+  frontendframeworks_vue: String 
+  frontendframeworks_angular: String 
+  frontendframeworks_preact: String 
+  frontendframeworks_ember: String 
+  frontendframeworks_svelte: String 
+  frontendframeworks_other: String 
+  frontendframeworks_overallhappiness: Float 
+  datalayer_redux: String 
+  datalayer_apollo: String 
+  datalayer_graphql: String 
+  datalayer_mobx: String 
+  datalayer_relay: String 
+  datalayer_other: String 
+  datalayer_overallhappiness: Float 
+  backendframeworks_express: String 
+  backendframeworks_nextjs: String 
+  backendframeworks_koa: String 
+  backendframeworks_meteor: String 
+  backendframeworks_sails: String 
+  backendframeworks_feathersjs: String 
+  backendframeworks_nuxtjs: String 
+  backendframeworks_gatsbyjs: String 
+  backendframeworks_other: String 
+  backendframeworks_overallhappiness: Float 
+  testing_jest: String 
+  testing_mocha: String 
+  testing_storybook: String 
+  testing_cypress: String 
+  testing_enzyme: String 
+  testing_ava: String 
+  testing_jasmine: String 
+  testing_puppeteer: String 
+  testing_other: String 
+  testing_overallhappiness: Float 
+  mobiledesktop_electron: String 
+  mobiledesktop_reactnative: String 
+  mobiledesktop_nativeapps: String 
+  mobiledesktop_cordova: String 
+  mobiledesktop_ionic: String 
+  mobiledesktop_nwjs: String 
+  mobiledesktop_expo: String 
+  mobiledesktop_other: String 
+  mobiledesktop_overallhappiness: Float 
+  othertools_utilities: [String] 
+  othertools_texteditors: [String] 
+  othertools_browsers: [String] 
+  othertools_buildtools: [String] 
+  othertools_otherlanguages: [String] 
+  resources_blogsnewsmagazines: [String] 
+  resources_sitescourses: [String] 
+  resources_podcasts: [String] 
+  opinionquestions_javascriptismovingintherightdirection: Float 
+  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
+  opinionquestions_javascriptisoverusedonline: Float 
+  opinionquestions_ienjoybuildingjavascriptapps: Float 
+  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
+  opinionquestions_thejavascriptecosystemischangingtoofast: Float 
+  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
+  aboutyou_yearsofexperience: String 
+  aboutyou_jobtitle: String 
+  aboutyou_cssproficiency: String 
+  aboutyou_backendproficiency: String 
+  aboutyou_companysize: String 
+  aboutyou_yearlysalary: String 
+  aboutyou_howdidyoufindoutaboutthissurvey: String 
+  aboutyou_yourgender: String 
+  aboutyou_yourcountry: String 
+  aboutyou_youremail: String 
+}
+
+input ResponseFilterInput {
+  _and: [ResponseFilterInput]
+  _not: ResponseFilterInput
+  _or: [ResponseFilterInput]
+
+
+  _id: String_Selector
+  createdAt: Date_Selector
+  updatedAt: Date_Selector
+  userId: String_Selector
+  pagePath: String_Selector
+  surveyId: String_Selector
+  syntax_destructuringconstfoobar: String_Selector
+  syntax_spreadoperatorarray1array2: String_Selector
+  syntax_arrowfunctionsconstfoo: String_Selector
+  language_proxies: String_Selector
+  language_asyncawait: String_Selector
+  language_promises: String_Selector
+  language_decorators: String_Selector
+  datastructures_maps: String_Selector
+  datastructures_sets: String_Selector
+  datastructures_typedarrays: String_Selector
+  browserapis_serviceworkers: String_Selector
+  browserapis_localstorage: String_Selector
+  browserapis_i18n: String_Selector
+  browserapis_webcomponents: String_Selector
+  browserapis_webaudioapi: String_Selector
+  browserapis_webgl: String_Selector
+  browserapis_webanimationsapi: String_Selector
+  browserapis_webrtc: String_Selector
+  browserapis_webspeechapi: String_Selector
+  browserapis_webvr: String_Selector
+  browserapis_websocket: String_Selector
+  browserapis_fetchapi: String_Selector
+  other_progressivewebappspwa: String_Selector
+  other_webassemblywasm: String_Selector
+  patterns_objectorientedprogramming: String_Selector
+  patterns_functionalprogramming: String_Selector
+  patterns_reactiveprogramming: String_Selector
+  javascriptflavors_typescript: String_Selector
+  javascriptflavors_reason: String_Selector
+  javascriptflavors_elm: String_Selector
+  javascriptflavors_clojurescript: String_Selector
+  javascriptflavors_purescript: String_Selector
+  javascriptflavors_other: String_Selector
+  javascriptflavors_overallhappiness: Float_Selector
+  frontendframeworks_react: String_Selector
+  frontendframeworks_vue: String_Selector
+  frontendframeworks_angular: String_Selector
+  frontendframeworks_preact: String_Selector
+  frontendframeworks_ember: String_Selector
+  frontendframeworks_svelte: String_Selector
+  frontendframeworks_other: String_Selector
+  frontendframeworks_overallhappiness: Float_Selector
+  datalayer_redux: String_Selector
+  datalayer_apollo: String_Selector
+  datalayer_graphql: String_Selector
+  datalayer_mobx: String_Selector
+  datalayer_relay: String_Selector
+  datalayer_other: String_Selector
+  datalayer_overallhappiness: Float_Selector
+  backendframeworks_express: String_Selector
+  backendframeworks_nextjs: String_Selector
+  backendframeworks_koa: String_Selector
+  backendframeworks_meteor: String_Selector
+  backendframeworks_sails: String_Selector
+  backendframeworks_feathersjs: String_Selector
+  backendframeworks_nuxtjs: String_Selector
+  backendframeworks_gatsbyjs: String_Selector
+  backendframeworks_other: String_Selector
+  backendframeworks_overallhappiness: Float_Selector
+  testing_jest: String_Selector
+  testing_mocha: String_Selector
+  testing_storybook: String_Selector
+  testing_cypress: String_Selector
+  testing_enzyme: String_Selector
+  testing_ava: String_Selector
+  testing_jasmine: String_Selector
+  testing_puppeteer: String_Selector
+  testing_other: String_Selector
+  testing_overallhappiness: Float_Selector
+  mobiledesktop_electron: String_Selector
+  mobiledesktop_reactnative: String_Selector
+  mobiledesktop_nativeapps: String_Selector
+  mobiledesktop_cordova: String_Selector
+  mobiledesktop_ionic: String_Selector
+  mobiledesktop_nwjs: String_Selector
+  mobiledesktop_expo: String_Selector
+  mobiledesktop_other: String_Selector
+  mobiledesktop_overallhappiness: Float_Selector
+
+
+
+
+
+
+
+
+  opinionquestions_javascriptismovingintherightdirection: Float_Selector
+  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float_Selector
+  opinionquestions_javascriptisoverusedonline: Float_Selector
+  opinionquestions_ienjoybuildingjavascriptapps: Float_Selector
+  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float_Selector
+  opinionquestions_thejavascriptecosystemischangingtoofast: Float_Selector
+  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String_Selector
+  aboutyou_yearsofexperience: String_Selector
+  aboutyou_jobtitle: String_Selector
+  aboutyou_cssproficiency: String_Selector
+  aboutyou_backendproficiency: String_Selector
+  aboutyou_companysize: String_Selector
+  aboutyou_yearlysalary: String_Selector
+  aboutyou_howdidyoufindoutaboutthissurvey: String_Selector
+  aboutyou_yourgender: String_Selector
+  aboutyou_yourcountry: String_Selector
+  aboutyou_youremail: String_Selector
+}
+
+input ResponseSortInput {
+  _id: SortOptions
+  createdAt: SortOptions
+  updatedAt: SortOptions
+  userId: SortOptions
+  pagePath: SortOptions
+  surveyId: SortOptions
+  syntax_destructuringconstfoobar: SortOptions
+  syntax_spreadoperatorarray1array2: SortOptions
+  syntax_arrowfunctionsconstfoo: SortOptions
+  language_proxies: SortOptions
+  language_asyncawait: SortOptions
+  language_promises: SortOptions
+  language_decorators: SortOptions
+  datastructures_maps: SortOptions
+  datastructures_sets: SortOptions
+  datastructures_typedarrays: SortOptions
+  browserapis_serviceworkers: SortOptions
+  browserapis_localstorage: SortOptions
+  browserapis_i18n: SortOptions
+  browserapis_webcomponents: SortOptions
+  browserapis_webaudioapi: SortOptions
+  browserapis_webgl: SortOptions
+  browserapis_webanimationsapi: SortOptions
+  browserapis_webrtc: SortOptions
+  browserapis_webspeechapi: SortOptions
+  browserapis_webvr: SortOptions
+  browserapis_websocket: SortOptions
+  browserapis_fetchapi: SortOptions
+  other_progressivewebappspwa: SortOptions
+  other_webassemblywasm: SortOptions
+  patterns_objectorientedprogramming: SortOptions
+  patterns_functionalprogramming: SortOptions
+  patterns_reactiveprogramming: SortOptions
+  javascriptflavors_typescript: SortOptions
+  javascriptflavors_reason: SortOptions
+  javascriptflavors_elm: SortOptions
+  javascriptflavors_clojurescript: SortOptions
+  javascriptflavors_purescript: SortOptions
+  javascriptflavors_other: SortOptions
+  javascriptflavors_overallhappiness: SortOptions
+  frontendframeworks_react: SortOptions
+  frontendframeworks_vue: SortOptions
+  frontendframeworks_angular: SortOptions
+  frontendframeworks_preact: SortOptions
+  frontendframeworks_ember: SortOptions
+  frontendframeworks_svelte: SortOptions
+  frontendframeworks_other: SortOptions
+  frontendframeworks_overallhappiness: SortOptions
+  datalayer_redux: SortOptions
+  datalayer_apollo: SortOptions
+  datalayer_graphql: SortOptions
+  datalayer_mobx: SortOptions
+  datalayer_relay: SortOptions
+  datalayer_other: SortOptions
+  datalayer_overallhappiness: SortOptions
+  backendframeworks_express: SortOptions
+  backendframeworks_nextjs: SortOptions
+  backendframeworks_koa: SortOptions
+  backendframeworks_meteor: SortOptions
+  backendframeworks_sails: SortOptions
+  backendframeworks_feathersjs: SortOptions
+  backendframeworks_nuxtjs: SortOptions
+  backendframeworks_gatsbyjs: SortOptions
+  backendframeworks_other: SortOptions
+  backendframeworks_overallhappiness: SortOptions
+  testing_jest: SortOptions
+  testing_mocha: SortOptions
+  testing_storybook: SortOptions
+  testing_cypress: SortOptions
+  testing_enzyme: SortOptions
+  testing_ava: SortOptions
+  testing_jasmine: SortOptions
+  testing_puppeteer: SortOptions
+  testing_other: SortOptions
+  testing_overallhappiness: SortOptions
+  mobiledesktop_electron: SortOptions
+  mobiledesktop_reactnative: SortOptions
+  mobiledesktop_nativeapps: SortOptions
+  mobiledesktop_cordova: SortOptions
+  mobiledesktop_ionic: SortOptions
+  mobiledesktop_nwjs: SortOptions
+  mobiledesktop_expo: SortOptions
+  mobiledesktop_other: SortOptions
+  mobiledesktop_overallhappiness: SortOptions
+  othertools_utilities: SortOptions
+  othertools_texteditors: SortOptions
+  othertools_browsers: SortOptions
+  othertools_buildtools: SortOptions
+  othertools_otherlanguages: SortOptions
+  resources_blogsnewsmagazines: SortOptions
+  resources_sitescourses: SortOptions
+  resources_podcasts: SortOptions
+  opinionquestions_javascriptismovingintherightdirection: SortOptions
+  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: SortOptions
+  opinionquestions_javascriptisoverusedonline: SortOptions
+  opinionquestions_ienjoybuildingjavascriptapps: SortOptions
+  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: SortOptions
+  opinionquestions_thejavascriptecosystemischangingtoofast: SortOptions
+  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: SortOptions
+  aboutyou_yearsofexperience: SortOptions
+  aboutyou_jobtitle: SortOptions
+  aboutyou_cssproficiency: SortOptions
+  aboutyou_backendproficiency: SortOptions
+  aboutyou_companysize: SortOptions
+  aboutyou_yearlysalary: SortOptions
+  aboutyou_howdidyoufindoutaboutthissurvey: SortOptions
+  aboutyou_yourgender: SortOptions
+  aboutyou_yourcountry: SortOptions
+  aboutyou_youremail: SortOptions
+}
+
+input ResponseSelectorInput {
+  _and: [ResponseSelectorInput]
+  _or: [ResponseSelectorInput]
+
+}
+
+input ResponseSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
 # Type for Surveys
 type Survey {
   _id: String 
@@ -619,6 +1288,9 @@ type Survey {
   name: String 
   year: Float 
   status: Float 
+  pagePath: String 
+  slug: String 
+  currentUserResponse: Response 
 }
 
 
@@ -721,6 +1393,9 @@ input SurveyFilterInput {
   name: String_Selector
   year: Float_Selector
   status: Float_Selector
+  pagePath: String_Selector
+  slug: String_Selector
+
 }
 
 input SurveySortInput {
@@ -731,6 +1406,9 @@ input SurveySortInput {
   name: SortOptions
   year: SortOptions
   status: SortOptions
+  pagePath: SortOptions
+  slug: SortOptions
+  currentUserResponse: SortOptions
 }
 
 input SurveySelectorInput {
@@ -740,135 +1418,6 @@ input SurveySelectorInput {
 }
 
 input SurveySelectorUniqueInput {
-  _id: String
-  documentId: String # OpenCRUD backwards compatibility
-  slug: String
-
-}
-
-
-# Type for Responses
-type Response {
-  _id: String 
-  createdAt: Date 
-  updatedAt: Date 
-  userId: String 
-  user: User 
-  surveyId: String 
-  survey: Survey 
-}
-
-
-input DeleteResponseInput{
-  filter: ResponseFilterInput
-  id: String
-}
-
-input SingleResponseInput {
-  # filtering
-  filter: ResponseFilterInput
-  sort: ResponseSortInput
-  search: String
-  id: String
-
-  # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
-  selector: ResponseSelectorUniqueInput
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Return null instead of throwing MissingDocumentError
-  allowNull: Boolean
-}
-
-input MultiResponseInput {
-
-  # filtering
-  filter: ResponseFilterInput
-  sort: ResponseSortInput
-  search: String
-  offset: Int
-  limit: Int
-
-  # backwards-compatibility
-  # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
-  terms: JSON
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Whether to calculate totalCount for this query
-  enableTotal: Boolean
-  
-}
-
-type SingleResponseOutput{
-  result: Response
-}
-
-type  MultiResponseOutput{
-  results: [Response]
-  totalCount: Int
-}
-
-type ResponseMutationOutput{
-  data: Response
-}
-
-input CreateResponseInput {
-  data: CreateResponseDataInput!
-}
-
-input CreateResponseDataInput {
-  surveyId: String 
-}
-
-input UpdateResponseInput{
-  filter: ResponseFilterInput
-  id: String
-  data: UpdateResponseDataInput!
-}
-
-input UpsertResponseInput{
-  filter: ResponseFilterInput
-  id: String
-  data: UpdateResponseDataInput!
-}
-
-input UpdateResponseDataInput {
-  surveyId: String 
-}
-
-input ResponseFilterInput {
-  _and: [ResponseFilterInput]
-  _not: ResponseFilterInput
-  _or: [ResponseFilterInput]
-
-
-  _id: String_Selector
-  createdAt: Date_Selector
-  updatedAt: Date_Selector
-  userId: String_Selector
-  surveyId: String_Selector
-}
-
-input ResponseSortInput {
-  _id: SortOptions
-  createdAt: SortOptions
-  updatedAt: SortOptions
-  userId: SortOptions
-  surveyId: SortOptions
-}
-
-input ResponseSelectorInput {
-  _and: [ResponseSelectorInput]
-  _or: [ResponseSelectorInput]
-
-}
-
-input ResponseSelectorUniqueInput {
   _id: String
   documentId: String # OpenCRUD backwards compatibility
   slug: String
@@ -895,17 +1444,17 @@ type Query {
   
   callbacks(input: MultiCallbackInput):  MultiCallbackOutput
   
-  # A single Survey document fetched by ID or slug
-  survey(input: SingleSurveyInput!): SingleSurveyOutput
-  
-  # A list of Survey documents matching a set of query terms
-  surveys(input: MultiSurveyInput):  MultiSurveyOutput
-  
   # A single Response document fetched by ID or slug
   response(input: SingleResponseInput!): SingleResponseOutput
   
   # A list of Response documents matching a set of query terms
   responses(input: MultiResponseInput):  MultiResponseOutput
+  
+  # A single Survey document fetched by ID or slug
+  survey(input: SingleSurveyInput!): SingleSurveyOutput
+  
+  # A list of Survey documents matching a set of query terms
+  surveys(input: MultiSurveyInput):  MultiSurveyOutput
   
 }
   
@@ -943,38 +1492,6 @@ type Mutation {
   selector: UserSelectorUniqueInput
 ) : UserMutationOutput
 
-  # Mutation for creating new Survey documents
-  createSurvey(
-  input: CreateSurveyInput,
-  "Deprecated (use 'input' field instead)."
-  data: CreateSurveyDataInput
-) : SurveyMutationOutput
-
-  # Mutation for updating a Survey document
-  updateSurvey(
-  input: UpdateSurveyInput,
-  "Deprecated (use 'input' field instead)."
-  selector: SurveySelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
-  data: UpdateSurveyDataInput 
-) : SurveyMutationOutput
-
-  # Mutation for upserting a Survey document
-  upsertSurvey(
-  input: UpsertSurveyInput,
-  "Deprecated (use 'input' field instead)."
-  selector: SurveySelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
-  data: UpdateSurveyDataInput
-) : SurveyMutationOutput
-
-  # Mutation for deleting a Survey document
-  deleteSurvey(
-  input: DeleteSurveyInput,
-  "Deprecated (use 'input' field instead)."
-  selector: SurveySelectorUniqueInput
-) : SurveyMutationOutput
-
   # Mutation for creating new Response documents
   createResponse(
   input: CreateResponseInput,
@@ -1006,6 +1523,38 @@ type Mutation {
   "Deprecated (use 'input' field instead)."
   selector: ResponseSelectorUniqueInput
 ) : ResponseMutationOutput
+
+  # Mutation for creating new Survey documents
+  createSurvey(
+  input: CreateSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  data: CreateSurveyDataInput
+) : SurveyMutationOutput
+
+  # Mutation for updating a Survey document
+  updateSurvey(
+  input: UpdateSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  selector: SurveySelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateSurveyDataInput 
+) : SurveyMutationOutput
+
+  # Mutation for upserting a Survey document
+  upsertSurvey(
+  input: UpsertSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  selector: SurveySelectorUniqueInput,
+  "Deprecated (use 'input' field instead)."
+  data: UpdateSurveyDataInput
+) : SurveyMutationOutput
+
+  # Mutation for deleting a Survey document
+  deleteSurvey(
+  input: DeleteSurveyInput,
+  "Deprecated (use 'input' field instead)."
+  selector: SurveySelectorUniqueInput
+) : SurveyMutationOutput
 
 }
 

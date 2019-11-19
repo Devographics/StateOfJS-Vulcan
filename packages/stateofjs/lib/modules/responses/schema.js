@@ -1,5 +1,9 @@
 import parsedOutline from '../outline.js';
-import { getQuestionObject, getQuestionSchema, getResponsePath } from './helpers.js';
+import {
+  getQuestionObject,
+  getQuestionSchema,
+  getResponsePath,
+} from './helpers.js';
 
 const schema = {
   // default properties

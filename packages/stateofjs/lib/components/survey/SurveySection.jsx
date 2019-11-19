@@ -3,7 +3,6 @@ import { registerComponent, Components, withSingle2 } from 'meteor/vulcan:core';
 import { withRouter } from 'react-router-dom';
 import parsedOutline from '../../modules/outline.js';
 import { NavLink } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
 import { getResponsePath, getId, getQuestionObject } from '../../modules/responses/helpers.js';
 
 const SurveySectionWithData = ({ match, history }) => {
@@ -39,8 +38,6 @@ const SurveySection = ({ loading, responseId, document: response, sectionNumber,
           <Components.Loading />
         ) : !response ? (
           <p>Could not find survey.</p>
-        ) : section.template === 'statictext' ? (
-          <StaticText response={response} title={section.title} {...sectionProps} />
         ) : (
           <Section response={response} {...sectionProps} />
         )}
@@ -90,28 +87,6 @@ const SectionNavItem = ({ responseId, response, section, number }) => {
   );
 };
 
-const StaticText = ({ title, response, sectionNumber, previousSection, nextSection }) => (
-  <div className="section-questions static-section">
-    {title}
-    <div className="form-section-nav">
-      {previousSection ? (
-        <LinkContainer to={getResponsePath(response, sectionNumber - 1)}>
-          <Components.Button>Previous: {previousSection.title}</Components.Button>
-        </LinkContainer>
-      ) : (
-        <div />
-      )}
-      {nextSection ? (
-        <LinkContainer to={getResponsePath(response, sectionNumber + 1)}>
-          <Components.Button>Next: {nextSection.title}</Components.Button>
-        </LinkContainer>
-      ) : (
-        <div />
-      )}
-    </div>
-  </div>
-);
-
 const FormSubmit = ({ submitForm, response, sectionNumber, nextSection, previousSection, history }) => (
   <div className="form-submit form-section-nav">
     {previousSection ? (
@@ -151,9 +126,11 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
   const fields = section.questions
     .map(q => (typeof q === 'string' ? q : q.title))
     .map(questionTitle => getId(section.title, questionTitle));
+  const { title, description } = section;
   return (
     <div className="section-questions">
-      <h2>{section.title}</h2>
+      <h2>{title}</h2>
+      <h3>{description}</h3>
       <Components.SmartForm
         documentId={response._id}
         fields={fields}
