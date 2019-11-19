@@ -8,6 +8,9 @@ const AdminSurveys = () => (
       options={{
         fragmentName: 'SurveyFragment'
       }}
+      newFormProps={{
+        label: 'New Survey',
+      }}
       // columns={['name', 'slug']}
     />
   </div>

@@ -2,9 +2,9 @@ import React from 'react';
 import { registerComponent, Components } from 'meteor/vulcan:core';
 import { withRouter } from 'react-router-dom';
 import parsedOutline from '../../modules/outline.js';
-import { makeId } from '../../modules/helpers.js';
-import { Link } from 'react-router-dom';
-import { getResponsePath } from '../../modules/responses/helpers.js';
+import { NavLink } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
+import { getResponsePath, getId } from '../../modules/responses/helpers.js';
 
 const SurveySection = ({ match, history }) => {
   const { responseId, sectionNumber = 0 } = match.params;
@@ -21,62 +21,97 @@ const SurveySection = ({ match, history }) => {
     history,
   };
   if (!responseId) {
-    <p>Could not find survey.</p>
+    <p>Could not find survey.</p>;
   }
   return (
     <div className="survey-section">
-      {section.template === 'statictext' ? (
-        <StaticText title={section.title} {...sectionProps} />
-      ) : (
-        <Section {...sectionProps} />
-      )}
+      <SectionNav response={{ _id: responseId }} currentSectionNumber={sn} />
+      <div className="section-contents">
+        {section.template === 'statictext' ? (
+          <StaticText title={section.title} {...sectionProps} />
+        ) : (
+          <Section {...sectionProps} />
+        )}
+      </div>
     </div>
   );
 };
 
+const SectionNav = ({ response }) => (
+  <ul className="section-nav">
+    {parsedOutline.map((section, i) => (
+      <SectionNavItem response={response} section={section} number={i} key={i} />
+    ))}
+  </ul>
+);
+
+const SectionNavItem = ({ response, section, number }) => (
+  <li className="section-nav-item">
+    <NavLink to={getResponsePath(response, number)}>{section.title}</NavLink>
+  </li>
+);
+
 const StaticText = ({ title, responseId, sectionNumber, previousSection, nextSection }) => (
-  <div className="static-section">
+  <div className="section-questions static-section">
     {title}
-    {previousSection && (
-      <Link to={getResponsePath({_id: responseId}, sectionNumber - 1)}>Previous: {previousSection.title}</Link>
-    )}
-    {nextSection && <Link to={getResponsePath({_id: responseId}, sectionNumber + 1)}>Next: {nextSection.title}</Link>}
+    <div className="form-section-nav">
+      {previousSection ? (
+        <LinkContainer to={getResponsePath({ _id: responseId }, sectionNumber - 1)}>
+          <Components.Button>Previous: {previousSection.title}</Components.Button>
+        </LinkContainer>
+      ) : (
+        <div />
+      )}
+      {nextSection ? (
+        <LinkContainer to={getResponsePath({ _id: responseId }, sectionNumber + 1)}>
+          <Components.Button>Next: {nextSection.title}</Components.Button>
+        </LinkContainer>
+      ) : (
+        <div />
+      )}
+    </div>
   </div>
 );
 
 const FormSubmit = ({ submitForm, responseId, sectionNumber, nextSection, previousSection, history }) => (
-  <div className="form-submit form-submit-prevnext">
-    {previousSection && (
+  <div className="form-submit form-section-nav">
+    {previousSection ? (
       <Components.Button
         type="submit"
         variant="primary"
         onClick={e => {
           e.preventDefault();
           submitForm();
-          history.push(getResponsePath({_id: responseId}, sectionNumber - 1));
+          history.push(getResponsePath({ _id: responseId }, sectionNumber - 1));
         }}
       >
         Previous: {previousSection.title}
       </Components.Button>
+    ) : (
+      <div />
     )}
-    {nextSection && (
+    {nextSection ? (
       <Components.Button
         type="submit"
         variant="primary"
         onClick={e => {
           e.preventDefault();
           submitForm();
-          history.push(getResponsePath({_id: responseId}, sectionNumber + 1));
+          history.push(getResponsePath({ _id: responseId }, sectionNumber + 1));
         }}
       >
         Next: {nextSection.title}
       </Components.Button>
+    ) : (
+      <div />
     )}
   </div>
 );
 
 const Section = ({ sectionNumber, section, responseId, previousSection, nextSection, history }) => {
-  const fields = section.questions.map(q => (typeof q === 'string' ? q : q.title)).map(makeId);
+  const fields = section.questions
+    .map(q => (typeof q === 'string' ? q : q.title))
+    .map(questionTitle => getId(section.title, questionTitle));
   return (
     <div className="section-questions">
       <h2>{section.title}</h2>

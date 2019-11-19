@@ -1,11 +1,42 @@
-import { makeId } from '../helpers.js';
 import countries from '../countries.js';
+
+/*
+
+Replace all occurences of a string
+
+*/
+// eslint-disable-next-line no-extend-native
+String.prototype.replaceAll = function(search, replacement) {
+  const target = this;
+  return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+/*
+
+Take a string ("Front-end") and make it usable as an ID ("frontend")
+
+*/
+const disallowedCharacters = '?.(){}[]=>&,/- ';
+export const makeId = str => {
+  if (!str) { 
+    return '';
+  }
+  let s = str.toLowerCase();
+  const charArray = [...disallowedCharacters];
+  charArray.forEach(c => {
+    s = s.replaceAll(`\\${c}`, '');
+  });
+  return s;
+};
+
+export const getId = (sectionTitle, questionTitle) =>
+  makeId(sectionTitle) + '_' + makeId(questionTitle);
 
 export const getResponsePath = (response, sectionNumber) =>
   `/session/${response._id}${
     typeof sectionNumber !== 'undefined' ? `/${sectionNumber}` : ''
   }`;
-  
+
 export const templates = {
   feature: () => ({
     input: 'radiogroup',
@@ -49,6 +80,7 @@ export const templates = {
   email: () => ({ input: 'email' }),
   opinion: () => ({
     input: 'radiogroup',
+    type: Number,
     options: [
       { value: 0, label: 'Disagree Strongly' },
       { value: 1, label: 'Disagree' },
@@ -60,6 +92,7 @@ export const templates = {
   // statictext: () => ({}),
   happiness: () => ({
     input: 'radiogroup',
+    type: Number,
     options: [
       { value: 0, label: 'Very Unhappy' },
       { value: 1, label: 'Unhappy' },
@@ -78,11 +111,12 @@ export const templates = {
 };
 
 // build question object from outline
-export const getQuestionObject = (questionOrId, section) => {
+export const getQuestionObject = (questionOrId, section, number) => {
   let questionObject =
     typeof questionOrId === 'string' ? { title: questionOrId } : questionOrId;
 
-  questionObject.id = makeId(questionObject.title);
+  questionObject.id = getId(section.title, questionObject.title);
+  questionObject.type = String; // default to String type
 
   // if options are provided in outlined format them properly
   if (questionObject.options) {
@@ -110,12 +144,13 @@ export const getQuestionSchema = questionObject => {
     options,
     allowother,
     randomize,
+    type,
   } = questionObject;
 
   const questionSchema = {
     label: title,
     description,
-    type: String,
+    type,
     optional: true,
     canRead: ['guests'],
     canCreate: ['admins'],

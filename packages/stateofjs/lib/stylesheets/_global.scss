@@ -1,0 +1,17 @@
+.header{
+  padding: 20px;
+}
+.main-contents{
+  padding: 20px;
+}
+
+.datatable-above{
+  display: flex;
+  justify-content: space-between;
+  .form-group{
+    max-width: 200px;
+  }
+  .modal-trigger{
+    margin-left: 20px;
+  }
+}

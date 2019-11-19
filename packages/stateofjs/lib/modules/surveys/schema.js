@@ -87,6 +87,9 @@ const schema = {
       type: 'Response',
       resolver: (survey, args, context) => {
         const { currentUser, Users } = context;
+        if (!currentUser) {
+          return null;
+        }
         const response = Responses.findOne({
           surveyId: survey._id,
           userId: currentUser._id,

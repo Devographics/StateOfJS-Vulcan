@@ -1,0 +1,46 @@
+.survey-item{
+  display: flex;
+}
+.survey-name{
+
+}
+.survey-actions{
+  flex-basis: 200px;
+}
+
+// Survey Section
+.survey-section{
+  display: flex;
+}
+.section-contents{
+  flex: 1;
+}
+.section-nav{
+  max-width: 300px;
+  margin-right: 80px;
+  .active{
+    font-weight: bold;
+  }
+}
+.section-questions{
+  max-width: 800px;
+  margin: 0 auto;
+  .form-component-clear{
+    display: none;
+  }
+  .form-group{
+    display: flex;
+    justify-content: space-between;
+    .col-sm-9{
+      flex: 1;
+      max-width: auto;
+    }
+  }
+}
+.form-section-nav{
+  display: flex;
+  justify-content: space-between;
+  button{
+    
+  }
+}

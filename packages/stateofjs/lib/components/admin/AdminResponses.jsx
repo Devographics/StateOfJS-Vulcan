@@ -8,6 +8,7 @@ const AdminResponses = () => (
       options={{
         fragmentName: 'ResponseFragment'
       }}
+      showNew={false}
       // columns={['name', 'slug']}
     />
   </div>

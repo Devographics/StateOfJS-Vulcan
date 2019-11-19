@@ -74,10 +74,13 @@ const schema = {
   },
 };
 
+let i = 0;
+
 parsedOutline.forEach(section => {
   section.questions &&
     section.questions.forEach(questionOrId => {
-      const questionObject = getQuestionObject(questionOrId, section);
+      i++;
+      const questionObject = getQuestionObject(questionOrId, section, i);
       const { id, allowmultiple } = questionObject;
       const questionSchema = getQuestionSchema(questionObject);
       // questions that allow multiple responses should be stored as arrays of strings
