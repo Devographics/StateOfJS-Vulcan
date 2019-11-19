@@ -1,69 +1,109 @@
 import React from 'react';
-import { registerComponent, Components } from 'meteor/vulcan:core';
+import { registerComponent, Components, withSingle2 } from 'meteor/vulcan:core';
 import { withRouter } from 'react-router-dom';
 import parsedOutline from '../../modules/outline.js';
 import { NavLink } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import { getResponsePath, getId } from '../../modules/responses/helpers.js';
+import { getResponsePath, getId, getQuestionObject } from '../../modules/responses/helpers.js';
 
-const SurveySection = ({ match, history }) => {
+const SurveySectionWithData = ({ match, history }) => {
   const { responseId, sectionNumber = 0 } = match.params;
-  const sn = parseInt(sectionNumber);
-  const section = parsedOutline[sn];
-  const previousSection = parsedOutline[sn - 1];
-  const nextSection = parsedOutline[sn + 1];
+  return (
+    <Components.SurveySection
+      input={{ id: responseId }}
+      responseId={responseId}
+      sectionNumber={parseInt(sectionNumber)}
+      history={history}
+    />
+  );
+};
+registerComponent('SurveySectionWithData', SurveySectionWithData, withRouter);
+
+const SurveySection = ({ loading, responseId, document: response, sectionNumber, history }) => {
+  const section = parsedOutline[sectionNumber];
+  const previousSection = parsedOutline[sectionNumber - 1];
+  const nextSection = parsedOutline[sectionNumber + 1];
   const sectionProps = {
-    sectionNumber: sn,
+    sectionNumber,
     section,
-    responseId,
+    response,
     previousSection,
     nextSection,
     history,
   };
-  if (!responseId) {
-    <p>Could not find survey.</p>;
-  }
   return (
     <div className="survey-section">
-      <SectionNav response={{ _id: responseId }} currentSectionNumber={sn} />
+      <SectionNav responseId={responseId} response={response} currentSectionNumber={sectionNumber} />
       <div className="section-contents">
-        {section.template === 'statictext' ? (
-          <StaticText title={section.title} {...sectionProps} />
+        {loading ? (
+          <Components.Loading />
+        ) : !response ? (
+          <p>Could not find survey.</p>
+        ) : section.template === 'statictext' ? (
+          <StaticText response={response} title={section.title} {...sectionProps} />
         ) : (
-          <Section {...sectionProps} />
+          <Section response={response} {...sectionProps} />
         )}
       </div>
     </div>
   );
 };
 
-const SectionNav = ({ response }) => (
+const options = {
+  collectionName: 'Responses',
+};
+
+registerComponent('SurveySection', SurveySection, withRouter, [withSingle2, options]);
+
+export default SurveySection;
+
+const SectionNav = ({ responseId, response }) => (
   <ul className="section-nav">
     {parsedOutline.map((section, i) => (
-      <SectionNavItem response={response} section={section} number={i} key={i} />
+      <SectionNavItem responseId={responseId} response={response} section={section} number={i} key={i} />
     ))}
   </ul>
 );
 
-const SectionNavItem = ({ response, section, number }) => (
-  <li className="section-nav-item">
-    <NavLink to={getResponsePath(response, number)}>{section.title}</NavLink>
-  </li>
-);
+const getSectionCompletion = (section, response) => {
+  if (!response || !section.questions) {
+    return null;
+  }
+  const questionsCount = section.questions && section.questions.length;
+  const completedQuestions = section.questions.filter(question => {
+    const questionObject = getQuestionObject(question, section);
+    return response[questionObject.id] !== null && typeof response[questionObject.id] !== 'undefined';
+  });
+  const completedQuestionsCount = completedQuestions.length;
+  return Math.round((completedQuestionsCount / questionsCount) * 100);
+};
 
-const StaticText = ({ title, responseId, sectionNumber, previousSection, nextSection }) => (
+const SectionNavItem = ({ responseId, response, section, number }) => {
+  const completion = getSectionCompletion(section, response);
+  const showCompletion = completion !== 'null' && completion > 0;
+  console.log(completion);
+  return (
+    <li className="section-nav-item">
+      <NavLink to={getResponsePath({ _id: responseId }, number)}>
+        {section.title} {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
+      </NavLink>
+    </li>
+  );
+};
+
+const StaticText = ({ title, response, sectionNumber, previousSection, nextSection }) => (
   <div className="section-questions static-section">
     {title}
     <div className="form-section-nav">
       {previousSection ? (
-        <LinkContainer to={getResponsePath({ _id: responseId }, sectionNumber - 1)}>
+        <LinkContainer to={getResponsePath(response, sectionNumber - 1)}>
           <Components.Button>Previous: {previousSection.title}</Components.Button>
         </LinkContainer>
       ) : (
         <div />
       )}
       {nextSection ? (
-        <LinkContainer to={getResponsePath({ _id: responseId }, sectionNumber + 1)}>
+        <LinkContainer to={getResponsePath(response, sectionNumber + 1)}>
           <Components.Button>Next: {nextSection.title}</Components.Button>
         </LinkContainer>
       ) : (
@@ -73,7 +113,7 @@ const StaticText = ({ title, responseId, sectionNumber, previousSection, nextSec
   </div>
 );
 
-const FormSubmit = ({ submitForm, responseId, sectionNumber, nextSection, previousSection, history }) => (
+const FormSubmit = ({ submitForm, response, sectionNumber, nextSection, previousSection, history }) => (
   <div className="form-submit form-section-nav">
     {previousSection ? (
       <Components.Button
@@ -82,7 +122,7 @@ const FormSubmit = ({ submitForm, responseId, sectionNumber, nextSection, previo
         onClick={e => {
           e.preventDefault();
           submitForm();
-          history.push(getResponsePath({ _id: responseId }, sectionNumber - 1));
+          history.push(getResponsePath(response, sectionNumber - 1));
         }}
       >
         Previous: {previousSection.title}
@@ -97,7 +137,7 @@ const FormSubmit = ({ submitForm, responseId, sectionNumber, nextSection, previo
         onClick={e => {
           e.preventDefault();
           submitForm();
-          history.push(getResponsePath({ _id: responseId }, sectionNumber + 1));
+          history.push(getResponsePath(response, sectionNumber + 1));
         }}
       >
         Next: {nextSection.title}
@@ -108,7 +148,7 @@ const FormSubmit = ({ submitForm, responseId, sectionNumber, nextSection, previo
   </div>
 );
 
-const Section = ({ sectionNumber, section, responseId, previousSection, nextSection, history }) => {
+const Section = ({ sectionNumber, section, response, previousSection, nextSection, history }) => {
   const fields = section.questions
     .map(q => (typeof q === 'string' ? q : q.title))
     .map(questionTitle => getId(section.title, questionTitle));
@@ -116,7 +156,7 @@ const Section = ({ sectionNumber, section, responseId, previousSection, nextSect
     <div className="section-questions">
       <h2>{section.title}</h2>
       <Components.SmartForm
-        documentId={responseId}
+        documentId={response._id}
         fields={fields}
         collectionName="Responses"
         showDelete={false}
@@ -126,7 +166,7 @@ const Section = ({ sectionNumber, section, responseId, previousSection, nextSect
           FormSubmit: props => (
             <FormSubmit
               {...props}
-              responseId={responseId}
+              response={response}
               sectionNumber={sectionNumber}
               history={history}
               nextSection={nextSection}
@@ -138,7 +178,3 @@ const Section = ({ sectionNumber, section, responseId, previousSection, nextSect
     </div>
   );
 };
-
-registerComponent('SurveySection', SurveySection, withRouter);
-
-export default SurveySection;
