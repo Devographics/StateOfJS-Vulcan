@@ -81,7 +81,6 @@ const getSectionCompletion = (section, response) => {
 const SectionNavItem = ({ responseId, response, section, number }) => {
   const completion = getSectionCompletion(section, response);
   const showCompletion = completion !== 'null' && completion > 0;
-  console.log(completion);
   return (
     <li className="section-nav-item">
       <NavLink to={getResponsePath({ _id: responseId }, number)}>

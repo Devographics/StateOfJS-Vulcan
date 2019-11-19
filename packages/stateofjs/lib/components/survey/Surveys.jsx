@@ -1,6 +1,6 @@
 import React from 'react';
 import { Components, registerComponent, withMulti2, withCurrentUser } from 'meteor/vulcan:core';
-import SurveyItem from './SurveyItem.jsx';
+// import SurveyItem from './SurveyItem.jsx';
 
 const Surveys = ({ loading, results, currentUser }) => (
   <div className="surveys">
@@ -9,7 +9,7 @@ const Surveys = ({ loading, results, currentUser }) => (
       loading ? (
         <Components.Loading />
       ) : (
-        results.map(survey => <SurveyItem key={survey._id} survey={survey} />)
+        results.map(survey => <Components.SurveyItem key={survey._id} survey={survey} />)
       )
     ) : (
       <p>Please log in or sign up to begin.</p>
