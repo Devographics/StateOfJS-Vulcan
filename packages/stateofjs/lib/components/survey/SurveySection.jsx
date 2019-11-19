@@ -129,8 +129,8 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
   const { title, description } = section;
   return (
     <div className="section-questions">
-      <h2>{title}</h2>
-      <h3>{description}</h3>
+      <h2 className="section-title">{title}</h2>
+      <h3 className="section-description">{description}</h3>
       <Components.SmartForm
         documentId={response._id}
         fields={fields}
@@ -138,6 +138,9 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
         showDelete={false}
         queryFragmentName="ResponseFragment"
         mutationFragmentName="ResponseFragment"
+        itemProperties={{
+          layout: 'vertical',
+        }}
         Components={{
           FormSubmit: props => (
             <FormSubmit

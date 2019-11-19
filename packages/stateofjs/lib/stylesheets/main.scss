@@ -1,10 +1,16 @@
-@import 'bootstrap.scss';
+@import '_bootstrap.scss';
 
-@import 'variables.scss';
-@import 'colors.scss';
-@import 'typography.scss';
-@import 'breakpoints.scss';
+@import '_colors.scss';
+@import '_variables.scss';
+@import '_breakpoints.scss';
+@import '_typography.scss';
 
-@import 'global.scss';
+@import '_overrides.scss';
+@import '_forms.scss';
+@import '_buttons.scss';
+@import '_datatable.scss';
+
+@import '_global.scss';
+@import '_layout.scss';
 
 @import 'surveys.scss';

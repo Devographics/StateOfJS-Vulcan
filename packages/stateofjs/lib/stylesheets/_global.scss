@@ -1,3 +1,148 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: $bg-color;
+  color: $text-color;
+  padding: 0;
+  font-feature-settings: 'liga' 0;
+  line-height: 1.7;
+
+  // background: linear-gradient(180deg, rgb(30, 32, 32) 0%, rgb(55, 58, 58) 100%) fixed;
+  @include primary-font;
+  @include small {
+      font-size: $root-size-mobile;
+  }
+  @include large {
+      font-size: $root-size;
+      // border: 10px solid $active-color;
+      // padding: 10px;
+      min-height: 100vh;
+  }
+}
+
+.modal-content{
+  color: $text-color-inverted;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include secondary-font;
+  margin: 0 0 $spacing 0;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 $spacing 0;
+  @include small {
+      line-height: 1.6;
+  }
+  @include medium-large {
+      line-height: 1.8;
+  }
+}
+
+a {
+  text-decoration: none;
+  @include font-bold;
+  // transition: all ease-in 300ms;
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+      @include small {
+          color: $link-color;
+      }
+      @include medium-large {
+          color: $link-color;
+      }
+  }
+  &:hover {
+      text-decoration: underline;
+      position: relative;
+      color: $hover-color;
+  }
+  &.button,
+  &.resp-sharing-button__link {
+      &:hover {
+          animation: none;
+      }
+  }
+  position: relative;
+
+  // &::before {
+  //     content: '';
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     height: 2px;
+  //     background-color: $pink;
+  //     transform-origin: bottom right;
+  //     transform: scaleX(0);
+  //     transition: transform 0.5s ease;
+  //     @include box-shadow;
+  // }
+
+  // &:hover::before {
+  //     transform-origin: bottom left;
+  //     transform: scaleX(1);
+  // }
+}
+
+.conclusion__byline {
+  text-align: right;
+  display: block;
+  @include font-bold;
+}
+
+// .note {
+//     color: $text-color-dark;
+// }
+
+/*
+
+Page-specific styles
+
+*/
+.PageLayout--introduction{
+  .block__content{
+      p:first-child{
+          @include medium-large{
+              font-size: $larger-font;
+          }
+      }
+  }
+}
+
+.desktop{
+  @include small{
+      display: none;
+  }
+}
+.mobile{
+  @include medium-large{
+      display: none;
+  }
+}
+
+.main-logo-wrapper{
+  max-width: 500px;
+  margin: 0 auto $spacing*2 auto;
+}
+
 .header{
   padding: 20px;
 }

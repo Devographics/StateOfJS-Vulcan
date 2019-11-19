@@ -7,7 +7,9 @@
 .survey-actions{
   flex-basis: 200px;
 }
-
+.survey-action{
+  margin-left: $spacing;
+}
 // Survey Section
 .survey-section{
   display: flex;
@@ -16,10 +18,14 @@
   flex: 1;
 }
 .section-nav{
-  max-width: 300px;
-  margin-right: 80px;
+  max-width: 280px;
+  margin-right: 40px;
+  a{
+    @include font-regular;
+    white-space: nowrap;
+  }
   .active{
-    font-weight: bold;
+    @include font-bold;
   }
 }
 .section-nav-item-completion{
@@ -31,14 +37,6 @@
   .form-component-clear{
     display: none;
   }
-  .form-group{
-    display: flex;
-    justify-content: space-between;
-    .col-sm-9{
-      flex: 1;
-      max-width: auto;
-    }
-  }
 }
 .form-section-nav{
   display: flex;
@@ -46,4 +44,14 @@
   button{
     
   }
+}
+.section-title{
+  font-size: $largest-font;
+  margin-bottom: $spacing/2;
+}
+.section-description{
+  font-size: $large-font;
+  @include font-regular;
+  color: $text-color-dark;
+  margin-bottom: $spacing;
 }

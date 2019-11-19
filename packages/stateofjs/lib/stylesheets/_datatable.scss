@@ -1,0 +1,10 @@
+.datatable-header-cell-inner{
+  display: flex;
+}
+.datatable-sorter, .datatable-filter{
+  cursor: pointer;
+  margin-left: $spacing/2;
+  svg path{
+    fill: $white;
+  }
+}

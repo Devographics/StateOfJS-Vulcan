@@ -1,0 +1,40 @@
+.form-group{
+  margin-bottom: $spacing;
+  @include border;
+  padding: $spacing;
+}
+.form-label{
+  font-size: $larger-font;
+  @include font-bold;
+}
+.form-check{
+  display: flex;
+  padding: $spacing/2;
+  &:last-of-type{
+    margin: 0;
+  }
+  &:hover{
+    background: $bg-color-light;
+  }
+}
+.form-check-input{
+  margin-left: 0;
+  position: static;
+  margin-right: $spacing/2;
+}
+.form-check-label{
+  flex: 1;
+}
+.form-item-contents{
+  display: flex;
+  flex-direction: column;
+}
+.form-item-input{
+  order: 2;
+}
+.form-text{
+  background: $bg-color-light;
+  padding: $spacing/2;
+  order: 1;
+  margin-bottom: $spacing/2;
+}
