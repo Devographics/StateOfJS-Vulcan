@@ -9,7 +9,7 @@ const AdminResponses = () => (
         fragmentName: 'ResponseFragment'
       }}
       showNew={false}
-      // columns={['name', 'slug']}
+      columns={['_id', 'createdAt', 'updatedAt', 'aboutyou_youremail', 'user']}
     />
   </div>
 );

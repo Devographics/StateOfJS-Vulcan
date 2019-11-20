@@ -5,7 +5,7 @@
 .survey-item{
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   margin-bottom: $spacing;
 }
 .survey-name{
@@ -37,7 +37,8 @@
   }
 }
 .section-nav-item-completion{
-  font-weight: bold;
+  @include font-regular;
+  color: $text-color;
 }
 .section-questions{
   max-width: 800px;

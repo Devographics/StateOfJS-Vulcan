@@ -66,7 +66,12 @@ const getSectionCompletion = (section, response) => {
   if (!response || !section.questions) {
     return null;
   }
-  const questionsCount = section.questions && section.questions.length;
+  // don't count text questions towards completion score
+  const sectionQuestions = section.questions.filter(question => {
+    const questionObject = getQuestionObject(question, section);
+    return !['text', 'longtext'].includes(questionObject.template)
+  })
+  const questionsCount = sectionQuestions.length;
   const completedQuestions = section.questions.filter(question => {
     const questionObject = getQuestionObject(question, section);
     return response[questionObject.id] !== null && typeof response[questionObject.id] !== 'undefined';

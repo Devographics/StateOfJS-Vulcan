@@ -163,3 +163,9 @@ Page-specific styles
     color: $text-color-inverted;
   }
 }
+
+.message{
+  background: $bg-color-light;
+  padding: $spacing;
+  margin-bottom: $spacing;
+}

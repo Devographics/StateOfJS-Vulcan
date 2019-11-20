@@ -18,7 +18,7 @@ Take a string ("Front-end") and make it usable as an ID ("frontend")
 */
 const disallowedCharacters = '?.(){}[]=>&,/- ';
 export const makeId = str => {
-  if (!str) { 
+  if (!str) {
     return '';
   }
   let s = str.toLowerCase();
@@ -142,9 +142,9 @@ export const getQuestionSchema = questionObject => {
     description,
     input,
     options,
-    allowother,
-    randomize,
     type,
+    isprivate = false,
+    searchable = false,
   } = questionObject;
 
   const questionSchema = {
@@ -152,10 +152,12 @@ export const getQuestionSchema = questionObject => {
     description,
     type,
     optional: true,
-    canRead: ['guests'],
-    canCreate: ['admins'],
-    canUpdate: ['admins'],
+    // canRead: isprivate ? ['owners'] : ['members'],
+    canRead: ['members'], // note: for now data is not public so all fields can be set to ['members']
+    canCreate: ['members'],
+    canUpdate: ['members'],
     input,
+    searchable,
   };
 
   if (options) {

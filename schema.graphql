@@ -619,9 +619,12 @@ type Response {
   pagePath: String 
   surveyId: String 
   survey: Survey 
-  syntax_destructuringconstfoobar: String 
-  syntax_spreadoperatorarray1array2: String 
-  syntax_arrowfunctionsconstfoo: String 
+  # Example: <code>const { foo } = bar</code>
+  syntax_destructuring: String 
+  # Example: <code>[...array1, ...array2]</code>
+  syntax_spreadoperator: String 
+  # Example: <code>const foo = () => {}</code>
+  syntax_arrowfunctions: String 
   language_proxies: String 
   language_asyncawait: String 
   language_promises: String 
@@ -641,8 +644,8 @@ type Response {
   browserapis_webvr: String 
   browserapis_websocket: String 
   browserapis_fetchapi: String 
-  other_progressivewebappspwa: String 
-  other_webassemblywasm: String 
+  otherfeatures_progressivewebappspwa: String 
+  otherfeatures_webassemblywasm: String 
   patterns_objectorientedprogramming: String 
   patterns_functionalprogramming: String 
   patterns_reactiveprogramming: String 
@@ -705,20 +708,36 @@ type Response {
   mobiledesktop_overallhappiness: Float 
   # Which JavaScript utilities do you regularly use?
   othertools_utilities: [String] 
+  # Other utilities you use not mentioned in the list above
+  othertools_otherutilities: String 
   # Which text editor(s) do you regularly use?
   othertools_texteditors: [String] 
+  # Other text editors you use not mentioned in the list above
+  othertools_othereditors: String 
   # Which browser(s) do you work in primarily during initial development?
   othertools_browsers: [String] 
+  # Other browsers you use not mentioned in the list above
+  othertools_otherbrowsers: String 
   # Which build tools do you use to compile and bundle your code?
   othertools_buildtools: [String] 
+  # Other build tools you use not mentioned in the list above
+  othertools_otherbuildtools: String 
   # Which other languages do you code in besides JavaScript and its flavors?
-  othertools_otherlanguages: [String] 
+  othertools_nonjslanguages: [String] 
+  # Other languages you use not mentioned in the list above
+  othertools_otherlanguages: String 
   # Which JavaScript-related blogs/magazines/etc. do you read?
   resources_blogsnewsmagazines: [String] 
+  # Other blogs, etc. you read not mentioned in the list above
+  resources_otherblogs: String 
   # Which JavaScript-related sites/courses/etc. do you consult?
   resources_sitescourses: [String] 
+  # Other sites, courses, etc. you consult not mentioned in the list above
+  resources_othercourses: String 
   # Which JavaScript or programming-related podcasts do you listen to?
   resources_podcasts: [String] 
+  # Other podcasts you listen to not mentioned in the list above
+  resources_otherpodcasts: String 
   opinionquestions_javascriptismovingintherightdirection: Float 
   opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
   opinionquestions_javascriptisoverusedonline: Float 
@@ -731,6 +750,8 @@ type Response {
   aboutyou_yearsofexperience: String 
   # How do you introduce yourself at parties?
   aboutyou_jobtitle: String 
+  # Other job title you use not mentioned in the list above
+  aboutyou_otherjobtitle: String 
   # How proficient are you at writing CSS? (pick the most advanced option corresponding to your skills)
   aboutyou_cssproficiency: String 
   # How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)
@@ -740,7 +761,8 @@ type Response {
   aboutyou_yearlysalary: String 
   aboutyou_howdidyoufindoutaboutthissurvey: String 
   aboutyou_yourgender: String 
-  # Note: if typing in your country doesn't work, please select it from the list directly instead.
+  # Other gender not mentioned in the list above
+  aboutyou_othergender: String 
   aboutyou_yourcountry: String 
   # If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
   aboutyou_youremail: String 
@@ -811,9 +833,9 @@ input CreateResponseInput {
 
 input CreateResponseDataInput {
   surveyId: String 
-  syntax_destructuringconstfoobar: String 
-  syntax_spreadoperatorarray1array2: String 
-  syntax_arrowfunctionsconstfoo: String 
+  syntax_destructuring: String 
+  syntax_spreadoperator: String 
+  syntax_arrowfunctions: String 
   language_proxies: String 
   language_asyncawait: String 
   language_promises: String 
@@ -833,8 +855,8 @@ input CreateResponseDataInput {
   browserapis_webvr: String 
   browserapis_websocket: String 
   browserapis_fetchapi: String 
-  other_progressivewebappspwa: String 
-  other_webassemblywasm: String 
+  otherfeatures_progressivewebappspwa: String 
+  otherfeatures_webassemblywasm: String 
   patterns_objectorientedprogramming: String 
   patterns_functionalprogramming: String 
   patterns_reactiveprogramming: String 
@@ -890,13 +912,21 @@ input CreateResponseDataInput {
   mobiledesktop_other: String 
   mobiledesktop_overallhappiness: Float 
   othertools_utilities: [String] 
+  othertools_otherutilities: String 
   othertools_texteditors: [String] 
+  othertools_othereditors: String 
   othertools_browsers: [String] 
+  othertools_otherbrowsers: String 
   othertools_buildtools: [String] 
-  othertools_otherlanguages: [String] 
+  othertools_otherbuildtools: String 
+  othertools_nonjslanguages: [String] 
+  othertools_otherlanguages: String 
   resources_blogsnewsmagazines: [String] 
+  resources_otherblogs: String 
   resources_sitescourses: [String] 
+  resources_othercourses: String 
   resources_podcasts: [String] 
+  resources_otherpodcasts: String 
   opinionquestions_javascriptismovingintherightdirection: Float 
   opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
   opinionquestions_javascriptisoverusedonline: Float 
@@ -906,12 +936,14 @@ input CreateResponseDataInput {
   opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
   aboutyou_yearsofexperience: String 
   aboutyou_jobtitle: String 
+  aboutyou_otherjobtitle: String 
   aboutyou_cssproficiency: String 
   aboutyou_backendproficiency: String 
   aboutyou_companysize: String 
   aboutyou_yearlysalary: String 
   aboutyou_howdidyoufindoutaboutthissurvey: String 
   aboutyou_yourgender: String 
+  aboutyou_othergender: String 
   aboutyou_yourcountry: String 
   aboutyou_youremail: String 
 }
@@ -930,9 +962,9 @@ input UpsertResponseInput{
 
 input UpdateResponseDataInput {
   surveyId: String 
-  syntax_destructuringconstfoobar: String 
-  syntax_spreadoperatorarray1array2: String 
-  syntax_arrowfunctionsconstfoo: String 
+  syntax_destructuring: String 
+  syntax_spreadoperator: String 
+  syntax_arrowfunctions: String 
   language_proxies: String 
   language_asyncawait: String 
   language_promises: String 
@@ -952,8 +984,8 @@ input UpdateResponseDataInput {
   browserapis_webvr: String 
   browserapis_websocket: String 
   browserapis_fetchapi: String 
-  other_progressivewebappspwa: String 
-  other_webassemblywasm: String 
+  otherfeatures_progressivewebappspwa: String 
+  otherfeatures_webassemblywasm: String 
   patterns_objectorientedprogramming: String 
   patterns_functionalprogramming: String 
   patterns_reactiveprogramming: String 
@@ -1009,13 +1041,21 @@ input UpdateResponseDataInput {
   mobiledesktop_other: String 
   mobiledesktop_overallhappiness: Float 
   othertools_utilities: [String] 
+  othertools_otherutilities: String 
   othertools_texteditors: [String] 
+  othertools_othereditors: String 
   othertools_browsers: [String] 
+  othertools_otherbrowsers: String 
   othertools_buildtools: [String] 
-  othertools_otherlanguages: [String] 
+  othertools_otherbuildtools: String 
+  othertools_nonjslanguages: [String] 
+  othertools_otherlanguages: String 
   resources_blogsnewsmagazines: [String] 
+  resources_otherblogs: String 
   resources_sitescourses: [String] 
+  resources_othercourses: String 
   resources_podcasts: [String] 
+  resources_otherpodcasts: String 
   opinionquestions_javascriptismovingintherightdirection: Float 
   opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
   opinionquestions_javascriptisoverusedonline: Float 
@@ -1025,12 +1065,14 @@ input UpdateResponseDataInput {
   opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
   aboutyou_yearsofexperience: String 
   aboutyou_jobtitle: String 
+  aboutyou_otherjobtitle: String 
   aboutyou_cssproficiency: String 
   aboutyou_backendproficiency: String 
   aboutyou_companysize: String 
   aboutyou_yearlysalary: String 
   aboutyou_howdidyoufindoutaboutthissurvey: String 
   aboutyou_yourgender: String 
+  aboutyou_othergender: String 
   aboutyou_yourcountry: String 
   aboutyou_youremail: String 
 }
@@ -1047,9 +1089,9 @@ input ResponseFilterInput {
   userId: String_Selector
   pagePath: String_Selector
   surveyId: String_Selector
-  syntax_destructuringconstfoobar: String_Selector
-  syntax_spreadoperatorarray1array2: String_Selector
-  syntax_arrowfunctionsconstfoo: String_Selector
+  syntax_destructuring: String_Selector
+  syntax_spreadoperator: String_Selector
+  syntax_arrowfunctions: String_Selector
   language_proxies: String_Selector
   language_asyncawait: String_Selector
   language_promises: String_Selector
@@ -1069,8 +1111,8 @@ input ResponseFilterInput {
   browserapis_webvr: String_Selector
   browserapis_websocket: String_Selector
   browserapis_fetchapi: String_Selector
-  other_progressivewebappspwa: String_Selector
-  other_webassemblywasm: String_Selector
+  otherfeatures_progressivewebappspwa: String_Selector
+  otherfeatures_webassemblywasm: String_Selector
   patterns_objectorientedprogramming: String_Selector
   patterns_functionalprogramming: String_Selector
   patterns_reactiveprogramming: String_Selector
@@ -1126,13 +1168,21 @@ input ResponseFilterInput {
   mobiledesktop_other: String_Selector
   mobiledesktop_overallhappiness: Float_Selector
 
+  othertools_otherutilities: String_Selector
 
+  othertools_othereditors: String_Selector
 
+  othertools_otherbrowsers: String_Selector
 
+  othertools_otherbuildtools: String_Selector
 
+  othertools_otherlanguages: String_Selector
 
+  resources_otherblogs: String_Selector
 
+  resources_othercourses: String_Selector
 
+  resources_otherpodcasts: String_Selector
   opinionquestions_javascriptismovingintherightdirection: Float_Selector
   opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float_Selector
   opinionquestions_javascriptisoverusedonline: Float_Selector
@@ -1142,12 +1192,14 @@ input ResponseFilterInput {
   opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String_Selector
   aboutyou_yearsofexperience: String_Selector
   aboutyou_jobtitle: String_Selector
+  aboutyou_otherjobtitle: String_Selector
   aboutyou_cssproficiency: String_Selector
   aboutyou_backendproficiency: String_Selector
   aboutyou_companysize: String_Selector
   aboutyou_yearlysalary: String_Selector
   aboutyou_howdidyoufindoutaboutthissurvey: String_Selector
   aboutyou_yourgender: String_Selector
+  aboutyou_othergender: String_Selector
   aboutyou_yourcountry: String_Selector
   aboutyou_youremail: String_Selector
 }
@@ -1159,9 +1211,9 @@ input ResponseSortInput {
   userId: SortOptions
   pagePath: SortOptions
   surveyId: SortOptions
-  syntax_destructuringconstfoobar: SortOptions
-  syntax_spreadoperatorarray1array2: SortOptions
-  syntax_arrowfunctionsconstfoo: SortOptions
+  syntax_destructuring: SortOptions
+  syntax_spreadoperator: SortOptions
+  syntax_arrowfunctions: SortOptions
   language_proxies: SortOptions
   language_asyncawait: SortOptions
   language_promises: SortOptions
@@ -1181,8 +1233,8 @@ input ResponseSortInput {
   browserapis_webvr: SortOptions
   browserapis_websocket: SortOptions
   browserapis_fetchapi: SortOptions
-  other_progressivewebappspwa: SortOptions
-  other_webassemblywasm: SortOptions
+  otherfeatures_progressivewebappspwa: SortOptions
+  otherfeatures_webassemblywasm: SortOptions
   patterns_objectorientedprogramming: SortOptions
   patterns_functionalprogramming: SortOptions
   patterns_reactiveprogramming: SortOptions
@@ -1238,13 +1290,21 @@ input ResponseSortInput {
   mobiledesktop_other: SortOptions
   mobiledesktop_overallhappiness: SortOptions
   othertools_utilities: SortOptions
+  othertools_otherutilities: SortOptions
   othertools_texteditors: SortOptions
+  othertools_othereditors: SortOptions
   othertools_browsers: SortOptions
+  othertools_otherbrowsers: SortOptions
   othertools_buildtools: SortOptions
+  othertools_otherbuildtools: SortOptions
+  othertools_nonjslanguages: SortOptions
   othertools_otherlanguages: SortOptions
   resources_blogsnewsmagazines: SortOptions
+  resources_otherblogs: SortOptions
   resources_sitescourses: SortOptions
+  resources_othercourses: SortOptions
   resources_podcasts: SortOptions
+  resources_otherpodcasts: SortOptions
   opinionquestions_javascriptismovingintherightdirection: SortOptions
   opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: SortOptions
   opinionquestions_javascriptisoverusedonline: SortOptions
@@ -1254,12 +1314,14 @@ input ResponseSortInput {
   opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: SortOptions
   aboutyou_yearsofexperience: SortOptions
   aboutyou_jobtitle: SortOptions
+  aboutyou_otherjobtitle: SortOptions
   aboutyou_cssproficiency: SortOptions
   aboutyou_backendproficiency: SortOptions
   aboutyou_companysize: SortOptions
   aboutyou_yearlysalary: SortOptions
   aboutyou_howdidyoufindoutaboutthissurvey: SortOptions
   aboutyou_yourgender: SortOptions
+  aboutyou_othergender: SortOptions
   aboutyou_yourcountry: SortOptions
   aboutyou_youremail: SortOptions
 }

@@ -9,7 +9,7 @@ export const Responses = createCollection({
   schema,
 
   permissions: {
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['owners', 'admins'],
     canDelete: ['admins'],

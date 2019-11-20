@@ -81,7 +81,9 @@ const outline = `
     - Elm
     - ClojureScript
     - PureScript
-    - other
+    - title: Other JavaScript Flavors
+      description: Other JavaScript flavors you use not mentioned in the list above
+      template: text
     - title: Overall Happiness
       description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of JavaScript flavors?
       template: happiness
@@ -97,7 +99,9 @@ const outline = `
     - Preact
     - Ember
     - Svelte
-    - other
+    - title: Other Front-end Frameworks
+      description: Other Front-end frameworks you use not mentioned in the list above
+      template: text
     - title: Overall Happiness
       description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of front-end frameworks?
       template: happiness
@@ -112,7 +116,9 @@ const outline = `
     - GraphQL
     - MobX
     - Relay
-    - other
+    - title: Other Data Layer Tools
+      description: Other data layer tools you use not mentioned in the list above
+      template: text
     - title: Overall Happiness
       description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of data layer technologies?
       template: happiness
@@ -130,7 +136,9 @@ const outline = `
     - FeathersJS
     - Nuxt.js
     - Gatsby.js
-    - other
+    - title: Other Back-end Frameworks
+      description: Other back-end frameworks you use not mentioned in the list above
+      template: text
     - title: Overall Happiness
       description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of back-end frameworks?
       template: happiness
@@ -148,7 +156,9 @@ const outline = `
     - Ava
     - Jasmine
     - Puppeteer
-    - other
+    - title: Other Testing Tools
+      description: Other testing tools you use not mentioned in the list above
+      template: text
     - title: Overall Happiness
       description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
       template: happiness
@@ -165,7 +175,9 @@ const outline = `
     - Ionic
     - NW.js
     - Expo
-    - other
+    - title: Other Mobile & Desktop Tools
+      description: Other mobile & desktop tools you use not mentioned in the list above
+      template: text
     - title: Overall Happiness
       description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
       template: happiness
@@ -470,8 +482,8 @@ const outline = `
     - title: Your Email
       description: If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
       template: email
-
-
+      isprivate: true
+      searchable: true
 `;
 
 const parsedOutline = yaml.safeLoad(outline);

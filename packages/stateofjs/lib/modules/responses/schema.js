@@ -25,6 +25,9 @@ const schema = {
     type: Date,
     optional: true,
     canRead: ['admins'],
+    onCreate: () => {
+      return new Date();
+    },
     onUpdate: () => {
       return new Date();
     },
@@ -53,7 +56,7 @@ const schema = {
   surveyId: {
     type: String,
     canRead: ['guests'],
-    canCreate: ['admins'],
+    canCreate: ['members'],
     canUpdate: ['admins'],
     input: 'select',
     resolveAs: {
