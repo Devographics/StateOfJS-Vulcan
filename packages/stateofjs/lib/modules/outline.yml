@@ -244,6 +244,7 @@
         - Gulp
         - RollUp
         - FuseBox
+        - Browserify
     - title: Other Build Tools
       template: text
       description: Other build tools you use not mentioned in the list above
@@ -295,6 +296,7 @@
         - Front-End Front
         - JavaScript Weekly
         - Dev.to
+        - Best of JS
     - title: Other Blogs
       template: text
       description: Other blogs, etc. you read not mentioned in the list above

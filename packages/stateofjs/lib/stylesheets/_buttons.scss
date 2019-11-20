@@ -20,6 +20,7 @@
     white-space: nowrap;
     // transition: color 400ms, border-color 400ms;
 
+
     &,
     &:link,
     &:visited {
@@ -62,6 +63,11 @@
     }
     .datatable-list & {
       color: $text-color-inverted;
+    }
+
+    &.loading-button-loading{
+      background: $greyMediumer;
+      cursor: default;
     }
   }
 }

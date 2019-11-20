@@ -25,6 +25,7 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
         itemProperties={{
           layout: 'vertical',
         }}
+        warnUnsavedChanges={true}
         Components={{
           FormSubmit: props => (
             <FormSubmit
