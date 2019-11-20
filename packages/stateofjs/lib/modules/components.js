@@ -1,3 +1,5 @@
+import '../components/Thanks';
+
 import '../components/common/Layout';
 import '../components/common/Header';
 

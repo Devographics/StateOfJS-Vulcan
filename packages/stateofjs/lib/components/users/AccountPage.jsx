@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Users from 'meteor/vulcan:users';
 
 const AccountPage = ({ currentUser }) => (
-  <div className="account">
+  <div className="contents-narrow account">
     {currentUser && <p>Logged in as {currentUser.email}</p>}
     <Components.AccountsLoginForm />
   </div>

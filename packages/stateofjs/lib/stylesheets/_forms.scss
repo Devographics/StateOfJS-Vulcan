@@ -50,4 +50,13 @@
     order: 1;
     margin-bottom: $spacing/2;
   }
+  .form-submit-actions{
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-submit-help{
+    margin-top: $spacing;
+    text-align: center;
+    font-size: $small-font;
+  }
 }

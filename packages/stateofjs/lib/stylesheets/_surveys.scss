@@ -1,8 +1,8 @@
-.surveys, .account{
+.surveys, .account, .contents-narrow{
   max-width: 500px;
   margin: 0 auto;
 }
-.survey-item{
+.survey-item-contents{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +17,8 @@
 }
 .survey-action{
   margin-left: $spacing;
+}
+.survey-item-error{
 }
 // Survey Section
 .survey-section{
@@ -48,11 +50,6 @@
   }
 }
 .form-section-nav{
-  display: flex;
-  justify-content: space-between;
-  button{
-    
-  }
 }
 .section-title{
   font-size: $largest-font;

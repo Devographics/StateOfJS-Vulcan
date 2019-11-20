@@ -7,3 +7,4 @@ addRoute({ name: 'responsePage', path: '/session/:responseId/:sectionNumber?', c
 addRoute({ name: 'adminSurveys', path: '/admin/surveys', componentName: 'AdminSurveys' });
 addRoute({ name: 'adminResponses', path: '/admin/responses', componentName: 'AdminResponses' });
 addRoute({ name: 'adminUsers', path: '/admin/users', componentName: 'AdminUsers' });
+addRoute({ name: 'thanks', path: '/thanks', componentName: 'Thanks' });

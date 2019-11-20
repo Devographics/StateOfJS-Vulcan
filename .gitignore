@@ -20,6 +20,7 @@ dump/
 dump/*
 
 production.settings.json
+settings-production.json
 settings.json
 settings.json.not-used
 .idea
