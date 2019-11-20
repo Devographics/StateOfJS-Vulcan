@@ -1,64 +1,68 @@
-.Button,
-.button,
 .btn {
-  background: none;
-  @include border;
-  padding: $spacing/2 $spacing;
-  cursor: pointer;
-  display: block;
-  text-align: center;
-  white-space: nowrap;
-  @include font-bold;
-  @include secondary-font;
-  @include small {
-    font-size: $small-font;
-  }
-  @include medium-large {
-    font-size: $medium-font;
-  }
-  white-space: nowrap;
-  // transition: color 400ms, border-color 400ms;
+  &:not(:disabled):not(.disabled),
+  &:not(:disabled):not(.disabled).active,
+  &.active {
+    background: none;
+    @include border;
+    padding: $spacing/2 $spacing;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    @include font-bold;
+    @include secondary-font;
+    @include small {
+      font-size: $small-font;
+    }
+    @include medium-large {
+      font-size: $medium-font;
+    }
+    white-space: nowrap;
+    // transition: color 400ms, border-color 400ms;
 
-  &,
-  &:link,
-  &:visited {
-    color: $text-color;
-    text-decoration: none;
-  }
+    &,
+    &:link,
+    &:visited {
+      color: $text-color;
+      text-decoration: none;
+    }
 
-  &:not(:disabled):not(.disabled) {
-  &:hover {
-    color: $hover-color;
-    border-color: $hover-color;
-    border-style: solid;
-    text-decoration: none;
-    background: $bg-color-light;
-  }
+    &:hover {
+      color: $hover-color;
+      border-color: $hover-color;
+      border-style: solid;
+      text-decoration: none;
+      background: $bg-color-light;
+    }
 
-  &:active, &:focus{
-    color: $white;
-    border-color: $active-color;
-    border-style: solid;
-    text-decoration: none;
-    background: $active-color;
-  }
-  }
-  &--small {
-    font-size: $small-font;
-    padding: $spacing / 5 $spacing / 2;
-  }
+    &:active,
+    &:focus {
+      color: $white;
+      border-color: $active-color;
+      border-style: solid;
+      text-decoration: none;
+      background: $active-color;
+    }
+    &--small {
+      font-size: $small-font;
+      padding: $spacing / 5 $spacing / 2;
+    }
 
-  &--large {
-    padding: $spacing $spacing;
-    font-size: $large-font;
-  }
+    &--large {
+      padding: $spacing $spacing;
+      font-size: $large-font;
+    }
 
-  &--disabled {
-    color: $active-color-dark;
-  }
+    &--disabled {
+      color: $active-color-dark;
+    }
 
-  &--active {
-    border-style: solid;
+    &--active {
+      border-style: solid;
+    }
+    .datatable-list & {
+      color: $text-color-inverted;
+    }
   }
 }
 

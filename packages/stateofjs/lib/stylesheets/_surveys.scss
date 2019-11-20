@@ -1,8 +1,16 @@
+.surveys, .account{
+  max-width: 500px;
+  margin: 0 auto;
+}
 .survey-item{
   display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: $spacing;
 }
 .survey-name{
-
+  font-size: $large-font;
+  margin: 0;
 }
 .survey-actions{
   flex-basis: 200px;

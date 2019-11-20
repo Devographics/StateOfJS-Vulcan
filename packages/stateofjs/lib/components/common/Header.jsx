@@ -16,7 +16,7 @@ const NavLink = ({ to, label }) => (
 const Header = ({ currentUser }) => (
   <div className="header">
     <Nav variant="tabs">
-      <NavLink to="/" label="All Surveys" />
+      <NavLink to="/" label="Survey" />
       {currentUser && <NavLink to="/account" label="Account" />}
       {Users.isAdmin(currentUser) && (
         <>

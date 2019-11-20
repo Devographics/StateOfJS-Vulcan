@@ -5,7 +5,7 @@ import Users from 'meteor/vulcan:users';
 
 const AccountPage = ({ currentUser }) => (
   <div className="account">
-    <p>Logged in as {currentUser.email}</p>
+    {currentUser && <p>Logged in as {currentUser.email}</p>}
     <Components.AccountsLoginForm />
   </div>
 );

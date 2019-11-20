@@ -9,9 +9,7 @@ const SurveyItem = ({ survey, history, currentUser }) => {
 
   return (
     <div className="survey-item">
-      <h2 className="survey-name">
-        {name} {year}
-      </h2>
+      <h3 className="survey-name">{name} {year}</h3>
       <div className="survey-action">
         {currentUserResponse ? (
           <LinkContainer to={currentUserResponse.pagePath}>
