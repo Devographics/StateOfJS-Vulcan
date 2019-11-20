@@ -1,3 +1,15 @@
+/*
+
+1. Load all surveys
+2. Get email from URL
+3. If user is not logged in show log in form prefilled with email
+4. If user is logged in, show list of surveys
+
+TODO
+
+- Use hooks
+
+*/
 import React from 'react';
 import { Components, registerComponent, withMulti2, withCurrentUser } from 'meteor/vulcan:core';
 // import SurveyItem from './SurveyItem.jsx';

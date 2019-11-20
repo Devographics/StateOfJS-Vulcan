@@ -1,3 +1,17 @@
+/*
+
+1. Look for responseId and section number in URL params
+2. Load response from server using withSingle2 HoC
+3. Display response form restricted to questions of current section via `fields` prop
+
+Note: form has a customized "FormSubmit" component to show the prev/next buttons
+
+TODO: 
+
+- use hooks instead of withSingle2
+- get rid of SurveySectionWithData and registerComponent
+
+*/
 import React from 'react';
 import { registerComponent, Components, withSingle2 } from 'meteor/vulcan:core';
 import { withRouter } from 'react-router-dom';

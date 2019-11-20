@@ -1,3 +1,11 @@
+/*
+
+1. Check currentUserResponse field on the survey to see if current user has a response
+2. If so link to the survey
+3. If not use MutatioButton to trigger the `createResponse` mutation
+4. If there is an error during the mutation, show it
+
+*/
 import React, { useState } from 'react';
 import { Components, registerComponent, withCurrentUser, getErrors } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';

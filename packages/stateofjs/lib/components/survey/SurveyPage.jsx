@@ -1,3 +1,8 @@
+/*
+
+Page for a single survey (Not currently used)
+
+*/
 import React from 'react';
 import { Components, registerComponent, withSingle2 } from 'meteor/vulcan:core';
 import SurveyItem from './SurveyItem.jsx';

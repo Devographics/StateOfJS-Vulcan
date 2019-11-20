@@ -1,3 +1,14 @@
+/*
+
+1. Show list of sections
+2. For each section, compare section questions with current response document
+3. Figure out completion percentage
+
+TODO
+
+- Simplify this by using already-parsed with getQuestionObject() outline
+
+*/
 import React from 'react';
 import { getResponsePath, getQuestionObject } from '../../modules/responses/helpers.js';
 import parsedOutline from '../../modules/outline.js';

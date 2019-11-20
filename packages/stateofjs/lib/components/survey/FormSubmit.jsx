@@ -1,3 +1,14 @@
+/*
+
+1. Receive submitForm callback from SmartForm
+2. Call it on click
+3. Once form has submitted, redirect to prev/next section
+
+TODO
+
+- Refactor to make DRYer
+
+*/
 import React, { useState } from 'react';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import { Components } from 'meteor/vulcan:core';
