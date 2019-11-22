@@ -169,3 +169,11 @@ Page-specific styles
   padding: $spacing;
   margin-bottom: $spacing;
 }
+
+.footer{
+  text-align: center;
+  margin: $spacing * 2 $spacing 0 $spacing;
+  border-top: $border;
+  font-size: $small-font;
+  padding: $spacing;
+}

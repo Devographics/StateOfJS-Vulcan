@@ -6,10 +6,10 @@ const AdminResponses = () => (
     <Components.Datatable
       collectionName="Responses"
       options={{
-        fragmentName: 'ResponseFragment'
+        fragmentName: 'ResponseAdminFragment'
       }}
       // showNew={false}
-      columns={['_id', 'createdAt', 'updatedAt', 'aboutyou_youremail', 'user']}
+      columns={['_id', 'createdAt', 'updatedAt', 'aboutyou_youremail', 'isSynced', 'user']}
     />
   </div>
 );

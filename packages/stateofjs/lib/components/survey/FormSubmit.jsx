@@ -13,11 +13,20 @@ import React, { useState } from 'react';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import { Components } from 'meteor/vulcan:core';
 
-const FormSubmit = ({ submitForm, response, sectionNumber, nextSection, previousSection, history }) => {
+const FormSubmit = ({
+  submitForm,
+  response,
+  sectionNumber,
+  nextSection,
+  previousSection,
+  history,
+  showMessage = true,
+  variant = 'bottom',
+}) => {
   const [prevLoading, setPrevLoading] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
   return (
-    <div className="form-submit form-section-nav">
+    <div className={`form-submit form-section-nav form-section-nav-${variant}`}>
       <div className="form-submit-actions">
         {previousSection ? (
           <Components.LoadingButton
@@ -32,14 +41,14 @@ const FormSubmit = ({ submitForm, response, sectionNumber, nextSection, previous
               history.push(getResponsePath(response, sectionNumber - 1));
             }}
           >
-            Previous: {previousSection.title}
+            « {previousSection.title}
           </Components.LoadingButton>
         ) : (
-          <div />
+          <div className="prev-placeholder"/>
         )}
         {nextSection ? (
           <Components.LoadingButton
-          loading={nextLoading}
+            loading={nextLoading}
             type="submit"
             variant="primary"
             onClick={async e => {
@@ -50,7 +59,7 @@ const FormSubmit = ({ submitForm, response, sectionNumber, nextSection, previous
               history.push(getResponsePath(response, sectionNumber + 1));
             }}
           >
-            Next: {nextSection.title}
+            {nextSection.title} »
           </Components.LoadingButton>
         ) : (
           <Components.Button
@@ -67,7 +76,11 @@ const FormSubmit = ({ submitForm, response, sectionNumber, nextSection, previous
         )}
       </div>
 
-      <div className="form-submit-help">Your data is saved whenever you navigate to the previous or next section.</div>
+      {showMessage && (
+        <div className="form-submit-help">
+          Your data is saved whenever you navigate to the previous or next section.
+        </div>
+      )}
     </div>
   );
 };

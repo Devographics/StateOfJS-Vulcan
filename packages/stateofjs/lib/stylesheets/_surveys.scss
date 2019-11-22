@@ -1,61 +1,92 @@
-.surveys, .account, .contents-narrow{
+.surveys,
+.account,
+.contents-narrow {
   max-width: 500px;
   margin: 0 auto;
 }
-.survey-item-contents{
+.survey-item-contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: $spacing;
 }
-.survey-name{
+.survey-name {
   font-size: $large-font;
   margin: 0;
 }
-.survey-actions{
+.survey-actions {
   flex-basis: 200px;
 }
-.survey-action{
+.survey-action {
   margin-left: $spacing;
 }
-.survey-item-error{
+.survey-item-error {
 }
 // Survey Section
-.survey-section{
-  display: flex;
+.survey-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: $spacing * 2;
 }
-.section-contents{
-  flex: 1;
+.section-contents {
 }
-.section-nav{
-  max-width: 280px;
-  margin-right: 40px;
-  a{
+.section-nav {
+  // background: $bg-color-light;
+  // padding: $spacing;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  a {
     @include font-regular;
     white-space: nowrap;
   }
-  .active{
+  .active {
     @include font-bold;
+    color: $contrast-color;
+  }
+  li{
+    font-size: $medium-font;
+    margin-bottom: $spacing/4;
+    &:last-child{
+      margin: 0;
+    }
   }
 }
-.section-nav-item-completion{
+.section-nav-inner{
+  // position: sticky;
+  // top: $spacing;
+}
+.section-nav-heading{
+  font-size: $medium-font;
+  margin-bottom: $spacing/2;
+}
+.completion-message{
+  font-size: $small-font;
+  margin-top: $spacing;
+  color: $text-color-dark;
+}
+.section-nav-item-completion {
   @include font-regular;
   color: $text-color;
 }
-.section-questions{
+.section-questions {
   max-width: 800px;
   margin: 0 auto;
-  .form-component-clear{
+  .form-component-clear {
     display: none;
   }
 }
-.form-section-nav{
+.form-section-nav {
+  &-top {
+    margin-bottom: $spacing;
+  }
 }
-.section-title{
+.section-title {
   font-size: $largest-font;
   margin-bottom: $spacing/2;
 }
-.section-description{
+.section-description {
   font-size: $large-font;
   @include font-regular;
   color: $text-color-dark;

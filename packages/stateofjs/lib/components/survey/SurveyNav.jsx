@@ -14,8 +14,14 @@ import { getResponsePath, getQuestionObject } from '../../modules/responses/help
 import parsedOutline from '../../modules/outline.js';
 import { NavLink } from 'react-router-dom';
 
+const ignoredFieldTypes = ['email', 'text', 'longtext'];
+
+// TODO
+// const getOverallCompletionPercentage = (response) => {
+  
+// }
+
 const getSectionCompletionPercentage = (section, response) => {
-  const ignoredFieldTypes = ['email', 'text', 'longtext'];
   if (!response || !section.questions) {
     return null;
   }
@@ -38,11 +44,18 @@ const getSectionCompletionPercentage = (section, response) => {
 };
 
 const SurveyNav = ({ responseId, response }) => (
-  <ul className="section-nav">
-    {parsedOutline.map((section, i) => (
-      <SectionNavItem responseId={responseId} response={response} section={section} number={i} key={i} />
-    ))}
-  </ul>
+  <nav className="section-nav">
+    <div className="section-nav-inner">
+      <h3 className="section-nav-heading">Table of Contents</h3>
+      <ul>
+        {parsedOutline.map((section, i) => (
+          <SectionNavItem responseId={responseId} response={response} section={section} number={i} key={i} />
+        ))}
+        {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
+      </ul>
+      <p className="completion-message">Note: all questions are optional, reaching 100% completion is not required.</p>
+    </div>
+  </nav>
 );
 
 const SectionNavItem = ({ responseId, response, section, number }) => {

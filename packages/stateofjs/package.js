@@ -4,6 +4,8 @@ Package.describe({
 
 Package.onUse(function (api) {
 
+  const version='1.14.0';
+
   api.use([
 
     // Here are our dependencies:
@@ -12,13 +14,16 @@ Package.onUse(function (api) {
 
     // vulcan core
     'promise',
-    'vulcan:core@=1.14.0',
+    `vulcan:core@${version}`,
 
     // vulcan packages
-    'vulcan:forms@=1.14.0',
-    'vulcan:accounts@=1.14.0',
-    'vulcan:ui-bootstrap@=1.14.0',
+    `vulcan:forms@${version}`,
+    `vulcan:accounts@${version}`,
+    `vulcan:ui-bootstrap@${version}`,
 
+    `vulcan:events-internal@${version}`,
+
+    `vulcan:errors-sentry@${version}`,
   ]);
 
   api.addFiles('lib/stylesheets/main.scss');

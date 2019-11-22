@@ -19,6 +19,7 @@ import parsedOutline from '../../modules/outline.js';
 import { getId } from '../../modules/responses/helpers.js';
 import SurveyNav from './SurveyNav.jsx';
 import FormSubmit from './FormSubmit.jsx';
+import FormLayout from './FormLayout.jsx';
 
 const Section = ({ sectionNumber, section, response, previousSection, nextSection, history }) => {
   const fields = section.questions
@@ -41,6 +42,7 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
         }}
         warnUnsavedChanges={true}
         Components={{
+          FormLayout,
           FormSubmit: props => (
             <FormSubmit
               {...props}

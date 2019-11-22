@@ -53,7 +53,14 @@
   .form-submit-actions{
     display: flex;
     justify-content: space-between;
+    .prev-placeholder, button{
+      flex-basis: 35%;
+    }
+    div:first-child, button:first-child{
+      // margin-right: $spacing;
+    }
   }
+  
   .form-submit-help{
     margin-top: $spacing;
     text-align: center;

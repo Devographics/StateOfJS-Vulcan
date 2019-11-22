@@ -45,6 +45,11 @@ const schema = {
 
   // custom properties
 
+  isSynced: {
+    type: Boolean,
+    optional: true,
+    canRead: ['admins'],
+  },
   pagePath: {
     type: String,
     optional: true,
