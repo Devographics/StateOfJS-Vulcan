@@ -9,7 +9,7 @@ TODO
 - Simplify this by using already-parsed with getQuestionObject() outline
 
 */
-import React from 'react';
+import React, { useState } from 'react';
 import { getResponsePath, getQuestionObject } from '../../modules/responses/helpers.js';
 import parsedOutline from '../../modules/outline.js';
 import { NavLink } from 'react-router-dom';
@@ -18,7 +18,7 @@ const ignoredFieldTypes = ['email', 'text', 'longtext'];
 
 // TODO
 // const getOverallCompletionPercentage = (response) => {
-  
+
 // }
 
 const getSectionCompletionPercentage = (section, response) => {
@@ -43,20 +43,35 @@ const getSectionCompletionPercentage = (section, response) => {
   return Math.round((completedQuestionsCount / questionsCount) * 100);
 };
 
-const SurveyNav = ({ responseId, response }) => (
-  <nav className="section-nav">
-    <div className="section-nav-inner">
-      <h3 className="section-nav-heading">Table of Contents</h3>
-      <ul>
-        {parsedOutline.map((section, i) => (
-          <SectionNavItem responseId={responseId} response={response} section={section} number={i} key={i} />
-        ))}
-        {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
-      </ul>
-      <p className="completion-message">Note: all questions are optional, reaching 100% completion is not required.</p>
-    </div>
-  </nav>
-);
+const SurveyNav = ({ responseId, response }) => {
+  const [shown, setShown] = useState(false);
+  return (
+    <nav className={`section-nav ${shown ? 'section-nav-shown' : 'section-nav-hidden'}`}>
+      <div className="section-nav-inner">
+        <div
+          className="section-nav-head"
+          onClick={e => {
+            setShown(!shown);
+          }}
+        >
+          <h3 className="section-nav-heading">Table of Contents</h3>
+          <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
+        </div>
+        <div className="section-nav-contents">
+          <ul>
+            {parsedOutline.map((section, i) => (
+              <SectionNavItem responseId={responseId} response={response} section={section} number={i} key={i} />
+            ))}
+            {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
+          </ul>
+          <p className="completion-message">
+            Note: all questions are optional, reaching 100% completion is not required.
+          </p>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
 const SectionNavItem = ({ responseId, response, section, number }) => {
   const completion = getSectionCompletionPercentage(section, response);

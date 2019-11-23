@@ -10,6 +10,7 @@ registerFragment(/* GraphQL */`
     year
     status
     slug
+    imageUrl
     pagePath
 
     user{

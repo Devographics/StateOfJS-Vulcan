@@ -21,7 +21,7 @@ const Surveys = ({ loading, results, currentUser, location }) => {
   const query = qs.parse(location.search, { ignoreQueryPrefix: true });
   const { email } = query;
   return (
-    <div className="contents-narrow surveys">
+    <div className="surveys">
       {currentUser ? (
         loading ? (
           <Components.Loading />

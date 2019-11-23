@@ -16,7 +16,6 @@
       description: 'Example: <code>[...array1, ...array2]</code>'
     - title: Arrow Functions
       description: 'Example: <code>const foo = () => {}</code>'
-
 - title: Language
   description: The vocabulary of JavaScript
   template: feature
@@ -27,15 +26,16 @@
     - Decorators
 
 - title: Data Structures
-  description: How you store and manipulate data.
+  description: How you store and manipulate data
   template: feature
   questions:
     - Maps
     - Sets
     - Typed Arrays
+    - Array.prototype.flat
 
 - title: Browser APIs
-  description: The features provided by the browser.
+  description: The features provided by the browser
   template: feature
   questions:
     - Service Workers

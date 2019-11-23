@@ -1,16 +1,37 @@
-.surveys,
 .account,
 .contents-narrow {
   max-width: 500px;
   margin: 0 auto;
 }
+.surveys{
+  max-width: 700px;
+  margin: 0 auto;
+}
+.survey-item{
+}
 .survey-item-contents {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include small {
+    text-align: center;
+  }
+  @include medium-large {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   margin-bottom: $spacing;
 }
+.survey-image{
+  width: 180px;
+  margin-right: $spacing;
+  img {
+    display: block;
+    width: 100%;
+  }
+}
 .survey-name {
+  @include small {
+    margin-bottom: $spacing/2;
+  }
   font-size: $large-font;
   margin: 0;
 }
@@ -18,15 +39,18 @@
   flex-basis: 200px;
 }
 .survey-action {
+  flex: 1;
   margin-left: $spacing;
 }
 .survey-item-error {
 }
 // Survey Section
 .survey-section {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: $spacing * 2;
+  @include large {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: $spacing * 2;
+  }
 }
 .section-contents {
 }
@@ -45,23 +69,45 @@
     @include font-bold;
     color: $contrast-color;
   }
-  li{
+  li {
     font-size: $medium-font;
     margin-bottom: $spacing/4;
-    &:last-child{
+    &:last-child {
       margin: 0;
     }
   }
 }
-.section-nav-inner{
-  // position: sticky;
-  // top: $spacing;
+.section-nav-head {
+  @include small-medium {
+    @include flex-center;
+    margin-bottom: $spacing;
+  }
+  @include large {
+    margin-bottom: $spacing/2;
+  }
 }
-.section-nav-heading{
+.section-nav-toggle {
+  margin-left: $spacing/2;
+  color: $text-color;
   font-size: $medium-font;
-  margin-bottom: $spacing/2;
+  @include large {
+    display: none;
+  }
 }
-.completion-message{
+.section-nav-hidden {
+  .section-nav-contents {
+    @include small-medium {
+      display: none;
+    }
+  }
+}
+.section-nav-inner {
+}
+.section-nav-heading {
+  font-size: $medium-font;
+  margin: 0;
+}
+.completion-message {
   font-size: $small-font;
   margin-top: $spacing;
   color: $text-color-dark;

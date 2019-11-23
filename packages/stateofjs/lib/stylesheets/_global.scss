@@ -177,3 +177,18 @@ Page-specific styles
   font-size: $small-font;
   padding: $spacing;
 }
+.navbar{
+  padding: 0;
+}
+.navbar-nav{
+  width: 100%;
+}
+.navbar-dark .navbar-toggler{
+  @include border;
+  @include border-radius;
+  padding: $spacing/2;
+}
+
+.nav-item{
+  margin-right: $spacing;
+}

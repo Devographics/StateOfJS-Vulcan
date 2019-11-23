@@ -61,6 +61,22 @@ const schema = {
     defaultValue: statuses.preview,
     options: statusesOptions,
   },
+  slug: {
+    type: String,
+    optional: true,
+    canRead: ['guests'],
+    onCreate: ({ document }) => Utils.slugify(document.name),
+    onUpdate: ({ document }) => Utils.slugify(document.name),
+  },
+  imageUrl: {
+    type: String,
+    optional: true,
+    canRead: ['guests'],
+    canCreate: ['admins'],
+    canUpdate: ['admins'],
+  },
+
+  // GraphQL-only fields
   pagePath: {
     type: String,
     optional: true,
@@ -69,16 +85,6 @@ const schema = {
       resolver: survey => `/survey/${survey.slug}/${survey.year}/`,
     },
   },
-  slug: {
-    type: String,
-    optional: true,
-    canRead: ['guests'],
-    onCreate: ({ document }) => Utils.slugify(document.name),
-    onUpdate: ({ document }) => Utils.slugify(document.name),
-  },
-
-  // GraphQL-only fields
-
   currentUserResponse: {
     type: Object,
     optional: true,

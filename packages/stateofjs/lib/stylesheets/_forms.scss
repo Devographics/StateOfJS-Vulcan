@@ -1,4 +1,4 @@
-.form-control{
+.form-control {
   background: $bg-color-lightest;
 }
 
@@ -22,10 +22,9 @@
     &:hover {
       background: $bg-color-light;
     }
-    &.form-check-checked{
-
+    &.form-check-checked {
     }
-    &.form-check-unchecked{
+    &.form-check-unchecked {
       opacity: 0.3;
     }
   }
@@ -50,18 +49,27 @@
     order: 1;
     margin-bottom: $spacing/2;
   }
-  .form-submit-actions{
+  .form-submit-actions {
     display: flex;
     justify-content: space-between;
-    .prev-placeholder, button{
-      flex-basis: 35%;
+    .prev-placeholder,
+    button {
+      @include small-medium {
+        flex-basis: 49%;
+      }
+      @include large {
+        flex-basis: 35%;
+      }
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    div:first-child, button:first-child{
+    div:first-child,
+    button:first-child {
       // margin-right: $spacing;
     }
   }
-  
-  .form-submit-help{
+
+  .form-submit-help {
     margin-top: $spacing;
     text-align: center;
     font-size: $small-font;

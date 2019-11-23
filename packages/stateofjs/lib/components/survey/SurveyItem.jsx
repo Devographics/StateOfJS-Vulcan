@@ -17,22 +17,25 @@ import isEmpty from 'lodash/isEmpty';
 const SurveyItem = ({ survey, history, currentUser }) => {
   const [errors, setErrors] = useState();
 
-  const { name, year, currentUserResponse } = survey;
+  const { name, year, imageUrl, currentUserResponse } = survey;
 
   return (
     <div className="survey-item">
       <div className="survey-item-contents">
+        <div className="survey-image">
+          <img src={`/surveys/${imageUrl}`} alt={name}/>
+        </div>
         <h3 className="survey-name">
           {name} {year}
         </h3>
         <div className="survey-action">
           {currentUserResponse && !isEmpty(currentUserResponse) ? (
             <LinkContainer to={currentUserResponse.pagePath}>
-              <Components.Button>Continue Survey</Components.Button>
+              <Components.Button>Continue Survey »</Components.Button>
             </LinkContainer>
           ) : (
             <Components.MutationButton
-              label="Start Survey"
+              label="Start Survey »"
               variant="primary"
               mutationOptions={{
                 name: 'createResponse',
