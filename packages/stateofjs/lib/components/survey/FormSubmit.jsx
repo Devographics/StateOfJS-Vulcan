@@ -71,7 +71,7 @@ const FormSubmit = ({
               history.push('/thanks');
             }}
           >
-            Finish Survey
+            Finish Survey »
           </Components.Button>
         )}
       </div>

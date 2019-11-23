@@ -13,17 +13,39 @@ import get from 'lodash/get';
 import { Link, withRouter } from 'react-router-dom';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import isEmpty from 'lodash/isEmpty';
+import bowser from 'bowser';
 
 const SurveyItem = ({ survey, history, currentUser }) => {
   const [errors, setErrors] = useState();
 
   const { name, year, imageUrl, currentUserResponse } = survey;
 
+  // prefilled data
+  let data = {
+    surveyId: survey._id,
+    aboutyou_youremail: currentUser.email,
+  };
+
+  if (typeof window !== 'undefined') {
+    const browser = bowser.getParser(window.navigator.userAgent);
+    const info = browser.parse().parsedResult;
+    data = {
+      ...data,
+      device: info.platform.type,
+      browser: info.browser.name,
+      version: info.browser.version,
+      os: info.os.name,
+      referrer: document.referrer,
+    };
+  }
+
+  console.log(data);
+
   return (
     <div className="survey-item">
       <div className="survey-item-contents">
         <div className="survey-image">
-          <img src={`/surveys/${imageUrl}`} alt={name}/>
+          <img src={`/surveys/${imageUrl}`} alt={name} />
         </div>
         <h3 className="survey-name">
           {name} {year}
@@ -42,7 +64,7 @@ const SurveyItem = ({ survey, history, currentUser }) => {
                 args: { input: 'CreateResponseInput' },
                 fragmentName: 'CreateResponseOutputFragment',
               }}
-              mutationArguments={{ input: { data: { surveyId: survey._id, aboutyou_youremail: currentUser.email } } }}
+              mutationArguments={{ input: { data } }}
               successCallback={result => {
                 history.push(get(result, 'data.createResponse.data.pagePath'));
               }}

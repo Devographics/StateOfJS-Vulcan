@@ -64,7 +64,9 @@
     .datatable-list & {
       color: $text-color-inverted;
     }
-
+    .modal-dialog &{
+      color: $text-color-inverted;
+    }
     &.loading-button-loading{
       background: $greyMediumer;
       cursor: default;

@@ -35,6 +35,7 @@
     "babel-runtime": "^6.26.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
+    "bowser": "^2.7.0",
     "chalk": "2.2.0",
     "classnames": "^2.2.3",
     "combined-stream2": "^1.1.2",

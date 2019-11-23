@@ -1,8 +1,7 @@
-.form-control {
-  background: $bg-color-lightest;
-}
-
 .survey-section {
+  // .form-control {
+  //   background: $bg-color-lightest;
+  // }
   .form-group {
     margin-bottom: $spacing;
     @include border;
