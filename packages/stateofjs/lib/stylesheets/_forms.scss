@@ -28,8 +28,10 @@
     }
   }
   .form-check-input {
-    margin: -3px $spacing/1.5 0 0;
-    position: static;
+    margin: 0px $spacing/1.5 0 0;
+    position: relative;
+    top: -3px;
+    display: block;
   }
   .form-check-label {
     flex: 1;
