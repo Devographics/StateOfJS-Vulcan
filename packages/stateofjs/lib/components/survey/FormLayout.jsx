@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormLayout = ({ FormComponents, formProps, errorProps, repeatErrors, submitProps, children }) => (
   <FormComponents.FormElement {...formProps}>
-    <FormComponents.FormSubmit {...submitProps} showMessage={false} variant="top"/>
+    {/* <FormComponents.FormSubmit {...submitProps} showMessage={false} variant="top"/> */}
 
     <FormComponents.FormErrors {...errorProps} />
 

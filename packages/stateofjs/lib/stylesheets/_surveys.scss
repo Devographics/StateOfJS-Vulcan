@@ -21,8 +21,13 @@
   margin-bottom: $spacing;
 }
 .survey-image{
-  width: 180px;
-  margin-right: $spacing;
+  max-width: 180px;
+  @include small{
+    margin: 0 auto $spacing/2 auto;
+  }
+  @include medium-large{
+    margin-right: $spacing;
+  }
   img {
     display: block;
     width: 100%;

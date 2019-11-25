@@ -62,17 +62,20 @@ const FormSubmit = ({
             {nextSection.title} »
           </Components.LoadingButton>
         ) : (
-          <Components.Button
+          <Components.LoadingButton
+            loading={nextLoading}
             type="submit"
             variant="primary"
-            onClick={e => {
+            onClick={async e => {
               e.preventDefault();
-              submitForm();
+              setNextLoading(true);
+              await submitForm();
+              setNextLoading(false);
               history.push('/thanks');
             }}
           >
             Finish Survey »
-          </Components.Button>
+          </Components.LoadingButton>
         )}
       </div>
 

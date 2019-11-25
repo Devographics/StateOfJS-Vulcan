@@ -6,10 +6,22 @@ const AdminResponses = () => (
     <Components.Datatable
       collectionName="Responses"
       options={{
-        fragmentName: 'ResponseAdminFragment'
+        fragmentName: 'ResponseAdminFragment',
+      }}
+      initialState={{
+        sort: {
+          updatedAt: 'desc',
+        },
       }}
       // showNew={false}
-      columns={['_id', 'createdAt', 'updatedAt', 'aboutyou_youremail', 'isSynced', 'user']}
+      columns={[
+        '_id',
+        { name: 'createdAt', sortable: true },
+        { name: 'updatedAt', sortable: true },
+        'aboutyou_youremail',
+        'isSynced',
+        'user',
+      ]}
     />
   </div>
 );

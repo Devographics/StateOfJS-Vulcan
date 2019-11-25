@@ -1,4 +1,4 @@
-import countries from '../countries.js';
+import countriesOptions from '../countriesOptions.js';
 
 /*
 
@@ -103,10 +103,7 @@ export const templates = {
   }),
   country: () => ({
     input: 'select',
-    options: countries.map(value => ({
-      value,
-      label: value,
-    })),
+    options: countriesOptions,
   }),
 };
 

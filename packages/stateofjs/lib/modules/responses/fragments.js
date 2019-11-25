@@ -32,6 +32,8 @@ registerFragment(/* GraphQL */ `
     pagePath
     isSynced
 
+    aboutyou_youremail
+
     user {
       _id
       displayName

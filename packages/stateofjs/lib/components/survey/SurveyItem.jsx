@@ -39,8 +39,6 @@ const SurveyItem = ({ survey, history, currentUser }) => {
     };
   }
 
-  console.log(data);
-
   return (
     <div className="survey-item">
       <div className="survey-item-contents">

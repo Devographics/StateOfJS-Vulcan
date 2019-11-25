@@ -60,7 +60,14 @@ const SurveyNav = ({ responseId, response }) => {
         <div className="section-nav-contents">
           <ul>
             {parsedOutline.map((section, i) => (
-              <SectionNavItem responseId={responseId} response={response} section={section} number={i} key={i} />
+              <SectionNavItem
+                setShown={setShown}
+                responseId={responseId}
+                response={response}
+                section={section}
+                number={i}
+                key={i}
+              />
             ))}
             {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
           </ul>
@@ -73,12 +80,17 @@ const SurveyNav = ({ responseId, response }) => {
   );
 };
 
-const SectionNavItem = ({ responseId, response, section, number }) => {
+const SectionNavItem = ({ responseId, response, section, number, setShown }) => {
   const completion = getSectionCompletionPercentage(section, response);
   const showCompletion = completion !== 'null' && completion > 0;
   return (
     <li className="section-nav-item">
-      <NavLink to={getResponsePath({ _id: responseId }, number)}>
+      <NavLink
+        to={getResponsePath({ _id: responseId }, number)}
+        onClick={() => {
+          setShown(false);
+        }}
+      >
         {section.title} {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
       </NavLink>
     </li>
