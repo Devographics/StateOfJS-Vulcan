@@ -209,7 +209,7 @@ export default [
   { value: 'SE', label: 'Sweden' },
   { value: 'CH', label: 'Switzerland' },
   { value: 'SY', label: 'Syrian Arab Republic' },
-  { value: 'TW', label: 'Taiwan, Province Of China' },
+  { value: 'TW', label: 'Taiwan' },
   { value: 'TJ', label: 'Tajikistan' },
   { value: 'TZ', label: 'Tanzania, United Republic Of' },
   { value: 'TH', label: 'Thailand' },
