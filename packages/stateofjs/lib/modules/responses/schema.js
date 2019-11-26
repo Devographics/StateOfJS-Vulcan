@@ -104,6 +104,13 @@ const schema = {
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
+  source: {
+    type: String,
+    optional: true,
+    canRead: ['members'],
+    canCreate: ['members'],
+    canUpdate: ['admins'],
+  },
   pagePath: {
     type: String,
     optional: true,

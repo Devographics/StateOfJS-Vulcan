@@ -36,6 +36,7 @@ const SurveyItem = ({ survey, history, currentUser }) => {
       version: info.browser.version,
       os: info.os.name,
       referrer: document.referrer,
+      source: window.source,
     };
   }
 

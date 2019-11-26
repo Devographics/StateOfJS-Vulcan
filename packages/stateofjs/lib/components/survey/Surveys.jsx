@@ -19,7 +19,14 @@ import AccountMessage from '../users/AccountMessage.jsx';
 
 const Surveys = ({ loading, results, currentUser, location }) => {
   const query = qs.parse(location.search, { ignoreQueryPrefix: true });
-  const { email } = query;
+  const { email, source } = query;
+  if (typeof window !== 'undefined') {
+    if (email) {
+      window.source = 'email';
+    } else if (source) {
+      window.source = source;
+    }
+  }
   return (
     <div className="surveys">
       {currentUser ? (
