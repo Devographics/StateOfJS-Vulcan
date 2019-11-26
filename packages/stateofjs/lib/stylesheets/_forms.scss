@@ -21,9 +21,11 @@
     &:hover {
       background: $bg-color-light;
     }
-    &.form-check-checked {
+  }
+  .form-component-radiogroup{
+    .form-check-checked {
     }
-    &.form-check-unchecked {
+    .form-check-unchecked {
       opacity: 0.3;
     }
   }

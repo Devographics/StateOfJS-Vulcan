@@ -33,6 +33,9 @@ registerFragment(/* GraphQL */ `
     isSynced
 
     aboutyou_youremail
+    referrer
+
+    completion
 
     user {
       _id

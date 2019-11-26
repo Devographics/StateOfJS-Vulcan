@@ -1,8 +1,9 @@
-import parsedOutline from '../outline.js';
+import { outline } from '../outline.js';
 import {
   getQuestionObject,
   getQuestionSchema,
   getResponsePath,
+  getCompletionPercentage,
 } from './helpers.js';
 
 const schema = {
@@ -45,6 +46,24 @@ const schema = {
 
   // custom properties
 
+  year: {
+    type: Number,
+    optional: true,
+    canRead: ['guests'],
+    canCreate: ['admins'],
+    canUpdate: ['admins'],
+    onCreate: () => {
+      return new Date().getFullYear();
+    },
+  },  
+  completion: {
+    type: Number,
+    optional: true,
+    canRead: ['guests'],
+    onUpdate: ({ document }) => {
+      return getCompletionPercentage(document);
+    },
+  },
   isSynced: {
     type: Boolean,
     optional: true,
@@ -123,7 +142,7 @@ const schema = {
 
 let i = 0;
 
-parsedOutline.forEach(section => {
+outline.forEach(section => {
   section.questions &&
     section.questions.forEach(questionOrId => {
       i++;

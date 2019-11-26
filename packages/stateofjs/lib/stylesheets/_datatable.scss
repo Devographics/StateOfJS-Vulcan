@@ -9,3 +9,13 @@
   background: $greyLight;
   overflow: scroll;
 }
+.dashboard-user{
+  display: flex;
+  align-items: center;
+  .avatar{
+    margin-right: $spacing/2;
+    height: 24px;
+    width: 24px;
+    font-size: $small-font;
+  }
+}

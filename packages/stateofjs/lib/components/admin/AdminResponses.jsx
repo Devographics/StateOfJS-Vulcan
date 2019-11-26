@@ -15,11 +15,13 @@ const AdminResponses = () => (
       }}
       // showNew={false}
       columns={[
-        '_id',
+        // '_id',
         { name: 'createdAt', sortable: true },
         { name: 'updatedAt', sortable: true },
+        { name: 'completion', sortable: true, component: ({ document }) => <span>{document.completion}%</span> },
         'aboutyou_youremail',
-        'isSynced',
+        'referrer',
+        // 'isSynced',
         'user',
       ]}
     />

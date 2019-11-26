@@ -176,7 +176,7 @@
       description: Other mobile & desktop tools you use not mentioned in the list above
       template: text
     - title: Overall Happiness
-      description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
+      description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of mobile & desktop tools?
       template: happiness
 
 ### OTHER TOOLS ###

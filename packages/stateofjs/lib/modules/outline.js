@@ -1,4 +1,4 @@
-const parsedOutline = [
+export const outline = [
   {
     title: 'Syntax',
     description: 'The grammar of JavaScript',
@@ -219,7 +219,7 @@ const parsedOutline = [
       {
         title: 'Overall Happiness',
         description:
-          'On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?',
+          'On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of mobile & desktop tools?',
         template: 'happiness'
       }
     ]
@@ -601,5 +601,3 @@ const parsedOutline = [
     ]
   }
 ];
-
-export default parsedOutline;

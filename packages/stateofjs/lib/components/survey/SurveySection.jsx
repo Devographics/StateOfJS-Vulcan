@@ -15,7 +15,7 @@ TODO:
 import React from 'react';
 import { registerComponent, Components, withSingle2 } from 'meteor/vulcan:core';
 import { withRouter } from 'react-router-dom';
-import parsedOutline from '../../modules/outline.js';
+import { outline } from '../../modules/outline.js';
 import { getId } from '../../modules/responses/helpers.js';
 import SurveyNav from './SurveyNav.jsx';
 import FormSubmit from './FormSubmit.jsx';
@@ -73,9 +73,9 @@ const SurveySectionWithData = ({ match, history }) => {
 registerComponent('SurveySectionWithData', SurveySectionWithData, withRouter);
 
 const SurveySection = ({ loading, responseId, document: response, sectionNumber, history }) => {
-  const section = parsedOutline[sectionNumber];
-  const previousSection = parsedOutline[sectionNumber - 1];
-  const nextSection = parsedOutline[sectionNumber + 1];
+  const section = outline[sectionNumber];
+  const previousSection = outline[sectionNumber - 1];
+  const nextSection = outline[sectionNumber + 1];
   const sectionProps = {
     sectionNumber,
     section,

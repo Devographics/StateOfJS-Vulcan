@@ -1,4 +1,5 @@
 import countriesOptions from '../countriesOptions.js';
+import { outline } from '../outline.js';
 
 /*
 
@@ -110,7 +111,7 @@ export const templates = {
 // build question object from outline
 export const getQuestionObject = (questionOrId, section, number) => {
   let questionObject =
-    typeof questionOrId === 'string' ? { title: questionOrId } : questionOrId;
+    typeof questionOrId === 'string' ? { title: questionOrId } : { ...questionOrId };
 
   questionObject.id = getId(section.title, questionObject.title);
   questionObject.type = String; // default to String type
@@ -163,3 +164,40 @@ export const getQuestionSchema = questionObject => {
 
   return questionSchema;
 };
+
+export const getParsedOutline = outline => {
+  let i = 0;
+  return outline.map(section => {
+    return {
+      ...section,
+      id: makeId(section.title),
+      questions:
+        section.questions &&
+        section.questions.map(question => {
+          i++;
+          return getQuestionObject(question, section, i);
+        })
+    };
+  });
+};
+
+
+export const parsedOutline = getParsedOutline(outline);
+
+export const ignoredFieldTypes = ['email', 'text', 'longtext'];
+
+export const getCompletionPercentage = document => {
+  let completedCount = 0;
+  let totalCount = 0;
+  parsedOutline.forEach(section => {
+    section.questions && section.questions.forEach(question => {
+      const response = document[question.id];
+      totalCount ++;
+      if (!ignoredFieldTypes.includes(question.template) && response !== null && typeof response !== 'undefined') {
+        completedCount++;
+      }
+    })
+  })
+  const completion = Math.round(completedCount*100/totalCount);
+  return completion;
+}

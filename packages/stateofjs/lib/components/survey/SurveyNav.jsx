@@ -10,11 +10,9 @@ TODO
 
 */
 import React, { useState } from 'react';
-import { getResponsePath, getQuestionObject } from '../../modules/responses/helpers.js';
-import parsedOutline from '../../modules/outline.js';
+import { getResponsePath, getQuestionObject, ignoredFieldTypes } from '../../modules/responses/helpers.js';
+import { outline } from '../../modules/outline.js';
 import { NavLink } from 'react-router-dom';
-
-const ignoredFieldTypes = ['email', 'text', 'longtext'];
 
 // TODO
 // const getOverallCompletionPercentage = (response) => {
@@ -59,7 +57,7 @@ const SurveyNav = ({ responseId, response }) => {
         </div>
         <div className="section-nav-contents">
           <ul>
-            {parsedOutline.map((section, i) => (
+            {outline.map((section, i) => (
               <SectionNavItem
                 setShown={setShown}
                 responseId={responseId}
