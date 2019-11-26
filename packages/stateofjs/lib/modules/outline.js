@@ -148,6 +148,7 @@ export const outline = [
     id: 'backend',
     questions: [
       'Express',
+      'NestJS',
       'Next.js',
       'Koa',
       'Meteor',
