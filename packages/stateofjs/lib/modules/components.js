@@ -1,4 +1,5 @@
 import '../components/Thanks';
+import '../components/PrivacyPolicy';
 
 import '../components/common/Layout';
 import '../components/common/Header';
