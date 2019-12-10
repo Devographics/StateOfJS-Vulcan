@@ -17,6 +17,7 @@ import { registerComponent, Components, withSingle2 } from 'meteor/vulcan:core';
 import { withRouter } from 'react-router-dom';
 import { outline } from '../../modules/outline.js';
 import { getId } from '../../modules/responses/helpers.js';
+import { statuses } from '../../modules/constants.js';
 import SurveyNav from './SurveyNav.jsx';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
@@ -28,6 +29,11 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
   const { title, description } = section;
   return (
     <div className="section-questions">
+      {response.survey && response.survey.status === statuses.closed && (
+        <div className="survey-closed">
+          This survey is now closed. You can review it but data can't be submitted or modified.
+        </div>
+      )}
       <h2 className="section-title">{title}</h2>
       <h3 className="section-description">{description}</h3>
       <Components.SmartForm
@@ -41,6 +47,7 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
           layout: 'vertical',
         }}
         warnUnsavedChanges={true}
+        disabled={response.survey.status === statuses.closed}
         Components={{
           FormLayout,
           FormSubmit: props => (
@@ -102,6 +109,7 @@ const SurveySection = ({ loading, responseId, document: response, sectionNumber,
 
 const options = {
   collectionName: 'Responses',
+  fragmentName: 'ResponseFragment',
 };
 
 registerComponent('SurveySection', SurveySection, withRouter, [withSingle2, options]);

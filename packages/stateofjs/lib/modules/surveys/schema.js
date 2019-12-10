@@ -55,7 +55,7 @@ const schema = {
     type: Number,
     optional: true,
     input: 'select',
-    canRead: ['admins'],
+    canRead: ['guests'],
     canCreate: ['admins'],
     canUpdate: ['admins'],
     defaultValue: statuses.preview,

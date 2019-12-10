@@ -19,6 +19,7 @@ registerFragment(/* GraphQL */ `
       _id
       name
       year
+      status
     }
   }
 `);

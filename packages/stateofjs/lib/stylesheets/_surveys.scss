@@ -1,3 +1,7 @@
+.surveys-title{
+  text-align: center;
+  margin-bottom: $spacing;
+}
 .account,
 .contents-narrow {
   max-width: 500px;
@@ -46,6 +50,11 @@
 .survey-action {
   flex: 1;
   margin-left: $spacing;
+}
+.survey-action-closed{
+  background: $bg-color-light;
+  padding: $spacing/2;
+  text-align: center;
 }
 .survey-item-error {
 }
@@ -127,6 +136,12 @@
   .form-component-clear {
     display: none;
   }
+}
+.survey-closed{
+  background: $redLighter;
+  padding: $spacing;
+  color: $text-color-inverted;
+  margin-bottom: $spacing;
 }
 .form-section-nav {
   &-top {

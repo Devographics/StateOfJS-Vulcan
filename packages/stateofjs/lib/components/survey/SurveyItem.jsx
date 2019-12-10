@@ -14,11 +14,12 @@ import { Link, withRouter } from 'react-router-dom';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import bowser from 'bowser';
+import { statuses } from '../../modules/constants.js';
 
 const SurveyItem = ({ survey, history, currentUser }) => {
   const [errors, setErrors] = useState();
 
-  const { name, year, imageUrl, currentUserResponse } = survey;
+  const { name, year, imageUrl, currentUserResponse, status } = survey;
 
   // prefilled data
   let data = {
@@ -52,25 +53,29 @@ const SurveyItem = ({ survey, history, currentUser }) => {
         <div className="survey-action">
           {currentUserResponse && !isEmpty(currentUserResponse) ? (
             <LinkContainer to={currentUserResponse.pagePath}>
-              <Components.Button>Continue Survey »</Components.Button>
+              <Components.Button>
+                {status === statuses.open ? 'Continue Survey »' : 'Review Survey »'}
+              </Components.Button>
             </LinkContainer>
           ) : (
-            <Components.MutationButton
-              label="Start Survey »"
-              variant="primary"
-              mutationOptions={{
-                name: 'createResponse',
-                args: { input: 'CreateResponseInput' },
-                fragmentName: 'CreateResponseOutputFragment',
-              }}
-              mutationArguments={{ input: { data } }}
-              successCallback={result => {
-                history.push(get(result, 'data.createResponse.data.pagePath'));
-              }}
-              errorCallback={error => {
-                setErrors(getErrors(error));
-              }}
-            />
+            status === statuses.open ? (
+              <Components.MutationButton
+                label="Start Survey »"
+                variant="primary"
+                mutationOptions={{
+                  name: 'createResponse',
+                  args: { input: 'CreateResponseInput' },
+                  fragmentName: 'CreateResponseOutputFragment',
+                }}
+                mutationArguments={{ input: { data } }}
+                successCallback={result => {
+                  history.push(get(result, 'data.createResponse.data.pagePath'));
+                }}
+                errorCallback={error => {
+                  setErrors(getErrors(error));
+                }}
+              />
+            ) : <div className="survey-action-closed">Survey closed.</div>
           )}
         </div>
       </div>

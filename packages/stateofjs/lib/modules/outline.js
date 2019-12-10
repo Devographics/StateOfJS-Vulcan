@@ -384,7 +384,7 @@ export const outline = [
           'FreeCodeCamp',
           'Codecademy',
           'LevelUp Tutorials',
-          'Wes Bos Courses (GSSGrid.io, Flexbox.io, etc.)',
+          'Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)',
           'Pluralsight',
           'DesignCode'
         ]
@@ -588,7 +588,8 @@ export const outline = [
       },
       {
         title: 'Your Country',
-        template: 'country'
+        template: 'country',
+        description: 'Your country of residence',
       },
       {
         title: 'Your Email',

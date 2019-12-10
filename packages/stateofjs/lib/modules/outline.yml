@@ -314,7 +314,7 @@
         - FreeCodeCamp
         - Codecademy
         - LevelUp Tutorials
-        - Wes Bos Courses (GSSGrid.io, Flexbox.io, etc.)
+        - Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)
         - Pluralsight
         - DesignCode
     - title: Other Courses
@@ -476,6 +476,7 @@
       description: Other gender not mentioned in the list above
     - title: Your Country
       template: country
+      description: Your country of residence
     # - title: Your City
     #   template: text
     - title: Your Email

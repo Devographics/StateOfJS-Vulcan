@@ -18,7 +18,7 @@ import qs from 'qs';
 import AccountMessage from '../users/AccountMessage.jsx';
 
 const Surveys = ({ loading, results, currentUser, location }) => {
-  const query = qs.parse(location.search, { ignoreQueryPrefix: true });
+  const query = qs.parse(location.search, { ignoreQueryPrefix: true, decoder: (c) => c });
   const { email, source } = query;
   if (typeof window !== 'undefined') {
     if (email) {
@@ -37,6 +37,8 @@ const Surveys = ({ loading, results, currentUser, location }) => {
         )
       ) : (
         <div>
+          <h3 className="surveys-title">The 2019 State of JavaScript Survey</h3>
+          <div className="survey-closed">Sorry, the survey is now closed! You can still log in to review your data but you won't be able to modify it.</div>
           {email ? (
             <div className="message">Please create a new password to continue.</div>
           ) : (
