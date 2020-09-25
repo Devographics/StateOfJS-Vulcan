@@ -10,8 +10,8 @@ input String_Selector {
   #_gte: String
   #_ilike: String
   _in: [String!]
-  #_is_null: Boolean
-  #_like: String
+  _is_null: Boolean
+  _like: String
   #_lt: String
   #_lte: String
   #_neq: String
@@ -23,8 +23,9 @@ input String_Selector {
 }
 
 input String_Array_Selector {
-  contains: String_Selector
-  # contains_all: [String_Selector]
+  _in: [String!]
+  _contains: String
+  # _contains_all: [String_Selector]
 }
 
 input Int_Selector {
@@ -117,6 +118,52 @@ input IntlValueInput{
 }
 directive @intl on FIELD_DEFINITION
 
+  input AuthPasswordInput {
+    email: String
+    password: String
+  }
+  type AuthResult {
+    token: String
+    userId: String
+  }
+  type LogoutResult {
+    userId: String
+  }
+
+  input SignupInput {
+    email: String
+    password: String
+  }
+  type SignupResult {
+    userId: String
+  }
+
+  input SetPasswordInput {
+    newPassword: String
+  }
+
+  #type SetPasswordResult # Will auth user again so we reuse AuthResult atm
+
+  input ResetPasswordInput {
+    token: String
+    newPassword: String
+  }
+  type ResetPasswordResult {
+    userId: String
+  }
+
+  input VerifyEmailInput {
+    token: String
+  }
+  type VerifyEmailResult {
+    userId: String
+  }
+
+  input AuthEmailInput {
+    email: String
+  }
+
+
 # A user object
 type User {
   _id: String 
@@ -132,11 +179,11 @@ type User {
   emailHash: String 
   avatarUrl: String 
   slug: String 
-  twitterUsername: String 
   groups: [String] 
   pageUrl: String 
   pagePath: String 
   editUrl: String 
+  createdAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
 
 
@@ -153,7 +200,7 @@ input SingleUserInput {
   id: String
 
   # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   selector: UserSelectorUniqueInput
 
   # options (backwards-compatibility)
@@ -161,6 +208,8 @@ input SingleUserInput {
   enableCache: Boolean
   # Return null instead of throwing MissingDocumentError
   allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
 }
 
 input MultiUserInput {
@@ -174,7 +223,7 @@ input MultiUserInput {
 
   # backwards-compatibility
   # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   terms: JSON
 
   # options (backwards-compatibility)
@@ -182,7 +231,9 @@ input MultiUserInput {
   enableCache: Boolean
   # Whether to calculate totalCount for this query
   enableTotal: Boolean
-  
+  # An identifier to name the query's execution context
+  contextName: String
+
 }
 
 type SingleUserOutput{
@@ -200,6 +251,8 @@ type UserMutationOutput{
 
 input CreateUserInput {
   data: CreateUserDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input CreateUserDataInput {
@@ -209,7 +262,6 @@ input CreateUserDataInput {
   profile: JSON 
   displayName: String 
   email: String 
-  twitterUsername: String 
   groups: [String] 
 }
 
@@ -217,12 +269,16 @@ input UpdateUserInput{
   filter: UserFilterInput
   id: String
   data: UpdateUserDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input UpsertUserInput{
   filter: UserFilterInput
   id: String
   data: UpdateUserDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input UpdateUserDataInput {
@@ -231,7 +287,6 @@ input UpdateUserDataInput {
   locale: String 
   displayName: String 
   email: String 
-  twitterUsername: String 
   groups: [String] 
 }
 
@@ -253,8 +308,7 @@ input UserFilterInput {
   emailHash: String_Selector
   avatarUrl: String_Selector
   slug: String_Selector
-  twitterUsername: String_Selector
-
+  groups: String_Array_Selector
   pageUrl: String_Selector
   pagePath: String_Selector
   editUrl: String_Selector
@@ -273,7 +327,6 @@ input UserSortInput {
   emailHash: SortOptions
   avatarUrl: SortOptions
   slug: SortOptions
-  twitterUsername: SortOptions
   groups: SortOptions
   pageUrl: SortOptions
   pagePath: SortOptions
@@ -294,50 +347,52 @@ input UserSelectorUniqueInput {
 }
 
 
-# Type for Emails
-type Email {
+# Type for AnalyticsEvents
+type AnalyticsEvent {
+  createdAt: Date 
   name: String 
-  template: String 
-  subject: String 
-  path: String 
+  properties: JSON 
+  createdAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
 
 
-input DeleteEmailInput{
-  filter: EmailFilterInput
+input DeleteAnalyticsEventInput{
+  filter: AnalyticsEventFilterInput
   id: String
 }
 
-input SingleEmailInput {
+input SingleAnalyticsEventInput {
   # filtering
-  filter: EmailFilterInput
-  sort: EmailSortInput
+  filter: AnalyticsEventFilterInput
+  sort: AnalyticsEventSortInput
   search: String
   id: String
 
   # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
-  selector: EmailSelectorUniqueInput
+  # Deprecated (use 'filter/id' fields instead).
+  selector: AnalyticsEventSelectorUniqueInput
 
   # options (backwards-compatibility)
   # Whether to enable caching for this query
   enableCache: Boolean
   # Return null instead of throwing MissingDocumentError
   allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
 }
 
-input MultiEmailInput {
+input MultiAnalyticsEventInput {
 
   # filtering
-  filter: EmailFilterInput
-  sort: EmailSortInput
+  filter: AnalyticsEventFilterInput
+  sort: AnalyticsEventSortInput
   search: String
   offset: Int
   limit: Int
 
   # backwards-compatibility
   # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   terms: JSON
 
   # options (backwards-compatibility)
@@ -345,263 +400,59 @@ input MultiEmailInput {
   enableCache: Boolean
   # Whether to calculate totalCount for this query
   enableTotal: Boolean
-  
+  # An identifier to name the query's execution context
+  contextName: String
+
 }
 
-type SingleEmailOutput{
-  result: Email
+type SingleAnalyticsEventOutput{
+  result: AnalyticsEvent
 }
 
-type  MultiEmailOutput{
-  results: [Email]
+type  MultiAnalyticsEventOutput{
+  results: [AnalyticsEvent]
   totalCount: Int
 }
 
-type EmailMutationOutput{
-  data: Email
+type AnalyticsEventMutationOutput{
+  data: AnalyticsEvent
 }
 
-input EmailFilterInput {
-  _and: [EmailFilterInput]
-  _not: EmailFilterInput
-  _or: [EmailFilterInput]
-
-
-  name: String_Selector
-  template: String_Selector
-  subject: String_Selector
-  path: String_Selector
+input CreateAnalyticsEventInput {
+  data: CreateAnalyticsEventDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
-input EmailSortInput {
-  name: SortOptions
-  template: SortOptions
-  subject: SortOptions
-  path: SortOptions
-}
-
-input EmailSelectorInput {
-  _and: [EmailSelectorInput]
-  _or: [EmailSelectorInput]
-
-}
-
-input EmailSelectorUniqueInput {
-  _id: String
-  documentId: String # OpenCRUD backwards compatibility
-  slug: String
-
-}
-
-
-# Type for Settings
-type Setting {
+input CreateAnalyticsEventDataInput {
   name: String 
-  value: JSON 
-  defaultValue: JSON 
-  isPublic: Boolean 
-  description: String 
+  properties: JSON 
 }
 
-
-input DeleteSettingInput{
-  filter: SettingFilterInput
-  id: String
-}
-
-input SingleSettingInput {
-  # filtering
-  filter: SettingFilterInput
-  sort: SettingSortInput
-  search: String
-  id: String
-
-  # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
-  selector: SettingSelectorUniqueInput
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Return null instead of throwing MissingDocumentError
-  allowNull: Boolean
-}
-
-input MultiSettingInput {
-
-  # filtering
-  filter: SettingFilterInput
-  sort: SettingSortInput
-  search: String
-  offset: Int
-  limit: Int
-
-  # backwards-compatibility
-  # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
-  terms: JSON
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Whether to calculate totalCount for this query
-  enableTotal: Boolean
-  
-}
-
-type SingleSettingOutput{
-  result: Setting
-}
-
-type  MultiSettingOutput{
-  results: [Setting]
-  totalCount: Int
-}
-
-type SettingMutationOutput{
-  data: Setting
-}
-
-input SettingFilterInput {
-  _and: [SettingFilterInput]
-  _not: SettingFilterInput
-  _or: [SettingFilterInput]
+input AnalyticsEventFilterInput {
+  _and: [AnalyticsEventFilterInput]
+  _not: AnalyticsEventFilterInput
+  _or: [AnalyticsEventFilterInput]
 
 
+  createdAt: Date_Selector
   name: String_Selector
 
-
-  isPublic: Boolean_Selector
-  description: String_Selector
 }
 
-input SettingSortInput {
+input AnalyticsEventSortInput {
+  createdAt: SortOptions
   name: SortOptions
-  value: SortOptions
-  defaultValue: SortOptions
-  isPublic: SortOptions
-  description: SortOptions
-}
-
-input SettingSelectorInput {
-  _and: [SettingSelectorInput]
-  _or: [SettingSelectorInput]
-
-}
-
-input SettingSelectorUniqueInput {
-  _id: String
-  documentId: String # OpenCRUD backwards compatibility
-  slug: String
-
-}
-
-
-# Type for Callbacks
-type Callback {
-  name: String 
-  iterator: JSON 
-  properties: [JSON] 
-  runs: String 
-  newSyntax: Boolean 
-  returns: String 
-  description: String 
-  hooks: [String] 
-}
-
-
-input DeleteCallbackInput{
-  filter: CallbackFilterInput
-  id: String
-}
-
-input SingleCallbackInput {
-  # filtering
-  filter: CallbackFilterInput
-  sort: CallbackSortInput
-  search: String
-  id: String
-
-  # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
-  selector: CallbackSelectorUniqueInput
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Return null instead of throwing MissingDocumentError
-  allowNull: Boolean
-}
-
-input MultiCallbackInput {
-
-  # filtering
-  filter: CallbackFilterInput
-  sort: CallbackSortInput
-  search: String
-  offset: Int
-  limit: Int
-
-  # backwards-compatibility
-  # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
-  terms: JSON
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Whether to calculate totalCount for this query
-  enableTotal: Boolean
-  
-}
-
-type SingleCallbackOutput{
-  result: Callback
-}
-
-type  MultiCallbackOutput{
-  results: [Callback]
-  totalCount: Int
-}
-
-type CallbackMutationOutput{
-  data: Callback
-}
-
-input CallbackFilterInput {
-  _and: [CallbackFilterInput]
-  _not: CallbackFilterInput
-  _or: [CallbackFilterInput]
-
-
-  name: String_Selector
-
-
-  runs: String_Selector
-  newSyntax: Boolean_Selector
-  returns: String_Selector
-  description: String_Selector
-
-}
-
-input CallbackSortInput {
-  name: SortOptions
-  iterator: SortOptions
   properties: SortOptions
-  runs: SortOptions
-  newSyntax: SortOptions
-  returns: SortOptions
-  description: SortOptions
-  hooks: SortOptions
 }
 
-input CallbackSelectorInput {
-  _and: [CallbackSelectorInput]
-  _or: [CallbackSelectorInput]
+input AnalyticsEventSelectorInput {
+  _and: [AnalyticsEventSelectorInput]
+  _or: [AnalyticsEventSelectorInput]
 
 }
 
-input CallbackSelectorUniqueInput {
+input AnalyticsEventSelectorUniqueInput {
   _id: String
   documentId: String # OpenCRUD backwards compatibility
   slug: String
@@ -616,6 +467,15 @@ type Response {
   updatedAt: Date 
   userId: String 
   user: User 
+  year: Float 
+  completion: Float 
+  isSynced: Boolean 
+  device: String 
+  browser: String 
+  version: String 
+  os: String 
+  referrer: String 
+  source: String 
   pagePath: String 
   surveyId: String 
   survey: Survey 
@@ -632,6 +492,7 @@ type Response {
   datastructures_maps: String 
   datastructures_sets: String 
   datastructures_typedarrays: String 
+  datastructures_arrayprototypeflat: String 
   browserapis_serviceworkers: String 
   browserapis_localstorage: String 
   browserapis_i18n: String 
@@ -654,7 +515,8 @@ type Response {
   javascriptflavors_elm: String 
   javascriptflavors_clojurescript: String 
   javascriptflavors_purescript: String 
-  javascriptflavors_other: String 
+  # Other JavaScript flavors you use not mentioned in the list above
+  javascriptflavors_otherjavascriptflavors: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of JavaScript flavors?
   javascriptflavors_overallhappiness: Float 
   frontendframeworks_react: String 
@@ -663,7 +525,8 @@ type Response {
   frontendframeworks_preact: String 
   frontendframeworks_ember: String 
   frontendframeworks_svelte: String 
-  frontendframeworks_other: String 
+  # Other Front-end frameworks you use not mentioned in the list above
+  frontendframeworks_otherfrontendframeworks: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of front-end frameworks?
   frontendframeworks_overallhappiness: Float 
   datalayer_redux: String 
@@ -671,7 +534,8 @@ type Response {
   datalayer_graphql: String 
   datalayer_mobx: String 
   datalayer_relay: String 
-  datalayer_other: String 
+  # Other data layer tools you use not mentioned in the list above
+  datalayer_otherdatalayertools: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of data layer technologies?
   datalayer_overallhappiness: Float 
   backendframeworks_express: String 
@@ -682,7 +546,8 @@ type Response {
   backendframeworks_feathersjs: String 
   backendframeworks_nuxtjs: String 
   backendframeworks_gatsbyjs: String 
-  backendframeworks_other: String 
+  # Other back-end frameworks you use not mentioned in the list above
+  backendframeworks_otherbackendframeworks: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of back-end frameworks?
   backendframeworks_overallhappiness: Float 
   testing_jest: String 
@@ -693,7 +558,8 @@ type Response {
   testing_ava: String 
   testing_jasmine: String 
   testing_puppeteer: String 
-  testing_other: String 
+  # Other testing tools you use not mentioned in the list above
+  testing_othertestingtools: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
   testing_overallhappiness: Float 
   mobiledesktop_electron: String 
@@ -703,8 +569,9 @@ type Response {
   mobiledesktop_ionic: String 
   mobiledesktop_nwjs: String 
   mobiledesktop_expo: String 
-  mobiledesktop_other: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
+  # Other mobile & desktop tools you use not mentioned in the list above
+  mobiledesktop_othermobiledesktoptools: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of mobile & desktop tools?
   mobiledesktop_overallhappiness: Float 
   # Which JavaScript utilities do you regularly use?
   othertools_utilities: [String] 
@@ -763,9 +630,12 @@ type Response {
   aboutyou_yourgender: String 
   # Other gender not mentioned in the list above
   aboutyou_othergender: String 
+  # Your country of residence
   aboutyou_yourcountry: String 
   # If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
   aboutyou_youremail: String 
+  createdAtFormatted(format: String = "YYYY/MM/DD"): String 
+  updatedAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
 
 
@@ -782,7 +652,7 @@ input SingleResponseInput {
   id: String
 
   # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   selector: ResponseSelectorUniqueInput
 
   # options (backwards-compatibility)
@@ -790,6 +660,8 @@ input SingleResponseInput {
   enableCache: Boolean
   # Return null instead of throwing MissingDocumentError
   allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
 }
 
 input MultiResponseInput {
@@ -803,7 +675,7 @@ input MultiResponseInput {
 
   # backwards-compatibility
   # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   terms: JSON
 
   # options (backwards-compatibility)
@@ -811,7 +683,9 @@ input MultiResponseInput {
   enableCache: Boolean
   # Whether to calculate totalCount for this query
   enableTotal: Boolean
-  
+  # An identifier to name the query's execution context
+  contextName: String
+
 }
 
 type SingleResponseOutput{
@@ -829,9 +703,18 @@ type ResponseMutationOutput{
 
 input CreateResponseInput {
   data: CreateResponseDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input CreateResponseDataInput {
+  year: Float 
+  device: String 
+  browser: String 
+  version: String 
+  os: String 
+  referrer: String 
+  source: String 
   surveyId: String 
   syntax_destructuring: String 
   syntax_spreadoperator: String 
@@ -843,6 +726,7 @@ input CreateResponseDataInput {
   datastructures_maps: String 
   datastructures_sets: String 
   datastructures_typedarrays: String 
+  datastructures_arrayprototypeflat: String 
   browserapis_serviceworkers: String 
   browserapis_localstorage: String 
   browserapis_i18n: String 
@@ -865,7 +749,7 @@ input CreateResponseDataInput {
   javascriptflavors_elm: String 
   javascriptflavors_clojurescript: String 
   javascriptflavors_purescript: String 
-  javascriptflavors_other: String 
+  javascriptflavors_otherjavascriptflavors: String 
   javascriptflavors_overallhappiness: Float 
   frontendframeworks_react: String 
   frontendframeworks_vue: String 
@@ -873,14 +757,14 @@ input CreateResponseDataInput {
   frontendframeworks_preact: String 
   frontendframeworks_ember: String 
   frontendframeworks_svelte: String 
-  frontendframeworks_other: String 
+  frontendframeworks_otherfrontendframeworks: String 
   frontendframeworks_overallhappiness: Float 
   datalayer_redux: String 
   datalayer_apollo: String 
   datalayer_graphql: String 
   datalayer_mobx: String 
   datalayer_relay: String 
-  datalayer_other: String 
+  datalayer_otherdatalayertools: String 
   datalayer_overallhappiness: Float 
   backendframeworks_express: String 
   backendframeworks_nextjs: String 
@@ -890,7 +774,7 @@ input CreateResponseDataInput {
   backendframeworks_feathersjs: String 
   backendframeworks_nuxtjs: String 
   backendframeworks_gatsbyjs: String 
-  backendframeworks_other: String 
+  backendframeworks_otherbackendframeworks: String 
   backendframeworks_overallhappiness: Float 
   testing_jest: String 
   testing_mocha: String 
@@ -900,7 +784,7 @@ input CreateResponseDataInput {
   testing_ava: String 
   testing_jasmine: String 
   testing_puppeteer: String 
-  testing_other: String 
+  testing_othertestingtools: String 
   testing_overallhappiness: Float 
   mobiledesktop_electron: String 
   mobiledesktop_reactnative: String 
@@ -909,7 +793,7 @@ input CreateResponseDataInput {
   mobiledesktop_ionic: String 
   mobiledesktop_nwjs: String 
   mobiledesktop_expo: String 
-  mobiledesktop_other: String 
+  mobiledesktop_othermobiledesktoptools: String 
   mobiledesktop_overallhappiness: Float 
   othertools_utilities: [String] 
   othertools_otherutilities: String 
@@ -952,15 +836,26 @@ input UpdateResponseInput{
   filter: ResponseFilterInput
   id: String
   data: UpdateResponseDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input UpsertResponseInput{
   filter: ResponseFilterInput
   id: String
   data: UpdateResponseDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input UpdateResponseDataInput {
+  year: Float 
+  device: String 
+  browser: String 
+  version: String 
+  os: String 
+  referrer: String 
+  source: String 
   surveyId: String 
   syntax_destructuring: String 
   syntax_spreadoperator: String 
@@ -972,6 +867,7 @@ input UpdateResponseDataInput {
   datastructures_maps: String 
   datastructures_sets: String 
   datastructures_typedarrays: String 
+  datastructures_arrayprototypeflat: String 
   browserapis_serviceworkers: String 
   browserapis_localstorage: String 
   browserapis_i18n: String 
@@ -994,7 +890,7 @@ input UpdateResponseDataInput {
   javascriptflavors_elm: String 
   javascriptflavors_clojurescript: String 
   javascriptflavors_purescript: String 
-  javascriptflavors_other: String 
+  javascriptflavors_otherjavascriptflavors: String 
   javascriptflavors_overallhappiness: Float 
   frontendframeworks_react: String 
   frontendframeworks_vue: String 
@@ -1002,14 +898,14 @@ input UpdateResponseDataInput {
   frontendframeworks_preact: String 
   frontendframeworks_ember: String 
   frontendframeworks_svelte: String 
-  frontendframeworks_other: String 
+  frontendframeworks_otherfrontendframeworks: String 
   frontendframeworks_overallhappiness: Float 
   datalayer_redux: String 
   datalayer_apollo: String 
   datalayer_graphql: String 
   datalayer_mobx: String 
   datalayer_relay: String 
-  datalayer_other: String 
+  datalayer_otherdatalayertools: String 
   datalayer_overallhappiness: Float 
   backendframeworks_express: String 
   backendframeworks_nextjs: String 
@@ -1019,7 +915,7 @@ input UpdateResponseDataInput {
   backendframeworks_feathersjs: String 
   backendframeworks_nuxtjs: String 
   backendframeworks_gatsbyjs: String 
-  backendframeworks_other: String 
+  backendframeworks_otherbackendframeworks: String 
   backendframeworks_overallhappiness: Float 
   testing_jest: String 
   testing_mocha: String 
@@ -1029,7 +925,7 @@ input UpdateResponseDataInput {
   testing_ava: String 
   testing_jasmine: String 
   testing_puppeteer: String 
-  testing_other: String 
+  testing_othertestingtools: String 
   testing_overallhappiness: Float 
   mobiledesktop_electron: String 
   mobiledesktop_reactnative: String 
@@ -1038,7 +934,7 @@ input UpdateResponseDataInput {
   mobiledesktop_ionic: String 
   mobiledesktop_nwjs: String 
   mobiledesktop_expo: String 
-  mobiledesktop_other: String 
+  mobiledesktop_othermobiledesktoptools: String 
   mobiledesktop_overallhappiness: Float 
   othertools_utilities: [String] 
   othertools_otherutilities: String 
@@ -1087,6 +983,15 @@ input ResponseFilterInput {
   createdAt: Date_Selector
   updatedAt: Date_Selector
   userId: String_Selector
+  year: Float_Selector
+  completion: Float_Selector
+  isSynced: Boolean_Selector
+  device: String_Selector
+  browser: String_Selector
+  version: String_Selector
+  os: String_Selector
+  referrer: String_Selector
+  source: String_Selector
   pagePath: String_Selector
   surveyId: String_Selector
   syntax_destructuring: String_Selector
@@ -1099,6 +1004,7 @@ input ResponseFilterInput {
   datastructures_maps: String_Selector
   datastructures_sets: String_Selector
   datastructures_typedarrays: String_Selector
+  datastructures_arrayprototypeflat: String_Selector
   browserapis_serviceworkers: String_Selector
   browserapis_localstorage: String_Selector
   browserapis_i18n: String_Selector
@@ -1121,7 +1027,7 @@ input ResponseFilterInput {
   javascriptflavors_elm: String_Selector
   javascriptflavors_clojurescript: String_Selector
   javascriptflavors_purescript: String_Selector
-  javascriptflavors_other: String_Selector
+  javascriptflavors_otherjavascriptflavors: String_Selector
   javascriptflavors_overallhappiness: Float_Selector
   frontendframeworks_react: String_Selector
   frontendframeworks_vue: String_Selector
@@ -1129,14 +1035,14 @@ input ResponseFilterInput {
   frontendframeworks_preact: String_Selector
   frontendframeworks_ember: String_Selector
   frontendframeworks_svelte: String_Selector
-  frontendframeworks_other: String_Selector
+  frontendframeworks_otherfrontendframeworks: String_Selector
   frontendframeworks_overallhappiness: Float_Selector
   datalayer_redux: String_Selector
   datalayer_apollo: String_Selector
   datalayer_graphql: String_Selector
   datalayer_mobx: String_Selector
   datalayer_relay: String_Selector
-  datalayer_other: String_Selector
+  datalayer_otherdatalayertools: String_Selector
   datalayer_overallhappiness: Float_Selector
   backendframeworks_express: String_Selector
   backendframeworks_nextjs: String_Selector
@@ -1146,7 +1052,7 @@ input ResponseFilterInput {
   backendframeworks_feathersjs: String_Selector
   backendframeworks_nuxtjs: String_Selector
   backendframeworks_gatsbyjs: String_Selector
-  backendframeworks_other: String_Selector
+  backendframeworks_otherbackendframeworks: String_Selector
   backendframeworks_overallhappiness: Float_Selector
   testing_jest: String_Selector
   testing_mocha: String_Selector
@@ -1156,7 +1062,7 @@ input ResponseFilterInput {
   testing_ava: String_Selector
   testing_jasmine: String_Selector
   testing_puppeteer: String_Selector
-  testing_other: String_Selector
+  testing_othertestingtools: String_Selector
   testing_overallhappiness: Float_Selector
   mobiledesktop_electron: String_Selector
   mobiledesktop_reactnative: String_Selector
@@ -1165,23 +1071,23 @@ input ResponseFilterInput {
   mobiledesktop_ionic: String_Selector
   mobiledesktop_nwjs: String_Selector
   mobiledesktop_expo: String_Selector
-  mobiledesktop_other: String_Selector
+  mobiledesktop_othermobiledesktoptools: String_Selector
   mobiledesktop_overallhappiness: Float_Selector
-
+  othertools_utilities: String_Array_Selector
   othertools_otherutilities: String_Selector
-
+  othertools_texteditors: String_Array_Selector
   othertools_othereditors: String_Selector
-
+  othertools_browsers: String_Array_Selector
   othertools_otherbrowsers: String_Selector
-
+  othertools_buildtools: String_Array_Selector
   othertools_otherbuildtools: String_Selector
-
+  othertools_nonjslanguages: String_Array_Selector
   othertools_otherlanguages: String_Selector
-
+  resources_blogsnewsmagazines: String_Array_Selector
   resources_otherblogs: String_Selector
-
+  resources_sitescourses: String_Array_Selector
   resources_othercourses: String_Selector
-
+  resources_podcasts: String_Array_Selector
   resources_otherpodcasts: String_Selector
   opinionquestions_javascriptismovingintherightdirection: Float_Selector
   opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float_Selector
@@ -1209,6 +1115,15 @@ input ResponseSortInput {
   createdAt: SortOptions
   updatedAt: SortOptions
   userId: SortOptions
+  year: SortOptions
+  completion: SortOptions
+  isSynced: SortOptions
+  device: SortOptions
+  browser: SortOptions
+  version: SortOptions
+  os: SortOptions
+  referrer: SortOptions
+  source: SortOptions
   pagePath: SortOptions
   surveyId: SortOptions
   syntax_destructuring: SortOptions
@@ -1221,6 +1136,7 @@ input ResponseSortInput {
   datastructures_maps: SortOptions
   datastructures_sets: SortOptions
   datastructures_typedarrays: SortOptions
+  datastructures_arrayprototypeflat: SortOptions
   browserapis_serviceworkers: SortOptions
   browserapis_localstorage: SortOptions
   browserapis_i18n: SortOptions
@@ -1243,7 +1159,7 @@ input ResponseSortInput {
   javascriptflavors_elm: SortOptions
   javascriptflavors_clojurescript: SortOptions
   javascriptflavors_purescript: SortOptions
-  javascriptflavors_other: SortOptions
+  javascriptflavors_otherjavascriptflavors: SortOptions
   javascriptflavors_overallhappiness: SortOptions
   frontendframeworks_react: SortOptions
   frontendframeworks_vue: SortOptions
@@ -1251,14 +1167,14 @@ input ResponseSortInput {
   frontendframeworks_preact: SortOptions
   frontendframeworks_ember: SortOptions
   frontendframeworks_svelte: SortOptions
-  frontendframeworks_other: SortOptions
+  frontendframeworks_otherfrontendframeworks: SortOptions
   frontendframeworks_overallhappiness: SortOptions
   datalayer_redux: SortOptions
   datalayer_apollo: SortOptions
   datalayer_graphql: SortOptions
   datalayer_mobx: SortOptions
   datalayer_relay: SortOptions
-  datalayer_other: SortOptions
+  datalayer_otherdatalayertools: SortOptions
   datalayer_overallhappiness: SortOptions
   backendframeworks_express: SortOptions
   backendframeworks_nextjs: SortOptions
@@ -1268,7 +1184,7 @@ input ResponseSortInput {
   backendframeworks_feathersjs: SortOptions
   backendframeworks_nuxtjs: SortOptions
   backendframeworks_gatsbyjs: SortOptions
-  backendframeworks_other: SortOptions
+  backendframeworks_otherbackendframeworks: SortOptions
   backendframeworks_overallhappiness: SortOptions
   testing_jest: SortOptions
   testing_mocha: SortOptions
@@ -1278,7 +1194,7 @@ input ResponseSortInput {
   testing_ava: SortOptions
   testing_jasmine: SortOptions
   testing_puppeteer: SortOptions
-  testing_other: SortOptions
+  testing_othertestingtools: SortOptions
   testing_overallhappiness: SortOptions
   mobiledesktop_electron: SortOptions
   mobiledesktop_reactnative: SortOptions
@@ -1287,7 +1203,7 @@ input ResponseSortInput {
   mobiledesktop_ionic: SortOptions
   mobiledesktop_nwjs: SortOptions
   mobiledesktop_expo: SortOptions
-  mobiledesktop_other: SortOptions
+  mobiledesktop_othermobiledesktoptools: SortOptions
   mobiledesktop_overallhappiness: SortOptions
   othertools_utilities: SortOptions
   othertools_otherutilities: SortOptions
@@ -1350,9 +1266,12 @@ type Survey {
   name: String 
   year: Float 
   status: Float 
-  pagePath: String 
   slug: String 
+  imageUrl: String 
+  pagePath: String 
   currentUserResponse: Response 
+  createdAtFormatted(format: String = "YYYY/MM/DD"): String 
+  updatedAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
 
 
@@ -1369,7 +1288,7 @@ input SingleSurveyInput {
   id: String
 
   # backwards-compatibility
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   selector: SurveySelectorUniqueInput
 
   # options (backwards-compatibility)
@@ -1377,6 +1296,8 @@ input SingleSurveyInput {
   enableCache: Boolean
   # Return null instead of throwing MissingDocumentError
   allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
 }
 
 input MultiSurveyInput {
@@ -1390,7 +1311,7 @@ input MultiSurveyInput {
 
   # backwards-compatibility
   # A JSON object that contains the query terms used to fetch data
-  "Deprecated (use 'filter/id' fields instead)."
+  # Deprecated (use 'filter/id' fields instead).
   terms: JSON
 
   # options (backwards-compatibility)
@@ -1398,7 +1319,9 @@ input MultiSurveyInput {
   enableCache: Boolean
   # Whether to calculate totalCount for this query
   enableTotal: Boolean
-  
+  # An identifier to name the query's execution context
+  contextName: String
+
 }
 
 type SingleSurveyOutput{
@@ -1416,30 +1339,38 @@ type SurveyMutationOutput{
 
 input CreateSurveyInput {
   data: CreateSurveyDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input CreateSurveyDataInput {
   name: String 
   year: Float 
   status: Float 
+  imageUrl: String 
 }
 
 input UpdateSurveyInput{
   filter: SurveyFilterInput
   id: String
   data: UpdateSurveyDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input UpsertSurveyInput{
   filter: SurveyFilterInput
   id: String
   data: UpdateSurveyDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
 }
 
 input UpdateSurveyDataInput {
   name: String 
   year: Float 
   status: Float 
+  imageUrl: String 
 }
 
 input SurveyFilterInput {
@@ -1455,8 +1386,9 @@ input SurveyFilterInput {
   name: String_Selector
   year: Float_Selector
   status: Float_Selector
-  pagePath: String_Selector
   slug: String_Selector
+  imageUrl: String_Selector
+  pagePath: String_Selector
 
 }
 
@@ -1468,8 +1400,9 @@ input SurveySortInput {
   name: SortOptions
   year: SortOptions
   status: SortOptions
-  pagePath: SortOptions
   slug: SortOptions
+  imageUrl: SortOptions
+  pagePath: SortOptions
   currentUserResponse: SortOptions
 }
 
@@ -1490,7 +1423,7 @@ input SurveySelectorUniqueInput {
 
 
 type Query {
-  SiteData: Site
+  siteData: Site
   
   currentUser: User
   
@@ -1500,11 +1433,11 @@ type Query {
   # A list of User documents matching a set of query terms
   users(input: MultiUserInput):  MultiUserOutput
   
-  emails(input: MultiEmailInput):  MultiEmailOutput
+  # A single AnalyticsEvent document fetched by ID or slug
+  analyticsEvent(input: SingleAnalyticsEventInput!): SingleAnalyticsEventOutput
   
-  settings(input: MultiSettingInput):  MultiSettingOutput
-  
-  callbacks(input: MultiCallbackInput):  MultiCallbackOutput
+  # A list of AnalyticsEvent documents matching a set of query terms
+  analyticsEvents(input: MultiAnalyticsEventInput):  MultiAnalyticsEventOutput
   
   # A single Response document fetched by ID or slug
   response(input: SingleResponseInput!): SingleResponseOutput
@@ -1522,99 +1455,122 @@ type Query {
   
 
 type Mutation {
+  authenticateWithPassword(input: AuthPasswordInput): AuthResult
+
+  logout: LogoutResult
+
+  signup(input: SignupInput): SignupResult
+
+  setPassword(input: SetPasswordInput): AuthResult
+
+  sendResetPasswordEmail(input: AuthEmailInput): Boolean
+
+  resetPassword(input: ResetPasswordInput): ResetPasswordResult
+
+  sendVerificationEmail(input: AuthEmailInput): Boolean
+
+  verifyEmail(input: VerifyEmailInput): VerifyEmailResult
+
   # Mutation for creating new User documents
   createUser(
   input: CreateUserInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   data: CreateUserDataInput
 ) : UserMutationOutput
 
   # Mutation for updating a User document
   updateUser(
   input: UpdateUserInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: UserSelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
-  data: UpdateUserDataInput 
+  # Deprecated (use 'input' field instead).
+  data: UpdateUserDataInput
 ) : UserMutationOutput
 
   # Mutation for upserting a User document
   upsertUser(
   input: UpsertUserInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: UserSelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   data: UpdateUserDataInput
 ) : UserMutationOutput
 
   # Mutation for deleting a User document
   deleteUser(
   input: DeleteUserInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: UserSelectorUniqueInput
 ) : UserMutationOutput
+
+  # Mutation for creating new AnalyticsEvent documents
+  createAnalyticsEvent(
+  input: CreateAnalyticsEventInput,
+  # Deprecated (use 'input' field instead).
+  data: CreateAnalyticsEventDataInput
+) : AnalyticsEventMutationOutput
 
   # Mutation for creating new Response documents
   createResponse(
   input: CreateResponseInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   data: CreateResponseDataInput
 ) : ResponseMutationOutput
 
   # Mutation for updating a Response document
   updateResponse(
   input: UpdateResponseInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: ResponseSelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
-  data: UpdateResponseDataInput 
+  # Deprecated (use 'input' field instead).
+  data: UpdateResponseDataInput
 ) : ResponseMutationOutput
 
   # Mutation for upserting a Response document
   upsertResponse(
   input: UpsertResponseInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: ResponseSelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   data: UpdateResponseDataInput
 ) : ResponseMutationOutput
 
   # Mutation for deleting a Response document
   deleteResponse(
   input: DeleteResponseInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: ResponseSelectorUniqueInput
 ) : ResponseMutationOutput
 
   # Mutation for creating new Survey documents
   createSurvey(
   input: CreateSurveyInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   data: CreateSurveyDataInput
 ) : SurveyMutationOutput
 
   # Mutation for updating a Survey document
   updateSurvey(
   input: UpdateSurveyInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: SurveySelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
-  data: UpdateSurveyDataInput 
+  # Deprecated (use 'input' field instead).
+  data: UpdateSurveyDataInput
 ) : SurveyMutationOutput
 
   # Mutation for upserting a Survey document
   upsertSurvey(
   input: UpsertSurveyInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: SurveySelectorUniqueInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   data: UpdateSurveyDataInput
 ) : SurveyMutationOutput
 
   # Mutation for deleting a Survey document
   deleteSurvey(
   input: DeleteSurveyInput,
-  "Deprecated (use 'input' field instead)."
+  # Deprecated (use 'input' field instead).
   selector: SurveySelectorUniqueInput
 ) : SurveyMutationOutput
 

@@ -54,11 +54,11 @@ const SurveyItem = ({ survey, history, currentUser }) => {
           {currentUserResponse && !isEmpty(currentUserResponse) ? (
             <LinkContainer to={currentUserResponse.pagePath}>
               <Components.Button>
-                {status === statuses.open ? 'Continue Survey »' : 'Review Survey »'}
+                {status === statuses.published ? 'Continue Survey »' : 'Review Survey »'}
               </Components.Button>
             </LinkContainer>
           ) : (
-            status === statuses.open ? (
+            status === statuses.published ? (
               <Components.MutationButton
                 label="Start Survey »"
                 variant="primary"

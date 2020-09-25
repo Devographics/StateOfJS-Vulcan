@@ -4,13 +4,13 @@ Package.describe({
 
 Package.onUse(function (api) {
 
-  const version='1.14.0';
+  const version='1.16.0';
 
   api.use([
 
     // Here are our dependencies:
 
-    'fourseven:scss@4.12.0',
+    'fourseven:scss',
 
     // vulcan core
     'promise',

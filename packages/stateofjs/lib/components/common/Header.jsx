@@ -7,11 +7,9 @@ import Nav from 'react-bootstrap/Nav';
 import { IndexLinkContainer } from 'react-router-bootstrap';
 
 const NavLink = ({ to, label }) => (
-  <Nav.Item eventKey={to}>
     <IndexLinkContainer to={to}>
       <Nav.Link>{label}</Nav.Link>
     </IndexLinkContainer>
-  </Nav.Item>
 );
 
 const Header = ({ currentUser }) => (
@@ -24,9 +22,9 @@ const Header = ({ currentUser }) => (
           {currentUser && <NavLink to="/account" label="Account" />}
           {Users.isAdmin(currentUser) && (
             <>
-              <NavLink to="/admin/surveys" label="Surveys Dashboard" />{' '}
-              <NavLink to="/admin/responses" label="Responses Dashboard" />
-              <NavLink to="/admin/users" label="Users Dashboard" />
+              <NavLink to="/admin/surveys" label="Surveys" />{' '}
+              <NavLink to="/admin/responses" label="Responses" />
+              <NavLink to="/admin/users" label="Users" />
             </>
           )}
         </Nav>

@@ -11,7 +11,7 @@ import {
   runCallbacks,
 } from 'meteor/vulcan:core';
 import { intlShape } from 'meteor/vulcan:i18n';
-import { withApollo } from 'react-apollo';
+import { withApollo } from '@apollo/client';
 import TrackerComponent from './TrackerComponent.jsx';
 
 import {

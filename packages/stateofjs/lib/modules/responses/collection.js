@@ -17,7 +17,7 @@ export const Responses = createCollection({
     // canUpdate: ['owners', 'admins'],
     canUpdate: ({ user, document: response }) => {
       const survey = Surveys.findOne(response.surveyId);
-      return Users.isAdmin(user) || user._id === response.userId && survey.status === statuses.open
+      return Users.isAdmin(user) || user._id === response.userId && survey.status === statuses.published
     },
     canDelete: ['admins'],
   },
