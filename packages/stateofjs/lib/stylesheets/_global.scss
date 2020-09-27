@@ -192,3 +192,7 @@ Page-specific styles
 .nav-item{
   margin-right: $spacing;
 }
+
+pre, code{
+  color: $text-color;
+}

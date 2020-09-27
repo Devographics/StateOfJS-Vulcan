@@ -16,10 +16,10 @@ registerFragment(/* GraphQL */ `
     }
 
     survey {
-      _id
       name
       year
       status
+      slug
     }
   }
 `);
@@ -33,7 +33,7 @@ registerFragment(/* GraphQL */ `
     pagePath
     isSynced
 
-    aboutyou_youremail
+    # aboutyou_youremail
     referrer
     source
 

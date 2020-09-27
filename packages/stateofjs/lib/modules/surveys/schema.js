@@ -65,8 +65,10 @@ const schema = {
     type: String,
     optional: true,
     canRead: ['guests'],
-    onCreate: ({ document }) => Utils.slugify(document.name),
-    onUpdate: ({ document }) => Utils.slugify(document.name),
+    canCreate: ['admins'],
+    canUpdate: ['admins'],
+    // onCreate: ({ document }) => Utils.slugify(document.name),
+    // onUpdate: ({ document }) => Utils.slugify(document.name),
   },
   imageUrl: {
     type: String,

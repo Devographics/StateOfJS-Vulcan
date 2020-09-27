@@ -425,7 +425,7 @@ export class AccountsLoginFormInner extends TrackerComponent {
     if (
       currentUser &&
       formState == STATES.PROFILE
-      // note: user.services is not published so change password link would never be shown
+      // note: user.services is not open so change password link would never be shown
       // && (currentUser.services && 'password' in currentUser.services)
     ) {
       loginButtons.push({

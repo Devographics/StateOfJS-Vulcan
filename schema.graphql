@@ -163,6 +163,20 @@ directive @intl on FIELD_DEFINITION
     email: String
   }
 
+type EmailResponse {
+  from: String
+  to: String
+  subject: String
+  success: JSON
+  error: String
+}
+type Survey {
+  slug: String 
+  name: String 
+  year: Float 
+  status: Float 
+  imageUrl: String 
+}
 
 # A user object
 type User {
@@ -183,6 +197,7 @@ type User {
   pageUrl: String 
   pagePath: String 
   editUrl: String 
+  responses: [Response] 
   createdAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
 
@@ -347,6 +362,333 @@ input UserSelectorUniqueInput {
 }
 
 
+# Type for Emails
+type Email {
+  name: String 
+  template: String 
+  subject: String 
+  testPath: String 
+}
+
+
+input DeleteEmailInput{
+  filter: EmailFilterInput
+  id: String
+}
+
+input SingleEmailInput {
+  # filtering
+  filter: EmailFilterInput
+  sort: EmailSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  # Deprecated (use 'filter/id' fields instead).
+  selector: EmailSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+}
+
+input MultiEmailInput {
+
+  # filtering
+  filter: EmailFilterInput
+  sort: EmailSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  # Deprecated (use 'filter/id' fields instead).
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+
+}
+
+type SingleEmailOutput{
+  result: Email
+}
+
+type  MultiEmailOutput{
+  results: [Email]
+  totalCount: Int
+}
+
+type EmailMutationOutput{
+  data: Email
+}
+
+input EmailFilterInput {
+  _and: [EmailFilterInput]
+  _not: EmailFilterInput
+  _or: [EmailFilterInput]
+
+
+  name: String_Selector
+  template: String_Selector
+  subject: String_Selector
+  testPath: String_Selector
+}
+
+input EmailSortInput {
+  name: SortOptions
+  template: SortOptions
+  subject: SortOptions
+  testPath: SortOptions
+}
+
+input EmailSelectorInput {
+  _and: [EmailSelectorInput]
+  _or: [EmailSelectorInput]
+
+}
+
+input EmailSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Settings
+type Setting {
+  name: String 
+  value: JSON 
+  defaultValue: JSON 
+  isPublic: Boolean 
+  description: String 
+}
+
+
+input DeleteSettingInput{
+  filter: SettingFilterInput
+  id: String
+}
+
+input SingleSettingInput {
+  # filtering
+  filter: SettingFilterInput
+  sort: SettingSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  # Deprecated (use 'filter/id' fields instead).
+  selector: SettingSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+}
+
+input MultiSettingInput {
+
+  # filtering
+  filter: SettingFilterInput
+  sort: SettingSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  # Deprecated (use 'filter/id' fields instead).
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+
+}
+
+type SingleSettingOutput{
+  result: Setting
+}
+
+type  MultiSettingOutput{
+  results: [Setting]
+  totalCount: Int
+}
+
+type SettingMutationOutput{
+  data: Setting
+}
+
+input SettingFilterInput {
+  _and: [SettingFilterInput]
+  _not: SettingFilterInput
+  _or: [SettingFilterInput]
+
+
+  name: String_Selector
+
+
+  isPublic: Boolean_Selector
+  description: String_Selector
+}
+
+input SettingSortInput {
+  name: SortOptions
+  value: SortOptions
+  defaultValue: SortOptions
+  isPublic: SortOptions
+  description: SortOptions
+}
+
+input SettingSelectorInput {
+  _and: [SettingSelectorInput]
+  _or: [SettingSelectorInput]
+
+}
+
+input SettingSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for Callbacks
+type Callback {
+  name: String 
+  iterator: JSON 
+  properties: [JSON] 
+  runs: String 
+  newSyntax: Boolean 
+  returns: String 
+  description: String 
+  hooks: [String] 
+}
+
+
+input DeleteCallbackInput{
+  filter: CallbackFilterInput
+  id: String
+}
+
+input SingleCallbackInput {
+  # filtering
+  filter: CallbackFilterInput
+  sort: CallbackSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  # Deprecated (use 'filter/id' fields instead).
+  selector: CallbackSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+}
+
+input MultiCallbackInput {
+
+  # filtering
+  filter: CallbackFilterInput
+  sort: CallbackSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  # Deprecated (use 'filter/id' fields instead).
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+
+}
+
+type SingleCallbackOutput{
+  result: Callback
+}
+
+type  MultiCallbackOutput{
+  results: [Callback]
+  totalCount: Int
+}
+
+type CallbackMutationOutput{
+  data: Callback
+}
+
+input CallbackFilterInput {
+  _and: [CallbackFilterInput]
+  _not: CallbackFilterInput
+  _or: [CallbackFilterInput]
+
+
+  name: String_Selector
+
+
+  runs: String_Selector
+  newSyntax: Boolean_Selector
+  returns: String_Selector
+  description: String_Selector
+
+}
+
+input CallbackSortInput {
+  name: SortOptions
+  iterator: SortOptions
+  properties: SortOptions
+  runs: SortOptions
+  newSyntax: SortOptions
+  returns: SortOptions
+  description: SortOptions
+  hooks: SortOptions
+}
+
+input CallbackSelectorInput {
+  _and: [CallbackSelectorInput]
+  _or: [CallbackSelectorInput]
+
+}
+
+input CallbackSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
 # Type for AnalyticsEvents
 type AnalyticsEvent {
   createdAt: Date 
@@ -477,163 +819,237 @@ type Response {
   referrer: String 
   source: String 
   pagePath: String 
-  surveyId: String 
-  survey: Survey 
+  surveySlug: String 
   # Example: <code>const { foo } = bar</code>
-  syntax_destructuring: String 
+  js2019_features_destructuring: String 
   # Example: <code>[...array1, ...array2]</code>
-  syntax_spreadoperator: String 
+  js2019_features_spreadoperator: String 
   # Example: <code>const foo = () => {}</code>
-  syntax_arrowfunctions: String 
-  language_proxies: String 
-  language_asyncawait: String 
-  language_promises: String 
-  language_decorators: String 
-  datastructures_maps: String 
-  datastructures_sets: String 
-  datastructures_typedarrays: String 
-  datastructures_arrayprototypeflat: String 
-  browserapis_serviceworkers: String 
-  browserapis_localstorage: String 
-  browserapis_i18n: String 
-  browserapis_webcomponents: String 
-  browserapis_webaudioapi: String 
-  browserapis_webgl: String 
-  browserapis_webanimationsapi: String 
-  browserapis_webrtc: String 
-  browserapis_webspeechapi: String 
-  browserapis_webvr: String 
-  browserapis_websocket: String 
-  browserapis_fetchapi: String 
-  otherfeatures_progressivewebappspwa: String 
-  otherfeatures_webassemblywasm: String 
-  patterns_objectorientedprogramming: String 
-  patterns_functionalprogramming: String 
-  patterns_reactiveprogramming: String 
-  javascriptflavors_typescript: String 
-  javascriptflavors_reason: String 
-  javascriptflavors_elm: String 
-  javascriptflavors_clojurescript: String 
-  javascriptflavors_purescript: String 
+  js2019_features_arrowfunctions: String 
+  js2019_features_proxies: String 
+  js2019_features_asyncawait: String 
+  js2019_features_promises: String 
+  js2019_features_decorators: String 
+  js2019_features_maps: String 
+  js2019_features_sets: String 
+  js2019_features_typedarrays: String 
+  js2019_features_arrayprototypeflat: String 
+  js2019_features_serviceworkers: String 
+  js2019_features_localstorage: String 
+  js2019_features_i18n: String 
+  js2019_features_webcomponents: String 
+  js2019_features_webaudioapi: String 
+  js2019_features_webgl: String 
+  js2019_features_webanimationsapi: String 
+  js2019_features_webrtc: String 
+  js2019_features_webspeechapi: String 
+  js2019_features_webvr: String 
+  js2019_features_websocket: String 
+  js2019_features_fetchapi: String 
+  js2019_features_progressivewebappspwa: String 
+  js2019_features_webassemblywasm: String 
+  js2019_patterns_objectorientedprogramming: String 
+  js2019_patterns_functionalprogramming: String 
+  js2019_patterns_reactiveprogramming: String 
+  js2019_tools_typescript: String 
+  js2019_tools_reason: String 
+  js2019_tools_elm: String 
+  js2019_tools_clojurescript: String 
+  js2019_tools_purescript: String 
   # Other JavaScript flavors you use not mentioned in the list above
-  javascriptflavors_otherjavascriptflavors: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of JavaScript flavors?
-  javascriptflavors_overallhappiness: Float 
-  frontendframeworks_react: String 
-  frontendframeworks_vue: String 
-  frontendframeworks_angular: String 
-  frontendframeworks_preact: String 
-  frontendframeworks_ember: String 
-  frontendframeworks_svelte: String 
-  # Other Front-end frameworks you use not mentioned in the list above
-  frontendframeworks_otherfrontendframeworks: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of front-end frameworks?
-  frontendframeworks_overallhappiness: Float 
-  datalayer_redux: String 
-  datalayer_apollo: String 
-  datalayer_graphql: String 
-  datalayer_mobx: String 
-  datalayer_relay: String 
-  # Other data layer tools you use not mentioned in the list above
-  datalayer_otherdatalayertools: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of data layer technologies?
-  datalayer_overallhappiness: Float 
-  backendframeworks_express: String 
-  backendframeworks_nextjs: String 
-  backendframeworks_koa: String 
-  backendframeworks_meteor: String 
-  backendframeworks_sails: String 
-  backendframeworks_feathersjs: String 
-  backendframeworks_nuxtjs: String 
-  backendframeworks_gatsbyjs: String 
-  # Other back-end frameworks you use not mentioned in the list above
-  backendframeworks_otherbackendframeworks: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of back-end frameworks?
-  backendframeworks_overallhappiness: Float 
-  testing_jest: String 
-  testing_mocha: String 
-  testing_storybook: String 
-  testing_cypress: String 
-  testing_enzyme: String 
-  testing_ava: String 
-  testing_jasmine: String 
-  testing_puppeteer: String 
-  # Other testing tools you use not mentioned in the list above
-  testing_othertestingtools: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of testing tools?
-  testing_overallhappiness: Float 
-  mobiledesktop_electron: String 
-  mobiledesktop_reactnative: String 
-  mobiledesktop_nativeapps: String 
-  mobiledesktop_cordova: String 
-  mobiledesktop_ionic: String 
-  mobiledesktop_nwjs: String 
-  mobiledesktop_expo: String 
-  # Other mobile & desktop tools you use not mentioned in the list above
-  mobiledesktop_othermobiledesktoptools: String 
+  js2019_tools_otherjavascriptflavors: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of mobile & desktop tools?
-  mobiledesktop_overallhappiness: Float 
+  js2019_tools_overallhappiness: Float 
+  js2019_tools_react: String 
+  js2019_tools_vue: String 
+  js2019_tools_angular: String 
+  js2019_tools_preact: String 
+  js2019_tools_ember: String 
+  js2019_tools_svelte: String 
+  # Other Front-end frameworks you use not mentioned in the list above
+  js2019_tools_otherfrontendframeworks: String 
+  js2019_tools_redux: String 
+  js2019_tools_apollo: String 
+  js2019_tools_graphql: String 
+  js2019_tools_mobx: String 
+  js2019_tools_relay: String 
+  # Other data layer tools you use not mentioned in the list above
+  js2019_tools_otherdatalayertools: String 
+  js2019_tools_express: String 
+  js2019_tools_nextjs: String 
+  js2019_tools_koa: String 
+  js2019_tools_meteor: String 
+  js2019_tools_sails: String 
+  js2019_tools_feathersjs: String 
+  js2019_tools_nuxtjs: String 
+  js2019_tools_gatsbyjs: String 
+  # Other back-end frameworks you use not mentioned in the list above
+  js2019_tools_otherbackendframeworks: String 
+  js2019_tools_jest: String 
+  js2019_tools_mocha: String 
+  js2019_tools_storybook: String 
+  js2019_tools_cypress: String 
+  js2019_tools_enzyme: String 
+  js2019_tools_ava: String 
+  js2019_tools_jasmine: String 
+  js2019_tools_puppeteer: String 
+  # Other testing tools you use not mentioned in the list above
+  js2019_tools_othertestingtools: String 
+  js2019_tools_electron: String 
+  js2019_tools_reactnative: String 
+  js2019_tools_nativeapps: String 
+  js2019_tools_cordova: String 
+  js2019_tools_ionic: String 
+  js2019_tools_nwjs: String 
+  js2019_tools_expo: String 
+  # Other mobile & desktop tools you use not mentioned in the list above
+  js2019_tools_othermobiledesktoptools: String 
   # Which JavaScript utilities do you regularly use?
-  othertools_utilities: [String] 
+  js2019_othertools_utilities: [String] 
   # Other utilities you use not mentioned in the list above
-  othertools_otherutilities: String 
+  js2019_othertools_otherutilities: String 
   # Which text editor(s) do you regularly use?
-  othertools_texteditors: [String] 
+  js2019_othertools_texteditors: [String] 
   # Other text editors you use not mentioned in the list above
-  othertools_othereditors: String 
+  js2019_othertools_othereditors: String 
   # Which browser(s) do you work in primarily during initial development?
-  othertools_browsers: [String] 
+  js2019_othertools_browsers: [String] 
   # Other browsers you use not mentioned in the list above
-  othertools_otherbrowsers: String 
+  js2019_othertools_otherbrowsers: String 
   # Which build tools do you use to compile and bundle your code?
-  othertools_buildtools: [String] 
+  js2019_othertools_buildtools: [String] 
   # Other build tools you use not mentioned in the list above
-  othertools_otherbuildtools: String 
+  js2019_othertools_otherbuildtools: String 
   # Which other languages do you code in besides JavaScript and its flavors?
-  othertools_nonjslanguages: [String] 
+  js2019_othertools_nonjslanguages: [String] 
   # Other languages you use not mentioned in the list above
-  othertools_otherlanguages: String 
+  js2019_othertools_otherlanguages: String 
   # Which JavaScript-related blogs/magazines/etc. do you read?
-  resources_blogsnewsmagazines: [String] 
+  js2019_resources_blogsnewsmagazines: [String] 
   # Other blogs, etc. you read not mentioned in the list above
-  resources_otherblogs: String 
+  js2019_resources_otherblogs: String 
   # Which JavaScript-related sites/courses/etc. do you consult?
-  resources_sitescourses: [String] 
+  js2019_resources_sitescourses: [String] 
   # Other sites, courses, etc. you consult not mentioned in the list above
-  resources_othercourses: String 
+  js2019_resources_othercourses: String 
   # Which JavaScript or programming-related podcasts do you listen to?
-  resources_podcasts: [String] 
+  js2019_resources_podcasts: [String] 
   # Other podcasts you listen to not mentioned in the list above
-  resources_otherpodcasts: String 
-  opinionquestions_javascriptismovingintherightdirection: Float 
-  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
-  opinionquestions_javascriptisoverusedonline: Float 
-  opinionquestions_ienjoybuildingjavascriptapps: Float 
-  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
-  opinionquestions_thejavascriptecosystemischangingtoofast: Float 
+  js2019_resources_otherpodcasts: String 
+  js2019_opinions_javascriptismovingintherightdirection: Float 
+  js2019_opinions_buildingjavascriptappsisoverlycomplexrightnow: Float 
+  js2019_opinions_javascriptisoverusedonline: Float 
+  js2019_opinions_ienjoybuildingjavascriptapps: Float 
+  js2019_opinions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
+  js2019_opinions_thejavascriptecosystemischangingtoofast: Float 
   # Features you'd like to see in JavaScript one day.
-  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
+  js2019_opinions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
   # How long you've been writing JavaScript.
-  aboutyou_yearsofexperience: String 
+  js2019_userinfo_yearsofexperience: String 
   # How do you introduce yourself at parties?
-  aboutyou_jobtitle: String 
+  js2019_userinfo_jobtitle: String 
   # Other job title you use not mentioned in the list above
-  aboutyou_otherjobtitle: String 
+  js2019_userinfo_otherjobtitle: String 
   # How proficient are you at writing CSS? (pick the most advanced option corresponding to your skills)
-  aboutyou_cssproficiency: String 
+  js2019_userinfo_cssproficiency: String 
   # How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)
-  aboutyou_backendproficiency: String 
-  aboutyou_companysize: String 
+  js2019_userinfo_backendproficiency: String 
+  js2019_userinfo_companysize: String 
   # In USD
-  aboutyou_yearlysalary: String 
-  aboutyou_howdidyoufindoutaboutthissurvey: String 
-  aboutyou_yourgender: String 
+  js2019_userinfo_yearlysalary: String 
+  js2019_userinfo_howdidyoufindoutaboutthissurvey: String 
+  js2019_userinfo_yourgender: String 
   # Other gender not mentioned in the list above
-  aboutyou_othergender: String 
+  js2019_userinfo_othergender: String 
   # Your country of residence
-  aboutyou_yourcountry: String 
+  js2019_userinfo_yourcountry: String 
   # If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
-  aboutyou_youremail: String 
+  js2019_userinfo_youremail: String 
+  # Example: <code>const { foo } = bar</code>
+  css2020_features_destructuring: String 
+  # Example: <code>[...array1, ...array2]</code>
+  css2020_features_spreadoperator: String 
+  # Example: <code>const foo = () => {}</code>
+  css2020_features_arrowfunctions: String 
+  css2020_features_proxies: String 
+  css2020_features_asyncawait: String 
+  css2020_features_promises: String 
+  css2020_features_decorators: String 
+  css2020_features_maps: String 
+  css2020_features_sets: String 
+  css2020_features_typedarrays: String 
+  css2020_features_arrayprototypeflat: String 
+  css2020_features_serviceworkers: String 
+  css2020_features_localstorage: String 
+  css2020_features_i18n: String 
+  css2020_features_webcomponents: String 
+  css2020_features_webaudioapi: String 
+  css2020_features_webgl: String 
+  css2020_features_webanimationsapi: String 
+  css2020_features_webrtc: String 
+  css2020_features_webspeechapi: String 
+  css2020_features_webvr: String 
+  css2020_features_websocket: String 
+  css2020_features_fetchapi: String 
+  css2020_features_progressivewebappspwa: String 
+  css2020_features_webassemblywasm: String 
+  css2020_patterns_objectorientedprogramming: String 
+  css2020_patterns_functionalprogramming: String 
+  css2020_patterns_reactiveprogramming: String 
+  css2020_tools_typescript: String 
+  css2020_tools_reason: String 
+  css2020_tools_elm: String 
+  css2020_tools_clojurescript: String 
+  css2020_tools_purescript: String 
+  # Other CSS flavors you use not mentioned in the list above
+  css2020_tools_othercssflavors: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of mobile & desktop tools?
+  css2020_tools_overallhappiness: Float 
+  css2020_tools_react: String 
+  css2020_tools_vue: String 
+  css2020_tools_angular: String 
+  css2020_tools_preact: String 
+  css2020_tools_ember: String 
+  css2020_tools_svelte: String 
+  # Other Front-end frameworks you use not mentioned in the list above
+  css2020_tools_otherfrontendframeworks: String 
+  css2020_tools_redux: String 
+  css2020_tools_apollo: String 
+  css2020_tools_graphql: String 
+  css2020_tools_mobx: String 
+  css2020_tools_relay: String 
+  # Other data layer tools you use not mentioned in the list above
+  css2020_tools_otherdatalayertools: String 
+  css2020_tools_express: String 
+  css2020_tools_nextjs: String 
+  css2020_tools_koa: String 
+  css2020_tools_meteor: String 
+  css2020_tools_sails: String 
+  css2020_tools_feathersjs: String 
+  css2020_tools_nuxtjs: String 
+  css2020_tools_gatsbyjs: String 
+  # Other back-end frameworks you use not mentioned in the list above
+  css2020_tools_otherbackendframeworks: String 
+  css2020_tools_jest: String 
+  css2020_tools_mocha: String 
+  css2020_tools_storybook: String 
+  css2020_tools_cypress: String 
+  css2020_tools_enzyme: String 
+  css2020_tools_ava: String 
+  css2020_tools_jasmine: String 
+  css2020_tools_puppeteer: String 
+  # Other testing tools you use not mentioned in the list above
+  css2020_tools_othertestingtools: String 
+  css2020_tools_electron: String 
+  css2020_tools_reactnative: String 
+  css2020_tools_nativeapps: String 
+  css2020_tools_cordova: String 
+  css2020_tools_ionic: String 
+  css2020_tools_nwjs: String 
+  css2020_tools_expo: String 
+  # Other mobile & desktop tools you use not mentioned in the list above
+  css2020_tools_othermobiledesktoptools: String 
+  survey: Survey 
   createdAtFormatted(format: String = "YYYY/MM/DD"): String 
   updatedAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
@@ -715,121 +1131,190 @@ input CreateResponseDataInput {
   os: String 
   referrer: String 
   source: String 
-  surveyId: String 
-  syntax_destructuring: String 
-  syntax_spreadoperator: String 
-  syntax_arrowfunctions: String 
-  language_proxies: String 
-  language_asyncawait: String 
-  language_promises: String 
-  language_decorators: String 
-  datastructures_maps: String 
-  datastructures_sets: String 
-  datastructures_typedarrays: String 
-  datastructures_arrayprototypeflat: String 
-  browserapis_serviceworkers: String 
-  browserapis_localstorage: String 
-  browserapis_i18n: String 
-  browserapis_webcomponents: String 
-  browserapis_webaudioapi: String 
-  browserapis_webgl: String 
-  browserapis_webanimationsapi: String 
-  browserapis_webrtc: String 
-  browserapis_webspeechapi: String 
-  browserapis_webvr: String 
-  browserapis_websocket: String 
-  browserapis_fetchapi: String 
-  otherfeatures_progressivewebappspwa: String 
-  otherfeatures_webassemblywasm: String 
-  patterns_objectorientedprogramming: String 
-  patterns_functionalprogramming: String 
-  patterns_reactiveprogramming: String 
-  javascriptflavors_typescript: String 
-  javascriptflavors_reason: String 
-  javascriptflavors_elm: String 
-  javascriptflavors_clojurescript: String 
-  javascriptflavors_purescript: String 
-  javascriptflavors_otherjavascriptflavors: String 
-  javascriptflavors_overallhappiness: Float 
-  frontendframeworks_react: String 
-  frontendframeworks_vue: String 
-  frontendframeworks_angular: String 
-  frontendframeworks_preact: String 
-  frontendframeworks_ember: String 
-  frontendframeworks_svelte: String 
-  frontendframeworks_otherfrontendframeworks: String 
-  frontendframeworks_overallhappiness: Float 
-  datalayer_redux: String 
-  datalayer_apollo: String 
-  datalayer_graphql: String 
-  datalayer_mobx: String 
-  datalayer_relay: String 
-  datalayer_otherdatalayertools: String 
-  datalayer_overallhappiness: Float 
-  backendframeworks_express: String 
-  backendframeworks_nextjs: String 
-  backendframeworks_koa: String 
-  backendframeworks_meteor: String 
-  backendframeworks_sails: String 
-  backendframeworks_feathersjs: String 
-  backendframeworks_nuxtjs: String 
-  backendframeworks_gatsbyjs: String 
-  backendframeworks_otherbackendframeworks: String 
-  backendframeworks_overallhappiness: Float 
-  testing_jest: String 
-  testing_mocha: String 
-  testing_storybook: String 
-  testing_cypress: String 
-  testing_enzyme: String 
-  testing_ava: String 
-  testing_jasmine: String 
-  testing_puppeteer: String 
-  testing_othertestingtools: String 
-  testing_overallhappiness: Float 
-  mobiledesktop_electron: String 
-  mobiledesktop_reactnative: String 
-  mobiledesktop_nativeapps: String 
-  mobiledesktop_cordova: String 
-  mobiledesktop_ionic: String 
-  mobiledesktop_nwjs: String 
-  mobiledesktop_expo: String 
-  mobiledesktop_othermobiledesktoptools: String 
-  mobiledesktop_overallhappiness: Float 
-  othertools_utilities: [String] 
-  othertools_otherutilities: String 
-  othertools_texteditors: [String] 
-  othertools_othereditors: String 
-  othertools_browsers: [String] 
-  othertools_otherbrowsers: String 
-  othertools_buildtools: [String] 
-  othertools_otherbuildtools: String 
-  othertools_nonjslanguages: [String] 
-  othertools_otherlanguages: String 
-  resources_blogsnewsmagazines: [String] 
-  resources_otherblogs: String 
-  resources_sitescourses: [String] 
-  resources_othercourses: String 
-  resources_podcasts: [String] 
-  resources_otherpodcasts: String 
-  opinionquestions_javascriptismovingintherightdirection: Float 
-  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
-  opinionquestions_javascriptisoverusedonline: Float 
-  opinionquestions_ienjoybuildingjavascriptapps: Float 
-  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
-  opinionquestions_thejavascriptecosystemischangingtoofast: Float 
-  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
-  aboutyou_yearsofexperience: String 
-  aboutyou_jobtitle: String 
-  aboutyou_otherjobtitle: String 
-  aboutyou_cssproficiency: String 
-  aboutyou_backendproficiency: String 
-  aboutyou_companysize: String 
-  aboutyou_yearlysalary: String 
-  aboutyou_howdidyoufindoutaboutthissurvey: String 
-  aboutyou_yourgender: String 
-  aboutyou_othergender: String 
-  aboutyou_yourcountry: String 
-  aboutyou_youremail: String 
+  surveySlug: String 
+  js2019_features_destructuring: String 
+  js2019_features_spreadoperator: String 
+  js2019_features_arrowfunctions: String 
+  js2019_features_proxies: String 
+  js2019_features_asyncawait: String 
+  js2019_features_promises: String 
+  js2019_features_decorators: String 
+  js2019_features_maps: String 
+  js2019_features_sets: String 
+  js2019_features_typedarrays: String 
+  js2019_features_arrayprototypeflat: String 
+  js2019_features_serviceworkers: String 
+  js2019_features_localstorage: String 
+  js2019_features_i18n: String 
+  js2019_features_webcomponents: String 
+  js2019_features_webaudioapi: String 
+  js2019_features_webgl: String 
+  js2019_features_webanimationsapi: String 
+  js2019_features_webrtc: String 
+  js2019_features_webspeechapi: String 
+  js2019_features_webvr: String 
+  js2019_features_websocket: String 
+  js2019_features_fetchapi: String 
+  js2019_features_progressivewebappspwa: String 
+  js2019_features_webassemblywasm: String 
+  js2019_patterns_objectorientedprogramming: String 
+  js2019_patterns_functionalprogramming: String 
+  js2019_patterns_reactiveprogramming: String 
+  js2019_tools_typescript: String 
+  js2019_tools_reason: String 
+  js2019_tools_elm: String 
+  js2019_tools_clojurescript: String 
+  js2019_tools_purescript: String 
+  js2019_tools_otherjavascriptflavors: String 
+  js2019_tools_overallhappiness: Float 
+  js2019_tools_react: String 
+  js2019_tools_vue: String 
+  js2019_tools_angular: String 
+  js2019_tools_preact: String 
+  js2019_tools_ember: String 
+  js2019_tools_svelte: String 
+  js2019_tools_otherfrontendframeworks: String 
+  js2019_tools_redux: String 
+  js2019_tools_apollo: String 
+  js2019_tools_graphql: String 
+  js2019_tools_mobx: String 
+  js2019_tools_relay: String 
+  js2019_tools_otherdatalayertools: String 
+  js2019_tools_express: String 
+  js2019_tools_nextjs: String 
+  js2019_tools_koa: String 
+  js2019_tools_meteor: String 
+  js2019_tools_sails: String 
+  js2019_tools_feathersjs: String 
+  js2019_tools_nuxtjs: String 
+  js2019_tools_gatsbyjs: String 
+  js2019_tools_otherbackendframeworks: String 
+  js2019_tools_jest: String 
+  js2019_tools_mocha: String 
+  js2019_tools_storybook: String 
+  js2019_tools_cypress: String 
+  js2019_tools_enzyme: String 
+  js2019_tools_ava: String 
+  js2019_tools_jasmine: String 
+  js2019_tools_puppeteer: String 
+  js2019_tools_othertestingtools: String 
+  js2019_tools_electron: String 
+  js2019_tools_reactnative: String 
+  js2019_tools_nativeapps: String 
+  js2019_tools_cordova: String 
+  js2019_tools_ionic: String 
+  js2019_tools_nwjs: String 
+  js2019_tools_expo: String 
+  js2019_tools_othermobiledesktoptools: String 
+  js2019_othertools_utilities: [String] 
+  js2019_othertools_otherutilities: String 
+  js2019_othertools_texteditors: [String] 
+  js2019_othertools_othereditors: String 
+  js2019_othertools_browsers: [String] 
+  js2019_othertools_otherbrowsers: String 
+  js2019_othertools_buildtools: [String] 
+  js2019_othertools_otherbuildtools: String 
+  js2019_othertools_nonjslanguages: [String] 
+  js2019_othertools_otherlanguages: String 
+  js2019_resources_blogsnewsmagazines: [String] 
+  js2019_resources_otherblogs: String 
+  js2019_resources_sitescourses: [String] 
+  js2019_resources_othercourses: String 
+  js2019_resources_podcasts: [String] 
+  js2019_resources_otherpodcasts: String 
+  js2019_opinions_javascriptismovingintherightdirection: Float 
+  js2019_opinions_buildingjavascriptappsisoverlycomplexrightnow: Float 
+  js2019_opinions_javascriptisoverusedonline: Float 
+  js2019_opinions_ienjoybuildingjavascriptapps: Float 
+  js2019_opinions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
+  js2019_opinions_thejavascriptecosystemischangingtoofast: Float 
+  js2019_opinions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
+  js2019_userinfo_yearsofexperience: String 
+  js2019_userinfo_jobtitle: String 
+  js2019_userinfo_otherjobtitle: String 
+  js2019_userinfo_cssproficiency: String 
+  js2019_userinfo_backendproficiency: String 
+  js2019_userinfo_companysize: String 
+  js2019_userinfo_yearlysalary: String 
+  js2019_userinfo_howdidyoufindoutaboutthissurvey: String 
+  js2019_userinfo_yourgender: String 
+  js2019_userinfo_othergender: String 
+  js2019_userinfo_yourcountry: String 
+  js2019_userinfo_youremail: String 
+  css2020_features_destructuring: String 
+  css2020_features_spreadoperator: String 
+  css2020_features_arrowfunctions: String 
+  css2020_features_proxies: String 
+  css2020_features_asyncawait: String 
+  css2020_features_promises: String 
+  css2020_features_decorators: String 
+  css2020_features_maps: String 
+  css2020_features_sets: String 
+  css2020_features_typedarrays: String 
+  css2020_features_arrayprototypeflat: String 
+  css2020_features_serviceworkers: String 
+  css2020_features_localstorage: String 
+  css2020_features_i18n: String 
+  css2020_features_webcomponents: String 
+  css2020_features_webaudioapi: String 
+  css2020_features_webgl: String 
+  css2020_features_webanimationsapi: String 
+  css2020_features_webrtc: String 
+  css2020_features_webspeechapi: String 
+  css2020_features_webvr: String 
+  css2020_features_websocket: String 
+  css2020_features_fetchapi: String 
+  css2020_features_progressivewebappspwa: String 
+  css2020_features_webassemblywasm: String 
+  css2020_patterns_objectorientedprogramming: String 
+  css2020_patterns_functionalprogramming: String 
+  css2020_patterns_reactiveprogramming: String 
+  css2020_tools_typescript: String 
+  css2020_tools_reason: String 
+  css2020_tools_elm: String 
+  css2020_tools_clojurescript: String 
+  css2020_tools_purescript: String 
+  css2020_tools_othercssflavors: String 
+  css2020_tools_overallhappiness: Float 
+  css2020_tools_react: String 
+  css2020_tools_vue: String 
+  css2020_tools_angular: String 
+  css2020_tools_preact: String 
+  css2020_tools_ember: String 
+  css2020_tools_svelte: String 
+  css2020_tools_otherfrontendframeworks: String 
+  css2020_tools_redux: String 
+  css2020_tools_apollo: String 
+  css2020_tools_graphql: String 
+  css2020_tools_mobx: String 
+  css2020_tools_relay: String 
+  css2020_tools_otherdatalayertools: String 
+  css2020_tools_express: String 
+  css2020_tools_nextjs: String 
+  css2020_tools_koa: String 
+  css2020_tools_meteor: String 
+  css2020_tools_sails: String 
+  css2020_tools_feathersjs: String 
+  css2020_tools_nuxtjs: String 
+  css2020_tools_gatsbyjs: String 
+  css2020_tools_otherbackendframeworks: String 
+  css2020_tools_jest: String 
+  css2020_tools_mocha: String 
+  css2020_tools_storybook: String 
+  css2020_tools_cypress: String 
+  css2020_tools_enzyme: String 
+  css2020_tools_ava: String 
+  css2020_tools_jasmine: String 
+  css2020_tools_puppeteer: String 
+  css2020_tools_othertestingtools: String 
+  css2020_tools_electron: String 
+  css2020_tools_reactnative: String 
+  css2020_tools_nativeapps: String 
+  css2020_tools_cordova: String 
+  css2020_tools_ionic: String 
+  css2020_tools_nwjs: String 
+  css2020_tools_expo: String 
+  css2020_tools_othermobiledesktoptools: String 
 }
 
 input UpdateResponseInput{
@@ -856,121 +1341,190 @@ input UpdateResponseDataInput {
   os: String 
   referrer: String 
   source: String 
-  surveyId: String 
-  syntax_destructuring: String 
-  syntax_spreadoperator: String 
-  syntax_arrowfunctions: String 
-  language_proxies: String 
-  language_asyncawait: String 
-  language_promises: String 
-  language_decorators: String 
-  datastructures_maps: String 
-  datastructures_sets: String 
-  datastructures_typedarrays: String 
-  datastructures_arrayprototypeflat: String 
-  browserapis_serviceworkers: String 
-  browserapis_localstorage: String 
-  browserapis_i18n: String 
-  browserapis_webcomponents: String 
-  browserapis_webaudioapi: String 
-  browserapis_webgl: String 
-  browserapis_webanimationsapi: String 
-  browserapis_webrtc: String 
-  browserapis_webspeechapi: String 
-  browserapis_webvr: String 
-  browserapis_websocket: String 
-  browserapis_fetchapi: String 
-  otherfeatures_progressivewebappspwa: String 
-  otherfeatures_webassemblywasm: String 
-  patterns_objectorientedprogramming: String 
-  patterns_functionalprogramming: String 
-  patterns_reactiveprogramming: String 
-  javascriptflavors_typescript: String 
-  javascriptflavors_reason: String 
-  javascriptflavors_elm: String 
-  javascriptflavors_clojurescript: String 
-  javascriptflavors_purescript: String 
-  javascriptflavors_otherjavascriptflavors: String 
-  javascriptflavors_overallhappiness: Float 
-  frontendframeworks_react: String 
-  frontendframeworks_vue: String 
-  frontendframeworks_angular: String 
-  frontendframeworks_preact: String 
-  frontendframeworks_ember: String 
-  frontendframeworks_svelte: String 
-  frontendframeworks_otherfrontendframeworks: String 
-  frontendframeworks_overallhappiness: Float 
-  datalayer_redux: String 
-  datalayer_apollo: String 
-  datalayer_graphql: String 
-  datalayer_mobx: String 
-  datalayer_relay: String 
-  datalayer_otherdatalayertools: String 
-  datalayer_overallhappiness: Float 
-  backendframeworks_express: String 
-  backendframeworks_nextjs: String 
-  backendframeworks_koa: String 
-  backendframeworks_meteor: String 
-  backendframeworks_sails: String 
-  backendframeworks_feathersjs: String 
-  backendframeworks_nuxtjs: String 
-  backendframeworks_gatsbyjs: String 
-  backendframeworks_otherbackendframeworks: String 
-  backendframeworks_overallhappiness: Float 
-  testing_jest: String 
-  testing_mocha: String 
-  testing_storybook: String 
-  testing_cypress: String 
-  testing_enzyme: String 
-  testing_ava: String 
-  testing_jasmine: String 
-  testing_puppeteer: String 
-  testing_othertestingtools: String 
-  testing_overallhappiness: Float 
-  mobiledesktop_electron: String 
-  mobiledesktop_reactnative: String 
-  mobiledesktop_nativeapps: String 
-  mobiledesktop_cordova: String 
-  mobiledesktop_ionic: String 
-  mobiledesktop_nwjs: String 
-  mobiledesktop_expo: String 
-  mobiledesktop_othermobiledesktoptools: String 
-  mobiledesktop_overallhappiness: Float 
-  othertools_utilities: [String] 
-  othertools_otherutilities: String 
-  othertools_texteditors: [String] 
-  othertools_othereditors: String 
-  othertools_browsers: [String] 
-  othertools_otherbrowsers: String 
-  othertools_buildtools: [String] 
-  othertools_otherbuildtools: String 
-  othertools_nonjslanguages: [String] 
-  othertools_otherlanguages: String 
-  resources_blogsnewsmagazines: [String] 
-  resources_otherblogs: String 
-  resources_sitescourses: [String] 
-  resources_othercourses: String 
-  resources_podcasts: [String] 
-  resources_otherpodcasts: String 
-  opinionquestions_javascriptismovingintherightdirection: Float 
-  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float 
-  opinionquestions_javascriptisoverusedonline: Float 
-  opinionquestions_ienjoybuildingjavascriptapps: Float 
-  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
-  opinionquestions_thejavascriptecosystemischangingtoofast: Float 
-  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
-  aboutyou_yearsofexperience: String 
-  aboutyou_jobtitle: String 
-  aboutyou_otherjobtitle: String 
-  aboutyou_cssproficiency: String 
-  aboutyou_backendproficiency: String 
-  aboutyou_companysize: String 
-  aboutyou_yearlysalary: String 
-  aboutyou_howdidyoufindoutaboutthissurvey: String 
-  aboutyou_yourgender: String 
-  aboutyou_othergender: String 
-  aboutyou_yourcountry: String 
-  aboutyou_youremail: String 
+  surveySlug: String 
+  js2019_features_destructuring: String 
+  js2019_features_spreadoperator: String 
+  js2019_features_arrowfunctions: String 
+  js2019_features_proxies: String 
+  js2019_features_asyncawait: String 
+  js2019_features_promises: String 
+  js2019_features_decorators: String 
+  js2019_features_maps: String 
+  js2019_features_sets: String 
+  js2019_features_typedarrays: String 
+  js2019_features_arrayprototypeflat: String 
+  js2019_features_serviceworkers: String 
+  js2019_features_localstorage: String 
+  js2019_features_i18n: String 
+  js2019_features_webcomponents: String 
+  js2019_features_webaudioapi: String 
+  js2019_features_webgl: String 
+  js2019_features_webanimationsapi: String 
+  js2019_features_webrtc: String 
+  js2019_features_webspeechapi: String 
+  js2019_features_webvr: String 
+  js2019_features_websocket: String 
+  js2019_features_fetchapi: String 
+  js2019_features_progressivewebappspwa: String 
+  js2019_features_webassemblywasm: String 
+  js2019_patterns_objectorientedprogramming: String 
+  js2019_patterns_functionalprogramming: String 
+  js2019_patterns_reactiveprogramming: String 
+  js2019_tools_typescript: String 
+  js2019_tools_reason: String 
+  js2019_tools_elm: String 
+  js2019_tools_clojurescript: String 
+  js2019_tools_purescript: String 
+  js2019_tools_otherjavascriptflavors: String 
+  js2019_tools_overallhappiness: Float 
+  js2019_tools_react: String 
+  js2019_tools_vue: String 
+  js2019_tools_angular: String 
+  js2019_tools_preact: String 
+  js2019_tools_ember: String 
+  js2019_tools_svelte: String 
+  js2019_tools_otherfrontendframeworks: String 
+  js2019_tools_redux: String 
+  js2019_tools_apollo: String 
+  js2019_tools_graphql: String 
+  js2019_tools_mobx: String 
+  js2019_tools_relay: String 
+  js2019_tools_otherdatalayertools: String 
+  js2019_tools_express: String 
+  js2019_tools_nextjs: String 
+  js2019_tools_koa: String 
+  js2019_tools_meteor: String 
+  js2019_tools_sails: String 
+  js2019_tools_feathersjs: String 
+  js2019_tools_nuxtjs: String 
+  js2019_tools_gatsbyjs: String 
+  js2019_tools_otherbackendframeworks: String 
+  js2019_tools_jest: String 
+  js2019_tools_mocha: String 
+  js2019_tools_storybook: String 
+  js2019_tools_cypress: String 
+  js2019_tools_enzyme: String 
+  js2019_tools_ava: String 
+  js2019_tools_jasmine: String 
+  js2019_tools_puppeteer: String 
+  js2019_tools_othertestingtools: String 
+  js2019_tools_electron: String 
+  js2019_tools_reactnative: String 
+  js2019_tools_nativeapps: String 
+  js2019_tools_cordova: String 
+  js2019_tools_ionic: String 
+  js2019_tools_nwjs: String 
+  js2019_tools_expo: String 
+  js2019_tools_othermobiledesktoptools: String 
+  js2019_othertools_utilities: [String] 
+  js2019_othertools_otherutilities: String 
+  js2019_othertools_texteditors: [String] 
+  js2019_othertools_othereditors: String 
+  js2019_othertools_browsers: [String] 
+  js2019_othertools_otherbrowsers: String 
+  js2019_othertools_buildtools: [String] 
+  js2019_othertools_otherbuildtools: String 
+  js2019_othertools_nonjslanguages: [String] 
+  js2019_othertools_otherlanguages: String 
+  js2019_resources_blogsnewsmagazines: [String] 
+  js2019_resources_otherblogs: String 
+  js2019_resources_sitescourses: [String] 
+  js2019_resources_othercourses: String 
+  js2019_resources_podcasts: [String] 
+  js2019_resources_otherpodcasts: String 
+  js2019_opinions_javascriptismovingintherightdirection: Float 
+  js2019_opinions_buildingjavascriptappsisoverlycomplexrightnow: Float 
+  js2019_opinions_javascriptisoverusedonline: Float 
+  js2019_opinions_ienjoybuildingjavascriptapps: Float 
+  js2019_opinions_iwouldlikejavascripttobemymainprogramminglanguage: Float 
+  js2019_opinions_thejavascriptecosystemischangingtoofast: Float 
+  js2019_opinions_whatdoyoufeeliscurrentlymissingfromjavascript: String 
+  js2019_userinfo_yearsofexperience: String 
+  js2019_userinfo_jobtitle: String 
+  js2019_userinfo_otherjobtitle: String 
+  js2019_userinfo_cssproficiency: String 
+  js2019_userinfo_backendproficiency: String 
+  js2019_userinfo_companysize: String 
+  js2019_userinfo_yearlysalary: String 
+  js2019_userinfo_howdidyoufindoutaboutthissurvey: String 
+  js2019_userinfo_yourgender: String 
+  js2019_userinfo_othergender: String 
+  js2019_userinfo_yourcountry: String 
+  js2019_userinfo_youremail: String 
+  css2020_features_destructuring: String 
+  css2020_features_spreadoperator: String 
+  css2020_features_arrowfunctions: String 
+  css2020_features_proxies: String 
+  css2020_features_asyncawait: String 
+  css2020_features_promises: String 
+  css2020_features_decorators: String 
+  css2020_features_maps: String 
+  css2020_features_sets: String 
+  css2020_features_typedarrays: String 
+  css2020_features_arrayprototypeflat: String 
+  css2020_features_serviceworkers: String 
+  css2020_features_localstorage: String 
+  css2020_features_i18n: String 
+  css2020_features_webcomponents: String 
+  css2020_features_webaudioapi: String 
+  css2020_features_webgl: String 
+  css2020_features_webanimationsapi: String 
+  css2020_features_webrtc: String 
+  css2020_features_webspeechapi: String 
+  css2020_features_webvr: String 
+  css2020_features_websocket: String 
+  css2020_features_fetchapi: String 
+  css2020_features_progressivewebappspwa: String 
+  css2020_features_webassemblywasm: String 
+  css2020_patterns_objectorientedprogramming: String 
+  css2020_patterns_functionalprogramming: String 
+  css2020_patterns_reactiveprogramming: String 
+  css2020_tools_typescript: String 
+  css2020_tools_reason: String 
+  css2020_tools_elm: String 
+  css2020_tools_clojurescript: String 
+  css2020_tools_purescript: String 
+  css2020_tools_othercssflavors: String 
+  css2020_tools_overallhappiness: Float 
+  css2020_tools_react: String 
+  css2020_tools_vue: String 
+  css2020_tools_angular: String 
+  css2020_tools_preact: String 
+  css2020_tools_ember: String 
+  css2020_tools_svelte: String 
+  css2020_tools_otherfrontendframeworks: String 
+  css2020_tools_redux: String 
+  css2020_tools_apollo: String 
+  css2020_tools_graphql: String 
+  css2020_tools_mobx: String 
+  css2020_tools_relay: String 
+  css2020_tools_otherdatalayertools: String 
+  css2020_tools_express: String 
+  css2020_tools_nextjs: String 
+  css2020_tools_koa: String 
+  css2020_tools_meteor: String 
+  css2020_tools_sails: String 
+  css2020_tools_feathersjs: String 
+  css2020_tools_nuxtjs: String 
+  css2020_tools_gatsbyjs: String 
+  css2020_tools_otherbackendframeworks: String 
+  css2020_tools_jest: String 
+  css2020_tools_mocha: String 
+  css2020_tools_storybook: String 
+  css2020_tools_cypress: String 
+  css2020_tools_enzyme: String 
+  css2020_tools_ava: String 
+  css2020_tools_jasmine: String 
+  css2020_tools_puppeteer: String 
+  css2020_tools_othertestingtools: String 
+  css2020_tools_electron: String 
+  css2020_tools_reactnative: String 
+  css2020_tools_nativeapps: String 
+  css2020_tools_cordova: String 
+  css2020_tools_ionic: String 
+  css2020_tools_nwjs: String 
+  css2020_tools_expo: String 
+  css2020_tools_othermobiledesktoptools: String 
 }
 
 input ResponseFilterInput {
@@ -993,121 +1547,190 @@ input ResponseFilterInput {
   referrer: String_Selector
   source: String_Selector
   pagePath: String_Selector
-  surveyId: String_Selector
-  syntax_destructuring: String_Selector
-  syntax_spreadoperator: String_Selector
-  syntax_arrowfunctions: String_Selector
-  language_proxies: String_Selector
-  language_asyncawait: String_Selector
-  language_promises: String_Selector
-  language_decorators: String_Selector
-  datastructures_maps: String_Selector
-  datastructures_sets: String_Selector
-  datastructures_typedarrays: String_Selector
-  datastructures_arrayprototypeflat: String_Selector
-  browserapis_serviceworkers: String_Selector
-  browserapis_localstorage: String_Selector
-  browserapis_i18n: String_Selector
-  browserapis_webcomponents: String_Selector
-  browserapis_webaudioapi: String_Selector
-  browserapis_webgl: String_Selector
-  browserapis_webanimationsapi: String_Selector
-  browserapis_webrtc: String_Selector
-  browserapis_webspeechapi: String_Selector
-  browserapis_webvr: String_Selector
-  browserapis_websocket: String_Selector
-  browserapis_fetchapi: String_Selector
-  otherfeatures_progressivewebappspwa: String_Selector
-  otherfeatures_webassemblywasm: String_Selector
-  patterns_objectorientedprogramming: String_Selector
-  patterns_functionalprogramming: String_Selector
-  patterns_reactiveprogramming: String_Selector
-  javascriptflavors_typescript: String_Selector
-  javascriptflavors_reason: String_Selector
-  javascriptflavors_elm: String_Selector
-  javascriptflavors_clojurescript: String_Selector
-  javascriptflavors_purescript: String_Selector
-  javascriptflavors_otherjavascriptflavors: String_Selector
-  javascriptflavors_overallhappiness: Float_Selector
-  frontendframeworks_react: String_Selector
-  frontendframeworks_vue: String_Selector
-  frontendframeworks_angular: String_Selector
-  frontendframeworks_preact: String_Selector
-  frontendframeworks_ember: String_Selector
-  frontendframeworks_svelte: String_Selector
-  frontendframeworks_otherfrontendframeworks: String_Selector
-  frontendframeworks_overallhappiness: Float_Selector
-  datalayer_redux: String_Selector
-  datalayer_apollo: String_Selector
-  datalayer_graphql: String_Selector
-  datalayer_mobx: String_Selector
-  datalayer_relay: String_Selector
-  datalayer_otherdatalayertools: String_Selector
-  datalayer_overallhappiness: Float_Selector
-  backendframeworks_express: String_Selector
-  backendframeworks_nextjs: String_Selector
-  backendframeworks_koa: String_Selector
-  backendframeworks_meteor: String_Selector
-  backendframeworks_sails: String_Selector
-  backendframeworks_feathersjs: String_Selector
-  backendframeworks_nuxtjs: String_Selector
-  backendframeworks_gatsbyjs: String_Selector
-  backendframeworks_otherbackendframeworks: String_Selector
-  backendframeworks_overallhappiness: Float_Selector
-  testing_jest: String_Selector
-  testing_mocha: String_Selector
-  testing_storybook: String_Selector
-  testing_cypress: String_Selector
-  testing_enzyme: String_Selector
-  testing_ava: String_Selector
-  testing_jasmine: String_Selector
-  testing_puppeteer: String_Selector
-  testing_othertestingtools: String_Selector
-  testing_overallhappiness: Float_Selector
-  mobiledesktop_electron: String_Selector
-  mobiledesktop_reactnative: String_Selector
-  mobiledesktop_nativeapps: String_Selector
-  mobiledesktop_cordova: String_Selector
-  mobiledesktop_ionic: String_Selector
-  mobiledesktop_nwjs: String_Selector
-  mobiledesktop_expo: String_Selector
-  mobiledesktop_othermobiledesktoptools: String_Selector
-  mobiledesktop_overallhappiness: Float_Selector
-  othertools_utilities: String_Array_Selector
-  othertools_otherutilities: String_Selector
-  othertools_texteditors: String_Array_Selector
-  othertools_othereditors: String_Selector
-  othertools_browsers: String_Array_Selector
-  othertools_otherbrowsers: String_Selector
-  othertools_buildtools: String_Array_Selector
-  othertools_otherbuildtools: String_Selector
-  othertools_nonjslanguages: String_Array_Selector
-  othertools_otherlanguages: String_Selector
-  resources_blogsnewsmagazines: String_Array_Selector
-  resources_otherblogs: String_Selector
-  resources_sitescourses: String_Array_Selector
-  resources_othercourses: String_Selector
-  resources_podcasts: String_Array_Selector
-  resources_otherpodcasts: String_Selector
-  opinionquestions_javascriptismovingintherightdirection: Float_Selector
-  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: Float_Selector
-  opinionquestions_javascriptisoverusedonline: Float_Selector
-  opinionquestions_ienjoybuildingjavascriptapps: Float_Selector
-  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: Float_Selector
-  opinionquestions_thejavascriptecosystemischangingtoofast: Float_Selector
-  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: String_Selector
-  aboutyou_yearsofexperience: String_Selector
-  aboutyou_jobtitle: String_Selector
-  aboutyou_otherjobtitle: String_Selector
-  aboutyou_cssproficiency: String_Selector
-  aboutyou_backendproficiency: String_Selector
-  aboutyou_companysize: String_Selector
-  aboutyou_yearlysalary: String_Selector
-  aboutyou_howdidyoufindoutaboutthissurvey: String_Selector
-  aboutyou_yourgender: String_Selector
-  aboutyou_othergender: String_Selector
-  aboutyou_yourcountry: String_Selector
-  aboutyou_youremail: String_Selector
+  surveySlug: String_Selector
+  js2019_features_destructuring: String_Selector
+  js2019_features_spreadoperator: String_Selector
+  js2019_features_arrowfunctions: String_Selector
+  js2019_features_proxies: String_Selector
+  js2019_features_asyncawait: String_Selector
+  js2019_features_promises: String_Selector
+  js2019_features_decorators: String_Selector
+  js2019_features_maps: String_Selector
+  js2019_features_sets: String_Selector
+  js2019_features_typedarrays: String_Selector
+  js2019_features_arrayprototypeflat: String_Selector
+  js2019_features_serviceworkers: String_Selector
+  js2019_features_localstorage: String_Selector
+  js2019_features_i18n: String_Selector
+  js2019_features_webcomponents: String_Selector
+  js2019_features_webaudioapi: String_Selector
+  js2019_features_webgl: String_Selector
+  js2019_features_webanimationsapi: String_Selector
+  js2019_features_webrtc: String_Selector
+  js2019_features_webspeechapi: String_Selector
+  js2019_features_webvr: String_Selector
+  js2019_features_websocket: String_Selector
+  js2019_features_fetchapi: String_Selector
+  js2019_features_progressivewebappspwa: String_Selector
+  js2019_features_webassemblywasm: String_Selector
+  js2019_patterns_objectorientedprogramming: String_Selector
+  js2019_patterns_functionalprogramming: String_Selector
+  js2019_patterns_reactiveprogramming: String_Selector
+  js2019_tools_typescript: String_Selector
+  js2019_tools_reason: String_Selector
+  js2019_tools_elm: String_Selector
+  js2019_tools_clojurescript: String_Selector
+  js2019_tools_purescript: String_Selector
+  js2019_tools_otherjavascriptflavors: String_Selector
+  js2019_tools_overallhappiness: Float_Selector
+  js2019_tools_react: String_Selector
+  js2019_tools_vue: String_Selector
+  js2019_tools_angular: String_Selector
+  js2019_tools_preact: String_Selector
+  js2019_tools_ember: String_Selector
+  js2019_tools_svelte: String_Selector
+  js2019_tools_otherfrontendframeworks: String_Selector
+  js2019_tools_redux: String_Selector
+  js2019_tools_apollo: String_Selector
+  js2019_tools_graphql: String_Selector
+  js2019_tools_mobx: String_Selector
+  js2019_tools_relay: String_Selector
+  js2019_tools_otherdatalayertools: String_Selector
+  js2019_tools_express: String_Selector
+  js2019_tools_nextjs: String_Selector
+  js2019_tools_koa: String_Selector
+  js2019_tools_meteor: String_Selector
+  js2019_tools_sails: String_Selector
+  js2019_tools_feathersjs: String_Selector
+  js2019_tools_nuxtjs: String_Selector
+  js2019_tools_gatsbyjs: String_Selector
+  js2019_tools_otherbackendframeworks: String_Selector
+  js2019_tools_jest: String_Selector
+  js2019_tools_mocha: String_Selector
+  js2019_tools_storybook: String_Selector
+  js2019_tools_cypress: String_Selector
+  js2019_tools_enzyme: String_Selector
+  js2019_tools_ava: String_Selector
+  js2019_tools_jasmine: String_Selector
+  js2019_tools_puppeteer: String_Selector
+  js2019_tools_othertestingtools: String_Selector
+  js2019_tools_electron: String_Selector
+  js2019_tools_reactnative: String_Selector
+  js2019_tools_nativeapps: String_Selector
+  js2019_tools_cordova: String_Selector
+  js2019_tools_ionic: String_Selector
+  js2019_tools_nwjs: String_Selector
+  js2019_tools_expo: String_Selector
+  js2019_tools_othermobiledesktoptools: String_Selector
+  js2019_othertools_utilities: String_Array_Selector
+  js2019_othertools_otherutilities: String_Selector
+  js2019_othertools_texteditors: String_Array_Selector
+  js2019_othertools_othereditors: String_Selector
+  js2019_othertools_browsers: String_Array_Selector
+  js2019_othertools_otherbrowsers: String_Selector
+  js2019_othertools_buildtools: String_Array_Selector
+  js2019_othertools_otherbuildtools: String_Selector
+  js2019_othertools_nonjslanguages: String_Array_Selector
+  js2019_othertools_otherlanguages: String_Selector
+  js2019_resources_blogsnewsmagazines: String_Array_Selector
+  js2019_resources_otherblogs: String_Selector
+  js2019_resources_sitescourses: String_Array_Selector
+  js2019_resources_othercourses: String_Selector
+  js2019_resources_podcasts: String_Array_Selector
+  js2019_resources_otherpodcasts: String_Selector
+  js2019_opinions_javascriptismovingintherightdirection: Float_Selector
+  js2019_opinions_buildingjavascriptappsisoverlycomplexrightnow: Float_Selector
+  js2019_opinions_javascriptisoverusedonline: Float_Selector
+  js2019_opinions_ienjoybuildingjavascriptapps: Float_Selector
+  js2019_opinions_iwouldlikejavascripttobemymainprogramminglanguage: Float_Selector
+  js2019_opinions_thejavascriptecosystemischangingtoofast: Float_Selector
+  js2019_opinions_whatdoyoufeeliscurrentlymissingfromjavascript: String_Selector
+  js2019_userinfo_yearsofexperience: String_Selector
+  js2019_userinfo_jobtitle: String_Selector
+  js2019_userinfo_otherjobtitle: String_Selector
+  js2019_userinfo_cssproficiency: String_Selector
+  js2019_userinfo_backendproficiency: String_Selector
+  js2019_userinfo_companysize: String_Selector
+  js2019_userinfo_yearlysalary: String_Selector
+  js2019_userinfo_howdidyoufindoutaboutthissurvey: String_Selector
+  js2019_userinfo_yourgender: String_Selector
+  js2019_userinfo_othergender: String_Selector
+  js2019_userinfo_yourcountry: String_Selector
+  js2019_userinfo_youremail: String_Selector
+  css2020_features_destructuring: String_Selector
+  css2020_features_spreadoperator: String_Selector
+  css2020_features_arrowfunctions: String_Selector
+  css2020_features_proxies: String_Selector
+  css2020_features_asyncawait: String_Selector
+  css2020_features_promises: String_Selector
+  css2020_features_decorators: String_Selector
+  css2020_features_maps: String_Selector
+  css2020_features_sets: String_Selector
+  css2020_features_typedarrays: String_Selector
+  css2020_features_arrayprototypeflat: String_Selector
+  css2020_features_serviceworkers: String_Selector
+  css2020_features_localstorage: String_Selector
+  css2020_features_i18n: String_Selector
+  css2020_features_webcomponents: String_Selector
+  css2020_features_webaudioapi: String_Selector
+  css2020_features_webgl: String_Selector
+  css2020_features_webanimationsapi: String_Selector
+  css2020_features_webrtc: String_Selector
+  css2020_features_webspeechapi: String_Selector
+  css2020_features_webvr: String_Selector
+  css2020_features_websocket: String_Selector
+  css2020_features_fetchapi: String_Selector
+  css2020_features_progressivewebappspwa: String_Selector
+  css2020_features_webassemblywasm: String_Selector
+  css2020_patterns_objectorientedprogramming: String_Selector
+  css2020_patterns_functionalprogramming: String_Selector
+  css2020_patterns_reactiveprogramming: String_Selector
+  css2020_tools_typescript: String_Selector
+  css2020_tools_reason: String_Selector
+  css2020_tools_elm: String_Selector
+  css2020_tools_clojurescript: String_Selector
+  css2020_tools_purescript: String_Selector
+  css2020_tools_othercssflavors: String_Selector
+  css2020_tools_overallhappiness: Float_Selector
+  css2020_tools_react: String_Selector
+  css2020_tools_vue: String_Selector
+  css2020_tools_angular: String_Selector
+  css2020_tools_preact: String_Selector
+  css2020_tools_ember: String_Selector
+  css2020_tools_svelte: String_Selector
+  css2020_tools_otherfrontendframeworks: String_Selector
+  css2020_tools_redux: String_Selector
+  css2020_tools_apollo: String_Selector
+  css2020_tools_graphql: String_Selector
+  css2020_tools_mobx: String_Selector
+  css2020_tools_relay: String_Selector
+  css2020_tools_otherdatalayertools: String_Selector
+  css2020_tools_express: String_Selector
+  css2020_tools_nextjs: String_Selector
+  css2020_tools_koa: String_Selector
+  css2020_tools_meteor: String_Selector
+  css2020_tools_sails: String_Selector
+  css2020_tools_feathersjs: String_Selector
+  css2020_tools_nuxtjs: String_Selector
+  css2020_tools_gatsbyjs: String_Selector
+  css2020_tools_otherbackendframeworks: String_Selector
+  css2020_tools_jest: String_Selector
+  css2020_tools_mocha: String_Selector
+  css2020_tools_storybook: String_Selector
+  css2020_tools_cypress: String_Selector
+  css2020_tools_enzyme: String_Selector
+  css2020_tools_ava: String_Selector
+  css2020_tools_jasmine: String_Selector
+  css2020_tools_puppeteer: String_Selector
+  css2020_tools_othertestingtools: String_Selector
+  css2020_tools_electron: String_Selector
+  css2020_tools_reactnative: String_Selector
+  css2020_tools_nativeapps: String_Selector
+  css2020_tools_cordova: String_Selector
+  css2020_tools_ionic: String_Selector
+  css2020_tools_nwjs: String_Selector
+  css2020_tools_expo: String_Selector
+  css2020_tools_othermobiledesktoptools: String_Selector
 }
 
 input ResponseSortInput {
@@ -1125,121 +1748,190 @@ input ResponseSortInput {
   referrer: SortOptions
   source: SortOptions
   pagePath: SortOptions
-  surveyId: SortOptions
-  syntax_destructuring: SortOptions
-  syntax_spreadoperator: SortOptions
-  syntax_arrowfunctions: SortOptions
-  language_proxies: SortOptions
-  language_asyncawait: SortOptions
-  language_promises: SortOptions
-  language_decorators: SortOptions
-  datastructures_maps: SortOptions
-  datastructures_sets: SortOptions
-  datastructures_typedarrays: SortOptions
-  datastructures_arrayprototypeflat: SortOptions
-  browserapis_serviceworkers: SortOptions
-  browserapis_localstorage: SortOptions
-  browserapis_i18n: SortOptions
-  browserapis_webcomponents: SortOptions
-  browserapis_webaudioapi: SortOptions
-  browserapis_webgl: SortOptions
-  browserapis_webanimationsapi: SortOptions
-  browserapis_webrtc: SortOptions
-  browserapis_webspeechapi: SortOptions
-  browserapis_webvr: SortOptions
-  browserapis_websocket: SortOptions
-  browserapis_fetchapi: SortOptions
-  otherfeatures_progressivewebappspwa: SortOptions
-  otherfeatures_webassemblywasm: SortOptions
-  patterns_objectorientedprogramming: SortOptions
-  patterns_functionalprogramming: SortOptions
-  patterns_reactiveprogramming: SortOptions
-  javascriptflavors_typescript: SortOptions
-  javascriptflavors_reason: SortOptions
-  javascriptflavors_elm: SortOptions
-  javascriptflavors_clojurescript: SortOptions
-  javascriptflavors_purescript: SortOptions
-  javascriptflavors_otherjavascriptflavors: SortOptions
-  javascriptflavors_overallhappiness: SortOptions
-  frontendframeworks_react: SortOptions
-  frontendframeworks_vue: SortOptions
-  frontendframeworks_angular: SortOptions
-  frontendframeworks_preact: SortOptions
-  frontendframeworks_ember: SortOptions
-  frontendframeworks_svelte: SortOptions
-  frontendframeworks_otherfrontendframeworks: SortOptions
-  frontendframeworks_overallhappiness: SortOptions
-  datalayer_redux: SortOptions
-  datalayer_apollo: SortOptions
-  datalayer_graphql: SortOptions
-  datalayer_mobx: SortOptions
-  datalayer_relay: SortOptions
-  datalayer_otherdatalayertools: SortOptions
-  datalayer_overallhappiness: SortOptions
-  backendframeworks_express: SortOptions
-  backendframeworks_nextjs: SortOptions
-  backendframeworks_koa: SortOptions
-  backendframeworks_meteor: SortOptions
-  backendframeworks_sails: SortOptions
-  backendframeworks_feathersjs: SortOptions
-  backendframeworks_nuxtjs: SortOptions
-  backendframeworks_gatsbyjs: SortOptions
-  backendframeworks_otherbackendframeworks: SortOptions
-  backendframeworks_overallhappiness: SortOptions
-  testing_jest: SortOptions
-  testing_mocha: SortOptions
-  testing_storybook: SortOptions
-  testing_cypress: SortOptions
-  testing_enzyme: SortOptions
-  testing_ava: SortOptions
-  testing_jasmine: SortOptions
-  testing_puppeteer: SortOptions
-  testing_othertestingtools: SortOptions
-  testing_overallhappiness: SortOptions
-  mobiledesktop_electron: SortOptions
-  mobiledesktop_reactnative: SortOptions
-  mobiledesktop_nativeapps: SortOptions
-  mobiledesktop_cordova: SortOptions
-  mobiledesktop_ionic: SortOptions
-  mobiledesktop_nwjs: SortOptions
-  mobiledesktop_expo: SortOptions
-  mobiledesktop_othermobiledesktoptools: SortOptions
-  mobiledesktop_overallhappiness: SortOptions
-  othertools_utilities: SortOptions
-  othertools_otherutilities: SortOptions
-  othertools_texteditors: SortOptions
-  othertools_othereditors: SortOptions
-  othertools_browsers: SortOptions
-  othertools_otherbrowsers: SortOptions
-  othertools_buildtools: SortOptions
-  othertools_otherbuildtools: SortOptions
-  othertools_nonjslanguages: SortOptions
-  othertools_otherlanguages: SortOptions
-  resources_blogsnewsmagazines: SortOptions
-  resources_otherblogs: SortOptions
-  resources_sitescourses: SortOptions
-  resources_othercourses: SortOptions
-  resources_podcasts: SortOptions
-  resources_otherpodcasts: SortOptions
-  opinionquestions_javascriptismovingintherightdirection: SortOptions
-  opinionquestions_buildingjavascriptappsisoverlycomplexrightnow: SortOptions
-  opinionquestions_javascriptisoverusedonline: SortOptions
-  opinionquestions_ienjoybuildingjavascriptapps: SortOptions
-  opinionquestions_iwouldlikejavascripttobemymainprogramminglanguage: SortOptions
-  opinionquestions_thejavascriptecosystemischangingtoofast: SortOptions
-  opinionquestions_whatdoyoufeeliscurrentlymissingfromjavascript: SortOptions
-  aboutyou_yearsofexperience: SortOptions
-  aboutyou_jobtitle: SortOptions
-  aboutyou_otherjobtitle: SortOptions
-  aboutyou_cssproficiency: SortOptions
-  aboutyou_backendproficiency: SortOptions
-  aboutyou_companysize: SortOptions
-  aboutyou_yearlysalary: SortOptions
-  aboutyou_howdidyoufindoutaboutthissurvey: SortOptions
-  aboutyou_yourgender: SortOptions
-  aboutyou_othergender: SortOptions
-  aboutyou_yourcountry: SortOptions
-  aboutyou_youremail: SortOptions
+  surveySlug: SortOptions
+  js2019_features_destructuring: SortOptions
+  js2019_features_spreadoperator: SortOptions
+  js2019_features_arrowfunctions: SortOptions
+  js2019_features_proxies: SortOptions
+  js2019_features_asyncawait: SortOptions
+  js2019_features_promises: SortOptions
+  js2019_features_decorators: SortOptions
+  js2019_features_maps: SortOptions
+  js2019_features_sets: SortOptions
+  js2019_features_typedarrays: SortOptions
+  js2019_features_arrayprototypeflat: SortOptions
+  js2019_features_serviceworkers: SortOptions
+  js2019_features_localstorage: SortOptions
+  js2019_features_i18n: SortOptions
+  js2019_features_webcomponents: SortOptions
+  js2019_features_webaudioapi: SortOptions
+  js2019_features_webgl: SortOptions
+  js2019_features_webanimationsapi: SortOptions
+  js2019_features_webrtc: SortOptions
+  js2019_features_webspeechapi: SortOptions
+  js2019_features_webvr: SortOptions
+  js2019_features_websocket: SortOptions
+  js2019_features_fetchapi: SortOptions
+  js2019_features_progressivewebappspwa: SortOptions
+  js2019_features_webassemblywasm: SortOptions
+  js2019_patterns_objectorientedprogramming: SortOptions
+  js2019_patterns_functionalprogramming: SortOptions
+  js2019_patterns_reactiveprogramming: SortOptions
+  js2019_tools_typescript: SortOptions
+  js2019_tools_reason: SortOptions
+  js2019_tools_elm: SortOptions
+  js2019_tools_clojurescript: SortOptions
+  js2019_tools_purescript: SortOptions
+  js2019_tools_otherjavascriptflavors: SortOptions
+  js2019_tools_overallhappiness: SortOptions
+  js2019_tools_react: SortOptions
+  js2019_tools_vue: SortOptions
+  js2019_tools_angular: SortOptions
+  js2019_tools_preact: SortOptions
+  js2019_tools_ember: SortOptions
+  js2019_tools_svelte: SortOptions
+  js2019_tools_otherfrontendframeworks: SortOptions
+  js2019_tools_redux: SortOptions
+  js2019_tools_apollo: SortOptions
+  js2019_tools_graphql: SortOptions
+  js2019_tools_mobx: SortOptions
+  js2019_tools_relay: SortOptions
+  js2019_tools_otherdatalayertools: SortOptions
+  js2019_tools_express: SortOptions
+  js2019_tools_nextjs: SortOptions
+  js2019_tools_koa: SortOptions
+  js2019_tools_meteor: SortOptions
+  js2019_tools_sails: SortOptions
+  js2019_tools_feathersjs: SortOptions
+  js2019_tools_nuxtjs: SortOptions
+  js2019_tools_gatsbyjs: SortOptions
+  js2019_tools_otherbackendframeworks: SortOptions
+  js2019_tools_jest: SortOptions
+  js2019_tools_mocha: SortOptions
+  js2019_tools_storybook: SortOptions
+  js2019_tools_cypress: SortOptions
+  js2019_tools_enzyme: SortOptions
+  js2019_tools_ava: SortOptions
+  js2019_tools_jasmine: SortOptions
+  js2019_tools_puppeteer: SortOptions
+  js2019_tools_othertestingtools: SortOptions
+  js2019_tools_electron: SortOptions
+  js2019_tools_reactnative: SortOptions
+  js2019_tools_nativeapps: SortOptions
+  js2019_tools_cordova: SortOptions
+  js2019_tools_ionic: SortOptions
+  js2019_tools_nwjs: SortOptions
+  js2019_tools_expo: SortOptions
+  js2019_tools_othermobiledesktoptools: SortOptions
+  js2019_othertools_utilities: SortOptions
+  js2019_othertools_otherutilities: SortOptions
+  js2019_othertools_texteditors: SortOptions
+  js2019_othertools_othereditors: SortOptions
+  js2019_othertools_browsers: SortOptions
+  js2019_othertools_otherbrowsers: SortOptions
+  js2019_othertools_buildtools: SortOptions
+  js2019_othertools_otherbuildtools: SortOptions
+  js2019_othertools_nonjslanguages: SortOptions
+  js2019_othertools_otherlanguages: SortOptions
+  js2019_resources_blogsnewsmagazines: SortOptions
+  js2019_resources_otherblogs: SortOptions
+  js2019_resources_sitescourses: SortOptions
+  js2019_resources_othercourses: SortOptions
+  js2019_resources_podcasts: SortOptions
+  js2019_resources_otherpodcasts: SortOptions
+  js2019_opinions_javascriptismovingintherightdirection: SortOptions
+  js2019_opinions_buildingjavascriptappsisoverlycomplexrightnow: SortOptions
+  js2019_opinions_javascriptisoverusedonline: SortOptions
+  js2019_opinions_ienjoybuildingjavascriptapps: SortOptions
+  js2019_opinions_iwouldlikejavascripttobemymainprogramminglanguage: SortOptions
+  js2019_opinions_thejavascriptecosystemischangingtoofast: SortOptions
+  js2019_opinions_whatdoyoufeeliscurrentlymissingfromjavascript: SortOptions
+  js2019_userinfo_yearsofexperience: SortOptions
+  js2019_userinfo_jobtitle: SortOptions
+  js2019_userinfo_otherjobtitle: SortOptions
+  js2019_userinfo_cssproficiency: SortOptions
+  js2019_userinfo_backendproficiency: SortOptions
+  js2019_userinfo_companysize: SortOptions
+  js2019_userinfo_yearlysalary: SortOptions
+  js2019_userinfo_howdidyoufindoutaboutthissurvey: SortOptions
+  js2019_userinfo_yourgender: SortOptions
+  js2019_userinfo_othergender: SortOptions
+  js2019_userinfo_yourcountry: SortOptions
+  js2019_userinfo_youremail: SortOptions
+  css2020_features_destructuring: SortOptions
+  css2020_features_spreadoperator: SortOptions
+  css2020_features_arrowfunctions: SortOptions
+  css2020_features_proxies: SortOptions
+  css2020_features_asyncawait: SortOptions
+  css2020_features_promises: SortOptions
+  css2020_features_decorators: SortOptions
+  css2020_features_maps: SortOptions
+  css2020_features_sets: SortOptions
+  css2020_features_typedarrays: SortOptions
+  css2020_features_arrayprototypeflat: SortOptions
+  css2020_features_serviceworkers: SortOptions
+  css2020_features_localstorage: SortOptions
+  css2020_features_i18n: SortOptions
+  css2020_features_webcomponents: SortOptions
+  css2020_features_webaudioapi: SortOptions
+  css2020_features_webgl: SortOptions
+  css2020_features_webanimationsapi: SortOptions
+  css2020_features_webrtc: SortOptions
+  css2020_features_webspeechapi: SortOptions
+  css2020_features_webvr: SortOptions
+  css2020_features_websocket: SortOptions
+  css2020_features_fetchapi: SortOptions
+  css2020_features_progressivewebappspwa: SortOptions
+  css2020_features_webassemblywasm: SortOptions
+  css2020_patterns_objectorientedprogramming: SortOptions
+  css2020_patterns_functionalprogramming: SortOptions
+  css2020_patterns_reactiveprogramming: SortOptions
+  css2020_tools_typescript: SortOptions
+  css2020_tools_reason: SortOptions
+  css2020_tools_elm: SortOptions
+  css2020_tools_clojurescript: SortOptions
+  css2020_tools_purescript: SortOptions
+  css2020_tools_othercssflavors: SortOptions
+  css2020_tools_overallhappiness: SortOptions
+  css2020_tools_react: SortOptions
+  css2020_tools_vue: SortOptions
+  css2020_tools_angular: SortOptions
+  css2020_tools_preact: SortOptions
+  css2020_tools_ember: SortOptions
+  css2020_tools_svelte: SortOptions
+  css2020_tools_otherfrontendframeworks: SortOptions
+  css2020_tools_redux: SortOptions
+  css2020_tools_apollo: SortOptions
+  css2020_tools_graphql: SortOptions
+  css2020_tools_mobx: SortOptions
+  css2020_tools_relay: SortOptions
+  css2020_tools_otherdatalayertools: SortOptions
+  css2020_tools_express: SortOptions
+  css2020_tools_nextjs: SortOptions
+  css2020_tools_koa: SortOptions
+  css2020_tools_meteor: SortOptions
+  css2020_tools_sails: SortOptions
+  css2020_tools_feathersjs: SortOptions
+  css2020_tools_nuxtjs: SortOptions
+  css2020_tools_gatsbyjs: SortOptions
+  css2020_tools_otherbackendframeworks: SortOptions
+  css2020_tools_jest: SortOptions
+  css2020_tools_mocha: SortOptions
+  css2020_tools_storybook: SortOptions
+  css2020_tools_cypress: SortOptions
+  css2020_tools_enzyme: SortOptions
+  css2020_tools_ava: SortOptions
+  css2020_tools_jasmine: SortOptions
+  css2020_tools_puppeteer: SortOptions
+  css2020_tools_othertestingtools: SortOptions
+  css2020_tools_electron: SortOptions
+  css2020_tools_reactnative: SortOptions
+  css2020_tools_nativeapps: SortOptions
+  css2020_tools_cordova: SortOptions
+  css2020_tools_ionic: SortOptions
+  css2020_tools_nwjs: SortOptions
+  css2020_tools_expo: SortOptions
+  css2020_tools_othermobiledesktoptools: SortOptions
 }
 
 input ResponseSelectorInput {
@@ -1256,170 +1948,6 @@ input ResponseSelectorUniqueInput {
 }
 
 
-# Type for Surveys
-type Survey {
-  _id: String 
-  createdAt: Date 
-  updatedAt: Date 
-  userId: String 
-  user: User 
-  name: String 
-  year: Float 
-  status: Float 
-  slug: String 
-  imageUrl: String 
-  pagePath: String 
-  currentUserResponse: Response 
-  createdAtFormatted(format: String = "YYYY/MM/DD"): String 
-  updatedAtFormatted(format: String = "YYYY/MM/DD"): String 
-}
-
-
-input DeleteSurveyInput{
-  filter: SurveyFilterInput
-  id: String
-}
-
-input SingleSurveyInput {
-  # filtering
-  filter: SurveyFilterInput
-  sort: SurveySortInput
-  search: String
-  id: String
-
-  # backwards-compatibility
-  # Deprecated (use 'filter/id' fields instead).
-  selector: SurveySelectorUniqueInput
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Return null instead of throwing MissingDocumentError
-  allowNull: Boolean
-  # An identifier to name the query's execution context
-  contextName: String
-}
-
-input MultiSurveyInput {
-
-  # filtering
-  filter: SurveyFilterInput
-  sort: SurveySortInput
-  search: String
-  offset: Int
-  limit: Int
-
-  # backwards-compatibility
-  # A JSON object that contains the query terms used to fetch data
-  # Deprecated (use 'filter/id' fields instead).
-  terms: JSON
-
-  # options (backwards-compatibility)
-  # Whether to enable caching for this query
-  enableCache: Boolean
-  # Whether to calculate totalCount for this query
-  enableTotal: Boolean
-  # An identifier to name the query's execution context
-  contextName: String
-
-}
-
-type SingleSurveyOutput{
-  result: Survey
-}
-
-type  MultiSurveyOutput{
-  results: [Survey]
-  totalCount: Int
-}
-
-type SurveyMutationOutput{
-  data: Survey
-}
-
-input CreateSurveyInput {
-  data: CreateSurveyDataInput!
-  # An identifier to name the mutation's execution context
-  contextName: String
-}
-
-input CreateSurveyDataInput {
-  name: String 
-  year: Float 
-  status: Float 
-  imageUrl: String 
-}
-
-input UpdateSurveyInput{
-  filter: SurveyFilterInput
-  id: String
-  data: UpdateSurveyDataInput!
-  # An identifier to name the mutation's execution context
-  contextName: String
-}
-
-input UpsertSurveyInput{
-  filter: SurveyFilterInput
-  id: String
-  data: UpdateSurveyDataInput!
-  # An identifier to name the mutation's execution context
-  contextName: String
-}
-
-input UpdateSurveyDataInput {
-  name: String 
-  year: Float 
-  status: Float 
-  imageUrl: String 
-}
-
-input SurveyFilterInput {
-  _and: [SurveyFilterInput]
-  _not: SurveyFilterInput
-  _or: [SurveyFilterInput]
-
-
-  _id: String_Selector
-  createdAt: Date_Selector
-  updatedAt: Date_Selector
-  userId: String_Selector
-  name: String_Selector
-  year: Float_Selector
-  status: Float_Selector
-  slug: String_Selector
-  imageUrl: String_Selector
-  pagePath: String_Selector
-
-}
-
-input SurveySortInput {
-  _id: SortOptions
-  createdAt: SortOptions
-  updatedAt: SortOptions
-  userId: SortOptions
-  name: SortOptions
-  year: SortOptions
-  status: SortOptions
-  slug: SortOptions
-  imageUrl: SortOptions
-  pagePath: SortOptions
-  currentUserResponse: SortOptions
-}
-
-input SurveySelectorInput {
-  _and: [SurveySelectorInput]
-  _or: [SurveySelectorInput]
-
-}
-
-input SurveySelectorUniqueInput {
-  _id: String
-  documentId: String # OpenCRUD backwards compatibility
-  slug: String
-
-}
-
-
 
 
 type Query {
@@ -1427,11 +1955,19 @@ type Query {
   
   currentUser: User
   
+  getDatabaseObject(id: String): JSON
+  
   # A single User document fetched by ID or slug
   user(input: SingleUserInput!): SingleUserOutput
   
   # A list of User documents matching a set of query terms
   users(input: MultiUserInput):  MultiUserOutput
+  
+  emails(input: MultiEmailInput):  MultiEmailOutput
+  
+  settings(input: MultiSettingInput):  MultiSettingOutput
+  
+  callbacks(input: MultiCallbackInput):  MultiCallbackOutput
   
   # A single AnalyticsEvent document fetched by ID or slug
   analyticsEvent(input: SingleAnalyticsEventInput!): SingleAnalyticsEventOutput
@@ -1444,12 +1980,6 @@ type Query {
   
   # A list of Response documents matching a set of query terms
   responses(input: MultiResponseInput):  MultiResponseOutput
-  
-  # A single Survey document fetched by ID or slug
-  survey(input: SingleSurveyInput!): SingleSurveyOutput
-  
-  # A list of Survey documents matching a set of query terms
-  surveys(input: MultiSurveyInput):  MultiSurveyOutput
   
 }
   
@@ -1470,6 +2000,8 @@ type Mutation {
   sendVerificationEmail(input: AuthEmailInput): Boolean
 
   verifyEmail(input: VerifyEmailInput): VerifyEmailResult
+
+  testEmail(emailName: String) : EmailResponse
 
   # Mutation for creating new User documents
   createUser(
@@ -1541,38 +2073,6 @@ type Mutation {
   # Deprecated (use 'input' field instead).
   selector: ResponseSelectorUniqueInput
 ) : ResponseMutationOutput
-
-  # Mutation for creating new Survey documents
-  createSurvey(
-  input: CreateSurveyInput,
-  # Deprecated (use 'input' field instead).
-  data: CreateSurveyDataInput
-) : SurveyMutationOutput
-
-  # Mutation for updating a Survey document
-  updateSurvey(
-  input: UpdateSurveyInput,
-  # Deprecated (use 'input' field instead).
-  selector: SurveySelectorUniqueInput,
-  # Deprecated (use 'input' field instead).
-  data: UpdateSurveyDataInput
-) : SurveyMutationOutput
-
-  # Mutation for upserting a Survey document
-  upsertSurvey(
-  input: UpsertSurveyInput,
-  # Deprecated (use 'input' field instead).
-  selector: SurveySelectorUniqueInput,
-  # Deprecated (use 'input' field instead).
-  data: UpdateSurveyDataInput
-) : SurveyMutationOutput
-
-  # Mutation for deleting a Survey document
-  deleteSurvey(
-  input: DeleteSurveyInput,
-  # Deprecated (use 'input' field instead).
-  selector: SurveySelectorUniqueInput
-) : SurveyMutationOutput
 
 }
 

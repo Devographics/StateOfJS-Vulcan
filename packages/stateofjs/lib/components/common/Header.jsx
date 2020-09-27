@@ -25,6 +25,8 @@ const Header = ({ currentUser }) => (
               <NavLink to="/admin/surveys" label="Surveys" />{' '}
               <NavLink to="/admin/responses" label="Responses" />
               <NavLink to="/admin/users" label="Users" />
+              {/* <NavLink to="/admin/emails" label="Emails" /> */}
+              <NavLink to="/admin/database" label="Database" />
             </>
           )}
         </Nav>

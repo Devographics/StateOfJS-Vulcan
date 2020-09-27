@@ -13,25 +13,23 @@ TODO:
 
 */
 import React from 'react';
-import { registerComponent, Components, withSingle2 } from 'meteor/vulcan:core';
-import { withRouter } from 'react-router-dom';
-import { outline } from '../../modules/outline.js';
-import { getId } from '../../modules/responses/helpers.js';
+import { Components, useSingle2 } from 'meteor/vulcan:core';
+import { useParams, useHistory } from 'react-router-dom';
+import surveys from '../../surveys';
+import { getQuestionId } from '../../modules/responses/helpers.js';
 import { statuses } from '../../modules/constants.js';
 import SurveyNav from './SurveyNav.jsx';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 
-const Section = ({ sectionNumber, section, response, previousSection, nextSection, history }) => {
-  const fields = section.questions
-    .map(q => (typeof q === 'string' ? q : q.title))
-    .map(questionTitle => getId(section.title, questionTitle));
+const Section = ({ survey, sectionNumber, section, response, previousSection, nextSection, history }) => {
+  const fields = section.questions.map(question => getQuestionId(survey, section, question));
   const { title, description } = section;
   return (
     <div className="section-questions">
       {response.survey && response.survey.status === statuses.closed && (
         <div className="survey-closed">
-          This survey is now closed. You can review it but data can't be submitted or modified.
+          This survey is now closed. You can review it but data can’t be submitted or modified.
         </div>
       )}
       <h2 className="section-title">{title}</h2>
@@ -66,23 +64,24 @@ const Section = ({ sectionNumber, section, response, previousSection, nextSectio
   );
 };
 
-const SurveySectionWithData = ({ match, history }) => {
-  const { responseId, sectionNumber = 0 } = match.params;
-  return (
-    <Components.SurveySection
-      input={{ id: responseId }}
-      responseId={responseId}
-      sectionNumber={parseInt(sectionNumber)}
-      history={history}
-    />
-  );
-};
-registerComponent('SurveySectionWithData', SurveySectionWithData, withRouter);
 
-const SurveySection = ({ loading, responseId, document: response, sectionNumber, history }) => {
-  const section = outline[sectionNumber];
-  const previousSection = outline[sectionNumber - 1];
-  const nextSection = outline[sectionNumber + 1];
+const SurveySection = () => {
+  const { responseId, sectionNumber = 0 } = useParams();
+  const history = useHistory();
+
+  const { document: response, loading } = useSingle2({
+    collectionName: 'Responses',
+    fragmentName: 'ResponseFragment',
+    input: {id: responseId}
+  });
+  if (loading) {
+    return <Components.Loading />;
+  }
+  const survey = surveys.find(s => s.slug === response.survey.slug)
+  const surveyOutline = survey.outline
+  const section = surveyOutline[sectionNumber];
+  const previousSection = surveyOutline[sectionNumber - 1];
+  const nextSection = surveyOutline[sectionNumber + 1];
   const sectionProps = {
     sectionNumber,
     section,
@@ -93,25 +92,18 @@ const SurveySection = ({ loading, responseId, document: response, sectionNumber,
   };
   return (
     <div className="survey-section">
-      <SurveyNav responseId={responseId} response={response} currentSectionNumber={sectionNumber} />
+      <SurveyNav survey={response.survey} responseId={responseId} response={response} currentSectionNumber={sectionNumber} />
       <div className="section-contents">
         {loading ? (
           <Components.Loading />
         ) : !response ? (
           <p>Could not find survey.</p>
         ) : (
-          <Section response={response} {...sectionProps} />
+          <Section survey={survey} response={response} {...sectionProps} />
         )}
       </div>
     </div>
   );
 };
-
-const options = {
-  collectionName: 'Responses',
-  fragmentName: 'ResponseFragment',
-};
-
-registerComponent('SurveySection', SurveySection, withRouter, [withSingle2, options]);
 
 export default SurveySection;

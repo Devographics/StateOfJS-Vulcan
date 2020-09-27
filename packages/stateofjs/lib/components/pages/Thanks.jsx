@@ -1,7 +1,6 @@
 import React from 'react';
-import { registerComponent } from 'meteor/vulcan:core';
 import { Link } from 'react-router-dom';
-import ShareSite from './share/ShareSite.jsx';
+import ShareSite from '../share/ShareSite.jsx';
 
 const Thanks = () => (
   <div className="contents-narrow thanks">
@@ -17,7 +16,5 @@ const Thanks = () => (
     </p>
   </div>
 );
-
-registerComponent('Thanks', Thanks);
 
 export default Thanks;

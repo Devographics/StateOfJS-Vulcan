@@ -1,6 +1,7 @@
 import { extendCollection } from "meteor/vulcan:core";
 import { Responses } from "../../modules/responses/index.js";
 import { updateElasticSearchOnCreate, updateElasticSearchOnUpdate } from '../elasticsearch/index.js';
+import { apiSchema } from './apischema';
 
 function duplicateCheck(validationErrors, { document, currentUser }) {
   const existingResponse = Responses.findOne({
@@ -18,6 +19,9 @@ function duplicateCheck(validationErrors, { document, currentUser }) {
 }
 
 extendCollection(Responses, {
+
+  apiSchema,
+
   callbacks: {
     create: {
       validate: [duplicateCheck],

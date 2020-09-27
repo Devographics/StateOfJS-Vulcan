@@ -15,6 +15,7 @@ Package.onUse(function (api) {
     // vulcan core
     'promise',
     `vulcan:core@${version}`,
+    `vulcan:debug@${version}`,
 
     // vulcan packages
     `vulcan:forms@${version}`,

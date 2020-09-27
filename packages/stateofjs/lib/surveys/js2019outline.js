@@ -1,8 +1,15 @@
-export const outline = [
+export default {
+  slug: 'js2019',
+  name: 'State of JavaScript',
+  year: 2019,
+  status: 3, // closed
+  imageUrl: 'stateofjs2019.png',
+  outline: [
   {
     title: 'Syntax',
     description: 'The grammar of JavaScript',
     template: 'feature',
+    slug: 'features',
     questions: [
       {
         title: 'Destructuring',
@@ -22,18 +29,21 @@ export const outline = [
     title: 'Language',
     description: 'The vocabulary of JavaScript',
     template: 'feature',
+    slug: 'features',
     questions: ['Proxies', 'Async/Await', 'Promises', 'Decorators']
   },
   {
     title: 'Data Structures',
     description: 'How you store and manipulate data',
     template: 'feature',
+    slug: 'features',
     questions: ['Maps', 'Sets', 'Typed Arrays', 'Array.prototype.flat']
   },
   {
     title: 'Browser APIs',
     description: 'The features provided by the browser',
     template: 'feature',
+    slug: 'features',
     questions: [
       'Service Workers',
       'LocalStorage',
@@ -53,12 +63,14 @@ export const outline = [
     title: 'Other Features',
     description: 'Other technologies and patterns',
     template: 'feature',
+    slug: 'features',
     questions: ['Progressive Web Apps (PWA)', 'WebAssembly (WASM)']
   },
   {
     title: 'Patterns',
     description: 'How you prefer writing code',
     template: 'pattern',
+    slug: 'patterns',
     questions: [
       'Object-Oriented Programming',
       'Functional Programming',
@@ -69,6 +81,7 @@ export const outline = [
     title: 'JavaScript Flavors',
     description: 'Languages that compile to JavaScript',
     template: 'tool',
+    slug: 'tools',
     id: 'flavors',
     questions: [
       'TypeScript',
@@ -94,6 +107,7 @@ export const outline = [
     title: 'Front-end Frameworks',
     description: 'Front-end frameworks and libraries',
     template: 'tool',
+    slug: 'tools',
     id: 'frontend',
     questions: [
       'React',
@@ -120,6 +134,7 @@ export const outline = [
     title: 'Data Layer',
     description: 'Loading and managing data in your app',
     template: 'tool',
+    slug: 'tools',
     id: 'datalayer',
     questions: [
       'Redux',
@@ -145,6 +160,7 @@ export const outline = [
     title: 'Back-end Frameworks',
     description: 'JavaScript on the server',
     template: 'tool',
+    slug: 'tools',
     id: 'backend',
     questions: [
       'Express',
@@ -173,6 +189,7 @@ export const outline = [
     title: 'Testing',
     description: 'Tools for testing your code',
     template: 'tool',
+    slug: 'tools',
     id: 'testing',
     questions: [
       'Jest',
@@ -201,6 +218,7 @@ export const outline = [
     title: 'Mobile & Desktop',
     description: 'JavaScript for mobile devices and desktop apps',
     template: 'tool',
+    slug: 'tools',
     id: 'mobiledesktop',
     questions: [
       'Electron',
@@ -226,6 +244,7 @@ export const outline = [
   },
   {
     title: 'Other Tools',
+    slug: 'othertools',
     description:
       'For these tools & technologies, just check the ones that you use regularly.',
     questions: [
@@ -339,6 +358,7 @@ export const outline = [
   },
   {
     title: 'Resources',
+    slug: 'resources',
     description: 'What JavaScript resources do you consult?',
     questions: [
       {
@@ -427,6 +447,7 @@ export const outline = [
   },
   {
     title: 'Opinion Questions',
+    slug: 'opinions',
     description: 'How do you feel about the state of JavaScript?',
     questions: [
       {
@@ -462,6 +483,7 @@ export const outline = [
   },
   {
     title: 'About You',
+    slug: 'userinfo',
     description: 'Let\'s get to know the real you.',
     questions: [
       {
@@ -601,4 +623,4 @@ export const outline = [
       }
     ]
   }
-];
+]};

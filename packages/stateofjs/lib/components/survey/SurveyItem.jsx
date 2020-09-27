@@ -7,19 +7,22 @@
 
 */
 import React, { useState } from 'react';
-import { Components, registerComponent, withCurrentUser, getErrors } from 'meteor/vulcan:core';
+import { Components, getErrors } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';
 import get from 'lodash/get';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import bowser from 'bowser';
 import { statuses } from '../../modules/constants.js';
 
-const SurveyItem = ({ survey, history, currentUser }) => {
+const SurveyItem = ({ survey, currentUser }) => {
+  const history = useHistory();
   const [errors, setErrors] = useState();
 
-  const { name, year, imageUrl, currentUserResponse, status } = survey;
+  const { slug, name, year, imageUrl, status } = survey;
+  const { responses } = currentUser;
+  const currentSurveyResponse = responses.find(r => r.surveySlug === slug);
 
   // prefilled data
   let data = {
@@ -51,14 +54,14 @@ const SurveyItem = ({ survey, history, currentUser }) => {
           {name} {year}
         </h3>
         <div className="survey-action">
-          {currentUserResponse && !isEmpty(currentUserResponse) ? (
-            <LinkContainer to={currentUserResponse.pagePath}>
+          {currentSurveyResponse && !isEmpty(currentSurveyResponse) ? (
+            <LinkContainer to={currentSurveyResponse.pagePath}>
               <Components.Button>
-                {status === statuses.published ? 'Continue Survey »' : 'Review Survey »'}
+                {status === statuses.open ? 'Continue Survey »' : 'Review Survey »'}
               </Components.Button>
             </LinkContainer>
           ) : (
-            status === statuses.published ? (
+            status === statuses.open ? (
               <Components.MutationButton
                 label="Start Survey »"
                 variant="primary"
@@ -95,7 +98,5 @@ const ErrorItem = ({ id, message, properties }) => {
     return <div className="survey-item-error error">{message}</div>;
   }
 };
-
-registerComponent('SurveyItem', SurveyItem, withRouter, withCurrentUser);
 
 export default SurveyItem;

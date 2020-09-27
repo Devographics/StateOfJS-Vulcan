@@ -1,5 +1,5 @@
 import countriesOptions from '../countriesOptions.js';
-import { outline } from '../outline.js';
+import surveys from '../../surveys/';
 
 /*
 
@@ -30,8 +30,10 @@ export const makeId = str => {
   return s;
 };
 
-export const getId = (sectionTitle, questionTitle) =>
-  makeId(sectionTitle) + '_' + makeId(questionTitle);
+export const getQuestionId = (survey, section, question) =>{
+  const questionSlug = makeId(typeof question === 'string' ? question : question.title)
+  return survey.slug + '_' + section.slug + '_' + questionSlug;
+}
 
 export const getResponsePath = (response, sectionNumber) =>
   `/session/${response._id}${
@@ -113,7 +115,8 @@ export const getQuestionObject = (questionOrId, section, number) => {
   let questionObject =
     typeof questionOrId === 'string' ? { title: questionOrId } : { ...questionOrId };
 
-  questionObject.id = getId(section.title, questionObject.title);
+  questionObject.id = makeId(questionObject.title);
+  questionObject.slug = questionObject.id;
   questionObject.type = String; // default to String type
 
   // if options are provided in outlined format them properly
@@ -143,6 +146,7 @@ export const getQuestionSchema = questionObject => {
     type,
     isprivate = false,
     searchable = false,
+    allowmultiple = false,
   } = questionObject;
 
   const questionSchema = {
@@ -160,6 +164,14 @@ export const getQuestionSchema = questionObject => {
 
   if (options) {
     questionSchema.options = options;
+  }
+
+  if (allowmultiple) {
+    questionSchema.type = Array;
+    questionSchema.arrayItem = {
+      type: String,
+            optional: true,
+    }
   }
 
   return questionSchema;
@@ -182,7 +194,7 @@ export const getParsedOutline = outline => {
 };
 
 
-export const parsedOutline = getParsedOutline(outline);
+export const parsedOutline = getParsedOutline(surveys[0].outline);
 
 export const ignoredFieldTypes = ['email', 'text', 'longtext'];
 

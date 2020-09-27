@@ -11,7 +11,7 @@ TODO
 */
 import React, { useState } from 'react';
 import { getResponsePath, getQuestionObject, ignoredFieldTypes } from '../../modules/responses/helpers.js';
-import { outline } from '../../modules/outline.js';
+import surveys from '../../surveys';
 import { NavLink } from 'react-router-dom';
 
 // TODO
@@ -41,8 +41,9 @@ const getSectionCompletionPercentage = (section, response) => {
   return Math.round((completedQuestionsCount / questionsCount) * 100);
 };
 
-const SurveyNav = ({ responseId, response }) => {
+const SurveyNav = ({ survey, responseId, response }) => {
   const [shown, setShown] = useState(false);
+  const outline = surveys.find(o => o.slug === survey.slug).outline;
   return (
     <nav className={`section-nav ${shown ? 'section-nav-shown' : 'section-nav-hidden'}`}>
       <div className="section-nav-inner">
@@ -52,6 +53,7 @@ const SurveyNav = ({ responseId, response }) => {
             setShown(!shown);
           }}
         >
+          <h2>{survey.name} {survey.year}</h2>
           <h3 className="section-nav-heading">Table of Contents</h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
         </div>

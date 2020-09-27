@@ -1,9 +1,13 @@
-import { outline } from '../outline.js';
+
+import surveys from '../../surveys';
+import get from 'lodash/get';
+
 import {
   getQuestionObject,
   getQuestionSchema,
   getResponsePath,
   getCompletionPercentage,
+  getQuestionId,
 } from './helpers.js';
 
 const schema = {
@@ -37,10 +41,10 @@ const schema = {
     type: String,
     optional: true,
     canRead: ['admins'],
-    resolveAs: {
+    relation: {
       fieldName: 'user',
-      type: 'User',
-      relation: 'hasOne',
+      typeName: 'User',
+      kind: 'hasOne',
     },
   },
 
@@ -119,55 +123,61 @@ const schema = {
       resolver: response => getResponsePath(response),
     },
   },
-  surveyId: {
+  surveySlug: {
     type: String,
+    optional: true,
     canRead: ['guests'],
     canCreate: ['members'],
     canUpdate: ['admins'],
-    input: 'select',
-    resolveAs: {
-      fieldName: 'survey',
-      type: 'Survey',
-      relation: 'hasOne',
-    },
-    options: ({ data }) =>
-      data.surveys.results.map(survey => ({
-        value: survey._id,
-        label: `[${survey.year}] ${survey.name}`,
-      })),
-    query: `
-      surveys{
-        results{
-          _id
-          name
-          year
-        }
-      }
-    `,
   },
+  // surveyId: {
+  //   type: String,
+  //   canRead: ['guests'],
+  //   canCreate: ['members'],
+  //   canUpdate: ['admins'],
+  //   input: 'select',
+  //   relation: {
+  //     fieldName: 'survey',
+  //     typeName: 'Survey',
+  //     kind: 'hasOne',
+  //   },
+  //   options: ({ data }) =>
+  //     get(data, 'surveys.results', []).map(survey => ({
+  //       value: survey._id,
+  //       label: `[${survey.year}] ${survey.name}`,
+  //     })),
+  //   query: `
+  //   query SurveysQuery {
+  //     surveys{
+  //       results{
+  //         _id
+  //         name
+  //         year
+  //       }
+  //     }
+  //   }
+  //   `,
+  // },
 };
 
-let i = 0;
+/*
 
-outline.forEach(section => {
-  section.questions &&
-    section.questions.forEach(questionOrId => {
-      i++;
-      const questionObject = getQuestionObject(questionOrId, section, i);
-      const { id, allowmultiple } = questionObject;
-      const questionSchema = getQuestionSchema(questionObject);
-      // questions that allow multiple responses should be stored as arrays of strings
-      if (allowmultiple) {
-        questionSchema.type = Array;
-        schema[id] = questionSchema;
-        schema[`${id}.$`] = {
-          type: String,
-          optional: true,
-        };
-      } else {
-        schema[id] = questionSchema;
-      }
-    });
+Just put all questions on the root of the schema
+
+*/
+let i = 0;
+surveys.forEach(survey => {
+  survey.outline.forEach(section => {
+    section.questions &&
+      section.questions.forEach(questionOrId => {
+        i++;
+        const questionObject = getQuestionObject(questionOrId, section, i);
+        const questionSchema = getQuestionSchema(questionObject);
+        const questionId = getQuestionId(survey, section, questionObject);
+        schema[questionId] = questionSchema;
+      });
+  });
 });
+
 
 export default schema;

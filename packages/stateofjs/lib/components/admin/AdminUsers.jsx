@@ -1,5 +1,5 @@
 import React from 'react';
-import { Components, registerComponent, withAccess } from 'meteor/vulcan:core';
+import { Components } from 'meteor/vulcan:core';
 import Users from 'meteor/vulcan:users';
 
 const AdminUsers = () => (
@@ -27,13 +27,5 @@ const AdminUsers = () => (
     />
   </div>
 );
-
-const accessOptions = {
-  groups: ['admins'],
-  redirect: '/',
-  message: 'Sorry, you do not have the rights to access this page.',
-};
-
-registerComponent('AdminUsers', AdminUsers, [withAccess, accessOptions]);
 
 export default AdminUsers;

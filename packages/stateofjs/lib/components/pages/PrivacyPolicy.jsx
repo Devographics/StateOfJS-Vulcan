@@ -1,5 +1,4 @@
 import React from 'react';
-import { registerComponent } from 'meteor/vulcan:core';
 
 const PrivacyPolicy = () => (
   <div className="contents-narrow privacy-policy">
@@ -48,7 +47,5 @@ const PrivacyPolicy = () => (
     </p>
   </div>
 );
-
-registerComponent('PrivacyPolicy', PrivacyPolicy);
 
 export default PrivacyPolicy;

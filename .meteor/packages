@@ -17,3 +17,4 @@ accounts-password
 stateofjs
 vulcan:events-internal
 vulcan:errors-sentry
+vulcan:debug
