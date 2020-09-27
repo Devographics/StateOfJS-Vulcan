@@ -1,6 +1,8 @@
 import countriesOptions from '../countriesOptions.js';
 import surveys from '../../surveys/';
 import { Utils } from 'meteor/vulcan:core';
+import pickBy from 'lodash/pickBy';
+
 /*
 
 Replace all occurences of a string
@@ -198,23 +200,32 @@ export const getParsedOutline = outline => {
   });
 };
 
-
-export const parsedOutline = getParsedOutline(surveys[0].outline);
-
 export const ignoredFieldTypes = ['email', 'text', 'longtext'];
 
-export const getCompletionPercentage = document => {
+export const getCompletionPercentage = response => {
   let completedCount = 0;
   let totalCount = 0;
+  const survey = getSurvey(response);
+  const parsedOutline = getParsedOutline(survey.outline);
   parsedOutline.forEach(section => {
     section.questions && section.questions.forEach(question => {
-      const response = document[question.id];
+      const questionId = getQuestionId(survey, section, question);
+      const answer = response[questionId];
       totalCount ++;
-      if (!ignoredFieldTypes.includes(question.template) && response !== null && typeof response !== 'undefined') {
+      if (!ignoredFieldTypes.includes(question.template) && answer !== null && typeof answer !== 'undefined') {
         completedCount++;
       }
-    })
-  })
+    });
+  });
   const completion = Math.round(completedCount*100/totalCount);
   return completion;
+}
+
+/*
+
+Filter a response object to only keep fields relevant to the survey
+
+*/
+export const getResponseData = response => {
+  return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }

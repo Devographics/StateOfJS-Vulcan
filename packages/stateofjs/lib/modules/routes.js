@@ -10,8 +10,8 @@ import SurveyPage from '../components/survey/SurveyPage';
 import SurveySection from '../components/survey/SurveySection';
 
 import AdminSurveys from '../components/admin/AdminSurveys';
-import AdminResponses from '../components/admin/AdminSurveys';
-import AdminUsers from '../components/admin/AdminSurveys';
+import AdminResponses from '../components/admin/AdminResponses';
+import AdminUsers from '../components/admin/AdminUsers';
 
 const routes = [
 { name: 'home', path: '/', component: Surveys },

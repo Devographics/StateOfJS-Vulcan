@@ -15,7 +15,9 @@ import SurveyNav from './SurveyNav.jsx';
 import SurveySectionContents from './SurveySectionContents.jsx';
 
 const SurveySection = () => {
-  const { responseId, sectionNumber = 0 } = useParams();
+  let { responseId, sectionNumber = 0 } = useParams();
+  sectionNumber = parseInt(sectionNumber);
+
   const history = useHistory();
 
   const { document: response, loading } = useSingle2({

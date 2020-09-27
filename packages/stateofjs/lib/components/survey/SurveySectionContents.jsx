@@ -41,7 +41,7 @@ const SurveySectionContents = ({ survey, sectionNumber, section, response, previ
         }}
         warnUnsavedChanges={true}
         disabled={response.survey.status === statuses.closed}
-        Components={{
+        components={{
           FormLayout,
           FormSubmit: FormSubmitWrapper,
         }}

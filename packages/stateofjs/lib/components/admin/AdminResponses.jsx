@@ -1,5 +1,14 @@
 import React from 'react';
 import { Components } from 'meteor/vulcan:core';
+import { getResponseData } from '../../modules/responses/helpers';
+
+const ResponseData = ({ document }) => {
+  return (
+    <Components.ModalTrigger label="View Data">
+      <Components.Card document={getResponseData(document)} />
+    </Components.ModalTrigger>
+  );
+};
 
 const AdminResponses = () => (
   <div className="admin-responses">
@@ -23,6 +32,7 @@ const AdminResponses = () => (
         'referrer',
         // 'isSynced',
         'user',
+        { name: 'data', component: ResponseData },
       ]}
     />
   </div>

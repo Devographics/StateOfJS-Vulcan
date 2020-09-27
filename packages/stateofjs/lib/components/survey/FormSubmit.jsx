@@ -12,6 +12,7 @@ TODO
 import React, { useState } from 'react';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import { Components } from 'meteor/vulcan:core';
+import { useHistory } from 'react-router-dom';
 
 const FormSubmit = ({
   submitForm,
@@ -19,10 +20,10 @@ const FormSubmit = ({
   sectionNumber,
   nextSection,
   previousSection,
-  history,
   showMessage = true,
   variant = 'bottom',
 }) => {
+  const history = useHistory();
   const [prevLoading, setPrevLoading] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
   return (

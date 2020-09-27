@@ -4,6 +4,8 @@ import { registerFragment } from 'meteor/vulcan:core';
 registerFragment(/* GraphQL */ `
   fragment ResponseFragment on Response {
     _id
+    createdAt
+    updatedAt
 
     pagePath
 
@@ -26,17 +28,11 @@ registerFragment(/* GraphQL */ `
 
 registerFragment(/* GraphQL */ `
   fragment ResponseAdminFragment on Response {
-    _id
-    createdAt
-    updatedAt
 
-    pagePath
-    isSynced
+    ...ResponseFragment
 
-    # aboutyou_youremail
     referrer
     source
-
     completion
 
     user {
@@ -45,11 +41,6 @@ registerFragment(/* GraphQL */ `
       pagePath
     }
 
-    survey {
-      _id
-      name
-      year
-    }
   }
 `);
 
