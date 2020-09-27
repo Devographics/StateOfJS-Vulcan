@@ -23,7 +23,6 @@ import SurveyItem from '../survey/SurveyItem';
 const Surveys = () => {
   const location = useLocation();
   const { currentUser } = useCurrentUser();
-
   const query = qs.parse(location.search, { ignoreQueryPrefix: true, decoder: (c) => c });
   const { email, source } = query;
   if (typeof window !== 'undefined') {

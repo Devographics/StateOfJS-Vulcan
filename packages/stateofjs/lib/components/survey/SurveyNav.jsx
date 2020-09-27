@@ -86,7 +86,7 @@ const SectionNavItem = ({ responseId, response, section, number, setShown }) => 
   return (
     <li className="section-nav-item">
       <NavLink
-        to={getResponsePath({ _id: responseId }, number)}
+        to={getResponsePath(response, number)}
         onClick={() => {
           setShown(false);
         }}

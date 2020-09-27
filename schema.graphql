@@ -818,7 +818,6 @@ type Response {
   os: String 
   referrer: String 
   source: String 
-  pagePath: String 
   surveySlug: String 
   # Example: <code>const { foo } = bar</code>
   js2019_features_destructuring: String 
@@ -1049,6 +1048,7 @@ type Response {
   css2020_tools_expo: String 
   # Other mobile & desktop tools you use not mentioned in the list above
   css2020_tools_othermobiledesktoptools: String 
+  pagePath: String 
   survey: Survey 
   createdAtFormatted(format: String = "YYYY/MM/DD"): String 
   updatedAtFormatted(format: String = "YYYY/MM/DD"): String 
@@ -1546,7 +1546,6 @@ input ResponseFilterInput {
   os: String_Selector
   referrer: String_Selector
   source: String_Selector
-  pagePath: String_Selector
   surveySlug: String_Selector
   js2019_features_destructuring: String_Selector
   js2019_features_spreadoperator: String_Selector
@@ -1747,7 +1746,6 @@ input ResponseSortInput {
   os: SortOptions
   referrer: SortOptions
   source: SortOptions
-  pagePath: SortOptions
   surveySlug: SortOptions
   js2019_features_destructuring: SortOptions
   js2019_features_spreadoperator: SortOptions

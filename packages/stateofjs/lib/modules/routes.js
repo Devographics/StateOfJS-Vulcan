@@ -17,7 +17,7 @@ const routes = [
 { name: 'home', path: '/', component: Surveys },
 { name: 'account', path: '/account', component: AccountPage },
 { name: 'surveyPage', path: '/survey/:slug/:year/', component: SurveyPage },
-{ name: 'responsePage', path: '/session/:responseId/:sectionNumber?', component: SurveySection },
+{ name: 'responsePage', path: '/survey/:slug/:year/:responseId/:sectionNumber?', component: SurveySection },
 
 { name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys },
 { name: 'adminResponses', path: '/admin/responses', component: AdminResponses },

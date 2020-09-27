@@ -1,11 +1,9 @@
 
 import surveys from '../../surveys';
-import get from 'lodash/get';
 
 import {
   getQuestionObject,
   getQuestionSchema,
-  getResponsePath,
   getCompletionPercentage,
   getQuestionId,
 } from './helpers.js';
@@ -115,14 +113,6 @@ const schema = {
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
-  pagePath: {
-    type: String,
-    optional: true,
-    canRead: ['guests'],
-    resolveAs: {
-      resolver: response => getResponsePath(response),
-    },
-  },
   surveySlug: {
     type: String,
     optional: true,
@@ -162,7 +152,7 @@ const schema = {
 
 /*
 
-Just put all questions on the root of the schema
+Just put all questions for all surveys on the root of the schema
 
 */
 let i = 0;

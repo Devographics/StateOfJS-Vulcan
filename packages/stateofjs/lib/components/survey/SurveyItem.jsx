@@ -22,7 +22,7 @@ const SurveyItem = ({ survey, currentUser }) => {
 
   const { slug, name, year, imageUrl, status } = survey;
   const { responses } = currentUser;
-  const currentSurveyResponse = responses.find(r => r.surveySlug === slug);
+  const currentSurveyResponse = responses.find((r) => r.surveySlug === slug);
 
   // prefilled data
   let data = {
@@ -60,38 +60,38 @@ const SurveyItem = ({ survey, currentUser }) => {
                 {status === statuses.open ? 'Continue Survey »' : 'Review Survey »'}
               </Components.Button>
             </LinkContainer>
+          ) : status === statuses.open ? (
+            <Components.MutationButton
+              label="Start Survey »"
+              variant="primary"
+              mutationOptions={{
+                name: 'createResponse',
+                args: { input: 'CreateResponseInput' },
+                fragmentName: 'CreateResponseOutputFragment',
+              }}
+              mutationArguments={{ input: { data } }}
+              successCallback={(result) => {
+                history.push(get(result, 'data.createResponse.data.pagePath'));
+              }}
+              errorCallback={(error) => {
+                setErrors(getErrors(error));
+              }}
+            />
           ) : (
-            status === statuses.open ? (
-              <Components.MutationButton
-                label="Start Survey »"
-                variant="primary"
-                mutationOptions={{
-                  name: 'createResponse',
-                  args: { input: 'CreateResponseInput' },
-                  fragmentName: 'CreateResponseOutputFragment',
-                }}
-                mutationArguments={{ input: { data } }}
-                successCallback={result => {
-                  history.push(get(result, 'data.createResponse.data.pagePath'));
-                }}
-                errorCallback={error => {
-                  setErrors(getErrors(error));
-                }}
-              />
-            ) : <div className="survey-action-closed">Survey closed.</div>
+            <div className="survey-action-closed">Survey closed.</div>
           )}
         </div>
       </div>
-      {errors && errors.map(error => <ErrorItem key={error.id} {...error} />)}
+      {errors && errors.map((error) => <ErrorItem key={error.id} {...error} response={currentSurveyResponse} />)}
     </div>
   );
 };
 
-const ErrorItem = ({ id, message, properties }) => {
+const ErrorItem = ({ id, message, properties, response }) => {
   if (id === 'responses.duplicate_responses') {
     return (
       <div className="survey-item-error error message">
-        {message} <Link to={getResponsePath({ _id: properties.responseId })}>Continue Survey →</Link>
+        {message} <Link to={getResponsePath(response)}>Continue Survey →</Link>
       </div>
     );
   } else {

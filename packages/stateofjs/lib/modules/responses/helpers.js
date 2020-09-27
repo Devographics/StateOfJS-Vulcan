@@ -1,6 +1,6 @@
 import countriesOptions from '../countriesOptions.js';
 import surveys from '../../surveys/';
-
+import { Utils } from 'meteor/vulcan:core';
 /*
 
 Replace all occurences of a string
@@ -30,15 +30,20 @@ export const makeId = str => {
   return s;
 };
 
+export const getSurvey = response => surveys.find(s => s.slug === response.surveySlug);
+
 export const getQuestionId = (survey, section, question) =>{
   const questionSlug = makeId(typeof question === 'string' ? question : question.title)
   return survey.slug + '_' + section.slug + '_' + questionSlug;
 }
 
-export const getResponsePath = (response, sectionNumber) =>
-  `/session/${response._id}${
+export const getResponsePath = (response, sectionNumber) =>{
+  const { name, year } = getSurvey(response);
+  const path = `/survey/${Utils.slugify(name)}/${year}/${response._id}${
     typeof sectionNumber !== 'undefined' ? `/${sectionNumber}` : ''
   }`;
+  return path;
+}
 
 export const templates = {
   feature: () => ({
