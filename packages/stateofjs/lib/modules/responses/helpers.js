@@ -94,8 +94,18 @@ export const templates = {
       { value: 'would_not_use', label: '👎 Used it > Would avoid' },
     ],
   }),
-  multiple: ({ allowmultiple }) => ({
-    input: allowmultiple ? 'checkboxgroup' : 'radiogroup',
+  single: ({ allowother = false }) => ({
+    allowmultiple: false,
+    allowother,
+    input: 'radiogroup',
+    randomize: false,
+  }),
+  multiple: ({ allowother = false }) => ({
+    allowmultiple: true,
+    allowother,
+    input: 'checkboxgroup',
+    randomize: true,
+    suffix: 'choices',
   }),
   text: () => ({ input: 'text' }),
   longtext: () => ({ input: 'textarea' }),

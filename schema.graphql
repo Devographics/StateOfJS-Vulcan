@@ -857,8 +857,8 @@ type Response {
   js2019__tools__purescript__experience: String 
   # Other JavaScript flavors you use not mentioned in the list above
   js2019__sections_other_tools__javascript_flavors: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of front-end frameworks?
-  js2019__happiness__front_end_frameworks: Float 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of JavaScript flavors?
+  js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
   js2019__tools__angular__experience: String 
@@ -867,6 +867,8 @@ type Response {
   js2019__tools__svelte__experience: String 
   # Other Front-end frameworks you use not mentioned in the list above
   js2019__sections_other_tools__front_end_frameworks: String 
+  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of front-end frameworks?
+  js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
@@ -951,8 +953,6 @@ type Response {
   js2019__user_info__years_of_experience: String 
   # How do you introduce yourself at parties?
   js2019__user_info__job_title: String 
-  # Other job title you use not mentioned in the list above
-  js2019__user_info__job_title_other: String 
   # How proficient are you at writing CSS? (pick the most advanced option corresponding to your skills)
   js2019__user_info__css_proficiency: String 
   # How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)
@@ -962,8 +962,6 @@ type Response {
   js2019__user_info__yearly_salary: String 
   js2019__user_info__how_did_you_find_out: String 
   js2019__user_info__gender: String 
-  # Other gender not mentioned in the list above
-  js2019__user_info__gender_other: String 
   # Your country of residence
   js2019__user_info__country: String 
   # If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
@@ -1063,17 +1061,17 @@ type Response {
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS-in-JS libraries?
   css2020__happiness__css_in_js: Float 
   # Which text editor(s) do you regularly use?
-  css2020__undefined__texteditors: [String] 
+  css2020__other_tools__text_editors__choices: [String] 
   # Other text editors you use not mentioned in the list above
-  css2020__undefined__text_editors__others: String 
+  css2020__other_tools__text_editors__others: String 
   # Which browser(s) do you work in primarily during initial development?
-  css2020__undefined__browsers: [String] 
+  css2020__other_tools__browsers__choices: [String] 
   # Other browsers you use not mentioned in the list above
-  css2020__undefined__browsers__others: String 
+  css2020__other_tools__browsers__others: String 
   # Which browsers do you test in?
-  css2020__environments__browsers: [String] 
+  css2020__environments__browsers__choices: [String] 
   # Which form factors do you test on?
-  css2020__environments__form_factors: [String] 
+  css2020__environments__form_factors__choices: [String] 
   # Do you write print styles?
   css2020__environments__css_for_print: String 
   # Do you write CSS for email clients?
@@ -1232,7 +1230,7 @@ input CreateResponseDataInput {
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
   js2019__sections_other_tools__javascript_flavors: String 
-  js2019__happiness__front_end_frameworks: Float 
+  js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
   js2019__tools__angular__experience: String 
@@ -1240,6 +1238,7 @@ input CreateResponseDataInput {
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
   js2019__sections_other_tools__front_end_frameworks: String 
+  js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
@@ -1299,14 +1298,12 @@ input CreateResponseDataInput {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
-  js2019__user_info__job_title_other: String 
   js2019__user_info__css_proficiency: String 
   js2019__user_info__backend_proficiency: String 
   js2019__user_info__company_size: String 
   js2019__user_info__yearly_salary: String 
   js2019__user_info__how_did_you_find_out: String 
   js2019__user_info__gender: String 
-  js2019__user_info__gender_other: String 
   js2019__user_info__country: String 
   js2019__user_info__email: String 
   css2020__features__grid__experience: String 
@@ -1386,12 +1383,12 @@ input CreateResponseDataInput {
   css2020__tools__cssmodules__experience: String 
   css2020__sections_other_tools__css_in_js: String 
   css2020__happiness__css_in_js: Float 
-  css2020__undefined__texteditors: [String] 
-  css2020__undefined__text_editors__others: String 
-  css2020__undefined__browsers: [String] 
-  css2020__undefined__browsers__others: String 
-  css2020__environments__browsers: [String] 
-  css2020__environments__form_factors: [String] 
+  css2020__other_tools__text_editors__choices: [String] 
+  css2020__other_tools__text_editors__others: String 
+  css2020__other_tools__browsers__choices: [String] 
+  css2020__other_tools__browsers__others: String 
+  css2020__environments__browsers__choices: [String] 
+  css2020__environments__form_factors__choices: [String] 
   css2020__environments__css_for_print: String 
   css2020__environments__css_for_email: String 
   css2020__resources__blogs_news_magazines__choices: [String] 
@@ -1478,7 +1475,7 @@ input UpdateResponseDataInput {
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
   js2019__sections_other_tools__javascript_flavors: String 
-  js2019__happiness__front_end_frameworks: Float 
+  js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
   js2019__tools__angular__experience: String 
@@ -1486,6 +1483,7 @@ input UpdateResponseDataInput {
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
   js2019__sections_other_tools__front_end_frameworks: String 
+  js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
@@ -1545,14 +1543,12 @@ input UpdateResponseDataInput {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
-  js2019__user_info__job_title_other: String 
   js2019__user_info__css_proficiency: String 
   js2019__user_info__backend_proficiency: String 
   js2019__user_info__company_size: String 
   js2019__user_info__yearly_salary: String 
   js2019__user_info__how_did_you_find_out: String 
   js2019__user_info__gender: String 
-  js2019__user_info__gender_other: String 
   js2019__user_info__country: String 
   js2019__user_info__email: String 
   css2020__features__grid__experience: String 
@@ -1632,12 +1628,12 @@ input UpdateResponseDataInput {
   css2020__tools__cssmodules__experience: String 
   css2020__sections_other_tools__css_in_js: String 
   css2020__happiness__css_in_js: Float 
-  css2020__undefined__texteditors: [String] 
-  css2020__undefined__text_editors__others: String 
-  css2020__undefined__browsers: [String] 
-  css2020__undefined__browsers__others: String 
-  css2020__environments__browsers: [String] 
-  css2020__environments__form_factors: [String] 
+  css2020__other_tools__text_editors__choices: [String] 
+  css2020__other_tools__text_editors__others: String 
+  css2020__other_tools__browsers__choices: [String] 
+  css2020__other_tools__browsers__others: String 
+  css2020__environments__browsers__choices: [String] 
+  css2020__environments__form_factors__choices: [String] 
   css2020__environments__css_for_print: String 
   css2020__environments__css_for_email: String 
   css2020__resources__blogs_news_magazines__choices: [String] 
@@ -1719,7 +1715,7 @@ input ResponseFilterInput {
   js2019__tools__clojurescript__experience: String_Selector
   js2019__tools__purescript__experience: String_Selector
   js2019__sections_other_tools__javascript_flavors: String_Selector
-  js2019__happiness__front_end_frameworks: Float_Selector
+  js2019__happiness__javascript_flavors: Float_Selector
   js2019__tools__react__experience: String_Selector
   js2019__tools__vue__experience: String_Selector
   js2019__tools__angular__experience: String_Selector
@@ -1727,6 +1723,7 @@ input ResponseFilterInput {
   js2019__tools__ember__experience: String_Selector
   js2019__tools__svelte__experience: String_Selector
   js2019__sections_other_tools__front_end_frameworks: String_Selector
+  js2019__happiness__front_end_frameworks: Float_Selector
   js2019__tools__redux__experience: String_Selector
   js2019__tools__apollo__experience: String_Selector
   js2019__tools__graphql__experience: String_Selector
@@ -1786,14 +1783,12 @@ input ResponseFilterInput {
   js2019__opinions__missing_from_js: String_Selector
   js2019__user_info__years_of_experience: String_Selector
   js2019__user_info__job_title: String_Selector
-  js2019__user_info__job_title_other: String_Selector
   js2019__user_info__css_proficiency: String_Selector
   js2019__user_info__backend_proficiency: String_Selector
   js2019__user_info__company_size: String_Selector
   js2019__user_info__yearly_salary: String_Selector
   js2019__user_info__how_did_you_find_out: String_Selector
   js2019__user_info__gender: String_Selector
-  js2019__user_info__gender_other: String_Selector
   js2019__user_info__country: String_Selector
   js2019__user_info__email: String_Selector
   css2020__features__grid__experience: String_Selector
@@ -1873,12 +1868,12 @@ input ResponseFilterInput {
   css2020__tools__cssmodules__experience: String_Selector
   css2020__sections_other_tools__css_in_js: String_Selector
   css2020__happiness__css_in_js: Float_Selector
-  css2020__undefined__texteditors: String_Array_Selector
-  css2020__undefined__text_editors__others: String_Selector
-  css2020__undefined__browsers: String_Array_Selector
-  css2020__undefined__browsers__others: String_Selector
-  css2020__environments__browsers: String_Array_Selector
-  css2020__environments__form_factors: String_Array_Selector
+  css2020__other_tools__text_editors__choices: String_Array_Selector
+  css2020__other_tools__text_editors__others: String_Selector
+  css2020__other_tools__browsers__choices: String_Array_Selector
+  css2020__other_tools__browsers__others: String_Selector
+  css2020__environments__browsers__choices: String_Array_Selector
+  css2020__environments__form_factors__choices: String_Array_Selector
   css2020__environments__css_for_print: String_Selector
   css2020__environments__css_for_email: String_Selector
   css2020__resources__blogs_news_magazines__choices: String_Array_Selector
@@ -1955,7 +1950,7 @@ input ResponseSortInput {
   js2019__tools__clojurescript__experience: SortOptions
   js2019__tools__purescript__experience: SortOptions
   js2019__sections_other_tools__javascript_flavors: SortOptions
-  js2019__happiness__front_end_frameworks: SortOptions
+  js2019__happiness__javascript_flavors: SortOptions
   js2019__tools__react__experience: SortOptions
   js2019__tools__vue__experience: SortOptions
   js2019__tools__angular__experience: SortOptions
@@ -1963,6 +1958,7 @@ input ResponseSortInput {
   js2019__tools__ember__experience: SortOptions
   js2019__tools__svelte__experience: SortOptions
   js2019__sections_other_tools__front_end_frameworks: SortOptions
+  js2019__happiness__front_end_frameworks: SortOptions
   js2019__tools__redux__experience: SortOptions
   js2019__tools__apollo__experience: SortOptions
   js2019__tools__graphql__experience: SortOptions
@@ -2022,14 +2018,12 @@ input ResponseSortInput {
   js2019__opinions__missing_from_js: SortOptions
   js2019__user_info__years_of_experience: SortOptions
   js2019__user_info__job_title: SortOptions
-  js2019__user_info__job_title_other: SortOptions
   js2019__user_info__css_proficiency: SortOptions
   js2019__user_info__backend_proficiency: SortOptions
   js2019__user_info__company_size: SortOptions
   js2019__user_info__yearly_salary: SortOptions
   js2019__user_info__how_did_you_find_out: SortOptions
   js2019__user_info__gender: SortOptions
-  js2019__user_info__gender_other: SortOptions
   js2019__user_info__country: SortOptions
   js2019__user_info__email: SortOptions
   css2020__features__grid__experience: SortOptions
@@ -2109,12 +2103,12 @@ input ResponseSortInput {
   css2020__tools__cssmodules__experience: SortOptions
   css2020__sections_other_tools__css_in_js: SortOptions
   css2020__happiness__css_in_js: SortOptions
-  css2020__undefined__texteditors: SortOptions
-  css2020__undefined__text_editors__others: SortOptions
-  css2020__undefined__browsers: SortOptions
-  css2020__undefined__browsers__others: SortOptions
-  css2020__environments__browsers: SortOptions
-  css2020__environments__form_factors: SortOptions
+  css2020__other_tools__text_editors__choices: SortOptions
+  css2020__other_tools__text_editors__others: SortOptions
+  css2020__other_tools__browsers__choices: SortOptions
+  css2020__other_tools__browsers__others: SortOptions
+  css2020__environments__browsers__choices: SortOptions
+  css2020__environments__form_factors__choices: SortOptions
   css2020__environments__css_for_print: SortOptions
   css2020__environments__css_for_email: SortOptions
   css2020__resources__blogs_news_magazines__choices: SortOptions

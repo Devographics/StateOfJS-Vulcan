@@ -189,7 +189,7 @@ export default {
             },
             {
                "title": "Overall Happiness",
-               "id": "front_end_frameworks",
+               "id": "javascript_flavors",
                "sectionSlug": "happiness",
                "description": "On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of JavaScript flavors?",
                "template": "happiness"
@@ -376,10 +376,6 @@ export default {
                "id": "utilities",
                "description": "Which JavaScript utilities do you regularly use?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": true,
-               "suffix": "choices",
                "options": [
                   "Immer",
                   "Lodash",
@@ -403,10 +399,6 @@ export default {
                "id": "text_editors",
                "description": "Which text editor(s) do you regularly use?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": true,
-               "suffix": "choices",
                "options": [
                   "VS Code",
                   "Sublime Text",
@@ -428,10 +420,6 @@ export default {
                "id": "browsers",
                "description": "Which browser(s) do you work in primarily during initial development?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": false,
-               "suffix": "choices",
                "options": [
                   "Edge",
                   "Chrome",
@@ -451,10 +439,6 @@ export default {
                "id": "build_tools",
                "description": "Which build tools do you use to compile and bundle your code?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": false,
-               "suffix": "choices",
                "options": [
                   "Webpack",
                   "Parcel",
@@ -476,10 +460,6 @@ export default {
                "id": "non_js_languages",
                "description": "Which other languages do you code in besides JavaScript and its flavors?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": false,
-               "suffix": "choices",
                "options": [
                   "PHP",
                   "Ruby",
@@ -517,10 +497,6 @@ export default {
                "id": "blogs_news_magazines",
                "description": "Which JavaScript-related blogs/magazines/etc. do you read?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": true,
-               "suffix": "choices",
                "options": [
                   "CSS Tricks",
                   "Smashing Magazine",
@@ -547,10 +523,6 @@ export default {
                "id": "sites_courses",
                "description": "Which JavaScript-related sites/courses/etc. do you consult?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": true,
-               "suffix": "choices",
                "options": [
                   "Stack Overflow",
                   "MDN",
@@ -575,10 +547,6 @@ export default {
                "id": "podcasts",
                "description": "Which JavaScript or programming-related podcasts do you listen to?",
                "template": "multiple",
-               "allowmultiple": true,
-               "allowother": true,
-               "randomize": true,
-               "suffix": "choices",
                "options": [
                   "Shop Talk Show",
                   "The Changelog",
@@ -654,10 +622,7 @@ export default {
                "title": "Years of Experience",
                "id": "years_of_experience",
                "description": "How long you've been writing JavaScript.",
-               "template": "multiple",
-               "allowmultiple": false,
-               "allowother": false,
-               "randomize": false,
+               "template": "single",
                "options": [
                   "Less than one year",
                   "1-2 years",
@@ -671,10 +636,8 @@ export default {
                "title": "Job Title",
                "id": "job_title",
                "description": "How do you introduce yourself at parties?",
-               "template": "multiple",
-               "allowmultiple": false,
+               "template": "single",
                "allowother": true,
-               "randomize": false,
                "options": [
                   "Front-end Developer/Engineer",
                   "Full-stack Developer/Engineer",
@@ -683,19 +646,10 @@ export default {
                ]
             },
             {
-               "title": "Other Job Title",
-               "id": "job_title_other",
-               "template": "text",
-               "description": "Other job title you use not mentioned in the list above"
-            },
-            {
                "title": "CSS Proficiency",
                "id": "css_proficiency",
                "description": "How proficient are you at writing CSS? (pick the most advanced option corresponding to your skills)",
-               "template": "multiple",
-               "allowmultiple": false,
-               "allowother": false,
-               "randomize": false,
+               "template": "single",
                "options": [
                   "Level 1: virtually no knowledge of CSS",
                   "Level 2: using CSS frameworks and tweaking existing styles",
@@ -708,10 +662,7 @@ export default {
                "title": "Back-end Proficiency",
                "id": "backend_proficiency",
                "description": "How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)",
-               "template": "multiple",
-               "allowmultiple": false,
-               "allowother": false,
-               "randomize": false,
+               "template": "single",
                "options": [
                   "Level 1: not able to handle any back-end work",
                   "Level 2: able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)",
@@ -723,10 +674,7 @@ export default {
             {
                "title": "Company Size",
                "id": "company_size",
-               "template": "multiple",
-               "allowmultiple": false,
-               "allowother": false,
-               "randomize": false,
+               "template": "single",
                "options": [
                   "Just me",
                   "1-5 people",
@@ -742,10 +690,7 @@ export default {
                "title": "Yearly Salary",
                "id": "yearly_salary",
                "description": "In USD",
-               "template": "multiple",
-               "allowmultiple": false,
-               "allowother": false,
-               "randomize": false,
+               "template": "single",
                "options": [
                   "I work for free :(",
                   "$0-$10k",
@@ -764,8 +709,7 @@ export default {
             {
                "title": "Your Gender",
                "id": "gender",
-               "template": "multiple",
-               "allowmultiple": false,
+               "template": "single",
                "allowother": true,
                "options": [
                   "Female",
@@ -773,12 +717,6 @@ export default {
                   "Non-binary/ third gender",
                   "Prefer not to say"
                ]
-            },
-            {
-               "title": "Other Gender",
-               "id": "gender_other",
-               "template": "text",
-               "description": "Other gender not mentioned in the list above"
             },
             {
                "title": "Your Country",

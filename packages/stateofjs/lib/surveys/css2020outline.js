@@ -472,15 +472,15 @@ export default {
      },
      {
         "title": "Other Tools",
+        "slug": "other_tools",
         "description": "For these tools & technologies, just check the ones that you use regularly.",
         "questions": [
            {
               "title": "Text Editors",
+              "id": "text_editors",
               "description": "Which text editor(s) do you regularly use?",
               "template": "multiple",
               "allowmultiple": true,
-              "allowother": true,
-              "randomize": true,
               "options": [
                  "VS Code",
                  "Sublime Text",
@@ -499,11 +499,10 @@ export default {
            },
            {
               "title": "Browsers",
+              "id": "browsers",
               "description": "Which browser(s) do you work in primarily during initial development?",
               "template": "multiple",
               "allowmultiple": true,
-              "allowother": true,
-              "randomize": false,
               "options": [
                  "Edge",
                  "Chrome",
@@ -543,9 +542,6 @@ export default {
               "id": "browsers",
               "description": "Which browsers do you test in?",
               "template": "multiple",
-              "allowmultiple": true,
-              "allowother": true,
-              "randomize": false,
               "options": [
                  "Edge",
                  "Chrome",
@@ -571,9 +567,6 @@ export default {
               "id": "form_factors",
               "description": "Which form factors do you test on?",
               "template": "multiple",
-              "allowmultiple": true,
-              "allowother": true,
-              "randomize": false,
               "options": [
                  "Desktop",
                  "Smartphone",
@@ -590,10 +583,7 @@ export default {
               "title": "CSS for Print",
               "id": "css_for_print",
               "description": "Do you write print styles?",
-              "template": "multiple",
-              "allowmultiple": false,
-              "allowother": false,
-              "randomize": false,
+              "template": "single",
               "options": [
                  "I (almost) never write print styles",
                  "I occasionally write print styles",
@@ -605,7 +595,7 @@ export default {
               "title": "CSS for Email Clients",
               "id": "css_for_email",
               "description": "Do you write CSS for email clients?",
-              "template": "multiple",
+              "template": "single",
               "allowmultiple": false,
               "allowother": false,
               "randomize": false,
@@ -628,10 +618,6 @@ export default {
               "id": "blogs_news_magazines",
               "description": "Which CSS-related blogs/magazines/etc. do you read?",
               "template": "multiple",
-              "allowmultiple": true,
-              "allowother": true,
-              "randomize": true,
-              "suffix": "choices",
               "options": [
                  "CSS Tricks",
                  "Smashing Magazine",
@@ -655,10 +641,6 @@ export default {
               "title": "Sites & Courses",
               "description": "Which CSS-related sites/courses/etc. do you consult?",
               "template": "multiple",
-              "allowmultiple": true,
-              "allowother": true,
-              "randomize": true,
-              "suffix": "choices",
               "options": [
                  "Stack Overflow",
                  "MDN",
@@ -682,10 +664,6 @@ export default {
               "title": "Podcasts",
               "description": "Which CSS or programming-related podcasts do you listen to?",
               "template": "multiple",
-              "allowmultiple": true,
-              "allowother": true,
-              "randomize": true,
-              "suffix": "choices",
               "options": [
                  "Shop Talk Show",
                  "Style Guide Podcast",
@@ -757,10 +735,7 @@ export default {
               "title": "Years of Experience",
               "id": "years_of_experience",
               "description": "How long you've been writing CSS.",
-              "template": "multiple",
-              "allowmultiple": false,
-              "allowother": false,
-              "randomize": false,
+              "template": "single",
               "options": [
                  "Less than one year",
                  "1-2 years",
@@ -774,10 +749,8 @@ export default {
               "title": "Job Title",
               "id": "job_title",
               "description": "How do you introduce yourself at parties?",
-              "template": "multiple",
-              "allowmultiple": false,
+              "template": "single",
               "allowother": true,
-              "randomize": false,
               "options": [
                  "Front-end Developer/Engineer",
                  "Full-stack Developer/Engineer",
@@ -791,10 +764,7 @@ export default {
               "title": "JavaScript Proficiency",
               "id": "javascript_proficiency",
               "description": "How proficient are you at JavaScript development? (pick the most advanced option corresponding to your skills)",
-              "template": "multiple",
-              "allowmultiple": false,
-              "allowother": false,
-              "randomize": false,
+              "template": "single",
               "options": [
                  "I am not able to write any JavaScript",
                  "I can write short, simple JavaScript or jQuery statements",
@@ -807,10 +777,7 @@ export default {
               "title": "Back-end Proficiency",
               "id": "backend_proficiency",
               "description": "How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)",
-              "template": "multiple",
-              "allowmultiple": false,
-              "allowother": false,
-              "randomize": false,
+              "template": "single",
               "options": [
                  "I am not able to handle any back-end work",
                  "I can set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)",
@@ -821,10 +788,7 @@ export default {
            {
               "title": "Company Size",
               "id": "company_size",
-              "template": "multiple",
-              "allowmultiple": false,
-              "allowother": false,
-              "randomize": false,
+              "template": "single",
               "options": [
                  "Just me",
                  "1-5 people",
@@ -840,10 +804,7 @@ export default {
               "title": "Yearly Salary",
               "id": "yearly_salary",
               "description": "In USD",
-              "template": "multiple",
-              "allowmultiple": false,
-              "allowother": false,
-              "randomize": false,
+              "template": "single",
               "options": [
                  "I work for free :(",
                  "$0-$10k",
@@ -862,8 +823,7 @@ export default {
            {
               "title": "Your Gender",
               "id": "gender",
-              "template": "multiple",
-              "allowmultiple": false,
+              "template": "single",
               "allowother": true,
               "options": [
                  "Female",
