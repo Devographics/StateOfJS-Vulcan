@@ -1090,14 +1090,14 @@ type Response {
   css2020__resources__podcasts__choices: [String] 
   # Other podcasts you listen to not mentioned in the list above
   css2020__resources__podcasts__others: String 
-  css2020__opinions__cssiseasytolearn: Float 
-  css2020__opinions__cssisevolvingtooslowly: Float 
-  css2020__opinions__utilitynonsemanticclassescenterlargetextetcshouldbeavoided: Float 
-  css2020__opinions__selectornestingfoobarullishouldbeavoided: Float 
-  css2020__opinions__cssisaprogramminglanguage: Float 
-  css2020__opinions__ienjoywritingcss: Float 
+  css2020__opinions__css_easy_to_learn: Float 
+  css2020__opinions__css_evolving_slowly: Float 
+  css2020__opinions__utility_classes_to_be_avoided: Float 
+  css2020__opinions__selector_nesting_to_be_avoided: Float 
+  css2020__opinions__css_is_programming_language: Float 
+  css2020__opinions__enjoy_writing_css: Float 
   # Features you'd like to see in CSS one day.
-  css2020__opinions__whatdoyoufeeliscurrentlymissingfromcss: String 
+  css2020__opinions__currently_missing_from_css: String 
   # How long you've been writing CSS.
   css2020__user_info__years_of_experience: String 
   # How do you introduce yourself at parties?
@@ -1400,13 +1400,13 @@ input CreateResponseDataInput {
   css2020__resources__sites_courses__others: String 
   css2020__resources__podcasts__choices: [String] 
   css2020__resources__podcasts__others: String 
-  css2020__opinions__cssiseasytolearn: Float 
-  css2020__opinions__cssisevolvingtooslowly: Float 
-  css2020__opinions__utilitynonsemanticclassescenterlargetextetcshouldbeavoided: Float 
-  css2020__opinions__selectornestingfoobarullishouldbeavoided: Float 
-  css2020__opinions__cssisaprogramminglanguage: Float 
-  css2020__opinions__ienjoywritingcss: Float 
-  css2020__opinions__whatdoyoufeeliscurrentlymissingfromcss: String 
+  css2020__opinions__css_easy_to_learn: Float 
+  css2020__opinions__css_evolving_slowly: Float 
+  css2020__opinions__utility_classes_to_be_avoided: Float 
+  css2020__opinions__selector_nesting_to_be_avoided: Float 
+  css2020__opinions__css_is_programming_language: Float 
+  css2020__opinions__enjoy_writing_css: Float 
+  css2020__opinions__currently_missing_from_css: String 
   css2020__user_info__years_of_experience: String 
   css2020__user_info__job_title: String 
   css2020__user_info__javascript_proficiency: String 
@@ -1646,13 +1646,13 @@ input UpdateResponseDataInput {
   css2020__resources__sites_courses__others: String 
   css2020__resources__podcasts__choices: [String] 
   css2020__resources__podcasts__others: String 
-  css2020__opinions__cssiseasytolearn: Float 
-  css2020__opinions__cssisevolvingtooslowly: Float 
-  css2020__opinions__utilitynonsemanticclassescenterlargetextetcshouldbeavoided: Float 
-  css2020__opinions__selectornestingfoobarullishouldbeavoided: Float 
-  css2020__opinions__cssisaprogramminglanguage: Float 
-  css2020__opinions__ienjoywritingcss: Float 
-  css2020__opinions__whatdoyoufeeliscurrentlymissingfromcss: String 
+  css2020__opinions__css_easy_to_learn: Float 
+  css2020__opinions__css_evolving_slowly: Float 
+  css2020__opinions__utility_classes_to_be_avoided: Float 
+  css2020__opinions__selector_nesting_to_be_avoided: Float 
+  css2020__opinions__css_is_programming_language: Float 
+  css2020__opinions__enjoy_writing_css: Float 
+  css2020__opinions__currently_missing_from_css: String 
   css2020__user_info__years_of_experience: String 
   css2020__user_info__job_title: String 
   css2020__user_info__javascript_proficiency: String 
@@ -1887,13 +1887,13 @@ input ResponseFilterInput {
   css2020__resources__sites_courses__others: String_Selector
   css2020__resources__podcasts__choices: String_Array_Selector
   css2020__resources__podcasts__others: String_Selector
-  css2020__opinions__cssiseasytolearn: Float_Selector
-  css2020__opinions__cssisevolvingtooslowly: Float_Selector
-  css2020__opinions__utilitynonsemanticclassescenterlargetextetcshouldbeavoided: Float_Selector
-  css2020__opinions__selectornestingfoobarullishouldbeavoided: Float_Selector
-  css2020__opinions__cssisaprogramminglanguage: Float_Selector
-  css2020__opinions__ienjoywritingcss: Float_Selector
-  css2020__opinions__whatdoyoufeeliscurrentlymissingfromcss: String_Selector
+  css2020__opinions__css_easy_to_learn: Float_Selector
+  css2020__opinions__css_evolving_slowly: Float_Selector
+  css2020__opinions__utility_classes_to_be_avoided: Float_Selector
+  css2020__opinions__selector_nesting_to_be_avoided: Float_Selector
+  css2020__opinions__css_is_programming_language: Float_Selector
+  css2020__opinions__enjoy_writing_css: Float_Selector
+  css2020__opinions__currently_missing_from_css: String_Selector
   css2020__user_info__years_of_experience: String_Selector
   css2020__user_info__job_title: String_Selector
   css2020__user_info__javascript_proficiency: String_Selector
@@ -2123,13 +2123,13 @@ input ResponseSortInput {
   css2020__resources__sites_courses__others: SortOptions
   css2020__resources__podcasts__choices: SortOptions
   css2020__resources__podcasts__others: SortOptions
-  css2020__opinions__cssiseasytolearn: SortOptions
-  css2020__opinions__cssisevolvingtooslowly: SortOptions
-  css2020__opinions__utilitynonsemanticclassescenterlargetextetcshouldbeavoided: SortOptions
-  css2020__opinions__selectornestingfoobarullishouldbeavoided: SortOptions
-  css2020__opinions__cssisaprogramminglanguage: SortOptions
-  css2020__opinions__ienjoywritingcss: SortOptions
-  css2020__opinions__whatdoyoufeeliscurrentlymissingfromcss: SortOptions
+  css2020__opinions__css_easy_to_learn: SortOptions
+  css2020__opinions__css_evolving_slowly: SortOptions
+  css2020__opinions__utility_classes_to_be_avoided: SortOptions
+  css2020__opinions__selector_nesting_to_be_avoided: SortOptions
+  css2020__opinions__css_is_programming_language: SortOptions
+  css2020__opinions__enjoy_writing_css: SortOptions
+  css2020__opinions__currently_missing_from_css: SortOptions
   css2020__user_info__years_of_experience: SortOptions
   css2020__user_info__job_title: SortOptions
   css2020__user_info__javascript_proficiency: SortOptions

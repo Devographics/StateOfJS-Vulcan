@@ -571,18 +571,25 @@ outline:
     slug: opinions
     questions:
       - title: CSS is easy to learn
+        id: css_easy_to_learn
         template: opinion
       - title: CSS is evolving too slowly
+        id: css_evolving_slowly
         template: opinion
       - title: Utility (non-semantic) classes (.center, .large-text, etc.) should be avoided
+        id: utility_classes_to_be_avoided
         template: opinion
       - title: Selector nesting (.foo .bar ul li {...}) should be avoided
+        id: selector_nesting_to_be_avoided
         template: opinion
       - title: CSS is a programming language
+        id: css_is_programming_language
         template: opinion
       - title: I enjoy writing CSS
+        id: enjoy_writing_css
         template: opinion
       - title: What do you feel is currently missing from CSS?
+        id: currently_missing_from_css
         description: Features you'd like to see in CSS one day.
         template: longtext
       # - title: CSS is moving in the right direction
