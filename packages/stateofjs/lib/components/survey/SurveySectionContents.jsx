@@ -1,12 +1,11 @@
 import React from 'react';
-import { getQuestionId } from '../../modules/responses/helpers.js';
 import { statuses } from '../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 import { Components } from 'meteor/vulcan:core';
 
 const SurveySectionContents = ({ survey, sectionNumber, section, response, previousSection, nextSection, history }) => {
-  const fields = section.questions.map((question) => getQuestionId(survey, section, question));
+  const fields = section.questions.map(question => question.fieldName);
   const { title, description } = section;
 
   const FormSubmitWrapper = (props) => (

@@ -5,7 +5,7 @@ import {
   getQuestionObject,
   getQuestionSchema,
   getCompletionPercentage,
-  getQuestionId,
+  getQuestionFieldName,
 } from './helpers.js';
 
 const schema = {
@@ -163,7 +163,7 @@ surveys.forEach(survey => {
         i++;
         const questionObject = getQuestionObject(questionOrId, section, i);
         const questionSchema = getQuestionSchema(questionObject);
-        const questionId = getQuestionId(survey, section, questionObject);
+        const questionId = getQuestionFieldName(survey, section, questionObject);
         schema[questionId] = questionSchema;
       });
   });

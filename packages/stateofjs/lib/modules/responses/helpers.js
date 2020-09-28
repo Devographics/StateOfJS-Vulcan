@@ -19,7 +19,7 @@ String.prototype.replaceAll = function(search, replacement) {
 Take a string ("Front-end") and make it usable as an ID ("frontend")
 
 */
-const disallowedCharacters = '?.(){}[]=>&,/- ';
+const disallowedCharacters = '?.(){}[]=>&,/- @*';
 export const makeId = str => {
   if (!str) {
     return '';
@@ -34,9 +34,18 @@ export const makeId = str => {
 
 export const getSurvey = response => surveys.find(s => s.slug === response.surveySlug);
 
-export const getQuestionId = (survey, section, question) =>{
-  const questionSlug = makeId(typeof question === 'string' ? question : question.title)
-  return survey.slug + '_' + section.slug + '_' + questionSlug;
+/*
+
+Note: section's slug can be overriden by the question
+
+*/
+export const getQuestionFieldName = (survey, section, question) =>{
+  const sectionSlug = question.sectionSlug || section.slug;
+  let fieldName = survey.slug + '__' + sectionSlug + '__' + question.id;
+  if (question.suffix) {
+    fieldName += `__${question.suffix}`;
+  }
+  return fieldName
 }
 
 export const getResponsePath = (response, sectionNumber) =>{
@@ -50,9 +59,10 @@ export const getResponsePath = (response, sectionNumber) =>{
 export const templates = {
   feature: () => ({
     input: 'radiogroup',
+    suffix: 'experience',
     options: [
       {
-        value: 'neverheard',
+        value: 'never_heard',
         label: '🤷 Never heard of it/Not sure what it is',
       },
       { value: 'heard', label: `✅ Know what it is, but haven't used it` },
@@ -61,6 +71,7 @@ export const templates = {
   }),
   pattern: () => ({
     input: 'radiogroup',
+    suffix: 'experience',
     options: [
       { value: 'use_never', label: 'Almost always avoid' },
       { value: 'use_sparingly', label: 'Use sparingly' },
@@ -71,15 +82,16 @@ export const templates = {
   }),
   tool: () => ({
     input: 'radiogroup',
+    suffix: 'experience',
     options: [
       {
-        value: 'neverheard',
+        value: 'never_heard',
         label: '🤷 Never heard of it/Not sure what it is',
       },
       { value: 'interested', label: '✅ Heard of it > Would like to learn' },
       { value: 'not_interested', label: '🚫 Heard of it > Not interested' },
-      { value: 'would_use_again', label: '👍 Used it > Would use again' },
-      { value: 'would_not_use_again', label: '👎 Used it > Would avoid' },
+      { value: 'would_use', label: '👍 Used it > Would use again' },
+      { value: 'would_not_use', label: '👎 Used it > Would avoid' },
     ],
   }),
   multiple: ({ allowmultiple }) => ({
@@ -122,10 +134,10 @@ export const getQuestionObject = (questionOrId, section, number) => {
   let questionObject =
     typeof questionOrId === 'string' ? { title: questionOrId } : { ...questionOrId };
 
-  questionObject.id = makeId(questionObject.title);
+  questionObject.id = questionObject.id || makeId(questionObject.title);
   questionObject.slug = questionObject.id;
   questionObject.type = String; // default to String type
-
+  
   // if options are provided in outlined format them properly
   if (questionObject.options) {
     questionObject.options = questionObject.options.map(option => ({
@@ -184,9 +196,16 @@ export const getQuestionSchema = questionObject => {
   return questionSchema;
 };
 
-export const getParsedOutline = outline => {
+/*
+
+Take a raw survey YAML and process it to give ids, fieldNames, etc.
+to every question
+
+*/
+export const parseSurvey = survey => {
   let i = 0;
-  return outline.map(section => {
+  const parsedSurvey = { ...survey };
+  parsedSurvey.outline = survey.outline.map(section => {
     return {
       ...section,
       id: makeId(section.title),
@@ -194,10 +213,13 @@ export const getParsedOutline = outline => {
         section.questions &&
         section.questions.map(question => {
           i++;
-          return getQuestionObject(question, section, i);
+          const questionObject = getQuestionObject(question, section, i);
+          questionObject.fieldName = getQuestionFieldName(survey, section, questionObject);
+          return questionObject;
         })
     };
   });
+  return parsedSurvey;
 };
 
 export const ignoredFieldTypes = ['email', 'text', 'longtext'];
@@ -206,10 +228,10 @@ export const getCompletionPercentage = response => {
   let completedCount = 0;
   let totalCount = 0;
   const survey = getSurvey(response);
-  const parsedOutline = getParsedOutline(survey.outline);
+  const parsedOutline = parseSurvey(survey).outline;
   parsedOutline.forEach(section => {
     section.questions && section.questions.forEach(question => {
-      const questionId = getQuestionId(survey, section, question);
+      const questionId = getQuestionFieldName(survey, section, question);
       const answer = response[questionId];
       totalCount ++;
       if (!ignoredFieldTypes.includes(question.template) && answer !== null && typeof answer !== 'undefined') {
