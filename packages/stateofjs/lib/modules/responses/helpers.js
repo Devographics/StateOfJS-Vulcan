@@ -147,14 +147,6 @@ export const getQuestionObject = (questionOrId, section, number) => {
   questionObject.id = questionObject.id || makeId(questionObject.title);
   questionObject.slug = questionObject.id;
   questionObject.type = String; // default to String type
-  
-  // if options are provided in outlined format them properly
-  if (questionObject.options) {
-    questionObject.options = questionObject.options.map(option => ({
-      value: option,
-      label: option,
-    }));
-  }
 
   // get template from either question or parent section
   const questionTemplate =

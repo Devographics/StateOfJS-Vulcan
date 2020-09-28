@@ -624,12 +624,30 @@ export default {
                "description": "How long you've been writing JavaScript.",
                "template": "single",
                "options": [
-                  "Less than one year",
-                  "1-2 years",
-                  "2-5 years",
-                  "5-10 years",
-                  "10-20 years",
-                  "20+ years"
+                  {
+                     "label": "Less than one year",
+                     "value": "range_less_than_1"
+                  },
+                  {
+                     "label": "1-2 years",
+                     "value": "range_1_2"
+                  },
+                  {
+                     "label": "2-5 years",
+                     "value": "range_2_5"
+                  },
+                  {
+                     "label": "5-10 years",
+                     "value": "range_5_10"
+                  },
+                  {
+                     "label": "10-20 years",
+                     "value": "range_10_20"
+                  },
+                  {
+                     "label": "20+ years",
+                     "value": "range_more_than_20"
+                  }
                ]
             },
             {
@@ -639,10 +657,22 @@ export default {
                "template": "single",
                "allowother": true,
                "options": [
-                  "Front-end Developer/Engineer",
-                  "Full-stack Developer/Engineer",
-                  "Back-end Developer/Engineer",
-                  "Web Developer"
+                  {
+                     "label": "Front-end Developer/Engineer",
+                     "value": "front_end_developer"
+                  },
+                  {
+                     "label": "Full-stack Developer/Engineer",
+                     "value": "full_stack_developer"
+                  },
+                  {
+                     "label": "Back-end Developer/Engineer",
+                     "value": "back_end_developer"
+                  },
+                  {
+                     "label": "Web Developer",
+                     "value": "web_developer"
+                  }
                ]
             },
             {
@@ -651,11 +681,26 @@ export default {
                "description": "How proficient are you at writing CSS? (pick the most advanced option corresponding to your skills)",
                "template": "single",
                "options": [
-                  "Level 1: virtually no knowledge of CSS",
-                  "Level 2: using CSS frameworks and tweaking existing styles",
-                  "Level 3: knowing specificity rules, being able to create layouts",
-                  "Level 4: mastering animations, interactions, transitions, etc.",
-                  "Level 5: being able to style an entire front-end from scratch following a consistent methodology"
+                  {
+                     "label": "Level 1: virtually no knowledge of CSS",
+                     "value": 0
+                  },
+                  {
+                     "label": "Level 2: using CSS frameworks and tweaking existing styles",
+                     "value": 1
+                  },
+                  {
+                     "label": "Level 3: knowing specificity rules, being able to create layouts",
+                     "value": 2
+                  },
+                  {
+                     "label": "Level 4: mastering animations, interactions, transitions, etc.",
+                     "value": 3
+                  },
+                  {
+                     "label": "Level 5: being able to style an entire front-end from scratch following a consistent methodology",
+                     "value": 4
+                  }
                ]
             },
             {
@@ -664,11 +709,26 @@ export default {
                "description": "How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)",
                "template": "single",
                "options": [
-                  "Level 1: not able to handle any back-end work",
-                  "Level 2: able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)",
-                  "Level 3: able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)",
-                  "Level 4: setting up an entire back-end from scratch (Go, Node, etc.)",
-                  "Level 5: able to handle complex multi-server or microservices architectures"
+                  {
+                     "label": "Level 1: not able to handle any back-end work",
+                     "value": 0
+                  },
+                  {
+                     "label": "Level 2: able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)",
+                     "value": 1
+                  },
+                  {
+                     "label": "Level 3: able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)",
+                     "value": 2
+                  },
+                  {
+                     "label": "Level 4: setting up an entire back-end from scratch (Go, Node, etc.)",
+                     "value": 3
+                  },
+                  {
+                     "label": "Level 5: able to handle complex multi-server or microservices architectures",
+                     "value": 4
+                  }
                ]
             },
             {
@@ -676,14 +736,38 @@ export default {
                "id": "company_size",
                "template": "single",
                "options": [
-                  "Just me",
-                  "1-5 people",
-                  "5-10 people",
-                  "10-20 people",
-                  "20-50 people",
-                  "50-100 people",
-                  "100-1000 people",
-                  "1000+ people"
+                  {
+                     "label": "Just me",
+                     "value": "range_1"
+                  },
+                  {
+                     "label": "1-5 people",
+                     "value": "range_1_5"
+                  },
+                  {
+                     "label": "5-10 people",
+                     "value": "range_5_10"
+                  },
+                  {
+                     "label": "10-20 people",
+                     "value": "range_10_20"
+                  },
+                  {
+                     "label": "20-50 people",
+                     "value": "range_20_50"
+                  },
+                  {
+                     "label": "50-100 people",
+                     "value": "range_50_100"
+                  },
+                  {
+                     "label": "100-1000 people",
+                     "value": "range_100_1000"
+                  },
+                  {
+                     "label": "1000+ people",
+                     "value": "range_more_than_1000"
+                  }
                ]
             },
             {
@@ -692,13 +776,34 @@ export default {
                "description": "In USD",
                "template": "single",
                "options": [
-                  "I work for free :(",
-                  "$0-$10k",
-                  "$10k-$30k",
-                  "$30k-$50k",
-                  "$50k-$100k",
-                  "$100k-$200k",
-                  "$200k+"
+                  {
+                     "label": "I work for free :(",
+                     "value": "range_work_for_free"
+                  },
+                  {
+                     "label": "$0-$10k",
+                     "value": "range_0_10"
+                  },
+                  {
+                     "label": "$10k-$30k",
+                     "value": "range_10_30"
+                  },
+                  {
+                     "label": "$30k-$50k",
+                     "value": "range_30_50"
+                  },
+                  {
+                     "label": "$50k-$100k",
+                     "value": "range_50_100"
+                  },
+                  {
+                     "label": "$100k-$200k",
+                     "value": "range_100_200"
+                  },
+                  {
+                     "label": "$200k+",
+                     "value": "range_more_than_200"
+                  }
                ]
             },
             {
@@ -712,10 +817,22 @@ export default {
                "template": "single",
                "allowother": true,
                "options": [
-                  "Female",
-                  "Male",
-                  "Non-binary/ third gender",
-                  "Prefer not to say"
+                  {
+                     "label": "Female",
+                     "value": "female"
+                  },
+                  {
+                     "label": "Male",
+                     "value": "male"
+                  },
+                  {
+                     "label": "Non-binary/ third gender",
+                     "value": "non_binary"
+                  },
+                  {
+                     "label": "Prefer not to say",
+                     "value": "prefer_not_to_say"
+                  }
                ]
             },
             {
