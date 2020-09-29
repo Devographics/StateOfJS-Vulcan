@@ -236,6 +236,66 @@ export default {
       "t": "Back-end Developer/Engineer"
     },
     {
+      "key": "options.javascript_proficiency.0",
+      "t": "Not able to write any JavaScript"
+    },
+    {
+      "key": "options.javascript_proficiency.1",
+      "t": "Writing short, simple JavaScript or jQuery statements"
+    },
+    {
+      "key": "options.javascript_proficiency.2",
+      "t": "Working on existing front-end codebases using modern frameworks (React, Vue, etc.)"
+    },
+    {
+      "key": "options.javascript_proficiency.3",
+      "t": "Architecturing entire front-end codebases from scratch"
+    },
+    {
+      "key": "options.javascript_proficiency.4",
+      "t": "Handling advanced front-end patterns (state management, data loading, etc.)"
+    },
+    {
+      "key": "options.css_proficiency.0",
+      "t": "Virtually no knowledge of CSS"
+    },
+    {
+      "key": "options.css_proficiency.1",
+      "t": "Using CSS frameworks and tweaking existing styles"
+    },
+    {
+      "key": "options.css_proficiency.2",
+      "t": "Knowing specificity rules, being able to create layouts"
+    },
+    {
+      "key": "options.css_proficiency.3",
+      "t": "Mastering animations, interactions, transitions, etc."
+    },
+    {
+      "key": "options.css_proficiency.4",
+      "t": "Able to style an entire front-end from scratch following a consistent methodology"
+    },
+    {
+      "key": "options.backend_proficiency.0",
+      "t": "Not able to handle any back-end work"
+    },
+    {
+      "key": "options.backend_proficiency.1",
+      "t": "Able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)"
+    },
+    {
+      "key": "options.backend_proficiency.2",
+      "t": "Able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)"
+    },
+    {
+      "key": "options.backend_proficiency.3",
+      "t": "Setting up an entire back-end from scratch (Go, Node, etc.)"
+    },
+    {
+      "key": "options.backend_proficiency.4",
+      "t": "Able to handle complex multi-server or microservices architectures"
+    },
+    {
       "key": "user_info.years_of_experience",
       "t": "Years of Experience"
     },
@@ -276,26 +336,6 @@ export default {
       "t": "How proficient are you at JavaScript?"
     },
     {
-      "key": "javascript_proficiency.0",
-      "t": "Not able to write any JavaScript"
-    },
-    {
-      "key": "javascript_proficiency.1",
-      "t": "Writing short, simple JavaScript or jQuery statements"
-    },
-    {
-      "key": "javascript_proficiency.2",
-      "t": "Working on existing front-end codebases using modern frameworks (React, Vue, etc.)"
-    },
-    {
-      "key": "javascript_proficiency.3",
-      "t": "Architecturing entire front-end codebases from scratch"
-    },
-    {
-      "key": "javascript_proficiency.4",
-      "t": "Handling advanced front-end patterns (state management, data loading, etc.)"
-    },
-    {
       "key": "user_info.css_proficiency",
       "t": "CSS Proficiency"
     },
@@ -304,52 +344,12 @@ export default {
       "t": "How proficient are you at CSS?"
     },
     {
-      "key": "css_proficiency.0",
-      "t": "Virtually no knowledge of CSS"
-    },
-    {
-      "key": "css_proficiency.1",
-      "t": "Using CSS frameworks and tweaking existing styles"
-    },
-    {
-      "key": "css_proficiency.2",
-      "t": "Knowing specificity rules, being able to create layouts"
-    },
-    {
-      "key": "css_proficiency.3",
-      "t": "Mastering animations, interactions, transitions, etc."
-    },
-    {
-      "key": "css_proficiency.4",
-      "t": "Able to style an entire front-end from scratch following a consistent methodology"
-    },
-    {
       "key": "user_info.backend_proficiency",
       "t": "Back-end Proficiency"
     },
     {
       "key": "user_info.backend_proficiency.description",
       "t": "How proficient are you at back-end development?"
-    },
-    {
-      "key": "backend_proficiency.0",
-      "t": "Not able to handle any back-end work"
-    },
-    {
-      "key": "backend_proficiency.1",
-      "t": "Able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)"
-    },
-    {
-      "key": "backend_proficiency.2",
-      "t": "Able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)"
-    },
-    {
-      "key": "backend_proficiency.3",
-      "t": "Setting up an entire back-end from scratch (Go, Node, etc.)"
-    },
-    {
-      "key": "backend_proficiency.4",
-      "t": "Able to handle complex multi-server or microservices architectures"
     },
     {
       "key": "user_info.gender",

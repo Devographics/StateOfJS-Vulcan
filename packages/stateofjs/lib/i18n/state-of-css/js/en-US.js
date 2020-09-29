@@ -108,6 +108,38 @@ export default {
       "t": "Which environments do you write CSS for?"
     },
     {
+      "key": "options.css_for_print.0",
+      "t": "I (almost) never write print styles"
+    },
+    {
+      "key": "options.css_for_print.1",
+      "t": "I occasionally write print styles"
+    },
+    {
+      "key": "options.css_for_print.2",
+      "t": "I write print styles as part of most projects"
+    },
+    {
+      "key": "options.css_for_print.3",
+      "t": "I focus mainly on CSS for print"
+    },
+    {
+      "key": "options.css_for_email.0",
+      "t": "I (almost) never write CSS for email clients"
+    },
+    {
+      "key": "options.css_for_email.1",
+      "t": "I occasionally write CSS for email clients"
+    },
+    {
+      "key": "options.css_for_email.2",
+      "t": "I write CSS for email clients as part of most projects"
+    },
+    {
+      "key": "options.css_for_email.3",
+      "t": "I focus mainly on CSS for email clients"
+    },
+    {
       "key": "features.grid",
       "t": "CSS Grid"
     },
@@ -266,6 +298,78 @@ export default {
     {
       "key": "features.comparison_functions.description",
       "t": "min(), max(), and clamp()"
+    },
+    {
+      "key": "features.units",
+      "t": "Units"
+    },
+    {
+      "key": "features.units.description",
+      "t": "Which of these CSS units have you used?"
+    },
+    {
+      "key": "features.pseudo_elements",
+      "t": "Pseudo Elements"
+    },
+    {
+      "key": "features.pseudo_elements.description",
+      "t": "Which of these CSS selectors have you used?"
+    },
+    {
+      "key": "features.combinators",
+      "t": "Combinators"
+    },
+    {
+      "key": "features.tree_document_structure",
+      "t": "Tree / Document Structure"
+    },
+    {
+      "key": "features.attributes",
+      "t": "Attributes"
+    },
+    {
+      "key": "features.links_urls",
+      "t": "Links/URLs"
+    },
+    {
+      "key": "features.interaction",
+      "t": "Interaction"
+    },
+    {
+      "key": "features.form_controls",
+      "t": "Form Controls"
+    },
+    {
+      "key": "environments.browsers",
+      "t": "Browsers"
+    },
+    {
+      "key": "environments.browsers.description",
+      "t": "Which browsers do you test in?"
+    },
+    {
+      "key": "environments.form_factors",
+      "t": "Form Factors"
+    },
+    {
+      "key": "environments.form_factors.description",
+      "t": "Which form factors do you test on?"
+    },
+    {
+      "key": "environments.css_for_print",
+      "t": "CSS for Print"
+    },
+    {
+      "key": "environments.css_for_print.description",
+      "t": "Do you write print styles?"
+    },
+    {
+      "key": "environments.css_for_email",
+      "t": "CSS for Email Clients"
+    },
+    {
+      "key": "environments.css_for_email.description",
+      "t": "Do you write CSS for email clients?"
     },
     {
       "key": "opinions.css_easy_to_learn",
