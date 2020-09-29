@@ -5,6 +5,7 @@ Startup
 */
 import scripts from './scripts.js';
 import { getSetting } from 'meteor/vulcan:core';
+import { convertAllYAML  }from './yaml';
 
 const startup = getSetting('startup', []);
 
@@ -23,4 +24,6 @@ Meteor.startup(async function () {
       console.log(error); // eslint-disable-line
     }
   }
+
+  await convertAllYAML();
 });

@@ -4,6 +4,7 @@ import Users from 'meteor/vulcan:users';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { IndexLinkContainer } from 'react-router-bootstrap';
+import LocaleSwitcher from './LocaleSwitcher';
 
 const NavLink = ({ to, label }) => (
   <IndexLinkContainer to={to}>
@@ -32,6 +33,7 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <LocaleSwitcher/>
     </div>
   );
 };

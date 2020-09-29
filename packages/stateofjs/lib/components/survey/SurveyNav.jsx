@@ -13,6 +13,7 @@ import React, { useState } from 'react';
 import { getResponsePath, getQuestionObject, ignoredFieldTypes } from '../../modules/responses/helpers.js';
 import surveys from '../../surveys';
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 // TODO
 // const getOverallCompletionPercentage = (response) => {
@@ -91,7 +92,7 @@ const SectionNavItem = ({ responseId, response, section, number, setShown }) => 
           setShown(false);
         }}
       >
-        {section.title} {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
+        <FormattedMessage id={`sections.${section.id}.title`}/> {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
       </NavLink>
     </li>
   );

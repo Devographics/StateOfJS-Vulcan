@@ -3,10 +3,11 @@ import { statuses } from '../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 import { Components } from 'meteor/vulcan:core';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 const SurveySectionContents = ({ survey, sectionNumber, section, response, previousSection, nextSection, history }) => {
   const fields = section.questions.map(question => question.fieldName);
-  const { title, description } = section;
+  const { id } = section;
 
   const FormSubmitWrapper = (props) => (
     <FormSubmit
@@ -26,8 +27,8 @@ const SurveySectionContents = ({ survey, sectionNumber, section, response, previ
           This survey is now closed. You can review it but data can’t be submitted or modified.
         </div>
       )}
-      <h2 className="section-title">{title}</h2>
-      <h3 className="section-description">{description}</h3>
+      <h2 className="section-title"><FormattedMessage id={`sections.${id}.title`} defaultMessage={id}/></h2>
+      <h3 className="section-description"><FormattedMessage id={`sections.${id}.description`} defaultMessage={id}/></h3>
       <Components.SmartForm
         documentId={response._id}
         fields={fields}

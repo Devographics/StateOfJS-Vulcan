@@ -1,13 +1,14 @@
 import { registerLocale, addStrings } from 'meteor/vulcan:core';
 
 registerLocale({
-  id: 'en',
-  label: 'English',
+  id: 'fr',
+  label: 'Français',
   // domains: ['http://localhost:4000', 'http://ja.zenshome.jp'],
   required: false,
 });
 
-addStrings('en', {
+
+addStrings('fr', {
   'accounts.switch_to_sign_in': 'Already have an account? Sign in →',
   'accounts.switch_to_sign_up': `Don't have an account? Sign up →`,
 
@@ -17,5 +18,9 @@ addStrings('en', {
   'share.twitter': 'Share via Twitter',
   'share.facebook': 'Share via Facebook',
   'share.linkedin': 'Share via LinkedIn',
+
+
+  // About You (User Info)
+  'salary.range_work_for_free.long': 'Je travaille gratuitement',
 
 });

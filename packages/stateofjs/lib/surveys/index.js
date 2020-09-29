@@ -1,5 +1,5 @@
-import js2019 from './js2019outline';
-import css2020 from './css2020outline';
+import js2019 from './js/js2019outline';
+import css2020 from './js/css2020outline';
 import { parseSurvey } from '../modules/responses/helpers';
 
 const surveys = [

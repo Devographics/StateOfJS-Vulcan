@@ -162,7 +162,7 @@ surveys.forEach(survey => {
       section.questions.forEach(questionOrId => {
         i++;
         const questionObject = getQuestionObject(questionOrId, section, i);
-        const questionSchema = getQuestionSchema(questionObject);
+        const questionSchema = getQuestionSchema(questionObject, section, survey);
         const questionId = getQuestionFieldName(survey, section, questionObject);
         schema[questionId] = questionSchema;
       });

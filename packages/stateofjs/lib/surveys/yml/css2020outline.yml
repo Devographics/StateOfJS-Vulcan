@@ -12,116 +12,77 @@ year: 2020
 status: 1 # preview
 imageUrl: 'stateofcss2020.png'
 outline:
-  - title: Layout
-    description: How do you position elements on the screen?
+  - id: layout
     template: feature
     slug: features
     questions:
-      - title: CSS Grid
-        id: grid
-      - title: CSS Subgrid
-        id: subgrid
-      - title: CSS Regions
-        id: regions
-      - title: Flexbox
-        id: flexbox
-      - title: CSS Multi-Column
-        id: multi_column
-      - title: CSS Writing Modes
-        id: writing_modes
-      - title: CSS Exclusions
-        id: exclusions
-      - title: 'Position: sticky'
-        id: position_sticky
-      - title: Logical Properties
-        id: logical_properties
-        description: margin-block-start, padding-inline-end, etc.
+      - id: grid
+      - id: subgrid
+      - id: regions
+      - id: flexbox
+      - id: multi_column
+      - id: writing_modes
+      - id: exclusions
+      - id: position_sticky
+      - id: logical_properties
+      - id: aspect_ratio
 
-  - title: Shapes & Graphics
-    description: Controlling the shape and display of elements.
+  - id: shapes_graphics
     template: feature
     slug: features
     questions:
-      - title: CSS Shapes
-        id: shapes
-      - title: Object-fit
-        id: object_fit
-      - title: Clip-path
-        id: clip_path
-      - title: CSS Masks
-        id: masks
-      - title: Blend Modes
-        id: blend_modes
-      - title: CSS Filter Effects
-        id: filter_effects
+      - id: shapes
+      - id: object_fit
+      - id: clip_path
+      - id: masks
+      - id: blend_modes
+      - id: filter_effects
 
-  - title: Interactions
-    description: Controlling how the user interacts with the page.
+  - id: interactions
     template: feature
     slug: features
     questions:
-      - title: CSS Scroll Snap
-        id: scroll_snap
-      - title: Overscroll-behavior
-        id: overscroll_behavior
-      - title: Overflow-anchor
-        id: overflow_anchor
+      - id: scroll_snap
+      - id: overscroll_behavior
+      - id: overflow_anchor
 
-  - title: Typography
-    description: Setting and laying out text.
+  - id: typography
     template: feature
     slug: features
     questions:
-      - title: Web fonts (@font-face)
-        id: web_fonts
-      - title: Variable fonts
-        id: variables_fonts
-      - title: Line breaking properties (overflow-wrap, word-break, line-break, hyphens)
-        id: line_breaking
-      - title: Font-variant-*
-        id: font_variant
-      - title: Initial-letter
-        id: initial_letter
-      - title: font-variant-numeric
-        id: font_variant_numeric
+      - id: web_fonts
+      - id: variables_fonts
+      - id: line_breaking
+      - id: font_variant
+      - id: initial_letter
+      - id: font_variant_numeric
+      - id: font_display
+      - id: line_clamp
 
-  - title: Animations & Transforms
-    description: Animating and transforming elements.
+  - id: animations_transforms
     template: feature
     slug: features
     questions:
-      - title: CSS Transitions
-        id: transitions
-      - title: CSS Transforms
-        id: transforms
-      - title: CSS Animations
-        id: animations
+      - id: transitions
+      - id: transforms
+      - id: animations
 
-  - title: Other Features
-    description: Other CSS features.
+  - id: other_features
     template: feature
     slug: features
     questions:
-      - title: CSS Variables
-        id: variables
-      - title: Feature Support Queries (@supports)
-        id: feature_support_queries
-      - title: CSS Containment
-        id: containment
-      - title: Will-change
-        id: will_change
-      - title: calc()
-        id: calc
-      - title: Houdini
-        id: houdini
+      - id: variables
+      - id: feature_support_queries
+      - id: containment
+      - id: will_change
+      - id: calc
+      - id: houdini
+      - id: comparison_functions
 
-  - title: Units & Selectors
-    description: Test your knowledge of CSS units and selectors.
+  - id: units_selectors
     slug: features
     questions:
-      - title: Units
-        id: units
-        description: Which of these CSS units have you used?
+      - id: units
         template: multiple
         allowmultiple: true
         allowother: false
@@ -141,9 +102,7 @@ outline:
           - cm
           - in
 
-      - title: Pseudo Elements
-        id: pseudo_elements
-        description: Which of these CSS selectors have you used?
+      - id: pseudo_elements
         template: multiple
         allowmultiple: true
         allowother: false
@@ -156,10 +115,9 @@ outline:
           - ::first-letter
           - ::selection
           - ::placeholder
+          - ::marker
 
-      - title: Combinators
-        id: combinators
-        description: Which of these CSS selectors have you used?
+      - id: combinators
         template: multiple
         allowmultiple: true
         allowother: false
@@ -171,9 +129,7 @@ outline:
           - div + div (next sibling)
           - div ~ div (subsequent sibling)
 
-      - title: Tree / Document Structure
-        id: tree_document_structure
-        description: Which of these CSS selectors have you used?
+      - id: tree_document_structure
         template: multiple
         allowmultiple: true
         allowother: false
@@ -195,9 +151,7 @@ outline:
           - :only-of-type
           - :lang()
 
-      - title: Attributes
-        id: attributes
-        description: Which of these CSS selectors have you used?
+      - id: attributes
         template: multiple
         allowmultiple: true
         allowother: false
@@ -212,9 +166,7 @@ outline:
           - div[foo*="bar"] (Contains substring)
           # - Case sensitivity (div[foo="bar" s] vs (div[foo="bar" i])
 
-      - title: Links/URLs
-        id: links_urls
-        description: Which of these CSS selectors have you used?
+      - id: links_urls
         template: multiple
         allowmultiple: true
         allowother: false
@@ -226,9 +178,7 @@ outline:
           - :local-link
           - :target
 
-      - title: Interaction
-        id: interaction
-        description: Which of these CSS selectors have you used?
+      - id: interaction
         template: multiple
         allowmultiple: true
         allowother: false
@@ -241,9 +191,7 @@ outline:
           - :focus-within
           - :focus-visible
 
-      - title: Form controls
-        id: form_controls
-        description: Which of these CSS selectors have you used?
+      - id: form_controls
         template: multiple
         allowmultiple: true
         allowother: false
@@ -263,32 +211,24 @@ outline:
 
   ### TOOLS ###
 
-  - title: Pre-/Post-processors
-    description: Utilities that augment CSS.
+  - id: pre_post_processors
     template: tool
     slug: tools
-    id: pre_post_processors
     questions:
       - Sass
       - Less
       - PostCSS
       - Stylus
-      - title: Other Pre-/Post-processors
-        id: pre_post_processors
-        description: Other pre-/post-processors you use not mentioned in the list above
+      - id: pre_post_processors
         template: text
         sectionSlug: sections_other_tools
-      - title: Overall Happiness
-        id: pre_post_processors
-        description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of pre-/post-processors
+      - id: pre_post_processors
         template: happiness
         sectionSlug: happiness
 
-  - title: CSS Frameworks
-    description: Libraries that give you pre-made components and styles.
+  - id: css_frameworks
     template: tool
     slug: tools
-    id: css_frameworks
     questions:
       - Bootstrap
       - Materialize CSS
@@ -301,6 +241,8 @@ outline:
       - Primer
       - Tailwind
       - PureCSS
+      - Skeleton
+      - Spectre
       # - Milligram
       # - BassCSS
       # - No Framework
@@ -315,62 +257,53 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  - title: Methodologies
-    description: Codified ways to write cleaner CSS.
+  - id: css_methodologies
     template: tool
     slug: tools
-    id: css_methodologies
     questions:
       - BEM
       - Atomic CSS
       - OOCSS
       - SMACSS
       - IT CSS
-      - title: Other Methodologies
-        id: css_methodologies
-        description: Other methodologies you use not mentioned in the list above
+      - CUBE CSS
+      - id: css_methodologies
         template: text
         sectionSlug: sections_other_tools
-      - title: Overall Happiness
-        id: css_methodologies
-        description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS methodologies?
+      - id: css_methodologies
         template: happiness
         sectionSlug: happiness
 
-  - title: CSS-in-JS
-    description: Libraries that give you pre-made components and styles.
+  - id: css_in_js
     template: tool
     slug: tools
-    id: css_in_js
     questions:
       - Styled Components
-      - Glamor
-      - Aphrodite
+      # - Glamor # deprecated
+      # - Aphrodite # not actively maintained?
       - JSS
       - Styled-JSX
       - Radium
       - Emotion
       - CSS Modules
-      - title: Other CSS-in-JS Libraries
-        id: css_in_js
-        description: Other CSS-in-JS libraries you use not mentioned in the list above
+      - Styled System
+      - Stitches
+      - Styletron
+      - Fela
+      - Linaria
+      - id: css_in_js
         template: text
         sectionSlug: sections_other_tools
-      - title: Overall Happiness
-        id: css_in_js
-        description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS-in-JS libraries?
+      - id: css_in_js
         template: happiness
         sectionSlug: happiness
 
   ### OTHER TOOLS ###
 
-  - title: Other Tools
+  - id: other_tools
     slug: other_tools
-    description: For these tools & technologies, just check the ones that you use regularly.
     questions:
-      - title: Text Editors
-        id: text_editors
-        description: Which text editor(s) do you regularly use?
+      - id: text_editors
         template: multiple
         allowmultiple: true
         options:
@@ -380,14 +313,11 @@ outline:
           - Vim
           - Emacs
           - Webstorm
-      - title: Other Editors
-        id: text_editors
+          - Nova
+      - id: text_editors
         suffix: others
         template: text
-        description: Other text editors you use not mentioned in the list above
-      - title: Browsers
-        id: browsers
-        description: Which browser(s) do you work in primarily during initial development?
+      - id: browsers
         template: multiple
         allowmultiple: true
         options:
@@ -408,20 +338,15 @@ outline:
           - UC Browser
           - Opera
           - Polypane
-      - title: Other Browsers
-        id: browsers
+      - id: browsers
         suffix: others
         template: text
-        description: Other browsers you use not mentioned in the list above
 
   ### ENVIRONMENTS ###
-  - title: Environments
-    description: Which environments do you write CSS for?
+  - id: environments
     slug: environments
     questions:
-      - title: Browsers
-        id: browsers
-        description: Which browsers do you test in?
+      - id: browsers
         template: multiple
         options:
           - Edge
@@ -442,9 +367,7 @@ outline:
           - Opera
           - Polypane
 
-      - title: Form Factors
-        id: form_factors
-        description: Which form factors do you test on?
+      - id: form_factors
         template: multiple
         options:
           - Desktop
@@ -457,9 +380,7 @@ outline:
           - Screen Reader
           - Print
 
-      - title: CSS for Print
-        id: css_for_print
-        description: Do you write print styles?
+      - id: css_for_print
         template: single
         options:
           - label: I (almost) never write print styles
@@ -471,9 +392,7 @@ outline:
           - label: I focus mainly on CSS for print
             value: 3
 
-      - title: CSS for Email Clients
-        id: css_for_email
-        description: Do you write CSS for email clients?
+      - id: css_for_email
         template: single
         allowmultiple: false
         allowother: false
@@ -490,13 +409,10 @@ outline:
 
     ### RESOURCES ###
 
-  - title: Resources
-    description: What CSS resources do you consult?
+  - id: resources
     slug: resources
     questions:
-      - title: Blogs, News, & Magazines
-        id: blogs_news_magazines
-        description: Which CSS-related blogs/magazines/etc. do you read?
+      - id: blogs_news_magazines
         template: multiple
         options:
           - CSS Tricks
@@ -507,15 +423,11 @@ outline:
           - Front-End Front
           - CSS Weekly
           - Dev.to
-          - Best of JS
-      - title: Other Blogs
+      - id: blogs_news_magazines
         template: text
-        id: blogs_news_magazines
         suffix: others
-        description: Other blogs, etc. you read not mentioned in the list above
 
-      - title: Sites & Courses
-        description: Which CSS-related sites/courses/etc. do you consult?
+      - id: sites_courses
         template: multiple
         options:
           - Stack Overflow
@@ -527,14 +439,11 @@ outline:
           - Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)
           - Pluralsight
           - DesignCode
-      - title: Other Courses
+      - id: sites_courses
         template: text
-        description: Other sites, courses, etc. you consult not mentioned in the list above
-        id: sites_courses
         suffix: others
 
-      - title: Podcasts
-        description: Which CSS or programming-related podcasts do you listen to?
+      - id: podcasts
         template: multiple
         options:
           - Shop Talk Show
@@ -544,52 +453,36 @@ outline:
           - Non Breaking Space Show
           - The Changelog
           - Syntax
-      - title: Other Podcasts
+      - id: podcasts
         template: text
-        description: Other podcasts you listen to not mentioned in the list above
-        id: podcasts
         suffix: others
 
     ### OPINIONS ###
 
-  - title: Opinion Questions
-    description: How do you feel about the state of CSS?
+  - id: opinions
     slug: opinions
     questions:
-      - title: CSS is easy to learn
-        id: css_easy_to_learn
+      - id: css_easy_to_learn
         template: opinion
-      - title: CSS is evolving too slowly
-        id: css_evolving_slowly
+      - id: css_evolving_slowly
         template: opinion
-      - title: Utility (non-semantic) classes (.center, .large-text, etc.) should be avoided
-        id: utility_classes_to_be_avoided
+      - id: utility_classes_to_be_avoided
         template: opinion
-      - title: Selector nesting (.foo .bar ul li {...}) should be avoided
-        id: selector_nesting_to_be_avoided
+      - id: selector_nesting_to_be_avoided
         template: opinion
-      - title: CSS is a programming language
-        id: css_is_programming_language
+      - id: css_is_programming_language
         template: opinion
-      - title: I enjoy writing CSS
-        id: enjoy_writing_css
+      - id: enjoy_writing_css
         template: opinion
-      - title: What do you feel is currently missing from CSS?
-        id: currently_missing_from_css
-        description: Features you'd like to see in CSS one day.
+      - id: currently_missing_from_css
         template: longtext
-      # - title: CSS is moving in the right direction
-      #   template: opinion
 
   ### DEMOGRAPHICS ###
 
-  - title: About You
-    description: Let's get to know the real you.
+  - id: user_info
     slug: user_info
     questions:
-      - title: Years of Experience
-        id: years_of_experience
-        description: How long you've been writing CSS.
+      - id: years_of_experience
         template: single
         options:
           - label: Less than one year
@@ -605,56 +498,7 @@ outline:
           - label: 20+ years
             value: range_more_than_20
 
-      - title: Job Title
-        id: job_title
-        description: How do you introduce yourself at parties?
-        template: single
-        allowother: true
-        options:
-          - label: Front-end Developer/Engineer
-            value: front_end_developer
-          - label: Full-stack Developer/Engineer
-            value: full_stack_developer
-          - label: Back-end Developer/Engineer
-            value: back_end_developer
-          - label: Web Developer
-            value: web_developer
-          - label: Web Designer
-            value: web_designer
-          - label: UI Designer
-            value: ui_designer
-          - label: UX Designer
-            value: ux_designer
-      - title: JavaScript Proficiency
-        id: javascript_proficiency
-        description: How proficient are you at JavaScript development? (pick the most advanced option corresponding to your skills)
-        template: single
-        options:
-          - label: I am not able to write any JavaScript
-            value: 0
-          - label: I can write short, simple JavaScript or jQuery statements
-            value: 1
-          - label: I can work on existing front-end codebases using modern frameworks (React, Vue, etc.)
-            value: 2
-          - label: I can architecture entire front-end codebases from scratch
-            value: 3
-          - label: I can handle advanced front-end patterns (state management, data loading, etc.)
-            value: 4
-      - title: Back-end Proficiency
-        id: backend_proficiency
-        description: How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)
-        template: single
-        options:
-          - label: I am not able to handle any back-end work
-            value: 0
-          - label: I can set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)
-            value: 1
-          - label: I can develop apps using pre-existing frameworks (Rails, Laravel, etc.)
-            value: 2
-          - label: I can set up an entire back-end from scratch (Go, Node, etc.)
-            value: 3
-      - title: Company Size
-        id: company_size
+      - id: company_size
         template: single
         options:
           - label: Just me
@@ -673,9 +517,8 @@ outline:
             value: range_100_1000
           - label: 1000+ people
             value: range_more_than_1000
-      - title: Yearly Salary
-        id: yearly_salary
-        description: In USD
+
+      - id: yearly_salary
         template: single
         options:
           - label: I work for free :(
@@ -692,11 +535,53 @@ outline:
             value: range_100_200
           - label: $200k+
             value: range_more_than_200
-      - title: How did you find out about this survey?
-        id: how_did_you_find_out
+
+      - id: job_title
+        template: single
+        allowother: true
+        options:
+          - label: Front-end Developer/Engineer
+            value: front_end_developer
+          - label: Full-stack Developer/Engineer
+            value: full_stack_developer
+          - label: Back-end Developer/Engineer
+            value: back_end_developer
+          - label: Web Developer
+            value: web_developer
+          - label: Web Designer
+            value: web_designer
+          - label: UI Designer
+            value: ui_designer
+          - label: UX Designer
+            value: ux_designer
+            
+      - id: javascript_proficiency
+        template: single
+        options:
+          - label: I am not able to write any JavaScript
+            value: 0
+          - label: I can write short, simple JavaScript or jQuery statements
+            value: 1
+          - label: I can work on existing front-end codebases using modern frameworks (React, Vue, etc.)
+            value: 2
+          - label: I can architecture entire front-end codebases from scratch
+            value: 3
+          - label: I can handle advanced front-end patterns (state management, data loading, etc.)
+            value: 4
+      - id: backend_proficiency
+        template: single
+        options:
+          - label: I am not able to handle any back-end work
+            value: 0
+          - label: I can set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)
+            value: 1
+          - label: I can develop apps using pre-existing frameworks (Rails, Laravel, etc.)
+            value: 2
+          - label: I can set up an entire back-end from scratch (Go, Node, etc.)
+            value: 3
+      - id: how_did_you_find_out
         template: text
-      - title: Your Gender
-        id: gender
+      - id: gender
         template: single
         allowother: true
         options:
@@ -708,10 +593,7 @@ outline:
             value: non_binary
           - label: Prefer not to say
             value: prefer_not_to_say
-      - title: Your Email
-        id: email
-        description: If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
+      - id: email
         template: email
-      - title: Your Country
-        id: country
+      - id: country
         template: country

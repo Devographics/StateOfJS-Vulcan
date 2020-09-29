@@ -974,8 +974,8 @@ type Response {
   css2020__features__writing_modes__experience: String 
   css2020__features__exclusions__experience: String 
   css2020__features__position_sticky__experience: String 
-  # margin-block-start, padding-inline-end, etc.
   css2020__features__logical_properties__experience: String 
+  css2020__features__aspect_ratio__experience: String 
   css2020__features__shapes__experience: String 
   css2020__features__object_fit__experience: String 
   css2020__features__clip_path__experience: String 
@@ -991,6 +991,8 @@ type Response {
   css2020__features__font_variant__experience: String 
   css2020__features__initial_letter__experience: String 
   css2020__features__font_variant_numeric__experience: String 
+  css2020__features__font_display__experience: String 
+  css2020__features__line_clamp__experience: String 
   css2020__features__transitions__experience: String 
   css2020__features__transforms__experience: String 
   css2020__features__animations__experience: String 
@@ -1000,29 +1002,20 @@ type Response {
   css2020__features__will_change__experience: String 
   css2020__features__calc__experience: String 
   css2020__features__houdini__experience: String 
-  # Which of these CSS units have you used?
+  css2020__features__comparison_functions__experience: String 
   css2020__features__units__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__pseudo_elements__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__combinators__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__tree_document_structure__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__attributes__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__links_urls__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__interaction__choices: [String] 
-  # Which of these CSS selectors have you used?
   css2020__features__form_controls__choices: [String] 
   css2020__tools__sass__experience: String 
   css2020__tools__less__experience: String 
   css2020__tools__postcss__experience: String 
   css2020__tools__stylus__experience: String 
-  # Other pre-/post-processors you use not mentioned in the list above
   css2020__sections_other_tools__pre_post_processors: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of pre-/post-processors
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materializecss__experience: String 
@@ -1035,6 +1028,8 @@ type Response {
   css2020__tools__primer__experience: String 
   css2020__tools__tailwind__experience: String 
   css2020__tools__purecss__experience: String 
+  css2020__tools__skeleton__experience: String 
+  css2020__tools__spectre__experience: String 
   # Other CSS frameworks you use not mentioned in the list above
   css2020__sections_other_tools__css_frameworks: String 
   # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS frameworks?
@@ -1044,49 +1039,35 @@ type Response {
   css2020__tools__oocss__experience: String 
   css2020__tools__smacss__experience: String 
   css2020__tools__itcss__experience: String 
-  # Other methodologies you use not mentioned in the list above
+  css2020__tools__cubecss__experience: String 
   css2020__sections_other_tools__css_methodologies: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS methodologies?
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styledcomponents__experience: String 
-  css2020__tools__glamor__experience: String 
-  css2020__tools__aphrodite__experience: String 
   css2020__tools__jss__experience: String 
   css2020__tools__styledjsx__experience: String 
   css2020__tools__radium__experience: String 
   css2020__tools__emotion__experience: String 
   css2020__tools__cssmodules__experience: String 
-  # Other CSS-in-JS libraries you use not mentioned in the list above
+  css2020__tools__styledsystem__experience: String 
+  css2020__tools__stitches__experience: String 
+  css2020__tools__styletron__experience: String 
+  css2020__tools__fela__experience: String 
+  css2020__tools__linaria__experience: String 
   css2020__sections_other_tools__css_in_js: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS-in-JS libraries?
   css2020__happiness__css_in_js: Float 
-  # Which text editor(s) do you regularly use?
   css2020__other_tools__text_editors__choices: [String] 
-  # Other text editors you use not mentioned in the list above
   css2020__other_tools__text_editors__others: String 
-  # Which browser(s) do you work in primarily during initial development?
   css2020__other_tools__browsers__choices: [String] 
-  # Other browsers you use not mentioned in the list above
   css2020__other_tools__browsers__others: String 
-  # Which browsers do you test in?
   css2020__environments__browsers__choices: [String] 
-  # Which form factors do you test on?
   css2020__environments__form_factors__choices: [String] 
-  # Do you write print styles?
   css2020__environments__css_for_print: String 
-  # Do you write CSS for email clients?
   css2020__environments__css_for_email: String 
-  # Which CSS-related blogs/magazines/etc. do you read?
   css2020__resources__blogs_news_magazines__choices: [String] 
-  # Other blogs, etc. you read not mentioned in the list above
   css2020__resources__blogs_news_magazines__others: String 
-  # Which CSS-related sites/courses/etc. do you consult?
-  css2020__resources__sitescourses__choices: [String] 
-  # Other sites, courses, etc. you consult not mentioned in the list above
+  css2020__resources__sites_courses__choices: [String] 
   css2020__resources__sites_courses__others: String 
-  # Which CSS or programming-related podcasts do you listen to?
   css2020__resources__podcasts__choices: [String] 
-  # Other podcasts you listen to not mentioned in the list above
   css2020__resources__podcasts__others: String 
   css2020__opinions__css_easy_to_learn: Float 
   css2020__opinions__css_evolving_slowly: Float 
@@ -1094,22 +1075,15 @@ type Response {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  # Features you'd like to see in CSS one day.
   css2020__opinions__currently_missing_from_css: String 
-  # How long you've been writing CSS.
   css2020__user_info__years_of_experience: String 
-  # How do you introduce yourself at parties?
-  css2020__user_info__job_title: String 
-  # How proficient are you at JavaScript development? (pick the most advanced option corresponding to your skills)
-  css2020__user_info__javascript_proficiency: String 
-  # How proficient are you at back-end development? (pick the most advanced option corresponding to your skills)
-  css2020__user_info__backend_proficiency: String 
   css2020__user_info__company_size: String 
-  # In USD
   css2020__user_info__yearly_salary: String 
+  css2020__user_info__job_title: String 
+  css2020__user_info__javascript_proficiency: String 
+  css2020__user_info__backend_proficiency: String 
   css2020__user_info__how_did_you_find_out: String 
   css2020__user_info__gender: String 
-  # If you'd like to be notified when survey results are available. Your email won't be used for any other purpose.
   css2020__user_info__email: String 
   css2020__user_info__country: String 
   pagePath: String 
@@ -1315,6 +1289,7 @@ input CreateResponseDataInput {
   css2020__features__exclusions__experience: String 
   css2020__features__position_sticky__experience: String 
   css2020__features__logical_properties__experience: String 
+  css2020__features__aspect_ratio__experience: String 
   css2020__features__shapes__experience: String 
   css2020__features__object_fit__experience: String 
   css2020__features__clip_path__experience: String 
@@ -1330,6 +1305,8 @@ input CreateResponseDataInput {
   css2020__features__font_variant__experience: String 
   css2020__features__initial_letter__experience: String 
   css2020__features__font_variant_numeric__experience: String 
+  css2020__features__font_display__experience: String 
+  css2020__features__line_clamp__experience: String 
   css2020__features__transitions__experience: String 
   css2020__features__transforms__experience: String 
   css2020__features__animations__experience: String 
@@ -1339,6 +1316,7 @@ input CreateResponseDataInput {
   css2020__features__will_change__experience: String 
   css2020__features__calc__experience: String 
   css2020__features__houdini__experience: String 
+  css2020__features__comparison_functions__experience: String 
   css2020__features__units__choices: [String] 
   css2020__features__pseudo_elements__choices: [String] 
   css2020__features__combinators__choices: [String] 
@@ -1364,6 +1342,8 @@ input CreateResponseDataInput {
   css2020__tools__primer__experience: String 
   css2020__tools__tailwind__experience: String 
   css2020__tools__purecss__experience: String 
+  css2020__tools__skeleton__experience: String 
+  css2020__tools__spectre__experience: String 
   css2020__sections_other_tools__css_frameworks: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
@@ -1371,16 +1351,20 @@ input CreateResponseDataInput {
   css2020__tools__oocss__experience: String 
   css2020__tools__smacss__experience: String 
   css2020__tools__itcss__experience: String 
+  css2020__tools__cubecss__experience: String 
   css2020__sections_other_tools__css_methodologies: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styledcomponents__experience: String 
-  css2020__tools__glamor__experience: String 
-  css2020__tools__aphrodite__experience: String 
   css2020__tools__jss__experience: String 
   css2020__tools__styledjsx__experience: String 
   css2020__tools__radium__experience: String 
   css2020__tools__emotion__experience: String 
   css2020__tools__cssmodules__experience: String 
+  css2020__tools__styledsystem__experience: String 
+  css2020__tools__stitches__experience: String 
+  css2020__tools__styletron__experience: String 
+  css2020__tools__fela__experience: String 
+  css2020__tools__linaria__experience: String 
   css2020__sections_other_tools__css_in_js: String 
   css2020__happiness__css_in_js: Float 
   css2020__other_tools__text_editors__choices: [String] 
@@ -1393,7 +1377,7 @@ input CreateResponseDataInput {
   css2020__environments__css_for_email: String 
   css2020__resources__blogs_news_magazines__choices: [String] 
   css2020__resources__blogs_news_magazines__others: String 
-  css2020__resources__sitescourses__choices: [String] 
+  css2020__resources__sites_courses__choices: [String] 
   css2020__resources__sites_courses__others: String 
   css2020__resources__podcasts__choices: [String] 
   css2020__resources__podcasts__others: String 
@@ -1405,11 +1389,11 @@ input CreateResponseDataInput {
   css2020__opinions__enjoy_writing_css: Float 
   css2020__opinions__currently_missing_from_css: String 
   css2020__user_info__years_of_experience: String 
+  css2020__user_info__company_size: String 
+  css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
   css2020__user_info__javascript_proficiency: String 
   css2020__user_info__backend_proficiency: String 
-  css2020__user_info__company_size: String 
-  css2020__user_info__yearly_salary: String 
   css2020__user_info__how_did_you_find_out: String 
   css2020__user_info__gender: String 
   css2020__user_info__email: String 
@@ -1560,6 +1544,7 @@ input UpdateResponseDataInput {
   css2020__features__exclusions__experience: String 
   css2020__features__position_sticky__experience: String 
   css2020__features__logical_properties__experience: String 
+  css2020__features__aspect_ratio__experience: String 
   css2020__features__shapes__experience: String 
   css2020__features__object_fit__experience: String 
   css2020__features__clip_path__experience: String 
@@ -1575,6 +1560,8 @@ input UpdateResponseDataInput {
   css2020__features__font_variant__experience: String 
   css2020__features__initial_letter__experience: String 
   css2020__features__font_variant_numeric__experience: String 
+  css2020__features__font_display__experience: String 
+  css2020__features__line_clamp__experience: String 
   css2020__features__transitions__experience: String 
   css2020__features__transforms__experience: String 
   css2020__features__animations__experience: String 
@@ -1584,6 +1571,7 @@ input UpdateResponseDataInput {
   css2020__features__will_change__experience: String 
   css2020__features__calc__experience: String 
   css2020__features__houdini__experience: String 
+  css2020__features__comparison_functions__experience: String 
   css2020__features__units__choices: [String] 
   css2020__features__pseudo_elements__choices: [String] 
   css2020__features__combinators__choices: [String] 
@@ -1609,6 +1597,8 @@ input UpdateResponseDataInput {
   css2020__tools__primer__experience: String 
   css2020__tools__tailwind__experience: String 
   css2020__tools__purecss__experience: String 
+  css2020__tools__skeleton__experience: String 
+  css2020__tools__spectre__experience: String 
   css2020__sections_other_tools__css_frameworks: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
@@ -1616,16 +1606,20 @@ input UpdateResponseDataInput {
   css2020__tools__oocss__experience: String 
   css2020__tools__smacss__experience: String 
   css2020__tools__itcss__experience: String 
+  css2020__tools__cubecss__experience: String 
   css2020__sections_other_tools__css_methodologies: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styledcomponents__experience: String 
-  css2020__tools__glamor__experience: String 
-  css2020__tools__aphrodite__experience: String 
   css2020__tools__jss__experience: String 
   css2020__tools__styledjsx__experience: String 
   css2020__tools__radium__experience: String 
   css2020__tools__emotion__experience: String 
   css2020__tools__cssmodules__experience: String 
+  css2020__tools__styledsystem__experience: String 
+  css2020__tools__stitches__experience: String 
+  css2020__tools__styletron__experience: String 
+  css2020__tools__fela__experience: String 
+  css2020__tools__linaria__experience: String 
   css2020__sections_other_tools__css_in_js: String 
   css2020__happiness__css_in_js: Float 
   css2020__other_tools__text_editors__choices: [String] 
@@ -1638,7 +1632,7 @@ input UpdateResponseDataInput {
   css2020__environments__css_for_email: String 
   css2020__resources__blogs_news_magazines__choices: [String] 
   css2020__resources__blogs_news_magazines__others: String 
-  css2020__resources__sitescourses__choices: [String] 
+  css2020__resources__sites_courses__choices: [String] 
   css2020__resources__sites_courses__others: String 
   css2020__resources__podcasts__choices: [String] 
   css2020__resources__podcasts__others: String 
@@ -1650,11 +1644,11 @@ input UpdateResponseDataInput {
   css2020__opinions__enjoy_writing_css: Float 
   css2020__opinions__currently_missing_from_css: String 
   css2020__user_info__years_of_experience: String 
+  css2020__user_info__company_size: String 
+  css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
   css2020__user_info__javascript_proficiency: String 
   css2020__user_info__backend_proficiency: String 
-  css2020__user_info__company_size: String 
-  css2020__user_info__yearly_salary: String 
   css2020__user_info__how_did_you_find_out: String 
   css2020__user_info__gender: String 
   css2020__user_info__email: String 
@@ -1800,6 +1794,7 @@ input ResponseFilterInput {
   css2020__features__exclusions__experience: String_Selector
   css2020__features__position_sticky__experience: String_Selector
   css2020__features__logical_properties__experience: String_Selector
+  css2020__features__aspect_ratio__experience: String_Selector
   css2020__features__shapes__experience: String_Selector
   css2020__features__object_fit__experience: String_Selector
   css2020__features__clip_path__experience: String_Selector
@@ -1815,6 +1810,8 @@ input ResponseFilterInput {
   css2020__features__font_variant__experience: String_Selector
   css2020__features__initial_letter__experience: String_Selector
   css2020__features__font_variant_numeric__experience: String_Selector
+  css2020__features__font_display__experience: String_Selector
+  css2020__features__line_clamp__experience: String_Selector
   css2020__features__transitions__experience: String_Selector
   css2020__features__transforms__experience: String_Selector
   css2020__features__animations__experience: String_Selector
@@ -1824,6 +1821,7 @@ input ResponseFilterInput {
   css2020__features__will_change__experience: String_Selector
   css2020__features__calc__experience: String_Selector
   css2020__features__houdini__experience: String_Selector
+  css2020__features__comparison_functions__experience: String_Selector
   css2020__features__units__choices: String_Array_Selector
   css2020__features__pseudo_elements__choices: String_Array_Selector
   css2020__features__combinators__choices: String_Array_Selector
@@ -1849,6 +1847,8 @@ input ResponseFilterInput {
   css2020__tools__primer__experience: String_Selector
   css2020__tools__tailwind__experience: String_Selector
   css2020__tools__purecss__experience: String_Selector
+  css2020__tools__skeleton__experience: String_Selector
+  css2020__tools__spectre__experience: String_Selector
   css2020__sections_other_tools__css_frameworks: String_Selector
   css2020__happiness__css_frameworks: Float_Selector
   css2020__tools__bem__experience: String_Selector
@@ -1856,16 +1856,20 @@ input ResponseFilterInput {
   css2020__tools__oocss__experience: String_Selector
   css2020__tools__smacss__experience: String_Selector
   css2020__tools__itcss__experience: String_Selector
+  css2020__tools__cubecss__experience: String_Selector
   css2020__sections_other_tools__css_methodologies: String_Selector
   css2020__happiness__css_methodologies: Float_Selector
   css2020__tools__styledcomponents__experience: String_Selector
-  css2020__tools__glamor__experience: String_Selector
-  css2020__tools__aphrodite__experience: String_Selector
   css2020__tools__jss__experience: String_Selector
   css2020__tools__styledjsx__experience: String_Selector
   css2020__tools__radium__experience: String_Selector
   css2020__tools__emotion__experience: String_Selector
   css2020__tools__cssmodules__experience: String_Selector
+  css2020__tools__styledsystem__experience: String_Selector
+  css2020__tools__stitches__experience: String_Selector
+  css2020__tools__styletron__experience: String_Selector
+  css2020__tools__fela__experience: String_Selector
+  css2020__tools__linaria__experience: String_Selector
   css2020__sections_other_tools__css_in_js: String_Selector
   css2020__happiness__css_in_js: Float_Selector
   css2020__other_tools__text_editors__choices: String_Array_Selector
@@ -1878,7 +1882,7 @@ input ResponseFilterInput {
   css2020__environments__css_for_email: String_Selector
   css2020__resources__blogs_news_magazines__choices: String_Array_Selector
   css2020__resources__blogs_news_magazines__others: String_Selector
-  css2020__resources__sitescourses__choices: String_Array_Selector
+  css2020__resources__sites_courses__choices: String_Array_Selector
   css2020__resources__sites_courses__others: String_Selector
   css2020__resources__podcasts__choices: String_Array_Selector
   css2020__resources__podcasts__others: String_Selector
@@ -1890,11 +1894,11 @@ input ResponseFilterInput {
   css2020__opinions__enjoy_writing_css: Float_Selector
   css2020__opinions__currently_missing_from_css: String_Selector
   css2020__user_info__years_of_experience: String_Selector
+  css2020__user_info__company_size: String_Selector
+  css2020__user_info__yearly_salary: String_Selector
   css2020__user_info__job_title: String_Selector
   css2020__user_info__javascript_proficiency: String_Selector
   css2020__user_info__backend_proficiency: String_Selector
-  css2020__user_info__company_size: String_Selector
-  css2020__user_info__yearly_salary: String_Selector
   css2020__user_info__how_did_you_find_out: String_Selector
   css2020__user_info__gender: String_Selector
   css2020__user_info__email: String_Selector
@@ -2035,6 +2039,7 @@ input ResponseSortInput {
   css2020__features__exclusions__experience: SortOptions
   css2020__features__position_sticky__experience: SortOptions
   css2020__features__logical_properties__experience: SortOptions
+  css2020__features__aspect_ratio__experience: SortOptions
   css2020__features__shapes__experience: SortOptions
   css2020__features__object_fit__experience: SortOptions
   css2020__features__clip_path__experience: SortOptions
@@ -2050,6 +2055,8 @@ input ResponseSortInput {
   css2020__features__font_variant__experience: SortOptions
   css2020__features__initial_letter__experience: SortOptions
   css2020__features__font_variant_numeric__experience: SortOptions
+  css2020__features__font_display__experience: SortOptions
+  css2020__features__line_clamp__experience: SortOptions
   css2020__features__transitions__experience: SortOptions
   css2020__features__transforms__experience: SortOptions
   css2020__features__animations__experience: SortOptions
@@ -2059,6 +2066,7 @@ input ResponseSortInput {
   css2020__features__will_change__experience: SortOptions
   css2020__features__calc__experience: SortOptions
   css2020__features__houdini__experience: SortOptions
+  css2020__features__comparison_functions__experience: SortOptions
   css2020__features__units__choices: SortOptions
   css2020__features__pseudo_elements__choices: SortOptions
   css2020__features__combinators__choices: SortOptions
@@ -2084,6 +2092,8 @@ input ResponseSortInput {
   css2020__tools__primer__experience: SortOptions
   css2020__tools__tailwind__experience: SortOptions
   css2020__tools__purecss__experience: SortOptions
+  css2020__tools__skeleton__experience: SortOptions
+  css2020__tools__spectre__experience: SortOptions
   css2020__sections_other_tools__css_frameworks: SortOptions
   css2020__happiness__css_frameworks: SortOptions
   css2020__tools__bem__experience: SortOptions
@@ -2091,16 +2101,20 @@ input ResponseSortInput {
   css2020__tools__oocss__experience: SortOptions
   css2020__tools__smacss__experience: SortOptions
   css2020__tools__itcss__experience: SortOptions
+  css2020__tools__cubecss__experience: SortOptions
   css2020__sections_other_tools__css_methodologies: SortOptions
   css2020__happiness__css_methodologies: SortOptions
   css2020__tools__styledcomponents__experience: SortOptions
-  css2020__tools__glamor__experience: SortOptions
-  css2020__tools__aphrodite__experience: SortOptions
   css2020__tools__jss__experience: SortOptions
   css2020__tools__styledjsx__experience: SortOptions
   css2020__tools__radium__experience: SortOptions
   css2020__tools__emotion__experience: SortOptions
   css2020__tools__cssmodules__experience: SortOptions
+  css2020__tools__styledsystem__experience: SortOptions
+  css2020__tools__stitches__experience: SortOptions
+  css2020__tools__styletron__experience: SortOptions
+  css2020__tools__fela__experience: SortOptions
+  css2020__tools__linaria__experience: SortOptions
   css2020__sections_other_tools__css_in_js: SortOptions
   css2020__happiness__css_in_js: SortOptions
   css2020__other_tools__text_editors__choices: SortOptions
@@ -2113,7 +2127,7 @@ input ResponseSortInput {
   css2020__environments__css_for_email: SortOptions
   css2020__resources__blogs_news_magazines__choices: SortOptions
   css2020__resources__blogs_news_magazines__others: SortOptions
-  css2020__resources__sitescourses__choices: SortOptions
+  css2020__resources__sites_courses__choices: SortOptions
   css2020__resources__sites_courses__others: SortOptions
   css2020__resources__podcasts__choices: SortOptions
   css2020__resources__podcasts__others: SortOptions
@@ -2125,11 +2139,11 @@ input ResponseSortInput {
   css2020__opinions__enjoy_writing_css: SortOptions
   css2020__opinions__currently_missing_from_css: SortOptions
   css2020__user_info__years_of_experience: SortOptions
+  css2020__user_info__company_size: SortOptions
+  css2020__user_info__yearly_salary: SortOptions
   css2020__user_info__job_title: SortOptions
   css2020__user_info__javascript_proficiency: SortOptions
   css2020__user_info__backend_proficiency: SortOptions
-  css2020__user_info__company_size: SortOptions
-  css2020__user_info__yearly_salary: SortOptions
   css2020__user_info__how_did_you_find_out: SortOptions
   css2020__user_info__gender: SortOptions
   css2020__user_info__email: SortOptions

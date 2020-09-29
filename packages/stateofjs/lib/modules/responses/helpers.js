@@ -63,21 +63,21 @@ export const templates = {
     options: [
       {
         value: 'never_heard',
-        label: '🤷 Never heard of it/Not sure what it is',
+        intlId: 'options.never_heard',
       },
-      { value: 'heard', label: `✅ Know what it is, but haven't used it` },
-      { value: 'used', label: `👍 I've used it` },
+      { value: 'heard',  intlId: 'options.heard', },
+      { value: 'used',  intlId: 'options.used', },
     ],
   }),
   pattern: () => ({
     input: 'radiogroup',
     suffix: 'experience',
     options: [
-      { value: 'use_never', label: 'Almost always avoid' },
-      { value: 'use_sparingly', label: 'Use sparingly' },
-      { value: 'use_neutral', label: 'Neutral' },
-      { value: 'use_frequently', label: 'Use frequently' },
-      { value: 'use_always', label: ' Use as much as I can' },
+      { value: 'use_never', intlId: 'options.use_never',},
+      { value: 'use_sparingly', intlId: 'options.use_sparingly', },
+      { value: 'use_neutral', intlId: 'options.use_neutral', },
+      { value: 'use_frequently', intlId: 'options.use_frequently', },
+      { value: 'use_always',  intlId: 'options.use_always',  },
     ],
   }),
   tool: () => ({
@@ -86,12 +86,12 @@ export const templates = {
     options: [
       {
         value: 'never_heard',
-        label: '🤷 Never heard of it/Not sure what it is',
+        intlId: 'options.never_heard',
       },
-      { value: 'interested', label: '✅ Heard of it > Would like to learn' },
-      { value: 'not_interested', label: '🚫 Heard of it > Not interested' },
-      { value: 'would_use', label: '👍 Used it > Would use again' },
-      { value: 'would_not_use', label: '👎 Used it > Would avoid' },
+      { value: 'interested', intlId: 'options.interested',},
+      { value: 'not_interested', intlId: 'options.interested', },
+      { value: 'would_use', intlId: 'options.interested', },
+      { value: 'would_not_use', intlId: 'options.interested', },
     ],
   }),
   single: ({ allowother = false }) => ({
@@ -158,7 +158,7 @@ export const getQuestionObject = (questionOrId, section, number) => {
 };
 
 // transform question object into SimpleSchema-compatible schema field
-export const getQuestionSchema = questionObject => {
+export const getQuestionSchema = (questionObject, section, survey) => {
   const {
     title,
     description,
@@ -168,10 +168,13 @@ export const getQuestionSchema = questionObject => {
     isprivate = false,
     searchable = false,
     allowmultiple = false,
+    id,
   } = questionObject;
 
   const questionSchema = {
+    // label: title,
     label: title,
+    intlId: `${section.slug}.${id}`,
     description,
     type,
     optional: true,
@@ -210,7 +213,6 @@ export const parseSurvey = survey => {
   parsedSurvey.outline = survey.outline.map(section => {
     return {
       ...section,
-      id: makeId(section.title),
       questions:
         section.questions &&
         section.questions.map(question => {
