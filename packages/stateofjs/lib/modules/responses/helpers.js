@@ -114,11 +114,11 @@ export const templates = {
     input: 'radiogroup',
     type: Number,
     options: [
-      { value: 0, label: 'Disagree Strongly' },
-      { value: 1, label: 'Disagree' },
-      { value: 2, label: 'Neutral' },
-      { value: 3, label: 'Agree' },
-      { value: 4, label: 'Agree Strongly' },
+      { value: 0, intlId: 'options.disagree_strongly' },
+      { value: 1, intlId: 'options.disagree' },
+      { value: 2, intlId: 'options.neutral' },
+      { value: 3, intlId: 'options.agree' },
+      { value: 4, intlId: 'options.agree_strongly' },
     ],
   }),
   // statictext: () => ({}),
@@ -126,11 +126,11 @@ export const templates = {
     input: 'radiogroup',
     type: Number,
     options: [
-      { value: 0, label: 'Very Unhappy' },
-      { value: 1, label: 'Unhappy' },
-      { value: 2, label: 'Neutral' },
-      { value: 3, label: 'Happy' },
-      { value: 4, label: 'Very Happy' },
+      { value: 0, intlId: 'options.very_unhappy' },
+      { value: 1, intlId: 'options.unhappy' },
+      { value: 2, intlId: 'options.neutral' },
+      { value: 3, intlId: 'options.happy' },
+      { value: 4, intlId: 'options.very_happy' },
     ],
   }),
   country: () => ({
@@ -157,6 +157,12 @@ export const getQuestionObject = (questionOrId, section, number) => {
   return questionObject;
 };
 
+const parseOptions = options => {
+  return options.map(o => {
+    return typeof o === 'string' ? { value: o, label: o }: o;
+  })
+}
+
 // transform question object into SimpleSchema-compatible schema field
 export const getQuestionSchema = (questionObject, section, survey) => {
   const {
@@ -169,12 +175,18 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     searchable = false,
     allowmultiple = false,
     id,
+    suffix,
   } = questionObject;
+
+  let intlId = `${section.slug}.${id}`;
+  if (suffix && suffix === 'others') {
+    intlId += `.others`;
+  }
 
   const questionSchema = {
     // label: title,
     label: title,
-    intlId: `${section.slug}.${id}`,
+    intlId,
     description,
     type,
     optional: true,
@@ -187,7 +199,7 @@ export const getQuestionSchema = (questionObject, section, survey) => {
   };
 
   if (options) {
-    questionSchema.options = options;
+    questionSchema.options = parseOptions(options);
   }
 
   if (allowmultiple) {
@@ -255,3 +267,4 @@ Filter a response object to only keep fields relevant to the survey
 export const getResponseData = response => {
   return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }
+

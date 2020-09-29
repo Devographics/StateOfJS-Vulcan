@@ -12,6 +12,7 @@ TODO
 import React, { useState } from 'react';
 import { getResponsePath } from '../../modules/responses/helpers.js';
 import { Components } from 'meteor/vulcan:core';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
 
 const FormSubmit = ({
@@ -42,7 +43,7 @@ const FormSubmit = ({
               history.push(getResponsePath(response, sectionNumber - 1));
             }}
           >
-            « {previousSection.title}
+            « <FormattedMessage id={`sections.${previousSection.id}.title`}/>
           </Components.LoadingButton>
         ) : (
           <div className="prev-placeholder"/>
@@ -60,7 +61,8 @@ const FormSubmit = ({
               history.push(getResponsePath(response, sectionNumber + 1));
             }}
           >
-            {nextSection.title} »
+            <FormattedMessage id={`sections.${nextSection.id}.title`}/>
+             »
           </Components.LoadingButton>
         ) : (
           <Components.LoadingButton
@@ -75,7 +77,7 @@ const FormSubmit = ({
               history.push('/thanks');
             }}
           >
-            Finish Survey »
+            <FormattedMessage id="other.finish_survey"/> »
           </Components.LoadingButton>
         )}
       </div>

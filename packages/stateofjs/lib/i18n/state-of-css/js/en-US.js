@@ -266,6 +266,38 @@ export default {
     {
       "key": "features.comparison_functions.description",
       "t": "min(), max(), and clamp()"
+    },
+    {
+      "key": "opinions.css_easy_to_learn",
+      "t": "CSS is easy to learn"
+    },
+    {
+      "key": "opinions.css_evolving_slowly",
+      "t": "CSS is evolving too slowly"
+    },
+    {
+      "key": "opinions.utility_classes_to_be_avoided",
+      "t": "Utility (non-semantic) classes (.center, .large-text, etc.) should be avoided"
+    },
+    {
+      "key": "opinions.selector_nesting_to_be_avoided",
+      "t": "Selector nesting (.foo .bar ul li {...}) should be avoided"
+    },
+    {
+      "key": "opinions.css_is_programming_language",
+      "t": "CSS is a programming language"
+    },
+    {
+      "key": "opinions.enjoy_writing_css",
+      "t": "I enjoy writing CSS"
+    },
+    {
+      "key": "opinions.currently_missing_from_css",
+      "t": "What do you feel is currently missing from CSS?"
+    },
+    {
+      "key": "opinions.currently_missing_from_css.description",
+      "t": "Features you'd like to see in CSS one day."
     }
   ]
 }
