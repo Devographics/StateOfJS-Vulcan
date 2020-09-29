@@ -74,23 +74,23 @@ translations:
   ###########################################################################
 
   # CSS for print
-  - key: options.environments.css_for_print.0
+  - key: options.css_for_print.0
     t: I (almost) never write print styles
-  - key: options.environments.css_for_print.1
+  - key: options.css_for_print.1
     t: I occasionally write print styles
-  - key: options.environments.css_for_print.2
+  - key: options.css_for_print.2
     t: I write print styles as part of most projects
-  - key: options.environments.css_for_print.3
+  - key: options.css_for_print.3
     t: I focus mainly on CSS for print
 
   # CSS for email
-  - key: options.environments.css_for_email.0
+  - key: options.css_for_email.0
     t: I (almost) never write CSS for email clients
-  - key: options.environments.css_for_email.1
+  - key: options.css_for_email.1
     t: I occasionally write CSS for email clients
-  - key: options.environments.css_for_email.2
+  - key: options.css_for_email.2
     t: I write CSS for email clients as part of most projects
-  - key: options.environments.css_for_email.3
+  - key: options.css_for_email.3
     t: I focus mainly on CSS for email clients
 
   ###########################################################################
@@ -222,7 +222,47 @@ translations:
   
   - key: features.form_controls
     t: Form Controls
-  
+
+  ###########################################################################
+  # Tools
+  ###########################################################################
+
+  - key: sections_other_tools.pre_post_processors
+    t: Other Pre-/Post-processors
+  - key: sections_other_tools.pre_post_processors.description
+    t: Other pre-/post-processors you use not mentioned in the list above
+  - key: happiness.pre_post_processors
+    t: Overall Happiness
+  - key: happiness.pre_post_processors.description
+    t: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of pre-/post-processors?
+
+  - key: sections_other_tools.css_frameworks
+    t: Other CSS Frameworks
+  - key: sections_other_tools.css_frameworks.description
+    t: Other CSS frameworks you use not mentioned in the list above
+  - key: happiness.css_frameworks
+    t: Overall Happiness
+  - key: happiness.css_frameworks.description
+    t: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS frameworks?
+
+  - key: sections_other_tools.css_methodologies
+    t: Other Methodologies
+  - key: sections_other_tools.css_methodologies.description
+    t: Other methodologies you use not mentioned in the list above
+  - key: happiness.css_methodologies
+    t: Overall Happiness
+  - key: happiness.css_methodologies.description
+    t: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS methodologies?
+
+  - key: sections_other_tools.css_in_js
+    t: Other CSS-in-JS Libraries
+  - key: sections_other_tools.css_in_js.description
+    t: Other CSS-in-JS libraries you use not mentioned in the list above
+  - key: happiness.css_in_js
+    t: Overall Happiness
+  - key: happiness.css_in_js.description
+    t: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS-in-JS libraries?
+
   ###########################################################################
   # Environments
   ###########################################################################

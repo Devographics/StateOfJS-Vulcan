@@ -89,9 +89,9 @@ export const templates = {
         intlId: 'options.tools.never_heard',
       },
       { value: 'interested', intlId: 'options.tools.interested',},
-      { value: 'not_interested', intlId: 'options.tools.interested', },
-      { value: 'would_use', intlId: 'options.tools.interested', },
-      { value: 'would_not_use', intlId: 'options.tools.interested', },
+      { value: 'not_interested', intlId: 'options.tools.not_interested', },
+      { value: 'would_use', intlId: 'options.tools.would_use', },
+      { value: 'would_not_use', intlId: 'options.tools.would_not_use', },
     ],
   }),
   single: ({ allowother = false }) => ({
@@ -105,7 +105,6 @@ export const templates = {
     allowother,
     input: 'checkboxgroup',
     randomize: true,
-    intlPrefix: `options.${id}`,
     suffix: 'choices',
   }),
   text: () => ({ input: 'text' }),
@@ -160,8 +159,7 @@ export const getQuestionObject = (questionOrId, section, number) => {
 
 const parseOptions = (questionObject, options) => {
   return options.map(o => {
-    const intlId = `options.${questionObject.id}.${o}`;
-    return typeof o === 'string' ? { value: o, label: o, intlId }: o;
+    return typeof o === 'object' ? o : { value: String(o), label: String(o), intlId: `options.${questionObject.id}.${String(o)}` };
   })
 }
 
@@ -182,9 +180,6 @@ export const getQuestionSchema = (questionObject, section, survey) => {
   } = questionObject;
 
   let intlId = `${section.slug}.${id}`;
-  if (intlPrefix) {
-    intlId = intlPrefix + '.' + intlId;
-  }
   if (suffix && suffix === 'others') {
     intlId += `.others`;
   }

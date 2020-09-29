@@ -348,16 +348,12 @@ export default {
         "Skeleton",
         "Spectre",
         {
-          "title": "Other CSS Frameworks",
           "id": "css_frameworks",
-          "description": "Other CSS frameworks you use not mentioned in the list above",
           "template": "text",
           "sectionSlug": "sections_other_tools"
         },
         {
-          "title": "Overall Happiness",
           "id": "css_frameworks",
-          "description": "On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS frameworks?",
           "template": "happiness",
           "sectionSlug": "happiness"
         }
@@ -523,9 +519,6 @@ export default {
         {
           "id": "css_for_email",
           "template": "single",
-          "allowmultiple": false,
-          "allowother": false,
-          "randomize": false,
           "options": [
             0,
             1,

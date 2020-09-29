@@ -246,14 +246,10 @@ outline:
       # - Milligram
       # - BassCSS
       # - No Framework
-      - title: Other CSS Frameworks
-        id: css_frameworks
-        description: Other CSS frameworks you use not mentioned in the list above
+      - id: css_frameworks
         template: text
         sectionSlug: sections_other_tools
-      - title: Overall Happiness
-        id: css_frameworks
-        description: On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS frameworks?
+      - id: css_frameworks
         template: happiness
         sectionSlug: happiness
 

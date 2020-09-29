@@ -64,7 +64,7 @@ export default {
       "t": "🤷 Never heard of it/Not sure what it is"
     },
     {
-      "key": "options.tools.never_heard",
+      "key": "options.tools.interested",
       "t": "✅ Heard of it > Would like to learn"
     },
     {
@@ -370,6 +370,18 @@ export default {
     {
       "key": "gender.prefer_not_to_say",
       "t": "Prefer not to say"
+    },
+    {
+      "key": "user_info.how_did_you_find_out",
+      "t": "How did you find out about this survey?"
+    },
+    {
+      "key": "user_info.email",
+      "t": "Your Email"
+    },
+    {
+      "key": "user_info.country",
+      "t": "Your Country"
     },
     {
       "key": "other_tools.text_editors",

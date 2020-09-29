@@ -1030,9 +1030,7 @@ type Response {
   css2020__tools__purecss__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
-  # Other CSS frameworks you use not mentioned in the list above
   css2020__sections_other_tools__css_frameworks: String 
-  # On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS frameworks?
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomiccss__experience: String 
