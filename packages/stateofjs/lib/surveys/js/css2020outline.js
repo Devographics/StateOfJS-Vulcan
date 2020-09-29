@@ -664,30 +664,12 @@ export default {
           "id": "years_of_experience",
           "template": "single",
           "options": [
-            {
-              "label": "Less than one year",
-              "value": "range_less_than_1"
-            },
-            {
-              "label": "1-2 years",
-              "value": "range_1_2"
-            },
-            {
-              "label": "2-5 years",
-              "value": "range_2_5"
-            },
-            {
-              "label": "5-10 years",
-              "value": "range_5_10"
-            },
-            {
-              "label": "10-20 years",
-              "value": "range_10_20"
-            },
-            {
-              "label": "20+ years",
-              "value": "range_more_than_20"
-            }
+            "range_less_than_1",
+            "range_1_2",
+            "range_2_5",
+            "range_5_10",
+            "range_10_20",
+            "range_more_than_20"
           ]
         },
         {

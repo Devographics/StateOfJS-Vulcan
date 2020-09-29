@@ -63,21 +63,21 @@ export const templates = {
     options: [
       {
         value: 'never_heard',
-        intlId: 'options.never_heard',
+        intlId: 'options.features.never_heard',
       },
-      { value: 'heard',  intlId: 'options.heard', },
-      { value: 'used',  intlId: 'options.used', },
+      { value: 'heard',  intlId: 'options.features.heard', },
+      { value: 'used',  intlId: 'options.features.used', },
     ],
   }),
   pattern: () => ({
     input: 'radiogroup',
     suffix: 'experience',
     options: [
-      { value: 'use_never', intlId: 'options.use_never',},
-      { value: 'use_sparingly', intlId: 'options.use_sparingly', },
-      { value: 'use_neutral', intlId: 'options.use_neutral', },
-      { value: 'use_frequently', intlId: 'options.use_frequently', },
-      { value: 'use_always',  intlId: 'options.use_always',  },
+      { value: 'use_never', intlId: 'options.patterns.use_never',},
+      { value: 'use_sparingly', intlId: 'options.patterns.use_sparingly', },
+      { value: 'use_neutral', intlId: 'options.patterns.use_neutral', },
+      { value: 'use_frequently', intlId: 'options.patterns.use_frequently', },
+      { value: 'use_always',  intlId: 'options.patterns.use_always',  },
     ],
   }),
   tool: () => ({
@@ -86,12 +86,12 @@ export const templates = {
     options: [
       {
         value: 'never_heard',
-        intlId: 'options.never_heard',
+        intlId: 'options.tools.never_heard',
       },
-      { value: 'interested', intlId: 'options.interested',},
-      { value: 'not_interested', intlId: 'options.interested', },
-      { value: 'would_use', intlId: 'options.interested', },
-      { value: 'would_not_use', intlId: 'options.interested', },
+      { value: 'interested', intlId: 'options.tools.interested',},
+      { value: 'not_interested', intlId: 'options.tools.interested', },
+      { value: 'would_use', intlId: 'options.tools.interested', },
+      { value: 'would_not_use', intlId: 'options.tools.interested', },
     ],
   }),
   single: ({ allowother = false }) => ({
@@ -100,11 +100,12 @@ export const templates = {
     input: 'radiogroup',
     randomize: false,
   }),
-  multiple: ({ allowother = false }) => ({
+  multiple: ({ id, allowother = false }) => ({
     allowmultiple: true,
     allowother,
     input: 'checkboxgroup',
     randomize: true,
+    intlPrefix: `options.${id}`,
     suffix: 'choices',
   }),
   text: () => ({ input: 'text' }),
@@ -114,11 +115,11 @@ export const templates = {
     input: 'radiogroup',
     type: Number,
     options: [
-      { value: 0, intlId: 'options.disagree_strongly' },
-      { value: 1, intlId: 'options.disagree' },
-      { value: 2, intlId: 'options.neutral' },
-      { value: 3, intlId: 'options.agree' },
-      { value: 4, intlId: 'options.agree_strongly' },
+      { value: 0, intlId: 'options.opinions.disagree_strongly' },
+      { value: 1, intlId: 'options.opinions.disagree' },
+      { value: 2, intlId: 'options.opinions.neutral' },
+      { value: 3, intlId: 'options.opinions.agree' },
+      { value: 4, intlId: 'options.opinions.agree_strongly' },
     ],
   }),
   // statictext: () => ({}),
@@ -126,11 +127,11 @@ export const templates = {
     input: 'radiogroup',
     type: Number,
     options: [
-      { value: 0, intlId: 'options.very_unhappy' },
-      { value: 1, intlId: 'options.unhappy' },
-      { value: 2, intlId: 'options.neutral' },
-      { value: 3, intlId: 'options.happy' },
-      { value: 4, intlId: 'options.very_happy' },
+      { value: 0, intlId: 'options.happiness.very_unhappy' },
+      { value: 1, intlId: 'options.happiness.unhappy' },
+      { value: 2, intlId: 'options.happiness.neutral' },
+      { value: 3, intlId: 'options.happiness.happy' },
+      { value: 4, intlId: 'options.happiness.very_happy' },
     ],
   }),
   country: () => ({
@@ -157,9 +158,10 @@ export const getQuestionObject = (questionOrId, section, number) => {
   return questionObject;
 };
 
-const parseOptions = options => {
+const parseOptions = (questionObject, options) => {
   return options.map(o => {
-    return typeof o === 'string' ? { value: o, label: o }: o;
+    const intlId = `options.${questionObject.id}.${o}`;
+    return typeof o === 'string' ? { value: o, label: o, intlId }: o;
   })
 }
 
@@ -175,10 +177,14 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     searchable = false,
     allowmultiple = false,
     id,
+    intlPrefix,
     suffix,
   } = questionObject;
 
   let intlId = `${section.slug}.${id}`;
+  if (intlPrefix) {
+    intlId = intlPrefix + '.' + intlId;
+  }
   if (suffix && suffix === 'others') {
     intlId += `.others`;
   }
@@ -199,7 +205,7 @@ export const getQuestionSchema = (questionObject, section, survey) => {
   };
 
   if (options) {
-    questionSchema.options = parseOptions(options);
+    questionSchema.options = parseOptions(questionObject, options);
   }
 
   if (allowmultiple) {
