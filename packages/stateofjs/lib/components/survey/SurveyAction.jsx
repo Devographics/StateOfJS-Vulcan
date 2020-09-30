@@ -11,7 +11,7 @@ import { Components, getErrors } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';
 import get from 'lodash/get';
 import { Link, useHistory } from 'react-router-dom';
-import { getResponsePath } from '../../modules/responses/helpers.js';
+import { getSurveyPath } from '../../modules/surveys/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import { statuses } from '../../modules/constants.js';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
@@ -70,46 +70,45 @@ const SurveyAction = ({ survey, currentUser }) => {
     <div className="survey-action">
       <div className="survey-action-inner">
         {status === statuses.preview ? (
-          hasResponse ? (
-            <SurveyButton response={currentSurveyResponse} message="general.preview_survey" />
-          ) : (
-            <Components.MutationButton
-              {...mutationButtonProps}
-              label={<FormattedMessage id="general.preview_survey" />}
-            />
-          )
+          <SurveyLink survey={survey} message="general.preview_survey" />
         ) : status === statuses.open ? (
           hasResponse ? (
-            <SurveyButton response={currentSurveyResponse} message="general.continue_survey" />
+            <SurveyLink survey={survey} response={currentSurveyResponse} message="general.continue_survey" />
           ) : (
             <Components.MutationButton {...mutationButtonProps} />
           )
         ) : status === statuses.closed ? (
           hasResponse ? (
-            <SurveyButton response={currentSurveyResponse} message="general.review_survey" />
+            <SurveyLink survey={survey} response={currentSurveyResponse} message="general.review_survey" />
           ) : (
-            <FormattedMessage id="general.survey_closed" />
+            <SurveyLink survey={survey} message="general.review_survey" />
           )
         ) : null}
       </div>
-      {errors && errors.map((error) => <ErrorItem key={error.id} {...error} response={currentSurveyResponse} />)}
+      {errors &&
+        errors.map((error) => <ErrorItem key={error.id} {...error} survey={survey} response={currentSurveyResponse} />)}
     </div>
   );
 };
 
-const SurveyButton = ({ response, message }) => (
-  <LinkContainer to={response.pagePath}>
+/*
+
+Link to the "naked" survey path or to the actual response
+
+*/
+const SurveyLink = ({ survey, response = {}, message }) => (
+  <LinkContainer to={response.pagePath || getSurveyPath({ survey })}>
     <Components.Button>
       <FormattedMessage id={message} />
     </Components.Button>
   </LinkContainer>
 );
 
-const ErrorItem = ({ id, message, properties, response }) => {
+const ErrorItem = ({ survey, id, message, properties, response }) => {
   if (id === 'responses.duplicate_responses') {
     return (
       <div className="survey-item-error error message">
-        {message} <Link to={getResponsePath(response)}>Continue Survey →</Link>
+        {message} <Link to={getSurveyPath({ survey, response })}>Continue Survey →</Link>
       </div>
     );
   } else {

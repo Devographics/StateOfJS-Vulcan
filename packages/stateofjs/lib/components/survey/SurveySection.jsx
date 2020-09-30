@@ -45,7 +45,6 @@ const SurveySection = () => {
     <div className="survey-section">
       <SurveyNav
         survey={response.survey}
-        responseId={responseId}
         response={response}
         currentSectionNumber={sectionNumber}
       />

@@ -1,11 +1,11 @@
 import surveys from '../../surveys';
-import { getResponsePath } from '../../modules/responses/helpers';
+import { getSurveyPath } from '../../modules/surveys/helpers';
 
 export const apiSchema = {
 
   pagePath: {
     type: 'String',
-    resolver: response => getResponsePath(response),
+    resolver: response => getSurveyPath({ response }),
   },
 
   survey: {

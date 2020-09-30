@@ -46,14 +46,6 @@ export const getQuestionFieldName = (survey, section, question) =>{
   return fieldName
 }
 
-export const getResponsePath = (response, sectionNumber) =>{
-  const { name, year } = getSurveyFromResponse(response);
-  const path = `/survey/${Utils.slugify(name)}/${year}/${response._id}${
-    typeof sectionNumber !== 'undefined' ? `/${sectionNumber}` : ''
-  }`;
-  return path;
-}
-
 export const getThanksPath = (response) =>{
   const { name, year } = getSurveyFromResponse(response);
   const path = `/survey/${Utils.slugify(name)}/${year}/thanks`;

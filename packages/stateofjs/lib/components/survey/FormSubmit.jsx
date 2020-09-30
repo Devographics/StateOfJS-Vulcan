@@ -10,12 +10,14 @@ TODO
 
 */
 import React, { useState } from 'react';
-import { getResponsePath, getThanksPath } from '../../modules/responses/helpers.js';
+import { getThanksPath } from '../../modules/responses/helpers.js';
+import { getSurveyPath } from '../../modules/surveys/helpers.js';
 import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
 
 const FormSubmit = ({
+  survey,
   submitForm,
   response,
   sectionNumber,
@@ -40,7 +42,7 @@ const FormSubmit = ({
               setPrevLoading(true);
               await submitForm();
               setPrevLoading(false);
-              history.push(getResponsePath(response, sectionNumber - 1));
+              history.push(getSurveyPath({survey, response, number: sectionNumber - 1}));
             }}
           >
             « <FormattedMessage id={`sections.${previousSection.id}.title`}/>
@@ -58,7 +60,7 @@ const FormSubmit = ({
               setNextLoading(true);
               await submitForm();
               setNextLoading(false);
-              history.push(getResponsePath(response, sectionNumber + 1));
+              history.push(getSurveyPath({survey, response, number: sectionNumber + 1}));
             }}
           >
             <FormattedMessage id={`sections.${nextSection.id}.title`}/>

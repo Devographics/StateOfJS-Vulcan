@@ -8,7 +8,9 @@ import AccountPage from '../components/users/AccountPage';
 
 // import SurveyLandingPage from '../components/survey/SurveyLandingPage';
 import SurveyPage from '../components/survey/SurveyPage';
-import SurveySection from '../components/survey/SurveySection';
+import SurveySectionSwitcher from '../components/survey/SurveySectionSwitcher';
+// import SurveySection from '../components/survey/SurveySection';
+// import SurveySectionReadOnly from '../components/survey/SurveySectionReadOnly';
 
 import AdminSurveys from '../components/admin/AdminSurveys';
 import AdminResponses from '../components/admin/AdminResponses';
@@ -26,7 +28,8 @@ const routes = [
 
 { name: 'surveyPage', path: '/survey/:slug/:year/', component: SurveyPage },
 { name: 'thanks', path: '/survey/:slug/:year/thanks/', component: Thanks },
-{ name: 'responsePage', path: '/survey/:slug/:year/:responseId/:sectionNumber?', component: SurveySection },
+// { name: 'responsePageReadOnly', path: '/survey/:slug/:year/read-only/:sectionNumber?', component: SurveySectionSwitcher },
+{ name: 'responsePage', path: '/survey/:slug/:year/:responseId/:sectionNumber?', component: SurveySectionSwitcher },
 // { name: 'mainSurveyPage', path: '/survey/:slug/', component: SurveyLandingPage },
 
 ];

@@ -11,7 +11,7 @@ import { Components, getErrors } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';
 import get from 'lodash/get';
 import { Link, useHistory } from 'react-router-dom';
-import { getResponsePath } from '../../modules/responses/helpers.js';
+import { getSurveyPath } from '../../modules/surveys/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import { statuses } from '../../modules/constants.js';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
@@ -89,16 +89,16 @@ const SurveyItem = ({ survey, currentUser }) => {
           )}
         </div>
       </div>
-      {errors && errors.map((error) => <ErrorItem key={error.id} {...error} response={currentSurveyResponse} />)}
+      {errors && errors.map((error) => <ErrorItem key={error.id} {...error} survey={survey} response={currentSurveyResponse} />)}
     </div>
   );
 };
 
-const ErrorItem = ({ id, message, properties, response }) => {
+const ErrorItem = ({ survey, id, message, properties, response }) => {
   if (id === 'responses.duplicate_responses') {
     return (
       <div className="survey-item-error error message">
-        {message} <Link to={getResponsePath(response)}>Continue Survey →</Link>
+        {message} <Link to={getSurveyPath({survey, response})}>Continue Survey →</Link>
       </div>
     );
   } else {

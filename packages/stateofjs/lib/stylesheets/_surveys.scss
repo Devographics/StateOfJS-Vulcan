@@ -36,7 +36,7 @@
   }
   .active {
     @include font-bold;
-    color: $contrast-color;
+    // color: $contrast-color;
   }
   li {
     font-size: $medium-font;

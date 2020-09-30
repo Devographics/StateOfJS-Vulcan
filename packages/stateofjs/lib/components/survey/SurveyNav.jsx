@@ -10,7 +10,8 @@ TODO
 
 */
 import React, { useState } from 'react';
-import { getResponsePath, getQuestionObject, ignoredFieldTypes } from '../../modules/responses/helpers.js';
+import { getQuestionObject, ignoredFieldTypes } from '../../modules/responses/helpers.js';
+import { getSurveyPath } from '../../modules/surveys/helpers.js';
 import surveys from '../../surveys';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
@@ -42,7 +43,7 @@ const getSectionCompletionPercentage = (section, response) => {
   return Math.round((completedQuestionsCount / questionsCount) * 100);
 };
 
-const SurveyNav = ({ survey, responseId, response }) => {
+const SurveyNav = ({ survey, response }) => {
   const [shown, setShown] = useState(false);
   const outline = surveys.find(o => o.slug === survey.slug).outline;
   return (
@@ -62,8 +63,8 @@ const SurveyNav = ({ survey, responseId, response }) => {
           <ul>
             {outline.map((section, i) => (
               <SectionNavItem
+                survey={survey}
                 setShown={setShown}
-                responseId={responseId}
                 response={response}
                 section={section}
                 number={i}
@@ -81,13 +82,14 @@ const SurveyNav = ({ survey, responseId, response }) => {
   );
 };
 
-const SectionNavItem = ({ responseId, response, section, number, setShown }) => {
+const SectionNavItem = ({ survey, response, section, number, setShown }) => {
   const completion = getSectionCompletionPercentage(section, response);
   const showCompletion = completion !== 'null' && completion > 0;
   return (
     <li className="section-nav-item">
       <NavLink
-        to={getResponsePath(response, number)}
+        exact={true}
+        to={getSurveyPath({survey, number, response})}
         onClick={() => {
           setShown(false);
         }}
