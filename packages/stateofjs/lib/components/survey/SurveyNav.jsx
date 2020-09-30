@@ -55,7 +55,7 @@ const SurveyNav = ({ survey, responseId, response }) => {
           }}
         >
           <h2>{survey.name} {survey.year}</h2>
-          <h3 className="section-nav-heading">Table of Contents</h3>
+          <h3 className="section-nav-heading"><FormattedMessage id="general.table_of_contents"/></h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
         </div>
         <div className="section-nav-contents">
@@ -73,7 +73,7 @@ const SurveyNav = ({ survey, responseId, response }) => {
             {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
           </ul>
           <p className="completion-message">
-            Note: all questions are optional, reaching 100% completion is not required.
+            <FormattedMessage id="general.all_questions_optional"/>
           </p>
         </div>
       </div>

@@ -4,6 +4,12 @@ export const statuses = {
   closed: 3,
 };
 
+export const statusesReverse = {
+  1: 'preview',
+  2: 'open',
+  3: 'closed',
+};
+
 export const statusesOptions = [
   {
     value: 1,

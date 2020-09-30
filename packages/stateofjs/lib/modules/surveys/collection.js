@@ -1,19 +1,19 @@
-import { createCollection } from 'meteor/vulcan:core';
-import schema from './schema.js';
+// import { createCollection } from 'meteor/vulcan:core';
+// import schema from './schema.js';
 
-export const Surveys = createCollection({
-  collectionName: 'Surveys',
+// export const Surveys = createCollection({
+//   collectionName: 'Surveys',
 
-  typeName: 'Survey',
+//   typeName: 'Survey',
 
-  schema,
+//   schema,
 
-  permissions: {
-    canRead: ['guests'],
-    canCreate: ['admins'],
-    canUpdate: ['admins'],
-    canDelete: ['admins'],
-  },
-});
+//   permissions: {
+//     canRead: ['guests'],
+//     canCreate: ['admins'],
+//     canUpdate: ['admins'],
+//     canDelete: ['admins'],
+//   },
+// });
 
-export default Surveys;
+// export default Surveys;

@@ -23,13 +23,13 @@ const SurveySection = () => {
   const { document: response, loading } = useSingle2({
     collectionName: 'Responses',
     fragmentName: 'ResponseFragment',
-    input: {id: responseId}
+    input: { id: responseId },
   });
   if (loading) {
     return <Components.Loading />;
   }
-  const survey = surveys.find(s => s.slug === response.survey.slug)
-  const surveyOutline = survey.outline
+  const survey = surveys.find((s) => s.slug === response.survey.slug);
+  const surveyOutline = survey.outline;
   const section = surveyOutline[sectionNumber];
   const previousSection = surveyOutline[sectionNumber - 1];
   const nextSection = surveyOutline[sectionNumber + 1];
@@ -43,7 +43,12 @@ const SurveySection = () => {
   };
   return (
     <div className="survey-section">
-      <SurveyNav survey={response.survey} responseId={responseId} response={response} currentSectionNumber={sectionNumber} />
+      <SurveyNav
+        survey={response.survey}
+        responseId={responseId}
+        response={response}
+        currentSectionNumber={sectionNumber}
+      />
       <div className="section-contents">
         {loading ? (
           <Components.Loading />

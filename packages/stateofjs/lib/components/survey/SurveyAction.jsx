@@ -20,11 +20,11 @@ import { FormattedMessage } from 'meteor/vulcan:i18n';
 // import bowser from 'bowser';
 // const bowser = require("bowser"); // CommonJS
 
-const SurveyItem = ({ survey, currentUser }) => {
+const SurveyAction = ({ survey, currentUser }) => {
   const history = useHistory();
   const [errors, setErrors] = useState();
 
-  const { slug, name, year, imageUrl, status } = survey;
+  const { slug, status } = survey;
   const currentSurveyResponse = currentUser && currentUser.responses.find((r) => r.surveySlug === slug);
 
   // prefilled data
@@ -47,52 +47,63 @@ const SurveyItem = ({ survey, currentUser }) => {
   //   };
   // }
 
+  const hasResponse = currentSurveyResponse && !isEmpty(currentSurveyResponse);
+
+  const mutationButtonProps = {
+    label: <FormattedMessage id="general.start_survey" />,
+    variant: 'primary',
+    mutationOptions: {
+      name: 'createResponse',
+      args: { input: 'CreateResponseInput' },
+      fragmentName: 'CreateResponseOutputFragment',
+    },
+    mutationArguments: { input: { data } },
+    successCallback: (result) => {
+      history.push(get(result, 'data.createResponse.data.pagePath'));
+    },
+    errorCallback: (error) => {
+      setErrors(getErrors(error));
+    },
+  };
+
   return (
-    <div className="survey-item">
-      <div className="survey-item-contents">
-        <div className="survey-image">
-          <img src={`/surveys/${imageUrl}`} alt={name} />
-        </div>
-        <h3 className="survey-name">
-          {name} {year}
-        </h3>
-        <div className="survey-action">
-          {currentSurveyResponse && !isEmpty(currentSurveyResponse) ? (
-            <LinkContainer to={currentSurveyResponse.pagePath}>
-              <Components.Button>
-                {status === statuses.open ? (
-                  <FormattedMessage id="general.continue_survey" />
-                ) : (
-                  <FormattedMessage id="general.review_survey" />
-                )}
-              </Components.Button>
-            </LinkContainer>
-          ) : status === statuses.open ? (
-            <Components.MutationButton
-              label={<FormattedMessage id="general.start_survey" />}
-              variant="primary"
-              mutationOptions={{
-                name: 'createResponse',
-                args: { input: 'CreateResponseInput' },
-                fragmentName: 'CreateResponseOutputFragment',
-              }}
-              mutationArguments={{ input: { data } }}
-              successCallback={(result) => {
-                history.push(get(result, 'data.createResponse.data.pagePath'));
-              }}
-              errorCallback={(error) => {
-                setErrors(getErrors(error));
-              }}
-            />
+    <div className="survey-action">
+      <div className="survey-action-inner">
+        {status === statuses.preview ? (
+          hasResponse ? (
+            <SurveyButton response={currentSurveyResponse} message="general.preview_survey" />
           ) : (
-            <div className="survey-action-closed">Survey closed.</div>
-          )}
-        </div>
+            <Components.MutationButton
+              {...mutationButtonProps}
+              label={<FormattedMessage id="general.preview_survey" />}
+            />
+          )
+        ) : status === statuses.open ? (
+          hasResponse ? (
+            <SurveyButton response={currentSurveyResponse} message="general.continue_survey" />
+          ) : (
+            <Components.MutationButton {...mutationButtonProps} />
+          )
+        ) : status === statuses.closed ? (
+          hasResponse ? (
+            <SurveyButton response={currentSurveyResponse} message="general.review_survey" />
+          ) : (
+            <FormattedMessage id="general.survey_closed" />
+          )
+        ) : null}
       </div>
       {errors && errors.map((error) => <ErrorItem key={error.id} {...error} response={currentSurveyResponse} />)}
     </div>
   );
 };
+
+const SurveyButton = ({ response, message }) => (
+  <LinkContainer to={response.pagePath}>
+    <Components.Button>
+      <FormattedMessage id={message} />
+    </Components.Button>
+  </LinkContainer>
+);
 
 const ErrorItem = ({ id, message, properties, response }) => {
   if (id === 'responses.duplicate_responses') {
@@ -106,4 +117,4 @@ const ErrorItem = ({ id, message, properties, response }) => {
   }
 };
 
-export default SurveyItem;
+export default SurveyAction;

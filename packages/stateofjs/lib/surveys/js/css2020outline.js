@@ -2,10 +2,15 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "css2020",
+  "prettySlug": "state-of-css",
+  "hashtag": "StateOfCSS2020",
   "name": "State of CSS",
   "year": 2020,
   "status": 1,
   "imageUrl": "stateofcss2020.png",
+  "bgColor": "#232840",
+  "textColor": "#9ac6c9",
+  "linkColor": "#f649a7",
   "outline": [
     {
       "id": "layout",
@@ -510,20 +515,36 @@ export default {
           "id": "css_for_print",
           "template": "single",
           "options": [
-            0,
-            1,
-            2,
-            3
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            }
           ]
         },
         {
           "id": "css_for_email",
           "template": "single",
           "options": [
-            0,
-            1,
-            2,
-            3
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            }
           ]
         }
       ]
@@ -633,39 +654,81 @@ export default {
           "id": "years_of_experience",
           "template": "single",
           "options": [
-            "range_less_than_1",
-            "range_1_2",
-            "range_2_5",
-            "range_5_10",
-            "range_10_20",
-            "range_more_than_20"
+            {
+              "id": "range_less_than_1"
+            },
+            {
+              "id": "range_1_2"
+            },
+            {
+              "id": "range_2_5"
+            },
+            {
+              "id": "range_5_10"
+            },
+            {
+              "id": "range_10_20"
+            },
+            {
+              "id": "range_more_than_20"
+            }
           ]
         },
         {
           "id": "company_size",
           "template": "single",
           "options": [
-            "range_1",
-            "range_1_5",
-            "range_5_10",
-            "range_10_20",
-            "range_20_50",
-            "range_50_100",
-            "range_100_1000",
-            "range_more_than_1000"
+            {
+              "id": "range_1"
+            },
+            {
+              "id": "range_1_5"
+            },
+            {
+              "id": "range_5_10"
+            },
+            {
+              "id": "range_10_20"
+            },
+            {
+              "id": "range_20_50"
+            },
+            {
+              "id": "range_50_100"
+            },
+            {
+              "id": "range_100_1000"
+            },
+            {
+              "id": "range_more_than_1000"
+            }
           ]
         },
         {
           "id": "yearly_salary",
           "template": "single",
           "options": [
-            "range_work_for_free",
-            "range_0_10",
-            "range_10_30",
-            "range_30_50",
-            "range_50_100",
-            "range_100_200",
-            "range_more_than_200"
+            {
+              "id": "range_work_for_free"
+            },
+            {
+              "id": "range_0_10"
+            },
+            {
+              "id": "range_10_30"
+            },
+            {
+              "id": "range_30_50"
+            },
+            {
+              "id": "range_50_100"
+            },
+            {
+              "id": "range_100_200"
+            },
+            {
+              "id": "range_more_than_200"
+            }
           ]
         },
         {
@@ -673,34 +736,66 @@ export default {
           "template": "single",
           "allowother": true,
           "options": [
-            "front_end_developer",
-            "full_stack_developer",
-            "back_end_developer",
-            "web_developer",
-            "web_designer",
-            "ui_designer",
-            "ux_designer"
+            {
+              "id": "front_end_developer"
+            },
+            {
+              "id": "full_stack_developer"
+            },
+            {
+              "id": "back_end_developer"
+            },
+            {
+              "id": "web_developer"
+            },
+            {
+              "id": "web_designer"
+            },
+            {
+              "id": "ui_designer"
+            },
+            {
+              "id": "ux_designer"
+            }
           ]
         },
         {
           "id": "javascript_proficiency",
           "template": "single",
           "options": [
-            0,
-            1,
-            2,
-            3,
-            4
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            },
+            {
+              "id": 4
+            }
           ]
         },
         {
           "id": "backend_proficiency",
           "template": "single",
           "options": [
-            0,
-            1,
-            2,
-            3
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            }
           ]
         },
         {
@@ -713,20 +808,16 @@ export default {
           "allowother": true,
           "options": [
             {
-              "label": "Female",
-              "value": "female"
+              "id": "female"
             },
             {
-              "label": "Male",
-              "value": "male"
+              "id": "male"
             },
             {
-              "label": "Non-binary/ third gender",
-              "value": "non_binary"
+              "id": "non_binary"
             },
             {
-              "label": "Prefer not to say",
-              "value": "prefer_not_to_say"
+              "id": "prefer_not_to_say"
             }
           ]
         },

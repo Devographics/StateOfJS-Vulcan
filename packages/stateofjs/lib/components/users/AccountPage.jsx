@@ -1,19 +1,22 @@
 import React from 'react';
-import { Components, registerComponent, withCurrentUser } from 'meteor/vulcan:core';
-import { Link } from 'react-router-dom';
-import Users from 'meteor/vulcan:users';
+import { Components, useCurrentUser } from 'meteor/vulcan:core';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 
-const AccountPage = ({ currentUser }) => (
-  <div className="contents-narrow account">
-    {currentUser && <p>Logged in as {currentUser.email}</p>}
-    <Components.AccountsLoginForm />
-    <p>
-      If you have any questions about how we use your data, or would like us to remove your data from our records,
-      please <a href="mailto:hello@stateofjs.com">get in touch</a>.
-    </p>
-  </div>
-);
-
-registerComponent('AccountPage', AccountPage, withCurrentUser);
+const AccountPage = () => {
+  const { currentUser } = useCurrentUser();
+  return (
+    <div className="contents-narrow account">
+      {currentUser && (
+        <p>
+          <FormattedMessage id="accounts.logged_in_as" values={{ email: currentUser.email }} />
+        </p>
+      )}
+      <Components.AccountsLoginForm />
+      <p>
+        <FormattedMessage id="accounts.questions" html={true} />
+      </p>
+    </div>
+  );
+};
 
 export default AccountPage;

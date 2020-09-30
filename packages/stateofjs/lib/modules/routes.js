@@ -6,6 +6,7 @@ import Surveys from '../components/pages/Surveys';
 
 import AccountPage from '../components/users/AccountPage';
 
+// import SurveyLandingPage from '../components/survey/SurveyLandingPage';
 import SurveyPage from '../components/survey/SurveyPage';
 import SurveySection from '../components/survey/SurveySection';
 
@@ -16,15 +17,18 @@ import AdminUsers from '../components/admin/AdminUsers';
 const routes = [
 { name: 'home', path: '/', component: Surveys },
 { name: 'account', path: '/account', component: AccountPage },
-{ name: 'surveyPage', path: '/survey/:slug/:year/', component: SurveyPage },
-{ name: 'responsePage', path: '/survey/:slug/:year/:responseId/:sectionNumber?', component: SurveySection },
 
 { name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys },
 { name: 'adminResponses', path: '/admin/responses', component: AdminResponses },
 { name: 'adminUsers', path: '/admin/users', component: AdminUsers },
 
-{ name: 'thanks', path: '/thanks', component: Thanks },
 { name: 'privacypolicy', path: '/privacy-policy', component: PrivacyPolicy },
+
+{ name: 'surveyPage', path: '/survey/:slug/:year/', component: SurveyPage },
+{ name: 'thanks', path: '/survey/:slug/:year/thanks/', component: Thanks },
+{ name: 'responsePage', path: '/survey/:slug/:year/:responseId/:sectionNumber?', component: SurveySection },
+// { name: 'mainSurveyPage', path: '/survey/:slug/', component: SurveyLandingPage },
+
 ];
 
 if (Meteor.isDevelopment && getSetting('environment') === 'development') {

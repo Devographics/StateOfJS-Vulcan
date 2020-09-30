@@ -1,20 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ShareSite from '../share/ShareSite.jsx';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { useParams } from 'react-router-dom';
+import { getSurvey } from '../../modules/surveys/helpers';
 
-const Thanks = () => (
-  <div className="contents-narrow thanks">
-    <p>Thanks for filling out the survey!</p>
-    <p>Your data is saved. You can review or modify it until the survey closes.</p>
-    <p>
-      Also, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even
-      more representative:
-    </p>
-    <ShareSite />
-    <p>
-      <Link to="/">Back</Link>
-    </p>
-  </div>
-);
+const Thanks = () => {
+  const { slug, year } = useParams();
+  const survey = getSurvey(slug, year);
+  return (
+    <div className="contents-narrow thanks">
+      <p>
+        <FormattedMessage id="general.thanks" />
+      </p>
+      <p>
+        <FormattedMessage id="general.review_data" />
+      </p>
+      <p>
+        <FormattedMessage id="general.help_share" />
+      </p>
+      <ShareSite survey={survey} />
+      <p>
+        <Link to="/">
+          <FormattedMessage id="general.back" />
+        </Link>
+      </p>
+    </div>
+  );
+};
 
 export default Thanks;

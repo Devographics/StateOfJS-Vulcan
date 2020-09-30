@@ -3,13 +3,17 @@ import ShareTwitter from './ShareTwitter';
 import ShareEmail from './ShareEmail';
 import ShareFacebook from './ShareFacebook';
 import ShareLinkedIn from './ShareLinkedIn';
+import { intlShape } from 'meteor/vulcan:i18n';
 
-const ShareSite = () => {
+
+const ShareSite = ({ survey }, { intl }) => {
+  const { name, year, hashtag } = survey;
+  const surveyName = `${name} ${year}`;
   const link = 'https://survey.stateofjs.com';
-  const title = 'The State of JavaScript 2019 Survey';
-  const twitterText = `This year's State of JavaScript survey is now open! ${link} #StateOfJS`;
-  const subject = 'The State of JavaScript 2019 Survey';
-  const body = `This year's State of JavaScript survey is now open! ${link}`;
+  const values = { surveyName, link };
+  const title = intl.formatMessage({ id: 'general.share_subject' }, values);
+  const body = intl.formatMessage({ id: 'general.share_text' }, values);
+  const twitterText = body + `#${hashtag}`;
 
   return (
     <div className="ShareSite">
@@ -17,10 +21,14 @@ const ShareSite = () => {
         <ShareTwitter text={twitterText}/>
         <ShareFacebook link={link} />
         <ShareLinkedIn link={link} title={title} />
-        <ShareEmail subject={subject} body={body} />
+        <ShareEmail subject={title} body={body} />
       </div>
     </div>
   );
+};
+
+ShareSite.contextTypes = {
+  intl: intlShape,
 };
 
 export default ShareSite;

@@ -1,7 +1,7 @@
 import countriesOptions from '../countriesOptions.js';
-import surveys from '../../surveys/';
 import { Utils } from 'meteor/vulcan:core';
 import pickBy from 'lodash/pickBy';
+import { getSurveyFromResponse } from '../surveys/helpers';
 
 /*
 
@@ -32,8 +32,6 @@ export const makeId = str => {
   return s;
 };
 
-export const getSurvey = response => surveys.find(s => s.slug === response.surveySlug);
-
 /*
 
 Note: section's slug can be overriden by the question
@@ -49,10 +47,16 @@ export const getQuestionFieldName = (survey, section, question) =>{
 }
 
 export const getResponsePath = (response, sectionNumber) =>{
-  const { name, year } = getSurvey(response);
+  const { name, year } = getSurveyFromResponse(response);
   const path = `/survey/${Utils.slugify(name)}/${year}/${response._id}${
     typeof sectionNumber !== 'undefined' ? `/${sectionNumber}` : ''
   }`;
+  return path;
+}
+
+export const getThanksPath = (response) =>{
+  const { name, year } = getSurveyFromResponse(response);
+  const path = `/survey/${Utils.slugify(name)}/${year}/thanks`;
   return path;
 }
 
@@ -157,9 +161,22 @@ export const getQuestionObject = (questionOrId, section, number) => {
   return questionObject;
 };
 
-const parseOptions = (questionObject, options) => {
-  return options.map(o => {
-    return typeof o === 'object' ? o : { value: String(o), label: String(o), intlId: `options.${questionObject.id}.${String(o)}` };
+export const parseOptions = (questionObject, options) => {
+  return options.map(option => {
+    if (typeof option === 'object') {
+      // if option is an object, use its id as translation key
+      const { id } = option;
+      const idString = String(id);
+      return {
+        value: id,
+        label: idString, // only used as fallback
+        intlId:`options.${questionObject.id}.${idString}`,
+        ...option
+      }
+    } else {
+      // if option is a string, use it as is
+      return { value: option, label: option };
+    }
   })
 }
 
@@ -177,9 +194,10 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     id,
     intlPrefix,
     suffix,
+    sectionSlug, 
   } = questionObject;
 
-  let intlId = `${section.slug}.${id}`;
+  let intlId = `${sectionSlug || section.slug}.${id}`;
   if (suffix && suffix === 'others') {
     intlId += `.others`;
   }
@@ -244,7 +262,7 @@ export const ignoredFieldTypes = ['email', 'text', 'longtext'];
 export const getCompletionPercentage = response => {
   let completedCount = 0;
   let totalCount = 0;
-  const survey = getSurvey(response);
+  const survey = getSurveyFromResponse(response);
   const parsedOutline = parseSurvey(survey).outline;
   parsedOutline.forEach(section => {
     section.questions && section.questions.forEach(question => {

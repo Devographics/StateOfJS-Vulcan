@@ -10,7 +10,7 @@ TODO
 
 */
 import React, { useState } from 'react';
-import { getResponsePath } from '../../modules/responses/helpers.js';
+import { getResponsePath, getThanksPath } from '../../modules/responses/helpers.js';
 import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
@@ -74,17 +74,17 @@ const FormSubmit = ({
               setNextLoading(true);
               await submitForm();
               setNextLoading(false);
-              history.push('/thanks');
+              history.push(getThanksPath(response));
             }}
           >
-            <FormattedMessage id="other.finish_survey"/> »
+            <FormattedMessage id="general.finish_survey"/> »
           </Components.LoadingButton>
         )}
       </div>
 
       {showMessage && (
         <div className="form-submit-help">
-          Your data is saved whenever you navigate to the previous or next section.
+          <FormattedMessage id="general.data_is_saved"/>
         </div>
       )}
     </div>

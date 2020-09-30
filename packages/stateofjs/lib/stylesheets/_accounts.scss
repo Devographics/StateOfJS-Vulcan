@@ -20,16 +20,3 @@
     display: block;
   }
 }
-
-.account-message{
-  margin-top: $spacing*2;
-  h4{
-    font-size: $large-font;
-  }
-  p, li{
-    font-size: $smallish-font;
-  }
-  ul:last-child, p:last-child{
-    margin-bottom: 0;
-  }
-}

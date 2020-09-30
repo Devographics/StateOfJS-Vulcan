@@ -13,51 +13,6 @@
 }
 .survey-item{
 }
-.survey-item-contents {
-  @include small {
-    text-align: center;
-  }
-  @include medium-large {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  margin-bottom: $spacing;
-}
-.survey-image{
-  max-width: 180px;
-  @include small{
-    margin: 0 auto $spacing/2 auto;
-  }
-  @include medium-large{
-    margin-right: $spacing;
-  }
-  img {
-    display: block;
-    width: 100%;
-  }
-}
-.survey-name {
-  @include small {
-    margin-bottom: $spacing/2;
-  }
-  font-size: $large-font;
-  margin: 0;
-}
-.survey-actions {
-  flex-basis: 200px;
-}
-.survey-action {
-  flex: 1;
-  margin-left: $spacing;
-}
-.survey-action-closed{
-  background: $bg-color-light;
-  padding: $spacing/2;
-  text-align: center;
-}
-.survey-item-error {
-}
 // Survey Section
 .survey-section {
   @include large {

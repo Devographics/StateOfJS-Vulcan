@@ -1,26 +1,64 @@
-/*
+import React, { useState } from 'react';
+import { Components, useCurrentUser } from 'meteor/vulcan:core';
+import { useParams, useLocation, useHistory } from 'react-router-dom';
+import { STATES } from 'meteor/vulcan:accounts';
+import AccountMessage from '../users/AccountMessage.jsx';
+import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
+import qs from 'qs';
+import SurveyAction from './SurveyAction';
+import { getSurvey } from '../../modules/surveys/helpers';
+import ReactMarkdown from 'react-markdown';
 
-Page for a single survey (Not currently used)
-
-*/
-import React from 'react';
-import { Components, registerComponent } from 'meteor/vulcan:core';
-import SurveyItem from './SurveyItem.jsx';
-
-const SurveyPageWithData = ({ match }) => {
-  const { slug, year } = match;
-  return <Components.SurveyPage input={{ filter: { _and: { slug: { _eq: slug }, year: { _eq: year } } } }} />;
+const SurveyPageWrapper = (props, { intl }) => {
+  const { slug, year } = useParams();
+  const survey = getSurvey(slug, year);
+  const { imageUrl, name, slug: surveySlug } = survey;
+  return (
+    <div className="survey-page">
+      <h1 className="survey-image">
+        <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
+      </h1>
+      <div className="survey-intro">
+        <ReactMarkdown source={intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })} escapeHtml={false} />
+      </div>
+      <SurveyPage survey={survey} />
+    </div>
+  );
 };
-registerComponent('SurveyPageWithData', SurveyPageWithData);
 
-const SurveyPage = ({ loading, document: survey, history }) => (
-  <div className="survey">{loading ? <Components.Loading /> : <SurveyItem survey={survey} />}</div>
-);
+SurveyPageWrapper.contextTypes = {
+  intl: intlShape,
+};
 
-// const options = {
-//   collectionName: 'Surveys',
-//   fragmentName: 'SurveyFragment',
-// };
-// registerComponent('SurveyPage', SurveyPage, [withSingle2, options]);
+const SurveyPage = ({ survey }) => {
+  const { currentUser, currentUserLoading } = useCurrentUser();
 
-export default SurveyPage;
+  const location = useLocation();
+
+  const query = qs.parse(location.search, { ignoreQueryPrefix: true, decoder: (c) => c });
+  const { email, source } = query;
+
+  if (currentUserLoading) {
+    return <Components.Loading />;
+  } else if (!currentUser) {
+    return (
+      <div className="survey-actions">
+        {email ? (
+          <div className="message survey-page-message">
+            <FormattedMessage id="accounts.please_pick_password" />
+          </div>
+        ) : (
+          <div className="message survey-page-message">
+            <FormattedMessage id="accounts.please_log_in" />
+          </div>
+        )}
+        <Components.AccountsLoginForm formState={STATES.SIGN_UP} email={email} />
+        <AccountMessage />
+      </div>
+    );
+  } else {
+    return <SurveyAction survey={survey} currentUser={currentUser} />;
+  }
+};
+
+export default SurveyPageWrapper;

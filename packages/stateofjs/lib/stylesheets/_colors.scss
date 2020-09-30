@@ -7,26 +7,26 @@ $grey: #e1e1e1;
 $greyMedium: #cecdcc;
 $greyMediumish: #9e9c9a;
 $greyMediumer: #616868;
-$greyDark: #4d4f4f;
-$greyDarkish: #2c3030;
+$greyDark:rgba(255, 255, 255, 0.4);
+$greyDarkish: rgba(255, 255, 255, 0.1);
 $greyDarker: #212424;
 
-$blueLighter: #B2BBEE;
-$blueLight: #808EE1;
+$blueLighter: #b2bbee;
+$blueLight: #808ee1;
 $blue: #3c52d1;
 $blueDark: #273aa2;
 
-$pinkLightest: #D3BBF2;
-$pinkLighter: #D68DF0;
-$pinkLight: #EC75CB;
+$pinkLightest: #d3bbf2;
+$pinkLighter: #d68df0;
+$pinkLight: #ec75cb;
 // $pink: #ec2f95; // contrast too low
-$pink: #F649A7; // better contrast
+$pink: #f649a7; // better contrast
 // $pink: #f055a9; // even better contrast but looks washed out
 
-$greenLighter: #E7FFED;
-$greenLight: #ACFFC3;
-$green: #85EBA2;
-$greenDark: #59DF7F;
+$greenLighter: #e7ffed;
+$greenLight: #acffc3;
+$green: #85eba2;
+$greenDark: #59df7f;
 
 $tealLighter: #94eeee;
 $tealLight: #65e0e0;
@@ -34,9 +34,9 @@ $teal: #41c7c7;
 $tealDark: #2ba7a7;
 $tealDarker: #1d7e7e;
 
-$purpleLight: #B096E7;
-$purple: #7854C3;
-$purpleDark: #57457C;
+$purpleLight: #b096e7;
+$purple: #7854c3;
+$purpleDark: #57457c;
 
 $redLighter: #f8a8a8;
 $redLight: #fc8f8f;
@@ -51,7 +51,7 @@ $aqua: #1ea0f2;
 $white: #ffffff;
 
 $navyLightest: #7e86ad;
-$navyLighter: #484F73;
+$navyLighter: #484f73;
 $navyLight: #303652;
 $navy: #232840;
 $navyDark: #1a1f35;
@@ -59,7 +59,6 @@ $navyDark: #1a1f35;
 /*****************************************************************************\
   "functional" colors
 \*****************************************************************************/
-
 
 $active-color: $teal;
 $active-color-dark: $tealDark;
@@ -81,3 +80,10 @@ $text-color-inverted: $greyDarkish;
 
 $link-color: $active-color;
 $hover-color: $contrast-color;
+
+:root {
+  --bg-color: #{$bg-color};
+  --text-color: #{$text-color};
+  --link-color: #{$link-color};
+  --hover-color: #{$link-color};
+}

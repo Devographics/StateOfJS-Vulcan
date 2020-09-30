@@ -1,22 +1,19 @@
 import React from 'react';
-import { registerComponent } from 'meteor/vulcan:core';
+import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
+import ReactMarkdown from 'react-markdown';
 
-const AccountMessage = () => (
+const AccountMessage = (props, { intl }) => (
   <div className="message account-message">
-    <h4>Why do I need to create an account?</h4>
-    <p>We ask you to create an account in order to:</p>
-    <ul>
-      <li>Avoid duplicate responses</li>
-      <li>Give you access to your data</li>
-      <li>Save your session as you go</li>
-      <li>Notify you when results are live</li>
-    </ul>
+    <h3><FormattedMessage id="general.why_create_account"/></h3>
+    <ReactMarkdown source={intl.formatMessage({ id: 'general.create_account_reasons'})} escapeHtml={false} />
     {/* <p>
       We take your data seriously, and guarantee we will not pass it on to third parties.
     </p> */}
   </div>
 );
 
-registerComponent('AccountMessage', AccountMessage);
+AccountMessage.contextTypes = {
+  intl: intlShape,
+};
 
 export default AccountMessage;

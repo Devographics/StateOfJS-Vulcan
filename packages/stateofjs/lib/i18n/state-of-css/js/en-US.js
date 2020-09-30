@@ -4,6 +4,10 @@ export default {
   "locale": "en-US",
   "translations": [
     {
+      "key": "general.survey_intro_css2020",
+      "t": "CSS is evolving faster than ever.\n\nFlexbox, Grid, Multi-Column… To say nothing of whole new paradigms like CSS-in-JS.\n\nSo after the success of our annual State Of JavaScript survey,  we’ve decided to take on the world of styles and selectors to help  identify the latests trends… and try to bridge the ever-growing “great front-end divide”!\n"
+    },
+    {
       "key": "sections.layout.title",
       "t": "Layout"
     },

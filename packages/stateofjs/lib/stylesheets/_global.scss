@@ -9,7 +9,9 @@ html {
 
 body {
   background: $bg-color;
+  background: var(--bg-color);
   color: $text-color;
+  color: var(--text-color);
   padding: 0;
   font-feature-settings: 'liga' 0;
   line-height: 1.7;
@@ -58,17 +60,14 @@ a {
   &:visited,
   &:active,
   &:focus {
-    @include small {
-      color: $link-color;
-    }
-    @include medium-large {
-      color: $link-color;
-    }
+    color: $link-color;
+    color: var(--link-color);
   }
   &:hover {
     text-decoration: underline;
     position: relative;
     color: $hover-color;
+    color: var(--hover-color);
   }
   &.button,
   &.resp-sharing-button__link {
@@ -164,35 +163,36 @@ Page-specific styles
   }
 }
 
-.message{
+.message {
   background: $bg-color-light;
   padding: $spacing;
   margin-bottom: $spacing;
 }
 
-.footer{
+.footer {
   text-align: center;
   margin: $spacing * 2 $spacing 0 $spacing;
   border-top: $border;
   font-size: $small-font;
   padding: $spacing;
 }
-.navbar{
+.navbar {
   padding: 0;
 }
-.navbar-nav{
+.navbar-nav {
   width: 100%;
 }
-.navbar-dark .navbar-toggler{
+.navbar-dark .navbar-toggler {
   @include border;
   @include border-radius;
   padding: $spacing/2;
 }
 
-.nav-item{
+.nav-item {
   margin-right: $spacing;
 }
 
-pre, code{
+pre,
+code {
   color: $text-color;
 }

@@ -4,6 +4,126 @@ export default {
   "locale": "en-US",
   "translations": [
     {
+      "key": "general.why_create_account",
+      "t": "Why do I need to create an account?"
+    },
+    {
+      "key": "general.create_account_reasons",
+      "t": "We ask you to create an account in order to:\n- Avoid duplicate responses\n- Give you access to your data\n- Save your session as you go\n- Notify you when results are live\n"
+    },
+    {
+      "key": "general.survey_closed",
+      "t": "Sorry, the survey is now closed! You can still log in to  review your data but you won't be able to modify it.\n"
+    },
+    {
+      "key": "general.start_survey",
+      "t": "Start Survey »"
+    },
+    {
+      "key": "general.start_survey",
+      "t": "Continue Survey »"
+    },
+    {
+      "key": "general.review_survey",
+      "t": "Review Survey »"
+    },
+    {
+      "key": "general.preview_survey",
+      "t": "Preview Survey »"
+    },
+    {
+      "key": "general.finish_survey",
+      "t": "Finish Survey »"
+    },
+    {
+      "key": "general.survey_closed",
+      "t": "Survey closed."
+    },
+    {
+      "key": "general.privacy_policy",
+      "t": "Privacy Policy"
+    },
+    {
+      "key": "general.leave_issue",
+      "t": "Questions? Found a bug? <a href=\"{link}\" target=\"_blank\">Leave an issue</a>."
+    },
+    {
+      "key": "general.table_of_contents",
+      "t": "Table of Contents"
+    },
+    {
+      "key": "general.all_questions_optional",
+      "t": "Note: all questions are optional, reaching 100% completion is not required.\n"
+    },
+    {
+      "key": "general.data_is_saved",
+      "t": "Your data is saved whenever you navigate to the previous or next section."
+    },
+    {
+      "key": "general.back",
+      "t": "Back"
+    },
+    {
+      "key": "general.thanks",
+      "t": "Thanks for filling out the survey!"
+    },
+    {
+      "key": "general.review_data",
+      "t": "Your data is saved. You can review or modify it until the survey closes."
+    },
+    {
+      "key": "general.help_share",
+      "t": "Also, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even more representative:\n"
+    },
+    {
+      "key": "general.share_subject",
+      "t": "{surveyName} survey\n"
+    },
+    {
+      "key": "general.share_text",
+      "t": "This year's {surveyName} survey is now open! {link}\n"
+    },
+    {
+      "key": "accounts.sign_up",
+      "t": "Sign Up"
+    },
+    {
+      "key": "accounts.sign_in",
+      "t": "Log In"
+    },
+    {
+      "key": "accounts.sign_out",
+      "t": "Sign Out"
+    },
+    {
+      "key": "accounts.cancel",
+      "t": "Cancel"
+    },
+    {
+      "key": "accounts.email",
+      "t": "Email"
+    },
+    {
+      "key": "accounts.enter_email",
+      "t": "Enter Email"
+    },
+    {
+      "key": "accounts.please_pick_password",
+      "t": "Please pick a new password to continue."
+    },
+    {
+      "key": "accounts.please_log_in",
+      "t": "Please log in or sign up to begin."
+    },
+    {
+      "key": "accounts.logged_in_as",
+      "t": "Logged in as {email}"
+    },
+    {
+      "key": "accounts.questions",
+      "t": "If you have any questions about how we use your data, or would like us to remove your data from our records, please <a href=\"mailto:hello@stateofjs.com\">get in touch</a>.\n"
+    },
+    {
       "key": "sections.user_info.title",
       "t": "About You"
     },

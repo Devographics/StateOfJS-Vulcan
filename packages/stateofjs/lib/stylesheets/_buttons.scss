@@ -25,12 +25,15 @@
     &:link,
     &:visited {
       color: $text-color;
+      color: var(--text-color);
       text-decoration: none;
     }
 
     &:hover {
       color: $hover-color;
+      color: var(--text-color);
       border-color: $hover-color;
+      border-color: var(--hover-color);
       border-style: solid;
       text-decoration: none;
       background: $bg-color-light;

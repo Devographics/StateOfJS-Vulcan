@@ -19,6 +19,7 @@ import AccountMessage from '../users/AccountMessage.jsx';
 import { useLocation } from 'react-router-dom';
 import surveys from '../../surveys';
 import SurveyItem from '../survey/SurveyItem';
+import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 const Surveys = () => {
   const location = useLocation();
@@ -38,15 +39,14 @@ const Surveys = () => {
         surveys.map((survey) => <SurveyItem key={survey.slug} survey={survey} currentUser={currentUser} />)
       ) : (
         <div>
-          <h3 className="surveys-title">The 2019 State of JavaScript Survey</h3>
+          {/* <h3 className="surveys-title">The 2019 State of JavaScript Survey</h3>
           <div className="survey-closed">
-            Sorry, the survey is now closed! You can still log in to review your data but you won't be able to modify
-            it.
-          </div>
+            <FormattedMessage id="general.survey_closed" />{' '}
+          </div> */}
           {email ? (
-            <div className="message">Please create a new password to continue.</div>
+            <div className="message"><FormattedMessage id="accounts.please_pick_password" /></div>
           ) : (
-            <div className="message">Please log in or sign up to begin.</div>
+            <div className="message"><FormattedMessage id="accounts.please_log_in" /></div>
           )}
           <Components.AccountsLoginForm formState={STATES.SIGN_UP} email={email} />
           <AccountMessage />
@@ -57,3 +57,4 @@ const Surveys = () => {
 };
 
 export default Surveys;
+
