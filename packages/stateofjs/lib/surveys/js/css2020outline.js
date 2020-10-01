@@ -2,11 +2,12 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "css2020",
+  "createdAt": "October 1, 2020",
   "prettySlug": "state-of-css",
   "hashtag": "StateOfCSS2020",
   "name": "State of CSS",
   "year": 2020,
-  "status": 1,
+  "status": 2,
   "imageUrl": "stateofcss2020.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",

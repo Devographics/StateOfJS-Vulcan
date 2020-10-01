@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Components, useCurrentUser } from 'meteor/vulcan:core';
-import { useParams, useLocation, useHistory } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { STATES } from 'meteor/vulcan:accounts';
-import AccountMessage from '../users/AccountMessage.jsx';
+import AccountMessage from '../../users/AccountMessage.jsx';
 import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
 import qs from 'qs';
 import SurveyAction from './SurveyAction';
-import { getSurvey } from '../../modules/surveys/helpers';
+import { getSurvey } from '../../../modules/surveys/helpers';
 import ReactMarkdown from 'react-markdown';
 
 const SurveyPageWrapper = (props, { intl }) => {

@@ -24,7 +24,11 @@ translations:
       Sorry, the survey is now closed! You can still log in to 
       review your data but you won't be able to modify it.
 
-  # survey
+  # surveys
+  - key: general.open_surveys
+    t: Open Surveys
+  - key: general.closed_surveys
+    t: Closed Surveys
   - key: general.start_survey
     t: Start Survey »
   - key: general.start_survey
@@ -72,6 +76,15 @@ translations:
   - key: general.share_text
     t: >
       This year's {surveyName} survey is now open! {link}
+
+  ###########################################################################
+  # Nav
+  ###########################################################################
+  
+  - key: nav.surveys
+    t: Surveys
+  - key: nav.account
+    t: Account
 
   ###########################################################################
   # Accounts

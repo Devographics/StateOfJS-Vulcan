@@ -232,7 +232,7 @@ to every question
 */
 export const parseSurvey = survey => {
   let i = 0;
-  const parsedSurvey = { ...survey };
+  const parsedSurvey = { ...survey, createdAt: new Date(survey.createdAt) };
   parsedSurvey.outline = survey.outline.map(section => {
     return {
       ...section,

@@ -4,10 +4,10 @@ export const getSurveyFromResponse = response => surveys.find(s => s.slug === re
 
 export const getSurvey = (prettySlug, year) => surveys.find(s => (s.prettySlug === prettySlug && s.year === parseInt(year)));
 
-export const getSurveyPath = ({ survey: surveyArgument, number, response }) => {
+export const getSurveyPath = ({ survey: surveyArgument, number, response, home = false }) => {
   const survey = surveyArgument || getSurveyFromResponse(response);
   const { year, prettySlug } = survey;
-  const responseSegment = response && `/${response._id}` || '/read-only';
+  const responseSegment = home ? '' : (response && `/${response._id}` || '/read-only');
   const numberSegment = number ? `/${number}` : '';
   const path = `/survey/${prettySlug}/${year}${responseSegment}${numberSegment}`;
   return path;

@@ -10,10 +10,10 @@ TODO
 
 */
 import React, { useState } from 'react';
-import { getQuestionObject, ignoredFieldTypes } from '../../modules/responses/helpers.js';
-import { getSurveyPath } from '../../modules/surveys/helpers.js';
-import surveys from '../../surveys';
-import { NavLink } from 'react-router-dom';
+import { getQuestionObject, ignoredFieldTypes } from '../../../modules/responses/helpers.js';
+import { getSurveyPath } from '../../../modules/surveys/helpers.js';
+import surveys from '../../../surveys';
+import { Link, NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 // TODO
@@ -55,8 +55,8 @@ const SurveyNav = ({ survey, response }) => {
             setShown(!shown);
           }}
         >
-          <h2>{survey.name} {survey.year}</h2>
-          <h3 className="section-nav-heading"><FormattedMessage id="general.table_of_contents"/></h3>
+          <h2 className="section-nav-heading"><Link to={getSurveyPath({ survey, home: true })}>{survey.name} {survey.year}</Link></h2>
+          <h3 className="section-nav-toc"><FormattedMessage id="general.table_of_contents"/></h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
         </div>
         <div className="section-nav-contents">

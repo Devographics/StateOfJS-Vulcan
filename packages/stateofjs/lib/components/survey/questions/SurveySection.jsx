@@ -10,7 +10,7 @@ Note: form has a customized "FormSubmit" component to show the prev/next buttons
 import React from 'react';
 import { Components, useSingle2 } from 'meteor/vulcan:core';
 import { useParams, useHistory } from 'react-router-dom';
-import surveys from '../../surveys';
+import surveys from '../../../surveys';
 import SurveyNav from './SurveyNav.jsx';
 import SurveySectionContents from './SurveySectionContents.jsx';
 

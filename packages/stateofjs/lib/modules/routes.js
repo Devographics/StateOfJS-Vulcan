@@ -6,8 +6,7 @@ import Surveys from '../components/pages/Surveys';
 
 import AccountPage from '../components/users/AccountPage';
 
-// import SurveyLandingPage from '../components/survey/SurveyLandingPage';
-import SurveyPage from '../components/survey/SurveyPage';
+import SurveyPage from '../components/survey/page/SurveyPage';
 import SurveySectionSwitcher from '../components/survey/SurveySectionSwitcher';
 // import SurveySection from '../components/survey/SurveySection';
 // import SurveySectionReadOnly from '../components/survey/SurveySectionReadOnly';

@@ -7,15 +7,17 @@
 ### FEATURES ###
 
 slug: css2020 # used as first part of field names
+createdAt: October 1, 2020
 prettySlug: state-of-css
 hashtag: StateOfCSS2020
 name: 'State of CSS'
 year: 2020
-status: 1 # preview
+status: 2 # preview
 imageUrl: 'stateofcss2020.png'
 bgColor: '#232840'
 textColor: '#9ac6c9'
 linkColor: '#f649a7'
+hoverColor: '#59df7f'
 outline:
   - id: layout
     template: feature

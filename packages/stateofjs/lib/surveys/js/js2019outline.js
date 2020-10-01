@@ -2,6 +2,8 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "js2019",
+  "prettySlug": "state-of-js",
+  "createdAt": "December 1, 2019",
   "name": "State of JavaScript",
   "year": 2019,
   "status": 3,

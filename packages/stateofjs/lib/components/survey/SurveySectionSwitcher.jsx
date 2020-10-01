@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import SurveySectionReadOnly from './SurveySectionReadOnly';
-import SurveySection from './SurveySection';
+import SurveySectionReadOnly from './questions/SurveySectionReadOnly';
+import SurveySection from './questions/SurveySection';
 
 const SurveySectionSwitcher = () => {
   let { responseId } = useParams();

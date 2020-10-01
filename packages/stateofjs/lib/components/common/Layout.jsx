@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
 
   if (slug && year) {
     const survey = getSurvey(slug, year);
-    const { bgColor, textColor, linkColor } = survey;
+    const { bgColor, textColor, linkColor, hoverColor } = survey;
     style = `
 
 
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   --bg-color: ${bgColor};
   --text-color: ${textColor};
   --link-color: ${linkColor};
-  --hover-color: ${linkColor};
+  --hover-color: ${hoverColor};
 }
   `;
   }

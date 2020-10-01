@@ -10,8 +10,8 @@ TODO
 
 */
 import React, { useState } from 'react';
-import { getThanksPath } from '../../modules/responses/helpers.js';
-import { getSurveyPath } from '../../modules/surveys/helpers.js';
+import { getThanksPath } from '../../../modules/responses/helpers.js';
+import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
@@ -25,6 +25,7 @@ const FormSubmit = ({
   previousSection,
   showMessage = true,
   variant = 'bottom',
+  readOnly,
 }) => {
   const history = useHistory();
   const [prevLoading, setPrevLoading] = useState(false);
@@ -37,41 +38,40 @@ const FormSubmit = ({
             loading={prevLoading}
             type="submit"
             variant="primary"
-            onClick={async e => {
+            onClick={async (e) => {
               e.preventDefault();
               setPrevLoading(true);
               await submitForm();
               setPrevLoading(false);
-              history.push(getSurveyPath({survey, response, number: sectionNumber - 1}));
+              history.push(getSurveyPath({ survey, response, number: sectionNumber - 1 }));
             }}
           >
-            « <FormattedMessage id={`sections.${previousSection.id}.title`}/>
+            « <FormattedMessage id={`sections.${previousSection.id}.title`} />
           </Components.LoadingButton>
         ) : (
-          <div className="prev-placeholder"/>
+          <div className="prev-placeholder" />
         )}
         {nextSection ? (
           <Components.LoadingButton
             loading={nextLoading}
             type="submit"
             variant="primary"
-            onClick={async e => {
+            onClick={async (e) => {
               e.preventDefault();
               setNextLoading(true);
               await submitForm();
               setNextLoading(false);
-              history.push(getSurveyPath({survey, response, number: sectionNumber + 1}));
+              history.push(getSurveyPath({ survey, response, number: sectionNumber + 1 }));
             }}
           >
-            <FormattedMessage id={`sections.${nextSection.id}.title`}/>
-             »
+            <FormattedMessage id={`sections.${nextSection.id}.title`} />»
           </Components.LoadingButton>
-        ) : (
+        ) : readOnly ? null : (
           <Components.LoadingButton
             loading={nextLoading}
             type="submit"
             variant="primary"
-            onClick={async e => {
+            onClick={async (e) => {
               e.preventDefault();
               setNextLoading(true);
               await submitForm();
@@ -79,14 +79,14 @@ const FormSubmit = ({
               history.push(getThanksPath(response));
             }}
           >
-            <FormattedMessage id="general.finish_survey"/> »
+            <FormattedMessage id="general.finish_survey" />
           </Components.LoadingButton>
         )}
       </div>
 
       {showMessage && (
         <div className="form-submit-help">
-          <FormattedMessage id="general.data_is_saved"/>
+          <FormattedMessage id="general.data_is_saved" />
         </div>
       )}
     </div>

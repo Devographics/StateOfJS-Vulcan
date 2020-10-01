@@ -1,11 +1,11 @@
 import React from 'react';
-import { statuses } from '../../modules/constants.js';
+import { statuses } from '../../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 
-const SurveySectionContents = ({ survey, sectionNumber, section, response, previousSection, nextSection, history }) => {
+const SurveySectionContents = ({ survey, sectionNumber, section, response, previousSection, nextSection, history, readOnly }) => {
   const fields = section.questions.map((question) => question.fieldName);
   const { id } = section;
 
@@ -18,6 +18,7 @@ const SurveySectionContents = ({ survey, sectionNumber, section, response, previ
       nextSection={nextSection}
       previousSection={previousSection}
       survey={survey}
+      readOnly={readOnly}
     />
   );
 
@@ -45,7 +46,7 @@ const SurveySectionContents = ({ survey, sectionNumber, section, response, previ
           layout: 'vertical',
         }}
         warnUnsavedChanges={true}
-        disabled={survey.status !== statuses.open}
+        disabled={readOnly || survey.status !== statuses.open}
         components={{
           FormLayout,
           FormSubmit: FormSubmitWrapper,

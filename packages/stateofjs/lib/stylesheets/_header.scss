@@ -1,0 +1,25 @@
+.nav-wrapper {
+  margin: 0 $spacing $spacing $spacing;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $border;
+}
+.navbar {
+  padding: 0;
+}
+.navbar-nav {
+  width: 100%;
+}
+.navbar-dark .navbar-toggler {
+  @include border;
+  @include border-radius;
+  padding: $spacing/2;
+}
+
+.nav-item {
+  margin-right: $spacing;
+}
+.nav-item-locale{
+  padding: $spacing 0;
+}

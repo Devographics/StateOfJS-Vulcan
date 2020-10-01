@@ -7,10 +7,17 @@
 ### FEATURES ###
 
 slug: js2019
+createdAt: December 1, 2019
+prettySlug: state-of-js
+hashtag: StateOfJS
 name: 'State of JavaScript'
 year: 2019
 status: 3 # closed
 imageUrl: 'stateofjs2019.png'
+bgColor: rgb(34, 36, 41)
+textColor: rgb(224, 228, 228)
+linkColor: rgb(65, 199, 199)
+hoverColor: rgb(254, 106, 106)
 outline: 
   - title: Syntax
     description: The grammar of JavaScript

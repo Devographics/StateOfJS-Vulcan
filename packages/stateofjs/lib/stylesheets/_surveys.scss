@@ -1,4 +1,5 @@
-.surveys-title{
+// surveys page
+.surveys-title {
   text-align: center;
   margin-bottom: $spacing;
 }
@@ -7,12 +8,53 @@
   max-width: 500px;
   margin: 0 auto;
 }
-.surveys{
-  max-width: 700px;
+.surveys {
+  max-width: 300px;
   margin: 0 auto;
 }
-.survey-item{
+.surveys-group {
+  margin-bottom: $spacing * 3;
 }
+.survey-item {
+  margin-bottom: $spacing * 2;
+  a {
+    position: relative;
+    display: block;
+    @include border;
+    @include border-radius;
+    &:hover {
+      &,
+      .survey-name span {
+        border-color: $hover-color;
+        background: $bg-color-light;
+      }
+    }
+  }
+}
+.survey-image-inner {
+  display: block;
+  padding: $spacing * 1.5;
+}
+.survey-name {
+  position: absolute;
+  bottom: 0;
+  margin-left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  z-index: 1;
+  background: var(--bg-color);
+  border-radius: 30px;
+  span {
+    padding: 5px 8px;
+    @include border;
+    border-radius: 30px;
+    white-space: nowrap;
+    font-size: $small-font;
+  }
+}
+.surveys-group-heading {
+  text-align: center;
+}
+
 // Survey Section
 .survey-section {
   @include large {
@@ -26,6 +68,7 @@
 .section-nav {
   // background: $bg-color-light;
   // padding: $spacing;
+  max-width: 280px;
   ul {
     list-style-type: none;
     padding: 0;
@@ -73,13 +116,24 @@
 .section-nav-inner {
 }
 .section-nav-heading {
+  font-size: $large-font;
+  border-bottom: $border;
+  padding-bottom: $spacing;
+  margin-bottom: $spacing;
+}
+.section-nav-toc {
   font-size: $medium-font;
   margin: 0;
+  @include small-medium {
+    display: block;
+  }
+  @include large {
+    display: none;
+  }
 }
 .completion-message {
   font-size: $small-font;
   margin-top: $spacing;
-  color: $text-color-dark;
 }
 .section-nav-item-completion {
   @include font-regular;
@@ -92,7 +146,7 @@
     display: none;
   }
 }
-.survey-closed{
+.survey-closed {
   background: $redLighter;
   padding: $spacing;
   color: $text-color-inverted;
@@ -106,6 +160,7 @@
 .section-title {
   font-size: $largest-font;
   margin-bottom: $spacing/2;
+  line-height: 1;
 }
 .section-description {
   font-size: $large-font;

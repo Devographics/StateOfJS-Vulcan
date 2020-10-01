@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import SurveyNav from './SurveyNav.jsx';
 import SurveySectionContents from './SurveySectionContents.jsx';
-import { getSurvey } from '../../modules/surveys/helpers';
+import { getSurvey } from '../../../modules/surveys/helpers';
 
 const SurveySectionReadOnly = () => {
   let { slug, year, sectionNumber = 0 } = useParams();

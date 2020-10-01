@@ -16,6 +16,14 @@ export default {
       "t": "Sorry, the survey is now closed! You can still log in to  review your data but you won't be able to modify it.\n"
     },
     {
+      "key": "general.open_surveys",
+      "t": "Open Surveys"
+    },
+    {
+      "key": "general.closed_surveys",
+      "t": "Closed Surveys"
+    },
+    {
       "key": "general.start_survey",
       "t": "Start Survey »"
     },
@@ -82,6 +90,14 @@ export default {
     {
       "key": "general.share_text",
       "t": "This year's {surveyName} survey is now open! {link}\n"
+    },
+    {
+      "key": "nav.surveys",
+      "t": "Surveys"
+    },
+    {
+      "key": "nav.account",
+      "t": "Account"
     },
     {
       "key": "accounts.sign_up",

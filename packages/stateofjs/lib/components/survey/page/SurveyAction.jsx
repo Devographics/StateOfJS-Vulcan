@@ -11,9 +11,9 @@ import { Components, getErrors } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';
 import get from 'lodash/get';
 import { Link, useHistory } from 'react-router-dom';
-import { getSurveyPath } from '../../modules/surveys/helpers.js';
+import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import isEmpty from 'lodash/isEmpty';
-import { statuses } from '../../modules/constants.js';
+import { statuses } from '../../../modules/constants.js';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 // for some reason this throws error?

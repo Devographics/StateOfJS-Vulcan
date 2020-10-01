@@ -37,7 +37,8 @@
   }
   .form-check-label {
     flex: 1;
-    padding: $spacing/2 0;
+    padding: $spacing/1.5 0;
+    line-height: 1;
   }
   .form-item-contents {
     display: flex;
