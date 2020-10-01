@@ -171,7 +171,8 @@ type EmailResponse {
   error: String
 }
 type Survey {
-  slug: String 
+  slug: String
+  prettySlug: String
   name: String 
   year: Float 
   status: Float 

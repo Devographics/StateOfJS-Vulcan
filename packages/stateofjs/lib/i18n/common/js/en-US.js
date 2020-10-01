@@ -28,7 +28,7 @@ export default {
       "t": "Start Survey »"
     },
     {
-      "key": "general.start_survey",
+      "key": "general.continue_survey",
       "t": "Continue Survey »"
     },
     {

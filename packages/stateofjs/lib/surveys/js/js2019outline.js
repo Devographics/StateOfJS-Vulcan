@@ -2,12 +2,17 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "js2019",
-  "prettySlug": "state-of-js",
   "createdAt": "December 1, 2019",
+  "prettySlug": "state-of-js",
+  "hashtag": "StateOfJS",
   "name": "State of JavaScript",
   "year": 2019,
   "status": 3,
   "imageUrl": "stateofjs2019.png",
+  "bgColor": "rgb(34, 36, 41)",
+  "textColor": "rgb(224, 228, 228)",
+  "linkColor": "rgb(65, 199, 199)",
+  "hoverColor": "rgb(254, 106, 106)",
   "outline": [
     {
       "title": "Syntax",

@@ -18,7 +18,6 @@ const SurveyItem = ({ survey }) => {
     </div>
   );
 };
-
   
 const Surveys = () => {
   const openSurveys = surveys.filter((s) => s.status === statuses.open);

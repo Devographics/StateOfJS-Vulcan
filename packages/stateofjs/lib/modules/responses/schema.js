@@ -169,5 +169,4 @@ surveys.forEach(survey => {
   });
 });
 
-
 export default schema;

@@ -17,8 +17,9 @@ import { statuses } from '../../../modules/constants.js';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 // for some reason this throws error?
-// import bowser from 'bowser';
+import bowser from 'bowser';
 // const bowser = require("bowser"); // CommonJS
+console.log(bowser)
 
 const SurveyAction = ({ survey, currentUser }) => {
   const history = useHistory();
@@ -29,8 +30,8 @@ const SurveyAction = ({ survey, currentUser }) => {
 
   // prefilled data
   let data = {
-    surveyId: survey._id,
-    aboutyou_youremail: currentUser && currentUser.email,
+    surveySlug: slug,
+    [`${slug}__user_info__email`]: currentUser && currentUser.email,
   };
 
   // if (typeof window !== 'undefined') {
@@ -48,7 +49,7 @@ const SurveyAction = ({ survey, currentUser }) => {
   // }
 
   const hasResponse = currentSurveyResponse && !isEmpty(currentSurveyResponse);
-
+  
   const mutationButtonProps = {
     label: <FormattedMessage id="general.start_survey" />,
     variant: 'primary',

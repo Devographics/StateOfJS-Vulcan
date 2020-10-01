@@ -12,6 +12,7 @@ export default {
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
   "linkColor": "#f649a7",
+  "hoverColor": "#59df7f",
   "outline": [
     {
       "id": "layout",

@@ -7,8 +7,10 @@ export const getSurvey = (prettySlug, year) => surveys.find(s => (s.prettySlug =
 export const getSurveyPath = ({ survey: surveyArgument, number, response, home = false }) => {
   const survey = surveyArgument || getSurveyFromResponse(response);
   const { year, prettySlug } = survey;
+  const prefixSegment = '/survey';
+  const slugSegment = `/${prettySlug}/${year}`;
   const responseSegment = home ? '' : (response && `/${response._id}` || '/read-only');
   const numberSegment = number ? `/${number}` : '';
-  const path = `/survey/${prettySlug}/${year}${responseSegment}${numberSegment}`;
+  const path = [prefixSegment, slugSegment, responseSegment, numberSegment].join('');
   return path;
 }

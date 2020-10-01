@@ -35,8 +35,8 @@ const getSectionCompletionPercentage = (section, response) => {
     const questionObject = getQuestionObject(question, section);
     return (
       !ignoredFieldTypes.includes(questionObject.template) &&
-      response[questionObject.id] !== null &&
-      typeof response[questionObject.id] !== 'undefined'
+      response[questionObject.fieldName] !== null &&
+      typeof response[questionObject.fieldName] !== 'undefined'
     );
   });
   const completedQuestionsCount = completedQuestions.length;

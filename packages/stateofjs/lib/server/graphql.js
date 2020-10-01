@@ -1,7 +1,8 @@
-import { addGraphQLSchema } from "meteor/vulcan:core";
+import { addGraphQLSchema } from 'meteor/vulcan:core';
 
 const surveyType = `type Survey {
-  slug: String 
+  slug: String
+  prettySlug: String
   name: String 
   year: Float 
   status: Float 

@@ -52,6 +52,11 @@
   margin: 0 auto;
   max-width: 300px;
 }
+
+.survey-action-inner {
+  display: flex;
+  justify-content: center;
+}
 .survey-action-closed {
   background: $bg-color-light;
   padding: $spacing/2;

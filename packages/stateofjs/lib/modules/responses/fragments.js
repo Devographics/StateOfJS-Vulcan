@@ -22,6 +22,7 @@ registerFragment(/* GraphQL */ `
       year
       status
       slug
+      prettySlug
     }
   }
 `);
