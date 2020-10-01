@@ -2,10 +2,22 @@ import React from 'react';
 import { statuses } from '../../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
-import { Components } from 'meteor/vulcan:core';
+import { Components, useCurrentUser } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { getSurveyPath } from '../../../modules/surveys/helpers';
 
-const SurveySectionContents = ({ survey, sectionNumber, section, response, previousSection, nextSection, history, readOnly }) => {
+const SurveySectionContents = ({
+  survey,
+  sectionNumber,
+  section,
+  response,
+  previousSection,
+  nextSection,
+  history,
+  readOnly,
+}) => {
+  const { currentUser } = useCurrentUser();
+
   const fields = section.questions.map((question) => question.fieldName);
   const { id } = section;
 
@@ -24,11 +36,20 @@ const SurveySectionContents = ({ survey, sectionNumber, section, response, previ
 
   return (
     <div className="section-questions">
-      {survey.status === statuses.closed && (
-        <div className="survey-closed">
-          This survey is now closed. You can review it but data can’t be submitted or modified.
+      {survey.status === statuses.preview ? (
+        <div className="survey-message survey-readonly">
+          <FormattedMessage id="general.survey_read_only" />
         </div>
-      )}
+      ) : survey.status === statuses.open && readOnly ? (
+        <div className="survey-message survey-readonly">
+          <FormattedMessage id="general.survey_read_only" />
+          <FormattedMessage id="general.survey_read_only_back" html={true} values={{ link: getSurveyPath({ survey, home: true }) }} />
+        </div>
+      ) : survey.status === statuses.closed ? (
+        <div className="survey-message survey-closed">
+          <FormattedMessage id="general.survey_closed" />
+        </div>
+      ) : null}
       <h2 className="section-title">
         <FormattedMessage id={`sections.${id}.title`} defaultMessage={id} />
       </h2>

@@ -19,7 +19,6 @@ import { FormattedMessage } from 'meteor/vulcan:i18n';
 // for some reason this throws error?
 import bowser from 'bowser';
 // const bowser = require("bowser"); // CommonJS
-console.log(bowser)
 
 const SurveyAction = ({ survey, currentUser }) => {
   const history = useHistory();
@@ -34,19 +33,19 @@ const SurveyAction = ({ survey, currentUser }) => {
     [`${slug}__user_info__email`]: currentUser && currentUser.email,
   };
 
-  // if (typeof window !== 'undefined') {
-  //   const browser = bowser.getParser(window.navigator.userAgent);
-  //   const info = browser.parse().parsedResult;
-  //   data = {
-  //     ...data,
-  //     device: info.platform.type,
-  //     browser: info.browser.name,
-  //     version: info.browser.version,
-  //     os: info.os.name,
-  //     referrer: document.referrer,
-  //     source: window.source,
-  //   };
-  // }
+  if (typeof window !== 'undefined') {
+    const browser = bowser.getParser(window.navigator.userAgent);
+    const info = browser.parse().parsedResult;
+    data = {
+      ...data,
+      device: info.platform.type,
+      browser: info.browser.name,
+      version: info.browser.version,
+      os: info.os.name,
+      referrer: document.referrer,
+      source: window.source,
+    };
+  }
 
   const hasResponse = currentSurveyResponse && !isEmpty(currentSurveyResponse);
   

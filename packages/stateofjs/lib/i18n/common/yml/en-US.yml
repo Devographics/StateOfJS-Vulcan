@@ -21,8 +21,13 @@ translations:
       - Notify you when results are live
   - key: general.survey_closed
     t: >
-      Sorry, the survey is now closed! You can still log in to 
-      review your data but you won't be able to modify it.
+      Sorry, the survey is now closed! You can still review your data but you won't be able to modify it.
+  - key: general.survey_read_only
+    t: >
+      You are currently viewing this survey in read-only mode. 
+  - key: general.survey_read_only_back
+    t: >
+      <a href="{link}">Go back</a> to the main survey page to start or resume a session.
 
   # surveys
   - key: general.open_surveys

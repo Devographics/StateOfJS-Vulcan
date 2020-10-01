@@ -13,7 +13,15 @@ export default {
     },
     {
       "key": "general.survey_closed",
-      "t": "Sorry, the survey is now closed! You can still log in to  review your data but you won't be able to modify it.\n"
+      "t": "Sorry, the survey is now closed! You can still review your data but you won't be able to modify it.\n"
+    },
+    {
+      "key": "general.survey_read_only",
+      "t": "You are currently viewing this survey in read-only mode. \n"
+    },
+    {
+      "key": "general.survey_read_only_back",
+      "t": "<a href=\"{link}\">Go back</a> to the main survey page to start or resume a session.\n"
     },
     {
       "key": "general.open_surveys",

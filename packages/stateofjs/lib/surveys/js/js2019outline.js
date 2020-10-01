@@ -5,6 +5,7 @@ export default {
   "createdAt": "December 1, 2019",
   "prettySlug": "state-of-js",
   "hashtag": "StateOfJS",
+  "shareUrl": "https://stateofjs.com",
   "name": "State of JavaScript",
   "year": 2019,
   "status": 3,

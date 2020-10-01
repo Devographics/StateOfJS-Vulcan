@@ -170,10 +170,10 @@
   }
 }
 .section-title {
-  @include small-medium{
+  @include small-medium {
     font-size: $larger-font;
   }
-  @include large{
+  @include large {
     font-size: $largest-font;
   }
   margin-bottom: $spacing/2;
@@ -184,4 +184,10 @@
   @include font-regular;
   color: $text-color-dark;
   margin-bottom: $spacing;
+}
+
+.survey-message {
+  background: $redTransparent;
+  padding: $spacing;
+  margin-bottom: $spacing * 2;
 }
