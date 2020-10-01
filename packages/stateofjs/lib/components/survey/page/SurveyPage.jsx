@@ -14,7 +14,7 @@ const SurveyPageWrapper = (props, { intl }) => {
   const survey = getSurvey(slug, year);
   const { imageUrl, name, slug: surveySlug } = survey;
   return (
-    <div className="survey-page">
+    <div className="survey-page contents-narrow">
       <h1 className="survey-image">
         <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
       </h1>

@@ -49,13 +49,13 @@ const SurveyNav = ({ survey, response }) => {
   return (
     <nav className={`section-nav ${shown ? 'section-nav-shown' : 'section-nav-hidden'}`}>
       <div className="section-nav-inner">
+        <h2 className="section-nav-heading"><Link to={getSurveyPath({ survey, home: true })}>{survey.name} {survey.year}</Link></h2>
         <div
           className="section-nav-head"
           onClick={e => {
             setShown(!shown);
           }}
         >
-          <h2 className="section-nav-heading"><Link to={getSurveyPath({ survey, home: true })}>{survey.name} {survey.year}</Link></h2>
           <h3 className="section-nav-toc"><FormattedMessage id="general.table_of_contents"/></h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
         </div>

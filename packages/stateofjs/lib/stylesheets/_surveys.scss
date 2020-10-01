@@ -89,6 +89,16 @@
     }
   }
 }
+
+.section-nav-heading {
+  font-size: $large-font;
+  border-bottom: $border;
+  padding-bottom: $spacing;
+  margin-bottom: $spacing;
+  @include small-medium {
+    text-align: center;
+  }
+}
 .section-nav-head {
   @include small-medium {
     @include flex-center;
@@ -113,13 +123,15 @@
     }
   }
 }
-.section-nav-inner {
+.section-nav-contents {
+  @include small-medium {
+    @include border;
+    @include border-radius;
+    padding: $spacing;
+    margin-bottom: $spacing;
+  }
 }
-.section-nav-heading {
-  font-size: $large-font;
-  border-bottom: $border;
-  padding-bottom: $spacing;
-  margin-bottom: $spacing;
+.section-nav-inner {
 }
 .section-nav-toc {
   font-size: $medium-font;
@@ -133,7 +145,7 @@
 }
 .completion-message {
   font-size: $small-font;
-  margin-top: $spacing;
+  margin: $spacing 0 0 0;
 }
 .section-nav-item-completion {
   @include font-regular;
@@ -158,7 +170,12 @@
   }
 }
 .section-title {
-  font-size: $largest-font;
+  @include small-medium{
+    font-size: $larger-font;
+  }
+  @include large{
+    font-size: $largest-font;
+  }
   margin-bottom: $spacing/2;
   line-height: 1;
 }

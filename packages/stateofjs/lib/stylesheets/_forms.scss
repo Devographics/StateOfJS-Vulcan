@@ -3,12 +3,23 @@
   //   background: $bg-color-lightest;
   // }
   .form-group {
+    @include small-medium {
+      @include border;
+      padding: $spacing/2;
+    }
+    @include large {
+      @include border;
+      padding: $spacing;
+    }
     margin-bottom: $spacing;
-    @include border;
-    padding: $spacing;
   }
   .form-label {
-    font-size: $larger-font;
+    @include small-medium {
+      font-size: $large-font;
+    }
+    @include large {
+      font-size: $larger-font;
+    }
     @include font-bold;
   }
   .form-check {
@@ -22,7 +33,7 @@
       background: $bg-color-light;
     }
   }
-  .form-component-radiogroup{
+  .form-component-radiogroup {
     .form-check-checked {
     }
     .form-check-unchecked {

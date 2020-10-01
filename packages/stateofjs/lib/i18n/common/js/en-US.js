@@ -73,15 +73,7 @@ export default {
     },
     {
       "key": "general.thanks",
-      "t": "Thanks for filling out the survey!"
-    },
-    {
-      "key": "general.review_data",
-      "t": "Your data is saved. You can review or modify it until the survey closes."
-    },
-    {
-      "key": "general.help_share",
-      "t": "Also, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even more representative:\n"
+      "t": "Thanks for filling out the survey!\nYour data is saved. You can review or modify it until the survey closes.\nAlso, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even more representative:\n"
     },
     {
       "key": "general.share_subject",

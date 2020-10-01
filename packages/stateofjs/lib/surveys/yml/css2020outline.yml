@@ -9,7 +9,8 @@
 slug: css2020 # used as first part of field names
 createdAt: October 1, 2020
 prettySlug: state-of-css
-hashtag: StateOfCSS2020
+hashtag: StateOfCSS
+shareUrl: https://stateofcss.com
 name: 'State of CSS'
 year: 2020
 status: 2 # preview
