@@ -773,43 +773,16 @@ export default {
           ]
         },
         {
+          "id": "css_proficiency",
+          "template": "proficiency"
+        },
+        {
           "id": "javascript_proficiency",
-          "template": "single",
-          "options": [
-            {
-              "id": 0
-            },
-            {
-              "id": 1
-            },
-            {
-              "id": 2
-            },
-            {
-              "id": 3
-            },
-            {
-              "id": 4
-            }
-          ]
+          "template": "proficiency"
         },
         {
           "id": "backend_proficiency",
-          "template": "single",
-          "options": [
-            {
-              "id": 0
-            },
-            {
-              "id": 1
-            },
-            {
-              "id": 2
-            },
-            {
-              "id": 3
-            }
-          ]
+          "template": "proficiency"
         },
         {
           "id": "how_did_you_find_out",

@@ -90,6 +90,19 @@ export const templates = {
       { value: 'would_not_use', intlId: 'options.tools.would_not_use', },
     ],
   }),
+  proficiency: ({ allowother = false }) => ({
+    allowmultiple: false,
+    allowother,
+    input: 'radiogroup',
+    randomize: false,
+    options: [
+      { id: 0 },
+      { id: 1 },
+      { id: 2 },
+      { id: 3 },
+      { id: 4 },
+    ]
+  }),
   single: ({ allowother = false }) => ({
     allowmultiple: false,
     allowother,

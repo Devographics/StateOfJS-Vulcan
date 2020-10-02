@@ -177,6 +177,10 @@ export default {
       "t": "Decorators"
     },
     {
+      "key": "features.decorators.description",
+      "t": "In its simplest form, a decorator is simply a way of  wrapping one piece of code with another — literally “decorating” it. \n"
+    },
+    {
       "key": "features.maps",
       "t": "Maps"
     },

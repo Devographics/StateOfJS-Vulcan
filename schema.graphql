@@ -932,6 +932,7 @@ type Response {
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
+  css2020__user_info__css_proficiency: String 
   css2020__user_info__javascript_proficiency: String 
   css2020__user_info__backend_proficiency: String 
   css2020__user_info__how_did_you_find_out: String 
@@ -1039,6 +1040,7 @@ type Response {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
+  js2019__user_info__javascript_proficiency: String 
   js2019__user_info__css_proficiency: String 
   js2019__user_info__backend_proficiency: String 
   js2019__user_info__company_size: String 
@@ -1242,6 +1244,7 @@ input CreateResponseDataInput {
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
+  css2020__user_info__css_proficiency: String 
   css2020__user_info__javascript_proficiency: String 
   css2020__user_info__backend_proficiency: String 
   css2020__user_info__how_did_you_find_out: String 
@@ -1349,6 +1352,7 @@ input CreateResponseDataInput {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
+  js2019__user_info__javascript_proficiency: String 
   js2019__user_info__css_proficiency: String 
   js2019__user_info__backend_proficiency: String 
   js2019__user_info__company_size: String 
@@ -1495,6 +1499,7 @@ input UpdateResponseDataInput {
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
+  css2020__user_info__css_proficiency: String 
   css2020__user_info__javascript_proficiency: String 
   css2020__user_info__backend_proficiency: String 
   css2020__user_info__how_did_you_find_out: String 
@@ -1602,6 +1607,7 @@ input UpdateResponseDataInput {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
+  js2019__user_info__javascript_proficiency: String 
   js2019__user_info__css_proficiency: String 
   js2019__user_info__backend_proficiency: String 
   js2019__user_info__company_size: String 
@@ -1743,6 +1749,7 @@ input ResponseFilterInput {
   css2020__user_info__company_size: String_Selector
   css2020__user_info__yearly_salary: String_Selector
   css2020__user_info__job_title: String_Selector
+  css2020__user_info__css_proficiency: String_Selector
   css2020__user_info__javascript_proficiency: String_Selector
   css2020__user_info__backend_proficiency: String_Selector
   css2020__user_info__how_did_you_find_out: String_Selector
@@ -1850,6 +1857,7 @@ input ResponseFilterInput {
   js2019__opinions__missing_from_js: String_Selector
   js2019__user_info__years_of_experience: String_Selector
   js2019__user_info__job_title: String_Selector
+  js2019__user_info__javascript_proficiency: String_Selector
   js2019__user_info__css_proficiency: String_Selector
   js2019__user_info__backend_proficiency: String_Selector
   js2019__user_info__company_size: String_Selector
@@ -1986,6 +1994,7 @@ input ResponseSortInput {
   css2020__user_info__company_size: SortOptions
   css2020__user_info__yearly_salary: SortOptions
   css2020__user_info__job_title: SortOptions
+  css2020__user_info__css_proficiency: SortOptions
   css2020__user_info__javascript_proficiency: SortOptions
   css2020__user_info__backend_proficiency: SortOptions
   css2020__user_info__how_did_you_find_out: SortOptions
@@ -2093,6 +2102,7 @@ input ResponseSortInput {
   js2019__opinions__missing_from_js: SortOptions
   js2019__user_info__years_of_experience: SortOptions
   js2019__user_info__job_title: SortOptions
+  js2019__user_info__javascript_proficiency: SortOptions
   js2019__user_info__css_proficiency: SortOptions
   js2019__user_info__backend_proficiency: SortOptions
   js2019__user_info__company_size: SortOptions

@@ -591,46 +591,16 @@ export default {
           ]
         },
         {
+          "id": "javascript_proficiency",
+          "template": "proficiency"
+        },
+        {
           "id": "css_proficiency",
-          "template": "single",
-          "options": [
-            {
-              "id": 0
-            },
-            {
-              "id": 1
-            },
-            {
-              "id": 2
-            },
-            {
-              "id": 3
-            },
-            {
-              "id": 4
-            }
-          ]
+          "template": "proficiency"
         },
         {
           "id": "backend_proficiency",
-          "template": "single",
-          "options": [
-            {
-              "id": 0
-            },
-            {
-              "id": 1
-            },
-            {
-              "id": 2
-            },
-            {
-              "id": 3
-            },
-            {
-              "id": 4
-            }
-          ]
+          "template": "proficiency"
         },
         {
           "id": "company_size",
