@@ -15,6 +15,10 @@
 .surveys-group {
   margin-bottom: $spacing * 3;
 }
+.surveys-noopen{
+  text-align: center;
+  font-size: $medium-font;
+}
 .survey-item {
   margin-bottom: $spacing * 2;
   a {
@@ -157,12 +161,6 @@
   .form-component-clear {
     display: none;
   }
-}
-.survey-closed {
-  background: $redLighter;
-  padding: $spacing;
-  color: $text-color-inverted;
-  margin-bottom: $spacing;
 }
 .form-section-nav {
   &-top {

@@ -7,6 +7,8 @@
 ### FEATURES ###
 
 slug: css2020 # used as first part of field names
+namespace: css
+topic: CSS
 createdAt: October 1, 2020
 prettySlug: state-of-css
 hashtag: StateOfCSS
@@ -228,9 +230,11 @@ outline:
       - PostCSS
       - Stylus
       - id: pre_post_processors
+        intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: other_tools
       - id: pre_post_processors
+        intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
 
@@ -255,9 +259,11 @@ outline:
       # - BassCSS
       # - No Framework
       - id: css_frameworks
+        intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: other_tools
       - id: css_frameworks
+        intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
 
@@ -272,9 +278,11 @@ outline:
       - IT CSS
       - CUBE CSS
       - id: css_methodologies
+        intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: other_tools
       - id: css_methodologies
+        intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
 
@@ -296,9 +304,11 @@ outline:
       - Fela
       - Linaria
       - id: css_in_js
+        intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: other_tools
       - id: css_in_js
+        intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
 
@@ -545,7 +555,5 @@ outline:
           - id: male
           - id: non_binary
           - id: prefer_not_to_say
-      - id: email
-        template: email
       - id: country
         template: country

@@ -43,7 +43,11 @@ const SurveySectionContents = ({
       ) : survey.status === statuses.open && readOnly ? (
         <div className="survey-message survey-readonly">
           <FormattedMessage id="general.survey_read_only" />
-          <FormattedMessage id="general.survey_read_only_back" html={true} values={{ link: getSurveyPath({ survey, home: true }) }} />
+          <FormattedMessage
+            id="general.survey_read_only_back"
+            html={true}
+            values={{ link: getSurveyPath({ survey, home: true }) }}
+          />
         </div>
       ) : survey.status === statuses.closed ? (
         <div className="survey-message survey-closed">
@@ -51,10 +55,10 @@ const SurveySectionContents = ({
         </div>
       ) : null}
       <h2 className="section-title">
-        <FormattedMessage id={`sections.${id}.title`} defaultMessage={id} />
+        <FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
       </h2>
       <h3 className="section-description">
-        <FormattedMessage id={`sections.${id}.description`} defaultMessage={id} />
+        <FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />
       </h3>
       <Components.SmartForm
         documentId={response && response._id}

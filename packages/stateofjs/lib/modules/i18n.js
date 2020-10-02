@@ -1,10 +1,14 @@
 import { registerLocale, addStrings } from 'meteor/vulcan:core';
 import locales from '../i18n/index';
 
-const convertStrings = strings => {
+const convertStrings = (stringFile) => {
   const convertedStrings = {};
-  strings.translations.forEach(({key, t})=> {
-    convertedStrings[key] = t;
+  const { namespace, translations } = stringFile;
+  translations.forEach(({key, t})=> {
+    // survey namespaces are not currently supported
+    // const translationKey = namespace ? `${namespace}.${key}`: key;
+    const translationKey = key;
+    convertedStrings[translationKey] = t;
   });
   return convertedStrings;
 }
@@ -16,7 +20,7 @@ locales.forEach(locale => {
     label
   });
 
-  stringFiles.forEach(strings => {
-    addStrings(id, convertStrings(strings));
+  stringFiles.forEach(stringFile => {
+    addStrings(id, convertStrings(stringFile));
   });
 });

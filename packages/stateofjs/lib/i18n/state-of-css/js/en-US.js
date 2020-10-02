@@ -2,6 +2,7 @@
 /* Generated automatically, do not modify */
 export default {
   "locale": "en-US",
+  "namespace": "css",
   "translations": [
     {
       "key": "general.survey_intro_css2020",
@@ -94,14 +95,6 @@ export default {
     {
       "key": "sections.css_in_js.description",
       "t": "Libraries that help integrate CSS into JavaScript code."
-    },
-    {
-      "key": "sections.other_tools.title",
-      "t": "Other Tools"
-    },
-    {
-      "key": "sections.other_tools.description",
-      "t": "For these tools & technologies, just check the ones that you use regularly."
     },
     {
       "key": "sections.environments.title",
@@ -342,70 +335,6 @@ export default {
     {
       "key": "features.form_controls",
       "t": "Form Controls"
-    },
-    {
-      "key": "sections_other_tools.pre_post_processors",
-      "t": "Other Pre-/Post-processors"
-    },
-    {
-      "key": "sections_other_tools.pre_post_processors.description",
-      "t": "Other pre-/post-processors you use not mentioned in the list above"
-    },
-    {
-      "key": "happiness.pre_post_processors",
-      "t": "Overall Happiness"
-    },
-    {
-      "key": "happiness.pre_post_processors.description",
-      "t": "On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of pre-/post-processors?"
-    },
-    {
-      "key": "sections_other_tools.css_frameworks",
-      "t": "Other CSS Frameworks"
-    },
-    {
-      "key": "sections_other_tools.css_frameworks.description",
-      "t": "Other CSS frameworks you use not mentioned in the list above"
-    },
-    {
-      "key": "happiness.css_frameworks",
-      "t": "Overall Happiness"
-    },
-    {
-      "key": "happiness.css_frameworks.description",
-      "t": "On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS frameworks?"
-    },
-    {
-      "key": "sections_other_tools.css_methodologies",
-      "t": "Other Methodologies"
-    },
-    {
-      "key": "sections_other_tools.css_methodologies.description",
-      "t": "Other methodologies you use not mentioned in the list above"
-    },
-    {
-      "key": "happiness.css_methodologies",
-      "t": "Overall Happiness"
-    },
-    {
-      "key": "happiness.css_methodologies.description",
-      "t": "On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS methodologies?"
-    },
-    {
-      "key": "sections_other_tools.css_in_js",
-      "t": "Other CSS-in-JS Libraries"
-    },
-    {
-      "key": "sections_other_tools.css_in_js.description",
-      "t": "Other CSS-in-JS libraries you use not mentioned in the list above"
-    },
-    {
-      "key": "happiness.css_in_js",
-      "t": "Overall Happiness"
-    },
-    {
-      "key": "happiness.css_in_js.description",
-      "t": "On a scale of one (very unhappy) to five (very happy), how happy you with the current overall state of CSS-in-JS libraries?"
     },
     {
       "key": "environments.browsers",

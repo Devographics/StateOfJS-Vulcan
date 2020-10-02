@@ -28,6 +28,10 @@ export default {
       "t": "Open Surveys"
     },
     {
+      "key": "general.no_open_surveys",
+      "t": "No surveys are currently open."
+    },
+    {
       "key": "general.closed_surveys",
       "t": "Closed Surveys"
     },
@@ -153,7 +157,7 @@ export default {
     },
     {
       "key": "sections.resources.description",
-      "t": "What {language} resources do you consult?"
+      "t": "What {topic} resources do you consult?"
     },
     {
       "key": "sections.opinions.title",
@@ -161,7 +165,15 @@ export default {
     },
     {
       "key": "sections.opinions.description",
-      "t": "How do you feel about the state of {language}?"
+      "t": "How do you feel about the state of {topic}?"
+    },
+    {
+      "key": "sections.other_tools.title",
+      "t": "Other Tools"
+    },
+    {
+      "key": "sections.other_tools.description",
+      "t": "For these tools & technologies, just check the ones that you use regularly."
     },
     {
       "key": "options.features.never_heard",
@@ -432,12 +444,44 @@ export default {
       "t": "Able to handle complex multi-server or microservices architectures"
     },
     {
+      "key": "options.gender.female",
+      "t": "Female"
+    },
+    {
+      "key": "options.gender.male",
+      "t": "Male"
+    },
+    {
+      "key": "options.gender.non_binary",
+      "t": "Non-Binary/Third Gender"
+    },
+    {
+      "key": "options.gender.prefer_not_to_say",
+      "t": "Prefer not to say"
+    },
+    {
+      "key": "tools.other_tools",
+      "t": "Other Options"
+    },
+    {
+      "key": "tools.other_tools.description",
+      "t": "Other options you use for the current section not mentioned in the list above"
+    },
+    {
+      "key": "tools.happiness",
+      "t": "Overall Happiness"
+    },
+    {
+      "key": "tools.happiness.description",
+      "t": "On a scale of one (very unhappy) to five (very happy), how happy are you with the current overall state of things as it relates to the options listed above?\n"
+    },
+    {
       "key": "user_info.years_of_experience",
       "t": "Years of Experience"
     },
     {
       "key": "user_info.years_of_experience.description",
-      "t": "How long you've been writing {language}."
+      "t": "How long you've been working or studying in this field."
     },
     {
       "key": "user_info.company_size",
@@ -490,22 +534,6 @@ export default {
     {
       "key": "user_info.gender",
       "t": "Gender"
-    },
-    {
-      "key": "gender.female",
-      "t": "Female"
-    },
-    {
-      "key": "gender.male",
-      "t": "Male"
-    },
-    {
-      "key": "gender.non_binary",
-      "t": "Non-Binary/Third Gender"
-    },
-    {
-      "key": "gender.prefer_not_to_say",
-      "t": "Prefer not to say"
     },
     {
       "key": "user_info.how_did_you_find_out",
@@ -605,7 +633,7 @@ export default {
     },
     {
       "key": "resources.blogs_news_magazines.description",
-      "t": "Which JS-related blogs/magazines/etc. do you read?"
+      "t": "Which blogs/magazines/etc. do you read?"
     },
     {
       "key": "resources.blogs_news_magazines.others",
@@ -621,7 +649,7 @@ export default {
     },
     {
       "key": "resources.sites_courses.description",
-      "t": "Which JS-related sites/courses/etc. do you consult?"
+      "t": "Which sites/courses/etc. do you consult?"
     },
     {
       "key": "resources.sites_courses.others",
@@ -637,7 +665,7 @@ export default {
     },
     {
       "key": "resources.podcasts.description",
-      "t": "Which JavaScript or programming-related podcasts do you listen to?"
+      "t": "Which programming-related podcasts do you listen to?"
     },
     {
       "key": "resources.podcasts.others",

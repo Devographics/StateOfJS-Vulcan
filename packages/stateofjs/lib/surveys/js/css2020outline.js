@@ -2,6 +2,8 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "css2020",
+  "namespace": "css",
+  "topic": "CSS",
   "createdAt": "October 1, 2020",
   "prettySlug": "state-of-css",
   "hashtag": "StateOfCSS",
@@ -327,11 +329,13 @@ export default {
         "Stylus",
         {
           "id": "pre_post_processors",
+          "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "other_tools"
         },
         {
           "id": "pre_post_processors",
+          "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
         }
@@ -357,11 +361,13 @@ export default {
         "Spectre",
         {
           "id": "css_frameworks",
+          "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "other_tools"
         },
         {
           "id": "css_frameworks",
+          "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
         }
@@ -380,11 +386,13 @@ export default {
         "CUBE CSS",
         {
           "id": "css_methodologies",
+          "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "other_tools"
         },
         {
           "id": "css_methodologies",
+          "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
         }
@@ -408,11 +416,13 @@ export default {
         "Linaria",
         {
           "id": "css_in_js",
+          "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "other_tools"
         },
         {
           "id": "css_in_js",
+          "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
         }
@@ -823,10 +833,6 @@ export default {
               "id": "prefer_not_to_say"
             }
           ]
-        },
-        {
-          "id": "email",
-          "template": "email"
         },
         {
           "id": "country",

@@ -32,8 +32,7 @@
     &:hover {
       color: $hover-color;
       color: var(--text-color);
-      border-color: $hover-color;
-      border-color: var(--hover-color);
+      border-color: var(--link-color);
       border-style: solid;
       text-decoration: none;
       background: $bg-color-light;
@@ -42,10 +41,10 @@
     &:active,
     &:focus {
       color: $white;
-      border-color: $active-color;
+      border-color: var(--link-color);
       border-style: solid;
       text-decoration: none;
-      background: $active-color;
+      background: var(--link-color);
     }
     &--small {
       font-size: $small-font;

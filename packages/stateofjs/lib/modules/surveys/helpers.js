@@ -6,6 +6,9 @@ export const getSurvey = (prettySlug, year) => surveys.find(s => (s.prettySlug =
 
 export const getSurveyPath = ({ survey: surveyArgument, number, response, home = false }) => {
   const survey = surveyArgument || getSurveyFromResponse(response);
+  if (!survey) {
+    return '';
+  }
   const { year, prettySlug } = survey;
   const prefixSegment = '/survey';
   const slugSegment = `/${prettySlug}/${year}`;

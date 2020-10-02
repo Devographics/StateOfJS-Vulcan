@@ -172,6 +172,23 @@ export const parseOptions = (questionObject, options) => {
   })
 }
 
+export const generateIntlId = (questionObject, section, survey) => {
+  const { sectionSlug, id, intlId, suffix } = questionObject;
+  // if intlId is explicitely specified on question object use that
+  if (intlId) {
+    return intlId;
+  }
+  // survey namespaces are not currently supported
+  // const surveySegment = survey.namespace;
+  const surveySegment = '';
+  // for section segment, use either section slug or sectionSlug override on question
+  const sectionSegment = sectionSlug || section.slug;
+  const questionSegment = `.${id}`;
+  // for now hardcode "others" as the only valid suffix
+  const suffixSegment = suffix && suffix === 'others' ? '.others' : '';
+  return [surveySegment, sectionSegment, questionSegment, suffixSegment].join('');
+}
+
 // transform question object into SimpleSchema-compatible schema field
 export const getQuestionSchema = (questionObject, section, survey) => {
   const {
@@ -180,19 +197,11 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     input,
     options,
     type,
-    isprivate = false,
     searchable = false,
     allowmultiple = false,
-    id,
-    intlPrefix,
-    suffix,
-    sectionSlug, 
   } = questionObject;
 
-  let intlId = `${sectionSlug || section.slug}.${id}`;
-  if (suffix && suffix === 'others') {
-    intlId += `.others`;
-  }
+  const intlId = generateIntlId(questionObject, section, survey);
 
   const questionSchema = {
     // label: title,
