@@ -393,11 +393,11 @@ export default {
       "t": "I enjoy writing CSS"
     },
     {
-      "key": "opinions.currently_missing_from_css",
+      "key": "opinions.currently_missing_from_css.others",
       "t": "What do you feel is currently missing from CSS?"
     },
     {
-      "key": "opinions.currently_missing_from_css.description",
+      "key": "opinions.currently_missing_from_css.others.description",
       "t": "Features you'd like to see in CSS one day."
     }
   ]

@@ -932,7 +932,7 @@ type Response {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  css2020__opinions__currently_missing_from_css: String 
+  css2020__opinions__currently_missing_from_css__others: String 
   css2020__user_info__years_of_experience: String 
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
@@ -1250,7 +1250,7 @@ input CreateResponseDataInput {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  css2020__opinions__currently_missing_from_css: String 
+  css2020__opinions__currently_missing_from_css__others: String 
   css2020__user_info__years_of_experience: String 
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
@@ -1511,7 +1511,7 @@ input UpdateResponseDataInput {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  css2020__opinions__currently_missing_from_css: String 
+  css2020__opinions__currently_missing_from_css__others: String 
   css2020__user_info__years_of_experience: String 
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
@@ -1767,7 +1767,7 @@ input ResponseFilterInput {
   css2020__opinions__selector_nesting_to_be_avoided: Float_Selector
   css2020__opinions__css_is_programming_language: Float_Selector
   css2020__opinions__enjoy_writing_css: Float_Selector
-  css2020__opinions__currently_missing_from_css: String_Selector
+  css2020__opinions__currently_missing_from_css__others: String_Selector
   css2020__user_info__years_of_experience: String_Selector
   css2020__user_info__company_size: String_Selector
   css2020__user_info__yearly_salary: String_Selector
@@ -2018,7 +2018,7 @@ input ResponseSortInput {
   css2020__opinions__selector_nesting_to_be_avoided: SortOptions
   css2020__opinions__css_is_programming_language: SortOptions
   css2020__opinions__enjoy_writing_css: SortOptions
-  css2020__opinions__currently_missing_from_css: SortOptions
+  css2020__opinions__currently_missing_from_css__others: SortOptions
   css2020__user_info__years_of_experience: SortOptions
   css2020__user_info__company_size: SortOptions
   css2020__user_info__yearly_salary: SortOptions
@@ -2284,12 +2284,6 @@ type Query {
   # A list of Response documents matching a set of query terms
   responses(input: MultiResponseInput):  MultiResponseOutput
   
-  # A single NormalizedResponse document fetched by ID or slug
-  normalizedResponse(input: SingleNormalizedResponseInput!): SingleNormalizedResponseOutput
-  
-  # A list of NormalizedResponse documents matching a set of query terms
-  normalizedResponses(input: MultiNormalizedResponseInput):  MultiNormalizedResponseOutput
-  
 }
   
 
@@ -2382,13 +2376,6 @@ type Mutation {
   # Deprecated (use 'input' field instead).
   selector: ResponseSelectorUniqueInput
 ) : ResponseMutationOutput
-
-  # Mutation for deleting a NormalizedResponse document
-  deleteNormalizedResponse(
-  input: DeleteNormalizedResponseInput,
-  # Deprecated (use 'input' field instead).
-  selector: NormalizedResponseSelectorUniqueInput
-) : NormalizedResponseMutationOutput
 
 }
 

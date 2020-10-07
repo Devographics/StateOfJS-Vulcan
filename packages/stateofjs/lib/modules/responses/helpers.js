@@ -309,4 +309,3 @@ Filter a response object to only keep fields relevant to the survey
 export const getResponseData = response => {
   return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }
-

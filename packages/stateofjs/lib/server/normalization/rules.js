@@ -253,6 +253,17 @@ export const sourceNormalizationRules = [...resourceNormalizationRules,
 ]
 
 
+export const otherFeaturesNormalizationRules = [
+  [/container ?queries/i, 'container_queries'],
+  [/parent ?selector/i, 'parent_selector'],
+  [/nesting/i, 'nesting'],
+  [/scoping/i, 'scoping'],
+  [/mixins/i, 'mixins'],
+  [/has/i, 'has_selector'],
+  [/functions/i, 'functions'],
+];
+
+
 /**
  * Defines a set of rules which can be applied
  * in order to standardize tool names, it's mostly involved
@@ -698,4 +709,4 @@ export const toolNormalizationRules = [
 
 ]
 
-export default [...sourceNormalizationRules, ...toolNormalizationRules];
+export default [...sourceNormalizationRules, ...toolNormalizationRules, ...otherFeaturesNormalizationRules];

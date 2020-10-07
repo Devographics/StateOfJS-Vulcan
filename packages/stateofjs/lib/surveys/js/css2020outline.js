@@ -678,6 +678,7 @@ export default {
         },
         {
           "id": "currently_missing_from_css",
+          "suffix": "others",
           "template": "longtext"
         }
       ]

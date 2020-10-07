@@ -19,8 +19,6 @@ export const normalizeResponse = ({ document: response }) => {
   console.log(`// Normalizing response ${response._id}…`)
   const keysToNormalize = [];
 
-  console.log(response);
-
   // 1. Copy over root fields and assign id
   const normalizedResp = pick(response, fieldsToCopy);
   normalizedResp.responseId = response._id;
@@ -56,9 +54,9 @@ export const normalizeResponse = ({ document: response }) => {
   keysToNormalize.forEach((path) => {
     const value = cleanupValue(get(normalizedResp, path));
     if (value) {
-      console.log(`// Normalizing key "${path}" with value "${value}"…`);
+      // console.log(`// Normalizing key "${path}" with value "${value}"…`);
       const normalizedValues = normalizeInput(value);
-      console.log(`  -> Normalized value: ${normalizedValues}`);
+      // console.log(`  -> Normalized value: ${normalizedValues}`);
       set(
         normalizedResp,
         `${path}_normalized`,
@@ -74,8 +72,6 @@ export const normalizeResponse = ({ document: response }) => {
 
   // 6. handle source field separately
   const [normalizedSource, sourcePattern] = normalizeResponseSource(normalizedResp);
-  console.log(normalizedSource)
-  console.log(sourcePattern)
   if (normalizedSource) {
     set(normalizedResp, 'user_info.source_normalized', normalizedSource);
     if (sourcePattern) {
@@ -83,8 +79,9 @@ export const normalizeResponse = ({ document: response }) => {
     }
   }
   
-  console.log(JSON.stringify(normalizedResp, '', 2));
+  // console.log(JSON.stringify(normalizedResp, '', 2));
 
   const result = NormalizedResponses.upsert({responseId: response._id}, normalizedResp);
+  // eslint-disable-next-line
   console.log(result);
 };
