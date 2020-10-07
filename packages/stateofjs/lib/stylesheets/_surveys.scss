@@ -15,23 +15,23 @@
 .surveys-group {
   margin-bottom: $spacing * 3;
 }
-.surveys-noopen{
+.surveys-noopen {
   text-align: center;
   font-size: $medium-font;
 }
 .survey-item {
   margin-bottom: $spacing * 2;
-  a {
-    position: relative;
-    display: block;
-    @include border;
-    @include border-radius;
-    &:hover {
-      &,
-      .survey-name span {
-        border-color: $hover-color;
-        background: $bg-color-light;
-      }
+}
+.survey-link {
+  position: relative;
+  display: block;
+  @include border;
+  @include border-radius;
+  &:hover {
+    &,
+    .survey-name span {
+      border-color: $hover-color;
+      background: $bg-color-light;
     }
   }
 }
@@ -54,6 +54,12 @@
     white-space: nowrap;
     font-size: $small-font;
   }
+}
+.survey-item-results {
+  display: block;
+  text-align: center;
+  margin-top: $spacing * 1.5;
+  font-size: $small-font;
 }
 .surveys-group-heading {
   text-align: center;

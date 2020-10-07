@@ -6,20 +6,27 @@ import { Link } from 'react-router-dom';
 import { statuses } from '../../modules/constants';
 
 const SurveyItem = ({ survey }) => {
-  const { imageUrl, name, year } = survey;
+  const { imageUrl, name, year, resultsUrl } = survey;
   return (
-    <div className="survey-item">
-      <div className="survey-image">
-        <Link to={getSurveyPath({ survey, home: true })}>
-          <span className="survey-image-inner">
-            <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
-          </span>
-          <span className="survey-name">
-            <span>
-              {name} {year}
+    <div>
+      <div className="survey-item">
+        <div className="survey-image">
+          <Link className="survey-link" to={getSurveyPath({ survey, home: true })}>
+            <span className="survey-image-inner">
+              <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
             </span>
-          </span>
-        </Link>
+            <span className="survey-name">
+              <span>
+                {name} {year}
+              </span>
+            </span>
+          </Link>
+        </div>
+        {resultsUrl && (
+          <a className="survey-item-results" href={resultsUrl} target="_blank" rel="noopener">
+            <FormattedMessage id="general.survey_results" />
+          </a>
+        )}
       </div>
     </div>
   );

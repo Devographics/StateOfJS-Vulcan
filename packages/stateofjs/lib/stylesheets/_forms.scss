@@ -81,6 +81,12 @@
     button:first-child {
       // margin-right: $spacing;
     }
+    .form-btn-prev, .prev-placeholder{
+      order: 1;
+    }
+    .form-btn-next{
+      order: 2;
+    }
   }
 
   .form-submit-help {

@@ -8,6 +8,7 @@ import qs from 'qs';
 import SurveyAction from './SurveyAction';
 import { getSurvey } from '../../../modules/surveys/helpers';
 import ReactMarkdown from 'react-markdown';
+import SurveyHeadTags from '../SurveyHeadTags';
 
 const SurveyPageWrapper = (props, { intl }) => {
   const { slug, year } = useParams();
@@ -15,6 +16,7 @@ const SurveyPageWrapper = (props, { intl }) => {
   const { imageUrl, name, slug: surveySlug } = survey;
   return (
     <div className="survey-page contents-narrow">
+      <SurveyHeadTags survey={survey} />
       <h1 className="survey-image">
         <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
       </h1>

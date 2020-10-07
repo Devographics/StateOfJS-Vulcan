@@ -8,6 +8,7 @@ export default {
   "prettySlug": "state-of-js",
   "hashtag": "StateOfJS",
   "shareUrl": "https://stateofjs.com",
+  "resultsUrl": "https://2019.stateofjs.com/",
   "name": "State of JavaScript",
   "year": 2019,
   "status": 3,

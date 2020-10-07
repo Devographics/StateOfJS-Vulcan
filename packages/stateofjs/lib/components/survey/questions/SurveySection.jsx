@@ -13,6 +13,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import surveys from '../../../surveys';
 import SurveyNav from './SurveyNav.jsx';
 import SurveySectionContents from './SurveySectionContents.jsx';
+import SurveyHeadTags from '../SurveyHeadTags';
 
 const SurveySection = () => {
   let { responseId, sectionNumber = 0 } = useParams();
@@ -43,12 +44,9 @@ const SurveySection = () => {
   };
   return (
     <div className="survey-section">
-      <SurveyNav
-        survey={response.survey}
-        response={response}
-        currentSectionNumber={sectionNumber}
-      />
+      <SurveyNav survey={response.survey} response={response} currentSectionNumber={sectionNumber} />
       <div className="section-contents">
+        <SurveyHeadTags survey={survey} />
         {loading ? (
           <Components.Loading />
         ) : !response ? (

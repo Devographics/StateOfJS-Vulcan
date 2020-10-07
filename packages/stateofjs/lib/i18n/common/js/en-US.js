@@ -60,6 +60,10 @@ export default {
       "t": "This survey is now closed."
     },
     {
+      "key": "general.survey_results",
+      "t": "View Survey Results »"
+    },
+    {
       "key": "general.privacy_policy",
       "t": "Privacy Policy"
     },

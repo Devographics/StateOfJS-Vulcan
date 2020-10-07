@@ -16,6 +16,7 @@ import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
 
+
 const FormSubmit = ({
   survey,
   submitForm,
@@ -33,8 +34,42 @@ const FormSubmit = ({
   return (
     <div className={`form-submit form-section-nav form-section-nav-${variant}`}>
       <div className="form-submit-actions">
+        {nextSection ? (
+          <Components.LoadingButton
+            className="form-btn-next"
+            loading={nextLoading}
+            type="submit"
+            variant="primary"
+            onClick={async (e) => {
+              e.preventDefault();
+              setNextLoading(true);
+              await submitForm();
+              setNextLoading(false);
+              history.push(getSurveyPath({ survey, response, number: sectionNumber + 1 }));
+            }}
+          >
+            <FormattedMessage id={`sections.${nextSection.id}.title`} /> »
+          </Components.LoadingButton>
+        ) : readOnly ? null : (
+          <Components.LoadingButton
+            className="form-btn-next form-btn-finish"
+            loading={nextLoading}
+            type="submit"
+            variant="primary"
+            onClick={async (e) => {
+              e.preventDefault();
+              setNextLoading(true);
+              await submitForm();
+              setNextLoading(false);
+              history.push(getThanksPath(response));
+            }}
+          >
+            <FormattedMessage id="general.finish_survey" />
+          </Components.LoadingButton>
+        )}
         {previousSection ? (
           <Components.LoadingButton
+            className="form-btn-prev"
             loading={prevLoading}
             type="submit"
             variant="primary"
@@ -50,37 +85,6 @@ const FormSubmit = ({
           </Components.LoadingButton>
         ) : (
           <div className="prev-placeholder" />
-        )}
-        {nextSection ? (
-          <Components.LoadingButton
-            loading={nextLoading}
-            type="submit"
-            variant="primary"
-            onClick={async (e) => {
-              e.preventDefault();
-              setNextLoading(true);
-              await submitForm();
-              setNextLoading(false);
-              history.push(getSurveyPath({ survey, response, number: sectionNumber + 1 }));
-            }}
-          >
-            <FormattedMessage id={`sections.${nextSection.id}.title`} />»
-          </Components.LoadingButton>
-        ) : readOnly ? null : (
-          <Components.LoadingButton
-            loading={nextLoading}
-            type="submit"
-            variant="primary"
-            onClick={async (e) => {
-              e.preventDefault();
-              setNextLoading(true);
-              await submitForm();
-              setNextLoading(false);
-              history.push(getThanksPath(response));
-            }}
-          >
-            <FormattedMessage id="general.finish_survey" />
-          </Components.LoadingButton>
         )}
       </div>
 

@@ -48,6 +48,8 @@ translations:
     t: Finish Survey »
   - key: general.survey_closed
     t: This survey is now closed.
+  - key: general.survey_results
+    t: View Survey Results »
 
   # footer
   - key: general.privacy_policy
