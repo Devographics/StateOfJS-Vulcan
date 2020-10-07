@@ -399,6 +399,14 @@ export default {
     {
       "key": "opinions.currently_missing_from_css.others.description",
       "t": "Features you'd like to see in CSS one day."
+    },
+    {
+      "key": "opinions.sum_up_one_word_css",
+      "t": "CSS in one word"
+    },
+    {
+      "key": "opinions.sum_up_one_word_css.description",
+      "t": "How would you sum up your opinion of CSS in one word?"
     }
   ]
 }

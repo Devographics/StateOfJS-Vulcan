@@ -693,11 +693,7 @@ export default {
     },
     {
       "key": "user_info.skin_tone",
-      "t": "Skin Tone"
-    },
-    {
-      "key": "user_info.skin_tone",
-      "t": "Skin Tone"
+      "t": "Appearance"
     },
     {
       "key": "user_info.skin_tone.description",

@@ -15,7 +15,7 @@ hashtag: StateOfCSS
 shareUrl: https://stateofcss.com
 name: 'State of CSS'
 year: 2020
-status: 2 # preview
+status: 1 # preview
 imageUrl: 'stateofcss2020.png'
 bgColor: '#232840'
 textColor: '#9ac6c9'
@@ -498,6 +498,8 @@ outline:
       - id: currently_missing_from_css
         suffix: others
         template: longtext
+      # - id: sum_up_one_word_css
+      #   template: text
 
   ### DEMOGRAPHICS ###
 

@@ -12,6 +12,7 @@ const fieldsToCopy = [
   'updatedAt',
   'year',
   'completion',
+  'userId',
 ];
 
 export const normalizeResponse = ({ document: response }) => {
