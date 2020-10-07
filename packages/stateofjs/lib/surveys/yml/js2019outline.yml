@@ -115,6 +115,7 @@ outline:
         intlId: tools.other_tools
         template: text
         sectionSlug: sections_other_tools
+        suffix: others
       - id: javascript_flavors
         intlId: tools.happiness
         sectionSlug: happiness
@@ -134,6 +135,7 @@ outline:
         intlId: tools.other_tools
         template: text
         sectionSlug: sections_other_tools
+        suffix: others
       - id: front_end_frameworks
         intlId: tools.happiness
         template: happiness
@@ -152,6 +154,7 @@ outline:
         intlId: tools.other_tools
         template: text
         sectionSlug: sections_other_tools
+        suffix: others
       - id: datalayer
         intlId: tools.happiness
         template: happiness
@@ -177,6 +180,7 @@ outline:
         intlId: tools.other_tools
         template: text
         sectionSlug: sections_other_tools
+        suffix: others
       - id: datalayer
         intlId: tools.happiness
         template: happiness
@@ -198,6 +202,7 @@ outline:
         intlId: tools.other_tools
         template: text
         sectionSlug: sections_other_tools
+        suffix: others
       - id: testing
         intlId: tools.happiness
         template: happiness
@@ -221,6 +226,7 @@ outline:
         intlId: tools.other_tools
         template: text
         sectionSlug: sections_other_tools
+        suffix: others
       - id: mobile_desktop
         intlId: tools.happiness
         template: happiness
@@ -426,7 +432,7 @@ outline:
           - id: range_50_100
           - id: range_100_200
           - id: range_more_than_200
-      - id: how_did_you_find_out
+      - id: how_did_user_find_out_about_the_survey
         template: text
       - id: gender
         template: single

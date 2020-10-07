@@ -1,4 +1,5 @@
-export default ['Afghanistan',
+const countries = [
+'Afghanistan',
 'Albania',
 'Algeria',
 'American Samoa',
@@ -239,3 +240,12 @@ export default ['Afghanistan',
 'Yemen',
 'Zambia',
 'Zimbabwe'];
+
+
+const kosovo = {
+  name: 'Kosovo',
+  'alpha-2': 'KV',
+  'alpha-3': 'OSA',
+};
+
+export default [...countries, kosovo];

@@ -178,7 +178,8 @@ export default {
           "id": "javascript_flavors",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "javascript_flavors",
@@ -203,7 +204,8 @@ export default {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "front_end_frameworks",
@@ -227,7 +229,8 @@ export default {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "datalayer",
@@ -266,7 +269,8 @@ export default {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "datalayer",
@@ -293,7 +297,8 @@ export default {
           "id": "testing",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "testing",
@@ -328,7 +333,8 @@ export default {
           "id": "mobile_desktop",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "mobile_desktop",
@@ -660,7 +666,7 @@ export default {
           ]
         },
         {
-          "id": "how_did_you_find_out",
+          "id": "how_did_user_find_out_about_the_survey",
           "template": "text"
         },
         {

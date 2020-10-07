@@ -188,6 +188,18 @@ export default {
       "t": "👍 I've used it"
     },
     {
+      "key": "options.features.never_heard.short",
+      "t": "Never heard of it"
+    },
+    {
+      "key": "options.features.heard.short",
+      "t": "Know about it"
+    },
+    {
+      "key": "options.features.used.short",
+      "t": "Have used it"
+    },
+    {
       "key": "options.patterns.use_never",
       "t": "Almost always avoid"
     },
@@ -225,7 +237,27 @@ export default {
     },
     {
       "key": "options.tools.would_not_use",
-      "t": "👎 Used it > Would avoid"
+      "t": "👎 Used it > Would not use again"
+    },
+    {
+      "key": "options.tools.never_heard",
+      "t": "Never heard"
+    },
+    {
+      "key": "options.tools.interested",
+      "t": "Interested"
+    },
+    {
+      "key": "options.tools.not_interested",
+      "t": "Not interested"
+    },
+    {
+      "key": "options.tools.would_use",
+      "t": "Would use again"
+    },
+    {
+      "key": "options.tools.would_not_use",
+      "t": "Would not use"
     },
     {
       "key": "options.happiness.very_unhappy",
@@ -564,6 +596,26 @@ export default {
       "t": "Prefer not to say"
     },
     {
+      "key": "options.skin_tone.0",
+      "t": "🧑🏻‍🦲"
+    },
+    {
+      "key": "options.skin_tone.1",
+      "t": "🧑🏼‍🦲"
+    },
+    {
+      "key": "options.skin_tone.2",
+      "t": "🧑🏽‍🦲"
+    },
+    {
+      "key": "options.skin_tone.3",
+      "t": "🧑🏾‍🦲"
+    },
+    {
+      "key": "options.skin_tone.4",
+      "t": "🧑🏿‍🦲"
+    },
+    {
       "key": "tools.other_tools",
       "t": "Other Options"
     },
@@ -640,7 +692,19 @@ export default {
       "t": "Gender"
     },
     {
-      "key": "user_info.how_did_you_find_out",
+      "key": "user_info.skin_tone",
+      "t": "Skin Tone"
+    },
+    {
+      "key": "user_info.skin_tone",
+      "t": "Skin Tone"
+    },
+    {
+      "key": "user_info.skin_tone.description",
+      "t": "Which emoji do you feel represents you best? <br/><br/>\nNote: We are experimenting with a new question format in order to  try and better capture the demographic makeup of our respondents.  <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Leave us your feedback</a> on GitHub. \n"
+    },
+    {
+      "key": "user_info.how_did_user_find_out_about_the_survey",
       "t": "How did you find out about this survey?"
     },
     {

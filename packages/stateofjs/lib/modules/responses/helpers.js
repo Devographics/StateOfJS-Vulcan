@@ -94,6 +94,7 @@ export const templates = {
     allowmultiple: false,
     allowother,
     input: 'radiogroup',
+    type: Number,
     randomize: false,
     options: [
       { id: 0 },
@@ -163,6 +164,14 @@ export const getQuestionObject = (questionOrId, section, number) => {
   if (questionTemplate) {
     questionObject = { ...questionObject, ...questionTemplate(questionObject) };
   }
+
+  // if type is specified, use it
+  if (questionObject.fieldType) {
+    if (questionObject.fieldType === 'Number') {
+      questionObject.type = Number;
+    }
+  }
+
   return questionObject;
 };
 

@@ -24,13 +24,14 @@ const SurveyAction = ({ survey, currentUser }) => {
   const history = useHistory();
   const [errors, setErrors] = useState();
 
-  const { slug, status } = survey;
+  const { slug, status, namespace } = survey;
   const currentSurveyResponse = currentUser && currentUser.responses.find((r) => r.surveySlug === slug);
 
   // prefilled data
   let data = {
     surveySlug: slug,
-    [`${slug}__user_info__email`]: currentUser && currentUser.email,
+    namespace,
+    email: currentUser && currentUser.email,
   };
 
   if (typeof window !== 'undefined') {
@@ -38,12 +39,12 @@ const SurveyAction = ({ survey, currentUser }) => {
     const info = browser.parse().parsedResult;
     data = {
       ...data,
-      device: info.platform.type,
-      browser: info.browser.name,
-      version: info.browser.version,
-      os: info.os.name,
-      referrer: document.referrer,
-      source: window.source,
+      common__user_info__device: info.platform.type,
+      common__user_info__browser: info.browser.name,
+      common__user_info__version: info.browser.version,
+      common__user_info__os: info.os.name,
+      common__user_info__referrer: document.referrer,
+      common__user_info__source: window.source,
     };
   }
 

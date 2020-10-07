@@ -272,7 +272,7 @@ translations:
   - key: options.company_size.range_more_than_1000
     t: More than 1000 employees
 
-  # company dize (short versions)
+  # company size (short versions)
   - key: options.company_size.range_1.short
     t: 1
   - key: options.company_size.range_1_5.short
@@ -402,6 +402,19 @@ translations:
   - key: options.gender.prefer_not_to_say
     t: Prefer not to say
 
+  # Skin Tone
+
+  - key: options.skin_tone.0
+    t: 🧑🏻‍🦲
+  - key: options.skin_tone.1
+    t: 🧑🏼‍🦲
+  - key: options.skin_tone.2
+    t: 🧑🏽‍🦲
+  - key: options.skin_tone.3
+    t: 🧑🏾‍🦲
+  - key: options.skin_tone.4
+    t: 🧑🏿‍🦲
+
   ###########################################################################
   # Tools
   ###########################################################################
@@ -469,8 +482,23 @@ translations:
   - key: user_info.gender
     t: Gender
 
+
+  # skin tone
+  - key: user_info.skin_tone
+    t: Skin Tone
+  - key: user_info.skin_tone
+    t: Skin Tone
+  - key: user_info.skin_tone.description
+    t: >
+        Which emoji do you feel represents you best? <br/><br/>
+
+        Note: We are experimenting with a new question format in order to 
+        try and better capture the demographic makeup of our respondents. 
+        <a href="https://github.com/StateOfJS/StateOfCSS-2020/issues/5" target="_blank">Leave us your feedback</a>
+        on GitHub. 
+
   # other info
-  - key: user_info.how_did_you_find_out
+  - key: user_info.how_did_user_find_out_about_the_survey
     t: How did you find out about this survey?
   - key: user_info.email
     t: Your Email

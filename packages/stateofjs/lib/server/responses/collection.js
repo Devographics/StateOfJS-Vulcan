@@ -1,11 +1,12 @@
-import { extendCollection } from "meteor/vulcan:core";
-import { Responses } from "../../modules/responses/index.js";
-import { updateElasticSearchOnCreate, updateElasticSearchOnUpdate } from '../elasticsearch/index.js';
+import { extendCollection } from 'meteor/vulcan:core';
+import { Responses } from '../../modules/responses/index.js';
+// import { updateElasticSearchOnCreate, updateElasticSearchOnUpdate } from '../elasticsearch/index.js';
 import { apiSchema } from './apischema';
+import { normalizeResponse } from '../normalization/normalize';
 
 function duplicateCheck(validationErrors, { document, currentUser }) {
   const existingResponse = Responses.findOne({
-    surveyId: document.surveyId,
+    surveySlug: document.surveySlug,
     userId: currentUser._id
   });
   if (existingResponse) {
@@ -25,10 +26,10 @@ extendCollection(Responses, {
   callbacks: {
     create: {
       validate: [duplicateCheck],
-      async: [updateElasticSearchOnCreate]
+      async: [/* updateElasticSearchOnCreate */]
     },
     update: {
-      async: [updateElasticSearchOnUpdate]
+      async: [/* updateElasticSearchOnUpdate, */ normalizeResponse]
     }
   }
 });

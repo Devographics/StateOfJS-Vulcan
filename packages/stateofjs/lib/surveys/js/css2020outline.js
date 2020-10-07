@@ -10,7 +10,7 @@ export default {
   "shareUrl": "https://stateofcss.com",
   "name": "State of CSS",
   "year": 2020,
-  "status": 1,
+  "status": 2,
   "imageUrl": "stateofcss2020.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
@@ -331,7 +331,8 @@ export default {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "pre_post_processors",
@@ -363,7 +364,8 @@ export default {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "css_frameworks",
@@ -388,7 +390,8 @@ export default {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "css_methodologies",
@@ -414,11 +417,13 @@ export default {
         "Styletron",
         "Fela",
         "Linaria",
+        "Astroturf",
         {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "other_tools"
+          "sectionSlug": "sections_other_tools",
+          "suffix": "others"
         },
         {
           "id": "css_in_js",
@@ -432,6 +437,21 @@ export default {
       "id": "other_tools",
       "slug": "other_tools",
       "questions": [
+        {
+          "id": "utilities",
+          "template": "multiple",
+          "allowmultiple": true,
+          "options": [
+            "Stylelint",
+            "PurgeCSS",
+            "PurifyCSS"
+          ]
+        },
+        {
+          "id": "utilities",
+          "suffix": "others",
+          "template": "text"
+        },
         {
           "id": "text_editors",
           "template": "multiple",
@@ -527,6 +547,7 @@ export default {
         {
           "id": "css_for_print",
           "template": "single",
+          "fieldType": "Number",
           "options": [
             {
               "id": 0
@@ -545,6 +566,7 @@ export default {
         {
           "id": "css_for_email",
           "template": "single",
+          "fieldType": "Number",
           "options": [
             {
               "id": 0
@@ -575,9 +597,10 @@ export default {
             "CoDrops",
             "SitePoint",
             "David Walsh",
-            "Front-End Front",
-            "CSS Weekly",
-            "Dev.to"
+            "Dev.to",
+            "Sidebar",
+            "HeyDesigner",
+            "CSS Weekly"
           ]
         },
         {
@@ -785,7 +808,7 @@ export default {
           "template": "proficiency"
         },
         {
-          "id": "how_did_you_find_out",
+          "id": "how_did_user_find_out_about_the_survey",
           "template": "text"
         },
         {
@@ -804,6 +827,28 @@ export default {
             },
             {
               "id": "prefer_not_to_say"
+            }
+          ]
+        },
+        {
+          "id": "skin_tone",
+          "template": "single",
+          "fieldType": "Number",
+          "options": [
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            },
+            {
+              "id": 4
             }
           ]
         },

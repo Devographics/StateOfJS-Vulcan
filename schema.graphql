@@ -813,13 +813,15 @@ type Response {
   year: Float 
   completion: Float 
   isSynced: Boolean 
-  device: String 
-  browser: String 
-  version: String 
-  os: String 
-  referrer: String 
-  source: String 
+  email: String 
+  namespace: String 
   surveySlug: String 
+  common__user_info__device: String 
+  common__user_info__browser: String 
+  common__user_info__version: String 
+  common__user_info__os: String 
+  common__user_info__referrer: String 
+  common__user_info__source: String 
   css2020__features__grid__experience: String 
   css2020__features__subgrid__experience: String 
   css2020__features__regions__experience: String 
@@ -869,7 +871,7 @@ type Response {
   css2020__tools__less__experience: String 
   css2020__tools__postcss__experience: String 
   css2020__tools__stylus__experience: String 
-  css2020__other_tools__pre_post_processors: String 
+  css2020__sections_other_tools__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materializecss__experience: String 
@@ -884,7 +886,7 @@ type Response {
   css2020__tools__purecss__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
-  css2020__other_tools__css_frameworks: String 
+  css2020__sections_other_tools__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomiccss__experience: String 
@@ -892,7 +894,7 @@ type Response {
   css2020__tools__smacss__experience: String 
   css2020__tools__itcss__experience: String 
   css2020__tools__cubecss__experience: String 
-  css2020__other_tools__css_methodologies: String 
+  css2020__sections_other_tools__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styledcomponents__experience: String 
   css2020__tools__jss__experience: String 
@@ -905,16 +907,19 @@ type Response {
   css2020__tools__styletron__experience: String 
   css2020__tools__fela__experience: String 
   css2020__tools__linaria__experience: String 
-  css2020__other_tools__css_in_js: String 
+  css2020__tools__astroturf__experience: String 
+  css2020__sections_other_tools__css_in_js__others: String 
   css2020__happiness__css_in_js: Float 
+  css2020__other_tools__utilities__choices: [String] 
+  css2020__other_tools__utilities__others: String 
   css2020__other_tools__text_editors__choices: [String] 
   css2020__other_tools__text_editors__others: String 
   css2020__other_tools__browsers__choices: [String] 
   css2020__other_tools__browsers__others: String 
   css2020__environments__browsers__choices: [String] 
   css2020__environments__form_factors__choices: [String] 
-  css2020__environments__css_for_print: String 
-  css2020__environments__css_for_email: String 
+  css2020__environments__css_for_print: Float 
+  css2020__environments__css_for_email: Float 
   css2020__resources__blogs_news_magazines__choices: [String] 
   css2020__resources__blogs_news_magazines__others: String 
   css2020__resources__sites_courses__choices: [String] 
@@ -932,11 +937,12 @@ type Response {
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
-  css2020__user_info__css_proficiency: String 
-  css2020__user_info__javascript_proficiency: String 
-  css2020__user_info__backend_proficiency: String 
-  css2020__user_info__how_did_you_find_out: String 
+  css2020__user_info__css_proficiency: Float 
+  css2020__user_info__javascript_proficiency: Float 
+  css2020__user_info__backend_proficiency: Float 
+  css2020__user_info__how_did_user_find_out_about_the_survey: String 
   css2020__user_info__gender: String 
+  css2020__user_info__skin_tone: Float 
   css2020__user_info__country: String 
   js2019__features__destructuring__experience: String 
   js2019__features__spread_operator__experience: String 
@@ -971,7 +977,7 @@ type Response {
   js2019__tools__elm__experience: String 
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
-  js2019__sections_other_tools__javascript_flavors: String 
+  js2019__sections_other_tools__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
@@ -979,14 +985,14 @@ type Response {
   js2019__tools__preact__experience: String 
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
-  js2019__sections_other_tools__front_end_frameworks: String 
+  js2019__sections_other_tools__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
   js2019__tools__mobx__experience: String 
   js2019__tools__relay__experience: String 
-  js2019__sections_other_tools__datalayer: String 
+  js2019__sections_other_tools__datalayer__others: String 
   js2019__happiness__datalayer: Float 
   js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
@@ -1004,7 +1010,7 @@ type Response {
   js2019__tools__ava__experience: String 
   js2019__tools__jasmine__experience: String 
   js2019__tools__puppeteer__experience: String 
-  js2019__sections_other_tools__testing: String 
+  js2019__sections_other_tools__testing__others: String 
   js2019__happiness__testing: Float 
   js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
@@ -1013,7 +1019,7 @@ type Response {
   js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
   js2019__tools__expo__experience: String 
-  js2019__sections_other_tools__mobile_desktop: String 
+  js2019__sections_other_tools__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
   js2019__other_tools__utilities__others: String 
@@ -1040,12 +1046,12 @@ type Response {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
-  js2019__user_info__javascript_proficiency: String 
-  js2019__user_info__css_proficiency: String 
-  js2019__user_info__backend_proficiency: String 
+  js2019__user_info__javascript_proficiency: Float 
+  js2019__user_info__css_proficiency: Float 
+  js2019__user_info__backend_proficiency: Float 
   js2019__user_info__company_size: String 
   js2019__user_info__yearly_salary: String 
-  js2019__user_info__how_did_you_find_out: String 
+  js2019__user_info__how_did_user_find_out_about_the_survey: String 
   js2019__user_info__gender: String 
   js2019__user_info__country: String 
   pagePath: String 
@@ -1125,13 +1131,15 @@ input CreateResponseInput {
 
 input CreateResponseDataInput {
   year: Float 
-  device: String 
-  browser: String 
-  version: String 
-  os: String 
-  referrer: String 
-  source: String 
+  email: String 
+  namespace: String 
   surveySlug: String 
+  common__user_info__device: String 
+  common__user_info__browser: String 
+  common__user_info__version: String 
+  common__user_info__os: String 
+  common__user_info__referrer: String 
+  common__user_info__source: String 
   css2020__features__grid__experience: String 
   css2020__features__subgrid__experience: String 
   css2020__features__regions__experience: String 
@@ -1181,7 +1189,7 @@ input CreateResponseDataInput {
   css2020__tools__less__experience: String 
   css2020__tools__postcss__experience: String 
   css2020__tools__stylus__experience: String 
-  css2020__other_tools__pre_post_processors: String 
+  css2020__sections_other_tools__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materializecss__experience: String 
@@ -1196,7 +1204,7 @@ input CreateResponseDataInput {
   css2020__tools__purecss__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
-  css2020__other_tools__css_frameworks: String 
+  css2020__sections_other_tools__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomiccss__experience: String 
@@ -1204,7 +1212,7 @@ input CreateResponseDataInput {
   css2020__tools__smacss__experience: String 
   css2020__tools__itcss__experience: String 
   css2020__tools__cubecss__experience: String 
-  css2020__other_tools__css_methodologies: String 
+  css2020__sections_other_tools__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styledcomponents__experience: String 
   css2020__tools__jss__experience: String 
@@ -1217,16 +1225,19 @@ input CreateResponseDataInput {
   css2020__tools__styletron__experience: String 
   css2020__tools__fela__experience: String 
   css2020__tools__linaria__experience: String 
-  css2020__other_tools__css_in_js: String 
+  css2020__tools__astroturf__experience: String 
+  css2020__sections_other_tools__css_in_js__others: String 
   css2020__happiness__css_in_js: Float 
+  css2020__other_tools__utilities__choices: [String] 
+  css2020__other_tools__utilities__others: String 
   css2020__other_tools__text_editors__choices: [String] 
   css2020__other_tools__text_editors__others: String 
   css2020__other_tools__browsers__choices: [String] 
   css2020__other_tools__browsers__others: String 
   css2020__environments__browsers__choices: [String] 
   css2020__environments__form_factors__choices: [String] 
-  css2020__environments__css_for_print: String 
-  css2020__environments__css_for_email: String 
+  css2020__environments__css_for_print: Float 
+  css2020__environments__css_for_email: Float 
   css2020__resources__blogs_news_magazines__choices: [String] 
   css2020__resources__blogs_news_magazines__others: String 
   css2020__resources__sites_courses__choices: [String] 
@@ -1244,11 +1255,12 @@ input CreateResponseDataInput {
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
-  css2020__user_info__css_proficiency: String 
-  css2020__user_info__javascript_proficiency: String 
-  css2020__user_info__backend_proficiency: String 
-  css2020__user_info__how_did_you_find_out: String 
+  css2020__user_info__css_proficiency: Float 
+  css2020__user_info__javascript_proficiency: Float 
+  css2020__user_info__backend_proficiency: Float 
+  css2020__user_info__how_did_user_find_out_about_the_survey: String 
   css2020__user_info__gender: String 
+  css2020__user_info__skin_tone: Float 
   css2020__user_info__country: String 
   js2019__features__destructuring__experience: String 
   js2019__features__spread_operator__experience: String 
@@ -1283,7 +1295,7 @@ input CreateResponseDataInput {
   js2019__tools__elm__experience: String 
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
-  js2019__sections_other_tools__javascript_flavors: String 
+  js2019__sections_other_tools__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
@@ -1291,14 +1303,14 @@ input CreateResponseDataInput {
   js2019__tools__preact__experience: String 
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
-  js2019__sections_other_tools__front_end_frameworks: String 
+  js2019__sections_other_tools__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
   js2019__tools__mobx__experience: String 
   js2019__tools__relay__experience: String 
-  js2019__sections_other_tools__datalayer: String 
+  js2019__sections_other_tools__datalayer__others: String 
   js2019__happiness__datalayer: Float 
   js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
@@ -1316,7 +1328,7 @@ input CreateResponseDataInput {
   js2019__tools__ava__experience: String 
   js2019__tools__jasmine__experience: String 
   js2019__tools__puppeteer__experience: String 
-  js2019__sections_other_tools__testing: String 
+  js2019__sections_other_tools__testing__others: String 
   js2019__happiness__testing: Float 
   js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
@@ -1325,7 +1337,7 @@ input CreateResponseDataInput {
   js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
   js2019__tools__expo__experience: String 
-  js2019__sections_other_tools__mobile_desktop: String 
+  js2019__sections_other_tools__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
   js2019__other_tools__utilities__others: String 
@@ -1352,12 +1364,12 @@ input CreateResponseDataInput {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
-  js2019__user_info__javascript_proficiency: String 
-  js2019__user_info__css_proficiency: String 
-  js2019__user_info__backend_proficiency: String 
+  js2019__user_info__javascript_proficiency: Float 
+  js2019__user_info__css_proficiency: Float 
+  js2019__user_info__backend_proficiency: Float 
   js2019__user_info__company_size: String 
   js2019__user_info__yearly_salary: String 
-  js2019__user_info__how_did_you_find_out: String 
+  js2019__user_info__how_did_user_find_out_about_the_survey: String 
   js2019__user_info__gender: String 
   js2019__user_info__country: String 
 }
@@ -1380,13 +1392,15 @@ input UpsertResponseInput{
 
 input UpdateResponseDataInput {
   year: Float 
-  device: String 
-  browser: String 
-  version: String 
-  os: String 
-  referrer: String 
-  source: String 
+  email: String 
+  namespace: String 
   surveySlug: String 
+  common__user_info__device: String 
+  common__user_info__browser: String 
+  common__user_info__version: String 
+  common__user_info__os: String 
+  common__user_info__referrer: String 
+  common__user_info__source: String 
   css2020__features__grid__experience: String 
   css2020__features__subgrid__experience: String 
   css2020__features__regions__experience: String 
@@ -1436,7 +1450,7 @@ input UpdateResponseDataInput {
   css2020__tools__less__experience: String 
   css2020__tools__postcss__experience: String 
   css2020__tools__stylus__experience: String 
-  css2020__other_tools__pre_post_processors: String 
+  css2020__sections_other_tools__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materializecss__experience: String 
@@ -1451,7 +1465,7 @@ input UpdateResponseDataInput {
   css2020__tools__purecss__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
-  css2020__other_tools__css_frameworks: String 
+  css2020__sections_other_tools__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomiccss__experience: String 
@@ -1459,7 +1473,7 @@ input UpdateResponseDataInput {
   css2020__tools__smacss__experience: String 
   css2020__tools__itcss__experience: String 
   css2020__tools__cubecss__experience: String 
-  css2020__other_tools__css_methodologies: String 
+  css2020__sections_other_tools__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styledcomponents__experience: String 
   css2020__tools__jss__experience: String 
@@ -1472,16 +1486,19 @@ input UpdateResponseDataInput {
   css2020__tools__styletron__experience: String 
   css2020__tools__fela__experience: String 
   css2020__tools__linaria__experience: String 
-  css2020__other_tools__css_in_js: String 
+  css2020__tools__astroturf__experience: String 
+  css2020__sections_other_tools__css_in_js__others: String 
   css2020__happiness__css_in_js: Float 
+  css2020__other_tools__utilities__choices: [String] 
+  css2020__other_tools__utilities__others: String 
   css2020__other_tools__text_editors__choices: [String] 
   css2020__other_tools__text_editors__others: String 
   css2020__other_tools__browsers__choices: [String] 
   css2020__other_tools__browsers__others: String 
   css2020__environments__browsers__choices: [String] 
   css2020__environments__form_factors__choices: [String] 
-  css2020__environments__css_for_print: String 
-  css2020__environments__css_for_email: String 
+  css2020__environments__css_for_print: Float 
+  css2020__environments__css_for_email: Float 
   css2020__resources__blogs_news_magazines__choices: [String] 
   css2020__resources__blogs_news_magazines__others: String 
   css2020__resources__sites_courses__choices: [String] 
@@ -1499,11 +1516,12 @@ input UpdateResponseDataInput {
   css2020__user_info__company_size: String 
   css2020__user_info__yearly_salary: String 
   css2020__user_info__job_title: String 
-  css2020__user_info__css_proficiency: String 
-  css2020__user_info__javascript_proficiency: String 
-  css2020__user_info__backend_proficiency: String 
-  css2020__user_info__how_did_you_find_out: String 
+  css2020__user_info__css_proficiency: Float 
+  css2020__user_info__javascript_proficiency: Float 
+  css2020__user_info__backend_proficiency: Float 
+  css2020__user_info__how_did_user_find_out_about_the_survey: String 
   css2020__user_info__gender: String 
+  css2020__user_info__skin_tone: Float 
   css2020__user_info__country: String 
   js2019__features__destructuring__experience: String 
   js2019__features__spread_operator__experience: String 
@@ -1538,7 +1556,7 @@ input UpdateResponseDataInput {
   js2019__tools__elm__experience: String 
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
-  js2019__sections_other_tools__javascript_flavors: String 
+  js2019__sections_other_tools__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
@@ -1546,14 +1564,14 @@ input UpdateResponseDataInput {
   js2019__tools__preact__experience: String 
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
-  js2019__sections_other_tools__front_end_frameworks: String 
+  js2019__sections_other_tools__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
   js2019__tools__mobx__experience: String 
   js2019__tools__relay__experience: String 
-  js2019__sections_other_tools__datalayer: String 
+  js2019__sections_other_tools__datalayer__others: String 
   js2019__happiness__datalayer: Float 
   js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
@@ -1571,7 +1589,7 @@ input UpdateResponseDataInput {
   js2019__tools__ava__experience: String 
   js2019__tools__jasmine__experience: String 
   js2019__tools__puppeteer__experience: String 
-  js2019__sections_other_tools__testing: String 
+  js2019__sections_other_tools__testing__others: String 
   js2019__happiness__testing: Float 
   js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
@@ -1580,7 +1598,7 @@ input UpdateResponseDataInput {
   js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
   js2019__tools__expo__experience: String 
-  js2019__sections_other_tools__mobile_desktop: String 
+  js2019__sections_other_tools__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
   js2019__other_tools__utilities__others: String 
@@ -1607,12 +1625,12 @@ input UpdateResponseDataInput {
   js2019__opinions__missing_from_js: String 
   js2019__user_info__years_of_experience: String 
   js2019__user_info__job_title: String 
-  js2019__user_info__javascript_proficiency: String 
-  js2019__user_info__css_proficiency: String 
-  js2019__user_info__backend_proficiency: String 
+  js2019__user_info__javascript_proficiency: Float 
+  js2019__user_info__css_proficiency: Float 
+  js2019__user_info__backend_proficiency: Float 
   js2019__user_info__company_size: String 
   js2019__user_info__yearly_salary: String 
-  js2019__user_info__how_did_you_find_out: String 
+  js2019__user_info__how_did_user_find_out_about_the_survey: String 
   js2019__user_info__gender: String 
   js2019__user_info__country: String 
 }
@@ -1630,13 +1648,15 @@ input ResponseFilterInput {
   year: Float_Selector
   completion: Float_Selector
   isSynced: Boolean_Selector
-  device: String_Selector
-  browser: String_Selector
-  version: String_Selector
-  os: String_Selector
-  referrer: String_Selector
-  source: String_Selector
+  email: String_Selector
+  namespace: String_Selector
   surveySlug: String_Selector
+  common__user_info__device: String_Selector
+  common__user_info__browser: String_Selector
+  common__user_info__version: String_Selector
+  common__user_info__os: String_Selector
+  common__user_info__referrer: String_Selector
+  common__user_info__source: String_Selector
   css2020__features__grid__experience: String_Selector
   css2020__features__subgrid__experience: String_Selector
   css2020__features__regions__experience: String_Selector
@@ -1686,7 +1706,7 @@ input ResponseFilterInput {
   css2020__tools__less__experience: String_Selector
   css2020__tools__postcss__experience: String_Selector
   css2020__tools__stylus__experience: String_Selector
-  css2020__other_tools__pre_post_processors: String_Selector
+  css2020__sections_other_tools__pre_post_processors__others: String_Selector
   css2020__happiness__pre_post_processors: Float_Selector
   css2020__tools__bootstrap__experience: String_Selector
   css2020__tools__materializecss__experience: String_Selector
@@ -1701,7 +1721,7 @@ input ResponseFilterInput {
   css2020__tools__purecss__experience: String_Selector
   css2020__tools__skeleton__experience: String_Selector
   css2020__tools__spectre__experience: String_Selector
-  css2020__other_tools__css_frameworks: String_Selector
+  css2020__sections_other_tools__css_frameworks__others: String_Selector
   css2020__happiness__css_frameworks: Float_Selector
   css2020__tools__bem__experience: String_Selector
   css2020__tools__atomiccss__experience: String_Selector
@@ -1709,7 +1729,7 @@ input ResponseFilterInput {
   css2020__tools__smacss__experience: String_Selector
   css2020__tools__itcss__experience: String_Selector
   css2020__tools__cubecss__experience: String_Selector
-  css2020__other_tools__css_methodologies: String_Selector
+  css2020__sections_other_tools__css_methodologies__others: String_Selector
   css2020__happiness__css_methodologies: Float_Selector
   css2020__tools__styledcomponents__experience: String_Selector
   css2020__tools__jss__experience: String_Selector
@@ -1722,16 +1742,19 @@ input ResponseFilterInput {
   css2020__tools__styletron__experience: String_Selector
   css2020__tools__fela__experience: String_Selector
   css2020__tools__linaria__experience: String_Selector
-  css2020__other_tools__css_in_js: String_Selector
+  css2020__tools__astroturf__experience: String_Selector
+  css2020__sections_other_tools__css_in_js__others: String_Selector
   css2020__happiness__css_in_js: Float_Selector
+  css2020__other_tools__utilities__choices: String_Array_Selector
+  css2020__other_tools__utilities__others: String_Selector
   css2020__other_tools__text_editors__choices: String_Array_Selector
   css2020__other_tools__text_editors__others: String_Selector
   css2020__other_tools__browsers__choices: String_Array_Selector
   css2020__other_tools__browsers__others: String_Selector
   css2020__environments__browsers__choices: String_Array_Selector
   css2020__environments__form_factors__choices: String_Array_Selector
-  css2020__environments__css_for_print: String_Selector
-  css2020__environments__css_for_email: String_Selector
+  css2020__environments__css_for_print: Float_Selector
+  css2020__environments__css_for_email: Float_Selector
   css2020__resources__blogs_news_magazines__choices: String_Array_Selector
   css2020__resources__blogs_news_magazines__others: String_Selector
   css2020__resources__sites_courses__choices: String_Array_Selector
@@ -1749,11 +1772,12 @@ input ResponseFilterInput {
   css2020__user_info__company_size: String_Selector
   css2020__user_info__yearly_salary: String_Selector
   css2020__user_info__job_title: String_Selector
-  css2020__user_info__css_proficiency: String_Selector
-  css2020__user_info__javascript_proficiency: String_Selector
-  css2020__user_info__backend_proficiency: String_Selector
-  css2020__user_info__how_did_you_find_out: String_Selector
+  css2020__user_info__css_proficiency: Float_Selector
+  css2020__user_info__javascript_proficiency: Float_Selector
+  css2020__user_info__backend_proficiency: Float_Selector
+  css2020__user_info__how_did_user_find_out_about_the_survey: String_Selector
   css2020__user_info__gender: String_Selector
+  css2020__user_info__skin_tone: Float_Selector
   css2020__user_info__country: String_Selector
   js2019__features__destructuring__experience: String_Selector
   js2019__features__spread_operator__experience: String_Selector
@@ -1788,7 +1812,7 @@ input ResponseFilterInput {
   js2019__tools__elm__experience: String_Selector
   js2019__tools__clojurescript__experience: String_Selector
   js2019__tools__purescript__experience: String_Selector
-  js2019__sections_other_tools__javascript_flavors: String_Selector
+  js2019__sections_other_tools__javascript_flavors__others: String_Selector
   js2019__happiness__javascript_flavors: Float_Selector
   js2019__tools__react__experience: String_Selector
   js2019__tools__vue__experience: String_Selector
@@ -1796,14 +1820,14 @@ input ResponseFilterInput {
   js2019__tools__preact__experience: String_Selector
   js2019__tools__ember__experience: String_Selector
   js2019__tools__svelte__experience: String_Selector
-  js2019__sections_other_tools__front_end_frameworks: String_Selector
+  js2019__sections_other_tools__front_end_frameworks__others: String_Selector
   js2019__happiness__front_end_frameworks: Float_Selector
   js2019__tools__redux__experience: String_Selector
   js2019__tools__apollo__experience: String_Selector
   js2019__tools__graphql__experience: String_Selector
   js2019__tools__mobx__experience: String_Selector
   js2019__tools__relay__experience: String_Selector
-  js2019__sections_other_tools__datalayer: String_Selector
+  js2019__sections_other_tools__datalayer__others: String_Selector
   js2019__happiness__datalayer: Float_Selector
   js2019__tools__express__experience: String_Selector
   js2019__tools__nextjs__experience: String_Selector
@@ -1821,7 +1845,7 @@ input ResponseFilterInput {
   js2019__tools__ava__experience: String_Selector
   js2019__tools__jasmine__experience: String_Selector
   js2019__tools__puppeteer__experience: String_Selector
-  js2019__sections_other_tools__testing: String_Selector
+  js2019__sections_other_tools__testing__others: String_Selector
   js2019__happiness__testing: Float_Selector
   js2019__tools__electron__experience: String_Selector
   js2019__tools__react_native__experience: String_Selector
@@ -1830,7 +1854,7 @@ input ResponseFilterInput {
   js2019__tools__ionic__experience: String_Selector
   js2019__tools__nwjs__experience: String_Selector
   js2019__tools__expo__experience: String_Selector
-  js2019__sections_other_tools__mobile_desktop: String_Selector
+  js2019__sections_other_tools__mobile_desktop__others: String_Selector
   js2019__happiness__mobile_desktop: Float_Selector
   js2019__other_tools__utilities__choices: String_Array_Selector
   js2019__other_tools__utilities__others: String_Selector
@@ -1857,12 +1881,12 @@ input ResponseFilterInput {
   js2019__opinions__missing_from_js: String_Selector
   js2019__user_info__years_of_experience: String_Selector
   js2019__user_info__job_title: String_Selector
-  js2019__user_info__javascript_proficiency: String_Selector
-  js2019__user_info__css_proficiency: String_Selector
-  js2019__user_info__backend_proficiency: String_Selector
+  js2019__user_info__javascript_proficiency: Float_Selector
+  js2019__user_info__css_proficiency: Float_Selector
+  js2019__user_info__backend_proficiency: Float_Selector
   js2019__user_info__company_size: String_Selector
   js2019__user_info__yearly_salary: String_Selector
-  js2019__user_info__how_did_you_find_out: String_Selector
+  js2019__user_info__how_did_user_find_out_about_the_survey: String_Selector
   js2019__user_info__gender: String_Selector
   js2019__user_info__country: String_Selector
 }
@@ -1875,13 +1899,15 @@ input ResponseSortInput {
   year: SortOptions
   completion: SortOptions
   isSynced: SortOptions
-  device: SortOptions
-  browser: SortOptions
-  version: SortOptions
-  os: SortOptions
-  referrer: SortOptions
-  source: SortOptions
+  email: SortOptions
+  namespace: SortOptions
   surveySlug: SortOptions
+  common__user_info__device: SortOptions
+  common__user_info__browser: SortOptions
+  common__user_info__version: SortOptions
+  common__user_info__os: SortOptions
+  common__user_info__referrer: SortOptions
+  common__user_info__source: SortOptions
   css2020__features__grid__experience: SortOptions
   css2020__features__subgrid__experience: SortOptions
   css2020__features__regions__experience: SortOptions
@@ -1931,7 +1957,7 @@ input ResponseSortInput {
   css2020__tools__less__experience: SortOptions
   css2020__tools__postcss__experience: SortOptions
   css2020__tools__stylus__experience: SortOptions
-  css2020__other_tools__pre_post_processors: SortOptions
+  css2020__sections_other_tools__pre_post_processors__others: SortOptions
   css2020__happiness__pre_post_processors: SortOptions
   css2020__tools__bootstrap__experience: SortOptions
   css2020__tools__materializecss__experience: SortOptions
@@ -1946,7 +1972,7 @@ input ResponseSortInput {
   css2020__tools__purecss__experience: SortOptions
   css2020__tools__skeleton__experience: SortOptions
   css2020__tools__spectre__experience: SortOptions
-  css2020__other_tools__css_frameworks: SortOptions
+  css2020__sections_other_tools__css_frameworks__others: SortOptions
   css2020__happiness__css_frameworks: SortOptions
   css2020__tools__bem__experience: SortOptions
   css2020__tools__atomiccss__experience: SortOptions
@@ -1954,7 +1980,7 @@ input ResponseSortInput {
   css2020__tools__smacss__experience: SortOptions
   css2020__tools__itcss__experience: SortOptions
   css2020__tools__cubecss__experience: SortOptions
-  css2020__other_tools__css_methodologies: SortOptions
+  css2020__sections_other_tools__css_methodologies__others: SortOptions
   css2020__happiness__css_methodologies: SortOptions
   css2020__tools__styledcomponents__experience: SortOptions
   css2020__tools__jss__experience: SortOptions
@@ -1967,8 +1993,11 @@ input ResponseSortInput {
   css2020__tools__styletron__experience: SortOptions
   css2020__tools__fela__experience: SortOptions
   css2020__tools__linaria__experience: SortOptions
-  css2020__other_tools__css_in_js: SortOptions
+  css2020__tools__astroturf__experience: SortOptions
+  css2020__sections_other_tools__css_in_js__others: SortOptions
   css2020__happiness__css_in_js: SortOptions
+  css2020__other_tools__utilities__choices: SortOptions
+  css2020__other_tools__utilities__others: SortOptions
   css2020__other_tools__text_editors__choices: SortOptions
   css2020__other_tools__text_editors__others: SortOptions
   css2020__other_tools__browsers__choices: SortOptions
@@ -1997,8 +2026,9 @@ input ResponseSortInput {
   css2020__user_info__css_proficiency: SortOptions
   css2020__user_info__javascript_proficiency: SortOptions
   css2020__user_info__backend_proficiency: SortOptions
-  css2020__user_info__how_did_you_find_out: SortOptions
+  css2020__user_info__how_did_user_find_out_about_the_survey: SortOptions
   css2020__user_info__gender: SortOptions
+  css2020__user_info__skin_tone: SortOptions
   css2020__user_info__country: SortOptions
   js2019__features__destructuring__experience: SortOptions
   js2019__features__spread_operator__experience: SortOptions
@@ -2033,7 +2063,7 @@ input ResponseSortInput {
   js2019__tools__elm__experience: SortOptions
   js2019__tools__clojurescript__experience: SortOptions
   js2019__tools__purescript__experience: SortOptions
-  js2019__sections_other_tools__javascript_flavors: SortOptions
+  js2019__sections_other_tools__javascript_flavors__others: SortOptions
   js2019__happiness__javascript_flavors: SortOptions
   js2019__tools__react__experience: SortOptions
   js2019__tools__vue__experience: SortOptions
@@ -2041,14 +2071,14 @@ input ResponseSortInput {
   js2019__tools__preact__experience: SortOptions
   js2019__tools__ember__experience: SortOptions
   js2019__tools__svelte__experience: SortOptions
-  js2019__sections_other_tools__front_end_frameworks: SortOptions
+  js2019__sections_other_tools__front_end_frameworks__others: SortOptions
   js2019__happiness__front_end_frameworks: SortOptions
   js2019__tools__redux__experience: SortOptions
   js2019__tools__apollo__experience: SortOptions
   js2019__tools__graphql__experience: SortOptions
   js2019__tools__mobx__experience: SortOptions
   js2019__tools__relay__experience: SortOptions
-  js2019__sections_other_tools__datalayer: SortOptions
+  js2019__sections_other_tools__datalayer__others: SortOptions
   js2019__happiness__datalayer: SortOptions
   js2019__tools__express__experience: SortOptions
   js2019__tools__nextjs__experience: SortOptions
@@ -2066,7 +2096,7 @@ input ResponseSortInput {
   js2019__tools__ava__experience: SortOptions
   js2019__tools__jasmine__experience: SortOptions
   js2019__tools__puppeteer__experience: SortOptions
-  js2019__sections_other_tools__testing: SortOptions
+  js2019__sections_other_tools__testing__others: SortOptions
   js2019__happiness__testing: SortOptions
   js2019__tools__electron__experience: SortOptions
   js2019__tools__react_native__experience: SortOptions
@@ -2075,7 +2105,7 @@ input ResponseSortInput {
   js2019__tools__ionic__experience: SortOptions
   js2019__tools__nwjs__experience: SortOptions
   js2019__tools__expo__experience: SortOptions
-  js2019__sections_other_tools__mobile_desktop: SortOptions
+  js2019__sections_other_tools__mobile_desktop__others: SortOptions
   js2019__happiness__mobile_desktop: SortOptions
   js2019__other_tools__utilities__choices: SortOptions
   js2019__other_tools__utilities__others: SortOptions
@@ -2107,7 +2137,7 @@ input ResponseSortInput {
   js2019__user_info__backend_proficiency: SortOptions
   js2019__user_info__company_size: SortOptions
   js2019__user_info__yearly_salary: SortOptions
-  js2019__user_info__how_did_you_find_out: SortOptions
+  js2019__user_info__how_did_user_find_out_about_the_survey: SortOptions
   js2019__user_info__gender: SortOptions
   js2019__user_info__country: SortOptions
 }
@@ -2119,6 +2149,101 @@ input ResponseSelectorInput {
 }
 
 input ResponseSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
+# Type for NormalizedResponses
+type NormalizedResponse {
+  _id: String 
+}
+
+
+input DeleteNormalizedResponseInput{
+  filter: NormalizedResponseFilterInput
+  id: String
+}
+
+input SingleNormalizedResponseInput {
+  # filtering
+  filter: NormalizedResponseFilterInput
+  sort: NormalizedResponseSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  # Deprecated (use 'filter/id' fields instead).
+  selector: NormalizedResponseSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+}
+
+input MultiNormalizedResponseInput {
+
+  # filtering
+  filter: NormalizedResponseFilterInput
+  sort: NormalizedResponseSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  # Deprecated (use 'filter/id' fields instead).
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+
+}
+
+type SingleNormalizedResponseOutput{
+  result: NormalizedResponse
+}
+
+type  MultiNormalizedResponseOutput{
+  results: [NormalizedResponse]
+  totalCount: Int
+}
+
+type NormalizedResponseMutationOutput{
+  data: NormalizedResponse
+}
+
+input NormalizedResponseFilterInput {
+  _and: [NormalizedResponseFilterInput]
+  _not: NormalizedResponseFilterInput
+  _or: [NormalizedResponseFilterInput]
+
+
+  _id: String_Selector
+}
+
+input NormalizedResponseSortInput {
+  _id: SortOptions
+}
+
+input NormalizedResponseSelectorInput {
+  _and: [NormalizedResponseSelectorInput]
+  _or: [NormalizedResponseSelectorInput]
+
+}
+
+input NormalizedResponseSelectorUniqueInput {
   _id: String
   documentId: String # OpenCRUD backwards compatibility
   slug: String
@@ -2158,6 +2283,12 @@ type Query {
   
   # A list of Response documents matching a set of query terms
   responses(input: MultiResponseInput):  MultiResponseOutput
+  
+  # A single NormalizedResponse document fetched by ID or slug
+  normalizedResponse(input: SingleNormalizedResponseInput!): SingleNormalizedResponseOutput
+  
+  # A list of NormalizedResponse documents matching a set of query terms
+  normalizedResponses(input: MultiNormalizedResponseInput):  MultiNormalizedResponseOutput
   
 }
   
@@ -2251,6 +2382,13 @@ type Mutation {
   # Deprecated (use 'input' field instead).
   selector: ResponseSelectorUniqueInput
 ) : ResponseMutationOutput
+
+  # Mutation for deleting a NormalizedResponse document
+  deleteNormalizedResponse(
+  input: DeleteNormalizedResponseInput,
+  # Deprecated (use 'input' field instead).
+  selector: NormalizedResponseSelectorUniqueInput
+) : NormalizedResponseMutationOutput
 
 }
 

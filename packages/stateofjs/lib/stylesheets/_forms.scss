@@ -49,7 +49,6 @@
   .form-check-label {
     flex: 1;
     padding: $spacing/1.5 0;
-    line-height: 1;
   }
   .form-item-contents {
     display: flex;
@@ -88,5 +87,18 @@
     margin-top: $spacing;
     text-align: center;
     font-size: $small-font;
+  }
+}
+
+.input-css2020__user_info__skin_tone {
+  .form-check {
+    margin-bottom: 5px;
+    label {
+      font-size: $largest-font;
+      background: $white;
+      flex: 0;
+      padding: 3px;
+      @include border-radius;
+    }
   }
 }
