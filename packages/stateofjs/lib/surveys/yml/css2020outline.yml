@@ -15,7 +15,7 @@ hashtag: StateOfCSS
 shareUrl: https://stateofcss.com
 name: 'State of CSS'
 year: 2020
-status: 2 # preview
+status: 1 # preview
 imageUrl: 'stateofcss2020.png'
 bgColor: '#232840'
 textColor: '#9ac6c9'
@@ -252,7 +252,8 @@ outline:
       - UIKit
       - Tachyons
       - Primer
-      - Tailwind
+      - id: tailwind
+        alias: Tailwind CSS
       - PureCSS
       - Skeleton
       - Spectre
@@ -274,7 +275,7 @@ outline:
     slug: tools
     questions:
       - BEM
-      - Atomic CSS
+      - id: atomiccss
       - OOCSS
       - SMACSS
       - IT CSS

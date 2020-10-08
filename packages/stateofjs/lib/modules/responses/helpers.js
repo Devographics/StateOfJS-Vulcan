@@ -221,13 +221,14 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     type,
     searchable = false,
     allowmultiple = false,
+    alias,
   } = questionObject;
 
   const intlId = generateIntlId(questionObject, section, survey);
 
   const questionSchema = {
     // label: title,
-    label: title,
+    label: alias || title,
     intlId,
     description,
     type,

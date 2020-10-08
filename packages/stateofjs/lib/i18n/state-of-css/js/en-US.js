@@ -337,6 +337,10 @@ export default {
       "t": "Form Controls"
     },
     {
+      "key": "tools.atomiccss",
+      "t": "Utility-First/Atomic CSS"
+    },
+    {
       "key": "environments.browsers",
       "t": "Browsers"
     },

@@ -10,7 +10,7 @@ export default {
   "shareUrl": "https://stateofcss.com",
   "name": "State of CSS",
   "year": 2020,
-  "status": 2,
+  "status": 1,
   "imageUrl": "stateofcss2020.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
@@ -356,7 +356,10 @@ export default {
         "UIKit",
         "Tachyons",
         "Primer",
-        "Tailwind",
+        {
+          "id": "tailwind",
+          "alias": "Tailwind CSS"
+        },
         "PureCSS",
         "Skeleton",
         "Spectre",
@@ -381,7 +384,9 @@ export default {
       "slug": "tools",
       "questions": [
         "BEM",
-        "Atomic CSS",
+        {
+          "id": "atomiccss"
+        },
         "OOCSS",
         "SMACSS",
         "IT CSS",
