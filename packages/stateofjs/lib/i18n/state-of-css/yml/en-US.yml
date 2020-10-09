@@ -265,9 +265,6 @@ translations:
   - key: features.form_controls
     t: Form Controls
 
-  - key: features.form_controls
-    t: Form Controls
-
   ###########################################################################
   # Tools
   ###########################################################################
