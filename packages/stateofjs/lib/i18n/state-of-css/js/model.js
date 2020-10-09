@@ -1,7 +1,7 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "locale": "en-US",
+  "locale": "ADD LOCALE HERE",
   "namespace": "css",
   "translations": [
     {
@@ -318,7 +318,7 @@ export default {
     },
     {
       "key": "features.variables",
-      "t": "CSS Variables (Logical Properties)"
+      "t": "CSS Variables"
     },
     {
       "key": "features.feature_support_queries",
@@ -383,10 +383,6 @@ export default {
     {
       "key": "features.interaction",
       "t": "Interaction"
-    },
-    {
-      "key": "features.form_controls",
-      "t": "Form Controls"
     },
     {
       "key": "features.form_controls",
@@ -467,14 +463,6 @@ export default {
     {
       "key": "opinions.sum_up_one_word_css.description",
       "t": "How would you sum up your opinion of CSS in one word?"
-    },
-    {
-      "key": "happiness.state_of_the_web",
-      "t": "How happy are you with the general state of web technologies?"
-    },
-    {
-      "key": "happiness.state_of_css",
-      "t": "How happy are you with the general state of CSS?"
     }
   ]
 }

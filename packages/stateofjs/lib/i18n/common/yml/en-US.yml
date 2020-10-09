@@ -484,7 +484,6 @@ translations:
   - key: user_info.gender
     t: Gender
 
-
   # skin tone/appearance
   - key: user_info.skin_tone
     t: Appearance

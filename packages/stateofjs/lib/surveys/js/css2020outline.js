@@ -10,7 +10,7 @@ export default {
   "shareUrl": "https://stateofcss.com",
   "name": "State of CSS",
   "year": 2020,
-  "status": 1,
+  "status": 2,
   "imageUrl": "stateofcss2020.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
@@ -51,6 +51,9 @@ export default {
         },
         {
           "id": "aspect_ratio"
+        },
+        {
+          "id": "content_visibility"
         }
       ]
     },
@@ -76,6 +79,9 @@ export default {
         },
         {
           "id": "filter_effects"
+        },
+        {
+          "id": "backdrop_filter"
         }
       ]
     },
@@ -92,6 +98,12 @@ export default {
         },
         {
           "id": "overflow_anchor"
+        },
+        {
+          "id": "touch_action"
+        },
+        {
+          "id": "pointer_events"
         }
       ]
     },
@@ -123,6 +135,12 @@ export default {
         },
         {
           "id": "line_clamp"
+        },
+        {
+          "id": "leading_trim"
+        },
+        {
+          "id": "direction"
         }
       ]
     },
@@ -139,6 +157,25 @@ export default {
         },
         {
           "id": "animations"
+        },
+        {
+          "id": "perspective"
+        }
+      ]
+    },
+    {
+      "id": "media_queries",
+      "template": "feature",
+      "slug": "features",
+      "questions": [
+        {
+          "id": "prefers_reduced_motion"
+        },
+        {
+          "id": "prefers_color_scheme"
+        },
+        {
+          "id": "color_gamut"
         }
       ]
     },
@@ -210,7 +247,8 @@ export default {
             "::first-letter",
             "::selection",
             "::placeholder",
-            "::marker"
+            "::marker",
+            "::backdrop"
           ]
         },
         {
@@ -248,7 +286,10 @@ export default {
             ":first-of-type",
             ":last-of-type",
             ":only-of-type",
-            ":lang()"
+            ":target",
+            ":lang()",
+            ":is()",
+            ":where()"
           ]
         },
         {
@@ -605,7 +646,8 @@ export default {
             "Dev.to",
             "Sidebar",
             "HeyDesigner",
-            "CSS Weekly"
+            "CSS Weekly",
+            "Frontend Horse"
           ]
         },
         {
@@ -643,7 +685,8 @@ export default {
             "The Web Ahead",
             "Non Breaking Space Show",
             "The Changelog",
-            "Syntax"
+            "Syntax",
+            "CSS Podcast"
           ]
         },
         {
@@ -685,6 +728,16 @@ export default {
           "id": "currently_missing_from_css",
           "suffix": "others",
           "template": "longtext"
+        },
+        {
+          "id": "state_of_the_web",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        },
+        {
+          "id": "state_of_css",
+          "template": "happiness",
+          "sectionSlug": "happiness"
         }
       ]
     },

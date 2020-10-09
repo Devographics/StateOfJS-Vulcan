@@ -12,6 +12,10 @@
       padding: $spacing;
     }
     margin-bottom: $spacing;
+    &:focus-within{
+      border-color: var(--link-color);
+      background: $greyDarkish;
+    }
   }
   .form-label {
     @include small-medium {
