@@ -669,7 +669,7 @@ export default {
     },
     {
       "key": "user_info.javascript_proficiency",
-      "t": "CSS Proficiency"
+      "t": "JavaScript Proficiency"
     },
     {
       "key": "user_info.javascript_proficiency.description",
