@@ -463,7 +463,7 @@ translations:
   # javascript proficiency
 
   - key: user_info.javascript_proficiency # TODO
-    t: CSS Proficiency
+    t: JavaScript Proficiency
   - key: user_info.javascript_proficiency.description # TODO
     t: How proficient are you at JavaScript?
 
