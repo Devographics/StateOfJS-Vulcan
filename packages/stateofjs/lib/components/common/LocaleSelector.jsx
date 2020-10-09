@@ -35,7 +35,6 @@ const LocaleSelector = (props, { setLocale, getLocale }) => {
   );
 };
 
-
 LocaleSelector.contextTypes = {
   getLocale: PropTypes.func,
   setLocale: PropTypes.func,

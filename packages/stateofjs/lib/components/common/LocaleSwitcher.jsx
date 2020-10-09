@@ -12,6 +12,9 @@ const LocaleSwitcher = (props, { setLocale, getLocale }) => {
       label={currentLocale.label}
       id="locale-dropdown"
       onSelect={index => {
+        if (!index) {
+          index = 0;
+        }
         setLocale(Locales[index].id);
       }}
       className="nav-locale-dropdown"
