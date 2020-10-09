@@ -4,6 +4,7 @@ import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { getSurveyPath } from '../../modules/surveys/helpers';
 import { Link } from 'react-router-dom';
 import { statuses } from '../../modules/constants';
+import LocaleSelector from '../common/LocaleSelector';
 
 const SurveyItem = ({ survey }) => {
   const { imageUrl, name, year, resultsUrl } = survey;
@@ -35,8 +36,10 @@ const SurveyItem = ({ survey }) => {
 const Surveys = () => {
   const openSurveys = surveys.filter((s) => s.status === statuses.open);
   const closedSurveys = surveys.filter((s) => s.status === statuses.closed);
+  
   return (
     <div className="surveys">
+      <LocaleSelector />
       <div className="surveys-group">
         <h3 className="surveys-group-heading">
           <FormattedMessage id="general.open_surveys" />

@@ -64,6 +64,14 @@ export default {
       "t": "View Survey Results »"
     },
     {
+      "key": "general.surveys_available_languages",
+      "t": "Surveys available in:"
+    },
+    {
+      "key": "general.help_us_translate",
+      "t": "Help us translate the surveys »"
+    },
+    {
       "key": "general.privacy_policy",
       "t": "Privacy Policy"
     },
