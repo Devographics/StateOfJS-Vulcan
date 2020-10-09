@@ -331,3 +331,9 @@ translations:
   - key: opinions.sum_up_one_word_css.description
     t: How would you sum up your opinion of CSS in one word?
     
+  - key: happiness.state_of_the_web
+    t: How happy are you with the general state of web technologies?
+  
+  - key: happiness.state_of_css
+    t: How happy are you with the general state of CSS?
+    
