@@ -47,6 +47,11 @@ translations:
   - key: sections.animations_transforms.description
     t: Animare e trasformare elementi.
 
+  - key: sections.media_queries.title
+    t: Media Queries
+  - key: sections.media_queries.description
+    t: I modi di adattare il tuo sito ai dispositivi e alle preferenze dell'utente.
+
   - key: sections.other_features.title
     t: Altre Funzionalità
   - key: sections.other_features.description
@@ -134,6 +139,8 @@ translations:
     t: margin-block-start, padding-inline-end, ecc.
   - key: features.aspect_ratio
     t: proporzioni
+  - key: features.content_visibility
+    t: visibilità del contenuto
 
   # shapes & graphics
   - key: features.shapes
@@ -150,6 +157,8 @@ translations:
     t: La proprietà mix-blend-mode
   - key: features.filter_effects
     t: Filtri CSS
+  - key: features.backdrop_filter
+    t: backdrop-filter
 
   # interactions
   - key: features.scroll_snap
@@ -158,6 +167,10 @@ translations:
     t: Overscroll-behavior
   - key: features.overflow_anchor
     t: Overflow-anchor
+  - key: features.touch_action
+    t: touch-action
+  - key: features.pointer_events
+    t: eventi con puntatori
 
   # typography
   - key: features.web_fonts
@@ -176,6 +189,12 @@ translations:
     t: font-display
   - key: features.line_clamp
     t: line-clamp
+  - key: features.leading_trim
+    t: leading-trim
+  - key: features.direction
+    t: direzione
+  - key: features.direction.description
+    t: Include anche l'attributo HTML <code>dir</code>.
 
   # animations & transforms
   - key: features.transitions
@@ -184,10 +203,20 @@ translations:
     t: Trasformazioni CSS
   - key: features.animations
     t: Animationi CSS
+  - key: perspective
+    t: prospettiva
+
+  # media features
+  - key: features.prefers_reduced_motion
+    t: prefers-reduced-motion
+  - key: features.prefers_color_scheme
+    t: prefers-color-scheme
+  - key: features.color_gamut
+    t: gamma di colori
     
   # other features
   - key: features.variables
-    t: Variabili CSS
+    t: Variabili CSS (Proprietà logiche)
   - key: features.feature_support_queries
     t: Query di Supporto (@supports)
   - key: features.containment
