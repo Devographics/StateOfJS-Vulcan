@@ -47,6 +47,11 @@ translations:
   - key: sections.animations_transforms.description # TODO
     t: Animating and transforming elements.
 
+  - key: sections.media_queries.title # TODO
+    t: Media Queries
+  - key: sections.media_queries.description # TODO
+    t: Ways of adapting your site to the user's device or preferences.
+
   - key: sections.other_features.title # TODO
     t: Other Features
   - key: sections.other_features.description # TODO
@@ -134,6 +139,8 @@ translations:
     t: margin-block-start, padding-inline-end, etc.
   - key: features.aspect_ratio # TODO
     t: aspect-ratio
+  - key: features.content_visibility # TODO
+    t: content-visibility
 
   # shapes & graphics
   - key: features.shapes # TODO
@@ -150,6 +157,8 @@ translations:
     t: The mix-blend-mode property
   - key: features.filter_effects # TODO
     t: CSS Filter Effects
+  - key: features.backdrop_filter # TODO
+    t: backdrop-filter
 
   # interactions
   - key: features.scroll_snap # TODO
@@ -158,6 +167,11 @@ translations:
     t: Overscroll-behavior
   - key: features.overflow_anchor # TODO
     t: Overflow-anchor
+  - key: features.touch_action # TODO
+    t: touch-action
+  - key: features.pointer_events # TODO
+    t: pointer-events
+
 
   # typography
   - key: features.web_fonts # TODO
@@ -176,6 +190,12 @@ translations:
     t: font-display
   - key: features.line_clamp # TODO
     t: line-clamp
+  - key: features.leading_trim # TODO
+    t: leading-trim
+  - key: features.direction # TODO
+    t: direction
+  - key: features.direction.description # TODO
+    t: Also includes <code>dir</code> HTML attribute.
 
   # animations & transforms
   - key: features.transitions # TODO
@@ -184,6 +204,16 @@ translations:
     t: CSS Transforms
   - key: features.animations # TODO
     t: CSS Animations
+  - key: perspective # TODO
+    t: perspective
+  
+  # media features
+  - key: features.prefers_reduced_motion # TODO
+    t: prefers-reduced-motion
+  - key: features.prefers_color_scheme # TODO
+    t: prefers-color-scheme
+  - key: features.color_gamut # TODO
+    t: color-gamut
     
   # other features
   - key: features.variables # TODO

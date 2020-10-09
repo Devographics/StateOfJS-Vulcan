@@ -47,6 +47,11 @@ translations:
   - key: sections.animations_transforms.description
     t: Animating and transforming elements.
 
+  - key: sections.media_queries.title
+    t: Media Queries
+  - key: sections.media_queries.description
+    t: Ways of adapting your site to the user's device or preferences.
+
   - key: sections.other_features.title
     t: Other Features
   - key: sections.other_features.description
@@ -134,6 +139,8 @@ translations:
     t: margin-block-start, padding-inline-end, etc.
   - key: features.aspect_ratio
     t: aspect-ratio
+  - key: features.content_visibility
+    t: content-visibility
 
   # shapes & graphics
   - key: features.shapes
@@ -150,6 +157,8 @@ translations:
     t: The mix-blend-mode property
   - key: features.filter_effects
     t: CSS Filter Effects
+  - key: features.backdrop_filter
+    t: backdrop-filter
 
   # interactions
   - key: features.scroll_snap
@@ -158,6 +167,10 @@ translations:
     t: Overscroll-behavior
   - key: features.overflow_anchor
     t: Overflow-anchor
+  - key: features.touch_action
+    t: touch-action
+  - key: features.pointer_events
+    t: pointer-events
 
   # typography
   - key: features.web_fonts
@@ -176,6 +189,12 @@ translations:
     t: font-display
   - key: features.line_clamp
     t: line-clamp
+  - key: features.leading_trim
+    t: leading-trim
+  - key: features.direction
+    t: direction
+  - key: features.direction.description
+    t: Also includes <code>dir</code> HTML attribute.
 
   # animations & transforms
   - key: features.transitions
@@ -184,10 +203,20 @@ translations:
     t: CSS Transforms
   - key: features.animations
     t: CSS Animations
-    
+  - key: perspective
+    t: perspective
+  
+  # media features
+  - key: features.prefers_reduced_motion
+    t: prefers-reduced-motion
+  - key: features.prefers_color_scheme
+    t: prefers-color-scheme
+  - key: features.color_gamut
+    t: color-gamut
+
   # other features
   - key: features.variables
-    t: CSS Variables
+    t: CSS Variables (Logical Properties)
   - key: features.feature_support_queries
     t: Feature Support Queries (@supports)
   - key: features.containment
@@ -233,6 +262,9 @@ translations:
   - key: features.interaction
     t: Interaction
   
+  - key: features.form_controls
+    t: Form Controls
+
   - key: features.form_controls
     t: Form Controls
 

@@ -36,6 +36,7 @@ outline:
       - id: position_sticky
       - id: logical_properties
       - id: aspect_ratio
+      - id: content_visibility
 
   - id: shapes_graphics
     template: feature
@@ -47,6 +48,7 @@ outline:
       - id: masks
       - id: blend_modes
       - id: filter_effects
+      - id: backdrop_filter
 
   - id: interactions
     template: feature
@@ -55,6 +57,8 @@ outline:
       - id: scroll_snap
       - id: overscroll_behavior
       - id: overflow_anchor
+      - id: touch_action
+      - id: pointer_events
 
   - id: typography
     template: feature
@@ -68,6 +72,8 @@ outline:
       - id: font_variant_numeric
       - id: font_display
       - id: line_clamp
+      - id: leading_trim
+      - id: direction
 
   - id: animations_transforms
     template: feature
@@ -76,7 +82,21 @@ outline:
       - id: transitions
       - id: transforms
       - id: animations
+      - id: perspective
 
+  - id: media_queries
+    template: feature
+    slug: features
+    questions:
+      - id: prefers_reduced_motion
+      - id: prefers_color_scheme
+      - id: color_gamut
+      # - prefers-reduced-data # not supported yet
+      # - prefers-reduced-transparency # not supported yet
+      # - prefers-contrast # not supported yet
+      # - forced-colors # not supported yet
+      # - inverted-colors # not supported yet
+      
   - id: other_features
     template: feature
     slug: features
@@ -126,6 +146,7 @@ outline:
           - ::selection
           - ::placeholder
           - ::marker
+          - ::backdrop
 
       - id: combinators
         template: multiple
@@ -159,7 +180,11 @@ outline:
           - :first-of-type
           - :last-of-type
           - :only-of-type
+          - :target
           - :lang()
+          - :is()
+          - :where()
+          # - :has() # not yet supported, add next year?
 
       - id: attributes
         template: multiple
@@ -218,6 +243,7 @@ outline:
           - :user-invalid
           - :in-range and :out-of-range
           - :required and :optional
+
 
   ### TOOLS ###
 
@@ -475,6 +501,7 @@ outline:
           - Non Breaking Space Show
           - The Changelog
           - Syntax
+          - CSS Podcast
       - id: podcasts
         template: text
         suffix: others
