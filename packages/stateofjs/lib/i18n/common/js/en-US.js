@@ -80,6 +80,10 @@ export default {
       "t": "Questions? Found a bug? <a href=\"{link}\" target=\"_blank\">Leave an issue</a>."
     },
     {
+      "key": "general.emoji_icons",
+      "t": "Emoji icons by <a target=\"_blank\" rel=\"noreferrer\" href=\"https://icons8.com\">Icons8</a>"
+    },
+    {
       "key": "general.table_of_contents",
       "t": "Table of Contents"
     },
@@ -252,23 +256,23 @@ export default {
       "t": "👎 Used it > Would not use again"
     },
     {
-      "key": "options.tools.never_heard",
+      "key": "options.tools.never_heard.short",
       "t": "Never heard"
     },
     {
-      "key": "options.tools.interested",
+      "key": "options.tools.interested.short",
       "t": "Interested"
     },
     {
-      "key": "options.tools.not_interested",
+      "key": "options.tools.not_interested.short",
       "t": "Not interested"
     },
     {
-      "key": "options.tools.would_use",
+      "key": "options.tools.would_use.short",
       "t": "Would use again"
     },
     {
-      "key": "options.tools.would_not_use",
+      "key": "options.tools.would_not_use.short",
       "t": "Would not use"
     },
     {
@@ -630,6 +634,26 @@ export default {
     {
       "key": "options.skin_tone.4",
       "t": "🧑🏿‍🦲"
+    },
+    {
+      "key": "options.skin_tone.0",
+      "t": "<img src=\"/emojis/icons8-bald-man-light-skin-tone-100.png\" alt=\"Light skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.1",
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-light-skin-tone-100.png\" alt=\"Medium-light skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.2",
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.3",
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-dark-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.4",
+      "t": "<img src=\"/emojis/icons8-bald-man-dark-skin-tone-100.png\" alt=\"Dark skin tone emoji\"/>"
     },
     {
       "key": "tools.other_tools",

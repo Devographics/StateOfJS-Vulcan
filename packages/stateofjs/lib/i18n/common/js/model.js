@@ -72,6 +72,10 @@ export default {
       "t": "Questions? Found a bug? <a href=\"{link}\" target=\"_blank\">Leave an issue</a>."
     },
     {
+      "key": "general.emoji_icons",
+      "t": "Emoji icons by <a target=\"_blank\" rel=\"noreferrer\" href=\"https://icons8.com\">Icons8</a>"
+    },
+    {
       "key": "general.table_of_contents",
       "t": "Table of Contents"
     },

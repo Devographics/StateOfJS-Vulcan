@@ -239,6 +239,9 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     canUpdate: ['members'],
     input,
     searchable,
+    itemProperties: {
+      optionsHTML: true
+    }
   };
 
   if (options) {

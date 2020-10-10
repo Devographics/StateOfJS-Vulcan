@@ -9,7 +9,7 @@
     font-size: $small-font;
     margin-bottom: 5px;
   }
-  &-item{
+  &-item {
     // display: inline-block;
     // margin-left: 5px;
   }
@@ -98,7 +98,9 @@
 .section-nav {
   // background: $bg-color-light;
   // padding: $spacing;
-  max-width: 280px;
+  @include large {
+    max-width: 280px;
+  }
   ul {
     list-style-type: none;
     padding: 0;

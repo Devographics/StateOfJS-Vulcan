@@ -56,6 +56,8 @@ translations:
     t: Privacy Policy
   - key: general.leave_issue # TODO
     t: Questions? Found a bug? <a href="{link}" target="_blank">Leave an issue</a>.
+  - key: general.emoji_icons # TODO
+    t: Emoji icons by <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>
 
   # navigation
   - key: general.table_of_contents # TODO

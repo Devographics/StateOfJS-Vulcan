@@ -1,7 +1,7 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "locale": "ADD LOCALE HERE",
+  "locale": "en-US",
   "namespace": "css",
   "translations": [
     {
@@ -174,7 +174,7 @@ export default {
     },
     {
       "key": "features.position_sticky",
-      "t": "Position: sticky"
+      "t": "<code>position: sticky</code>"
     },
     {
       "key": "features.logical_properties",
@@ -182,15 +182,15 @@ export default {
     },
     {
       "key": "features.logical_properties.description",
-      "t": "margin-block-start, padding-inline-end, etc."
+      "t": "<code>margin-block-start</code>, <code>padding-inline-end</code>, etc."
     },
     {
       "key": "features.aspect_ratio",
-      "t": "aspect-ratio"
+      "t": "<code>aspect-ratio</code>"
     },
     {
       "key": "features.content_visibility",
-      "t": "content-visibility"
+      "t": "<code>content-visibility</code>"
     },
     {
       "key": "features.shapes",
@@ -198,11 +198,11 @@ export default {
     },
     {
       "key": "features.object_fit",
-      "t": "Object-fit"
+      "t": "<code>object-fit</code>"
     },
     {
       "key": "features.clip_path",
-      "t": "Clip-path"
+      "t": "<code>clip-path</code>"
     },
     {
       "key": "features.masks",
@@ -214,7 +214,7 @@ export default {
     },
     {
       "key": "features.blend_modes.description",
-      "t": "The mix-blend-mode property"
+      "t": "The <code>mix-blend-mode</code> property"
     },
     {
       "key": "features.filter_effects",
@@ -222,7 +222,7 @@ export default {
     },
     {
       "key": "features.backdrop_filter",
-      "t": "backdrop-filter"
+      "t": "<code>backdrop-filter</code>"
     },
     {
       "key": "features.scroll_snap",
@@ -230,19 +230,19 @@ export default {
     },
     {
       "key": "features.overscroll_behavior",
-      "t": "Overscroll-behavior"
+      "t": "<code>overscroll-behavior</code>"
     },
     {
       "key": "features.overflow_anchor",
-      "t": "Overflow-anchor"
+      "t": "<code>overflow-anchor</code>"
     },
     {
       "key": "features.touch_action",
-      "t": "touch-action"
+      "t": "<code>touch-action</code>"
     },
     {
       "key": "features.pointer_events",
-      "t": "pointer-events"
+      "t": "<code>pointer-events</code>"
     },
     {
       "key": "features.web_fonts",
@@ -254,35 +254,39 @@ export default {
     },
     {
       "key": "features.line_breaking",
-      "t": "Line breaking properties (overflow-wrap, word-break, line-break, hyphens)"
+      "t": "Line breaking properties"
+    },
+    {
+      "key": "features.line_breaking.description",
+      "t": "<code>overflow-wrap</code>, <code>word-break</code>, <code>line-break</code>, <code>hyphens</code>"
     },
     {
       "key": "features.font_variant",
-      "t": "Font-variant-*"
+      "t": "<code>font-variant-*</code>"
     },
     {
       "key": "features.initial_letter",
-      "t": "Initial-letter"
+      "t": "<code>initial-letter</code>"
     },
     {
       "key": "features.font_variant_numeric",
-      "t": "font-variant-numeric"
+      "t": "<code>font-variant-numeric</code>"
     },
     {
       "key": "features.font_display",
-      "t": "font-display"
+      "t": "<code>font-display</code>"
     },
     {
       "key": "features.line_clamp",
-      "t": "line-clamp"
+      "t": "<code>line-clamp</code>"
     },
     {
       "key": "features.leading_trim",
-      "t": "leading-trim"
+      "t": "<code>leading-trim</code>"
     },
     {
       "key": "features.direction",
-      "t": "direction"
+      "t": "<code>direction</code>"
     },
     {
       "key": "features.direction.description",
@@ -301,28 +305,28 @@ export default {
       "t": "CSS Animations"
     },
     {
-      "key": "perspective",
-      "t": "perspective"
-    },
-    {
-      "key": "features.prefers_reduced_motion",
-      "t": "prefers-reduced-motion"
-    },
-    {
-      "key": "features.prefers_color_scheme",
-      "t": "prefers-color-scheme"
-    },
-    {
-      "key": "features.color_gamut",
-      "t": "color-gamut"
-    },
-    {
-      "key": "features.variables",
-      "t": "CSS Variables"
+      "key": "features.perspective",
+      "t": "<code>perspective</code>"
     },
     {
       "key": "features.feature_support_queries",
-      "t": "Feature Support Queries (@supports)"
+      "t": "Feature Support Queries (<code>@supports</code>)"
+    },
+    {
+      "key": "features.prefers_reduced_motion",
+      "t": "<code>prefers-reduced-motion</code>"
+    },
+    {
+      "key": "features.prefers_color_scheme",
+      "t": "<code>prefers-color-scheme</code>"
+    },
+    {
+      "key": "features.color_gamut",
+      "t": "<code>color-gamut</code>"
+    },
+    {
+      "key": "features.variables",
+      "t": "CSS Variables (Logical Properties)"
     },
     {
       "key": "features.containment",
@@ -330,11 +334,11 @@ export default {
     },
     {
       "key": "features.will_change",
-      "t": "Will-change"
+      "t": "<code>will-change</code>"
     },
     {
       "key": "features.calc",
-      "t": "calc()"
+      "t": "<code>calc()</code>"
     },
     {
       "key": "features.houdini",
@@ -346,7 +350,7 @@ export default {
     },
     {
       "key": "features.comparison_functions.description",
-      "t": "min(), max(), and clamp()"
+      "t": "<code>min()</code>, <code>max()</code>, and <code>clamp()</code>"
     },
     {
       "key": "features.units",
@@ -463,6 +467,14 @@ export default {
     {
       "key": "opinions.sum_up_one_word_css.description",
       "t": "How would you sum up your opinion of CSS in one word?"
+    },
+    {
+      "key": "happiness.state_of_the_web",
+      "t": "How happy are you with the general state of web technologies?"
+    },
+    {
+      "key": "happiness.state_of_css",
+      "t": "How happy are you with the general state of CSS?"
     }
   ]
 }
