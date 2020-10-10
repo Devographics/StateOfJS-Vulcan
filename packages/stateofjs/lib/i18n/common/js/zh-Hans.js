@@ -161,7 +161,7 @@ export default {
     },
     {
       "key": "sections.resources.title",
-      "t": "Resources"
+      "t": "资源"
     },
     {
       "key": "sections.resources.description",
@@ -169,7 +169,7 @@ export default {
     },
     {
       "key": "sections.opinions.title",
-      "t": "Opinions"
+      "t": "看法"
     },
     {
       "key": "sections.opinions.description",
@@ -177,7 +177,7 @@ export default {
     },
     {
       "key": "sections.other_tools.title",
-      "t": "Other Tools"
+      "t": "其他工具"
     },
     {
       "key": "sections.other_tools.description",
@@ -185,27 +185,27 @@ export default {
     },
     {
       "key": "options.features.never_heard",
-      "t": "🤷 Never heard of it/Not sure what it is"
+      "t": "🤷 没听说过/不确定它是什么"
     },
     {
       "key": "options.features.heard",
-      "t": "✅ Know what it is, but haven't used it"
+      "t": "✅ 知道它是什么，但是没用过"
     },
     {
       "key": "options.features.used",
-      "t": "👍 I've used it"
+      "t": "👍 用过"
     },
     {
       "key": "options.features.never_heard.short",
-      "t": "Never heard of it"
+      "t": "没听说过/不确定它是什么"
     },
     {
       "key": "options.features.heard.short",
-      "t": "Know about it"
+      "t": "知道它是什么，但是没用过"
     },
     {
       "key": "options.features.used.short",
-      "t": "Have used it"
+      "t": "用过"
     },
     {
       "key": "options.patterns.use_never",
@@ -229,43 +229,43 @@ export default {
     },
     {
       "key": "options.tools.never_heard",
-      "t": "🤷 Never heard of it/Not sure what it is"
+      "t": "🤷 我从来没有听说过这个技术"
     },
     {
       "key": "options.tools.interested",
-      "t": "✅ Heard of it > Would like to learn"
+      "t": "✅ 我听说过这个技术，且有学习的意向"
     },
     {
       "key": "options.tools.not_interested",
-      "t": "🚫 Heard of it > Not interested"
+      "t": "🚫 我听说过这个技术，但我不感兴趣"
     },
     {
       "key": "options.tools.would_use",
-      "t": "👍 Used it > Would use again"
+      "t": "👍 我使用过这个技术，以后也愿意再次使用"
     },
     {
       "key": "options.tools.would_not_use",
-      "t": "👎 Used it > Would not use again"
+      "t": "👎 我使用过这个技术，但以后不愿意再用"
     },
     {
       "key": "options.tools.never_heard",
-      "t": "Never heard"
+      "t": "从来没听说过"
     },
     {
       "key": "options.tools.interested",
-      "t": "Interested"
+      "t": "听说过，且打算学习"
     },
     {
       "key": "options.tools.not_interested",
-      "t": "Not interested"
+      "t": "听说过，但不感兴趣"
     },
     {
       "key": "options.tools.would_use",
-      "t": "Would use again"
+      "t": "使用过，以后也愿意用"
     },
     {
       "key": "options.tools.would_not_use",
-      "t": "Would not use"
+      "t": "使用过，以后不愿意用"
     },
     {
       "key": "options.happiness.very_unhappy",
@@ -289,47 +289,47 @@ export default {
     },
     {
       "key": "options.opinions.disagree_strongly",
-      "t": "Disagree Strongly"
+      "t": "强烈反对"
     },
     {
       "key": "options.opinions.disagree",
-      "t": "Disagree"
+      "t": "反对"
     },
     {
       "key": "options.opinions.neutral",
-      "t": "Neutral"
+      "t": "中立"
     },
     {
       "key": "options.opinions.agree",
-      "t": "Agree"
+      "t": "同意"
     },
     {
       "key": "options.opinions.agree_strongly",
-      "t": "Agree Strongly"
+      "t": "十分同意"
     },
     {
       "key": "options.years_of_experience.range_less_than_1",
-      "t": "Less than one year"
+      "t": "少于 1 年"
     },
     {
       "key": "options.years_of_experience.range_1_2",
-      "t": "1 to 2 years"
+      "t": "1 至 2 年"
     },
     {
       "key": "options.years_of_experience.range_2_5",
-      "t": "2 to 5 years"
+      "t": "2 至 5 年"
     },
     {
       "key": "options.years_of_experience.range_5_10",
-      "t": "5 to 10 years"
+      "t": "5 至 10 年"
     },
     {
       "key": "options.years_of_experience.range_10_20",
-      "t": "10 to 20 years"
+      "t": "10 至 20 年"
     },
     {
       "key": "options.years_of_experience.range_more_than_20",
-      "t": "More than 20 years"
+      "t": "20 年以上"
     },
     {
       "key": "options.years_of_experience.range_less_than_1.short",
@@ -357,35 +357,35 @@ export default {
     },
     {
       "key": "options.company_size.range_1",
-      "t": "One employee"
+      "t": "1 个雇员"
     },
     {
       "key": "options.company_size.range_1_5",
-      "t": "1 to 5 employees"
+      "t": "1 至 5 个雇员"
     },
     {
       "key": "options.company_size.range_5_10",
-      "t": "5 to 10 employees"
+      "t": "5 至 10 个雇员"
     },
     {
       "key": "options.company_size.range_10_20",
-      "t": "10 to 20 employees"
+      "t": "10 至 20 个雇员"
     },
     {
       "key": "options.company_size.range_20_50",
-      "t": "20 to 50 employees"
+      "t": "20 至 50 个雇员"
     },
     {
       "key": "options.company_size.range_50_100",
-      "t": "50 to 100 employees"
+      "t": "50 至 100 个雇员"
     },
     {
       "key": "options.company_size.range_100_1000",
-      "t": "100 to 1000 employees"
+      "t": "100 至 1000 个雇员"
     },
     {
       "key": "options.company_size.range_more_than_1000",
-      "t": "More than 1000 employees"
+      "t": "超过 1000 个雇员"
     },
     {
       "key": "options.company_size.range_1.short",
@@ -421,31 +421,31 @@ export default {
     },
     {
       "key": "options.yearly_salary.range_work_for_free",
-      "t": "I work for free"
+      "t": "我没有收入"
     },
     {
       "key": "options.yearly_salary.range_0_10",
-      "t": "$0k-$10k"
+      "t": "0 美元 - 1 万美元"
     },
     {
       "key": "options.yearly_salary.range_10_30",
-      "t": "$10k-$30k"
+      "t": "1 万美元 - 3 万美元"
     },
     {
       "key": "options.yearly_salary.range_30_50",
-      "t": "$30k-$50k"
+      "t": "3 万美元 - 5 万美元"
     },
     {
       "key": "options.yearly_salary.range_50_100",
-      "t": "$50k-$100k"
+      "t": "5 万美元 - 10 万美元"
     },
     {
       "key": "options.yearly_salary.range_100_200",
-      "t": "$100k-$200k"
+      "t": "10 万美元 - 20 万美元"
     },
     {
       "key": "options.yearly_salary.range_more_than_200",
-      "t": "more than $200k"
+      "t": "大于 20 万美元"
     },
     {
       "key": "options.yearly_salary.range_work_for_free.short",
@@ -481,35 +481,35 @@ export default {
     },
     {
       "key": "options.job_title.front_end_developer",
-      "t": "Front End Developer/Engineer"
+      "t": "前端开发者/工程师"
     },
     {
       "key": "options.job_title.back_end_developer",
-      "t": "Back End Developer/Engineer"
+      "t": "后端开发者/工程师"
     },
     {
       "key": "options.job_title.full_stack_developer",
-      "t": "Full Stack Developer/Engineer"
+      "t": "全栈开发者/工程师"
     },
     {
       "key": "options.job_title.web_developer",
-      "t": "Web Developer"
+      "t": "Web 开发者"
     },
     {
       "key": "options.job_title.web_designer",
-      "t": "Web Designer"
+      "t": "Web 设计师"
     },
     {
       "key": "options.job_title.ux_designer",
-      "t": "UX Designer"
+      "t": "UX 设计师"
     },
     {
       "key": "options.job_title.ui_designer",
-      "t": "UI Designer"
+      "t": "UI 设计师"
     },
     {
       "key": "options.job_title.back_end_dev",
-      "t": "Back-end Developer/Engineer"
+      "t": "后端开发者/工程师"
     },
     {
       "key": "options.javascript_proficiency.0",
@@ -533,43 +533,43 @@ export default {
     },
     {
       "key": "options.css_proficiency.0",
-      "t": "Virtually no knowledge of CSS"
+      "t": "实际上没有 CSS 经验"
     },
     {
       "key": "options.css_proficiency.1",
-      "t": "Using CSS frameworks and tweaking existing styles"
+      "t": "使用 CSS 框架以及调整现有样式"
     },
     {
       "key": "options.css_proficiency.2",
-      "t": "Knowing specificity rules, being able to create layouts"
+      "t": "知道特定规则，能够创建布局"
     },
     {
       "key": "options.css_proficiency.3",
-      "t": "Mastering animations, interactions, transitions, etc."
+      "t": "精通动画、交互、过渡等"
     },
     {
       "key": "options.css_proficiency.4",
-      "t": "Able to style an entire front-end from scratch following a consistent methodology"
+      "t": "能够以统一的方法论从零构建整个前端站点的样式"
     },
     {
       "key": "options.backend_proficiency.0",
-      "t": "Not able to handle any back-end work"
+      "t": "无法完成任何后端工作"
     },
     {
       "key": "options.backend_proficiency.1",
-      "t": "Able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)"
+      "t": "会配置一体化 CMS（WordPress 等）或静态站点生成器（Jekyll 等）"
     },
     {
       "key": "options.backend_proficiency.2",
-      "t": "Able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)"
+      "t": "能够使用现有框架开发应用（Rails、Laravel 等）"
     },
     {
       "key": "options.backend_proficiency.3",
-      "t": "Setting up an entire back-end from scratch (Go, Node, etc.)"
+      "t": "从零搭建整个后端（Go、Node 等）"
     },
     {
       "key": "options.backend_proficiency.4",
-      "t": "Able to handle complex multi-server or microservices architectures"
+      "t": "能够掌控复杂的多台服务器或微服务架构"
     },
     {
       "key": "options.proficiency.0",
@@ -593,19 +593,19 @@ export default {
     },
     {
       "key": "options.gender.female",
-      "t": "Female"
+      "t": "女性"
     },
     {
       "key": "options.gender.male",
-      "t": "Male"
+      "t": "男性"
     },
     {
       "key": "options.gender.non_binary",
-      "t": "Non-Binary/Third Gender"
+      "t": "第三性别"
     },
     {
       "key": "options.gender.prefer_not_to_say",
-      "t": "Prefer not to say"
+      "t": "未透露"
     },
     {
       "key": "options.skin_tone.0",
@@ -628,6 +628,26 @@ export default {
       "t": "🧑🏿‍🦲"
     },
     {
+      "key": "options.skin_tone.0",
+      "t": "<img src=\"/emojis/icons8-bald-man-light-skin-tone-100.png\" alt=\"Light skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.1",
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-light-skin-tone-100.png\" alt=\"Medium-light skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.2",
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.3",
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-dark-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+    },
+    {
+      "key": "options.skin_tone.4",
+      "t": "<img src=\"/emojis/icons8-bald-man-dark-skin-tone-100.png\" alt=\"Dark skin tone emoji\"/>"
+    },
+    {
       "key": "tools.other_tools",
       "t": "Other Options"
     },
@@ -645,7 +665,7 @@ export default {
     },
     {
       "key": "user_info.years_of_experience",
-      "t": "Years of Experience"
+      "t": "工龄"
     },
     {
       "key": "user_info.years_of_experience.description",
@@ -653,27 +673,27 @@ export default {
     },
     {
       "key": "user_info.company_size",
-      "t": "Company Size"
+      "t": "公司规模"
     },
     {
       "key": "user_info.company_size.description",
-      "t": "How big your company is."
+      "t": "所在公司规模分析"
     },
     {
       "key": "user_info.yearly_salary",
-      "t": "Yearly Salary"
+      "t": "薪资"
     },
     {
       "key": "user_info.yearly_salary.description",
-      "t": "In USD."
+      "t": "年收入（美元）"
     },
     {
       "key": "user_info.job_title",
-      "t": "Job Title"
+      "t": "职位名称"
     },
     {
       "key": "user_info.job_title.description",
-      "t": "How do you introduce yourself at parties?"
+      "t": "你在社交场合如何介绍自己？"
     },
     {
       "key": "user_info.javascript_proficiency",
@@ -701,7 +721,7 @@ export default {
     },
     {
       "key": "user_info.gender",
-      "t": "Gender"
+      "t": "性别"
     },
     {
       "key": "user_info.skin_tone",

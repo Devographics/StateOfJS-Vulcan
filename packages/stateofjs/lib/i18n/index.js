@@ -6,6 +6,10 @@ import { default as itCommon } from './common/js/it-IT.js';
 import { default as itCSS } from './state-of-css/js/it-IT.js';
 import { default as itJS } from './state-of-js/js/it-IT.js';
 
+import { default as zhCommon } from './common/js/zh-Hans.js';
+import { default as zhCSS } from './state-of-css/js/zh-Hans.js';
+import { default as zhJS } from './state-of-js/js/zh-Hans.js';
+
 const locales = [
   {
     id: 'en',
@@ -16,6 +20,11 @@ const locales = [
     id: 'it',
     label: 'Italiano',
     stringFiles: [itCommon, itCSS, itJS],
+  },
+  {
+    id: 'zh',
+    label: '中文',
+    stringFiles: [zhCommon, zhCSS, zhJS],
   },
 ];
 
