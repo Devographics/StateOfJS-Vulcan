@@ -329,6 +329,8 @@ translations:
     t: '>$200k'
 
   # job titles
+  - key: options.job_title.cto
+    t: CTO
   - key: options.job_title.front_end_developer
     t: Front End Developer/Engineer
   - key: options.job_title.back_end_developer

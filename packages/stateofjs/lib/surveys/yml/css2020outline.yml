@@ -578,6 +578,7 @@ outline:
         template: single
         allowother: true
         options:
+          - id: cto
           - id: front_end_developer
           - id: full_stack_developer
           - id: back_end_developer

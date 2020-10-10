@@ -832,6 +832,9 @@ export default {
           "allowother": true,
           "options": [
             {
+              "id": "cto"
+            },
+            {
               "id": "front_end_developer"
             },
             {

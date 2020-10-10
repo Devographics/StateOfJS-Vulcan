@@ -25,6 +25,9 @@
       font-size: $largeish-font;
     }
     @include font-bold;
+    code {
+      font-size: $medium-font;
+    }
   }
   .form-check {
     display: flex;

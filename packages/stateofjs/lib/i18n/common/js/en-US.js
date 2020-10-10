@@ -480,6 +480,10 @@ export default {
       "t": ">$200k"
     },
     {
+      "key": "options.job_title.cto",
+      "t": "CTO"
+    },
+    {
       "key": "options.job_title.front_end_developer",
       "t": "Front End Developer/Engineer"
     },

@@ -254,7 +254,11 @@ export default {
     },
     {
       "key": "features.line_breaking",
-      "t": "Interruttori di linea (overflow-wrap, word-break, line-break, hyphens)"
+      "t": "Interruttori di linea"
+    },
+    {
+      "key": "features.line_breaking",
+      "t": "overflow-wrap, word-break, line-break, hyphens"
     },
     {
       "key": "features.font_variant",
@@ -301,7 +305,7 @@ export default {
       "t": "Animationi CSS"
     },
     {
-      "key": "perspective",
+      "key": "features.perspective",
       "t": "prospettiva"
     },
     {

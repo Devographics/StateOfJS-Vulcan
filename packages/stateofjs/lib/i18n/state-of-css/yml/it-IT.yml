@@ -178,7 +178,9 @@ translations:
   - key: features.variables_fonts
     t: Fonts Variabili
   - key: features.line_breaking
-    t: Interruttori di linea (overflow-wrap, word-break, line-break, hyphens)
+    t: Interruttori di linea
+  - key: features.line_breaking
+    t: overflow-wrap, word-break, line-break, hyphens
   - key: features.font_variant
     t: Font-variant-*
   - key: features.initial_letter
@@ -203,7 +205,7 @@ translations:
     t: Trasformazioni CSS
   - key: features.animations
     t: Animationi CSS
-  - key: perspective
+  - key: features.perspective
     t: prospettiva
 
   # media features
