@@ -1,4 +1,4 @@
-locale: en-US
+locale: es-AR
 translations:
   
   ###########################################################################
@@ -47,7 +47,7 @@ translations:
   - key: general.finish_survey
     t: Finalizar Encuesta »
   - key: general.survey_closed
-    t: Está encuesta ahora está cerrada.
+    t: Esta encuesta ahora está cerrada.
   - key: general.survey_results
     t: Ver Resultados de la Encuesta »
   - key: general.surveys_available_languages
@@ -81,8 +81,8 @@ translations:
       
       Tu información está guardada. Podés revisarla o modificarla hasta que la encuesta cierre.
 
-      Además, podés ayudarnos a difundir compartiendo esta encuesta. Todo cuenta, y ayudará a hacer nuestros datos aún
-      más representativos:
+      Además, podés ayudarnos a difundir compartiendo esta encuesta. Todo cuenta, y ayudará a hacer que nuestros datos
+      sean aún más representativos:
 
   # share
   - key: general.share_subject
