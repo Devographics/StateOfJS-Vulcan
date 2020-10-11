@@ -8,15 +8,15 @@ translations:
 
   - key: general.survey_intro_css2020
     t: >
-      CSS is evolving faster than ever.
+      CSS está evolucionando más rápido que nunca.
 
       
-      Flexbox, Grid, Multi-Column… To say nothing of whole new paradigms like CSS-in-JS.
+      Flexbox, Grid, Multi-Column… Por no hablar de paradigmas completamente nuevos como CSS-inJS.
 
       
-      So after the success of our annual State Of JavaScript survey, 
-      we’ve decided to take on the world of styles and selectors to help 
-      identify the latests trends… and try to bridge the ever-growing “great front-end divide”!
+      Así que después del éxito de nuestra encuesta anual State Of JavaScript,
+      decidimos entrar en el mundo de los estilos y selectores para ayudar a
+      identificar las últimas tendencias… ¡e intentar unir la siempre creciente "gran división del front-end"!
 
   ###########################################################################
   # Sections
@@ -25,67 +25,67 @@ translations:
   - key: sections.layout.title
     t: Layout
   - key: sections.layout.description
-    t: How do you position elements on the screen?
+    t: ¿Cómo posicionás los elementos en la pantalla?
   
   - key: sections.shapes_graphics.title
-    t: Shapes & Graphics
+    t: Formas y Gráficos
   - key: sections.shapes_graphics.description
-    t: Controlling the shape and display of elements.
+    t: Controlando la forma y visualización de los elementos.
 
   - key: sections.interactions.title
-    t: Interactions
+    t: Interacciones
   - key: sections.interactions.description
-    t: Controlling how the user interacts with the page.
+    t: Controlando cómo el usuario interactúa con la página.
 
   - key: sections.typography.title
-    t: Typography
+    t: Tipografía
   - key: sections.typography.description
-    t: Setting and laying out text.
+    t: Definiendo y diagramando el texto.
 
   - key: sections.animations_transforms.title
-    t: Animations & Transforms
+    t: Animaciones y Transformaciones
   - key: sections.animations_transforms.description
-    t: Animating and transforming elements.
+    t: Animando y transformando elementos.
 
   - key: sections.media_queries.title
     t: Media Queries
   - key: sections.media_queries.description
-    t: Ways of adapting your site to the user's device or preferences.
+    t: Formas de adaptar tu sitio al dispositivo o preferencias del usuario.
 
   - key: sections.other_features.title
-    t: Other Features
+    t: Otras Funcionalidades
   - key: sections.other_features.description
-    t: Other CSS features.
+    t: Otras funcionalidades de CSS.
 
   - key: sections.units_selectors.title
-    t: Units & Selectors
+    t: Unidades y Selectores
   - key: sections.units_selectors.description
-    t: Test your knowledge of CSS units and selectors.
+    t: Evaluá tu conocimiento de unidades y selectores de CSS.
 
   - key: sections.pre_post_processors.title
-    t: Pre-/Post-processors
+    t: Pre-/Post-procesadores
   - key: sections.pre_post_processors.description
-    t: Utilities that augment CSS.
+    t: Utilidades que aumentan CSS.
 
   - key: sections.css_frameworks.title
-    t: CSS Frameworks
+    t: Frameworks CSS
   - key: sections.css_frameworks.description
-    t: Libraries that give you pre-made components and styles.
+    t: Librerías de componentes y estilos prefabricados.
 
   - key: sections.css_methodologies.title
-    t: CSS Methodologies
+    t: Metodologías de CSS
   - key: sections.css_methodologies.description
-    t: Codified ways to write cleaner CSS.
+    t: Formas codificadas de escribir CSS más limpio.
 
   - key: sections.css_in_js.title
     t: CSS-in-JS
   - key: sections.css_in_js.description
-    t: Libraries that help integrate CSS into JavaScript code.
+    t: Librerías que ayudan a integrar CSS en código JavaScript.
 
   - key: sections.environments.title
-    t: Environments
+    t: Ambientes
   - key: sections.environments.description
-    t: Which environments do you write CSS for?
+    t: ¿Para qué ambientes escribís CSS?
 
   ###########################################################################
   # Options
@@ -93,23 +93,23 @@ translations:
 
   # CSS for print
   - key: options.css_for_print.0
-    t: I (almost) never write print styles
+    t: (Casi) Nunca escribo estilos para impresión
   - key: options.css_for_print.1
-    t: I occasionally write print styles
+    t: Ocasionalmente escribo estilos para impresión
   - key: options.css_for_print.2
-    t: I write print styles as part of most projects
+    t: Escribo estilos para impresión como parte de la mayoría de los proyectos
   - key: options.css_for_print.3
-    t: I focus mainly on CSS for print
+    t: Me enfoco principalmente en CSS para impresión
 
   # CSS for email
   - key: options.css_for_email.0
-    t: I (almost) never write CSS for email clients
+    t: (Casi) Nunca escribo CSS para clientes de email
   - key: options.css_for_email.1
-    t: I occasionally write CSS for email clients
+    t: Ocasionalmente escribo CSS para clientes de email
   - key: options.css_for_email.2
-    t: I write CSS for email clients as part of most projects
+    t: Escribo CSS para clientes de email como parte de la mayoría de los proyectos
   - key: options.css_for_email.3
-    t: I focus mainly on CSS for email clients
+    t: Me enfoco principalmente en CSS para clientes de email
 
   ###########################################################################
   # Features
@@ -122,19 +122,19 @@ translations:
   - key: features.subgrid
     t: Subgrid
   - key: features.regions
-    t: CSS Regions
+    t: Regiones CSS
   - key: features.flexbox
     t: Flexbox
   - key: features.multi_column
-    t: CSS Multi-Column
+    t: CSS Multi-Columna
   - key: features.writing_modes
-    t: CSS Writing Modes
+    t: Modos de Escritura CSS
   - key: features.exclusions
-    t: CSS Exclusions
+    t: Exclusiones CSS
   - key: features.position_sticky
     t: '<code>position: sticky</code>'
   - key: features.logical_properties
-    t: Logical Properties
+    t: Propiedades Lógicas
   - key: features.logical_properties.description
     t: <code>margin-block-start</code>, <code>padding-inline-end</code>, etc.
   - key: features.aspect_ratio
@@ -144,25 +144,25 @@ translations:
 
   # shapes & graphics
   - key: features.shapes
-    t: CSS Shapes
+    t: Formas CSS
   - key: features.object_fit
     t: <code>object-fit</code>
   - key: features.clip_path
     t: <code>clip-path</code>
   - key: features.masks
-    t: CSS Masks
+    t: Máscaras CSS
   - key: features.blend_modes
-    t: Blend Modes
+    t: Modos de Fusión
   - key: features.blend_modes.description
     t: The <code>mix-blend-mode</code> property
   - key: features.filter_effects
-    t: CSS Filter Effects
+    t: Filtros CSS
   - key: features.backdrop_filter
     t: <code>backdrop-filter</code>
 
   # interactions
   - key: features.scroll_snap
-    t: CSS Scroll Snap
+    t: Scroll Snap CSS
   - key: features.overscroll_behavior
     t: <code>overscroll-behavior</code>
   - key: features.overflow_anchor
@@ -176,9 +176,9 @@ translations:
   - key: features.web_fonts
     t: Web fonts (@font-face)
   - key: features.variables_fonts
-    t: Variable fonts
+    t: Fonts variables
   - key: features.line_breaking
-    t: Line breaking properties
+    t: Propiedades de salto de línea
   - key: features.line_breaking.description
     t: <code>overflow-wrap</code>, <code>word-break</code>, <code>line-break</code>, <code>hyphens</code>
   - key: features.font_variant
@@ -196,15 +196,15 @@ translations:
   - key: features.direction
     t: <code>direction</code>
   - key: features.direction.description
-    t: Also includes <code>dir</code> HTML attribute.
+    t: También incluye el atributo HTML <code>dir</code>.
 
   # animations & transforms
   - key: features.transitions
-    t: CSS Transitions
+    t: Transiciones CSS
   - key: features.transforms
-    t: CSS Transforms
+    t: Transformaciones CSS
   - key: features.animations
-    t: CSS Animations
+    t: Animaciones CSS
   - key: features.perspective
     t: <code>perspective</code>
   
@@ -220,9 +220,9 @@ translations:
 
   # other features
   - key: features.variables
-    t: CSS Variables (Logical Properties)
+    t: Variables CSS (Propiedades Lógicas)
   - key: features.containment
-    t: CSS Containment
+    t: Contención CSS (contain)
   - key: features.will_change
     t: <code>will-change</code>
   - key: features.calc
@@ -230,7 +230,7 @@ translations:
   - key: features.houdini
     t: Houdini
   - key: features.comparison_functions
-    t: CSS Comparison Functions
+    t: Funciones de Comparación CSS
   - key: features.comparison_functions.description
     t: <code>min()</code>, <code>max()</code>, and <code>clamp()</code>
 
@@ -240,32 +240,32 @@ translations:
 
   # units & selectors
   - key: features.units
-    t: Units
+    t: Unidades
   - key: features.units.description
-    t: Which of these CSS units have you used?
+    t: ¿Cuáles de estas unidades CSS usaste?
 
   - key: features.pseudo_elements
-    t: Pseudo Elements
+    t: Pseudo Elementos
   - key: features.pseudo_elements.description
-    t: Which of these CSS selectors have you used?
+    t: ¿Cuáles de estos selectores CSS usaste?
 
   - key: features.combinators
-    t: Combinators
+    t: Combinadores
 
   - key: features.tree_document_structure
-    t: Tree / Document Structure
+    t: Estructura de árbol del documento
 
   - key: features.attributes
-    t: Attributes
+    t: Atributos
   
   - key: features.links_urls
     t: Links/URLs
 
   - key: features.interaction
-    t: Interaction
+    t: Interacción
   
   - key: features.form_controls
-    t: Form Controls
+    t: Controles de Formulario
 
   ###########################################################################
   # Tools
@@ -279,60 +279,60 @@ translations:
   ###########################################################################
 
   - key: environments.browsers
-    t: Browsers
+    t: Navegadores
   - key: environments.browsers.description
-    t: Which browsers do you test in?
+    t: ¿En qué navegadores probás?
   
   - key: environments.form_factors
-    t: Form Factors
+    t: Formatos
   - key: environments.form_factors.description
-    t: Which form factors do you test on?
+    t: ¿En qué formatos probás?
 
   - key: environments.css_for_print
-    t: CSS for Print
+    t: CSS para Impresión
   - key: environments.css_for_print.description
-    t: Do you write print styles?
+    t: ¿Escribís estilos para impresión?
 
   - key: environments.css_for_email
-    t: CSS for Email Clients
+    t: CSS para Clientes de Email
   - key: environments.css_for_email.description
-    t: Do you write CSS for email clients?
+    t: ¿Escribís CSS para clientes de email?
 
   ###########################################################################
   # Opinions
   ###########################################################################
 
   - key: opinions.css_easy_to_learn
-    t: CSS is easy to learn
+    t: CSS es fácil de aprender
     
   - key: opinions.css_evolving_slowly
-    t: CSS is evolving too slowly
+    t: CSS evoluciona demasiado lento
     
   - key: opinions.utility_classes_to_be_avoided
-    t: Utility (non-semantic) classes (.center, .large-text, etc.) should be avoided
+    t: Las clases de utilidad (no semánticas, .center, .large-text, etc.) deberían ser evitadas
     
   - key: opinions.selector_nesting_to_be_avoided
-    t: Selector nesting (.foo .bar ul li {...}) should be avoided
+    t: El anidamiento de selectores (.foo .bar ul li {...}) debería ser evitado
     
   - key: opinions.css_is_programming_language
-    t: CSS is a programming language
+    t: CSS es un lenguaje de programación
     
   - key: opinions.enjoy_writing_css
-    t: I enjoy writing CSS
+    t: Me gusta escribir CSS
     
   - key: opinions.currently_missing_from_css.others
-    t: What do you feel is currently missing from CSS?
+    t: ¿Qué pensás que le falta a CSS actualmente?
   - key: opinions.currently_missing_from_css.others.description
-    t: Features you'd like to see in CSS one day.
+    t: Funcionalidades que te gustaría ver en CSS algún día.
 
   - key: opinions.sum_up_one_word_css
-    t: CSS in one word
+    t: CSS en una palabra
   - key: opinions.sum_up_one_word_css.description
-    t: How would you sum up your opinion of CSS in one word?
+    t: ¿Cómo resumirías tu opinión de CSS en una palabra?
     
   - key: happiness.state_of_the_web
-    t: How happy are you with the general state of web technologies?
+    t: ¿Qué tan contento estás con el estado general de las tecnologías web?
   
   - key: happiness.state_of_css
-    t: How happy are you with the general state of CSS?
+    t: ¿Qué tan contento estás con el estado general de CSS?
     
