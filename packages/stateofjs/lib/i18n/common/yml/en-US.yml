@@ -545,7 +545,7 @@ translations:
   - key: other_tools.utilities.others
     t: Other Utilities
   - key: other_tools.utilities.others.description
-    t: Other utilities (freeform field).
+    t: Other answers (freeform field).
 
   - key: other_tools.browsers
     t: Browsers
