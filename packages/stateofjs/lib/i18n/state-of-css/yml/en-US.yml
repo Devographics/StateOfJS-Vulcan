@@ -244,28 +244,168 @@ translations:
   - key: features.units.description
     t: Which of these CSS units have you used?
 
+  - key: px
+    t: px
+  - key: pt
+    t: pt
+  - key: percent
+    t: '%'
+  - key: em
+    t: em
+  - key: rem
+    t: rem
+  - key: vh_vw
+    t: vh, vw
+  - key: vmin_vmax
+    t: vmin, vmax
+  - key: ch
+    t: ch
+  - key: ex
+    t: ex
+  - key: mm
+    t: mm
+  - key: cm
+    t: cm
+  - key: in
+    t: in
+
   - key: features.pseudo_elements
     t: Pseudo Elements
   - key: features.pseudo_elements.description
     t: Which of these CSS selectors have you used?
 
+  - key: before
+    t: '::before'
+  - key: after
+    t: '::after'
+  - key: first_line
+    t: '::first-line'
+  - key: first_letter
+    t: '::first-letter'
+  - key: selection
+    t: '::selection'
+  - key: placeholder
+    t: '::placeholder'
+  - key: marker
+    t: '::marker'
+  - key: backdrop
+    t: '::backdrop'
+
   - key: features.combinators
     t: Combinators
+
+  - key: descendant
+    t: div span (descendant)
+  - key: child
+    t: div > span (child)
+  - key: next_subling
+    t: div + div (next sibling)
+  - key: subsequent_sibling
+    t: div ~ div (subsequent sibling)
 
   - key: features.tree_document_structure
     t: Tree / Document Structure
 
+  - key: root
+    t: :root
+  - key: empty
+    t: :empty
+  - key: not
+    t: :not()
+  - key: nth_child
+    t: :nth-child()
+  - key: nth_last_child
+    t: :nth-last-child()
+  - key: first_child
+    t: :first-child
+  - key: last_child
+    t: :last-child
+  - key: only_child
+    t: :only-child
+  - key: nth_of_type
+    t: :nth-of-type()
+  - key: nth_last_of_type
+    t: :nth-last-of-type()
+  - key: first_of_type
+    t: :first-of-type
+  - key: last_of_type
+    t: :last-of-type
+  - key: only_of_type
+    t: :only-of-type
+  - key: lang
+    t: :lang()
+  - key: is
+    t: :is()
+  - key: where
+    t: :where()
+  - key: has
+    t: :has()
+
   - key: features.attributes
     t: Attributes
   
+  - key: presence
+    t: div[foo] (Presence)
+  - key: equality
+    t: div[foo="bar"] (Equality)
+  - key: starts_with
+    t: div[foo^="bar"] (Starts with)
+  - key: ends_with
+    t: div[foo$="bar"] (Ends with)
+  - key: contains_word
+    t: div[foo~="bar"] (Contains word)
+  - key: contains_substring
+    t: div[foo*="bar"] (Contains substring)
+
   - key: features.links_urls
     t: Links/URLs
+
+  - key: any_link
+    t: :any-link
+  - key: link_visited
+    t: :link and :visited
+  - key: local_link
+    t: :local-link
+  - key: target
+    t: :target
 
   - key: features.interaction
     t: Interaction
   
+  - key: hover
+    t: :hover
+  - key: active
+    t: :active
+  - key: focus
+    t: :focus
+  - key: focus_within
+    t: :focus-within
+  - key: focus_visible
+    t: :focus-visible
+
   - key: features.form_controls
     t: Form Controls
+
+  - key: enabled_disabled
+    t: :enabled and :disabled
+  - key: read_only_write
+    t: :read-only and :read-write
+  - key: placeholder_shown
+    t: :placeholder-shown
+  - key: default
+    t: :default
+  - key: checked
+    t: :checked
+  - key: indeterminate
+    t: :indeterminate
+  - key: valid_invalid
+    t: :valid and :invalid
+  - key: user_invalid
+    t: :user-invalid
+  - key: in_out_range
+    t: :in-range and :out-of-range
+  - key: required_optional
+    t: :required and :optional
 
   ###########################################################################
   # Tools
