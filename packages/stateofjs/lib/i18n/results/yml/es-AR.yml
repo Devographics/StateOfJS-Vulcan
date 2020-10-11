@@ -9,13 +9,13 @@ translations:
   ###########################################################################
 
   - key: features.learn_more
-    t: Learn More (MDN)
+    t: Conocer Más (MDN)
   - key: features.mdn_link
     t: MDN
   - key: features.caniuse_link
     t: CanIUse
   - key: features.specification_link
-    t: W3C Specification
+    t: Especificación W3C
 
   ###########################################################################
   # Tools & Methodologies
@@ -27,8 +27,8 @@ translations:
   - key: tools.github_link
     t: GitHub
   - key: tools.github_stars
-    t: stars
+    t: estrellas
   - key: tools.homepage_link
-    t: Homepage
+    t: Página Principal
   - key: tools.npm_link
     t: NPM
