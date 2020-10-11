@@ -361,6 +361,54 @@ export default {
       "t": "Which of these CSS units have you used?"
     },
     {
+      "key": "options.units.px",
+      "t": "px"
+    },
+    {
+      "key": "options.units.pt",
+      "t": "pt"
+    },
+    {
+      "key": "options.units.percent",
+      "t": "%"
+    },
+    {
+      "key": "options.units.em",
+      "t": "em"
+    },
+    {
+      "key": "options.units.rem",
+      "t": "rem"
+    },
+    {
+      "key": "options.units.vh_vw",
+      "t": "vh, vw"
+    },
+    {
+      "key": "options.units.vmin_vmax",
+      "t": "vmin, vmax"
+    },
+    {
+      "key": "options.units.ch",
+      "t": "ch"
+    },
+    {
+      "key": "options.units.ex",
+      "t": "ex"
+    },
+    {
+      "key": "options.units.mm",
+      "t": "mm"
+    },
+    {
+      "key": "options.units.cm",
+      "t": "cm"
+    },
+    {
+      "key": "options.units.in",
+      "t": "in"
+    },
+    {
       "key": "features.pseudo_elements",
       "t": "Pseudo Elements"
     },
@@ -369,28 +417,244 @@ export default {
       "t": "Which of these CSS selectors have you used?"
     },
     {
+      "key": "options.pseudo_elements.before",
+      "t": "::before"
+    },
+    {
+      "key": "options.pseudo_elements.after",
+      "t": "::after"
+    },
+    {
+      "key": "options.pseudo_elements.first_line",
+      "t": "::first-line"
+    },
+    {
+      "key": "options.pseudo_elements.first_letter",
+      "t": "::first-letter"
+    },
+    {
+      "key": "options.pseudo_elements.selection",
+      "t": "::selection"
+    },
+    {
+      "key": "options.pseudo_elements.placeholder",
+      "t": "::placeholder"
+    },
+    {
+      "key": "options.pseudo_elements.marker",
+      "t": "::marker"
+    },
+    {
+      "key": "options.pseudo_elements.backdrop",
+      "t": "::backdrop"
+    },
+    {
       "key": "features.combinators",
       "t": "Combinators"
+    },
+    {
+      "key": "options.combinators.descendant",
+      "t": "div span (descendant)"
+    },
+    {
+      "key": "options.combinators.child",
+      "t": "div > span (child)"
+    },
+    {
+      "key": "options.combinators.next_subling",
+      "t": "div + div (next sibling)"
+    },
+    {
+      "key": "options.combinators.subsequent_sibling",
+      "t": "div ~ div (subsequent sibling)"
     },
     {
       "key": "features.tree_document_structure",
       "t": "Tree / Document Structure"
     },
     {
+      "key": "options.tree_document_structure.root",
+      "t": ":root"
+    },
+    {
+      "key": "options.tree_document_structure.empty",
+      "t": ":empty"
+    },
+    {
+      "key": "options.tree_document_structure.not",
+      "t": ":not()"
+    },
+    {
+      "key": "options.tree_document_structure.nth_child",
+      "t": ":nth-child()"
+    },
+    {
+      "key": "options.tree_document_structure.nth_last_child",
+      "t": ":nth-last-child()"
+    },
+    {
+      "key": "options.tree_document_structure.first_child",
+      "t": ":first-child"
+    },
+    {
+      "key": "options.tree_document_structure.last_child",
+      "t": ":last-child"
+    },
+    {
+      "key": "options.tree_document_structure.only_child",
+      "t": ":only-child"
+    },
+    {
+      "key": "options.tree_document_structure.nth_of_type",
+      "t": ":nth-of-type()"
+    },
+    {
+      "key": "options.tree_document_structure.nth_last_of_type",
+      "t": ":nth-last-of-type()"
+    },
+    {
+      "key": "options.tree_document_structure.first_of_type",
+      "t": ":first-of-type"
+    },
+    {
+      "key": "options.tree_document_structure.last_of_type",
+      "t": ":last-of-type"
+    },
+    {
+      "key": "options.tree_document_structure.only_of_type",
+      "t": ":only-of-type"
+    },
+    {
+      "key": "options.tree_document_structure.lang",
+      "t": ":lang()"
+    },
+    {
+      "key": "options.tree_document_structure.is",
+      "t": ":is()"
+    },
+    {
+      "key": "options.tree_document_structure.where",
+      "t": ":where()"
+    },
+    {
+      "key": "options.tree_document_structure.has",
+      "t": ":has()"
+    },
+    {
       "key": "features.attributes",
       "t": "Attributes"
+    },
+    {
+      "key": "options.attributes.presence",
+      "t": "div[foo] (Presence)"
+    },
+    {
+      "key": "options.attributes.equality",
+      "t": "div[foo=\"bar\"] (Equality)"
+    },
+    {
+      "key": "options.attributes.starts_with",
+      "t": "div[foo^=\"bar\"] (Starts with)"
+    },
+    {
+      "key": "options.attributes.ends_with",
+      "t": "div[foo$=\"bar\"] (Ends with)"
+    },
+    {
+      "key": "options.attributes.contains_word",
+      "t": "div[foo~=\"bar\"] (Contains word)"
+    },
+    {
+      "key": "options.attributes.contains_substring",
+      "t": "div[foo*=\"bar\"] (Contains substring)"
     },
     {
       "key": "features.links_urls",
       "t": "Links/URLs"
     },
     {
+      "key": "options.links_urls.any_link",
+      "t": ":any-link"
+    },
+    {
+      "key": "options.links_urls.link_visited",
+      "t": ":link and :visited"
+    },
+    {
+      "key": "options.links_urls.local_link",
+      "t": ":local-link"
+    },
+    {
+      "key": "options.links_urls.target",
+      "t": ":target"
+    },
+    {
       "key": "features.interaction",
       "t": "Interaction"
     },
     {
+      "key": "options.interaction.hover",
+      "t": ":hover"
+    },
+    {
+      "key": "options.interaction.active",
+      "t": ":active"
+    },
+    {
+      "key": "options.interaction.focus",
+      "t": ":focus"
+    },
+    {
+      "key": "options.interaction.focus_within",
+      "t": ":focus-within"
+    },
+    {
+      "key": "options.interaction.focus_visible",
+      "t": ":focus-visible"
+    },
+    {
       "key": "features.form_controls",
       "t": "Form Controls"
+    },
+    {
+      "key": "options.form_controls.enabled_disabled",
+      "t": ":enabled and :disabled"
+    },
+    {
+      "key": "options.form_controls.read_only_write",
+      "t": ":read-only and :read-write"
+    },
+    {
+      "key": "options.form_controls.placeholder_shown",
+      "t": ":placeholder-shown"
+    },
+    {
+      "key": "options.form_controls.default",
+      "t": ":default"
+    },
+    {
+      "key": "options.form_controls.checked",
+      "t": ":checked"
+    },
+    {
+      "key": "options.form_controls.indeterminate",
+      "t": ":indeterminate"
+    },
+    {
+      "key": "options.form_controls.valid_invalid",
+      "t": ":valid and :invalid"
+    },
+    {
+      "key": "options.form_controls.user_invalid",
+      "t": ":user-invalid"
+    },
+    {
+      "key": "options.form_controls.in_out_range",
+      "t": ":in-range and :out-of-range"
+    },
+    {
+      "key": "options.form_controls.required_optional",
+      "t": ":required and :optional"
     },
     {
       "key": "tools.atomiccss",

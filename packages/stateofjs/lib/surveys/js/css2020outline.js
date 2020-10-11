@@ -219,18 +219,42 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "px",
-            "pt",
-            "%",
-            "em",
-            "rem",
-            "vh, vw",
-            "vmin, vmax",
-            "ch",
-            "ex",
-            "mm",
-            "cm",
-            "in"
+            {
+              "id": "px"
+            },
+            {
+              "id": "pt"
+            },
+            {
+              "id": "percent"
+            },
+            {
+              "id": "em"
+            },
+            {
+              "id": "rem"
+            },
+            {
+              "id": "vh_vw"
+            },
+            {
+              "id": "vmin_vmax"
+            },
+            {
+              "id": "ch"
+            },
+            {
+              "id": "ex"
+            },
+            {
+              "id": "mm"
+            },
+            {
+              "id": "cm"
+            },
+            {
+              "id": "in"
+            }
           ]
         },
         {
@@ -241,14 +265,30 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "::before",
-            "::after",
-            "::first-line",
-            "::first-letter",
-            "::selection",
-            "::placeholder",
-            "::marker",
-            "::backdrop"
+            {
+              "id": "before"
+            },
+            {
+              "id": "after"
+            },
+            {
+              "id": "first_line"
+            },
+            {
+              "id": "first_letter"
+            },
+            {
+              "id": "selection"
+            },
+            {
+              "id": "placeholder"
+            },
+            {
+              "id": "marker"
+            },
+            {
+              "id": "backdrop"
+            }
           ]
         },
         {
@@ -259,10 +299,18 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "div span (descendant)",
-            "div > span (child)",
-            "div + div (next sibling)",
-            "div ~ div (subsequent sibling)"
+            {
+              "id": "descendant"
+            },
+            {
+              "id": "child"
+            },
+            {
+              "id": "next_subling"
+            },
+            {
+              "id": "subsequent_sibling"
+            }
           ]
         },
         {
@@ -273,23 +321,54 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":root",
-            ":empty",
-            ":not()",
-            ":nth-child()",
-            ":nth-last-child()",
-            ":first-child",
-            ":last-child",
-            ":only-child",
-            ":nth-of-type()",
-            ":nth-last-of-type()",
-            ":first-of-type",
-            ":last-of-type",
-            ":only-of-type",
-            ":target",
-            ":lang()",
-            ":is()",
-            ":where()"
+            {
+              "id": "root"
+            },
+            {
+              "id": "empty"
+            },
+            {
+              "id": "not"
+            },
+            {
+              "id": "nth_child"
+            },
+            {
+              "id": "nth_last_child"
+            },
+            {
+              "id": "first_child"
+            },
+            {
+              "id": "last_child"
+            },
+            {
+              "id": "only_child"
+            },
+            {
+              "id": "nth_of_type"
+            },
+            {
+              "id": "nth_last_of_type"
+            },
+            {
+              "id": "first_of_type"
+            },
+            {
+              "id": "last_of_type"
+            },
+            {
+              "id": "only_of_type"
+            },
+            {
+              "id": "lang"
+            },
+            {
+              "id": "is"
+            },
+            {
+              "id": "where"
+            }
           ]
         },
         {
@@ -300,12 +379,24 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "div[foo] (Presence)",
-            "div[foo=\"bar\"] (Equality)",
-            "div[foo^=\"bar\"] (Starts with)",
-            "div[foo$=\"bar\"] (Ends with)",
-            "div[foo~=\"bar\"] (Contains word)",
-            "div[foo*=\"bar\"] (Contains substring)"
+            {
+              "id": "presence"
+            },
+            {
+              "id": "equality"
+            },
+            {
+              "id": "starts_with"
+            },
+            {
+              "id": "ends_with"
+            },
+            {
+              "id": "contains_word"
+            },
+            {
+              "id": "contains_substring"
+            }
           ]
         },
         {
@@ -316,10 +407,18 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":any-link",
-            ":link and :visited",
-            ":local-link",
-            ":target"
+            {
+              "id": "any_link"
+            },
+            {
+              "id": "link_visited"
+            },
+            {
+              "id": "local_link"
+            },
+            {
+              "id": "target"
+            }
           ]
         },
         {
@@ -330,11 +429,21 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":hover",
-            ":active",
-            ":focus",
-            ":focus-within",
-            ":focus-visible"
+            {
+              "id": "hover"
+            },
+            {
+              "id": "active"
+            },
+            {
+              "id": "focus"
+            },
+            {
+              "id": "focus_within"
+            },
+            {
+              "id": "focus_visible"
+            }
           ]
         },
         {
@@ -345,16 +454,36 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":enabled and :disabled",
-            ":read-only and :read-write",
-            ":placeholder-shown",
-            ":default",
-            ":checked",
-            ":indeterminate",
-            ":valid and :invalid",
-            ":user-invalid",
-            ":in-range and :out-of-range",
-            ":required and :optional"
+            {
+              "id": "enabled_disabled"
+            },
+            {
+              "id": "read_only_write"
+            },
+            {
+              "id": "placeholder_shown"
+            },
+            {
+              "id": "default"
+            },
+            {
+              "id": "checked"
+            },
+            {
+              "id": "indeterminate"
+            },
+            {
+              "id": "valid_invalid"
+            },
+            {
+              "id": "user_invalid"
+            },
+            {
+              "id": "in_out_range"
+            },
+            {
+              "id": "required_optional"
+            }
           ]
         }
       ]
@@ -726,6 +855,7 @@ export default {
         },
         {
           "id": "currently_missing_from_css",
+          "sectionSlug": "opinions_other",
           "suffix": "others",
           "template": "longtext"
         },

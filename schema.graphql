@@ -942,7 +942,7 @@ type Response {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  css2020__opinions__currently_missing_from_css__others: String 
+  css2020__opinions_other__currently_missing_from_css__others: String 
   css2020__happiness__state_of_the_web: Float 
   css2020__happiness__state_of_css: Float 
   css2020__user_info__years_of_experience: String 
@@ -1272,7 +1272,7 @@ input CreateResponseDataInput {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  css2020__opinions__currently_missing_from_css__others: String 
+  css2020__opinions_other__currently_missing_from_css__others: String 
   css2020__happiness__state_of_the_web: Float 
   css2020__happiness__state_of_css: Float 
   css2020__user_info__years_of_experience: String 
@@ -1545,7 +1545,7 @@ input UpdateResponseDataInput {
   css2020__opinions__selector_nesting_to_be_avoided: Float 
   css2020__opinions__css_is_programming_language: Float 
   css2020__opinions__enjoy_writing_css: Float 
-  css2020__opinions__currently_missing_from_css__others: String 
+  css2020__opinions_other__currently_missing_from_css__others: String 
   css2020__happiness__state_of_the_web: Float 
   css2020__happiness__state_of_css: Float 
   css2020__user_info__years_of_experience: String 
@@ -1813,7 +1813,7 @@ input ResponseFilterInput {
   css2020__opinions__selector_nesting_to_be_avoided: Float_Selector
   css2020__opinions__css_is_programming_language: Float_Selector
   css2020__opinions__enjoy_writing_css: Float_Selector
-  css2020__opinions__currently_missing_from_css__others: String_Selector
+  css2020__opinions_other__currently_missing_from_css__others: String_Selector
   css2020__happiness__state_of_the_web: Float_Selector
   css2020__happiness__state_of_css: Float_Selector
   css2020__user_info__years_of_experience: String_Selector
@@ -2076,7 +2076,7 @@ input ResponseSortInput {
   css2020__opinions__selector_nesting_to_be_avoided: SortOptions
   css2020__opinions__css_is_programming_language: SortOptions
   css2020__opinions__enjoy_writing_css: SortOptions
-  css2020__opinions__currently_missing_from_css__others: SortOptions
+  css2020__opinions_other__currently_missing_from_css__others: SortOptions
   css2020__happiness__state_of_the_web: SortOptions
   css2020__happiness__state_of_css: SortOptions
   css2020__user_info__years_of_experience: SortOptions
