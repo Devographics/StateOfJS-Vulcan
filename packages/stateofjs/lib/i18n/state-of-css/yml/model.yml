@@ -238,36 +238,34 @@ translations:
   # Units & Selectors
   ###########################################################################
 
-  # units & selectors
-  
   - key: features.units # TODO
     t: Units
   - key: features.units.description # TODO
     t: Which of these CSS units have you used?
 
-  - key: px # TODO
+  - key: options.units.px # TODO
     t: px
-  - key: pt # TODO
+  - key: options.units.pt # TODO
     t: pt
-  - key: percent # TODO
+  - key: options.units.percent # TODO
     t: '%'
-  - key: em # TODO
+  - key: options.units.em # TODO
     t: em
-  - key: rem # TODO
+  - key: options.units.rem # TODO
     t: rem
-  - key: vh_vw # TODO
+  - key: options.units.vh_vw # TODO
     t: vh, vw
-  - key: vmin_vmax # TODO
+  - key: options.units.vmin_vmax # TODO
     t: vmin, vmax
-  - key: ch # TODO
+  - key: options.units.ch # TODO
     t: ch
-  - key: ex # TODO
+  - key: options.units.ex # TODO
     t: ex
-  - key: mm # TODO
+  - key: options.units.mm # TODO
     t: mm
-  - key: cm # TODO
+  - key: options.units.cm # TODO
     t: cm
-  - key: in # TODO
+  - key: options.units.in # TODO
     t: in
 
   - key: features.pseudo_elements # TODO
@@ -275,138 +273,139 @@ translations:
   - key: features.pseudo_elements.description # TODO
     t: Which of these CSS selectors have you used?
 
-  - key: before # TODO
+  - key: options.pseudo_elements.before # TODO
     t: '::before'
-  - key: after # TODO
+  - key: options.pseudo_elements.after # TODO
     t: '::after'
-  - key: first_line # TODO
+  - key: options.pseudo_elements.first_line # TODO
     t: '::first-line'
-  - key: first_letter # TODO
+  - key: options.pseudo_elements.first_letter # TODO
     t: '::first-letter'
-  - key: selection # TODO
+  - key: options.pseudo_elements.selection # TODO
     t: '::selection'
-  - key: placeholder # TODO
+  - key: options.pseudo_elements.placeholder # TODO
     t: '::placeholder'
-  - key: marker # TODO
+  - key: options.pseudo_elements.marker # TODO
     t: '::marker'
-  - key: backdrop # TODO
+  - key: options.pseudo_elements.backdrop # TODO
     t: '::backdrop'
 
   - key: features.combinators # TODO
     t: Combinators
 
-  - key: descendant # TODO
+  - key: options.combinators.descendant # TODO
     t: div span (descendant)
-  - key: child # TODO
+  - key: options.combinators.child # TODO
     t: div > span (child)
-  - key: next_subling # TODO
+  - key: options.combinators.next_subling # TODO
     t: div + div (next sibling)
-  - key: subsequent_sibling # TODO
+  - key: options.combinators.subsequent_sibling # TODO
     t: div ~ div (subsequent sibling)
 
   - key: features.tree_document_structure # TODO
     t: Tree / Document Structure
 
-  - key: root # TODO
+  - key: options.tree_document_structure.root # TODO
     t: :root
-  - key: empty # TODO
+  - key: options.tree_document_structure.empty # TODO
     t: :empty
-  - key: not # TODO
+  - key: options.tree_document_structure.not # TODO
     t: :not()
-  - key: nth_child # TODO
+  - key: options.tree_document_structure.nth_child # TODO
     t: :nth-child()
-  - key: nth_last_child # TODO
+  - key: options.tree_document_structure.nth_last_child # TODO
     t: :nth-last-child()
-  - key: first_child # TODO
+  - key: options.tree_document_structure.first_child # TODO
     t: :first-child
-  - key: last_child # TODO
+  - key: options.tree_document_structure.last_child # TODO
     t: :last-child
-  - key: only_child # TODO
+  - key: options.tree_document_structure.only_child # TODO
     t: :only-child
-  - key: nth_of_type # TODO
+  - key: options.tree_document_structure.nth_of_type # TODO
     t: :nth-of-type()
-  - key: nth_last_of_type # TODO
+  - key: options.tree_document_structure.nth_last_of_type # TODO
     t: :nth-last-of-type()
-  - key: first_of_type # TODO
+  - key: options.tree_document_structure.first_of_type # TODO
     t: :first-of-type
-  - key: last_of_type # TODO
+  - key: options.tree_document_structure.last_of_type # TODO
     t: :last-of-type
-  - key: only_of_type # TODO
+  - key: options.tree_document_structure.only_of_type # TODO
     t: :only-of-type
-  - key: lang # TODO
+  - key: options.tree_document_structure.lang # TODO
     t: :lang()
-  - key: is # TODO
+  - key: options.tree_document_structure.is # TODO
     t: :is()
-  - key: where # TODO
+  - key: options.tree_document_structure.where # TODO
     t: :where()
-  - key: has # TODO
+  - key: options.tree_document_structure.has # TODO
     t: :has()
 
   - key: features.attributes # TODO
     t: Attributes
   
-  - key: presence # TODO
+  - key: options.attributes.presence # TODO
     t: div[foo] (Presence)
-  - key: equality # TODO
+  - key: options.attributes.equality # TODO
     t: div[foo="bar"] (Equality)
-  - key: starts_with # TODO
+  - key: options.attributes.starts_with # TODO
     t: div[foo^="bar"] (Starts with)
-  - key: ends_with # TODO
+  - key: options.attributes.ends_with # TODO
     t: div[foo$="bar"] (Ends with)
-  - key: contains_word # TODO
+  - key: options.attributes.contains_word # TODO
     t: div[foo~="bar"] (Contains word)
-  - key: contains_substring # TODO
+  - key: options.attributes.contains_substring # TODO
     t: div[foo*="bar"] (Contains substring)
 
   - key: features.links_urls # TODO
     t: Links/URLs
 
-  - key: any_link # TODO
+  - key: options.links_urls.any_link # TODO
     t: :any-link
-  - key: link_visited # TODO
+  - key: options.links_urls.link_visited # TODO
     t: :link and :visited
-  - key: local_link # TODO
+  - key: options.links_urls.local_link # TODO
     t: :local-link
-  - key: target # TODO
+  - key: options.links_urls.target # TODO
     t: :target
 
   - key: features.interaction # TODO
     t: Interaction
   
-  - key: hover # TODO
+  - key: options.interaction.hover # TODO
     t: :hover
-  - key: active # TODO
+  - key: options.interaction.active # TODO
     t: :active
-  - key: focus # TODO
+  - key: options.interaction.focus # TODO
     t: :focus
-  - key: focus_within # TODO
+  - key: options.interaction.focus_within # TODO
     t: :focus-within
-  - key: focus_visible # TODO
+  - key: options.interaction.focus_visible # TODO
     t: :focus-visible
 
   - key: features.form_controls # TODO
     t: Form Controls
 
-  - key: enabled_disabled # TODO
+  - key: options.form_controls.enabled_disabled # TODO
     t: :enabled and :disabled
-  - key: read_only_write # TODO
+  - key: options.form_controls.read_only_write # TODO
     t: :read-only and :read-write
-  - key: placeholder_shown # TODO
+  - key: options.form_controls.placeholder_shown # TODO
     t: :placeholder-shown
-  - key: default # TODO
+  - key: options.form_controls.default # TODO
     t: :default
-  - key: checked # TODO
+  - key: options.form_controls.checked # TODO
     t: :checked
-  - key: indeterminate # TODO
+  - key: options.form_controls.indeterminate # TODO
     t: :indeterminate
-  - key: valid_invalid # TODO
+  - key: options.form_controls.valid_invalid # TODO
     t: :valid and :invalid
-  - key: user_invalid # TODO
+  - key: options.form_controls.user_invalid # TODO
     t: :user-invalid
-  - key: in_out_range # TODO
+  - key: options.form_controls.in_out_range # TODO
     t: :in-range and :out-of-range
-  - key: required_optional # TODO
+  - key: options.form_controls.required_optional # TODO
     t: :required and :optional
+
 
   ###########################################################################
   # Tools
