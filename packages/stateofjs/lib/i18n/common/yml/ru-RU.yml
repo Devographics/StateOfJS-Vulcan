@@ -51,9 +51,9 @@ translations:
   - key: general.survey_results
     t: Посмотреть результаты опроса »
   - key: general.surveys_available_languages
-    t: "Опросы доступны в:"
+    t: "Опросы доступны на следующих языках:"
   - key: general.help_us_translate
-    t: Помощь с передовом опросов »
+    t: Помочь с передовом опросов »
 
   # footer
   - key: general.privacy_policy
@@ -78,10 +78,12 @@ translations:
   - key: general.thanks
     t: >
       Спасибо за заполнение опроса!
-      
-      Ваши ответы сохранены. До завершения опроса вы можете посмотреть или изменить ответы.
 
-      Кроме того, вы можете помочь нам, если расскажите всем об этом опросе. Даже небольшая помощь сделает опрос более точным:
+      
+      Ваши ответы сохранены. До завершения опроса вы можете посмотреть или изменить их.
+
+      
+      Кроме того, вы можете помочь нам, если расскажите другим людям об этом опросе. Даже небольшая активность с вашей стороны сделает опрос более точным:
 
   # share
   - key: general.share_subject
@@ -147,7 +149,7 @@ translations:
   - key: sections.opinions.title
     t: Мнения
   - key: sections.opinions.description
-    t: Что вы думаете насчёт общего состояния в {topic}?
+    t: Что вы думаете насчёт общего состояния {topic}?
 
   - key: sections.other_tools.title
     t: Другие инструменты
@@ -357,11 +359,11 @@ translations:
   - key: options.javascript_proficiency.1
     t: Пишу короткие, простые выражения на JavaScript или jQuery
   - key: options.javascript_proficiency.2
-    t: Работаю с фронтендом, используя современные фреймворки (React, Vue и т.д.).
+    t: Работаю с фронтендом, используя современные фреймворки (React, Vue и т.д.)
   - key: options.javascript_proficiency.3
     t: Могу написать фронтенд с нуля
   - key: options.javascript_proficiency.4
-    t: Владею продвинутыми фронтенд-паттернами (управление состоянием, загрузка данных и т.д.).
+    t: Владею продвинутыми фронтенд-паттернами (управление состоянием, загрузка данных и т.д.)
 
   # CSS proficiency
 
@@ -379,7 +381,7 @@ translations:
   # Back-end proficiency
 
   - key: options.backend_proficiency.0
-    t: Не могу выполнять никакую бэкенд-работу
+    t: Не работаю с бэкендом
   - key: options.backend_proficiency.1
     t: Могу устанавливать универсальные CMS (WordPress и т.п.) или статические генераторы сайтов (Jekyll, etc.)
   - key: options.backend_proficiency.2
@@ -414,24 +416,24 @@ translations:
 
   # Race & Ethnicity
 
-  - key: options.race_ethnicity.white_european # TODO
-    t: White or of European descent
-  - key: options.race_ethnicity.south_asian # TODO
-    t: South Asian
-  - key: options.race_ethnicity.hispanic_latin # TODO
-    t: Hispanic or Latino/Latina
-  - key: options.race_ethnicity.east_asian # TODO
-    t: East Asian
-  - key: options.race_ethnicity.middle_eastern # TODO
-    t: Middle Eastern
-  - key: options.race_ethnicity.black_african # TODO
-    t: Black or of African descent
-  - key: options.race_ethnicity.multiracial # TODO
-    t: Multiracial
-  - key: options.race_ethnicity.biracial # TODO
-    t: Biracial
-  - key: options.race_ethnicity.native_american_islander_australian # TODO
-    t: Native American, Pacific Islander, or Indigenous Australian
+  - key: options.race_ethnicity.white_european
+    t: Белый или европеец
+  - key: options.race_ethnicity.south_asian
+    t: Уроженец Южной Азии
+  - key: options.race_ethnicity.hispanic_latin
+    t: Испанец или латиноамериканец
+  - key: options.race_ethnicity.east_asian
+    t: Уроженец Восточной Азии
+  - key: options.race_ethnicity.middle_eastern
+    t: Уроженец Ближнего Востока
+  - key: options.race_ethnicity.black_african
+    t: Чёрный или африканец
+  - key: options.race_ethnicity.multiracial
+    t: Метис
+  - key: options.race_ethnicity.biracial
+    t: Представитель двух рас
+  - key: options.race_ethnicity.native_american_islander_australian
+    t: Коренной американец, либо уроженец островов Тихого океана, либо коренной австралиец
 
   # image fallback
   - key: options.skin_tone.0
@@ -450,15 +452,15 @@ translations:
   ###########################################################################
 
   - key: tools.other_tools
-    t: Другие инструменты
+    t: Другие варианты
   - key: tools.other_tools.description
-    t: Другие инструменты, связанные с текущим разделом, но не перечисленные в списке.
+    t: Что-то другое, кроме представленных выше вариантов.
   - key: tools.happiness
     t: Общий показатель счастья
   - key: tools.happiness.description
     t: >
       По шкале от одного (очень недоволен) до пяти (очень доволен), насколько вы довольны
-      текущим положением дел в перечисленных выше вариантах?
+      текущими перечисленными выше вариантами?
 
   ###########################################################################
   # Demographics (About You/User Info)
@@ -480,13 +482,13 @@ translations:
   - key: user_info.yearly_salary
     t: Годовая зарплата
   - key: user_info.yearly_salary.description
-    t: В долларах.
+    t: В долларах США.
 
   # job title
   - key: user_info.job_title
     t: Должность
   - key: user_info.job_title.description
-    t: Как вы представляетесь на тусовках?
+    t: Как вы представляетесь на публичных мероприятиях?
 
   # javascript proficiency
 
@@ -513,15 +515,8 @@ translations:
     t: Пол
 
   # skin tone/appearance
-  - key: user_info.skin_tone
-    t: Внешность
-  - key: user_info.skin_tone.description
-    t: >
-      На какой эмодзи вы похожи? <br/><br/>
-      
-      Примечание: мы экспериментируем с новым форматом вопроса, чтобы 
-      попробовать лучше отразить демографический состав наших респондентов.
-      <a href="https://github.com/StateOfJS/StateOfCSS-2020/issues/5" target="_blank">Вы можете оставить свой отзыв об этом</a> на GitHub.
+  - key: user_info.race_ethnicity
+    t: Раса и этническая принадлежность
 
   # other info
   - key: user_info.how_did_user_find_out_about_the_survey
@@ -556,7 +551,7 @@ translations:
   - key: tools_other.browsers
     t: Браузеры
   - key: tools_other.browsers.description
-    t: В каких браузерах вы в основном работаете при начальной разработке?
+    t: В каких браузерах вы в основном работаете?
   - key: tools_other.browsers.others
     t: Другие браузеры
   - key: tools_other.browsers.others.description

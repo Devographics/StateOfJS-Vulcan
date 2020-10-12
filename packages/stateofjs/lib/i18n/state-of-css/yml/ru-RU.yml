@@ -9,8 +9,10 @@ translations:
   - key: general.survey_intro_css2020
     t: >
       CSS развивается быстрее, чем когда-либо.
+
       
       Флексбоксы, гриды, мультиколонки… Не говоря уже о совершенно новых парадигмах, таких как CSS-in-JS.
+
       
       Итак, после успешного проведения ежегодного опроса "State of JavaScript", 
       мы решили войти в мир стилей и селекторов, чтобы 
@@ -95,7 +97,7 @@ translations:
   - key: options.css_for_print.1
     t: Иногда я создаю стили для печати
   - key: options.css_for_print.2
-    t: Создаю стили для печати в большинстве своих проектах
+    t: Создаю стили для печати в большинстве проектах
   - key: options.css_for_print.3
     t: Уделяю особое внимание CSS для печати
 
@@ -116,13 +118,13 @@ translations:
   # layout
 
   - key: features.grid
-    t: Гриды CSS
+    t: Грид CSS
   - key: features.subgrid
     t: Сабгрид
   - key: features.regions
     t: CSS-области
   - key: features.flexbox
-    t: Flexbox
+    t: Флексбокс
   - key: features.multi_column
     t: Мультиколонки CSS
   - key: features.writing_modes
@@ -270,7 +272,7 @@ translations:
   - key: features_others.pseudo_elements
     t: Псевдоэлементы
   - key: features_others.pseudo_elements.description
-    t: Какой из этих CSS-селекторов вы использовали?
+    t: Какие из этих CSS-псевдоэлементов вы использовали?
 
   - key: options.pseudo_elements.before
     t: '::before'
@@ -447,7 +449,7 @@ translations:
     t: CSS развивается слишком медленно
     
   - key: opinions.utility_classes_to_be_avoided
-    t: Следует избегать вспомогательных (несемантических) классов (.center, .large-text и т.д.).
+    t: Следует избегать вспомогательных (несемантических) классов (.center, .large-text и т.д.)
     
   - key: opinions.selector_nesting_to_be_avoided
     t: Следует избегать вложенных селекторов (.foo .bar ul li {...})
