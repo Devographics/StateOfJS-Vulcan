@@ -247,7 +247,7 @@ translations:
   - key: features_others.pseudo_elements
     t: Pseudo Elementi
   - key: features_others.pseudo_elements.description
-    t: Quali di questi selettori CSS hai usato?
+    t: Quali di questi pseudo elementi CSS hai usato?
 
   - key: features_others.combinators
     t: Combinatori
