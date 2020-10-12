@@ -247,7 +247,7 @@ translations:
   - key: features_others.pseudo_elements # TODO
     t: Pseudo Elements
   - key: features_others.pseudo_elements.description # TODO
-    t: Which of these CSS selectors have you used?
+    t: Which of these CSS pseudo-elements have you used?
 
   - key: features_others.combinators # TODO
     t: Combinators

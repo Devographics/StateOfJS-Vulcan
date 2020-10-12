@@ -269,7 +269,7 @@ translations:
   - key: features_others.pseudo_elements
     t: Pseudo Éléments
   - key: features_others.pseudo_elements.description
-    t: Lequel de ces sélecteurs CSS avez-vous utilisé ?
+    t: Lequel de ces pseudo-éléments CSS avez-vous utilisé ?
 
   - key: options.pseudo_elements.before
     t: '::before'
