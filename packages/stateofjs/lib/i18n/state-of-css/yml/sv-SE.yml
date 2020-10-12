@@ -35,7 +35,6 @@ translations:
   - key: sections.interactions.title
     t: Interaktioner
   - key: sections.interactions.description
-    t:
     t: Hur du styr över hur användaren interagerar med sidan.
 
   - key: sections.typography.title

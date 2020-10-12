@@ -18,6 +18,10 @@ import { default as frCommon } from './common/js/fr-FR.js';
 import { default as frCSS } from './state-of-css/js/fr-FR.js';
 // import { default as frJS } from './state-of-js/js/fr-FR.js'; // not translated yet
 
+import { default as svCommon } from './common/js/sv-SE.js';
+import { default as svCSS } from './state-of-css/js/sv-SE.js';
+import { default as svJS } from './state-of-js/js/sv-SE.js';
+
 const locales = [
   {
     id: 'en',
@@ -29,7 +33,7 @@ const locales = [
     id: 'it',
     label: 'Italiano',
     stringFiles: [itCommon, itCSS, itJS],
-    translators: []
+    translators: ['polettoweb']
   },
   {
     id: 'zh',
@@ -49,7 +53,12 @@ const locales = [
     stringFiles: [frCommon, frCSS],
     translators: ['arnauddrain']
   },
+  {
+    id: 'sv-SE',
+    label: 'Svenska',
+    stringFiles: [svCommon, svCSS, svJS],
+    translators: ['m-hagberg']
+  },
 ];
-
 
 export default locales;
