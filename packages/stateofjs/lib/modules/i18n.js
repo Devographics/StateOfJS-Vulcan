@@ -1,10 +1,7 @@
 import { registerLocale, addStrings } from 'meteor/vulcan:core';
 import locales from '../i18n/index';
 
-import projects from '../data/js/projects';
-import entities from '../data/js/entities';
-
-const convertStrings = (stringFile) => {
+export const convertStrings = (stringFile) => {
   const convertedStrings = {};
   const { namespace, translations } = stringFile;
   translations.forEach(({ key, t }) => {
@@ -16,26 +13,19 @@ const convertStrings = (stringFile) => {
   return convertedStrings;
 };
 
-const convertEntities = (projects, suffix) => {
-  const convertedStrings = {};
-  projects.forEach(({ id, name }) => {
-    convertedStrings[`entities.${id}`] = name;
-  });
-  return convertedStrings;
-};
-
 locales.forEach((locale) => {
   const { id, stringFiles, label } = locale;
   registerLocale({
     id,
     label,
+    dynamic: true,
   });
 
-  stringFiles.forEach(stringFile => {
-    addStrings(id, convertStrings(stringFile));
-  });
+  if (id === 'en') {
+    // add en language to client bundle so it can act as a fallback
+    stringFiles.forEach((stringFile) => {
+      addStrings(id, convertStrings(stringFile));
+    });
+  }
 
-  // also add all project and entities names
-  addStrings(id, convertEntities(projects));
-  addStrings(id, convertEntities(entities));
 });
