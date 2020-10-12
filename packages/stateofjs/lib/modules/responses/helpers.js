@@ -79,6 +79,7 @@ export const templates = {
   tool: () => ({
     input: 'radiogroup',
     suffix: 'experience',
+    intlPrefix: 'entities',
     options: [
       {
         value: 'never_heard',
@@ -116,6 +117,10 @@ export const templates = {
     input: 'checkboxgroup',
     randomize: true,
     suffix: 'choices',
+  }),
+  others: () => ({
+    input: 'text',
+    suffix: 'others',
   }),
   text: () => ({ input: 'text' }),
   longtext: () => ({ input: 'textarea' }),
@@ -195,7 +200,7 @@ export const parseOptions = (questionObject, options) => {
 }
 
 export const generateIntlId = (questionObject, section, survey) => {
-  const { sectionSlug, id, intlId, suffix } = questionObject;
+  const { sectionSlug, id, intlId, intlPrefix, suffix } = questionObject;
   // if intlId is explicitely specified on question object use that
   if (intlId) {
     return intlId;
@@ -203,8 +208,8 @@ export const generateIntlId = (questionObject, section, survey) => {
   // survey namespaces are not currently supported
   // const surveySegment = survey.namespace;
   const surveySegment = '';
-  // for section segment, use either section slug or sectionSlug override on question
-  const sectionSegment = sectionSlug || section.slug;
+  // for section segment, use either intlPrefix, section slug or sectionSlug override on question
+  const sectionSegment = intlPrefix || sectionSlug || section.slug;
   const questionSegment = `.${id}`;
   // for now hardcode "others" as the only valid suffix
   const suffixSegment = suffix && suffix === 'others' ? '.others' : '';
@@ -313,3 +318,5 @@ Filter a response object to only keep fields relevant to the survey
 export const getResponseData = response => {
   return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }
+
+

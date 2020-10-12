@@ -600,24 +600,40 @@ export default {
       "t": "Preferisco non dirlo"
     },
     {
-      "key": "options.skin_tone.0",
-      "t": "🧑🏻‍🦲"
+      "key": "options.race_ethnicity.white_european",
+      "t": "White or of European descent"
     },
     {
-      "key": "options.skin_tone.1",
-      "t": "🧑🏼‍🦲"
+      "key": "options.race_ethnicity.south_asian",
+      "t": "South Asian"
     },
     {
-      "key": "options.skin_tone.2",
-      "t": "🧑🏽‍🦲"
+      "key": "options.race_ethnicity.hispanic_latin",
+      "t": "Hispanic or Latino/Latina"
     },
     {
-      "key": "options.skin_tone.3",
-      "t": "🧑🏾‍🦲"
+      "key": "options.race_ethnicity.east_asian",
+      "t": "East Asian"
     },
     {
-      "key": "options.skin_tone.4",
-      "t": "🧑🏿‍🦲"
+      "key": "options.race_ethnicity.middle_eastern",
+      "t": "Middle Eastern"
+    },
+    {
+      "key": "options.race_ethnicity.black_african",
+      "t": "Black or of African descent"
+    },
+    {
+      "key": "options.race_ethnicity.multiracial",
+      "t": "Multiracial"
+    },
+    {
+      "key": "options.race_ethnicity.biracial",
+      "t": "Biracial"
+    },
+    {
+      "key": "options.race_ethnicity.native_american_islander_australian",
+      "t": "Native American, Pacific Islander, or Indigenous Australian"
     },
     {
       "key": "tools.other_tools",
@@ -716,83 +732,83 @@ export default {
       "t": "Il tuo Paese"
     },
     {
-      "key": "other_tools.text_editors",
+      "key": "tools_other.text_editors",
       "t": "Editor di Testo"
     },
     {
-      "key": "other_tools.text_editors.description",
+      "key": "tools_other.text_editors.description",
       "t": "Quale/i editor di testo usi regolarmente?"
     },
     {
-      "key": "other_tools.text_editors.others",
+      "key": "tools_other.text_editors.others",
       "t": "Altri Editor di Testo"
     },
     {
-      "key": "other_tools.text_editors.others.description",
+      "key": "tools_other.text_editors.others.description",
       "t": "Altre risposte (risposta aperta)."
     },
     {
-      "key": "other_tools.utilities",
+      "key": "tools_other.utilities",
       "t": "Utilità"
     },
     {
-      "key": "other_tools.utilities.description",
+      "key": "tools_other.utilities.description",
       "t": "Quale libreria di utilità usi regolarmente?"
     },
     {
-      "key": "other_tools.utilities.others",
+      "key": "tools_other.utilities.others",
       "t": "Altre Utilità"
     },
     {
-      "key": "other_tools.utilities.others.description",
+      "key": "tools_other.utilities.others.description",
       "t": "Altre Utilità (risposta aperta)."
     },
     {
-      "key": "other_tools.browsers",
+      "key": "tools_other.browsers",
       "t": "Browser"
     },
     {
-      "key": "other_tools.browsers.description",
+      "key": "tools_other.browsers.description",
       "t": "Su quale/i browser lavori principalmente durante lo sviluppo iniziale?"
     },
     {
-      "key": "other_tools.browsers.others",
+      "key": "tools_other.browsers.others",
       "t": "Altri Browser"
     },
     {
-      "key": "other_tools.browsers.others.description",
+      "key": "tools_other.browsers.others.description",
       "t": "Altre risposte (risposta aperta)."
     },
     {
-      "key": "other_tools.build_tools",
+      "key": "tools_other.build_tools",
       "t": "Strumenti di Costruzione"
     },
     {
-      "key": "other_tools.build_tools.description",
+      "key": "tools_other.build_tools.description",
       "t": "Quali strumenti di contruzione usi?"
     },
     {
-      "key": "other_tools.build_tools.others",
+      "key": "tools_other.build_tools.others",
       "t": "Altri strumenti di costruzione"
     },
     {
-      "key": "other_tools.build_tools.others.description",
+      "key": "tools_other.build_tools.others.description",
       "t": "Altre risposte (rispostsa aperta)."
     },
     {
-      "key": "other_tools.non_js_languages",
+      "key": "tools_other.non_js_languages",
       "t": "Linguaggi Non-JavaScript"
     },
     {
-      "key": "other_tools.non_js_languages.description",
+      "key": "tools_other.non_js_languages.description",
       "t": "Quali altri linguaggi di programmazione usi?"
     },
     {
-      "key": "other_tools.non_js_languages.others",
+      "key": "tools_other.non_js_languages.others",
       "t": "Altri Linguaggi"
     },
     {
-      "key": "other_tools.non_js_languages.others.description",
+      "key": "tools_other.non_js_languages.others.description",
       "t": "Altre risposte (rispostsa aperta)."
     },
     {

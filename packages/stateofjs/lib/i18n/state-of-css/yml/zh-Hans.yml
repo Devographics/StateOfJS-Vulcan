@@ -239,32 +239,32 @@ translations:
   ###########################################################################
 
   # units & selectors
-  - key: features.units # TODO
+  - key: features_others.units # TODO
     t: Units
-  - key: features.units.description # TODO
+  - key: features_others.units.description # TODO
     t: Which of these CSS units have you used?
 
-  - key: features.pseudo_elements # TODO
+  - key: features_others.pseudo_elements # TODO
     t: Pseudo Elements
-  - key: features.pseudo_elements.description # TODO
+  - key: features_others.pseudo_elements.description # TODO
     t: Which of these CSS selectors have you used?
 
-  - key: features.combinators # TODO
+  - key: features_others.combinators # TODO
     t: Combinators
 
-  - key: features.tree_document_structure # TODO
+  - key: features_others.tree_document_structure # TODO
     t: Tree / Document Structure
 
-  - key: features.attributes # TODO
+  - key: features_others.attributes # TODO
     t: Attributes
   
-  - key: features.links_urls # TODO
+  - key: features_others.links_urls # TODO
     t: Links/URLs
 
-  - key: features.interaction # TODO
+  - key: features_others.interaction # TODO
     t: Interaction
   
-  - key: features.form_controls # TODO
+  - key: features_others.form_controls # TODO
     t: Form Controls
 
   ###########################################################################

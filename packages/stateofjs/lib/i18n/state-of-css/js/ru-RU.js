@@ -1,100 +1,100 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "locale": "en-US",
+  "locale": "ru-RU",
   "namespace": "css",
   "translations": [
     {
       "key": "general.survey_intro_css2020",
-      "t": "CSS is evolving faster than ever.\n\nFlexbox, Grid, Multi-Column… To say nothing of whole new paradigms like CSS-in-JS.\n\nSo after the success of our annual State Of JavaScript survey,  we’ve decided to take on the world of styles and selectors to help  identify the latests trends… and try to bridge the ever-growing “great front-end divide”!\n"
+      "t": "CSS развивается быстрее, чем когда-либо.\nФлексбоксы, гриды, мультиколонки… Не говоря уже о совершенно новых парадигмах, таких как CSS-in-JS.\nИтак, после успешного проведения ежегодного опроса \"State of JavaScript\",  мы решили войти в мир стилей и селекторов, чтобы  определить последние тенденции… и попытаться преодолеть постоянно увеличивающуюся \"огромную пропасть во фронтенде\"!\n"
     },
     {
       "key": "sections.layout.title",
-      "t": "Layout"
+      "t": "Раскладка"
     },
     {
       "key": "sections.layout.description",
-      "t": "How do you position elements on the screen?"
+      "t": "Как вы располагаете элементы на странице?"
     },
     {
       "key": "sections.shapes_graphics.title",
-      "t": "Shapes & Graphics"
+      "t": "Фигуры и графические объекты"
     },
     {
       "key": "sections.shapes_graphics.description",
-      "t": "Controlling the shape and display of elements."
+      "t": "Управление фигурами и отображение элементов."
     },
     {
       "key": "sections.interactions.title",
-      "t": "Interactions"
+      "t": "Взаимодействия"
     },
     {
       "key": "sections.interactions.description",
-      "t": "Controlling how the user interacts with the page."
+      "t": "Контроль взаимодействия пользователя со страницей."
     },
     {
       "key": "sections.typography.title",
-      "t": "Typography"
+      "t": "Типографика"
     },
     {
       "key": "sections.typography.description",
-      "t": "Setting and laying out text."
+      "t": "Параметры и форматирование текста"
     },
     {
       "key": "sections.animations_transforms.title",
-      "t": "Animations & Transforms"
+      "t": "Анимации и трансформации"
     },
     {
       "key": "sections.animations_transforms.description",
-      "t": "Animating and transforming elements."
+      "t": "Анимирование и трансформация элементов."
     },
     {
       "key": "sections.media_queries.title",
-      "t": "Media Queries"
+      "t": "Медиавыражения"
     },
     {
       "key": "sections.media_queries.description",
-      "t": "Ways of adapting your site to the user's device or preferences."
+      "t": "Способы адаптации сайта к устройству пользователя или его предпочтениям."
     },
     {
       "key": "sections.other_features.title",
-      "t": "Other Features"
+      "t": "Другие возможности"
     },
     {
       "key": "sections.other_features.description",
-      "t": "Other CSS features."
+      "t": "Другие CSS-возможности."
     },
     {
       "key": "sections.units_selectors.title",
-      "t": "Units & Selectors"
+      "t": "Единицы значения и селекторы"
     },
     {
       "key": "sections.units_selectors.description",
-      "t": "Test your knowledge of CSS units and selectors."
+      "t": "Проверьте свои знания единиц измерения и селекторов CSS."
     },
     {
       "key": "sections.pre_post_processors.title",
-      "t": "Pre-/Post-processors"
+      "t": "Пре/Постпроцессоры"
     },
     {
       "key": "sections.pre_post_processors.description",
-      "t": "Utilities that augment CSS."
+      "t": "Утилиты, расширяющие возможности CSS."
     },
     {
       "key": "sections.css_frameworks.title",
-      "t": "CSS Frameworks"
+      "t": "CSS-фреймворки"
     },
     {
       "key": "sections.css_frameworks.description",
-      "t": "Libraries that give you pre-made components and styles."
+      "t": "Библиотеки с готовыми компонентами и стилями."
     },
     {
       "key": "sections.css_methodologies.title",
-      "t": "CSS Methodologies"
+      "t": "Методологии CSS"
     },
     {
       "key": "sections.css_methodologies.description",
-      "t": "Codified ways to write cleaner CSS."
+      "t": "Систематизированные способы написания чистого CSS-кода."
     },
     {
       "key": "sections.css_in_js.title",
@@ -102,59 +102,59 @@ export default {
     },
     {
       "key": "sections.css_in_js.description",
-      "t": "Libraries that help integrate CSS into JavaScript code."
+      "t": "Библиотеки для интеграции CSS в JavaScript-код."
     },
     {
       "key": "sections.environments.title",
-      "t": "Environments"
+      "t": "Окружения"
     },
     {
       "key": "sections.environments.description",
-      "t": "Which environments do you write CSS for?"
+      "t": "Для каких окружений вы пишете CSS?"
     },
     {
       "key": "options.css_for_print.0",
-      "t": "I (almost) never write print styles"
+      "t": "Я (почти) никогда не создаю стили для печати"
     },
     {
       "key": "options.css_for_print.1",
-      "t": "I occasionally write print styles"
+      "t": "Иногда я создаю стили для печати"
     },
     {
       "key": "options.css_for_print.2",
-      "t": "I write print styles as part of most projects"
+      "t": "Создаю стили для печати в большинстве своих проектах"
     },
     {
       "key": "options.css_for_print.3",
-      "t": "I focus mainly on CSS for print"
+      "t": "Уделяю особое внимание CSS для печати"
     },
     {
       "key": "options.css_for_email.0",
-      "t": "I (almost) never write CSS for email clients"
+      "t": "Я (почти) никогда не создаю стили для почтовых клиентов"
     },
     {
       "key": "options.css_for_email.1",
-      "t": "I occasionally write CSS for email clients"
+      "t": "Иногда я пишу стили для почтовых клиентов"
     },
     {
       "key": "options.css_for_email.2",
-      "t": "I write CSS for email clients as part of most projects"
+      "t": "Создаю стили для почтовых клиентов в большинстве проектах"
     },
     {
       "key": "options.css_for_email.3",
-      "t": "I focus mainly on CSS for email clients"
+      "t": "Уделяю особое внимание CSS для почтовых клиентов"
     },
     {
       "key": "features.grid",
-      "t": "CSS Grid"
+      "t": "Гриды CSS"
     },
     {
       "key": "features.subgrid",
-      "t": "Subgrid"
+      "t": "Сабгрид"
     },
     {
       "key": "features.regions",
-      "t": "CSS Regions"
+      "t": "CSS-области"
     },
     {
       "key": "features.flexbox",
@@ -162,15 +162,15 @@ export default {
     },
     {
       "key": "features.multi_column",
-      "t": "CSS Multi-Column"
+      "t": "Мультиколонки CSS"
     },
     {
       "key": "features.writing_modes",
-      "t": "CSS Writing Modes"
+      "t": "Режимы письма CSS"
     },
     {
       "key": "features.exclusions",
-      "t": "CSS Exclusions"
+      "t": "CSS-исключения"
     },
     {
       "key": "features.position_sticky",
@@ -178,11 +178,11 @@ export default {
     },
     {
       "key": "features.logical_properties",
-      "t": "Logical Properties"
+      "t": "Логические свойства"
     },
     {
       "key": "features.logical_properties.description",
-      "t": "<code>margin-block-start</code>, <code>padding-inline-end</code>, etc."
+      "t": "<code>margin-block-start</code>, <code>padding-inline-end</code> и т.д."
     },
     {
       "key": "features.aspect_ratio",
@@ -194,7 +194,7 @@ export default {
     },
     {
       "key": "features.shapes",
-      "t": "CSS Shapes"
+      "t": "CSS-фигуры"
     },
     {
       "key": "features.object_fit",
@@ -206,19 +206,19 @@ export default {
     },
     {
       "key": "features.masks",
-      "t": "CSS Masks"
+      "t": "CSS-маски"
     },
     {
       "key": "features.blend_modes",
-      "t": "Blend Modes"
+      "t": "Режимы смешивания"
     },
     {
       "key": "features.blend_modes.description",
-      "t": "The <code>mix-blend-mode</code> property"
+      "t": "Свойство <code>mix-blend-mode</code>"
     },
     {
       "key": "features.filter_effects",
-      "t": "CSS Filter Effects"
+      "t": "CSS-фильтры"
     },
     {
       "key": "features.backdrop_filter",
@@ -226,7 +226,7 @@ export default {
     },
     {
       "key": "features.scroll_snap",
-      "t": "CSS Scroll Snap"
+      "t": "Привязка прокрутки в CSS"
     },
     {
       "key": "features.overscroll_behavior",
@@ -246,15 +246,15 @@ export default {
     },
     {
       "key": "features.web_fonts",
-      "t": "Web fonts (@font-face)"
+      "t": "Веб-шрифты (@font-face)"
     },
     {
       "key": "features.variables_fonts",
-      "t": "Variable fonts"
+      "t": "Вариативные шрифты"
     },
     {
       "key": "features.line_breaking",
-      "t": "Line breaking properties"
+      "t": "Свойства переноса строк"
     },
     {
       "key": "features.line_breaking.description",
@@ -290,19 +290,19 @@ export default {
     },
     {
       "key": "features.direction.description",
-      "t": "Also includes <code>dir</code> HTML attribute."
+      "t": "Включая также HTML-атрибут <code>dir</code>."
     },
     {
       "key": "features.transitions",
-      "t": "CSS Transitions"
+      "t": "CSS-переходы"
     },
     {
       "key": "features.transforms",
-      "t": "CSS Transforms"
+      "t": "CSS-трансформации"
     },
     {
       "key": "features.animations",
-      "t": "CSS Animations"
+      "t": "CSS-анимации"
     },
     {
       "key": "features.perspective",
@@ -310,7 +310,7 @@ export default {
     },
     {
       "key": "features.feature_support_queries",
-      "t": "Feature Support Queries (<code>@supports</code>)"
+      "t": "Проверка CSS-возможности (<code>@supports</code>)"
     },
     {
       "key": "features.prefers_reduced_motion",
@@ -326,11 +326,11 @@ export default {
     },
     {
       "key": "features.variables",
-      "t": "CSS Variables (Logical Properties)"
+      "t": "CSS-переменные (логические свойства)"
     },
     {
       "key": "features.containment",
-      "t": "CSS Containment"
+      "t": "CSS-изоляция"
     },
     {
       "key": "features.will_change",
@@ -346,19 +346,19 @@ export default {
     },
     {
       "key": "features.comparison_functions",
-      "t": "CSS Comparison Functions"
+      "t": "Функции сравнения CSS"
     },
     {
       "key": "features.comparison_functions.description",
-      "t": "<code>min()</code>, <code>max()</code>, and <code>clamp()</code>"
+      "t": "<code>min()</code>, <code>max()</code> и <code>clamp()</code>"
     },
     {
       "key": "features_others.units",
-      "t": "Units"
+      "t": "Единицы измерения"
     },
     {
       "key": "features_others.units.description",
-      "t": "Which of these CSS units have you used?"
+      "t": "Какую из этих единиц измерения CSS вы использовали?"
     },
     {
       "key": "options.units.px",
@@ -410,11 +410,11 @@ export default {
     },
     {
       "key": "features_others.pseudo_elements",
-      "t": "Pseudo Elements"
+      "t": "Псевдоэлементы"
     },
     {
       "key": "features_others.pseudo_elements.description",
-      "t": "Which of these CSS selectors have you used?"
+      "t": "Какой из этих CSS-селекторов вы использовали?"
     },
     {
       "key": "options.pseudo_elements.before",
@@ -450,27 +450,27 @@ export default {
     },
     {
       "key": "features_others.combinators",
-      "t": "Combinators"
+      "t": "Комбинаторы"
     },
     {
       "key": "options.combinators.descendant",
-      "t": "div span (descendant)"
+      "t": "div span (комбинатор потомка)"
     },
     {
       "key": "options.combinators.child",
-      "t": "div > span (child)"
+      "t": "div > span (комбинатор непосредственного потомка)"
     },
     {
       "key": "options.combinators.next_subling",
-      "t": "div + div (next sibling)"
+      "t": "div + div (комбинатор непосредственного соседства)"
     },
     {
       "key": "options.combinators.subsequent_sibling",
-      "t": "div ~ div (subsequent sibling)"
+      "t": "div ~ div (комбинатор соседства)"
     },
     {
       "key": "features_others.tree_document_structure",
-      "t": "Tree / Document Structure"
+      "t": "Структура дерева/документа"
     },
     {
       "key": "options.tree_document_structure.root",
@@ -542,35 +542,35 @@ export default {
     },
     {
       "key": "features_others.attributes",
-      "t": "Attributes"
+      "t": "Атрибуты"
     },
     {
       "key": "options.attributes.presence",
-      "t": "div[foo] (Presence)"
+      "t": "div[foo] (имеет определённый атрибут)"
     },
     {
       "key": "options.attributes.equality",
-      "t": "div[foo=\"bar\"] (Equality)"
+      "t": "div[foo=\"bar\"] (имеет определённый атрибут со значением)"
     },
     {
       "key": "options.attributes.starts_with",
-      "t": "div[foo^=\"bar\"] (Starts with)"
+      "t": "div[foo^=\"bar\"] (начинается с)"
     },
     {
       "key": "options.attributes.ends_with",
-      "t": "div[foo$=\"bar\"] (Ends with)"
+      "t": "div[foo$=\"bar\"] (заканчивается на)"
     },
     {
       "key": "options.attributes.contains_word",
-      "t": "div[foo~=\"bar\"] (Contains word)"
+      "t": "div[foo~=\"bar\"] (содержит определённый набор слов)"
     },
     {
       "key": "options.attributes.contains_substring",
-      "t": "div[foo*=\"bar\"] (Contains substring)"
+      "t": "div[foo*=\"bar\"] (содержит определённую подстроку)"
     },
     {
       "key": "features_others.links_urls",
-      "t": "Links/URLs"
+      "t": "Ссылки/URL-адреса"
     },
     {
       "key": "options.links_urls.any_link",
@@ -590,7 +590,7 @@ export default {
     },
     {
       "key": "features_others.interaction",
-      "t": "Interaction"
+      "t": "Взаимодействие"
     },
     {
       "key": "options.interaction.hover",
@@ -614,15 +614,15 @@ export default {
     },
     {
       "key": "features_others.form_controls",
-      "t": "Form Controls"
+      "t": "Управление полями формы"
     },
     {
       "key": "options.form_controls.enabled_disabled",
-      "t": ":enabled and :disabled"
+      "t": ":enabled и :disabled"
     },
     {
       "key": "options.form_controls.read_only_write",
-      "t": ":read-only and :read-write"
+      "t": ":read-only и :read-write"
     },
     {
       "key": "options.form_controls.placeholder_shown",
@@ -642,7 +642,7 @@ export default {
     },
     {
       "key": "options.form_controls.valid_invalid",
-      "t": ":valid and :invalid"
+      "t": ":valid и :invalid"
     },
     {
       "key": "options.form_controls.user_invalid",
@@ -650,95 +650,95 @@ export default {
     },
     {
       "key": "options.form_controls.in_out_range",
-      "t": ":in-range and :out-of-range"
+      "t": ":in-range и :out-of-range"
     },
     {
       "key": "options.form_controls.required_optional",
-      "t": ":required and :optional"
+      "t": ":required и :optional"
     },
     {
       "key": "tools.atomiccss",
-      "t": "Utility-First/Atomic CSS"
+      "t": "Подход Utility-First/Atomic CSS"
     },
     {
       "key": "environments.browsers",
-      "t": "Browsers"
+      "t": "Браузеры"
     },
     {
       "key": "environments.browsers.description",
-      "t": "Which browsers do you test in?"
+      "t": "В каких браузерах вы тестируете?"
     },
     {
       "key": "environments.form_factors",
-      "t": "Form Factors"
+      "t": "Форм-фактор"
     },
     {
       "key": "environments.form_factors.description",
-      "t": "Which form factors do you test on?"
+      "t": "Какие форм-факторы вы проверяете?"
     },
     {
       "key": "environments.css_for_print",
-      "t": "CSS for Print"
+      "t": "CSS для печати"
     },
     {
       "key": "environments.css_for_print.description",
-      "t": "Do you write print styles?"
+      "t": "Вы создаёте стили для печати?"
     },
     {
       "key": "environments.css_for_email",
-      "t": "CSS for Email Clients"
+      "t": "CSS для почтовых клиентов"
     },
     {
       "key": "environments.css_for_email.description",
-      "t": "Do you write CSS for email clients?"
+      "t": "Вы создаёте CSS-стили для почтовых клиентов?"
     },
     {
       "key": "opinions.css_easy_to_learn",
-      "t": "CSS is easy to learn"
+      "t": "CSS легко изучить"
     },
     {
       "key": "opinions.css_evolving_slowly",
-      "t": "CSS is evolving too slowly"
+      "t": "CSS развивается слишком медленно"
     },
     {
       "key": "opinions.utility_classes_to_be_avoided",
-      "t": "Utility (non-semantic) classes (.center, .large-text, etc.) should be avoided"
+      "t": "Следует избегать вспомогательных (несемантических) классов (.center, .large-text и т.д.)."
     },
     {
       "key": "opinions.selector_nesting_to_be_avoided",
-      "t": "Selector nesting (.foo .bar ul li {...}) should be avoided"
+      "t": "Следует избегать вложенных селекторов (.foo .bar ul li {...})"
     },
     {
       "key": "opinions.css_is_programming_language",
-      "t": "CSS is a programming language"
+      "t": "CSS — язык программирования"
     },
     {
       "key": "opinions.enjoy_writing_css",
-      "t": "I enjoy writing CSS"
+      "t": "Мне нравится писать CSS"
     },
     {
       "key": "opinions.currently_missing_from_css.others",
-      "t": "What do you feel is currently missing from CSS?"
+      "t": "Что вам не хватает в CSS?"
     },
     {
       "key": "opinions.currently_missing_from_css.others.description",
-      "t": "Features you'd like to see in CSS one day."
+      "t": "Возможности, которые вы хотели бы видеть в CSS."
     },
     {
       "key": "opinions.sum_up_one_word_css",
-      "t": "CSS in one word"
+      "t": "CSS одним словом"
     },
     {
       "key": "opinions.sum_up_one_word_css.description",
-      "t": "How would you sum up your opinion of CSS in one word?"
+      "t": "Как вы бы выразили своё мнение о CSS одним словом?"
     },
     {
       "key": "happiness.state_of_the_web",
-      "t": "How happy are you with the general state of web technologies?"
+      "t": "Насколько вы удовлетворены текущим состоянием веб-технологий?"
     },
     {
       "key": "happiness.state_of_css",
-      "t": "How happy are you with the general state of CSS?"
+      "t": "Насколько вы удовлетворены текущим состоянием CSS?"
     }
   ]
 }

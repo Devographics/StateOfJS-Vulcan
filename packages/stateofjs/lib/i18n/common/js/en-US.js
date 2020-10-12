@@ -616,44 +616,40 @@ export default {
       "t": "Prefer not to say"
     },
     {
-      "key": "options.skin_tone.0",
-      "t": "🧑🏻‍🦲"
+      "key": "options.race_ethnicity.white_european",
+      "t": "White or of European descent"
     },
     {
-      "key": "options.skin_tone.1",
-      "t": "🧑🏼‍🦲"
+      "key": "options.race_ethnicity.south_asian",
+      "t": "South Asian"
     },
     {
-      "key": "options.skin_tone.2",
-      "t": "🧑🏽‍🦲"
+      "key": "options.race_ethnicity.hispanic_latin",
+      "t": "Hispanic or Latino/Latina"
     },
     {
-      "key": "options.skin_tone.3",
-      "t": "🧑🏾‍🦲"
+      "key": "options.race_ethnicity.east_asian",
+      "t": "East Asian"
     },
     {
-      "key": "options.skin_tone.4",
-      "t": "🧑🏿‍🦲"
+      "key": "options.race_ethnicity.middle_eastern",
+      "t": "Middle Eastern"
     },
     {
-      "key": "options.skin_tone.0",
-      "t": "<img src=\"/emojis/icons8-bald-man-light-skin-tone-100.png\" alt=\"Light skin tone emoji\"/>"
+      "key": "options.race_ethnicity.black_african",
+      "t": "Black or of African descent"
     },
     {
-      "key": "options.skin_tone.1",
-      "t": "<img src=\"/emojis/icons8-bald-man-medium-light-skin-tone-100.png\" alt=\"Medium-light skin tone emoji\"/>"
+      "key": "options.race_ethnicity.multiracial",
+      "t": "Multiracial"
     },
     {
-      "key": "options.skin_tone.2",
-      "t": "<img src=\"/emojis/icons8-bald-man-medium-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+      "key": "options.race_ethnicity.biracial",
+      "t": "Biracial"
     },
     {
-      "key": "options.skin_tone.3",
-      "t": "<img src=\"/emojis/icons8-bald-man-medium-dark-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
-    },
-    {
-      "key": "options.skin_tone.4",
-      "t": "<img src=\"/emojis/icons8-bald-man-dark-skin-tone-100.png\" alt=\"Dark skin tone emoji\"/>"
+      "key": "options.race_ethnicity.native_american_islander_australian",
+      "t": "Native American, Pacific Islander, or Indigenous Australian"
     },
     {
       "key": "tools.other_tools",
@@ -732,12 +728,8 @@ export default {
       "t": "Gender"
     },
     {
-      "key": "user_info.skin_tone",
-      "t": "Appearance"
-    },
-    {
-      "key": "user_info.skin_tone.description",
-      "t": "Which emoji do you feel represents you best? <br/><br/>\nNote: We are experimenting with a new question format in order to  try and better capture the demographic makeup of our respondents.  <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Leave us your feedback</a> on GitHub. \n"
+      "key": "user_info.race_ethnicity",
+      "t": "Race & Ethnicity"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",
@@ -752,83 +744,83 @@ export default {
       "t": "Your Country"
     },
     {
-      "key": "other_tools.text_editors",
+      "key": "tools_other.text_editors",
       "t": "Text Editors"
     },
     {
-      "key": "other_tools.text_editors.description",
+      "key": "tools_other.text_editors.description",
       "t": "Which text editor(s) do you regularly use?"
     },
     {
-      "key": "other_tools.text_editors.others",
+      "key": "tools_other.text_editors.others",
       "t": "Other Text Editors"
     },
     {
-      "key": "other_tools.text_editors.others.description",
+      "key": "tools_other.text_editors.others.description",
       "t": "Other answers (freeform field)."
     },
     {
-      "key": "other_tools.utilities",
+      "key": "tools_other.utilities",
       "t": "Utilities"
     },
     {
-      "key": "other_tools.utilities.description",
+      "key": "tools_other.utilities.description",
       "t": "Which utility libraries do you regularly use?"
     },
     {
-      "key": "other_tools.utilities.others",
+      "key": "tools_other.utilities.others",
       "t": "Other Utilities"
     },
     {
-      "key": "other_tools.utilities.others.description",
+      "key": "tools_other.utilities.others.description",
       "t": "Other utilities (freeform field)."
     },
     {
-      "key": "other_tools.browsers",
+      "key": "tools_other.browsers",
       "t": "Browsers"
     },
     {
-      "key": "other_tools.browsers.description",
+      "key": "tools_other.browsers.description",
       "t": "Which browser(s) do you primarily work in during initial development?"
     },
     {
-      "key": "other_tools.browsers.others",
+      "key": "tools_other.browsers.others",
       "t": "Other Browsers"
     },
     {
-      "key": "other_tools.browsers.others.description",
+      "key": "tools_other.browsers.others.description",
       "t": "Other answers (freeform field)."
     },
     {
-      "key": "other_tools.build_tools",
+      "key": "tools_other.build_tools",
       "t": "Build Tools"
     },
     {
-      "key": "other_tools.build_tools.description",
+      "key": "tools_other.build_tools.description",
       "t": "Which build tools do you use?"
     },
     {
-      "key": "other_tools.build_tools.others",
+      "key": "tools_other.build_tools.others",
       "t": "Other Build Tools"
     },
     {
-      "key": "other_tools.build_tools.others.description",
+      "key": "tools_other.build_tools.others.description",
       "t": "Other answers (freeform field)."
     },
     {
-      "key": "other_tools.non_js_languages",
+      "key": "tools_other.non_js_languages",
       "t": "Non-JavaScript Languages"
     },
     {
-      "key": "other_tools.non_js_languages.description",
+      "key": "tools_other.non_js_languages.description",
       "t": "Which other programming languages do you use?"
     },
     {
-      "key": "other_tools.non_js_languages.others",
+      "key": "tools_other.non_js_languages.others",
       "t": "Other Languages"
     },
     {
-      "key": "other_tools.non_js_languages.others.description",
+      "key": "tools_other.non_js_languages.others.description",
       "t": "Other answers (freeform field)."
     },
     {

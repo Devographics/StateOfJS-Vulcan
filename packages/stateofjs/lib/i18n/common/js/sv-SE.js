@@ -1,279 +1,287 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "locale": "ADD LOCALE HERE",
+  "locale": "sv-SE",
   "translations": [
     {
       "key": "general.why_create_account",
-      "t": "Why do I need to create an account?"
+      "t": "Varför behöver jag skapa ett konto?"
     },
     {
       "key": "general.create_account_reasons",
-      "t": "We ask you to create an account in order to:\n- Avoid duplicate responses\n- Give you access to your data\n- Save your session as you go\n- Notify you when results are live\n"
+      "t": "Vi ber dig skapa ett konto så att vi kan:\n- Undvika dubbla svar\n- Ge dig tillgång till din data\n- Spara din session\n- Notifiera dig när resultaten går live\n"
     },
     {
       "key": "general.survey_closed",
-      "t": "Sorry, the survey is now closed! You can still review your data but you won't be able to modify it.\n"
+      "t": "Ledsen, undersökningen är nu stängd! Du kan fortfarande se din data, men du kan inte längre redigera den.\n"
     },
     {
       "key": "general.survey_read_only",
-      "t": "You are currently viewing this survey in read-only mode. \n"
+      "t": "Du visar just nu undersökning i skrivskyddat läge.\n"
     },
     {
       "key": "general.survey_read_only_back",
-      "t": "<a href=\"{link}\">Go back</a> to the main survey page to start or resume a session.\n"
+      "t": "<a href=\"{link}\">Gå tillbaka</a> till undersökningens startsida, eller återuppta en session.\n"
     },
     {
       "key": "general.open_surveys",
-      "t": "Open Surveys"
+      "t": "Öppna Undersökningar"
     },
     {
       "key": "general.no_open_surveys",
-      "t": "No surveys are currently open."
+      "t": "Inga Undersökningar Öppna För Tillfället"
     },
     {
       "key": "general.closed_surveys",
-      "t": "Closed Surveys"
+      "t": "Stängda Undersökningar"
     },
     {
       "key": "general.start_survey",
-      "t": "Start Survey »"
+      "t": "Starta Undersökning »"
     },
     {
       "key": "general.continue_survey",
-      "t": "Continue Survey »"
+      "t": "Fortsätt Undersökning »"
     },
     {
       "key": "general.review_survey",
-      "t": "Review Survey »"
+      "t": "Granska Undersökning »"
     },
     {
       "key": "general.preview_survey",
-      "t": "Preview Survey »"
+      "t": "Förhandsgranska Undersökning »"
     },
     {
       "key": "general.finish_survey",
-      "t": "Finish Survey »"
+      "t": "Avsluta Undersökning »"
     },
     {
       "key": "general.survey_closed",
-      "t": "This survey is now closed."
+      "t": "Undersökningen är nu ständ."
     },
     {
       "key": "general.survey_results",
-      "t": "View Survey Results »"
+      "t": "Visa Undersökningsresultat »"
+    },
+    {
+      "key": "general.surveys_available_languages",
+      "t": "Undersökningar tillgängliga på:"
+    },
+    {
+      "key": "general.help_us_translate",
+      "t": "Hjälp oss översätta undersökningar »"
     },
     {
       "key": "general.privacy_policy",
-      "t": "Privacy Policy"
+      "t": "Integritetspolicy"
     },
     {
       "key": "general.leave_issue",
-      "t": "Questions? Found a bug? <a href=\"{link}\" target=\"_blank\">Leave an issue</a>."
+      "t": "Frågor? Hittat en bugg? <a href=\"{link}\" target=\"_blank\">Öppna ett ärende</a>."
     },
     {
       "key": "general.emoji_icons",
-      "t": "Emoji icons by <a target=\"_blank\" rel=\"noreferrer\" href=\"https://icons8.com\">Icons8</a>"
+      "t": "Emojis av <a target=\"_blank\" rel=\"noreferrer\" href=\"https://icons8.com\">Icons8</a>"
     },
     {
       "key": "general.table_of_contents",
-      "t": "Table of Contents"
+      "t": "Innehållsförteckning"
     },
     {
       "key": "general.all_questions_optional",
-      "t": "Note: all questions are optional, reaching 100% completion is not required.\n"
+      "t": "Obs! Alla frågor är frivilliga, och 100% slutförande krävs ej.\n"
     },
     {
       "key": "general.data_is_saved",
-      "t": "Your data is saved whenever you navigate to the previous or next section."
+      "t": "Din data sparas automatiskt när du navigerar till föregående eller nästa sektion."
     },
     {
       "key": "general.back",
-      "t": "Back"
+      "t": "Tillbaka"
     },
     {
       "key": "general.thanks",
-      "t": "Thanks for filling out the survey!\nYour data is saved. You can review or modify it until the survey closes.\nAlso, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even more representative:\n"
+      "t": "Tack för att du fyllde i undersökningen!\nDin data är sparad. Du kan granska eller redigera den när som helst fram tills undersökningen stänger.\nHjälp oss gärna dela denna undersökning till flera. Varje bit räknas, och det kommer göra vår data ännu mer representativ:\n"
     },
     {
       "key": "general.share_subject",
-      "t": "{surveyName} survey\n"
+      "t": "{surveyName}-undersökning\n"
     },
     {
       "key": "general.share_text",
-      "t": "This year's {surveyName} survey is now open! {link}\n"
+      "t": "Detta års {surveyName}-undersökning är nu öppen! {link}\n"
     },
     {
       "key": "nav.surveys",
-      "t": "Surveys"
+      "t": "Undersökningar"
     },
     {
       "key": "nav.account",
-      "t": "Account"
+      "t": "Konto"
     },
     {
       "key": "accounts.sign_up",
-      "t": "Sign Up"
+      "t": "Skapa Konto"
     },
     {
       "key": "accounts.sign_in",
-      "t": "Log In"
+      "t": "Logga In"
     },
     {
       "key": "accounts.sign_out",
-      "t": "Sign Out"
+      "t": "Logga Ut"
     },
     {
       "key": "accounts.cancel",
-      "t": "Cancel"
+      "t": "Avbryt"
     },
     {
       "key": "accounts.email",
-      "t": "Email"
+      "t": "E-mail"
     },
     {
       "key": "accounts.enter_email",
-      "t": "Enter Email"
+      "t": "Ange E-mail"
     },
     {
       "key": "accounts.please_pick_password",
-      "t": "Please pick a new password to continue."
+      "t": "Välj ett nytt lösenord för att fortsätta."
     },
     {
       "key": "accounts.please_log_in",
-      "t": "Please log in or sign up to begin."
+      "t": "Vänligen skapa konto eller logga in för att börja"
     },
     {
       "key": "accounts.logged_in_as",
-      "t": "Logged in as {email}"
+      "t": "Inloggad som {email}"
     },
     {
       "key": "accounts.questions",
-      "t": "If you have any questions about how we use your data, or would like us to remove your data from our records, please <a href=\"mailto:hello@stateofjs.com\">get in touch</a>.\n"
+      "t": "Om du har några frågor gällande hur vi använder din data, eller om du vill att vi raderar din data från vårt register, vänligen <a href=\"mailto:hello@stateofjs.com\">hör av dig</a>.\n"
     },
     {
       "key": "sections.user_info.title",
-      "t": "About You"
+      "t": "Om Dig"
     },
     {
       "key": "sections.user_info.description",
-      "t": "Let's get to know the real you."
+      "t": "Låt oss lära känna dig."
     },
     {
       "key": "sections.resources.title",
-      "t": "资源"
+      "t": "Resurser"
     },
     {
       "key": "sections.resources.description",
-      "t": "What {topic} resources do you consult?"
+      "t": "Vilka {topic}-resurser konsulterar du?"
     },
     {
       "key": "sections.opinions.title",
-      "t": "看法"
+      "t": "Åsikter"
     },
     {
       "key": "sections.opinions.description",
-      "t": "How do you feel about the state of {topic}?"
+      "t": "Hur känner du inför hur {topic} är i dagsläget?"
     },
     {
       "key": "sections.other_tools.title",
-      "t": "其他工具"
+      "t": "Andra Verktyg"
     },
     {
       "key": "sections.other_tools.description",
-      "t": "For these tools & technologies, just check the ones that you use regularly."
+      "t": "Markera endast de verktyg och teknologier du regelbundet använder."
     },
     {
       "key": "options.features.never_heard",
-      "t": "🤷 没听说过/不确定它是什么"
+      "t": "🤷 Aldrig hört talas om/Osäker på vad det är"
     },
     {
       "key": "options.features.heard",
-      "t": "✅ 知道它是什么，但是没用过"
+      "t": "✅ Vet vad det är, men har aldrig använt"
     },
     {
       "key": "options.features.used",
-      "t": "👍 用过"
+      "t": "👍 Har använt det"
     },
     {
       "key": "options.features.never_heard.short",
-      "t": "没听说过/不确定它是什么"
+      "t": "Aldrig hört talas om det"
     },
     {
       "key": "options.features.heard.short",
-      "t": "知道它是什么，但是没用过"
+      "t": "Hört talas om det"
     },
     {
       "key": "options.features.used.short",
-      "t": "用过"
+      "t": "Har använt det"
     },
     {
       "key": "options.patterns.use_never",
-      "t": "Almost always avoid"
+      "t": "Undviker nästan alltid"
     },
     {
       "key": "options.patterns.use_sparingly",
-      "t": "Use sparingly"
+      "t": "Använder sparsamt"
     },
     {
-      "key": "optionspatterns..use_neutral",
+      "key": "options.patterns.use_neutral",
       "t": "Neutral"
     },
     {
       "key": "options.patterns.use_frequently",
-      "t": "Use frequently"
+      "t": "Använder frekvent"
     },
     {
       "key": "options.patterns.use_always",
-      "t": "Use as much as I can"
+      "t": "Använder så mycket jag bara kan"
     },
     {
       "key": "options.tools.never_heard",
-      "t": "🤷 我从来没有听说过这个技术"
+      "t": "🤷 Aldrig hört talas om/Osäker på vad det är"
     },
     {
       "key": "options.tools.interested",
-      "t": "✅ 我听说过这个技术，且有学习的意向"
+      "t": "✅ Hört talas om > Vill lära mig"
     },
     {
       "key": "options.tools.not_interested",
-      "t": "🚫 我听说过这个技术，但我不感兴趣"
+      "t": "🚫 Hört talas om > Inte intresserad"
     },
     {
       "key": "options.tools.would_use",
-      "t": "👍 我使用过这个技术，以后也愿意再次使用"
+      "t": "👍 Har använt > Skulle använda igen"
     },
     {
       "key": "options.tools.would_not_use",
-      "t": "👎 我使用过这个技术，但以后不愿意再用"
+      "t": "👎 Har använt > Skulle inte använda igen"
     },
     {
-      "key": "options.tools.never_heard",
-      "t": "从来没听说过"
+      "key": "options.tools.never_heard.short",
+      "t": "Aldrig hört"
     },
     {
-      "key": "options.tools.interested",
-      "t": "听说过，且打算学习"
+      "key": "options.tools.interested.short",
+      "t": "Intresserad"
     },
     {
-      "key": "options.tools.not_interested",
-      "t": "听说过，但不感兴趣"
+      "key": "options.tools.not_interested.short",
+      "t": "Inte intresserad"
     },
     {
-      "key": "options.tools.would_use",
-      "t": "使用过，以后也愿意用"
+      "key": "options.tools.would_use.short",
+      "t": "Skulle använda"
     },
     {
-      "key": "options.tools.would_not_use",
-      "t": "使用过，以后不愿意用"
+      "key": "options.tools.would_not_use.short",
+      "t": "Skulle inte använda"
     },
     {
       "key": "options.happiness.very_unhappy",
-      "t": "Very Unhappy"
+      "t": "Väldigt missnöjd"
     },
     {
       "key": "options.happiness.unhappy",
-      "t": "Unhappy"
+      "t": "Missnöjd"
     },
     {
       "key": "options.happiness.neutral",
@@ -281,55 +289,55 @@ export default {
     },
     {
       "key": "options.happiness.happy",
-      "t": "Happy"
+      "t": "Nöjd"
     },
     {
       "key": "options.happiness.very_happy",
-      "t": "Very Happy"
+      "t": "Väldigt nöjd"
     },
     {
       "key": "options.opinions.disagree_strongly",
-      "t": "强烈反对"
+      "t": "Håller verkligen inte med"
     },
     {
       "key": "options.opinions.disagree",
-      "t": "反对"
+      "t": "Håller inte med"
     },
     {
       "key": "options.opinions.neutral",
-      "t": "中立"
+      "t": "Neutral"
     },
     {
       "key": "options.opinions.agree",
-      "t": "同意"
+      "t": "Håller med"
     },
     {
       "key": "options.opinions.agree_strongly",
-      "t": "十分同意"
+      "t": "Håller verkligen med"
     },
     {
       "key": "options.years_of_experience.range_less_than_1",
-      "t": "少于 1 年"
+      "t": "Mindre än ett år"
     },
     {
       "key": "options.years_of_experience.range_1_2",
-      "t": "1 至 2 年"
+      "t": "1 till 2 år"
     },
     {
       "key": "options.years_of_experience.range_2_5",
-      "t": "2 至 5 年"
+      "t": "2 till 5 år"
     },
     {
       "key": "options.years_of_experience.range_5_10",
-      "t": "5 至 10 年"
+      "t": "5 till 10 år"
     },
     {
       "key": "options.years_of_experience.range_10_20",
-      "t": "10 至 20 年"
+      "t": "10 till 20 år"
     },
     {
       "key": "options.years_of_experience.range_more_than_20",
-      "t": "20 年以上"
+      "t": "Mer än 20 år"
     },
     {
       "key": "options.years_of_experience.range_less_than_1.short",
@@ -357,35 +365,35 @@ export default {
     },
     {
       "key": "options.company_size.range_1",
-      "t": "1 个雇员"
+      "t": "En anställd"
     },
     {
       "key": "options.company_size.range_1_5",
-      "t": "1 至 5 个雇员"
+      "t": "1 till 5 anställda"
     },
     {
       "key": "options.company_size.range_5_10",
-      "t": "5 至 10 个雇员"
+      "t": "5 till 10 anställda"
     },
     {
       "key": "options.company_size.range_10_20",
-      "t": "10 至 20 个雇员"
+      "t": "10 till 20 anställda"
     },
     {
       "key": "options.company_size.range_20_50",
-      "t": "20 至 50 个雇员"
+      "t": "20 till 50 anställda"
     },
     {
       "key": "options.company_size.range_50_100",
-      "t": "50 至 100 个雇员"
+      "t": "50 till 100 anställda"
     },
     {
       "key": "options.company_size.range_100_1000",
-      "t": "100 至 1000 个雇员"
+      "t": "100 till 1000 anställda"
     },
     {
       "key": "options.company_size.range_more_than_1000",
-      "t": "超过 1000 个雇员"
+      "t": "Fler än 1000 anställda"
     },
     {
       "key": "options.company_size.range_1.short",
@@ -421,31 +429,31 @@ export default {
     },
     {
       "key": "options.yearly_salary.range_work_for_free",
-      "t": "我没有收入"
+      "t": "Jag arbetar gratis"
     },
     {
       "key": "options.yearly_salary.range_0_10",
-      "t": "0 美元 - 1 万美元"
+      "t": "$0k-$10k"
     },
     {
       "key": "options.yearly_salary.range_10_30",
-      "t": "1 万美元 - 3 万美元"
+      "t": "$10k-$30k"
     },
     {
       "key": "options.yearly_salary.range_30_50",
-      "t": "3 万美元 - 5 万美元"
+      "t": "$30k-$50k"
     },
     {
       "key": "options.yearly_salary.range_50_100",
-      "t": "5 万美元 - 10 万美元"
+      "t": "$50k-$100k"
     },
     {
       "key": "options.yearly_salary.range_100_200",
-      "t": "10 万美元 - 20 万美元"
+      "t": "$100k-$200k"
     },
     {
       "key": "options.yearly_salary.range_more_than_200",
-      "t": "大于 20 万美元"
+      "t": "Mer än $200k"
     },
     {
       "key": "options.yearly_salary.range_work_for_free.short",
@@ -481,111 +489,111 @@ export default {
     },
     {
       "key": "options.job_title.front_end_developer",
-      "t": "前端开发者/工程师"
+      "t": "Frontend-utvecklare"
     },
     {
       "key": "options.job_title.back_end_developer",
-      "t": "后端开发者/工程师"
+      "t": "Backend-utvecklare"
     },
     {
       "key": "options.job_title.full_stack_developer",
-      "t": "全栈开发者/工程师"
+      "t": "Fullstack-utvecklare"
     },
     {
       "key": "options.job_title.web_developer",
-      "t": "Web 开发者"
+      "t": "Webbutvecklare"
     },
     {
       "key": "options.job_title.web_designer",
-      "t": "Web 设计师"
+      "t": "Webbdesigner"
     },
     {
       "key": "options.job_title.ux_designer",
-      "t": "UX 设计师"
+      "t": "UX-Designer"
     },
     {
       "key": "options.job_title.ui_designer",
-      "t": "UI 设计师"
+      "t": "UI-Designer"
     },
     {
       "key": "options.job_title.back_end_dev",
-      "t": "后端开发者/工程师"
+      "t": "Backend-utvecklare"
     },
     {
       "key": "options.javascript_proficiency.0",
-      "t": "Not able to write any JavaScript"
+      "t": "Kan inte skriva någon JavaScript"
     },
     {
       "key": "options.javascript_proficiency.1",
-      "t": "Writing short, simple JavaScript or jQuery statements"
+      "t": "Kan skriva korta, simpla statements i JavaScript eller jQuery"
     },
     {
       "key": "options.javascript_proficiency.2",
-      "t": "Working on existing front-end codebases using modern frameworks (React, Vue, etc.)"
+      "t": "Jobbar med existerande frontend-kodbaser som använder moderna frameworks (React, Vue, etc.)"
     },
     {
       "key": "options.javascript_proficiency.3",
-      "t": "Architecturing entire front-end codebases from scratch"
+      "t": "Skapar arkitektur för hela frontend-kodbaser från scratch"
     },
     {
       "key": "options.javascript_proficiency.4",
-      "t": "Handling advanced front-end patterns (state management, data loading, etc.)"
+      "t": "Hanterar avancerade frontend-patterns (state management, data loading, etc.)"
     },
     {
       "key": "options.css_proficiency.0",
-      "t": "实际上没有 CSS 经验"
+      "t": "Praktiskt taget ingen kunskap om CSS"
     },
     {
       "key": "options.css_proficiency.1",
-      "t": "使用 CSS 框架以及调整现有样式"
+      "t": "Använder CSS-frameworks och tweakar existerande styles"
     },
     {
       "key": "options.css_proficiency.2",
-      "t": "知道特定规则，能够创建布局"
+      "t": "Känner till specificitetsregler, kan skapa layouter"
     },
     {
       "key": "options.css_proficiency.3",
-      "t": "精通动画、交互、过渡等"
+      "t": "Bemästrar animationer, interaktioner, transitions, etc."
     },
     {
       "key": "options.css_proficiency.4",
-      "t": "能够以统一的方法论从零构建整个前端站点的样式"
+      "t": "Kan utforma en hel frontend från scratch efter en konsekvent metodik"
     },
     {
       "key": "options.backend_proficiency.0",
-      "t": "无法完成任何后端工作"
+      "t": "Kan inte hantera något backend-arbete"
     },
     {
       "key": "options.backend_proficiency.1",
-      "t": "会配置一体化 CMS（WordPress 等）或静态站点生成器（Jekyll 等）"
+      "t": "Kan sätta upp ett all-in-one CMS (WordPress, etc.) eller statisk site-generator (Jekyll, etc.)"
     },
     {
       "key": "options.backend_proficiency.2",
-      "t": "能够使用现有框架开发应用（Rails、Laravel 等）"
+      "t": "Kan utveckla applikationer med hjälp av redan existerande frameworks (Rails, Laravel, etc.)"
     },
     {
       "key": "options.backend_proficiency.3",
-      "t": "从零搭建整个后端（Go、Node 等）"
+      "t": "Kan sätta upp ett helt backend från scratch (Go, Node, etc.)"
     },
     {
       "key": "options.backend_proficiency.4",
-      "t": "能够掌控复杂的多台服务器或微服务架构"
+      "t": "Kan hantera komplexa multiserver- eller microservice-arkitekturer"
     },
     {
       "key": "options.proficiency.0",
-      "t": "None"
+      "t": "Ingen"
     },
     {
       "key": "options.proficiency.1",
-      "t": "Beginner"
+      "t": "Nybörjare"
     },
     {
       "key": "options.proficiency.2",
-      "t": "Intermediate"
+      "t": "Medelnivå"
     },
     {
       "key": "options.proficiency.3",
-      "t": "Advanced"
+      "t": "Avancerad"
     },
     {
       "key": "options.proficiency.4",
@@ -593,283 +601,283 @@ export default {
     },
     {
       "key": "options.gender.female",
-      "t": "女性"
+      "t": "Kvinna"
     },
     {
       "key": "options.gender.male",
-      "t": "男性"
+      "t": "Man"
     },
     {
       "key": "options.gender.non_binary",
-      "t": "第三性别"
+      "t": "Icke-Binär/Intersex"
     },
     {
       "key": "options.gender.prefer_not_to_say",
-      "t": "未透露"
+      "t": "Föredrar att inte säga"
     },
     {
-      "key": "options.race_ethnicity.white_european",
+      "key": "white_european",
       "t": "White or of European descent"
     },
     {
-      "key": "options.race_ethnicity.south_asian",
+      "key": "south_asian",
       "t": "South Asian"
     },
     {
-      "key": "options.race_ethnicity.hispanic_latin",
+      "key": "hispanic_latin",
       "t": "Hispanic or Latino/Latina"
     },
     {
-      "key": "options.race_ethnicity.east_asian",
+      "key": "east_asian",
       "t": "East Asian"
     },
     {
-      "key": "options.race_ethnicity.middle_eastern",
+      "key": "middle_eastern",
       "t": "Middle Eastern"
     },
     {
-      "key": "options.race_ethnicity.black_african",
+      "key": "black_african",
       "t": "Black or of African descent"
     },
     {
-      "key": "options.race_ethnicity.multiracial",
+      "key": "multiracial",
       "t": "Multiracial"
     },
     {
-      "key": "options.race_ethnicity.biracial",
+      "key": "biracial",
       "t": "Biracial"
     },
     {
-      "key": "options.race_ethnicity.native_american_islander_australian",
+      "key": "native_american_islander_australian",
       "t": "Native American, Pacific Islander, or Indigenous Australian"
     },
     {
       "key": "options.skin_tone.0",
-      "t": "<img src=\"/emojis/icons8-bald-man-light-skin-tone-100.png\" alt=\"Light skin tone emoji\"/>"
+      "t": "<img src=\"/emojis/icons8-bald-man-light-skin-tone-100.png\" alt=\"Ljus hudfärg emoji\"/>"
     },
     {
       "key": "options.skin_tone.1",
-      "t": "<img src=\"/emojis/icons8-bald-man-medium-light-skin-tone-100.png\" alt=\"Medium-light skin tone emoji\"/>"
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-light-skin-tone-100.png\" alt=\"Beige hudfärg emoji\"/>"
     },
     {
       "key": "options.skin_tone.2",
-      "t": "<img src=\"/emojis/icons8-bald-man-medium-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-skin-tone-100.png\" alt=\"Ljusbrun hudfärg emoji\"/>"
     },
     {
       "key": "options.skin_tone.3",
-      "t": "<img src=\"/emojis/icons8-bald-man-medium-dark-skin-tone-100.png\" alt=\"Medium skin tone emoji\"/>"
+      "t": "<img src=\"/emojis/icons8-bald-man-medium-dark-skin-tone-100.png\" alt=\"Mörkbrun hudfärg emoji\"/>"
     },
     {
       "key": "options.skin_tone.4",
-      "t": "<img src=\"/emojis/icons8-bald-man-dark-skin-tone-100.png\" alt=\"Dark skin tone emoji\"/>"
+      "t": "<img src=\"/emojis/icons8-bald-man-dark-skin-tone-100.png\" alt=\"Mörk hudfärg emoji\"/>"
     },
     {
       "key": "tools.other_tools",
-      "t": "Other Options"
+      "t": "Andra Alternativ"
     },
     {
       "key": "tools.other_tools.description",
-      "t": "Other options you use for the current section not mentioned in the list above"
+      "t": "Andra alternativ du använder för denna sektion som ej står med i listan"
     },
     {
       "key": "tools.happiness",
-      "t": "Overall Happiness"
+      "t": "Övergripande Nöjdhet"
     },
     {
       "key": "tools.happiness.description",
-      "t": "On a scale of one (very unhappy) to five (very happy), how happy are you with the current overall state of things as it relates to the options listed above?\n"
+      "t": "På en skala från ett (väldigt missnöjd) till fem (väldigt nöjd), hur nöjd är du med det aktuella övergripande läget när det gäller alternativen ovan?\n"
     },
     {
       "key": "user_info.years_of_experience",
-      "t": "工龄"
+      "t": "Antal Års Erfarenhet"
     },
     {
       "key": "user_info.years_of_experience.description",
-      "t": "How long you've been working or studying in this field."
+      "t": "Hur länge du har jobbat med eller studerat detta ämne."
     },
     {
       "key": "user_info.company_size",
-      "t": "公司规模"
+      "t": "Företagsstorlek"
     },
     {
       "key": "user_info.company_size.description",
-      "t": "所在公司规模分析"
+      "t": "Hur stort ditt företag är."
     },
     {
       "key": "user_info.yearly_salary",
-      "t": "薪资"
+      "t": "Årlig Inkomst"
     },
     {
       "key": "user_info.yearly_salary.description",
-      "t": "年收入（美元）"
+      "t": "Ange i amerikanska dollar (USD)."
     },
     {
       "key": "user_info.job_title",
-      "t": "职位名称"
+      "t": "Jobbtitel"
     },
     {
       "key": "user_info.job_title.description",
-      "t": "你在社交场合如何介绍自己？"
+      "t": "Hur introducerar du dig själv för andra?"
     },
     {
       "key": "user_info.javascript_proficiency",
-      "t": "JavaScript Proficiency"
+      "t": "JavaScript-kunskaper"
     },
     {
       "key": "user_info.javascript_proficiency.description",
-      "t": "How proficient are you at JavaScript?"
+      "t": "Hur skicklig är du på JavaScript?"
     },
     {
       "key": "user_info.css_proficiency",
-      "t": "CSS Proficiency"
+      "t": "CSS-kunskaper"
     },
     {
       "key": "user_info.css_proficiency.description",
-      "t": "How proficient are you at CSS?"
+      "t": "Hur skicklig är du på CSS?"
     },
     {
       "key": "user_info.backend_proficiency",
-      "t": "Back-end Proficiency"
+      "t": "Backend-kunskaper"
     },
     {
       "key": "user_info.backend_proficiency.description",
-      "t": "How proficient are you at back-end development?"
+      "t": "Hur skicklig är du på backend-utveckling?"
     },
     {
       "key": "user_info.gender",
-      "t": "性别"
+      "t": "Kön"
     },
     {
       "key": "user_info.skin_tone",
-      "t": "Appearance"
+      "t": "Utseende"
     },
     {
       "key": "user_info.skin_tone.description",
-      "t": "Which emoji do you feel represents you best? <br/><br/>\nNote: We are experimenting with a new question format in order to  try and better capture the demographic makeup of our respondents.  <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Leave us your feedback</a> on GitHub. \n"
+      "t": "Vilken emoji representerar dig bäst? <br/><br/>\nObs! Vi experimenterar med ett nytt frågeformat för att bättre kunna fånga den demografiska sammansättningen av våra respondenter. <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Lämna din feedback</a> på GitHub.\n"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",
-      "t": "How did you find out about this survey?"
+      "t": "Hur fick du reda på den här undersökningen?"
     },
     {
       "key": "user_info.email",
-      "t": "Your Email"
+      "t": "Din E-mail"
     },
     {
       "key": "user_info.country",
-      "t": "Your Country"
+      "t": "Ditt Land"
     },
     {
-      "key": "tools_other.text_editors",
-      "t": "Text Editors"
+      "key": "other_tools.text_editors",
+      "t": "Text-Editors"
     },
     {
-      "key": "tools_other.text_editors.description",
-      "t": "Which text editor(s) do you regularly use?"
+      "key": "other_tools.text_editors.description",
+      "t": "Vilka text-editor(s) använder du regelbundet?"
     },
     {
-      "key": "tools_other.text_editors.others",
-      "t": "Other Text Editors"
+      "key": "other_tools.text_editors.others",
+      "t": "Andra text-editors"
     },
     {
-      "key": "tools_other.text_editors.others.description",
-      "t": "Other answers (freeform field)."
+      "key": "other_tools.text_editors.others.description",
+      "t": "Övriga svar (fritextfält)."
     },
     {
-      "key": "tools_other.utilities",
-      "t": "Utilities"
+      "key": "other_tools.utilities",
+      "t": "Verktygsbibliotek"
     },
     {
-      "key": "tools_other.utilities.description",
-      "t": "Which utility libraries do you regularly use?"
+      "key": "other_tools.utilities.description",
+      "t": "Vilka verktygsbibliotek använder du regelbundet?"
     },
     {
-      "key": "tools_other.utilities.others",
-      "t": "Other Utilities"
+      "key": "other_tools.utilities.others",
+      "t": "Andra verktygsbibliotek"
     },
     {
-      "key": "tools_other.utilities.others.description",
-      "t": "Other utilities (freeform field)."
+      "key": "other_tools.utilities.others.description",
+      "t": "Övriga svar (fritextfält)."
     },
     {
-      "key": "tools_other.browsers",
-      "t": "Browsers"
+      "key": "other_tools.browsers",
+      "t": "Webbläsare"
     },
     {
-      "key": "tools_other.browsers.description",
-      "t": "Which browser(s) do you primarily work in during initial development?"
+      "key": "other_tools.browsers.description",
+      "t": "Vilka webbläsare jobbar du i primärt under initial utveckling?"
     },
     {
-      "key": "tools_other.browsers.others",
-      "t": "Other Browsers"
+      "key": "other_tools.browsers.others",
+      "t": "Övriga webbläsare"
     },
     {
-      "key": "tools_other.browsers.others.description",
-      "t": "Other answers (freeform field)."
+      "key": "other_tools.browsers.others.description",
+      "t": "Övriga svar (fritextfält)."
     },
     {
-      "key": "tools_other.build_tools",
-      "t": "Build Tools"
+      "key": "other_tools.build_tools",
+      "t": "Byggverktyg"
     },
     {
-      "key": "tools_other.build_tools.description",
-      "t": "Which build tools do you use?"
+      "key": "other_tools.build_tools.description",
+      "t": "Vilka byggverktyg använder du?"
     },
     {
-      "key": "tools_other.build_tools.others",
-      "t": "Other Build Tools"
+      "key": "other_tools.build_tools.others",
+      "t": "Övriga byggverktyg"
     },
     {
-      "key": "tools_other.build_tools.others.description",
-      "t": "Other answers (freeform field)."
+      "key": "other_tools.build_tools.others.description",
+      "t": "Övriga svar (fritextfält)."
     },
     {
-      "key": "tools_other.non_js_languages",
-      "t": "Non-JavaScript Languages"
+      "key": "other_tools.non_js_languages",
+      "t": "Språk Utöver JavaScript"
     },
     {
-      "key": "tools_other.non_js_languages.description",
-      "t": "Which other programming languages do you use?"
+      "key": "other_tools.non_js_languages.description",
+      "t": "Vilka andra programmeringsspråk använder du?"
     },
     {
-      "key": "tools_other.non_js_languages.others",
-      "t": "Other Languages"
+      "key": "other_tools.non_js_languages.others",
+      "t": "Andra språk"
     },
     {
-      "key": "tools_other.non_js_languages.others.description",
-      "t": "Other answers (freeform field)."
+      "key": "other_tools.non_js_languages.others.description",
+      "t": "Övriga svar (fritextfält)."
     },
     {
       "key": "resources.blogs_news_magazines",
-      "t": "Blogs & Magazines"
+      "t": "Bloggar & Magasin"
     },
     {
       "key": "resources.blogs_news_magazines.description",
-      "t": "Which blogs/magazines/etc. do you read?"
+      "t": "Vilka bloggar/magasin/etc. läser du?"
     },
     {
       "key": "resources.blogs_news_magazines.others",
-      "t": "Other Blogs & Magazines"
+      "t": "Andra bloggar & magasin"
     },
     {
       "key": "resources.blogs_news_magazines.others.description",
-      "t": "Other answers (freeform field)."
+      "t": "Övriga svar (fritextfält)."
     },
     {
       "key": "resources.sites_courses",
-      "t": "Sites & Courses"
+      "t": "Siter & Kurser"
     },
     {
       "key": "resources.sites_courses.description",
-      "t": "Which sites/courses/etc. do you consult?"
+      "t": "Vilka siter/kurser/etc. konsulterar du?"
     },
     {
       "key": "resources.sites_courses.others",
-      "t": "Other Sites & Courses"
+      "t": "Andra siter & kurser"
     },
     {
       "key": "resources.sites_courses.others.description",
-      "t": "Other answers (freeform field)."
+      "t": "Övriga svar (fritextfält)."
     },
     {
       "key": "resources.podcasts",
@@ -877,15 +885,15 @@ export default {
     },
     {
       "key": "resources.podcasts.description",
-      "t": "Which programming-related podcasts do you listen to?"
+      "t": "Vilka programmingsrelaterade podcasts lyssnar du på?"
     },
     {
       "key": "resources.podcasts.others",
-      "t": "Other Podcasts"
+      "t": "Andra podcasts"
     },
     {
       "key": "resources.podcasts.others.description",
-      "t": "Other answers (freeform field)."
+      "t": "Övriga svar (fritextfält)."
     }
   ]
 }
