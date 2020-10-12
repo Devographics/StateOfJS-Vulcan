@@ -237,9 +237,9 @@ translations:
   ###########################################################################
 
   # units & selectors
-  - key: features.units
+  - key: features_others.units
     t: Единицы измерения
-  - key: features.units.description
+  - key: features_others.units.description
     t: Какую из этих единиц измерения CSS вы использовали?
 
   - key: options.units.px
@@ -267,9 +267,9 @@ translations:
   - key: options.units.in
     t: in
 
-  - key: features.pseudo_elements
+  - key: features_others.pseudo_elements
     t: Псевдоэлементы
-  - key: features.pseudo_elements.description
+  - key: features_others.pseudo_elements.description
     t: Какой из этих CSS-селекторов вы использовали?
 
   - key: options.pseudo_elements.before
@@ -289,7 +289,7 @@ translations:
   - key: options.pseudo_elements.backdrop
     t: '::backdrop'
 
-  - key: features.combinators
+  - key: features_others.combinators
     t: Комбинаторы
 
   - key: options.combinators.descendant
@@ -301,7 +301,7 @@ translations:
   - key: options.combinators.subsequent_sibling
     t: div ~ div (комбинатор соседства)
 
-  - key: features.tree_document_structure
+  - key: features_others.tree_document_structure
     t: Структура дерева/документа
 
   - key: options.tree_document_structure.root
@@ -339,7 +339,7 @@ translations:
   - key: options.tree_document_structure.has
     t: :has()
 
-  - key: features.attributes
+  - key: features_others.attributes
     t: Атрибуты
 
   - key: options.attributes.presence
@@ -355,7 +355,7 @@ translations:
   - key: options.attributes.contains_substring
     t: div[foo*="bar"] (содержит определённую подстроку)
 
-  - key: features.links_urls
+  - key: features_others.links_urls
     t: Ссылки/URL-адреса
 
   - key: options.links_urls.any_link
@@ -367,7 +367,7 @@ translations:
   - key: options.links_urls.target
     t: :target
 
-  - key: features.interaction
+  - key: features_others.interaction
     t: Взаимодействие
     
   - key: options.interaction.hover
@@ -381,7 +381,7 @@ translations:
   - key: options.interaction.focus_visible
     t: :focus-visible
   
-  - key: features.form_controls
+  - key: features_others.form_controls
     t: Управление полями формы
 
   - key: options.form_controls.enabled_disabled

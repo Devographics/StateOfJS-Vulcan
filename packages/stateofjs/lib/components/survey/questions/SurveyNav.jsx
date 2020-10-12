@@ -47,7 +47,7 @@ const SurveyNav = ({ survey, response }) => {
   const outline = surveys.find((o) => o.slug === survey.slug).outline;
 
   const [shown, setShown] = useState(false);
-  const [currentTabindex, setCurrentTabindex] = useState(0);
+  const [currentTabindex, setCurrentTabindex] = useState(null);
   const [currentFocusIndex, setCurrentFocusIndex] = useState();
 
   useEffect(() => {

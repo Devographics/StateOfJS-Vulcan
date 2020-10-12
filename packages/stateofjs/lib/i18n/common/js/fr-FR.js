@@ -1,127 +1,131 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "locale": "it-IT",
+  "locale": "fr-FR",
   "translations": [
     {
       "key": "general.why_create_account",
-      "t": "Perché devo creare un account?"
+      "t": "Pourquoi dois-je créer un compte ?"
     },
     {
       "key": "general.create_account_reasons",
-      "t": "Ti chiediamo di crearti un account per:\n- Evitare doppie risposte\n- Darti accesso ai tuoi dati\n- Salvare man mano la sessione\n- Notificarti quando i risultati sono pubblicati\n"
+      "t": "Nous vous demandons de créer un compte pour :\n- Éviter les réponses dupliquées\n- Vous donner accès à vos données\n- Enregistrer vos réponses en cours\n- Vous tenir au courant de la sortie des résultats\n"
     },
     {
       "key": "general.survey_closed",
-      "t": "Ci spiace, il sondaggio é ora chiuso! Puoi rivedere i tuoi dati ma non sarai in grado di modificarli.\n"
+      "t": "Désolé, le questionnaire est terminé ! Vous pouvez toujours voir vos réponses mais vous ne pourrez pas les modifier.\n"
     },
     {
       "key": "general.survey_read_only",
-      "t": "Stai guardando questo sondaggio in modalità sola lettura. \n"
+      "t": "Vous êtes actuellement en train de voir ce questionnaire en lecture seule.\n"
     },
     {
       "key": "general.survey_read_only_back",
-      "t": "<a href=\"{link}\">Torna indietro</a> alla pagina principale del sondaggio per iniziare o riprendere una sessione.\n"
+      "t": "<a href=\"{link}\">Retourner</a> à la page principale du questionnaire pour commencer ou continuer à répondre.\n"
     },
     {
       "key": "general.open_surveys",
-      "t": "Sondaggi Aperti"
+      "t": "Questionnaires en cours"
     },
     {
       "key": "general.no_open_surveys",
-      "t": "Nessun sondaggio aperto al momento."
+      "t": "Aucun questionnaire n'est actuellement en cours."
     },
     {
       "key": "general.closed_surveys",
-      "t": "Sondaggi Chiusi"
+      "t": "Questionnaires terminés"
     },
     {
       "key": "general.start_survey",
-      "t": "Inizia Sondaggio »"
+      "t": "Commencer à répondre »"
     },
     {
       "key": "general.continue_survey",
-      "t": "Continua Sondaggio »"
+      "t": "Continuer à répondre »"
     },
     {
       "key": "general.review_survey",
-      "t": "Rivedi Sondaggio »"
+      "t": "Revoir mes réponses »"
     },
     {
       "key": "general.preview_survey",
-      "t": "Anteprima Sondaggio »"
+      "t": "Prévisualiser le questionnaire »"
     },
     {
       "key": "general.finish_survey",
-      "t": "Finisci Sondaggio »"
+      "t": "Terminer le questionnaire »"
     },
     {
       "key": "general.survey_closed",
-      "t": "Questo sondaggio é ora chiuso."
+      "t": "Ce questionnaire est maintenant terminé."
     },
     {
       "key": "general.survey_results",
-      "t": "Vedi Risultati Sondaggo »"
+      "t": "Voir les résultats du questionnaire »"
     },
     {
       "key": "general.privacy_policy",
-      "t": "Politica sulla Privacy"
+      "t": "Politique de confidentialité"
     },
     {
       "key": "general.leave_issue",
-      "t": "Domande? Trovato un bug? <a href=\"{link}\" target=\"_blank\">Apri una issue</a>."
+      "t": "Une question ? Un bug ? <a href=\"{link}\" target=\"_blank\">Reportez un problème</a>."
+    },
+    {
+      "key": "general.emoji_icons",
+      "t": "Emoji icons by <a target=\"_blank\" rel=\"noreferrer\" href=\"https://icons8.com\">Icons8</a>"
     },
     {
       "key": "general.table_of_contents",
-      "t": "Indice"
+      "t": "Sommaire"
     },
     {
       "key": "general.all_questions_optional",
-      "t": "Nota: tutte le domande sono facoltative, raggiungere il 100% del completamento non é obbligatorio.\n"
+      "t": "Note : toutes les questions sont optionnelles, il n'est pas nécessaire de remplir 100% du questionnaire.\n"
     },
     {
       "key": "general.data_is_saved",
-      "t": "I tuoi dati sono salvati quando navighi nella sezione precedente o successiva."
+      "t": "Vos réponses sont sauvegardées à chaque fois que vous naviguez entre les sections."
     },
     {
       "key": "general.back",
-      "t": "Indietro"
+      "t": "Retour"
     },
     {
       "key": "general.thanks",
-      "t": "Grazie per aver particpato al sondaggio!\nI tuoi dati sono stati salvati. Puoi rivederli or modificarli fino alla chiusura del sondaggio.\nInoltre, puoi aiutarci spargendo la voce e condividendo quest osondaggio. Ogni piccolo aiuto conta e aiuterà i nostri dati ad essere ancora più significativi:\n"
+      "t": "Merci d'avoir rempli le questionnaire !\nVos réponses sont sauvegardées. Vous pouvez les revoir ou les modifier jusqu'à ce que le questionnaire se termine.\nVous pouvez aussi nous aider en faisant connaître le questionnaire en le partageant. Chaque action compte et rendra nos données encore plus représentatives.\n"
     },
     {
       "key": "general.share_subject",
-      "t": "Sondaggio {surveyName}\n"
+      "t": "{surveyName} questionnaire\n"
     },
     {
       "key": "general.share_text",
-      "t": "Il sondaggio {surveyName} di quest'anno é ora aperto! {link}\n"
+      "t": "Le questionnaire {surveyName} de cette année est ouvert ! {link}\n"
     },
     {
       "key": "nav.surveys",
-      "t": "Sondaggi"
+      "t": "Questionnaires"
     },
     {
       "key": "nav.account",
-      "t": "Account"
+      "t": "Compte"
     },
     {
       "key": "accounts.sign_up",
-      "t": "Registrati"
+      "t": "S'inscrire"
     },
     {
       "key": "accounts.sign_in",
-      "t": "Accedi"
+      "t": "Se connecter"
     },
     {
       "key": "accounts.sign_out",
-      "t": "Disconnettiti"
+      "t": "Se déconnecter"
     },
     {
       "key": "accounts.cancel",
-      "t": "Cancella"
+      "t": "Annuler"
     },
     {
       "key": "accounts.email",
@@ -129,259 +133,259 @@ export default {
     },
     {
       "key": "accounts.enter_email",
-      "t": "Inserisci Email"
+      "t": "Entrez votre Email"
     },
     {
       "key": "accounts.please_pick_password",
-      "t": "Scegli una nuova password per continuare."
+      "t": "Merci de choisir un nouveau mot de passe pour continuer."
     },
     {
       "key": "accounts.please_log_in",
-      "t": "Accedi or registrati per iniziare."
+      "t": "Merci de vous connecter ou de vous inscrire pour commencer."
     },
     {
       "key": "accounts.logged_in_as",
-      "t": "Connesso come {email}"
+      "t": "Connecté en tant que {email}"
     },
     {
       "key": "accounts.questions",
-      "t": "Se hai domande riguadardanti l'uso dei tuoi dati, o se vorresti la  rimozione degli stessi dai nostri registri, <a href=\"mailto:hello@stateofjs.com\">Contattaci</a>.\n"
+      "t": "Si vous avez une question à propos de notre utilisation de vos données, ou si vous voulez être retiré de nos enregistrements, merci de <a href=\"mailto:hello@stateofjs.com\">nous envoyer un message</a>.\n"
     },
     {
       "key": "sections.user_info.title",
-      "t": "Informazioni utente"
+      "t": "A propos de vous"
     },
     {
       "key": "sections.user_info.description",
-      "t": "Conosciamo il vero te."
+      "t": "Qui êtes-vous vraiment."
     },
     {
       "key": "sections.resources.title",
-      "t": "Risorse"
+      "t": "Ressources"
     },
     {
       "key": "sections.resources.description",
-      "t": "Quali {topic} risorse consulti?"
+      "t": "Quelles ressources {topic} consultez-vous ?"
     },
     {
       "key": "sections.opinions.title",
-      "t": "Opinioni"
+      "t": "Opinions"
     },
     {
       "key": "sections.opinions.description",
-      "t": "Cosa ne pensi dell stato di {topic}?"
+      "t": "Comment vous sentez-vous par rapport à l'état de {topic} ?"
     },
     {
       "key": "sections.other_tools.title",
-      "t": "Altri strumenti"
+      "t": "Autre outils"
     },
     {
       "key": "sections.other_tools.description",
-      "t": "Per questi strumenti e tecnoligie, spunta quelle che usi regolarmente."
+      "t": "Pour ces outils et technologies, cochez juste ceux que vous utilisez régulièrement."
     },
     {
       "key": "options.features.never_heard",
-      "t": "🤷 Mai sentito nominare/Non sono sicuro di cosa sia"
+      "t": "🤷 Je n'en ai jamais entendu parler / Je ne suis pas sur de ce que c'est"
     },
     {
       "key": "options.features.heard",
-      "t": "✅ So cos'é, ma non l'ho mai usato"
+      "t": "✅ Je sais ce que c'est, mais je ne l'ai jamais utilisé"
     },
     {
       "key": "options.features.used",
-      "t": "👍 L'ho usato"
+      "t": "👍 Je l'ai utilisé"
     },
     {
       "key": "options.features.never_heard.short",
-      "t": "Mai sentito nominare"
+      "t": "Jamais entendu parler"
     },
     {
       "key": "options.features.heard.short",
-      "t": "So cos'é"
+      "t": "Entendu parler"
     },
     {
       "key": "options.features.used.short",
-      "t": "L'ho usato"
+      "t": "Utilisé"
     },
     {
       "key": "options.patterns.use_never",
-      "t": "Lo evito quasi sempre"
+      "t": "Évite quasiment tout le temps"
     },
     {
       "key": "options.patterns.use_sparingly",
-      "t": "Lo uso con parsimonia"
+      "t": "Utilise de temps en temps"
     },
     {
       "key": "optionspatterns..use_neutral",
-      "t": "Neutrale"
+      "t": "Neutre"
     },
     {
       "key": "options.patterns.use_frequently",
-      "t": "Lo uso frequentemente"
+      "t": "Utilise fréquemment"
     },
     {
       "key": "options.patterns.use_always",
-      "t": "Lo uso più che posso"
+      "t": "Utilise autant que je peux"
     },
     {
       "key": "options.tools.never_heard",
-      "t": "🤷 Mai sentito nominare/Non sono sicuro di cosa sia"
+      "t": "🤷 Je n'en ai jamais entendu parler / Je ne suis pas sur de ce que c'est"
     },
     {
       "key": "options.tools.interested",
-      "t": "✅ L'ho sentito nominare > Vorrei impararlo"
+      "t": "✅ J'en ai entendu parler > Je voudrais l'apprendre"
     },
     {
       "key": "options.tools.not_interested",
-      "t": "🚫 L'ho sentito nominare > Non sono interessato"
+      "t": "🚫 J'en ai entendu parler > Je ne suis pas intéressé"
     },
     {
       "key": "options.tools.would_use",
-      "t": "👍 L'ho usato > Lo userei ancora"
+      "t": "👍 Je l'ai utilisé > Je l'utiliserai à nouveau"
     },
     {
       "key": "options.tools.would_not_use",
-      "t": "👎 L'ho usato > Non lo userei più"
+      "t": "👎 Je l'ai utilisé > Je ne l'utiliserai plus"
     },
     {
       "key": "options.tools.never_heard",
-      "t": "Mai sentito"
+      "t": "Jamais entendu parler"
     },
     {
       "key": "options.tools.interested",
-      "t": "Interessato"
+      "t": "Intéressé"
     },
     {
       "key": "options.tools.not_interested",
-      "t": "Non interessato"
+      "t": "Pas intéressé"
     },
     {
       "key": "options.tools.would_use",
-      "t": "Lo userei ancora"
+      "t": "L'utiliserai à nouveau"
     },
     {
       "key": "options.tools.would_not_use",
-      "t": "Non lo userei più"
+      "t": "Ne l'utiliserai pas"
     },
     {
       "key": "options.happiness.very_unhappy",
-      "t": "Molto insoddisfatto"
+      "t": "Très mécontent"
     },
     {
       "key": "options.happiness.unhappy",
-      "t": "Insoddisfatto"
+      "t": "Mécontent"
     },
     {
       "key": "options.happiness.neutral",
-      "t": "Neutrale"
+      "t": "Neutre"
     },
     {
       "key": "options.happiness.happy",
-      "t": "Soddisfatto"
+      "t": "Content"
     },
     {
       "key": "options.happiness.very_happy",
-      "t": "Molto soddisfatto"
+      "t": "Très content"
     },
     {
       "key": "options.opinions.disagree_strongly",
-      "t": "Sono fortemente in disaccordo"
+      "t": "Pas du tout d'accord"
     },
     {
       "key": "options.opinions.disagree",
-      "t": "Sono in disaccordo"
+      "t": "Pas d'accord"
     },
     {
       "key": "options.opinions.neutral",
-      "t": "Neutrale"
+      "t": "Neutre"
     },
     {
       "key": "options.opinions.agree",
-      "t": "Concordo"
+      "t": "D'accord"
     },
     {
       "key": "options.opinions.agree_strongly",
-      "t": "Concordo fortemente"
+      "t": "Entièrement d'accord"
     },
     {
       "key": "options.years_of_experience.range_less_than_1",
-      "t": "Meno di un anno"
+      "t": "Moins d'un an"
     },
     {
       "key": "options.years_of_experience.range_1_2",
-      "t": "Da 1 a 2 anni"
+      "t": "1 à 2 ans"
     },
     {
       "key": "options.years_of_experience.range_2_5",
-      "t": "Da 2 a 5 anni"
+      "t": "2 à 5 ans"
     },
     {
       "key": "options.years_of_experience.range_5_10",
-      "t": "Da 5 a 10 anni"
+      "t": "5 à 10 ans"
     },
     {
       "key": "options.years_of_experience.range_10_20",
-      "t": "Da 10 a 20 anni"
+      "t": "10 à 20 ans"
     },
     {
       "key": "options.years_of_experience.range_more_than_20",
-      "t": "Più di 20 anni"
+      "t": "Plus de 20 ans"
     },
     {
       "key": "options.years_of_experience.range_less_than_1.short",
-      "t": "<1"
+      "t": "< 1"
     },
     {
       "key": "options.years_of_experience.range_1_2.short",
-      "t": "1-2"
+      "t": "1 - 2"
     },
     {
       "key": "options.years_of_experience.range_2_5.short",
-      "t": "2-5"
+      "t": "2 - 5"
     },
     {
       "key": "options.years_of_experience.range_5_10",
-      "t": "5-10"
+      "t": "5 - 10"
     },
     {
       "key": "options.years_of_experience.range_10_20.short",
-      "t": "10-20"
+      "t": "10 - 20"
     },
     {
       "key": "options.years_of_experience.range_more_than_20.short",
-      "t": ">20"
+      "t": "> 20"
     },
     {
       "key": "options.company_size.range_1",
-      "t": "Un dipendente"
+      "t": "Un employé"
     },
     {
       "key": "options.company_size.range_1_5",
-      "t": "Da 1 a 5 dipendenti"
+      "t": "1 à 5 employés"
     },
     {
       "key": "options.company_size.range_5_10",
-      "t": "Da 5 a 10 dipendenti"
+      "t": "5 à 10 employés"
     },
     {
       "key": "options.company_size.range_10_20",
-      "t": "Da 10 a 20 dipendenti"
+      "t": "10 à 20 employés"
     },
     {
       "key": "options.company_size.range_20_50",
-      "t": "Da 20 a 50 dipendenti"
+      "t": "20 à 50 employés"
     },
     {
       "key": "options.company_size.range_50_100",
-      "t": "Da 50 a 100 dipendenti"
+      "t": "50 à 100 employés"
     },
     {
       "key": "options.company_size.range_100_1000",
-      "t": "Da 100 a 1000 dipendenti"
+      "t": "100 à 1000 employés"
     },
     {
       "key": "options.company_size.range_more_than_1000",
-      "t": "Più 1000 dipendenti"
+      "t": "Plus de 1000 employés"
     },
     {
       "key": "options.company_size.range_1.short",
@@ -389,59 +393,59 @@ export default {
     },
     {
       "key": "options.company_size.range_1_5.short",
-      "t": "1-5"
+      "t": "1 - 5"
     },
     {
       "key": "options.company_size.range_5_10.short",
-      "t": "5-10"
+      "t": "5 - 10"
     },
     {
       "key": "options.company_size.range_10_20.short",
-      "t": "10-20"
+      "t": "10 - 20"
     },
     {
       "key": "options.company_size.range_20_50.short",
-      "t": "20-50"
+      "t": "20 - 50"
     },
     {
       "key": "options.company_size.range_50_100.short",
-      "t": "50-100"
+      "t": "50 - 100"
     },
     {
       "key": "options.company_size.range_100_1000.short",
-      "t": "100-1000"
+      "t": "100 - 1000"
     },
     {
       "key": "options.company_size.range_more_than_1000.short",
-      "t": ">1000"
+      "t": "> 1000"
     },
     {
       "key": "options.yearly_salary.range_work_for_free",
-      "t": "Lavoro gratis"
+      "t": "Je suis bénévole"
     },
     {
       "key": "options.yearly_salary.range_0_10",
-      "t": "$0k-$10k"
+      "t": "$0k - $10k"
     },
     {
       "key": "options.yearly_salary.range_10_30",
-      "t": "$10k-$30k"
+      "t": "$10k - $30k"
     },
     {
       "key": "options.yearly_salary.range_30_50",
-      "t": "$30k-$50k"
+      "t": "$30k - $50k"
     },
     {
       "key": "options.yearly_salary.range_50_100",
-      "t": "$50k-$100k"
+      "t": "$50k - $100k"
     },
     {
       "key": "options.yearly_salary.range_100_200",
-      "t": "$100k-$200k"
+      "t": "$100k - $200k"
     },
     {
       "key": "options.yearly_salary.range_more_than_200",
-      "t": "Più di $200k"
+      "t": "plus de $200k"
     },
     {
       "key": "options.yearly_salary.range_work_for_free.short",
@@ -449,43 +453,47 @@ export default {
     },
     {
       "key": "options.yearly_salary.range_0_10.short",
-      "t": "$0k-$10k"
+      "t": "$0k - $10k"
     },
     {
       "key": "options.yearly_salary.range_10_30.short",
-      "t": "$10k-$30k"
+      "t": "$10k - $30k"
     },
     {
       "key": "options.yearly_salary.range_30_50.short",
-      "t": "$30k-$50k"
+      "t": "$30k - $50k"
     },
     {
       "key": "options.yearly_salary.range_50_100.short",
-      "t": "$50k-$100k"
+      "t": "$50k - $100k"
     },
     {
       "key": "options.yearly_salary.range_100_200.short",
-      "t": "$100k-$200k"
+      "t": "$100k - $200k"
     },
     {
       "key": "options.yearly_salary.range_more_than_200.short",
-      "t": ">$200k"
+      "t": "> $200k"
+    },
+    {
+      "key": "options.job_title.cto",
+      "t": "CTO"
     },
     {
       "key": "options.job_title.front_end_developer",
-      "t": "Front End Developer/Engineer"
+      "t": "Développeur Front-End"
     },
     {
       "key": "options.job_title.back_end_developer",
-      "t": "Back End Developer/Engineer"
+      "t": "Développeur Back-End"
     },
     {
       "key": "options.job_title.full_stack_developer",
-      "t": "Full Stack Developer/Engineer"
+      "t": "Développeur Full-Stack"
     },
     {
       "key": "options.job_title.web_developer",
-      "t": "Web Developer"
+      "t": "Développeur Web"
     },
     {
       "key": "options.job_title.web_designer",
@@ -493,111 +501,107 @@ export default {
     },
     {
       "key": "options.job_title.ux_designer",
-      "t": "Disegnatore Esperiece Utente (UX)"
+      "t": "UX Designer"
     },
     {
       "key": "options.job_title.ui_designer",
-      "t": "Disegnatore Interfacce"
-    },
-    {
-      "key": "options.job_title.back_end_dev",
-      "t": "Back-end Developer/Engegnere"
+      "t": "UI Designer"
     },
     {
       "key": "options.javascript_proficiency.0",
-      "t": "Non essere in grado di scrivere in JavaScript"
+      "t": "Incapable d'écrire du javascript"
     },
     {
       "key": "options.javascript_proficiency.1",
-      "t": "Essere in grado di scrivere corte e semplici righe di JavaScript o jQuery"
+      "t": "Peut écrire des scripts simples et courts en javascript ou jQuery"
     },
     {
       "key": "options.javascript_proficiency.2",
-      "t": "Lavorare su codici sorgenti front-end pre esistenti usando framework moderni (React, Vue, ecc.)"
+      "t": "Travaille sur une base de code existante utilisant des frameworks modernes (React, Vue, Angular, etc.)"
     },
     {
       "key": "options.javascript_proficiency.3",
-      "t": "Scrivere da zero la completa architettura front-end"
+      "t": "Architecture des front-end entièrement from scratch."
     },
     {
       "key": "options.javascript_proficiency.4",
-      "t": "Manipolazione avanzata di modelli front-end (gestione \"state\" , caricamenti dati, ecc.)"
+      "t": "Gère des patterns front-end avancés (gestion d'état, chargement de données etc.)"
     },
     {
       "key": "options.css_proficiency.0",
-      "t": "Quasi nessuna conoscenza di CSS"
+      "t": "Aucune connaissance en CSS"
     },
     {
       "key": "options.css_proficiency.1",
-      "t": "Usare framework CSS e modificare fogli di stile esistenti"
+      "t": "Utilise des frameworks CSS et modifie des styles existants"
     },
     {
       "key": "options.css_proficiency.2",
-      "t": "Conoscere le regole di specificità ed essere in grado di creare layout"
+      "t": "Connaît la spécificité des règles, peut créer des designs"
     },
     {
       "key": "options.css_proficiency.3",
-      "t": "Avere padronanza di animationi, interazioni, transizioni, ecc."
+      "t": "Maîtrise les animations, intéractions, transitions etc."
     },
     {
       "key": "options.css_proficiency.4",
-      "t": "Essere in grado di scrivere fogli di stile da zero per un intero fron-end seguendo una metodologia consistente"
+      "t": "Capable de styliser une interface entière from scratch en suivant une méthodologie consistante"
     },
     {
       "key": "options.backend_proficiency.0",
-      "t": "Non essere in grado di scrivere alcun codice back-end"
+      "t": "Incapable de travailler sur un backend"
     },
     {
       "key": "options.backend_proficiency.1",
-      "t": "Essere in grado di impostare \"tutto incluso\" CMS (WordPress, ecc.) o generatori di siti statici (Jekyll, ecc.)"
+      "t": "Capable de mettre en place des CMS tout-en-un (Wordpress, etc.) ou des générateurs de site statiques (Jimdo etc.)"
     },
     {
       "key": "options.backend_proficiency.2",
-      "t": "Essere in grado di sviluppare applicazioni usando framework per esistenti (Rails, Laravel, ecc.)"
+      "t": "Capable de déveloper des applications en utilisant des frameworks existants (Rails, Laravel etc.)"
     },
     {
       "key": "options.backend_proficiency.3",
-      "t": "Essere in grado di impostare da zero un back-end completo (Go, Node, ecc.)"
+      "t": "Met en place des back-end from scratch (Go, Node, etc.)"
     },
     {
       "key": "options.backend_proficiency.4",
-      "t": "Essere in grado di gestire architetture multi-server o di micro servizi complesse"
+      "t": "Capable de gérer des architectures multi-serveurs complexes ou des micro-services"
     },
     {
       "key": "options.proficiency.0",
-      "t": "Nessuna"
+      "t": "Aucun"
     },
     {
       "key": "options.proficiency.1",
-      "t": "Principiante"
+      "t": "Débutant"
     },
     {
       "key": "options.proficiency.2",
-      "t": "Intermedio"
+      "t": "Intérmédiaire"
     },
     {
       "key": "options.proficiency.3",
-      "t": "Avanzato"
+      "t": "Avancé"
     },
     {
       "key": "options.proficiency.4",
-      "t": "Esperto"
+      "t": "Expert"
     },
     {
       "key": "options.gender.female",
-      "t": "Femmina"
+      "t": "Féminin"
     },
     {
       "key": "options.gender.male",
-      "t": "Maschio"
+      "t": "Masculin"
     },
     {
       "key": "options.gender.non_binary",
-      "t": "Non-Binario/Terzo Sesso"
+      "t": "Non-Binaire / Troisième Genre"
     },
     {
       "key": "options.gender.prefer_not_to_say",
-      "t": "Preferisco non dirlo"
+      "t": "Préfère ne pas répondre"
     },
     {
       "key": "options.skin_tone.0",
@@ -621,227 +625,227 @@ export default {
     },
     {
       "key": "tools.other_tools",
-      "t": "Altre Opzioni"
+      "t": "Autre options"
     },
     {
       "key": "tools.other_tools.description",
-      "t": "Altre opzioni per la presente sezione che usi e non sono menzionate nella lista qui sopra"
+      "t": "Autre options que vous utilisez pour la section actuelle et non mentionnées dans la liste ci-dessus."
     },
     {
       "key": "tools.happiness",
-      "t": "Felicità generale"
+      "t": "Bonheur général"
     },
     {
       "key": "tools.happiness.description",
-      "t": "Su una scala da uno (molto infelice) a cinque (molto felice), quanto felice sei con la situazione delle cose relativa alle opzioni elencate sopra?\n"
+      "t": "Sur une échelle de 1 (très malheureux) à 5 (très content), comment vous-sentez vous avec l'état général des choses par rapports aux options de la liste ci-dessus ?\n"
     },
     {
       "key": "user_info.years_of_experience",
-      "t": "Anni di esperienza"
+      "t": "Années d'expérience"
     },
     {
       "key": "user_info.years_of_experience.description",
-      "t": "Da quanto tempi lavori o studi in questo campo."
+      "t": "Combien de temps avez-vous travaillé ou étudié dans ce domaine."
     },
     {
       "key": "user_info.company_size",
-      "t": "Dimensione dell'azienda"
+      "t": "Taille de l'entreprise"
     },
     {
       "key": "user_info.company_size.description",
-      "t": "Quanto grande é la tua azienda."
+      "t": "Quelle est la taille de votre entreprise."
     },
     {
       "key": "user_info.yearly_salary",
-      "t": "Salario Annuale"
+      "t": "Salaire annuel"
     },
     {
       "key": "user_info.yearly_salary.description",
-      "t": "In Dollari Americani (USD)."
+      "t": "En USD."
     },
     {
       "key": "user_info.job_title",
-      "t": "Ruolo"
+      "t": "Intitulé du poste"
     },
     {
       "key": "user_info.job_title.description",
-      "t": "Come ti presenti agli amici?"
+      "t": "Comment vous présentez-vous en soirée ?"
     },
     {
       "key": "user_info.javascript_proficiency",
-      "t": "Competenza in JavaScript"
+      "t": "Compétences en JavaScript"
     },
     {
       "key": "user_info.javascript_proficiency.description",
-      "t": "Quanto competente sei in JavaScript?"
+      "t": "Quel est votre niveau de compétence en JavaScript ?"
     },
     {
       "key": "user_info.css_proficiency",
-      "t": "Competenza in CSS"
+      "t": "Compétences en CSS"
     },
     {
       "key": "user_info.css_proficiency.description",
-      "t": "Quanto competente sei in CSS?"
+      "t": "Quel est votre niveau de compétence en CSS ?"
     },
     {
       "key": "user_info.backend_proficiency",
-      "t": "Competenza Back-end"
+      "t": "Cométences en back-end"
     },
     {
       "key": "user_info.backend_proficiency.description",
-      "t": "Quanto competente sei in sviluppo back-end?"
+      "t": "Quel est votre niveau de compétence en développement back-end ?"
     },
     {
       "key": "user_info.gender",
-      "t": "Sesso"
+      "t": "Genre"
     },
     {
       "key": "user_info.skin_tone",
-      "t": "Aspetto"
+      "t": "Apparance"
     },
     {
       "key": "user_info.skin_tone.description",
-      "t": "Quale emoji ti rappresenta al meglio? <br/><br/>\nNota: Stiamo sperimentando un nuovo formato di domande che ci permetterà di avere una migliore rappresentazione demografica dei partecipanti al sondaggio.  <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Lasciaci un feedback</a> su GitHub. \n"
+      "t": "Quel émoji vous représente le mieux ? <br/><br/>\nNote : Nous sommes en train d'expérimenter un nouveau format de question pour essayer de mieux représenter la démographie des répondants. <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Donnez-nous votre retour</a> sur GitHub. \n"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",
-      "t": "Come sei venuto a conoscenza di questo sondaggio?"
+      "t": "Comment avez-vous trouvé ce questionnaire ?"
     },
     {
       "key": "user_info.email",
-      "t": "La tua Email"
+      "t": "Votre Email"
     },
     {
       "key": "user_info.country",
-      "t": "Il tuo Paese"
+      "t": "Votre Pays"
     },
     {
       "key": "tools_other.text_editors",
-      "t": "Editor di Testo"
+      "t": "Éditeurs de texte"
     },
     {
       "key": "tools_other.text_editors.description",
-      "t": "Quale/i editor di testo usi regolarmente?"
+      "t": "Quel(s) éditeur(s) de texte utilisez-vous régulièrement ?"
     },
     {
       "key": "tools_other.text_editors.others",
-      "t": "Altri Editor di Testo"
+      "t": "Autre éditeurs de texte"
     },
     {
       "key": "tools_other.text_editors.others.description",
-      "t": "Altre risposte (risposta aperta)."
+      "t": "Autres réponses (champ libre)."
     },
     {
       "key": "tools_other.utilities",
-      "t": "Utilità"
+      "t": "Utilitaires"
     },
     {
       "key": "tools_other.utilities.description",
-      "t": "Quale libreria di utilità usi regolarmente?"
+      "t": "Quelles librairies utilitaire utilisez-vous régulièrement ?"
     },
     {
       "key": "tools_other.utilities.others",
-      "t": "Altre Utilità"
+      "t": "Autre utilitaires"
     },
     {
       "key": "tools_other.utilities.others.description",
-      "t": "Altre Utilità (risposta aperta)."
+      "t": "Autre utilitaires (champ libre)."
     },
     {
       "key": "tools_other.browsers",
-      "t": "Browser"
+      "t": "Navigateurs"
     },
     {
       "key": "tools_other.browsers.description",
-      "t": "Su quale/i browser lavori principalmente durante lo sviluppo iniziale?"
+      "t": "Quel(s) navigateur(s) utilisez-vous principalement durant vos développement initiaux ?"
     },
     {
       "key": "tools_other.browsers.others",
-      "t": "Altri Browser"
+      "t": "Autres navigateurs"
     },
     {
       "key": "tools_other.browsers.others.description",
-      "t": "Altre risposte (risposta aperta)."
+      "t": "Autre réponses (champ libre)."
     },
     {
       "key": "tools_other.build_tools",
-      "t": "Strumenti di Costruzione"
+      "t": "Outils de build"
     },
     {
       "key": "tools_other.build_tools.description",
-      "t": "Quali strumenti di contruzione usi?"
+      "t": "Quel(s) outil(s) de build utilisez-vous ?"
     },
     {
       "key": "tools_other.build_tools.others",
-      "t": "Altri strumenti di costruzione"
+      "t": "Autres outils de build"
     },
     {
       "key": "tools_other.build_tools.others.description",
-      "t": "Altre risposte (rispostsa aperta)."
+      "t": "Autres réponses (champ libre)."
     },
     {
       "key": "tools_other.non_js_languages",
-      "t": "Linguaggi Non-JavaScript"
+      "t": "JavaScript autres que JavaScript"
     },
     {
       "key": "tools_other.non_js_languages.description",
-      "t": "Quali altri linguaggi di programmazione usi?"
+      "t": "Quel autres langages utilisez-vous ?"
     },
     {
       "key": "tools_other.non_js_languages.others",
-      "t": "Altri Linguaggi"
+      "t": "Autres langages"
     },
     {
       "key": "tools_other.non_js_languages.others.description",
-      "t": "Altre risposte (rispostsa aperta)."
+      "t": "Autres réponses (champ libre)."
     },
     {
       "key": "resources.blogs_news_magazines",
-      "t": "Blog & Riviste"
+      "t": "Blogs et Magazines"
     },
     {
       "key": "resources.blogs_news_magazines.description",
-      "t": "Quali blog/riviste/ecc. leggi?"
+      "t": "Quel(s) blogs / magazines / etc. lisez-vous ?"
     },
     {
       "key": "resources.blogs_news_magazines.others",
-      "t": "Altri Blog & Riviste"
+      "t": "Autres Blogs et Magazines"
     },
     {
       "key": "resources.blogs_news_magazines.others.description",
-      "t": "Altre risposte (rispostsa aperta)."
+      "t": "Autres réponses (champ libre)."
     },
     {
       "key": "resources.sites_courses",
-      "t": "Siti & Corsi"
+      "t": "Sites & Cours"
     },
     {
       "key": "resources.sites_courses.description",
-      "t": "Quali siti/corsi/ecc. consulti?"
+      "t": "Quel(s) sites / cours / etc. consultez-vous ?"
     },
     {
       "key": "resources.sites_courses.others",
-      "t": "Sltri Siti & Corsi"
+      "t": "Autres Sites et Cours"
     },
     {
       "key": "resources.sites_courses.others.description",
-      "t": "Altre risposte (rispostsa aperta)."
+      "t": "Autres réponses (champ libre)."
     },
     {
       "key": "resources.podcasts",
-      "t": "Podcast"
+      "t": "Podcasts"
     },
     {
       "key": "resources.podcasts.description",
-      "t": "Quali podcast riguardanti la programmazione ascolti?"
+      "t": "Quel(s) podcasts lié à la programmation écoutez-vous ?"
     },
     {
       "key": "resources.podcasts.others",
-      "t": "Altri Podcast"
+      "t": "Autres Podcasts"
     },
     {
       "key": "resources.podcasts.others.description",
-      "t": "Altre risposte (rispostsa aperta)."
+      "t": "Autres réponses (champ libre)."
     }
   ]
 }

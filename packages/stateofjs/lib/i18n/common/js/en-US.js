@@ -752,83 +752,83 @@ export default {
       "t": "Your Country"
     },
     {
-      "key": "other_tools.text_editors",
+      "key": "tools_other.text_editors",
       "t": "Text Editors"
     },
     {
-      "key": "other_tools.text_editors.description",
+      "key": "tools_other.text_editors.description",
       "t": "Which text editor(s) do you regularly use?"
     },
     {
-      "key": "other_tools.text_editors.others",
+      "key": "tools_other.text_editors.others",
       "t": "Other Text Editors"
     },
     {
-      "key": "other_tools.text_editors.others.description",
+      "key": "tools_other.text_editors.others.description",
       "t": "Other answers (freeform field)."
     },
     {
-      "key": "other_tools.utilities",
+      "key": "tools_other.utilities",
       "t": "Utilities"
     },
     {
-      "key": "other_tools.utilities.description",
+      "key": "tools_other.utilities.description",
       "t": "Which utility libraries do you regularly use?"
     },
     {
-      "key": "other_tools.utilities.others",
+      "key": "tools_other.utilities.others",
       "t": "Other Utilities"
     },
     {
-      "key": "other_tools.utilities.others.description",
+      "key": "tools_other.utilities.others.description",
       "t": "Other utilities (freeform field)."
     },
     {
-      "key": "other_tools.browsers",
+      "key": "tools_other.browsers",
       "t": "Browsers"
     },
     {
-      "key": "other_tools.browsers.description",
+      "key": "tools_other.browsers.description",
       "t": "Which browser(s) do you primarily work in during initial development?"
     },
     {
-      "key": "other_tools.browsers.others",
+      "key": "tools_other.browsers.others",
       "t": "Other Browsers"
     },
     {
-      "key": "other_tools.browsers.others.description",
+      "key": "tools_other.browsers.others.description",
       "t": "Other answers (freeform field)."
     },
     {
-      "key": "other_tools.build_tools",
+      "key": "tools_other.build_tools",
       "t": "Build Tools"
     },
     {
-      "key": "other_tools.build_tools.description",
+      "key": "tools_other.build_tools.description",
       "t": "Which build tools do you use?"
     },
     {
-      "key": "other_tools.build_tools.others",
+      "key": "tools_other.build_tools.others",
       "t": "Other Build Tools"
     },
     {
-      "key": "other_tools.build_tools.others.description",
+      "key": "tools_other.build_tools.others.description",
       "t": "Other answers (freeform field)."
     },
     {
-      "key": "other_tools.non_js_languages",
+      "key": "tools_other.non_js_languages",
       "t": "Non-JavaScript Languages"
     },
     {
-      "key": "other_tools.non_js_languages.description",
+      "key": "tools_other.non_js_languages.description",
       "t": "Which other programming languages do you use?"
     },
     {
-      "key": "other_tools.non_js_languages.others",
+      "key": "tools_other.non_js_languages.others",
       "t": "Other Languages"
     },
     {
-      "key": "other_tools.non_js_languages.others.description",
+      "key": "tools_other.non_js_languages.others.description",
       "t": "Other answers (freeform field)."
     },
     {

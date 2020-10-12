@@ -353,11 +353,11 @@ export default {
       "t": "<code>min()</code>, <code>max()</code>, and <code>clamp()</code>"
     },
     {
-      "key": "features.units",
+      "key": "features_others.units",
       "t": "Units"
     },
     {
-      "key": "features.units.description",
+      "key": "features_others.units.description",
       "t": "Which of these CSS units have you used?"
     },
     {
@@ -409,11 +409,11 @@ export default {
       "t": "in"
     },
     {
-      "key": "features.pseudo_elements",
+      "key": "features_others.pseudo_elements",
       "t": "Pseudo Elements"
     },
     {
-      "key": "features.pseudo_elements.description",
+      "key": "features_others.pseudo_elements.description",
       "t": "Which of these CSS selectors have you used?"
     },
     {
@@ -449,7 +449,7 @@ export default {
       "t": "::backdrop"
     },
     {
-      "key": "features.combinators",
+      "key": "features_others.combinators",
       "t": "Combinators"
     },
     {
@@ -469,7 +469,7 @@ export default {
       "t": "div ~ div (subsequent sibling)"
     },
     {
-      "key": "features.tree_document_structure",
+      "key": "features_others.tree_document_structure",
       "t": "Tree / Document Structure"
     },
     {
@@ -541,7 +541,7 @@ export default {
       "t": ":has()"
     },
     {
-      "key": "features.attributes",
+      "key": "features_others.attributes",
       "t": "Attributes"
     },
     {
@@ -569,7 +569,7 @@ export default {
       "t": "div[foo*=\"bar\"] (Contains substring)"
     },
     {
-      "key": "features.links_urls",
+      "key": "features_others.links_urls",
       "t": "Links/URLs"
     },
     {
@@ -589,7 +589,7 @@ export default {
       "t": ":target"
     },
     {
-      "key": "features.interaction",
+      "key": "features_others.interaction",
       "t": "Interaction"
     },
     {
@@ -613,7 +613,7 @@ export default {
       "t": ":focus-visible"
     },
     {
-      "key": "features.form_controls",
+      "key": "features_others.form_controls",
       "t": "Form Controls"
     },
     {
@@ -655,10 +655,6 @@ export default {
     {
       "key": "options.form_controls.required_optional",
       "t": ":required and :optional"
-    },
-    {
-      "key": "tools.atomiccss",
-      "t": "Utility-First/Atomic CSS"
     },
     {
       "key": "environments.browsers",

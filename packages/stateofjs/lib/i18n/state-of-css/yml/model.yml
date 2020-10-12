@@ -238,9 +238,9 @@ translations:
   # Units & Selectors
   ###########################################################################
 
-  - key: features.units # TODO
+  - key: features_others.units # TODO
     t: Units
-  - key: features.units.description # TODO
+  - key: features_others.units.description # TODO
     t: Which of these CSS units have you used?
 
   - key: options.units.px # TODO
@@ -268,9 +268,9 @@ translations:
   - key: options.units.in # TODO
     t: in
 
-  - key: features.pseudo_elements # TODO
+  - key: features_others.pseudo_elements # TODO
     t: Pseudo Elements
-  - key: features.pseudo_elements.description # TODO
+  - key: features_others.pseudo_elements.description # TODO
     t: Which of these CSS selectors have you used?
 
   - key: options.pseudo_elements.before # TODO
@@ -290,7 +290,7 @@ translations:
   - key: options.pseudo_elements.backdrop # TODO
     t: '::backdrop'
 
-  - key: features.combinators # TODO
+  - key: features_others.combinators # TODO
     t: Combinators
 
   - key: options.combinators.descendant # TODO
@@ -302,7 +302,7 @@ translations:
   - key: options.combinators.subsequent_sibling # TODO
     t: div ~ div (subsequent sibling)
 
-  - key: features.tree_document_structure # TODO
+  - key: features_others.tree_document_structure # TODO
     t: Tree / Document Structure
 
   - key: options.tree_document_structure.root # TODO
@@ -340,7 +340,7 @@ translations:
   - key: options.tree_document_structure.has # TODO
     t: :has()
 
-  - key: features.attributes # TODO
+  - key: features_others.attributes # TODO
     t: Attributes
   
   - key: options.attributes.presence # TODO
@@ -356,7 +356,7 @@ translations:
   - key: options.attributes.contains_substring # TODO
     t: div[foo*="bar"] (Contains substring)
 
-  - key: features.links_urls # TODO
+  - key: features_others.links_urls # TODO
     t: Links/URLs
 
   - key: options.links_urls.any_link # TODO
@@ -368,7 +368,7 @@ translations:
   - key: options.links_urls.target # TODO
     t: :target
 
-  - key: features.interaction # TODO
+  - key: features_others.interaction # TODO
     t: Interaction
   
   - key: options.interaction.hover # TODO
@@ -382,7 +382,7 @@ translations:
   - key: options.interaction.focus_visible # TODO
     t: :focus-visible
 
-  - key: features.form_controls # TODO
+  - key: features_others.form_controls # TODO
     t: Form Controls
 
   - key: options.form_controls.enabled_disabled # TODO

@@ -209,7 +209,7 @@ export default {
     },
     {
       "id": "units_selectors",
-      "slug": "features",
+      "slug": "features_others",
       "questions": [
         {
           "id": "units",
@@ -493,10 +493,18 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "Sass",
-        "Less",
-        "PostCSS",
-        "Stylus",
+        {
+          "id": "sass"
+        },
+        {
+          "id": "less"
+        },
+        {
+          "id": "postcss"
+        },
+        {
+          "id": "stylus"
+        },
         {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
@@ -517,22 +525,45 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "Bootstrap",
-        "Materialize CSS",
-        "Ant Design",
-        "Semantic UI",
-        "Bulma",
-        "Foundation",
-        "UIKit",
-        "Tachyons",
-        "Primer",
         {
-          "id": "tailwind",
-          "alias": "Tailwind CSS"
+          "id": "bootstrap"
         },
-        "PureCSS",
-        "Skeleton",
-        "Spectre",
+        {
+          "id": "materialize_css"
+        },
+        {
+          "id": "ant_design"
+        },
+        {
+          "id": "semantic_ui"
+        },
+        {
+          "id": "bulma"
+        },
+        {
+          "id": "foundation"
+        },
+        {
+          "id": "uikit"
+        },
+        {
+          "id": "tachyons"
+        },
+        {
+          "id": "primer"
+        },
+        {
+          "id": "tailwind"
+        },
+        {
+          "id": "purecss"
+        },
+        {
+          "id": "skeleton"
+        },
+        {
+          "id": "spectre"
+        },
         {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
@@ -553,14 +584,24 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "BEM",
         {
-          "id": "atomiccss"
+          "id": "bem"
         },
-        "OOCSS",
-        "SMACSS",
-        "IT CSS",
-        "CUBE CSS",
+        {
+          "id": "atomic_css"
+        },
+        {
+          "id": "oocss"
+        },
+        {
+          "id": "smacss"
+        },
+        {
+          "id": "it_css"
+        },
+        {
+          "id": "cube_css"
+        },
         {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
@@ -582,17 +623,39 @@ export default {
       "slug": "tools",
       "questions": [
         "Styled Components",
-        "JSS",
-        "Styled-JSX",
-        "Radium",
-        "Emotion",
-        "CSS Modules",
-        "Styled System",
-        "Stitches",
-        "Styletron",
-        "Fela",
-        "Linaria",
-        "Astroturf",
+        {
+          "id": "jss"
+        },
+        {
+          "id": "styled_jsx"
+        },
+        {
+          "id": "radium"
+        },
+        {
+          "id": "emotion"
+        },
+        {
+          "id": "css_modules"
+        },
+        {
+          "id": "styled_system"
+        },
+        {
+          "id": "stitches"
+        },
+        {
+          "id": "styletron"
+        },
+        {
+          "id": "fela"
+        },
+        {
+          "id": "linaria"
+        },
+        {
+          "id": "astroturf"
+        },
         {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
@@ -610,70 +673,118 @@ export default {
     },
     {
       "id": "other_tools",
-      "slug": "other_tools",
+      "slug": "tools_other",
       "questions": [
         {
           "id": "utilities",
           "template": "multiple",
-          "allowmultiple": true,
           "options": [
-            "Stylelint",
-            "PurgeCSS",
-            "PurifyCSS"
+            {
+              "id": "stylelint"
+            },
+            {
+              "id": "purgecss"
+            },
+            {
+              "id": "purifycss"
+            }
           ]
         },
         {
           "id": "utilities",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         },
         {
           "id": "text_editors",
           "template": "multiple",
-          "allowmultiple": true,
           "options": [
-            "VS Code",
-            "Sublime Text",
-            "Atom",
-            "Vim",
-            "Emacs",
-            "Webstorm",
-            "Nova"
+            {
+              "id": "vs_code"
+            },
+            {
+              "id": "sublime_text"
+            },
+            {
+              "id": "atom"
+            },
+            {
+              "id": "vim"
+            },
+            {
+              "id": "emacs"
+            },
+            {
+              "id": "webstorm"
+            },
+            {
+              "id": "nova"
+            }
           ]
         },
         {
           "id": "text_editors",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         },
         {
           "id": "browsers",
           "template": "multiple",
-          "allowmultiple": true,
           "options": [
-            "Edge",
-            "Chrome",
-            "Safari",
-            "Firefox",
-            "Internet Explorer 11",
-            "Internet Explorer 8/9/10",
-            "Opera Mini",
-            "Safari iOS",
-            "Chrome iOS",
-            "Chrome Android",
-            "Firefox Android",
-            "Samsung Internet",
-            "Vivaldi",
-            "Brave",
-            "UC Browser",
-            "Opera",
-            "Polypane"
+            {
+              "id": "edge"
+            },
+            {
+              "id": "chrome"
+            },
+            {
+              "id": "safari"
+            },
+            {
+              "id": "firefox"
+            },
+            {
+              "id": "internet_explorer_11"
+            },
+            {
+              "id": "internet_explorer_8_9_10"
+            },
+            {
+              "id": "opera_mini"
+            },
+            {
+              "id": "safari_ios"
+            },
+            {
+              "id": "chrome_ios"
+            },
+            {
+              "id": "chrome_android"
+            },
+            {
+              "id": "firefox_android"
+            },
+            {
+              "id": "samsung_internet"
+            },
+            {
+              "id": "vivaldi"
+            },
+            {
+              "id": "brave"
+            },
+            {
+              "id": "ub_browser"
+            },
+            {
+              "id": "opera"
+            },
+            {
+              "id": "polypane"
+            }
           ]
         },
         {
           "id": "browsers",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         }
       ]
     },
@@ -685,38 +796,90 @@ export default {
           "id": "browsers",
           "template": "multiple",
           "options": [
-            "Edge",
-            "Chrome",
-            "Safari",
-            "Firefox",
-            "Internet Explorer 11",
-            "Internet Explorer 8/9/10",
-            "Opera Mini",
-            "Safari iOS",
-            "Chrome iOS",
-            "Chrome Android",
-            "Firefox Android",
-            "Samsung Internet",
-            "Vivaldi",
-            "Brave",
-            "UC Browser",
-            "Opera",
-            "Polypane"
+            {
+              "id": "edge"
+            },
+            {
+              "id": "chrome"
+            },
+            {
+              "id": "safari"
+            },
+            {
+              "id": "firefox"
+            },
+            {
+              "id": "internet_explorer_11"
+            },
+            {
+              "id": "internet_explorer_8_9_10"
+            },
+            {
+              "id": "opera_mini"
+            },
+            {
+              "id": "safari_ios"
+            },
+            {
+              "id": "chrome_ios"
+            },
+            {
+              "id": "chrome_android"
+            },
+            {
+              "id": "firefox_android"
+            },
+            {
+              "id": "samsung_internet"
+            },
+            {
+              "id": "vivaldi"
+            },
+            {
+              "id": "brave"
+            },
+            {
+              "id": "ub_browser"
+            },
+            {
+              "id": "opera"
+            },
+            {
+              "id": "polypane"
+            }
           ]
         },
         {
           "id": "form_factors",
           "template": "multiple",
           "options": [
-            "Desktop",
-            "Smartphone",
-            "Feature Phone",
-            "Tablet",
-            "Smart Watch",
-            "TV",
-            "Gaming Console",
-            "Screen Reader",
-            "Print"
+            {
+              "id": "desktop"
+            },
+            {
+              "id": "smartphone"
+            },
+            {
+              "id": "feature_phone"
+            },
+            {
+              "id": "tablet"
+            },
+            {
+              "id": "smart_watch"
+            },
+            {
+              "id": "tv"
+            },
+            {
+              "id": "gaming_console"
+            },
+            {
+              "id": "screen_reader"
+            },
+            {
+              "id": "print"
+            }
           ]
         },
         {
@@ -767,61 +930,112 @@ export default {
           "id": "blogs_news_magazines",
           "template": "multiple",
           "options": [
-            "CSS Tricks",
-            "Smashing Magazine",
-            "CoDrops",
-            "SitePoint",
-            "David Walsh",
-            "Dev.to",
-            "Sidebar",
-            "HeyDesigner",
-            "CSS Weekly",
-            "Frontend Horse"
+            {
+              "id": "css_tricks"
+            },
+            {
+              "id": "smashing_magazine"
+            },
+            {
+              "id": "codrops"
+            },
+            {
+              "id": "sitepoint"
+            },
+            {
+              "id": "david_walsh"
+            },
+            {
+              "id": "dev_to"
+            },
+            {
+              "id": "sidebar"
+            },
+            {
+              "id": "heydesigner"
+            },
+            {
+              "id": "css_weekly"
+            },
+            {
+              "id": "frontend_horse"
+            }
           ]
         },
         {
           "id": "blogs_news_magazines",
-          "template": "text",
-          "suffix": "others"
+          "template": "others"
         },
         {
           "id": "sites_courses",
           "template": "multiple",
           "options": [
-            "Stack Overflow",
-            "MDN",
-            "W3Schools",
-            "FreeCodeCamp",
-            "Codecademy",
-            "LevelUp Tutorials",
-            "Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)",
-            "Pluralsight",
-            "DesignCode"
+            {
+              "id": "stack_overflow"
+            },
+            {
+              "id": "mdn"
+            },
+            {
+              "id": "w3schools"
+            },
+            {
+              "id": "freecodecamp"
+            },
+            {
+              "id": "codecademy"
+            },
+            {
+              "id": "levelup_tutorials"
+            },
+            {
+              "id": "wes_bos_courses"
+            },
+            {
+              "id": "pluralsight"
+            },
+            {
+              "id": "designcode"
+            }
           ]
         },
         {
           "id": "sites_courses",
-          "template": "text",
-          "suffix": "others"
+          "template": "others"
         },
         {
           "id": "podcasts",
           "template": "multiple",
           "options": [
-            "Shop Talk Show",
-            "Style Guide Podcast",
-            "The Big Web Show",
-            "The Web Ahead",
-            "Non Breaking Space Show",
-            "The Changelog",
-            "Syntax",
-            "CSS Podcast"
+            {
+              "id": "shop_talk_show"
+            },
+            {
+              "id": "style_guide_podcast"
+            },
+            {
+              "id": "the_big_web_show"
+            },
+            {
+              "id": "the_web_ahead"
+            },
+            {
+              "id": "non_breaking_space_show"
+            },
+            {
+              "id": "the_changelog"
+            },
+            {
+              "id": "syntax"
+            },
+            {
+              "id": "css_podcast"
+            }
           ]
         },
         {
           "id": "podcasts",
-          "template": "text",
-          "suffix": "others"
+          "template": "others"
         }
       ]
     },

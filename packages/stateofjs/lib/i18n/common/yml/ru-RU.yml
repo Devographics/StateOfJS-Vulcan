@@ -527,49 +527,49 @@ translations:
   # Other Tools
   ###########################################################################
 
-  - key: other_tools.text_editors
+  - key: tools_other.text_editors
     t: Текстовые редакторы
-  - key: other_tools.text_editors.description
+  - key: tools_other.text_editors.description
     t: Какими текстовыми редакторами вы регулярно пользуетесь?
-  - key: other_tools.text_editors.others
+  - key: tools_other.text_editors.others
     t: Другие текстовые редакторы
-  - key: other_tools.text_editors.others.description
+  - key: tools_other.text_editors.others.description
     t: Другие ответы (поле со свободной формой ответа).
 
-  - key: other_tools.utilities
+  - key: tools_other.utilities
     t: Утилиты
-  - key: other_tools.utilities.description
+  - key: tools_other.utilities.description
     t:  Какие библиотеки-утилиты вы регулярно используете?
-  - key: other_tools.utilities.others
+  - key: tools_other.utilities.others
     t: Другие утилиты
-  - key: other_tools.utilities.others.description
+  - key: tools_other.utilities.others.description
     t: Другие утилиты (поле со свободной формой ответа).
 
-  - key: other_tools.browsers
+  - key: tools_other.browsers
     t: Браузеры
-  - key: other_tools.browsers.description
+  - key: tools_other.browsers.description
     t: В каких браузерах вы в основном работаете при начальной разработке?
-  - key: other_tools.browsers.others
+  - key: tools_other.browsers.others
     t: Другие браузеры
-  - key: other_tools.browsers.others.description
+  - key: tools_other.browsers.others.description
     t: Другие ответы (поле со свободной формой ответа).
 
-  - key: other_tools.build_tools
+  - key: tools_other.build_tools
     t: Сборщики
-  - key: other_tools.build_tools.description
+  - key: tools_other.build_tools.description
     t: Какие сборщики вы используете?
-  - key: other_tools.build_tools.others
+  - key: tools_other.build_tools.others
     t: Другие сборщики
-  - key: other_tools.build_tools.others.description
+  - key: tools_other.build_tools.others.description
     t: Другие ответы (поле со свободной формой ответа).
 
-  - key: other_tools.non_js_languages
+  - key: tools_other.non_js_languages
     t: Языки, помимо JavaScript
-  - key: other_tools.non_js_languages.description
+  - key: tools_other.non_js_languages.description
     t: Какими другими языками программирования вы пользуетесь?
-  - key: other_tools.non_js_languages.others
+  - key: tools_other.non_js_languages.others
     t: Другие языки
-  - key: other_tools.non_js_languages.others.description
+  - key: tools_other.non_js_languages.others.description
     t: Другие ответы (поле со свободной формой ответа).
 
 ###########################################################################

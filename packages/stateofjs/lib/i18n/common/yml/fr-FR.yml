@@ -511,49 +511,49 @@ translations:
   # Other Tools
   ###########################################################################
 
-  - key: other_tools.text_editors
+  - key: tools_other.text_editors
     t: Éditeurs de texte
-  - key: other_tools.text_editors.description
+  - key: tools_other.text_editors.description
     t: Quel(s) éditeur(s) de texte utilisez-vous régulièrement ?
-  - key: other_tools.text_editors.others
+  - key: tools_other.text_editors.others
     t: Autre éditeurs de texte
-  - key: other_tools.text_editors.others.description
+  - key: tools_other.text_editors.others.description
     t: Autres réponses (champ libre).
 
-  - key: other_tools.utilities
+  - key: tools_other.utilities
     t: Utilitaires
-  - key: other_tools.utilities.description
+  - key: tools_other.utilities.description
     t: Quelles librairies utilitaire utilisez-vous régulièrement ?
-  - key: other_tools.utilities.others
+  - key: tools_other.utilities.others
     t: Autre utilitaires
-  - key: other_tools.utilities.others.description
+  - key: tools_other.utilities.others.description
     t: Autre utilitaires (champ libre).
 
-  - key: other_tools.browsers
+  - key: tools_other.browsers
     t: Navigateurs
-  - key: other_tools.browsers.description
+  - key: tools_other.browsers.description
     t: Quel(s) navigateur(s) utilisez-vous principalement durant vos développement initiaux ?
-  - key: other_tools.browsers.others
+  - key: tools_other.browsers.others
     t: Autres navigateurs
-  - key: other_tools.browsers.others.description
+  - key: tools_other.browsers.others.description
     t: Autre réponses (champ libre).
 
-  - key: other_tools.build_tools
+  - key: tools_other.build_tools
     t: Outils de build
-  - key: other_tools.build_tools.description
+  - key: tools_other.build_tools.description
     t: Quel(s) outil(s) de build utilisez-vous ?
-  - key: other_tools.build_tools.others
+  - key: tools_other.build_tools.others
     t: Autres outils de build
-  - key: other_tools.build_tools.others.description
+  - key: tools_other.build_tools.others.description
     t: Autres réponses (champ libre).
 
-  - key: other_tools.non_js_languages
+  - key: tools_other.non_js_languages
     t: JavaScript autres que JavaScript
-  - key: other_tools.non_js_languages.description
+  - key: tools_other.non_js_languages.description
     t: Quel autres langages utilisez-vous ?
-  - key: other_tools.non_js_languages.others
+  - key: tools_other.non_js_languages.others
     t: Autres langages
-  - key: other_tools.non_js_languages.others.description
+  - key: tools_other.non_js_languages.others.description
     t: Autres réponses (champ libre).
 
 ###########################################################################

@@ -353,43 +353,43 @@ export default {
       "t": "<code>min()</code>, <code>max()</code>, and <code>clamp()</code>"
     },
     {
-      "key": "features.units",
+      "key": "features_others.units",
       "t": "Units"
     },
     {
-      "key": "features.units.description",
+      "key": "features_others.units.description",
       "t": "Which of these CSS units have you used?"
     },
     {
-      "key": "features.pseudo_elements",
+      "key": "features_others.pseudo_elements",
       "t": "Pseudo Elements"
     },
     {
-      "key": "features.pseudo_elements.description",
+      "key": "features_others.pseudo_elements.description",
       "t": "Which of these CSS selectors have you used?"
     },
     {
-      "key": "features.combinators",
+      "key": "features_others.combinators",
       "t": "Combinators"
     },
     {
-      "key": "features.tree_document_structure",
+      "key": "features_others.tree_document_structure",
       "t": "Tree / Document Structure"
     },
     {
-      "key": "features.attributes",
+      "key": "features_others.attributes",
       "t": "Attributes"
     },
     {
-      "key": "features.links_urls",
+      "key": "features_others.links_urls",
       "t": "Links/URLs"
     },
     {
-      "key": "features.interaction",
+      "key": "features_others.interaction",
       "t": "Interaction"
     },
     {
-      "key": "features.form_controls",
+      "key": "features_others.form_controls",
       "t": "Form Controls"
     },
     {

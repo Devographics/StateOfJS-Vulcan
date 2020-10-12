@@ -10,11 +10,11 @@ translations:
     t: >
       ## CSS évolue plus rapidement que jamais.
     
-    Flexbox, Grid, Multi-Column... Sans parler des tout nouveaux paradigmes comme CSS-in-JS.
-    
-    Après le succès de notre questionnaire annuel [State Of JavaScript](https://stateofjs.com), nous avons décidé
-    de s'attaquer au monde du style et des sélecteurs pour aider à identifier les dernières modes...
-    et essaye de casser le mythe du "un bon front-end divise" !
+      Flexbox, Grid, Multi-Column... Sans parler des tout nouveaux paradigmes comme CSS-in-JS.
+      
+      Après le succès de notre questionnaire annuel [State Of JavaScript](https://stateofjs.com), nous avons décidé
+      de s'attaquer au monde du style et des sélecteurs pour aider à identifier les dernières tendances…
+      et essaye de franchir le "gouffre du front-end"!
 
   ###########################################################################
   # Sections
@@ -31,9 +31,9 @@ translations:
     t: Contrôler la forme et l'affichage des éléments
 
   - key: sections.interactions.title
-    t: Intéractions
+    t: Interactions
   - key: sections.interactions.description
-    t: Contrôler comment l'utilisateur interagi avec la page
+    t: Contrôler comment l'utilisateur interragi avec la page
 
   - key: sections.typography.title
     t: Typography
@@ -43,7 +43,7 @@ translations:
   - key: sections.animations_transforms.title
     t: Animations et Transformations
   - key: sections.animations_transforms.description
-    t: Animer and transformer les éléments.
+    t: Animer et transformer les éléments.
 
   - key: sections.media_queries.title
     t: Media Queries
@@ -236,9 +236,9 @@ translations:
   # Units & Selectors
   ###########################################################################
 
-  - key: features.units
+  - key: features_others.units
     t: Unités
-  - key: features.units.description
+  - key: features_others.units.description
     t: Lesquels de ces unités avez-vous utilisé ?
 
   - key: options.units.px
@@ -266,9 +266,9 @@ translations:
   - key: options.units.in
     t: in
 
-  - key: features.pseudo_elements
+  - key: features_others.pseudo_elements
     t: Pseudo Éléments
-  - key: features.pseudo_elements.description
+  - key: features_others.pseudo_elements.description
     t: Lequel de ces sélecteurs CSS avez-vous utilisé ?
 
   - key: options.pseudo_elements.before
@@ -288,7 +288,7 @@ translations:
   - key: options.pseudo_elements.backdrop
     t: '::backdrop'
 
-  - key: features.combinators
+  - key: features_others.combinators
     t: Combinaisons
 
   - key: options.combinators.descendant
@@ -300,7 +300,7 @@ translations:
   - key: options.combinators.subsequent_sibling
     t: div ~ div (voisin subséquent)
 
-  - key: features.tree_document_structure
+  - key: features_others.tree_document_structure
     t: Hiérarchie / Structure de document
 
   - key: options.tree_document_structure.root
@@ -338,7 +338,7 @@ translations:
   - key: options.tree_document_structure.has
     t: :has()
 
-  - key: features.attributes
+  - key: features_others.attributes
     t: Attributs
   
   - key: options.attributes.presence
@@ -354,7 +354,7 @@ translations:
   - key: options.attributes.contains_substring
     t: div[foo*="bar"] (Contient une partie de texte)
 
-  - key: features.links_urls
+  - key: features_others.links_urls
     t: Links/URLs
 
   - key: options.links_urls.any_link
@@ -366,7 +366,7 @@ translations:
   - key: options.links_urls.target
     t: :target
 
-  - key: features.interaction
+  - key: features_others.interaction
     t: Interaction
   
   - key: options.interaction.hover
@@ -380,7 +380,7 @@ translations:
   - key: options.interaction.focus_visible
     t: :focus-visible
 
-  - key: features.form_controls
+  - key: features_others.form_controls
     t: Form Controls
 
   - key: options.form_controls.enabled_disabled

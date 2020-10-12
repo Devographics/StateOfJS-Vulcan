@@ -239,32 +239,32 @@ translations:
   ###########################################################################
 
   # units & selectors
-  - key: features.units
+  - key: features_others.units
     t: Unità di misura
-  - key: features.units.description
+  - key: features_others.units.description
     t: Quali di queste unità di misura CSS hai usato?
 
-  - key: features.pseudo_elements
+  - key: features_others.pseudo_elements
     t: Pseudo Elementi
-  - key: features.pseudo_elements.description
+  - key: features_others.pseudo_elements.description
     t: Quali di questi selettori CSS hai usato?
 
-  - key: features.combinators
+  - key: features_others.combinators
     t: Combinatori
 
-  - key: features.tree_document_structure
+  - key: features_others.tree_document_structure
     t: Struttura ad albero della pagina
 
-  - key: features.attributes
+  - key: features_others.attributes
     t: Attributi
   
-  - key: features.links_urls
+  - key: features_others.links_urls
     t: Link/URL
 
-  - key: features.interaction
+  - key: features_others.interaction
     t: Interazioni
   
-  - key: features.form_controls
+  - key: features_others.form_controls
     t: Controllo form
 
   ###########################################################################
