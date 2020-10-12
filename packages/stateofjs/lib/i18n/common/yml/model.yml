@@ -408,18 +408,26 @@ translations:
   - key: options.gender.prefer_not_to_say # TODO
     t: Prefer not to say
 
-  # Skin Tone
+  # Race & Ethnicity
 
-  - key: options.skin_tone.0 # TODO
-    t: 🧑🏻‍🦲
-  - key: options.skin_tone.1 # TODO
-    t: 🧑🏼‍🦲
-  - key: options.skin_tone.2 # TODO
-    t: 🧑🏽‍🦲
-  - key: options.skin_tone.3 # TODO
-    t: 🧑🏾‍🦲
-  - key: options.skin_tone.4 # TODO
-    t: 🧑🏿‍🦲
+  - key: white_european #  # TODO
+    t: White or of European descent
+  - key: south_asian # TODO
+    t: South Asian
+  - key: hispanic_latin # TODO
+    t: Hispanic or Latino/Latina
+  - key: east_asian # TODO
+    t: East Asian
+  - key: middle_eastern # TODO
+    t: Middle Eastern
+  - key: black_african # TODO
+    t: Black or of African descent
+  - key: multiracial # TODO
+    t: Multiracial
+  - key: biracial # TODO
+    t: Biracial
+  - key: native_american_islander_australian # TODO
+    t: Native American, Pacific Islander, or Indigenous Australian
 
   ###########################################################################
   # Tools

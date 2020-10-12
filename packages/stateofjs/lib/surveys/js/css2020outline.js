@@ -553,10 +553,10 @@ export default {
           "id": "primer"
         },
         {
-          "id": "tailwind"
+          "id": "tailwind_css"
         },
         {
-          "id": "purecss"
+          "id": "pure_css"
         },
         {
           "id": "skeleton"
@@ -1237,24 +1237,32 @@ export default {
           ]
         },
         {
-          "id": "skin_tone",
-          "template": "single",
-          "fieldType": "Number",
+          "id": "race_ethnicity",
+          "template": "multiple",
           "options": [
             {
-              "id": 0
+              "id": "white_european"
             },
             {
-              "id": 1
+              "id": "hispanic_latin"
             },
             {
-              "id": 2
+              "id": "east_asian"
             },
             {
-              "id": 3
+              "id": "middle_eastern"
             },
             {
-              "id": 4
+              "id": "black_african"
+            },
+            {
+              "id": "multiracial"
+            },
+            {
+              "id": "biracial"
+            },
+            {
+              "id": "native_american_islander_australian"
             }
           ]
         },

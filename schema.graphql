@@ -892,8 +892,8 @@ type Response {
   css2020__tools__uikit__experience: String 
   css2020__tools__tachyons__experience: String 
   css2020__tools__primer__experience: String 
-  css2020__tools__tailwind__experience: String 
-  css2020__tools__purecss__experience: String 
+  css2020__tools__tailwind_css__experience: String 
+  css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
   css2020__sections_other_tools__css_frameworks__others: String 
@@ -954,7 +954,7 @@ type Response {
   css2020__user_info__backend_proficiency: Float 
   css2020__user_info__how_did_user_find_out_about_the_survey: String 
   css2020__user_info__gender: String 
-  css2020__user_info__skin_tone: Float 
+  css2020__user_info__race_ethnicity__choices: [String] 
   css2020__user_info__country: String 
   js2019__features__destructuring__experience: String 
   js2019__features__spread_operator__experience: String 
@@ -1222,8 +1222,8 @@ input CreateResponseDataInput {
   css2020__tools__uikit__experience: String 
   css2020__tools__tachyons__experience: String 
   css2020__tools__primer__experience: String 
-  css2020__tools__tailwind__experience: String 
-  css2020__tools__purecss__experience: String 
+  css2020__tools__tailwind_css__experience: String 
+  css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
   css2020__sections_other_tools__css_frameworks__others: String 
@@ -1284,7 +1284,7 @@ input CreateResponseDataInput {
   css2020__user_info__backend_proficiency: Float 
   css2020__user_info__how_did_user_find_out_about_the_survey: String 
   css2020__user_info__gender: String 
-  css2020__user_info__skin_tone: Float 
+  css2020__user_info__race_ethnicity__choices: [String] 
   css2020__user_info__country: String 
   js2019__features__destructuring__experience: String 
   js2019__features__spread_operator__experience: String 
@@ -1495,8 +1495,8 @@ input UpdateResponseDataInput {
   css2020__tools__uikit__experience: String 
   css2020__tools__tachyons__experience: String 
   css2020__tools__primer__experience: String 
-  css2020__tools__tailwind__experience: String 
-  css2020__tools__purecss__experience: String 
+  css2020__tools__tailwind_css__experience: String 
+  css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre__experience: String 
   css2020__sections_other_tools__css_frameworks__others: String 
@@ -1557,7 +1557,7 @@ input UpdateResponseDataInput {
   css2020__user_info__backend_proficiency: Float 
   css2020__user_info__how_did_user_find_out_about_the_survey: String 
   css2020__user_info__gender: String 
-  css2020__user_info__skin_tone: Float 
+  css2020__user_info__race_ethnicity__choices: [String] 
   css2020__user_info__country: String 
   js2019__features__destructuring__experience: String 
   js2019__features__spread_operator__experience: String 
@@ -1763,8 +1763,8 @@ input ResponseFilterInput {
   css2020__tools__uikit__experience: String_Selector
   css2020__tools__tachyons__experience: String_Selector
   css2020__tools__primer__experience: String_Selector
-  css2020__tools__tailwind__experience: String_Selector
-  css2020__tools__purecss__experience: String_Selector
+  css2020__tools__tailwind_css__experience: String_Selector
+  css2020__tools__pure_css__experience: String_Selector
   css2020__tools__skeleton__experience: String_Selector
   css2020__tools__spectre__experience: String_Selector
   css2020__sections_other_tools__css_frameworks__others: String_Selector
@@ -1825,7 +1825,7 @@ input ResponseFilterInput {
   css2020__user_info__backend_proficiency: Float_Selector
   css2020__user_info__how_did_user_find_out_about_the_survey: String_Selector
   css2020__user_info__gender: String_Selector
-  css2020__user_info__skin_tone: Float_Selector
+  css2020__user_info__race_ethnicity__choices: String_Array_Selector
   css2020__user_info__country: String_Selector
   js2019__features__destructuring__experience: String_Selector
   js2019__features__spread_operator__experience: String_Selector
@@ -2026,8 +2026,8 @@ input ResponseSortInput {
   css2020__tools__uikit__experience: SortOptions
   css2020__tools__tachyons__experience: SortOptions
   css2020__tools__primer__experience: SortOptions
-  css2020__tools__tailwind__experience: SortOptions
-  css2020__tools__purecss__experience: SortOptions
+  css2020__tools__tailwind_css__experience: SortOptions
+  css2020__tools__pure_css__experience: SortOptions
   css2020__tools__skeleton__experience: SortOptions
   css2020__tools__spectre__experience: SortOptions
   css2020__sections_other_tools__css_frameworks__others: SortOptions
@@ -2088,7 +2088,7 @@ input ResponseSortInput {
   css2020__user_info__backend_proficiency: SortOptions
   css2020__user_info__how_did_user_find_out_about_the_survey: SortOptions
   css2020__user_info__gender: SortOptions
-  css2020__user_info__skin_tone: SortOptions
+  css2020__user_info__race_ethnicity__choices: SortOptions
   css2020__user_info__country: SortOptions
   js2019__features__destructuring__experience: SortOptions
   js2019__features__spread_operator__experience: SortOptions

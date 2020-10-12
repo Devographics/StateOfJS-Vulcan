@@ -279,8 +279,8 @@ outline:
       - id: uikit
       - id: tachyons
       - id: primer
-      - id: tailwind
-      - id: purecss
+      - id: tailwind_css
+      - id: pure_css
       - id: skeleton
       - id: spectre
       # id: - milligram
@@ -675,14 +675,17 @@ outline:
           - id: male
           - id: non_binary
           - id: prefer_not_to_say
-      - id: skin_tone
-        template: single
-        fieldType: Number
+      - id: race_ethnicity
+        template: multiple
         options:
-          - id: 0
-          - id: 1
-          - id: 2
-          - id: 3
-          - id: 4
+          - id: white_european
+          - id: hispanic_latin
+          - id: east_asian
+          - id: middle_eastern
+          - id: black_african
+          - id: multiracial
+          - id: biracial
+          - id: native_american_islander_australian
       - id: country
         template: country
+

@@ -608,24 +608,40 @@ export default {
       "t": "Prefer not to say"
     },
     {
-      "key": "options.skin_tone.0",
-      "t": "🧑🏻‍🦲"
+      "key": "white_european",
+      "t": "White or of European descent"
     },
     {
-      "key": "options.skin_tone.1",
-      "t": "🧑🏼‍🦲"
+      "key": "south_asian",
+      "t": "South Asian"
     },
     {
-      "key": "options.skin_tone.2",
-      "t": "🧑🏽‍🦲"
+      "key": "hispanic_latin",
+      "t": "Hispanic or Latino/Latina"
     },
     {
-      "key": "options.skin_tone.3",
-      "t": "🧑🏾‍🦲"
+      "key": "east_asian",
+      "t": "East Asian"
     },
     {
-      "key": "options.skin_tone.4",
-      "t": "🧑🏿‍🦲"
+      "key": "middle_eastern",
+      "t": "Middle Eastern"
+    },
+    {
+      "key": "black_african",
+      "t": "Black or of African descent"
+    },
+    {
+      "key": "multiracial",
+      "t": "Multiracial"
+    },
+    {
+      "key": "biracial",
+      "t": "Biracial"
+    },
+    {
+      "key": "native_american_islander_australian",
+      "t": "Native American, Pacific Islander, or Indigenous Australian"
     },
     {
       "key": "tools.other_tools",

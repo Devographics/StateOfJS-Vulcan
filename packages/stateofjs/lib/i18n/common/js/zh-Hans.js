@@ -608,24 +608,40 @@ export default {
       "t": "未透露"
     },
     {
-      "key": "options.skin_tone.0",
-      "t": "🧑🏻‍🦲"
+      "key": "options.race_ethnicity.white_european",
+      "t": "White or of European descent"
     },
     {
-      "key": "options.skin_tone.1",
-      "t": "🧑🏼‍🦲"
+      "key": "options.race_ethnicity.south_asian",
+      "t": "South Asian"
     },
     {
-      "key": "options.skin_tone.2",
-      "t": "🧑🏽‍🦲"
+      "key": "options.race_ethnicity.hispanic_latin",
+      "t": "Hispanic or Latino/Latina"
     },
     {
-      "key": "options.skin_tone.3",
-      "t": "🧑🏾‍🦲"
+      "key": "options.race_ethnicity.east_asian",
+      "t": "East Asian"
     },
     {
-      "key": "options.skin_tone.4",
-      "t": "🧑🏿‍🦲"
+      "key": "options.race_ethnicity.middle_eastern",
+      "t": "Middle Eastern"
+    },
+    {
+      "key": "options.race_ethnicity.black_african",
+      "t": "Black or of African descent"
+    },
+    {
+      "key": "options.race_ethnicity.multiracial",
+      "t": "Multiracial"
+    },
+    {
+      "key": "options.race_ethnicity.biracial",
+      "t": "Biracial"
+    },
+    {
+      "key": "options.race_ethnicity.native_american_islander_australian",
+      "t": "Native American, Pacific Islander, or Indigenous Australian"
     },
     {
       "key": "options.skin_tone.0",
