@@ -1,0 +1,61 @@
+locale: lt-LT
+translations:
+
+  ###########################################################################
+  # Homepage
+  ###########################################################################
+
+  key: homepage.hand_coded
+  t: Suprogramuota Japonijoje.
+  key: homepage.leave_issue
+  t: Praneškite klaidą
+  key: homepage.get_in_touch
+  t: Susisiekite
+
+  key: homepage.made_by
+  t: 'The State of CSS parengta:'
+  key: homepage.leave_issue
+  t: Praneškite klaidą
+
+  key: homepage.previous_years
+  t: Praėję metai:
+
+  key: homepage.intro
+  t: >
+    ## CSS kinta greičiau nei bet kada.
+
+    Flexbox, Grid, Multi-Column… Nekalbant apie naujas paradigmas kaip CSS-in-JS.
+
+    Po sėkmingos mūsų metinės [State Of JavaScript](https://stateofjs.com) apklausos, nusprendėme pasinerti į stilių ir selektorių pasaulį,
+tam, kad padėtume identifikuoti naujausias tendencijas... ir pabandyti sujungti
+    vis augančią “didžiąją front-end takoskyrą”!
+  key: homepage.take_survey
+  t: Užpildykite apklausą
+  key: homepage.view_results
+  t: Peržiūrėkite 2019 rezultatus
+  key: share.help_spread
+  t: Pasidalinkite!
+  key: newsletter.stay_tuned
+  t: Užsisakykite naujienas
+  key: newsletter.leave_your_email
+  t: Palikite savo el. pašto adresą, ir mes Jus informuosime, kai vykdysime sekančią apklausą.
+  key: author.sacha.bio
+  t: >
+      JavaScript duomenų vizualizacijos bibliotekos [Nivo](http://nivo.rocks/)
+        ir [Mozaik](http://mozaik.rocks/), priemonės, padedančios kurti gražiais informacijos suvestines (dashboards), kūrėjas.
+  key: author.raphael.bio
+  t: >
+        Kasdieninio naujienlaiškio [Sidebar](http://sidebar.io) ir
+        React+GraphQL atviros sistemos [VulcanJS](http://vulcanjs.org) kūrėjas.
+© 2020 GitHub, Inc.
+Sąlygos
+Privatumo politika
+Apsauga
+Būsena
+Pagalba
+Susisiekite GitHub
+Kainodara
+API
+Mokymai
+Blogas
+Apie
