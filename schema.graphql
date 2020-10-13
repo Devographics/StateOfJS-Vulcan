@@ -194,7 +194,6 @@ type Entity {
   type: String
   tags: [String]
   context: String
-  isCode: Boolean
 }
 
 # A user object
@@ -899,7 +898,7 @@ type Response {
   css2020__tools__less__experience: String 
   css2020__tools__post_css__experience: String 
   css2020__tools__stylus__experience: String 
-  css2020__sections_other_tools__pre_post_processors__others: String 
+  css2020__tools_others__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materialize_css__experience: String 
@@ -914,7 +913,7 @@ type Response {
   css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre_css__experience: String 
-  css2020__sections_other_tools__css_frameworks__others: String 
+  css2020__tools_others__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomic_css__experience: String 
@@ -922,7 +921,7 @@ type Response {
   css2020__tools__smacss__experience: String 
   css2020__tools__it_css__experience: String 
   css2020__tools__cube_css__experience: String 
-  css2020__sections_other_tools__css_methodologies__others: String 
+  css2020__tools_others__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styled_components__experience: String 
   css2020__tools__jss__experience: String 
@@ -936,14 +935,14 @@ type Response {
   css2020__tools__fela__experience: String 
   css2020__tools__linaria__experience: String 
   css2020__tools__astroturf__experience: String 
-  css2020__sections_other_tools__css_in_js__others: String 
+  css2020__tools_others__css_in_js__others: String 
   css2020__happiness__css_in_js: Float 
-  css2020__tools_other__utilities__choices: [String] 
-  css2020__tools_other__utilities__others: String 
-  css2020__tools_other__text_editors__choices: [String] 
-  css2020__tools_other__text_editors__others: String 
-  css2020__tools_other__browsers__choices: [String] 
-  css2020__tools_other__browsers__others: String 
+  css2020__tools_others__utilities__choices: [String] 
+  css2020__tools_others__utilities__others: String 
+  css2020__tools_others__text_editors__choices: [String] 
+  css2020__tools_others__text_editors__others: String 
+  css2020__tools_others__browsers__choices: [String] 
+  css2020__tools_others__browsers__others: String 
   css2020__environments__browsers__choices: [String] 
   css2020__environments__form_factors__choices: [String] 
   css2020__environments__css_for_print: Float 
@@ -1007,7 +1006,7 @@ type Response {
   js2019__tools__elm__experience: String 
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
-  js2019__sections_other_tools__javascript_flavors__others: String 
+  js2019__tools_others__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
@@ -1015,14 +1014,14 @@ type Response {
   js2019__tools__preact__experience: String 
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
-  js2019__sections_other_tools__front_end_frameworks__others: String 
+  js2019__tools_others__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
   js2019__tools__mobx__experience: String 
   js2019__tools__relay__experience: String 
-  js2019__sections_other_tools__datalayer__others: String 
+  js2019__tools_others__datalayer__others: String 
   js2019__happiness__datalayer: Float 
   js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
@@ -1040,7 +1039,7 @@ type Response {
   js2019__tools__ava__experience: String 
   js2019__tools__jasmine__experience: String 
   js2019__tools__puppeteer__experience: String 
-  js2019__sections_other_tools__testing__others: String 
+  js2019__tools_others__testing__others: String 
   js2019__happiness__testing: Float 
   js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
@@ -1049,7 +1048,7 @@ type Response {
   js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
   js2019__tools__expo__experience: String 
-  js2019__sections_other_tools__mobile_desktop__others: String 
+  js2019__tools_others__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
   js2019__other_tools__utilities__others: String 
@@ -1229,7 +1228,7 @@ input CreateResponseDataInput {
   css2020__tools__less__experience: String 
   css2020__tools__post_css__experience: String 
   css2020__tools__stylus__experience: String 
-  css2020__sections_other_tools__pre_post_processors__others: String 
+  css2020__tools_others__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materialize_css__experience: String 
@@ -1244,7 +1243,7 @@ input CreateResponseDataInput {
   css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre_css__experience: String 
-  css2020__sections_other_tools__css_frameworks__others: String 
+  css2020__tools_others__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomic_css__experience: String 
@@ -1252,7 +1251,7 @@ input CreateResponseDataInput {
   css2020__tools__smacss__experience: String 
   css2020__tools__it_css__experience: String 
   css2020__tools__cube_css__experience: String 
-  css2020__sections_other_tools__css_methodologies__others: String 
+  css2020__tools_others__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styled_components__experience: String 
   css2020__tools__jss__experience: String 
@@ -1266,14 +1265,14 @@ input CreateResponseDataInput {
   css2020__tools__fela__experience: String 
   css2020__tools__linaria__experience: String 
   css2020__tools__astroturf__experience: String 
-  css2020__sections_other_tools__css_in_js__others: String 
+  css2020__tools_others__css_in_js__others: String 
   css2020__happiness__css_in_js: Float 
-  css2020__tools_other__utilities__choices: [String] 
-  css2020__tools_other__utilities__others: String 
-  css2020__tools_other__text_editors__choices: [String] 
-  css2020__tools_other__text_editors__others: String 
-  css2020__tools_other__browsers__choices: [String] 
-  css2020__tools_other__browsers__others: String 
+  css2020__tools_others__utilities__choices: [String] 
+  css2020__tools_others__utilities__others: String 
+  css2020__tools_others__text_editors__choices: [String] 
+  css2020__tools_others__text_editors__others: String 
+  css2020__tools_others__browsers__choices: [String] 
+  css2020__tools_others__browsers__others: String 
   css2020__environments__browsers__choices: [String] 
   css2020__environments__form_factors__choices: [String] 
   css2020__environments__css_for_print: Float 
@@ -1337,7 +1336,7 @@ input CreateResponseDataInput {
   js2019__tools__elm__experience: String 
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
-  js2019__sections_other_tools__javascript_flavors__others: String 
+  js2019__tools_others__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
@@ -1345,14 +1344,14 @@ input CreateResponseDataInput {
   js2019__tools__preact__experience: String 
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
-  js2019__sections_other_tools__front_end_frameworks__others: String 
+  js2019__tools_others__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
   js2019__tools__mobx__experience: String 
   js2019__tools__relay__experience: String 
-  js2019__sections_other_tools__datalayer__others: String 
+  js2019__tools_others__datalayer__others: String 
   js2019__happiness__datalayer: Float 
   js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
@@ -1370,7 +1369,7 @@ input CreateResponseDataInput {
   js2019__tools__ava__experience: String 
   js2019__tools__jasmine__experience: String 
   js2019__tools__puppeteer__experience: String 
-  js2019__sections_other_tools__testing__others: String 
+  js2019__tools_others__testing__others: String 
   js2019__happiness__testing: Float 
   js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
@@ -1379,7 +1378,7 @@ input CreateResponseDataInput {
   js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
   js2019__tools__expo__experience: String 
-  js2019__sections_other_tools__mobile_desktop__others: String 
+  js2019__tools_others__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
   js2019__other_tools__utilities__others: String 
@@ -1502,7 +1501,7 @@ input UpdateResponseDataInput {
   css2020__tools__less__experience: String 
   css2020__tools__post_css__experience: String 
   css2020__tools__stylus__experience: String 
-  css2020__sections_other_tools__pre_post_processors__others: String 
+  css2020__tools_others__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
   css2020__tools__bootstrap__experience: String 
   css2020__tools__materialize_css__experience: String 
@@ -1517,7 +1516,7 @@ input UpdateResponseDataInput {
   css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
   css2020__tools__spectre_css__experience: String 
-  css2020__sections_other_tools__css_frameworks__others: String 
+  css2020__tools_others__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
   css2020__tools__atomic_css__experience: String 
@@ -1525,7 +1524,7 @@ input UpdateResponseDataInput {
   css2020__tools__smacss__experience: String 
   css2020__tools__it_css__experience: String 
   css2020__tools__cube_css__experience: String 
-  css2020__sections_other_tools__css_methodologies__others: String 
+  css2020__tools_others__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
   css2020__tools__styled_components__experience: String 
   css2020__tools__jss__experience: String 
@@ -1539,14 +1538,14 @@ input UpdateResponseDataInput {
   css2020__tools__fela__experience: String 
   css2020__tools__linaria__experience: String 
   css2020__tools__astroturf__experience: String 
-  css2020__sections_other_tools__css_in_js__others: String 
+  css2020__tools_others__css_in_js__others: String 
   css2020__happiness__css_in_js: Float 
-  css2020__tools_other__utilities__choices: [String] 
-  css2020__tools_other__utilities__others: String 
-  css2020__tools_other__text_editors__choices: [String] 
-  css2020__tools_other__text_editors__others: String 
-  css2020__tools_other__browsers__choices: [String] 
-  css2020__tools_other__browsers__others: String 
+  css2020__tools_others__utilities__choices: [String] 
+  css2020__tools_others__utilities__others: String 
+  css2020__tools_others__text_editors__choices: [String] 
+  css2020__tools_others__text_editors__others: String 
+  css2020__tools_others__browsers__choices: [String] 
+  css2020__tools_others__browsers__others: String 
   css2020__environments__browsers__choices: [String] 
   css2020__environments__form_factors__choices: [String] 
   css2020__environments__css_for_print: Float 
@@ -1610,7 +1609,7 @@ input UpdateResponseDataInput {
   js2019__tools__elm__experience: String 
   js2019__tools__clojurescript__experience: String 
   js2019__tools__purescript__experience: String 
-  js2019__sections_other_tools__javascript_flavors__others: String 
+  js2019__tools_others__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
   js2019__tools__react__experience: String 
   js2019__tools__vue__experience: String 
@@ -1618,14 +1617,14 @@ input UpdateResponseDataInput {
   js2019__tools__preact__experience: String 
   js2019__tools__ember__experience: String 
   js2019__tools__svelte__experience: String 
-  js2019__sections_other_tools__front_end_frameworks__others: String 
+  js2019__tools_others__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
   js2019__tools__redux__experience: String 
   js2019__tools__apollo__experience: String 
   js2019__tools__graphql__experience: String 
   js2019__tools__mobx__experience: String 
   js2019__tools__relay__experience: String 
-  js2019__sections_other_tools__datalayer__others: String 
+  js2019__tools_others__datalayer__others: String 
   js2019__happiness__datalayer: Float 
   js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
@@ -1643,7 +1642,7 @@ input UpdateResponseDataInput {
   js2019__tools__ava__experience: String 
   js2019__tools__jasmine__experience: String 
   js2019__tools__puppeteer__experience: String 
-  js2019__sections_other_tools__testing__others: String 
+  js2019__tools_others__testing__others: String 
   js2019__happiness__testing: Float 
   js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
@@ -1652,7 +1651,7 @@ input UpdateResponseDataInput {
   js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
   js2019__tools__expo__experience: String 
-  js2019__sections_other_tools__mobile_desktop__others: String 
+  js2019__tools_others__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
   js2019__other_tools__utilities__others: String 
@@ -1770,7 +1769,7 @@ input ResponseFilterInput {
   css2020__tools__less__experience: String_Selector
   css2020__tools__post_css__experience: String_Selector
   css2020__tools__stylus__experience: String_Selector
-  css2020__sections_other_tools__pre_post_processors__others: String_Selector
+  css2020__tools_others__pre_post_processors__others: String_Selector
   css2020__happiness__pre_post_processors: Float_Selector
   css2020__tools__bootstrap__experience: String_Selector
   css2020__tools__materialize_css__experience: String_Selector
@@ -1785,7 +1784,7 @@ input ResponseFilterInput {
   css2020__tools__pure_css__experience: String_Selector
   css2020__tools__skeleton__experience: String_Selector
   css2020__tools__spectre_css__experience: String_Selector
-  css2020__sections_other_tools__css_frameworks__others: String_Selector
+  css2020__tools_others__css_frameworks__others: String_Selector
   css2020__happiness__css_frameworks: Float_Selector
   css2020__tools__bem__experience: String_Selector
   css2020__tools__atomic_css__experience: String_Selector
@@ -1793,7 +1792,7 @@ input ResponseFilterInput {
   css2020__tools__smacss__experience: String_Selector
   css2020__tools__it_css__experience: String_Selector
   css2020__tools__cube_css__experience: String_Selector
-  css2020__sections_other_tools__css_methodologies__others: String_Selector
+  css2020__tools_others__css_methodologies__others: String_Selector
   css2020__happiness__css_methodologies: Float_Selector
   css2020__tools__styled_components__experience: String_Selector
   css2020__tools__jss__experience: String_Selector
@@ -1807,14 +1806,14 @@ input ResponseFilterInput {
   css2020__tools__fela__experience: String_Selector
   css2020__tools__linaria__experience: String_Selector
   css2020__tools__astroturf__experience: String_Selector
-  css2020__sections_other_tools__css_in_js__others: String_Selector
+  css2020__tools_others__css_in_js__others: String_Selector
   css2020__happiness__css_in_js: Float_Selector
-  css2020__tools_other__utilities__choices: String_Array_Selector
-  css2020__tools_other__utilities__others: String_Selector
-  css2020__tools_other__text_editors__choices: String_Array_Selector
-  css2020__tools_other__text_editors__others: String_Selector
-  css2020__tools_other__browsers__choices: String_Array_Selector
-  css2020__tools_other__browsers__others: String_Selector
+  css2020__tools_others__utilities__choices: String_Array_Selector
+  css2020__tools_others__utilities__others: String_Selector
+  css2020__tools_others__text_editors__choices: String_Array_Selector
+  css2020__tools_others__text_editors__others: String_Selector
+  css2020__tools_others__browsers__choices: String_Array_Selector
+  css2020__tools_others__browsers__others: String_Selector
   css2020__environments__browsers__choices: String_Array_Selector
   css2020__environments__form_factors__choices: String_Array_Selector
   css2020__environments__css_for_print: Float_Selector
@@ -1878,7 +1877,7 @@ input ResponseFilterInput {
   js2019__tools__elm__experience: String_Selector
   js2019__tools__clojurescript__experience: String_Selector
   js2019__tools__purescript__experience: String_Selector
-  js2019__sections_other_tools__javascript_flavors__others: String_Selector
+  js2019__tools_others__javascript_flavors__others: String_Selector
   js2019__happiness__javascript_flavors: Float_Selector
   js2019__tools__react__experience: String_Selector
   js2019__tools__vue__experience: String_Selector
@@ -1886,14 +1885,14 @@ input ResponseFilterInput {
   js2019__tools__preact__experience: String_Selector
   js2019__tools__ember__experience: String_Selector
   js2019__tools__svelte__experience: String_Selector
-  js2019__sections_other_tools__front_end_frameworks__others: String_Selector
+  js2019__tools_others__front_end_frameworks__others: String_Selector
   js2019__happiness__front_end_frameworks: Float_Selector
   js2019__tools__redux__experience: String_Selector
   js2019__tools__apollo__experience: String_Selector
   js2019__tools__graphql__experience: String_Selector
   js2019__tools__mobx__experience: String_Selector
   js2019__tools__relay__experience: String_Selector
-  js2019__sections_other_tools__datalayer__others: String_Selector
+  js2019__tools_others__datalayer__others: String_Selector
   js2019__happiness__datalayer: Float_Selector
   js2019__tools__express__experience: String_Selector
   js2019__tools__nextjs__experience: String_Selector
@@ -1911,7 +1910,7 @@ input ResponseFilterInput {
   js2019__tools__ava__experience: String_Selector
   js2019__tools__jasmine__experience: String_Selector
   js2019__tools__puppeteer__experience: String_Selector
-  js2019__sections_other_tools__testing__others: String_Selector
+  js2019__tools_others__testing__others: String_Selector
   js2019__happiness__testing: Float_Selector
   js2019__tools__electron__experience: String_Selector
   js2019__tools__react_native__experience: String_Selector
@@ -1920,7 +1919,7 @@ input ResponseFilterInput {
   js2019__tools__ionic__experience: String_Selector
   js2019__tools__nwjs__experience: String_Selector
   js2019__tools__expo__experience: String_Selector
-  js2019__sections_other_tools__mobile_desktop__others: String_Selector
+  js2019__tools_others__mobile_desktop__others: String_Selector
   js2019__happiness__mobile_desktop: Float_Selector
   js2019__other_tools__utilities__choices: String_Array_Selector
   js2019__other_tools__utilities__others: String_Selector
@@ -2033,7 +2032,7 @@ input ResponseSortInput {
   css2020__tools__less__experience: SortOptions
   css2020__tools__post_css__experience: SortOptions
   css2020__tools__stylus__experience: SortOptions
-  css2020__sections_other_tools__pre_post_processors__others: SortOptions
+  css2020__tools_others__pre_post_processors__others: SortOptions
   css2020__happiness__pre_post_processors: SortOptions
   css2020__tools__bootstrap__experience: SortOptions
   css2020__tools__materialize_css__experience: SortOptions
@@ -2048,7 +2047,7 @@ input ResponseSortInput {
   css2020__tools__pure_css__experience: SortOptions
   css2020__tools__skeleton__experience: SortOptions
   css2020__tools__spectre_css__experience: SortOptions
-  css2020__sections_other_tools__css_frameworks__others: SortOptions
+  css2020__tools_others__css_frameworks__others: SortOptions
   css2020__happiness__css_frameworks: SortOptions
   css2020__tools__bem__experience: SortOptions
   css2020__tools__atomic_css__experience: SortOptions
@@ -2056,7 +2055,7 @@ input ResponseSortInput {
   css2020__tools__smacss__experience: SortOptions
   css2020__tools__it_css__experience: SortOptions
   css2020__tools__cube_css__experience: SortOptions
-  css2020__sections_other_tools__css_methodologies__others: SortOptions
+  css2020__tools_others__css_methodologies__others: SortOptions
   css2020__happiness__css_methodologies: SortOptions
   css2020__tools__styled_components__experience: SortOptions
   css2020__tools__jss__experience: SortOptions
@@ -2070,14 +2069,14 @@ input ResponseSortInput {
   css2020__tools__fela__experience: SortOptions
   css2020__tools__linaria__experience: SortOptions
   css2020__tools__astroturf__experience: SortOptions
-  css2020__sections_other_tools__css_in_js__others: SortOptions
+  css2020__tools_others__css_in_js__others: SortOptions
   css2020__happiness__css_in_js: SortOptions
-  css2020__tools_other__utilities__choices: SortOptions
-  css2020__tools_other__utilities__others: SortOptions
-  css2020__tools_other__text_editors__choices: SortOptions
-  css2020__tools_other__text_editors__others: SortOptions
-  css2020__tools_other__browsers__choices: SortOptions
-  css2020__tools_other__browsers__others: SortOptions
+  css2020__tools_others__utilities__choices: SortOptions
+  css2020__tools_others__utilities__others: SortOptions
+  css2020__tools_others__text_editors__choices: SortOptions
+  css2020__tools_others__text_editors__others: SortOptions
+  css2020__tools_others__browsers__choices: SortOptions
+  css2020__tools_others__browsers__others: SortOptions
   css2020__environments__browsers__choices: SortOptions
   css2020__environments__form_factors__choices: SortOptions
   css2020__environments__css_for_print: SortOptions
@@ -2141,7 +2140,7 @@ input ResponseSortInput {
   js2019__tools__elm__experience: SortOptions
   js2019__tools__clojurescript__experience: SortOptions
   js2019__tools__purescript__experience: SortOptions
-  js2019__sections_other_tools__javascript_flavors__others: SortOptions
+  js2019__tools_others__javascript_flavors__others: SortOptions
   js2019__happiness__javascript_flavors: SortOptions
   js2019__tools__react__experience: SortOptions
   js2019__tools__vue__experience: SortOptions
@@ -2149,14 +2148,14 @@ input ResponseSortInput {
   js2019__tools__preact__experience: SortOptions
   js2019__tools__ember__experience: SortOptions
   js2019__tools__svelte__experience: SortOptions
-  js2019__sections_other_tools__front_end_frameworks__others: SortOptions
+  js2019__tools_others__front_end_frameworks__others: SortOptions
   js2019__happiness__front_end_frameworks: SortOptions
   js2019__tools__redux__experience: SortOptions
   js2019__tools__apollo__experience: SortOptions
   js2019__tools__graphql__experience: SortOptions
   js2019__tools__mobx__experience: SortOptions
   js2019__tools__relay__experience: SortOptions
-  js2019__sections_other_tools__datalayer__others: SortOptions
+  js2019__tools_others__datalayer__others: SortOptions
   js2019__happiness__datalayer: SortOptions
   js2019__tools__express__experience: SortOptions
   js2019__tools__nextjs__experience: SortOptions
@@ -2174,7 +2173,7 @@ input ResponseSortInput {
   js2019__tools__ava__experience: SortOptions
   js2019__tools__jasmine__experience: SortOptions
   js2019__tools__puppeteer__experience: SortOptions
-  js2019__sections_other_tools__testing__others: SortOptions
+  js2019__tools_others__testing__others: SortOptions
   js2019__happiness__testing: SortOptions
   js2019__tools__electron__experience: SortOptions
   js2019__tools__react_native__experience: SortOptions
@@ -2183,7 +2182,7 @@ input ResponseSortInput {
   js2019__tools__ionic__experience: SortOptions
   js2019__tools__nwjs__experience: SortOptions
   js2019__tools__expo__experience: SortOptions
-  js2019__sections_other_tools__mobile_desktop__others: SortOptions
+  js2019__tools_others__mobile_desktop__others: SortOptions
   js2019__happiness__mobile_desktop: SortOptions
   js2019__other_tools__utilities__choices: SortOptions
   js2019__other_tools__utilities__others: SortOptions

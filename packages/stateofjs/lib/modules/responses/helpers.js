@@ -184,8 +184,8 @@ export const parseOptions = (questionObject, options) => {
   return options.map(option => {
     if (typeof option === 'object') {
       // if option is an object, use its id as translation key
-      const { id } = option;
-      const idString = String(id);
+      const { id, value } = option;
+      const idString = String(id || value);
       return {
         value: id,
         label: idString, // only used as fallback
@@ -319,4 +319,5 @@ Filter a response object to only keep fields relevant to the survey
 export const getResponseData = response => {
   return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }
+
 

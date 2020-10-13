@@ -115,7 +115,7 @@ outline:
       - id: javascript_flavors
         intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: tools_others
         suffix: others
       - id: javascript_flavors
         intlId: tools.happiness
@@ -135,7 +135,7 @@ outline:
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: tools_others
         suffix: others
       - id: front_end_frameworks
         intlId: tools.happiness
@@ -154,7 +154,7 @@ outline:
       - id: datalayer
         intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: tools_others
         suffix: others
       - id: datalayer
         intlId: tools.happiness
@@ -180,7 +180,7 @@ outline:
       - id: datalayer
         intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: tools_others
         suffix: others
       - id: datalayer
         intlId: tools.happiness
@@ -202,7 +202,7 @@ outline:
       - id: testing
         intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: tools_others
         suffix: others
       - id: testing
         intlId: tools.happiness
@@ -226,7 +226,7 @@ outline:
       - id: mobile_desktop
         intlId: tools.other_tools
         template: text
-        sectionSlug: sections_other_tools
+        sectionSlug: tools_others
         suffix: others
       - id: mobile_desktop
         intlId: tools.happiness

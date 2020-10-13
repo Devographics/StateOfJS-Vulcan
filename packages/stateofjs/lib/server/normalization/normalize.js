@@ -60,12 +60,17 @@ export const normalizeResponse = ({ document: response }) => {
       // console.log(`  -> Normalized value: ${normalizedValues}`);
       set(
         normalizedResp,
-        `${path}_normalized`,
+        `${path}.raw`,
+        value
+      );
+      set(
+        normalizedResp,
+        `${path}.normalized`,
         normalizedValues.map((v) => v[0])
       );
       set(
         normalizedResp,
-        `${path}_patterns`,
+        `${path}.patterns`,
         normalizedValues.map((v) => v[1].toString())
       );
     }
@@ -74,9 +79,9 @@ export const normalizeResponse = ({ document: response }) => {
   // 6. handle source field separately
   const [normalizedSource, sourcePattern] = normalizeResponseSource(normalizedResp);
   if (normalizedSource) {
-    set(normalizedResp, 'user_info.source_normalized', normalizedSource);
+    set(normalizedResp, 'user_info.source.normalized', normalizedSource);
     if (sourcePattern) {
-      set(normalizedResp, 'user_info.source_pattern', sourcePattern.toString());
+      set(normalizedResp, 'user_info.source.pattern', sourcePattern.toString());
     }
   }
   

@@ -179,7 +179,7 @@ export default {
           "id": "javascript_flavors",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -205,7 +205,7 @@ export default {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -230,7 +230,7 @@ export default {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -270,7 +270,7 @@ export default {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -298,7 +298,7 @@ export default {
           "id": "testing",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -334,7 +334,7 @@ export default {
           "id": "mobile_desktop",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {

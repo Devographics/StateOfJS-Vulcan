@@ -49,7 +49,8 @@ const locale = async (root, { localeId }, context) => {
 
   const strings = get(json, 'data.locale.strings');
   if (json.errors) {
-    throw new Error(json.errors);
+    console.log(json.errors);
+    throw new Error('// locale API query error')
   }
   const convertedStrings = {};
   strings.forEach(({ key, t }) => {
@@ -75,7 +76,6 @@ const entityType = `type Entity {
   type: String
   tags: [String]
   context: String
-  isCode: Boolean
 }`;
 
 addGraphQLSchema(entityType);
@@ -89,7 +89,6 @@ const entitiesQuery = `query EntitiesQuery {
     type
     category
     description
-    isCode
   }
 }
 `;
@@ -106,7 +105,8 @@ const entities = async () => {
   });
   const json = await response.json();
   if (json.errors) {
-    throw new Error(json.errors);
+    console.log(json.errors);
+    throw new Error('// entities API query error')
   }
   const entities = get(json, 'data.entities');
   return entities;

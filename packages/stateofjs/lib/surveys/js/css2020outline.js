@@ -509,7 +509,7 @@ export default {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -568,7 +568,7 @@ export default {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -606,7 +606,7 @@ export default {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -662,7 +662,7 @@ export default {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
           "template": "text",
-          "sectionSlug": "sections_other_tools",
+          "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
@@ -675,7 +675,7 @@ export default {
     },
     {
       "id": "other_tools",
-      "slug": "tools_other",
+      "slug": "tools_others",
       "questions": [
         {
           "id": "utilities",
