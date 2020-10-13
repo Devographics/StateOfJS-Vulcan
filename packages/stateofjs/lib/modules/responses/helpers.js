@@ -219,6 +219,7 @@ export const generateIntlId = (questionObject, section, survey) => {
 // transform question object into SimpleSchema-compatible schema field
 export const getQuestionSchema = (questionObject, section, survey) => {
   const {
+    id,
     title,
     description,
     input,
@@ -245,7 +246,7 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     input,
     searchable,
     itemProperties: {
-      optionsHTML: true
+      questionId: id,
     }
   };
 
@@ -318,5 +319,4 @@ Filter a response object to only keep fields relevant to the survey
 export const getResponseData = response => {
   return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }
-
 

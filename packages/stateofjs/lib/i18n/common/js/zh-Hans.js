@@ -740,12 +740,8 @@ export default {
       "t": "性别"
     },
     {
-      "key": "user_info.skin_tone",
-      "t": "Appearance"
-    },
-    {
-      "key": "user_info.skin_tone.description",
-      "t": "Which emoji do you feel represents you best? <br/><br/>\nNote: We are experimenting with a new question format in order to  try and better capture the demographic makeup of our respondents.  <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Leave us your feedback</a> on GitHub. \n"
+      "key": "user_info.race_ethnicity",
+      "t": "Race & Ethnicity"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",

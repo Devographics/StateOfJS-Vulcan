@@ -65,11 +65,11 @@ export default {
     },
     {
       "key": "general.surveys_available_languages",
-      "t": "Опросы доступны в:"
+      "t": "Опросы доступны на следующих языках:"
     },
     {
       "key": "general.help_us_translate",
-      "t": "Помощь с передовом опросов »"
+      "t": "Помочь с передовом опросов »"
     },
     {
       "key": "general.privacy_policy",
@@ -101,7 +101,7 @@ export default {
     },
     {
       "key": "general.thanks",
-      "t": "Спасибо за заполнение опроса!\nВаши ответы сохранены. До завершения опроса вы можете посмотреть или изменить ответы.\nКроме того, вы можете помочь нам, если расскажите всем об этом опросе. Даже небольшая помощь сделает опрос более точным:\n"
+      "t": "Спасибо за заполнение опроса!\n\nВаши ответы сохранены. До завершения опроса вы можете посмотреть или изменить их.\n\nКроме того, вы можете помочь нам, если расскажите другим людям об этом опросе. Даже небольшая активность с вашей стороны сделает опрос более точным:\n"
     },
     {
       "key": "general.share_subject",
@@ -181,7 +181,7 @@ export default {
     },
     {
       "key": "sections.opinions.description",
-      "t": "Что вы думаете насчёт общего состояния в {topic}?"
+      "t": "Что вы думаете насчёт общего состояния {topic}?"
     },
     {
       "key": "sections.other_tools.title",
@@ -529,7 +529,7 @@ export default {
     },
     {
       "key": "options.javascript_proficiency.2",
-      "t": "Работаю с фронтендом, используя современные фреймворки (React, Vue и т.д.)."
+      "t": "Работаю с фронтендом, используя современные фреймворки (React, Vue и т.д.)"
     },
     {
       "key": "options.javascript_proficiency.3",
@@ -537,7 +537,7 @@ export default {
     },
     {
       "key": "options.javascript_proficiency.4",
-      "t": "Владею продвинутыми фронтенд-паттернами (управление состоянием, загрузка данных и т.д.)."
+      "t": "Владею продвинутыми фронтенд-паттернами (управление состоянием, загрузка данных и т.д.)"
     },
     {
       "key": "options.css_proficiency.0",
@@ -561,7 +561,7 @@ export default {
     },
     {
       "key": "options.backend_proficiency.0",
-      "t": "Не могу выполнять никакую бэкенд-работу"
+      "t": "Не работаю с бэкендом"
     },
     {
       "key": "options.backend_proficiency.1",
@@ -617,39 +617,39 @@ export default {
     },
     {
       "key": "options.race_ethnicity.white_european",
-      "t": "White or of European descent"
+      "t": "Белый или европеец"
     },
     {
       "key": "options.race_ethnicity.south_asian",
-      "t": "South Asian"
+      "t": "Уроженец Южной Азии"
     },
     {
       "key": "options.race_ethnicity.hispanic_latin",
-      "t": "Hispanic or Latino/Latina"
+      "t": "Испанец или латиноамериканец"
     },
     {
       "key": "options.race_ethnicity.east_asian",
-      "t": "East Asian"
+      "t": "Уроженец Восточной Азии"
     },
     {
       "key": "options.race_ethnicity.middle_eastern",
-      "t": "Middle Eastern"
+      "t": "Уроженец Ближнего Востока"
     },
     {
       "key": "options.race_ethnicity.black_african",
-      "t": "Black or of African descent"
+      "t": "Чёрный или африканец"
     },
     {
       "key": "options.race_ethnicity.multiracial",
-      "t": "Multiracial"
+      "t": "Метис"
     },
     {
       "key": "options.race_ethnicity.biracial",
-      "t": "Biracial"
+      "t": "Представитель двух рас"
     },
     {
       "key": "options.race_ethnicity.native_american_islander_australian",
-      "t": "Native American, Pacific Islander, or Indigenous Australian"
+      "t": "Коренной американец, либо уроженец островов Тихого океана, либо коренной австралиец"
     },
     {
       "key": "options.skin_tone.0",
@@ -673,11 +673,11 @@ export default {
     },
     {
       "key": "tools.other_tools",
-      "t": "Другие инструменты"
+      "t": "Другие варианты"
     },
     {
       "key": "tools.other_tools.description",
-      "t": "Другие инструменты, связанные с текущим разделом, но не перечисленные в списке."
+      "t": "Что-то другое, кроме представленных выше вариантов."
     },
     {
       "key": "tools.happiness",
@@ -685,7 +685,7 @@ export default {
     },
     {
       "key": "tools.happiness.description",
-      "t": "По шкале от одного (очень недоволен) до пяти (очень доволен), насколько вы довольны текущим положением дел в перечисленных выше вариантах?\n"
+      "t": "По шкале от одного (очень недоволен) до пяти (очень доволен), насколько вы довольны текущими перечисленными выше вариантами?\n"
     },
     {
       "key": "user_info.years_of_experience",
@@ -709,7 +709,7 @@ export default {
     },
     {
       "key": "user_info.yearly_salary.description",
-      "t": "В долларах."
+      "t": "В долларах США."
     },
     {
       "key": "user_info.job_title",
@@ -717,7 +717,7 @@ export default {
     },
     {
       "key": "user_info.job_title.description",
-      "t": "Как вы представляетесь на тусовках?"
+      "t": "Как вы представляетесь на публичных мероприятиях?"
     },
     {
       "key": "user_info.javascript_proficiency",
@@ -748,12 +748,8 @@ export default {
       "t": "Пол"
     },
     {
-      "key": "user_info.skin_tone",
-      "t": "Внешность"
-    },
-    {
-      "key": "user_info.skin_tone.description",
-      "t": "На какой эмодзи вы похожи? <br/><br/>\nПримечание: мы экспериментируем с новым форматом вопроса, чтобы  попробовать лучше отразить демографический состав наших респондентов. <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Вы можете оставить свой отзыв об этом</a> на GitHub.\n"
+      "key": "user_info.race_ethnicity",
+      "t": "Раса и этническая принадлежность"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",
@@ -805,7 +801,7 @@ export default {
     },
     {
       "key": "tools_other.browsers.description",
-      "t": "В каких браузерах вы в основном работаете при начальной разработке?"
+      "t": "В каких браузерах вы в основном работаете?"
     },
     {
       "key": "tools_other.browsers.others",

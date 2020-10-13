@@ -2,6 +2,8 @@ import React from 'react';
 import { statuses } from '../../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
+import FormLabel from './FormLabel.jsx';
+import FormOptionLabel from './FormOptionLabel.jsx';
 import { Components, useCurrentUser } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { getSurveyPath } from '../../../modules/surveys/helpers';
@@ -75,6 +77,8 @@ const SurveySectionContents = ({
         components={{
           FormLayout,
           FormSubmit: FormSubmitWrapper,
+          FormOptionLabel,
+          FormLabel,
         }}
       />
     </div>

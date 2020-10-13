@@ -712,12 +712,8 @@ export default {
       "t": "Sesso"
     },
     {
-      "key": "user_info.skin_tone",
-      "t": "Aspetto"
-    },
-    {
-      "key": "user_info.skin_tone.description",
-      "t": "Quale emoji ti rappresenta al meglio? <br/><br/>\nNota: Stiamo sperimentando un nuovo formato di domande che ci permetterà di avere una migliore rappresentazione demografica dei partecipanti al sondaggio.  <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Lasciaci un feedback</a> su GitHub. \n"
+      "key": "user_info.race_ethnicity",
+      "t": "Race & Ethnicity"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",

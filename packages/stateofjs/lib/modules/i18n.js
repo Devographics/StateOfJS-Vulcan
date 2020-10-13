@@ -1,17 +1,54 @@
 import { registerLocale, addStrings } from 'meteor/vulcan:core';
-import locales from '../i18n/index';
 
-export const convertStrings = (stringFile) => {
-  const convertedStrings = {};
-  const { namespace, translations } = stringFile;
-  translations.forEach(({ key, t }) => {
-    // survey namespaces are not currently supported
-    // const translationKey = namespace ? `${namespace}.${key}`: key;
-    const translationKey = key;
-    convertedStrings[translationKey] = t;
-  });
-  return convertedStrings;
-};
+export const locales = [
+  {
+    id: 'en-US',
+    label: 'English',
+    translators: []
+  },
+  {
+    id: 'it-IT',
+    label: 'Italiano',
+    translators: ['polettoweb']
+  },
+  {
+    id: 'zh-Hans',
+    label: '中文',
+    translators: []
+  },
+  {
+    id: 'ru-RU',
+    label: 'Русский',
+    translators: ['lex111', 'Omhet']
+  },
+  {
+    id: 'fr-FR',
+    label: 'Français',
+    translators: ['arnauddrain']
+  },
+  {
+    id: 'sv-SE',
+    label: 'Svenska',
+    translators: ['m-hagberg']
+  },
+  {
+    id: 'pt-PT',
+    label: 'Português',
+    translators: []
+  },
+];
+
+// export const convertStrings = (stringFile) => {
+//   const convertedStrings = {};
+//   const { namespace, translations } = stringFile;
+//   translations.forEach(({ key, t }) => {
+//     // survey namespaces are not currently supported
+//     // const translationKey = namespace ? `${namespace}.${key}`: key;
+//     const translationKey = key;
+//     convertedStrings[translationKey] = t;
+//   });
+//   return convertedStrings;
+// };
 
 locales.forEach((locale) => {
   const { id, stringFiles, label } = locale;
@@ -21,11 +58,11 @@ locales.forEach((locale) => {
     dynamic: true,
   });
 
-  if (id === 'en') {
-    // add en language to client bundle so it can act as a fallback
-    stringFiles.forEach((stringFile) => {
-      addStrings(id, convertStrings(stringFile));
-    });
-  }
+  // if (id === 'en') {
+  //   // add en language to client bundle so it can act as a fallback
+  //   stringFiles.forEach((stringFile) => {
+  //     addStrings(id, convertStrings(stringFile));
+  //   });
+  // }
 
 });

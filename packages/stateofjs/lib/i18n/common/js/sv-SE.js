@@ -748,12 +748,8 @@ export default {
       "t": "Kön"
     },
     {
-      "key": "user_info.skin_tone",
-      "t": "Utseende"
-    },
-    {
-      "key": "user_info.skin_tone.description",
-      "t": "Vilken emoji representerar dig bäst? <br/><br/>\nObs! Vi experimenterar med ett nytt frågeformat för att bättre kunna fånga den demografiska sammansättningen av våra respondenter. <a href=\"https://github.com/StateOfJS/StateOfCSS-2020/issues/5\" target=\"_blank\">Lämna din feedback</a> på GitHub.\n"
+      "key": "user_info.race_ethnicity",
+      "t": "Race & Ethnicity"
     },
     {
       "key": "user_info.how_did_user_find_out_about_the_survey",

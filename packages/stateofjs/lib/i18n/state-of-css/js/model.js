@@ -461,7 +461,7 @@ export default {
       "t": "div > span (child)"
     },
     {
-      "key": "options.combinators.next_subling",
+      "key": "options.combinators.next_sibling",
       "t": "div + div (next sibling)"
     },
     {

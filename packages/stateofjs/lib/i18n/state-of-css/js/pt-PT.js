@@ -1,12 +1,12 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "locale": "en-US",
+  "locale": "pt-PT",
   "namespace": "css",
   "translations": [
     {
       "key": "general.survey_intro_css2020",
-      "t": "## CSS évolue plus rapidement que jamais.\nFlexbox, Grid, Multi-Column... Sans parler des tout nouveaux paradigmes comme CSS-in-JS.\nAprès le succès de notre questionnaire annuel [State Of JavaScript](https://stateofjs.com), nous avons décidé de s'attaquer au monde du style et des sélecteurs pour aider à identifier les dernières tendances… et essaye de franchir le \"gouffre du front-end\"!\n"
+      "t": "O CSS está a evoluir mais rapidamente do que nunca.\n\nFlexbox, Grid, Multi-Coluna... Para não falar de paradigmas totalmente novos como o CSS-in-JS.\n\nAssim, após o sucesso do nosso inquérito anual sobre o Estado de JavaScript, decidimos assumir o mundo dos estilos e selectores para ajudar identificar as últimas tendências... e tentar ultrapassar o sempre crescente \"grande fosso no front-end\"!\n"
     },
     {
       "key": "sections.layout.title",
@@ -14,39 +14,39 @@ export default {
     },
     {
       "key": "sections.layout.description",
-      "t": "Comment positionnez-vous des éléments sur l'écran ?"
+      "t": "Como se posicionam os elementos no ecrã?"
     },
     {
       "key": "sections.shapes_graphics.title",
-      "t": "Formes et Graphiques"
+      "t": "Formas e Gráficos"
     },
     {
       "key": "sections.shapes_graphics.description",
-      "t": "Contrôler la forme et l'affichage des éléments"
+      "t": "Controlo da forma e exibição dos elementos."
     },
     {
       "key": "sections.interactions.title",
-      "t": "Interactions"
+      "t": "Interacções"
     },
     {
       "key": "sections.interactions.description",
-      "t": "Contrôler comment l'utilisateur interragi avec la page"
+      "t": "Controlar a forma como o utilizador interage com a página."
     },
     {
       "key": "sections.typography.title",
-      "t": "Typography"
+      "t": "Tipografia"
     },
     {
       "key": "sections.typography.description",
-      "t": "Mettre en forme le texte."
+      "t": "Definição e disposição do texto."
     },
     {
       "key": "sections.animations_transforms.title",
-      "t": "Animations et Transformations"
+      "t": "Animações e Transformações"
     },
     {
       "key": "sections.animations_transforms.description",
-      "t": "Animer et transformer les éléments."
+      "t": "Animação e transformação de elementos."
     },
     {
       "key": "sections.media_queries.title",
@@ -54,47 +54,47 @@ export default {
     },
     {
       "key": "sections.media_queries.description",
-      "t": "Façons d'adapter votre site aux terminaux et aux préférences de l'utilisateur"
+      "t": "Formas de adaptar o seu site ao dispositivo ou preferências do utilizador."
     },
     {
       "key": "sections.other_features.title",
-      "t": "Autres fonctionnalités"
+      "t": "Outras características"
     },
     {
       "key": "sections.other_features.description",
-      "t": "Autres fonctionnalités CSS."
+      "t": "Outras características do CSS."
     },
     {
       "key": "sections.units_selectors.title",
-      "t": "Unités et Sélecteurs"
+      "t": "Unidades & Selectores"
     },
     {
       "key": "sections.units_selectors.description",
-      "t": "Testez vos connaissances des unités CSS et des sélecteurs"
+      "t": "Teste os seus conhecimentos de unidades e selectores de CSS."
     },
     {
       "key": "sections.pre_post_processors.title",
-      "t": "Pre-/Post-processors"
+      "t": "Pré/Pós-processadores"
     },
     {
       "key": "sections.pre_post_processors.description",
-      "t": "Outils qui améliorent CSS."
+      "t": "Utilitários que aumentam o CSS."
     },
     {
       "key": "sections.css_frameworks.title",
-      "t": "Frameworks CSS"
+      "t": "CSS Frameworks"
     },
     {
       "key": "sections.css_frameworks.description",
-      "t": "Librairies qui fournissent des composants et styles pré-réalisés."
+      "t": "Bibliotecas que lhe fornecem componentes e estilos pré-fabricados."
     },
     {
       "key": "sections.css_methodologies.title",
-      "t": "Méthodologies CSS"
+      "t": "Metodologias CSS"
     },
     {
       "key": "sections.css_methodologies.description",
-      "t": "Méthodes codifiés d'écrire du CSS plus propre."
+      "t": "Formas codificadas de escrever CSS mais limpo."
     },
     {
       "key": "sections.css_in_js.title",
@@ -102,47 +102,47 @@ export default {
     },
     {
       "key": "sections.css_in_js.description",
-      "t": "Librairies permettant d'intégrer du CSS dans du code JavaScript."
+      "t": "Bibliotecas que ajudam a integrar o CSS no código JavaScript."
     },
     {
       "key": "sections.environments.title",
-      "t": "Environnements"
+      "t": "Ambientes"
     },
     {
       "key": "sections.environments.description",
-      "t": "Pour quels environments écrivez-vous du CSS ?"
+      "t": "Para que ambientes escreve CSS?"
     },
     {
       "key": "options.css_for_print.0",
-      "t": "Je n'imprime (quasiment) jamais du style"
+      "t": "Eu (quase) nunca escrevo estilos de impressão"
     },
     {
       "key": "options.css_for_print.1",
-      "t": "J'imprime parfois du style"
+      "t": "Escrevo ocasionalmente estilos de impressão"
     },
     {
       "key": "options.css_for_print.2",
-      "t": "J'écris du style d'impression pour la plupart de mes projets"
+      "t": "Escrevo estilos de impressão como parte da maioria dos projectos"
     },
     {
       "key": "options.css_for_print.3",
-      "t": "Je me concentre principalement sur le CSS pour l'impression"
+      "t": "Concentro-me principalmente no CSS para impressão"
     },
     {
       "key": "options.css_for_email.0",
-      "t": "Je n'écris (quasiment) jamais du CSS pour des clients mails"
+      "t": "Eu (quase) nunca escrevo CSS para clientes de e-mail"
     },
     {
       "key": "options.css_for_email.1",
-      "t": "J'écris parfois du CSS pour des clients mails"
+      "t": "Escrevo ocasionalmente CSS para clientes de e-mail"
     },
     {
       "key": "options.css_for_email.2",
-      "t": "J'écris du CSS pour des clients mails pour la plupart de mes projets"
+      "t": "Escrevo CSS para clientes de e-mail como parte da maioria dos projectos"
     },
     {
       "key": "options.css_for_email.3",
-      "t": "Je me concentre principalement sur le CSS pour les clients mails"
+      "t": "Concentro-me principalmente no CSS para clientes de e-mail"
     },
     {
       "key": "features.grid",
@@ -154,7 +154,7 @@ export default {
     },
     {
       "key": "features.regions",
-      "t": "Régions CSS"
+      "t": "Regiões do CSS"
     },
     {
       "key": "features.flexbox",
@@ -162,15 +162,15 @@ export default {
     },
     {
       "key": "features.multi_column",
-      "t": "CSS Multi-Colonnes"
+      "t": "CSS Multi-Coluna"
     },
     {
       "key": "features.writing_modes",
-      "t": "Modes d'écriture de CSS"
+      "t": "Modos de escrita do CSS"
     },
     {
       "key": "features.exclusions",
-      "t": "Exclusions CSS"
+      "t": "Exclusões CSS"
     },
     {
       "key": "features.position_sticky",
@@ -178,7 +178,7 @@ export default {
     },
     {
       "key": "features.logical_properties",
-      "t": "Propriétés logiques"
+      "t": "Propriedades lógicas"
     },
     {
       "key": "features.logical_properties.description",
@@ -194,7 +194,7 @@ export default {
     },
     {
       "key": "features.shapes",
-      "t": "Formes CSS"
+      "t": "Formas de CSS"
     },
     {
       "key": "features.object_fit",
@@ -206,7 +206,7 @@ export default {
     },
     {
       "key": "features.masks",
-      "t": "Masques CSS"
+      "t": "Máscaras CSS"
     },
     {
       "key": "features.blend_modes",
@@ -214,11 +214,11 @@ export default {
     },
     {
       "key": "features.blend_modes.description",
-      "t": "La propriété <code>mix-blend-mode</code>"
+      "t": "The <code>mix-blend-mode</code> property"
     },
     {
       "key": "features.filter_effects",
-      "t": "Les effets filtres CSS"
+      "t": "Efeitos do filtro CSS"
     },
     {
       "key": "features.backdrop_filter",
@@ -226,7 +226,7 @@ export default {
     },
     {
       "key": "features.scroll_snap",
-      "t": "Scroll-Snap CSS"
+      "t": "CSS Scroll Snap"
     },
     {
       "key": "features.overscroll_behavior",
@@ -250,11 +250,11 @@ export default {
     },
     {
       "key": "features.variables_fonts",
-      "t": "Variable de police d'écriture"
+      "t": "Fontes variáveis"
     },
     {
       "key": "features.line_breaking",
-      "t": "Propriétés de saut de ligne"
+      "t": "Propriedades de quebra de linha"
     },
     {
       "key": "features.line_breaking.description",
@@ -290,19 +290,19 @@ export default {
     },
     {
       "key": "features.direction.description",
-      "t": "Inclut aussi les attributs HTML <code>dir</code>."
+      "t": "Também inclui <code>dir</code> Atributo HTML."
     },
     {
       "key": "features.transitions",
-      "t": "Transitions CSS"
+      "t": "Transições do CSS"
     },
     {
       "key": "features.transforms",
-      "t": "Transformations CSS"
+      "t": "Transformações CSS"
     },
     {
       "key": "features.animations",
-      "t": "Animations CSS"
+      "t": "Animações CSS"
     },
     {
       "key": "features.perspective",
@@ -310,7 +310,7 @@ export default {
     },
     {
       "key": "features.feature_support_queries",
-      "t": "Requêtes de fonctionnalités (<code>@supports</code>)"
+      "t": "Feature Support Queries (<code>@supports</code>)"
     },
     {
       "key": "features.prefers_reduced_motion",
@@ -326,11 +326,11 @@ export default {
     },
     {
       "key": "features.variables",
-      "t": "Variables CSS (Propriétés Logiques)"
+      "t": "Variáveis CSS (Logical Properties)"
     },
     {
       "key": "features.containment",
-      "t": "Endiguement CSS"
+      "t": "Contenção CSS"
     },
     {
       "key": "features.will_change",
@@ -346,19 +346,19 @@ export default {
     },
     {
       "key": "features.comparison_functions",
-      "t": "Fonctions de comparaison CSS"
+      "t": "Funções de comparação do CSS"
     },
     {
       "key": "features.comparison_functions.description",
-      "t": "<code>min()</code>, <code>max()</code>, and <code>clamp()</code>"
+      "t": "<code>min()</code>, <code>max()</code>, e <code>clamp()</code>"
     },
     {
       "key": "features_others.units",
-      "t": "Unités"
+      "t": "Unidades"
     },
     {
       "key": "features_others.units.description",
-      "t": "Lesquels de ces unités avez-vous utilisé ?"
+      "t": "Qual destas unidades do CSS utilizou?"
     },
     {
       "key": "options.units.px",
@@ -410,11 +410,11 @@ export default {
     },
     {
       "key": "features_others.pseudo_elements",
-      "t": "Pseudo Éléments"
+      "t": "Elementos Pseudo"
     },
     {
       "key": "features_others.pseudo_elements.description",
-      "t": "Lequel de ces pseudo-éléments CSS avez-vous utilisé ?"
+      "t": "Quais destes selectores CSS utilizou?"
     },
     {
       "key": "options.pseudo_elements.before",
@@ -450,7 +450,7 @@ export default {
     },
     {
       "key": "features_others.combinators",
-      "t": "Combinaisons"
+      "t": "Combinadores"
     },
     {
       "key": "options.combinators.descendant",
@@ -458,19 +458,19 @@ export default {
     },
     {
       "key": "options.combinators.child",
-      "t": "div > span (enfant)"
+      "t": "div > span (child)"
     },
     {
       "key": "options.combinators.next_sibling",
-      "t": "div + div (voisin suivant)"
+      "t": "div + div (next sibling)"
     },
     {
       "key": "options.combinators.subsequent_sibling",
-      "t": "div ~ div (voisin subséquent)"
+      "t": "div ~ div (subsequent sibling)"
     },
     {
       "key": "features_others.tree_document_structure",
-      "t": "Hiérarchie / Structure de document"
+      "t": "Estrutura de Árvore / Documento"
     },
     {
       "key": "options.tree_document_structure.root",
@@ -542,31 +542,31 @@ export default {
     },
     {
       "key": "features_others.attributes",
-      "t": "Attributs"
+      "t": "Atributos"
     },
     {
       "key": "options.attributes.presence",
-      "t": "div[foo] (Présence)"
+      "t": "div[foo] (Presence)"
     },
     {
       "key": "options.attributes.equality",
-      "t": "div[foo=\"bar\"] (Égalité)"
+      "t": "div[foo=\"bar\"] (Equality)"
     },
     {
       "key": "options.attributes.starts_with",
-      "t": "div[foo^=\"bar\"] (Commence par)"
+      "t": "div[foo^=\"bar\"] (Starts with)"
     },
     {
       "key": "options.attributes.ends_with",
-      "t": "div[foo$=\"bar\"] (Termine par)"
+      "t": "div[foo$=\"bar\"] (Ends with)"
     },
     {
       "key": "options.attributes.contains_word",
-      "t": "div[foo~=\"bar\"] (Contient un mot)"
+      "t": "div[foo~=\"bar\"] (Contains word)"
     },
     {
       "key": "options.attributes.contains_substring",
-      "t": "div[foo*=\"bar\"] (Contient une partie de texte)"
+      "t": "div[foo*=\"bar\"] (Contains substring)"
     },
     {
       "key": "features_others.links_urls",
@@ -578,7 +578,7 @@ export default {
     },
     {
       "key": "options.links_urls.link_visited",
-      "t": ":link et :visited"
+      "t": ":link e :visited"
     },
     {
       "key": "options.links_urls.local_link",
@@ -590,7 +590,7 @@ export default {
     },
     {
       "key": "features_others.interaction",
-      "t": "Interaction"
+      "t": "Interacção"
     },
     {
       "key": "options.interaction.hover",
@@ -614,15 +614,15 @@ export default {
     },
     {
       "key": "features_others.form_controls",
-      "t": "Form Controls"
+      "t": "Controlos de formulário"
     },
     {
       "key": "options.form_controls.enabled_disabled",
-      "t": ":enabled et :disabled"
+      "t": ":enabled e :disabled"
     },
     {
       "key": "options.form_controls.read_only_write",
-      "t": ":read-only et :read-write"
+      "t": ":read-only e :read-write"
     },
     {
       "key": "options.form_controls.placeholder_shown",
@@ -642,7 +642,7 @@ export default {
     },
     {
       "key": "options.form_controls.valid_invalid",
-      "t": ":valid et :invalid"
+      "t": ":valid e :invalid"
     },
     {
       "key": "options.form_controls.user_invalid",
@@ -650,95 +650,91 @@ export default {
     },
     {
       "key": "options.form_controls.in_out_range",
-      "t": ":in-range et :out-of-range"
+      "t": ":in-range e :out-of-range"
     },
     {
       "key": "options.form_controls.required_optional",
-      "t": ":required et :optional"
-    },
-    {
-      "key": "tools.atomiccss",
-      "t": "Utility-First / Atomic CSS"
+      "t": ":required e :optional"
     },
     {
       "key": "environments.browsers",
-      "t": "Navigateurs"
+      "t": "Browsers"
     },
     {
       "key": "environments.browsers.description",
-      "t": "Sur quels navigateurs testez-vous ?"
+      "t": "Em que navegadores testa?"
     },
     {
       "key": "environments.form_factors",
-      "t": "Facteurs de forme"
+      "t": "Factores de Forma"
     },
     {
       "key": "environments.form_factors.description",
-      "t": "Sur quel facteur de forme testez-vous ?"
+      "t": "Quais são os factores de forma que testam?"
     },
     {
       "key": "environments.css_for_print",
-      "t": "CSS pour l'impression"
+      "t": "CSS para impressão"
     },
     {
       "key": "environments.css_for_print.description",
-      "t": "Écrivez-vous du style d'impression ?"
+      "t": "Escreve estilos de impressão?"
     },
     {
       "key": "environments.css_for_email",
-      "t": "CSS pour les clients mails"
+      "t": "CSS para clientes de e-mail"
     },
     {
       "key": "environments.css_for_email.description",
-      "t": "Écrivez-vous du CSS pour des clients mails ?"
+      "t": "Escreve CSS para clientes de correio electrónico?"
     },
     {
       "key": "opinions.css_easy_to_learn",
-      "t": "CSS est façile à apprendre"
+      "t": "O CSS é fácil de aprender"
     },
     {
       "key": "opinions.css_evolving_slowly",
-      "t": "CSS évolue trop lentement"
+      "t": "O CSS está a evoluir demasiado lentamente"
     },
     {
       "key": "opinions.utility_classes_to_be_avoided",
-      "t": "Les classes utilitaires (.center, .large-text, etc.) devraient être évitées"
+      "t": "Classes de utilidade (não-semântica) (.center, .large-text, etc.) devem ser evitadas"
     },
     {
       "key": "opinions.selector_nesting_to_be_avoided",
-      "t": "L'imbrication de sélecteurs (.foo .bar ul li {...}) devrait être évitée"
+      "t": "A nidificação do selector (.foo .bar ul li {...}) deve ser evitada"
     },
     {
       "key": "opinions.css_is_programming_language",
-      "t": "CSS est un langage de programmation"
+      "t": "CSS é uma linguagem de programação"
     },
     {
       "key": "opinions.enjoy_writing_css",
-      "t": "J'aime écrire du CSS"
+      "t": "Eu gosto de escrever CSS"
     },
     {
       "key": "opinions.currently_missing_from_css.others",
-      "t": "Quelle fonctionnalité est actuellement manquante dans CSS selon vous ?"
+      "t": "O que sente que falta actualmente no CSS?"
     },
     {
       "key": "opinions.currently_missing_from_css.others.description",
-      "t": "Fonctionnalités que vous aimeriez voir dans CSS un jour."
+      "t": "Características que gostaria de ver um dia no CSS."
     },
     {
       "key": "opinions.sum_up_one_word_css",
-      "t": "CSS en un mot"
+      "t": "CSS em uma palavra"
     },
     {
       "key": "opinions.sum_up_one_word_css.description",
-      "t": "Comment résumeriez-vous votre opinion de CSS en un mot ?"
+      "t": "Como resumiria a sua opinião sobre o CSS numa só palavra?"
     },
     {
       "key": "happiness.state_of_the_web",
-      "t": "A quel point êtes-vous heureux de l'état général des technologies web ?"
+      "t": "Até que ponto está satisfeito com o estado geral das tecnologias web?"
     },
     {
       "key": "happiness.state_of_css",
-      "t": "A quel point êtes-vous heureux de l'état général de CSS ?"
+      "t": "Até que ponto está satisfeito com o estado geral do CSS?"
     }
   ]
 }

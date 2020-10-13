@@ -306,7 +306,7 @@ export default {
               "id": "child"
             },
             {
-              "id": "next_subling"
+              "id": "next_sibling"
             },
             {
               "id": "subsequent_sibling"

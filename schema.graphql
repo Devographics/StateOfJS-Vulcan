@@ -184,6 +184,18 @@ type Survey {
   status: Float 
   imageUrl: String 
 }
+type Entity {
+  id: String
+  name: String
+  homepage: String
+  category: String
+  npm: String
+  description: String
+  type: String
+  tags: [String]
+  context: String
+  isCode: Boolean
+}
 
 # A user object
 type User {
@@ -2327,6 +2339,8 @@ type Query {
   currentUser: User
   
   getDatabaseObject(id: String): JSON
+  
+  entities: [Entity]
   
   # A single User document fetched by ID or slug
   user(input: SingleUserInput!): SingleUserOutput

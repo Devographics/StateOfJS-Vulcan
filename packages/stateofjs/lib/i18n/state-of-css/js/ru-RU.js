@@ -6,7 +6,7 @@ export default {
   "translations": [
     {
       "key": "general.survey_intro_css2020",
-      "t": "CSS развивается быстрее, чем когда-либо.\nФлексбоксы, гриды, мультиколонки… Не говоря уже о совершенно новых парадигмах, таких как CSS-in-JS.\nИтак, после успешного проведения ежегодного опроса \"State of JavaScript\",  мы решили войти в мир стилей и селекторов, чтобы  определить последние тенденции… и попытаться преодолеть постоянно увеличивающуюся \"огромную пропасть во фронтенде\"!\n"
+      "t": "CSS развивается быстрее, чем когда-либо.\n\nФлексбоксы, гриды, мультиколонки… Не говоря уже о совершенно новых парадигмах, таких как CSS-in-JS.\n\nИтак, после успешного проведения ежегодного опроса \"State of JavaScript\",  мы решили войти в мир стилей и селекторов, чтобы  определить последние тенденции… и попытаться преодолеть постоянно увеличивающуюся \"огромную пропасть во фронтенде\"!\n"
     },
     {
       "key": "sections.layout.title",
@@ -122,7 +122,7 @@ export default {
     },
     {
       "key": "options.css_for_print.2",
-      "t": "Создаю стили для печати в большинстве своих проектах"
+      "t": "Создаю стили для печати в большинстве проектах"
     },
     {
       "key": "options.css_for_print.3",
@@ -146,7 +146,7 @@ export default {
     },
     {
       "key": "features.grid",
-      "t": "Гриды CSS"
+      "t": "Грид CSS"
     },
     {
       "key": "features.subgrid",
@@ -158,7 +158,7 @@ export default {
     },
     {
       "key": "features.flexbox",
-      "t": "Flexbox"
+      "t": "Флексбокс"
     },
     {
       "key": "features.multi_column",
@@ -414,7 +414,7 @@ export default {
     },
     {
       "key": "features_others.pseudo_elements.description",
-      "t": "Какой из этих CSS-селекторов вы использовали?"
+      "t": "Какие из этих CSS-псевдоэлементов вы использовали?"
     },
     {
       "key": "options.pseudo_elements.before",
@@ -461,7 +461,7 @@ export default {
       "t": "div > span (комбинатор непосредственного потомка)"
     },
     {
-      "key": "options.combinators.next_subling",
+      "key": "options.combinators.next_sibling",
       "t": "div + div (комбинатор непосредственного соседства)"
     },
     {
@@ -702,7 +702,7 @@ export default {
     },
     {
       "key": "opinions.utility_classes_to_be_avoided",
-      "t": "Следует избегать вспомогательных (несемантических) классов (.center, .large-text и т.д.)."
+      "t": "Следует избегать вспомогательных (несемантических) классов (.center, .large-text и т.д.)"
     },
     {
       "key": "opinions.selector_nesting_to_be_avoided",

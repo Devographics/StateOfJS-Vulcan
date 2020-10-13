@@ -3,7 +3,7 @@ import { Components, useCurrentUser } from 'meteor/vulcan:core';
 import { useParams, useLocation } from 'react-router-dom';
 import { STATES } from 'meteor/vulcan:accounts';
 import AccountMessage from '../../users/AccountMessage.jsx';
-import { FormattedMessage, intlShape } from 'meteor/vulcan:i18n';
+import { FormattedMessage, intlShape, IntlContext } from 'meteor/vulcan:i18n';
 import qs from 'qs';
 import SurveyAction from './SurveyAction';
 import { getSurvey } from '../../../modules/surveys/helpers';
@@ -15,16 +15,25 @@ const SurveyPageWrapper = (props, { intl }) => {
   const survey = getSurvey(slug, year);
   const { imageUrl, name, slug: surveySlug } = survey;
   return (
-    <div className="survey-page contents-narrow">
-      <SurveyHeadTags survey={survey} />
-      <h1 className="survey-image">
-        <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
-      </h1>
-      <div className="survey-intro">
-        <ReactMarkdown source={intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })} escapeHtml={false} />
-      </div>
-      <SurveyPage survey={survey} />
-    </div>
+    <IntlContext.Consumer>
+      {(props) => {
+        // console.log(props)
+        return (
+        <div className="survey-page contents-narrow">
+          <SurveyHeadTags survey={survey} />
+          <h1 className="survey-image">
+            <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
+          </h1>
+          <div className="survey-intro">
+            <ReactMarkdown
+              source={intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })}
+              escapeHtml={false}
+            />
+          </div>
+          <SurveyPage survey={survey} />
+        </div>
+      )}}
+    </IntlContext.Consumer>
   );
 };
 

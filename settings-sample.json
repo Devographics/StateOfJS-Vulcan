@@ -11,7 +11,7 @@
     
     "faviconUrl": "/favicon.png",
 
-    "locale": "en"
+    "locale": "en-US"
 
   },
 
@@ -20,6 +20,8 @@
 
   "startupDisabled": [],
   "startup": [],
+
+  "translationAPI": "http://api.stateofjs.com/graphql",
 
   "encriptionKey": "foobar"
 }

@@ -414,7 +414,7 @@ export default {
     },
     {
       "key": "features_others.pseudo_elements.description",
-      "t": "Which of these CSS selectors have you used?"
+      "t": "Which of these CSS pseudo-elements have you used?"
     },
     {
       "key": "options.pseudo_elements.before",
@@ -461,7 +461,7 @@ export default {
       "t": "div > span (child)"
     },
     {
-      "key": "options.combinators.next_subling",
+      "key": "options.combinators.next_sibling",
       "t": "div + div (next sibling)"
     },
     {

@@ -1,7 +1,14 @@
-import { addGraphQLSchema, addGraphQLResolvers, getSetting } from 'meteor/vulcan:core';
+import { addGraphQLSchema, addGraphQLResolvers, getSetting, addGraphQLQuery } from 'meteor/vulcan:core';
 import fetch from 'node-fetch';
 import get from 'lodash/get';
 
+const translationAPI = getSetting('translationAPI');
+
+/*
+
+Survey Type
+
+*/
 const surveyType = `type Survey {
   slug: String
   prettySlug: String
@@ -13,10 +20,12 @@ const surveyType = `type Survey {
 
 addGraphQLSchema(surveyType);
 
+/*
 
-const translationAPI = getSetting('translationAPI');
+Locales
 
-const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [LocaleContexts]) {
+*/
+const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]) {
   locale(localeId: $localeId, contexts: $contexts) {
     strings {
       key
@@ -25,7 +34,9 @@ const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [LocaleCon
   }
 }
 `;
+
 const locale = async (root, { localeId }, context) => {
+
   const response = await fetch(translationAPI, {
     method: 'POST',
     headers: {
@@ -37,6 +48,9 @@ const locale = async (root, { localeId }, context) => {
   const json = await response.json();
 
   const strings = get(json, 'data.locale.strings');
+  if (json.errors) {
+    throw new Error(json.errors);
+  }
   const convertedStrings = {};
   strings.forEach(({ key, t }) => {
     convertedStrings[key] = t;
@@ -45,3 +59,58 @@ const locale = async (root, { localeId }, context) => {
 };
 
 addGraphQLResolvers({ Query: { locale } });
+
+/*
+
+Entities
+
+*/
+const entityType = `type Entity {
+  id: String
+  name: String
+  homepage: String
+  category: String
+  npm: String
+  description: String
+  type: String
+  tags: [String]
+  context: String
+  isCode: Boolean
+}`;
+
+addGraphQLSchema(entityType);
+
+const entitiesQuery = `query EntitiesQuery {
+  entities {
+    id
+    name
+    tags
+    context
+    type
+    category
+    description
+    isCode
+  }
+}
+`;
+
+const entities = async () => {
+
+  const response = await fetch(translationAPI, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({ query: entitiesQuery, variables: { } }),
+  });
+  const json = await response.json();
+  if (json.errors) {
+    throw new Error(json.errors);
+  }
+  const entities = get(json, 'data.entities');
+  return entities;
+};
+
+addGraphQLQuery('entities: [Entity]');
+addGraphQLResolvers({ Query: { entities } });

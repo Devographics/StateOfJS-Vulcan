@@ -178,3 +178,16 @@ pre,
 code {
   color: $text-color;
 }
+
+.app-secondary-loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  @include flex-center;
+  background: white(0.3);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+
+}

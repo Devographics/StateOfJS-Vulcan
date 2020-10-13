@@ -366,7 +366,7 @@ export default {
     },
     {
       "key": "features_others.pseudo_elements.description",
-      "t": "Which of these CSS selectors have you used?"
+      "t": "Which of these CSS pseudo-elements have you used?"
     },
     {
       "key": "features_others.combinators",
