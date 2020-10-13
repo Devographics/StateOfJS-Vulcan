@@ -250,7 +250,7 @@ outline:
     questions:
       - id: sass
       - id: less
-      - id: postcss
+      - id: post_css
       - id: stylus
       # - Sass
       # - Less
@@ -276,34 +276,17 @@ outline:
       - id: semantic_ui
       - id: bulma
       - id: foundation
-      - id: uikit
+      - id: ui_kit
       - id: tachyons
       - id: primer
       - id: tailwind_css
       - id: pure_css
       - id: skeleton
-      - id: spectre
+      - id: spectre_css
       # id: - milligram
       # id: - basscss
       # id: - no_css_framework
 
-      # - Bootstrap
-      # - Materialize CSS
-      # - Ant Design
-      # - Semantic UI
-      # - Bulma
-      # - Foundation
-      # - UIKit
-      # - Tachyons
-      # - Primer
-      # - id: tailwind
-      #   alias: Tailwind CSS
-      # - PureCSS
-      # - Skeleton
-      # - Spectre
-      # # - Milligram
-      # # - BassCSS
-      # # - No Framework
       - id: css_frameworks
         intlId: tools.other_tools
         template: text
@@ -338,7 +321,7 @@ outline:
     template: tool
     slug: tools
     questions:
-      - Styled Components
+      - id: styled_components
       # - Glamor # deprecated
       # - Aphrodite # not actively maintained?
       - id: jss
@@ -382,18 +365,14 @@ outline:
         template: multiple
         options:
           - id: stylelint
-          - id: purgecss
-          - id: purifycss
-
-          # - Stylelint
-          # - PurgeCSS
-          # - PurifyCSS
+          - id: purge_css
+          - id: purify_css
       - id: utilities
         template: others
       - id: text_editors
         template: multiple
         options:
-          - id: vs_code
+          - id: visual_studio
           - id: sublime_text
           - id: atom
           - id: vim
@@ -419,7 +398,7 @@ outline:
           - id: samsung_internet
           - id: vivaldi
           - id: brave
-          - id: ub_browser
+          - id: ucbrowser
           - id: opera
           - id: polypane
       - id: browsers
@@ -446,27 +425,9 @@ outline:
           - id: samsung_internet
           - id: vivaldi
           - id: brave
-          - id: ub_browser
+          - id: ucbrowser
           - id: opera
           - id: polypane
-
-          # - Edge
-          # - Chrome
-          # - Safari
-          # - Firefox
-          # - Internet Explorer 11
-          # - Internet Explorer 8/9/10
-          # - Opera Mini
-          # - Safari iOS
-          # - Chrome iOS
-          # - Chrome Android
-          # - Firefox Android
-          # - Samsung Internet
-          # - Vivaldi
-          # - Brave
-          # - UC Browser
-          # - Opera
-          # - Polypane
 
       - id: form_factors
         template: multiple
@@ -508,11 +469,12 @@ outline:
         template: multiple
         options:
           - id: css_tricks
+          - id: a_list_apart
           - id: smashing_magazine
           - id: codrops
           - id: sitepoint
           - id: david_walsh
-          - id: dev_to
+          - id: devto
           - id: sidebar
           - id: heydesigner
           - id: css_weekly
@@ -539,8 +501,8 @@ outline:
           - id: w3schools
           - id: freecodecamp
           - id: codecademy
-          - id: levelup_tutorials
-          - id: wes_bos_courses
+          - id: levelup
+          - id: wesbos
           - id: pluralsight
           - id: designcode
 
@@ -561,11 +523,11 @@ outline:
         options:
           - id: shop_talk_show
           - id: style_guide_podcast
-          - id: the_big_web_show
-          - id: the_web_ahead
+          - id: big_web_show
+          - id: web_ahead
           - id: non_breaking_space_show
-          - id: the_changelog
-          - id: syntax
+          - id: changelog
+          - id: syntaxfm
           - id: css_podcast
 
           # - Shop Talk Show

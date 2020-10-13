@@ -500,7 +500,7 @@ export default {
           "id": "less"
         },
         {
-          "id": "postcss"
+          "id": "post_css"
         },
         {
           "id": "stylus"
@@ -544,7 +544,7 @@ export default {
           "id": "foundation"
         },
         {
-          "id": "uikit"
+          "id": "ui_kit"
         },
         {
           "id": "tachyons"
@@ -562,7 +562,7 @@ export default {
           "id": "skeleton"
         },
         {
-          "id": "spectre"
+          "id": "spectre_css"
         },
         {
           "id": "css_frameworks",
@@ -622,7 +622,9 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "Styled Components",
+        {
+          "id": "styled_components"
+        },
         {
           "id": "jss"
         },
@@ -683,10 +685,10 @@ export default {
               "id": "stylelint"
             },
             {
-              "id": "purgecss"
+              "id": "purge_css"
             },
             {
-              "id": "purifycss"
+              "id": "purify_css"
             }
           ]
         },
@@ -699,7 +701,7 @@ export default {
           "template": "multiple",
           "options": [
             {
-              "id": "vs_code"
+              "id": "visual_studio"
             },
             {
               "id": "sublime_text"
@@ -772,7 +774,7 @@ export default {
               "id": "brave"
             },
             {
-              "id": "ub_browser"
+              "id": "ucbrowser"
             },
             {
               "id": "opera"
@@ -839,7 +841,7 @@ export default {
               "id": "brave"
             },
             {
-              "id": "ub_browser"
+              "id": "ucbrowser"
             },
             {
               "id": "opera"
@@ -934,6 +936,9 @@ export default {
               "id": "css_tricks"
             },
             {
+              "id": "a_list_apart"
+            },
+            {
               "id": "smashing_magazine"
             },
             {
@@ -946,7 +951,7 @@ export default {
               "id": "david_walsh"
             },
             {
-              "id": "dev_to"
+              "id": "devto"
             },
             {
               "id": "sidebar"
@@ -986,10 +991,10 @@ export default {
               "id": "codecademy"
             },
             {
-              "id": "levelup_tutorials"
+              "id": "levelup"
             },
             {
-              "id": "wes_bos_courses"
+              "id": "wesbos"
             },
             {
               "id": "pluralsight"
@@ -1014,19 +1019,19 @@ export default {
               "id": "style_guide_podcast"
             },
             {
-              "id": "the_big_web_show"
+              "id": "big_web_show"
             },
             {
-              "id": "the_web_ahead"
+              "id": "web_ahead"
             },
             {
               "id": "non_breaking_space_show"
             },
             {
-              "id": "the_changelog"
+              "id": "changelog"
             },
             {
-              "id": "syntax"
+              "id": "syntaxfm"
             },
             {
               "id": "css_podcast"

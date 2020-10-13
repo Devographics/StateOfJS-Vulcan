@@ -897,7 +897,7 @@ type Response {
   css2020__features_others__form_controls__choices: [String] 
   css2020__tools__sass__experience: String 
   css2020__tools__less__experience: String 
-  css2020__tools__postcss__experience: String 
+  css2020__tools__post_css__experience: String 
   css2020__tools__stylus__experience: String 
   css2020__sections_other_tools__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
@@ -907,13 +907,13 @@ type Response {
   css2020__tools__semantic_ui__experience: String 
   css2020__tools__bulma__experience: String 
   css2020__tools__foundation__experience: String 
-  css2020__tools__uikit__experience: String 
+  css2020__tools__ui_kit__experience: String 
   css2020__tools__tachyons__experience: String 
   css2020__tools__primer__experience: String 
   css2020__tools__tailwind_css__experience: String 
   css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
-  css2020__tools__spectre__experience: String 
+  css2020__tools__spectre_css__experience: String 
   css2020__sections_other_tools__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
@@ -924,7 +924,7 @@ type Response {
   css2020__tools__cube_css__experience: String 
   css2020__sections_other_tools__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
-  css2020__tools__styledcomponents__experience: String 
+  css2020__tools__styled_components__experience: String 
   css2020__tools__jss__experience: String 
   css2020__tools__styled_jsx__experience: String 
   css2020__tools__radium__experience: String 
@@ -1227,7 +1227,7 @@ input CreateResponseDataInput {
   css2020__features_others__form_controls__choices: [String] 
   css2020__tools__sass__experience: String 
   css2020__tools__less__experience: String 
-  css2020__tools__postcss__experience: String 
+  css2020__tools__post_css__experience: String 
   css2020__tools__stylus__experience: String 
   css2020__sections_other_tools__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
@@ -1237,13 +1237,13 @@ input CreateResponseDataInput {
   css2020__tools__semantic_ui__experience: String 
   css2020__tools__bulma__experience: String 
   css2020__tools__foundation__experience: String 
-  css2020__tools__uikit__experience: String 
+  css2020__tools__ui_kit__experience: String 
   css2020__tools__tachyons__experience: String 
   css2020__tools__primer__experience: String 
   css2020__tools__tailwind_css__experience: String 
   css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
-  css2020__tools__spectre__experience: String 
+  css2020__tools__spectre_css__experience: String 
   css2020__sections_other_tools__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
@@ -1254,7 +1254,7 @@ input CreateResponseDataInput {
   css2020__tools__cube_css__experience: String 
   css2020__sections_other_tools__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
-  css2020__tools__styledcomponents__experience: String 
+  css2020__tools__styled_components__experience: String 
   css2020__tools__jss__experience: String 
   css2020__tools__styled_jsx__experience: String 
   css2020__tools__radium__experience: String 
@@ -1500,7 +1500,7 @@ input UpdateResponseDataInput {
   css2020__features_others__form_controls__choices: [String] 
   css2020__tools__sass__experience: String 
   css2020__tools__less__experience: String 
-  css2020__tools__postcss__experience: String 
+  css2020__tools__post_css__experience: String 
   css2020__tools__stylus__experience: String 
   css2020__sections_other_tools__pre_post_processors__others: String 
   css2020__happiness__pre_post_processors: Float 
@@ -1510,13 +1510,13 @@ input UpdateResponseDataInput {
   css2020__tools__semantic_ui__experience: String 
   css2020__tools__bulma__experience: String 
   css2020__tools__foundation__experience: String 
-  css2020__tools__uikit__experience: String 
+  css2020__tools__ui_kit__experience: String 
   css2020__tools__tachyons__experience: String 
   css2020__tools__primer__experience: String 
   css2020__tools__tailwind_css__experience: String 
   css2020__tools__pure_css__experience: String 
   css2020__tools__skeleton__experience: String 
-  css2020__tools__spectre__experience: String 
+  css2020__tools__spectre_css__experience: String 
   css2020__sections_other_tools__css_frameworks__others: String 
   css2020__happiness__css_frameworks: Float 
   css2020__tools__bem__experience: String 
@@ -1527,7 +1527,7 @@ input UpdateResponseDataInput {
   css2020__tools__cube_css__experience: String 
   css2020__sections_other_tools__css_methodologies__others: String 
   css2020__happiness__css_methodologies: Float 
-  css2020__tools__styledcomponents__experience: String 
+  css2020__tools__styled_components__experience: String 
   css2020__tools__jss__experience: String 
   css2020__tools__styled_jsx__experience: String 
   css2020__tools__radium__experience: String 
@@ -1768,7 +1768,7 @@ input ResponseFilterInput {
   css2020__features_others__form_controls__choices: String_Array_Selector
   css2020__tools__sass__experience: String_Selector
   css2020__tools__less__experience: String_Selector
-  css2020__tools__postcss__experience: String_Selector
+  css2020__tools__post_css__experience: String_Selector
   css2020__tools__stylus__experience: String_Selector
   css2020__sections_other_tools__pre_post_processors__others: String_Selector
   css2020__happiness__pre_post_processors: Float_Selector
@@ -1778,13 +1778,13 @@ input ResponseFilterInput {
   css2020__tools__semantic_ui__experience: String_Selector
   css2020__tools__bulma__experience: String_Selector
   css2020__tools__foundation__experience: String_Selector
-  css2020__tools__uikit__experience: String_Selector
+  css2020__tools__ui_kit__experience: String_Selector
   css2020__tools__tachyons__experience: String_Selector
   css2020__tools__primer__experience: String_Selector
   css2020__tools__tailwind_css__experience: String_Selector
   css2020__tools__pure_css__experience: String_Selector
   css2020__tools__skeleton__experience: String_Selector
-  css2020__tools__spectre__experience: String_Selector
+  css2020__tools__spectre_css__experience: String_Selector
   css2020__sections_other_tools__css_frameworks__others: String_Selector
   css2020__happiness__css_frameworks: Float_Selector
   css2020__tools__bem__experience: String_Selector
@@ -1795,7 +1795,7 @@ input ResponseFilterInput {
   css2020__tools__cube_css__experience: String_Selector
   css2020__sections_other_tools__css_methodologies__others: String_Selector
   css2020__happiness__css_methodologies: Float_Selector
-  css2020__tools__styledcomponents__experience: String_Selector
+  css2020__tools__styled_components__experience: String_Selector
   css2020__tools__jss__experience: String_Selector
   css2020__tools__styled_jsx__experience: String_Selector
   css2020__tools__radium__experience: String_Selector
@@ -2031,7 +2031,7 @@ input ResponseSortInput {
   css2020__features_others__form_controls__choices: SortOptions
   css2020__tools__sass__experience: SortOptions
   css2020__tools__less__experience: SortOptions
-  css2020__tools__postcss__experience: SortOptions
+  css2020__tools__post_css__experience: SortOptions
   css2020__tools__stylus__experience: SortOptions
   css2020__sections_other_tools__pre_post_processors__others: SortOptions
   css2020__happiness__pre_post_processors: SortOptions
@@ -2041,13 +2041,13 @@ input ResponseSortInput {
   css2020__tools__semantic_ui__experience: SortOptions
   css2020__tools__bulma__experience: SortOptions
   css2020__tools__foundation__experience: SortOptions
-  css2020__tools__uikit__experience: SortOptions
+  css2020__tools__ui_kit__experience: SortOptions
   css2020__tools__tachyons__experience: SortOptions
   css2020__tools__primer__experience: SortOptions
   css2020__tools__tailwind_css__experience: SortOptions
   css2020__tools__pure_css__experience: SortOptions
   css2020__tools__skeleton__experience: SortOptions
-  css2020__tools__spectre__experience: SortOptions
+  css2020__tools__spectre_css__experience: SortOptions
   css2020__sections_other_tools__css_frameworks__others: SortOptions
   css2020__happiness__css_frameworks: SortOptions
   css2020__tools__bem__experience: SortOptions
@@ -2058,7 +2058,7 @@ input ResponseSortInput {
   css2020__tools__cube_css__experience: SortOptions
   css2020__sections_other_tools__css_methodologies__others: SortOptions
   css2020__happiness__css_methodologies: SortOptions
-  css2020__tools__styledcomponents__experience: SortOptions
+  css2020__tools__styled_components__experience: SortOptions
   css2020__tools__jss__experience: SortOptions
   css2020__tools__styled_jsx__experience: SortOptions
   css2020__tools__radium__experience: SortOptions
