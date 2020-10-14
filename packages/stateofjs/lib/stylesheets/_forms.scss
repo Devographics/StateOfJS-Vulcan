@@ -12,6 +12,10 @@
       padding: $spacing;
     }
     margin-bottom: $spacing;
+    &:focus-within {
+      border-color: var(--link-color);
+      background: $greyDarkish;
+    }
   }
   .form-label {
     @include small-medium {
@@ -21,6 +25,9 @@
       font-size: $largeish-font;
     }
     @include font-bold;
+    code {
+      font-size: $medium-font;
+    }
   }
   .form-check {
     display: flex;
@@ -81,10 +88,11 @@
     button:first-child {
       // margin-right: $spacing;
     }
-    .form-btn-prev, .prev-placeholder{
+    .form-btn-prev,
+    .prev-placeholder {
       order: 1;
     }
-    .form-btn-next{
+    .form-btn-next {
       order: 2;
     }
   }
@@ -105,6 +113,11 @@
       flex: 0;
       padding: 3px;
       @include border-radius;
+      @include emoji-font;
+    }
+    img {
+      height: 32px;
+      width: 32px;
     }
   }
 }

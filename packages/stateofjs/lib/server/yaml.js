@@ -7,6 +7,7 @@ const i18nCommon = `${pathPrefix}/packages/stateofjs/lib/i18n/common`;
 const i18nCSS = `${pathPrefix}/packages/stateofjs/lib/i18n/state-of-css`;
 const i18nJS = `${pathPrefix}/packages/stateofjs/lib/i18n/state-of-js`;
 const surveyDirPath = `${pathPrefix}/packages/stateofjs/lib/surveys`;
+const dataDirPath = `${pathPrefix}/packages/stateofjs/lib/data`;
 
 export const convertYAMLDir = async dirPath => {
 
@@ -32,6 +33,5 @@ export const convertAllYAML = async () => {
   await convertYAMLDir(i18nCSS)
   await convertYAMLDir(i18nJS)
   await convertYAMLDir(surveyDirPath)
+  await convertYAMLDir(dataDirPath)
 }
-
-

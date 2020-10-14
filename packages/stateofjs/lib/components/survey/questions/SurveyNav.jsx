@@ -9,7 +9,7 @@ TODO
 - Simplify this by using already-parsed with getQuestionObject() outline
 
 */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getQuestionObject, ignoredFieldTypes } from '../../../modules/responses/helpers.js';
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import surveys from '../../../surveys';
@@ -26,12 +26,12 @@ const getSectionCompletionPercentage = (section, response) => {
     return null;
   }
   // don't count text questions towards completion score
-  const sectionQuestions = section.questions.filter(question => {
+  const sectionQuestions = section.questions.filter((question) => {
     const questionObject = getQuestionObject(question, section);
     return !ignoredFieldTypes.includes(questionObject.template);
   });
   const questionsCount = sectionQuestions.length;
-  const completedQuestions = section.questions.filter(question => {
+  const completedQuestions = section.questions.filter((question) => {
     const questionObject = getQuestionObject(question, section);
     return (
       !ignoredFieldTypes.includes(questionObject.template) &&
@@ -44,19 +44,48 @@ const getSectionCompletionPercentage = (section, response) => {
 };
 
 const SurveyNav = ({ survey, response }) => {
+  const outline = surveys.find((o) => o.slug === survey.slug).outline;
+
   const [shown, setShown] = useState(false);
-  const outline = surveys.find(o => o.slug === survey.slug).outline;
+  const [currentTabindex, setCurrentTabindex] = useState(null);
+  const [currentFocusIndex, setCurrentFocusIndex] = useState();
+
+  useEffect(() => {
+    const keyPressHandler = (e) => {
+      if (currentFocusIndex !== null) {
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          setCurrentTabindex(currentTabindex - 1);
+        }
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setCurrentTabindex(currentTabindex + 1);
+        }
+      }
+    };
+    document.addEventListener('keydown', keyPressHandler);
+    return () => {
+      document.removeEventListener('keydown', keyPressHandler);
+    };
+  }, [currentFocusIndex]);
+
   return (
     <nav className={`section-nav ${shown ? 'section-nav-shown' : 'section-nav-hidden'}`}>
       <div className="section-nav-inner">
-        <h2 className="section-nav-heading"><Link to={getSurveyPath({ survey, home: true })}>{survey.name} {survey.year}</Link></h2>
+        <h2 className="section-nav-heading">
+          <Link to={getSurveyPath({ survey, home: true })}>
+            {survey.name} {survey.year}
+          </Link>
+        </h2>
         <div
           className="section-nav-head"
-          onClick={e => {
+          onClick={(e) => {
             setShown(!shown);
           }}
         >
-          <h3 className="section-nav-toc"><FormattedMessage id="general.table_of_contents"/></h3>
+          <h3 className="section-nav-toc">
+            <FormattedMessage id="general.table_of_contents" />
+          </h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
         </div>
         <div className="section-nav-contents">
@@ -69,12 +98,15 @@ const SurveyNav = ({ survey, response }) => {
                 section={section}
                 number={i}
                 key={i}
+                currentTabindex={currentTabindex}
+                setCurrentTabindex={setCurrentTabindex}
+                setCurrentFocusIndex={setCurrentFocusIndex}
               />
             ))}
             {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
           </ul>
           <p className="completion-message">
-            <FormattedMessage id="general.all_questions_optional"/>
+            <FormattedMessage id="general.all_questions_optional" />
           </p>
         </div>
       </div>
@@ -82,19 +114,36 @@ const SurveyNav = ({ survey, response }) => {
   );
 };
 
-const SectionNavItem = ({ survey, response, section, number, setShown }) => {
+const SectionNavItem = ({ survey, response, section, number, setShown, currentTabindex, setCurrentFocusIndex }) => {
+  const textInput = useRef(null);
   const completion = getSectionCompletionPercentage(section, response);
   const showCompletion = completion !== 'null' && completion > 0;
+
+  useEffect(() => {
+    if (currentTabindex === number) {
+      textInput.current.focus();
+    }
+  }, [currentTabindex]);
+
   return (
     <li className="section-nav-item">
       <NavLink
         exact={true}
-        to={getSurveyPath({survey, number, response})}
+        to={getSurveyPath({ survey, number, response })}
         onClick={() => {
           setShown(false);
         }}
+        tabIndex={currentTabindex === number ? 0 : -1}
+        ref={textInput}
+        onFocus={() => {
+          setCurrentFocusIndex(number);
+        }}
+        onBlur={() => {
+          setCurrentFocusIndex(null);
+        }}
       >
-        <FormattedMessage id={`sections.${section.id}.title`}/> {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
+        <FormattedMessage id={`sections.${section.id}.title`} />{' '}
+        {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
       </NavLink>
     </li>
   );

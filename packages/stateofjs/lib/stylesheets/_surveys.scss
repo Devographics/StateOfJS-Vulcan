@@ -1,4 +1,24 @@
+// locale selector
+.locale-selector {
+  margin-bottom: $spacing * 2;
+  text-align: center;
+  padding: $spacing;
+  background: $bg-color-light;
+  &-languages {
+    @include font-regular;
+    font-size: $small-font;
+    margin-bottom: 5px;
+  }
+  &-item {
+    // display: inline-block;
+    // margin-left: 5px;
+  }
+  &-help {
+    font-size: $small-font;
+  }
+}
 // surveys page
+
 .surveys-title {
   text-align: center;
   margin-bottom: $spacing;
@@ -78,7 +98,9 @@
 .section-nav {
   // background: $bg-color-light;
   // padding: $spacing;
-  max-width: 280px;
+  @include large {
+    max-width: 280px;
+  }
   ul {
     list-style-type: none;
     padding: 0;

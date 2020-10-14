@@ -1,0 +1,25 @@
+{
+  "public": {
+
+    "debug": false,
+
+    "title": "The 2020 State of JS and State of CSS Surveys",
+    "tagline":"Take the 2020 State of JS and State of CSS surveys",
+    "siteImage": "https://survey.stateofjs.com/stateofjs-social.png",
+
+    "environment": "development",
+    
+    "faviconUrl": "/favicon.png",
+
+    "locale": "en"
+
+  },
+
+  "defaultEmail": "hello@example.com",
+  "mailUrl": "smtp://username:password@smtp.mailgun.org:587/",
+
+  "startupDisabled": [],
+  "startup": [],
+
+  "encriptionKey": "foobar"
+}

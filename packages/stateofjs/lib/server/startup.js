@@ -8,6 +8,7 @@ import { getSetting } from 'meteor/vulcan:core';
 import { convertAllYAML  }from './yaml';
 
 const startup = getSetting('startup', []);
+const environment = getSetting('environment');
 
 Meteor.startup(async function () {
   // for some reason JSON arrays are of the form: { '0': 'testScript', '1': 'testScript2' },
@@ -25,5 +26,7 @@ Meteor.startup(async function () {
     }
   }
 
-  await convertAllYAML();
+  if (environment === 'development') {
+    await convertAllYAML();
+  }
 });

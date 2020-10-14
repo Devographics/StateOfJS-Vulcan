@@ -10,7 +10,7 @@ export default {
   "shareUrl": "https://stateofcss.com",
   "name": "State of CSS",
   "year": 2020,
-  "status": 1,
+  "status": 2,
   "imageUrl": "stateofcss2020.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
@@ -51,6 +51,9 @@ export default {
         },
         {
           "id": "aspect_ratio"
+        },
+        {
+          "id": "content_visibility"
         }
       ]
     },
@@ -76,6 +79,9 @@ export default {
         },
         {
           "id": "filter_effects"
+        },
+        {
+          "id": "backdrop_filter"
         }
       ]
     },
@@ -92,6 +98,12 @@ export default {
         },
         {
           "id": "overflow_anchor"
+        },
+        {
+          "id": "touch_action"
+        },
+        {
+          "id": "pointer_events"
         }
       ]
     },
@@ -123,6 +135,12 @@ export default {
         },
         {
           "id": "line_clamp"
+        },
+        {
+          "id": "leading_trim"
+        },
+        {
+          "id": "direction"
         }
       ]
     },
@@ -139,6 +157,25 @@ export default {
         },
         {
           "id": "animations"
+        },
+        {
+          "id": "perspective"
+        }
+      ]
+    },
+    {
+      "id": "media_queries",
+      "template": "feature",
+      "slug": "features",
+      "questions": [
+        {
+          "id": "prefers_reduced_motion"
+        },
+        {
+          "id": "prefers_color_scheme"
+        },
+        {
+          "id": "color_gamut"
         }
       ]
     },
@@ -172,7 +209,7 @@ export default {
     },
     {
       "id": "units_selectors",
-      "slug": "features",
+      "slug": "features_others",
       "questions": [
         {
           "id": "units",
@@ -182,18 +219,42 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "px",
-            "pt",
-            "%",
-            "em",
-            "rem",
-            "vh, vw",
-            "vmin, vmax",
-            "ch",
-            "ex",
-            "mm",
-            "cm",
-            "in"
+            {
+              "id": "px"
+            },
+            {
+              "id": "pt"
+            },
+            {
+              "id": "percent"
+            },
+            {
+              "id": "em"
+            },
+            {
+              "id": "rem"
+            },
+            {
+              "id": "vh_vw"
+            },
+            {
+              "id": "vmin_vmax"
+            },
+            {
+              "id": "ch"
+            },
+            {
+              "id": "ex"
+            },
+            {
+              "id": "mm"
+            },
+            {
+              "id": "cm"
+            },
+            {
+              "id": "in"
+            }
           ]
         },
         {
@@ -204,13 +265,30 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "::before",
-            "::after",
-            "::first-line",
-            "::first-letter",
-            "::selection",
-            "::placeholder",
-            "::marker"
+            {
+              "id": "before"
+            },
+            {
+              "id": "after"
+            },
+            {
+              "id": "first_line"
+            },
+            {
+              "id": "first_letter"
+            },
+            {
+              "id": "selection"
+            },
+            {
+              "id": "placeholder"
+            },
+            {
+              "id": "marker"
+            },
+            {
+              "id": "backdrop"
+            }
           ]
         },
         {
@@ -221,10 +299,18 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "div span (descendant)",
-            "div > span (child)",
-            "div + div (next sibling)",
-            "div ~ div (subsequent sibling)"
+            {
+              "id": "descendant"
+            },
+            {
+              "id": "child"
+            },
+            {
+              "id": "next_subling"
+            },
+            {
+              "id": "subsequent_sibling"
+            }
           ]
         },
         {
@@ -235,20 +321,54 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":root",
-            ":empty",
-            ":not()",
-            ":nth-child()",
-            ":nth-last-child()",
-            ":first-child",
-            ":last-child",
-            ":only-child",
-            ":nth-of-type()",
-            ":nth-last-of-type()",
-            ":first-of-type",
-            ":last-of-type",
-            ":only-of-type",
-            ":lang()"
+            {
+              "id": "root"
+            },
+            {
+              "id": "empty"
+            },
+            {
+              "id": "not"
+            },
+            {
+              "id": "nth_child"
+            },
+            {
+              "id": "nth_last_child"
+            },
+            {
+              "id": "first_child"
+            },
+            {
+              "id": "last_child"
+            },
+            {
+              "id": "only_child"
+            },
+            {
+              "id": "nth_of_type"
+            },
+            {
+              "id": "nth_last_of_type"
+            },
+            {
+              "id": "first_of_type"
+            },
+            {
+              "id": "last_of_type"
+            },
+            {
+              "id": "only_of_type"
+            },
+            {
+              "id": "lang"
+            },
+            {
+              "id": "is"
+            },
+            {
+              "id": "where"
+            }
           ]
         },
         {
@@ -259,12 +379,24 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            "div[foo] (Presence)",
-            "div[foo=\"bar\"] (Equality)",
-            "div[foo^=\"bar\"] (Starts with)",
-            "div[foo$=\"bar\"] (Ends with)",
-            "div[foo~=\"bar\"] (Contains word)",
-            "div[foo*=\"bar\"] (Contains substring)"
+            {
+              "id": "presence"
+            },
+            {
+              "id": "equality"
+            },
+            {
+              "id": "starts_with"
+            },
+            {
+              "id": "ends_with"
+            },
+            {
+              "id": "contains_word"
+            },
+            {
+              "id": "contains_substring"
+            }
           ]
         },
         {
@@ -275,10 +407,18 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":any-link",
-            ":link and :visited",
-            ":local-link",
-            ":target"
+            {
+              "id": "any_link"
+            },
+            {
+              "id": "link_visited"
+            },
+            {
+              "id": "local_link"
+            },
+            {
+              "id": "target"
+            }
           ]
         },
         {
@@ -289,11 +429,21 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":hover",
-            ":active",
-            ":focus",
-            ":focus-within",
-            ":focus-visible"
+            {
+              "id": "hover"
+            },
+            {
+              "id": "active"
+            },
+            {
+              "id": "focus"
+            },
+            {
+              "id": "focus_within"
+            },
+            {
+              "id": "focus_visible"
+            }
           ]
         },
         {
@@ -304,16 +454,36 @@ export default {
           "randomize": false,
           "suffix": "choices",
           "options": [
-            ":enabled and :disabled",
-            ":read-only and :read-write",
-            ":placeholder-shown",
-            ":default",
-            ":checked",
-            ":indeterminate",
-            ":valid and :invalid",
-            ":user-invalid",
-            ":in-range and :out-of-range",
-            ":required and :optional"
+            {
+              "id": "enabled_disabled"
+            },
+            {
+              "id": "read_only_write"
+            },
+            {
+              "id": "placeholder_shown"
+            },
+            {
+              "id": "default"
+            },
+            {
+              "id": "checked"
+            },
+            {
+              "id": "indeterminate"
+            },
+            {
+              "id": "valid_invalid"
+            },
+            {
+              "id": "user_invalid"
+            },
+            {
+              "id": "in_out_range"
+            },
+            {
+              "id": "required_optional"
+            }
           ]
         }
       ]
@@ -323,10 +493,18 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "Sass",
-        "Less",
-        "PostCSS",
-        "Stylus",
+        {
+          "id": "sass"
+        },
+        {
+          "id": "less"
+        },
+        {
+          "id": "postcss"
+        },
+        {
+          "id": "stylus"
+        },
         {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
@@ -347,22 +525,45 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "Bootstrap",
-        "Materialize CSS",
-        "Ant Design",
-        "Semantic UI",
-        "Bulma",
-        "Foundation",
-        "UIKit",
-        "Tachyons",
-        "Primer",
         {
-          "id": "tailwind",
-          "alias": "Tailwind CSS"
+          "id": "bootstrap"
         },
-        "PureCSS",
-        "Skeleton",
-        "Spectre",
+        {
+          "id": "materialize_css"
+        },
+        {
+          "id": "ant_design"
+        },
+        {
+          "id": "semantic_ui"
+        },
+        {
+          "id": "bulma"
+        },
+        {
+          "id": "foundation"
+        },
+        {
+          "id": "uikit"
+        },
+        {
+          "id": "tachyons"
+        },
+        {
+          "id": "primer"
+        },
+        {
+          "id": "tailwind_css"
+        },
+        {
+          "id": "pure_css"
+        },
+        {
+          "id": "skeleton"
+        },
+        {
+          "id": "spectre"
+        },
         {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
@@ -383,14 +584,24 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        "BEM",
         {
-          "id": "atomiccss"
+          "id": "bem"
         },
-        "OOCSS",
-        "SMACSS",
-        "IT CSS",
-        "CUBE CSS",
+        {
+          "id": "atomic_css"
+        },
+        {
+          "id": "oocss"
+        },
+        {
+          "id": "smacss"
+        },
+        {
+          "id": "it_css"
+        },
+        {
+          "id": "cube_css"
+        },
         {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
@@ -412,17 +623,39 @@ export default {
       "slug": "tools",
       "questions": [
         "Styled Components",
-        "JSS",
-        "Styled-JSX",
-        "Radium",
-        "Emotion",
-        "CSS Modules",
-        "Styled System",
-        "Stitches",
-        "Styletron",
-        "Fela",
-        "Linaria",
-        "Astroturf",
+        {
+          "id": "jss"
+        },
+        {
+          "id": "styled_jsx"
+        },
+        {
+          "id": "radium"
+        },
+        {
+          "id": "emotion"
+        },
+        {
+          "id": "css_modules"
+        },
+        {
+          "id": "styled_system"
+        },
+        {
+          "id": "stitches"
+        },
+        {
+          "id": "styletron"
+        },
+        {
+          "id": "fela"
+        },
+        {
+          "id": "linaria"
+        },
+        {
+          "id": "astroturf"
+        },
         {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
@@ -440,70 +673,118 @@ export default {
     },
     {
       "id": "other_tools",
-      "slug": "other_tools",
+      "slug": "tools_other",
       "questions": [
         {
           "id": "utilities",
           "template": "multiple",
-          "allowmultiple": true,
           "options": [
-            "Stylelint",
-            "PurgeCSS",
-            "PurifyCSS"
+            {
+              "id": "stylelint"
+            },
+            {
+              "id": "purgecss"
+            },
+            {
+              "id": "purifycss"
+            }
           ]
         },
         {
           "id": "utilities",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         },
         {
           "id": "text_editors",
           "template": "multiple",
-          "allowmultiple": true,
           "options": [
-            "VS Code",
-            "Sublime Text",
-            "Atom",
-            "Vim",
-            "Emacs",
-            "Webstorm",
-            "Nova"
+            {
+              "id": "vs_code"
+            },
+            {
+              "id": "sublime_text"
+            },
+            {
+              "id": "atom"
+            },
+            {
+              "id": "vim"
+            },
+            {
+              "id": "emacs"
+            },
+            {
+              "id": "webstorm"
+            },
+            {
+              "id": "nova"
+            }
           ]
         },
         {
           "id": "text_editors",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         },
         {
           "id": "browsers",
           "template": "multiple",
-          "allowmultiple": true,
           "options": [
-            "Edge",
-            "Chrome",
-            "Safari",
-            "Firefox",
-            "Internet Explorer 11",
-            "Internet Explorer 8/9/10",
-            "Opera Mini",
-            "Safari iOS",
-            "Chrome iOS",
-            "Chrome Android",
-            "Firefox Android",
-            "Samsung Internet",
-            "Vivaldi",
-            "Brave",
-            "UC Browser",
-            "Opera",
-            "Polypane"
+            {
+              "id": "edge"
+            },
+            {
+              "id": "chrome"
+            },
+            {
+              "id": "safari"
+            },
+            {
+              "id": "firefox"
+            },
+            {
+              "id": "internet_explorer_11"
+            },
+            {
+              "id": "internet_explorer_8_9_10"
+            },
+            {
+              "id": "opera_mini"
+            },
+            {
+              "id": "safari_ios"
+            },
+            {
+              "id": "chrome_ios"
+            },
+            {
+              "id": "chrome_android"
+            },
+            {
+              "id": "firefox_android"
+            },
+            {
+              "id": "samsung_internet"
+            },
+            {
+              "id": "vivaldi"
+            },
+            {
+              "id": "brave"
+            },
+            {
+              "id": "ub_browser"
+            },
+            {
+              "id": "opera"
+            },
+            {
+              "id": "polypane"
+            }
           ]
         },
         {
           "id": "browsers",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         }
       ]
     },
@@ -515,38 +796,90 @@ export default {
           "id": "browsers",
           "template": "multiple",
           "options": [
-            "Edge",
-            "Chrome",
-            "Safari",
-            "Firefox",
-            "Internet Explorer 11",
-            "Internet Explorer 8/9/10",
-            "Opera Mini",
-            "Safari iOS",
-            "Chrome iOS",
-            "Chrome Android",
-            "Firefox Android",
-            "Samsung Internet",
-            "Vivaldi",
-            "Brave",
-            "UC Browser",
-            "Opera",
-            "Polypane"
+            {
+              "id": "edge"
+            },
+            {
+              "id": "chrome"
+            },
+            {
+              "id": "safari"
+            },
+            {
+              "id": "firefox"
+            },
+            {
+              "id": "internet_explorer_11"
+            },
+            {
+              "id": "internet_explorer_8_9_10"
+            },
+            {
+              "id": "opera_mini"
+            },
+            {
+              "id": "safari_ios"
+            },
+            {
+              "id": "chrome_ios"
+            },
+            {
+              "id": "chrome_android"
+            },
+            {
+              "id": "firefox_android"
+            },
+            {
+              "id": "samsung_internet"
+            },
+            {
+              "id": "vivaldi"
+            },
+            {
+              "id": "brave"
+            },
+            {
+              "id": "ub_browser"
+            },
+            {
+              "id": "opera"
+            },
+            {
+              "id": "polypane"
+            }
           ]
         },
         {
           "id": "form_factors",
           "template": "multiple",
           "options": [
-            "Desktop",
-            "Smartphone",
-            "Feature Phone",
-            "Tablet",
-            "Smart Watch",
-            "TV",
-            "Gaming Console",
-            "Screen Reader",
-            "Print"
+            {
+              "id": "desktop"
+            },
+            {
+              "id": "smartphone"
+            },
+            {
+              "id": "feature_phone"
+            },
+            {
+              "id": "tablet"
+            },
+            {
+              "id": "smart_watch"
+            },
+            {
+              "id": "tv"
+            },
+            {
+              "id": "gaming_console"
+            },
+            {
+              "id": "screen_reader"
+            },
+            {
+              "id": "print"
+            }
           ]
         },
         {
@@ -597,59 +930,112 @@ export default {
           "id": "blogs_news_magazines",
           "template": "multiple",
           "options": [
-            "CSS Tricks",
-            "Smashing Magazine",
-            "CoDrops",
-            "SitePoint",
-            "David Walsh",
-            "Dev.to",
-            "Sidebar",
-            "HeyDesigner",
-            "CSS Weekly"
+            {
+              "id": "css_tricks"
+            },
+            {
+              "id": "smashing_magazine"
+            },
+            {
+              "id": "codrops"
+            },
+            {
+              "id": "sitepoint"
+            },
+            {
+              "id": "david_walsh"
+            },
+            {
+              "id": "dev_to"
+            },
+            {
+              "id": "sidebar"
+            },
+            {
+              "id": "heydesigner"
+            },
+            {
+              "id": "css_weekly"
+            },
+            {
+              "id": "frontend_horse"
+            }
           ]
         },
         {
           "id": "blogs_news_magazines",
-          "template": "text",
-          "suffix": "others"
+          "template": "others"
         },
         {
           "id": "sites_courses",
           "template": "multiple",
           "options": [
-            "Stack Overflow",
-            "MDN",
-            "W3Schools",
-            "FreeCodeCamp",
-            "Codecademy",
-            "LevelUp Tutorials",
-            "Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)",
-            "Pluralsight",
-            "DesignCode"
+            {
+              "id": "stack_overflow"
+            },
+            {
+              "id": "mdn"
+            },
+            {
+              "id": "w3schools"
+            },
+            {
+              "id": "freecodecamp"
+            },
+            {
+              "id": "codecademy"
+            },
+            {
+              "id": "levelup_tutorials"
+            },
+            {
+              "id": "wes_bos_courses"
+            },
+            {
+              "id": "pluralsight"
+            },
+            {
+              "id": "designcode"
+            }
           ]
         },
         {
           "id": "sites_courses",
-          "template": "text",
-          "suffix": "others"
+          "template": "others"
         },
         {
           "id": "podcasts",
           "template": "multiple",
           "options": [
-            "Shop Talk Show",
-            "Style Guide Podcast",
-            "The Big Web Show",
-            "The Web Ahead",
-            "Non Breaking Space Show",
-            "The Changelog",
-            "Syntax"
+            {
+              "id": "shop_talk_show"
+            },
+            {
+              "id": "style_guide_podcast"
+            },
+            {
+              "id": "the_big_web_show"
+            },
+            {
+              "id": "the_web_ahead"
+            },
+            {
+              "id": "non_breaking_space_show"
+            },
+            {
+              "id": "the_changelog"
+            },
+            {
+              "id": "syntax"
+            },
+            {
+              "id": "css_podcast"
+            }
           ]
         },
         {
           "id": "podcasts",
-          "template": "text",
-          "suffix": "others"
+          "template": "others"
         }
       ]
     },
@@ -683,8 +1069,19 @@ export default {
         },
         {
           "id": "currently_missing_from_css",
+          "sectionSlug": "opinions_other",
           "suffix": "others",
           "template": "longtext"
+        },
+        {
+          "id": "state_of_the_web",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        },
+        {
+          "id": "state_of_css",
+          "template": "happiness",
+          "sectionSlug": "happiness"
         }
       ]
     },
@@ -779,6 +1176,9 @@ export default {
           "allowother": true,
           "options": [
             {
+              "id": "cto"
+            },
+            {
               "id": "front_end_developer"
             },
             {
@@ -837,24 +1237,32 @@ export default {
           ]
         },
         {
-          "id": "skin_tone",
-          "template": "single",
-          "fieldType": "Number",
+          "id": "race_ethnicity",
+          "template": "multiple",
           "options": [
             {
-              "id": 0
+              "id": "white_european"
             },
             {
-              "id": 1
+              "id": "hispanic_latin"
             },
             {
-              "id": 2
+              "id": "east_asian"
             },
             {
-              "id": 3
+              "id": "middle_eastern"
             },
             {
-              "id": 4
+              "id": "black_african"
+            },
+            {
+              "id": "multiracial"
+            },
+            {
+              "id": "biracial"
+            },
+            {
+              "id": "native_american_islander_australian"
             }
           ]
         },
