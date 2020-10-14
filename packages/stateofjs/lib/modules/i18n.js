@@ -34,7 +34,7 @@ export const locales = [
   {
     id: 'pt-PT',
     label: 'Português',
-    translators: []
+    translators: ['danisal']
   },
 ];
 

@@ -1,5 +1,7 @@
 // locale selector
 .locale-selector {
+  max-width: 600px;
+  margin: 0 auto;
   margin-bottom: $spacing * 2;
   text-align: center;
   padding: $spacing;
@@ -29,10 +31,10 @@
   margin: 0 auto;
 }
 .surveys {
-  max-width: 300px;
-  margin: 0 auto;
 }
 .surveys-group {
+  max-width: 300px;
+  margin: 0 auto;
   margin-bottom: $spacing * 3;
 }
 .surveys-noopen {
@@ -217,4 +219,40 @@
   background: $redTransparent;
   padding: $spacing;
   margin-bottom: $spacing * 2;
+}
+
+.translators {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing * 2;
+  @include border2;
+  @include border-radius;
+  &-heading {
+    text-align: center;
+    font-size: $large-font;
+  }
+  &-locales {
+    @include large {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $spacing;
+      row-gap: $spacing;
+    }
+  }
+  &-locale {
+  }
+  &-locale-heading {
+    font-size: $smallish-font;
+    // margin-bottom: $spacing/4;
+    display: inline;
+    &::after {
+      content: ': ';
+    }
+  }
+  &-locale-translators {
+    display: inline;
+  }
+  &-locale-translator {
+    font-size: $smallish-font;
+  }
 }

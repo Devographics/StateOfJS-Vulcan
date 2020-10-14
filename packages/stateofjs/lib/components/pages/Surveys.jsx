@@ -5,6 +5,7 @@ import { getSurveyPath } from '../../modules/surveys/helpers';
 import { Link } from 'react-router-dom';
 import { statuses } from '../../modules/constants';
 import LocaleSelector from '../common/LocaleSelector';
+import Translators from '../common/Translators';
 
 const SurveyItem = ({ survey }) => {
   const { imageUrl, name, year, resultsUrl } = survey;
@@ -60,6 +61,7 @@ const Surveys = () => {
           <SurveyItem key={survey.slug} survey={survey} />
         ))}
       </div>
+      <Translators />
     </div>
   );
 };
