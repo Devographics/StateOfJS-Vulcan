@@ -2,7 +2,7 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "css2020",
-  "namespace": "css",
+  "context": "state_of_css",
   "topic": "CSS",
   "createdAt": "October 1, 2020",
   "prettySlug": "state-of-css",

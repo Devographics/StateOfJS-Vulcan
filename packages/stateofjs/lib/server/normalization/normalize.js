@@ -24,7 +24,7 @@ export const normalizeResponse = ({ document: response }) => {
   const normalizedResp = pick(response, fieldsToCopy);
   normalizedResp.responseId = response._id;
   normalizedResp.generatedAt = new Date();
-  normalizedResp.survey = response.namespace;
+  normalizedResp.survey = response.context;
 
   // 2. split off response into subfields
   Object.keys(response).forEach((fieldName) => {
@@ -40,7 +40,7 @@ export const normalizeResponse = ({ document: response }) => {
   });
 
   // 3. generate email hash
-  normalizedResp.user_info.email_hash = encrypt(response.email);
+  set(normalizedResp, 'user_info.hash', encrypt(response.email));
 
   // 4. normalize country (if provided)
   if (normalizedResp.user_info.country) {
@@ -77,8 +77,9 @@ export const normalizeResponse = ({ document: response }) => {
   });
 
   // 6. handle source field separately
-  const [normalizedSource, sourcePattern] = normalizeResponseSource(normalizedResp);
+  const [normalizedSource, sourcePattern, rawSource] = normalizeResponseSource(normalizedResp);
   if (normalizedSource) {
+    set(normalizedResp, 'user_info.source.raw', rawSource);
     set(normalizedResp, 'user_info.source.normalized', normalizedSource);
     if (sourcePattern) {
       set(normalizedResp, 'user_info.source.pattern', sourcePattern.toString());

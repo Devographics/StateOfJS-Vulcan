@@ -98,11 +98,11 @@ export const templates = {
     type: Number,
     randomize: false,
     options: [
-      { id: 0 },
-      { id: 1 },
-      { id: 2 },
-      { id: 3 },
-      { id: 4 },
+      { value: 0 },
+      { value: 1 },
+      { value: 2 },
+      { value: 3 },
+      { value: 4 },
     ]
   }),
   single: ({ allowother = false }) => ({
@@ -129,11 +129,11 @@ export const templates = {
     input: 'radiogroup',
     type: Number,
     options: [
-      { value: 0, intlId: 'options.opinions.disagree_strongly' },
-      { value: 1, intlId: 'options.opinions.disagree' },
-      { value: 2, intlId: 'options.opinions.neutral' },
-      { value: 3, intlId: 'options.opinions.agree' },
-      { value: 4, intlId: 'options.opinions.agree_strongly' },
+      { value: 0, intlId: 'options.opinions.0' },
+      { value: 1, intlId: 'options.opinions.1' },
+      { value: 2, intlId: 'options.opinions.2' },
+      { value: 3, intlId: 'options.opinions.3' },
+      { value: 4, intlId: 'options.opinions.4' },
     ],
   }),
   // statictext: () => ({}),
@@ -141,11 +141,11 @@ export const templates = {
     input: 'radiogroup',
     type: Number,
     options: [
-      { value: 0, intlId: 'options.happiness.very_unhappy' },
-      { value: 1, intlId: 'options.happiness.unhappy' },
-      { value: 2, intlId: 'options.happiness.neutral' },
-      { value: 3, intlId: 'options.happiness.happy' },
-      { value: 4, intlId: 'options.happiness.very_happy' },
+      { value: 0, intlId: 'options.happiness.0' },
+      { value: 1, intlId: 'options.happiness.1' },
+      { value: 2, intlId: 'options.happiness.2' },
+      { value: 3, intlId: 'options.happiness.3' },
+      { value: 4, intlId: 'options.happiness.4' },
     ],
   }),
   country: () => ({
@@ -155,11 +155,8 @@ export const templates = {
 };
 
 // build question object from outline
-export const getQuestionObject = (questionOrId, section, number) => {
-  let questionObject =
-    typeof questionOrId === 'string' ? { title: questionOrId } : { ...questionOrId };
+export const getQuestionObject = (questionObject, section, number) => {
 
-  questionObject.id = questionObject.id || makeId(questionObject.title);
   questionObject.slug = questionObject.id;
   questionObject.type = String; // default to String type
 
@@ -205,12 +202,12 @@ export const generateIntlId = (questionObject, section, survey) => {
   if (intlId) {
     return intlId;
   }
-  // survey namespaces are not currently supported
-  // const surveySegment = survey.namespace;
+  // survey contexts are not currently supported
+  // const surveySegment = survey.context;
   const surveySegment = '';
   // for section segment, use either intlPrefix, section slug or sectionSlug override on question
   const sectionSegment = intlPrefix || sectionSlug || section.slug;
-  const questionSegment = `.${id}`;
+  const questionSegment = `.${String(id)}`;
   // for now hardcode "others" as the only valid suffix
   const suffixSegment = suffix && suffix === 'others' ? '.others' : '';
   return [surveySegment, sectionSegment, questionSegment, suffixSegment].join('');

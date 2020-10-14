@@ -831,7 +831,7 @@ type Response {
   completion: Float 
   isSynced: Boolean 
   email: String 
-  namespace: String 
+  context: String 
   surveySlug: String 
   common__user_info__device: String 
   common__user_info__browser: String 
@@ -1001,53 +1001,22 @@ type Response {
   js2019__patterns__object_oriented_programming__experience: String 
   js2019__patterns__functional_programming__experience: String 
   js2019__patterns__reactive_programming__experience: String 
-  js2019__tools__typescript__experience: String 
-  js2019__tools__reason__experience: String 
-  js2019__tools__elm__experience: String 
-  js2019__tools__clojurescript__experience: String 
-  js2019__tools__purescript__experience: String 
+  js2019__tools__undefined__experience: String 
   js2019__tools_others__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
-  js2019__tools__react__experience: String 
-  js2019__tools__vue__experience: String 
-  js2019__tools__angular__experience: String 
-  js2019__tools__preact__experience: String 
-  js2019__tools__ember__experience: String 
-  js2019__tools__svelte__experience: String 
   js2019__tools_others__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
-  js2019__tools__redux__experience: String 
-  js2019__tools__apollo__experience: String 
-  js2019__tools__graphql__experience: String 
-  js2019__tools__mobx__experience: String 
-  js2019__tools__relay__experience: String 
   js2019__tools_others__datalayer__others: String 
   js2019__happiness__datalayer: Float 
-  js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
-  js2019__tools__koa__experience: String 
-  js2019__tools__meteor__experience: String 
-  js2019__tools__sails__experience: String 
   js2019__tools__feathers__experience: String 
   js2019__tools__nuxtjs__experience: String 
   js2019__tools__gatsby__experience: String 
-  js2019__tools__jest__experience: String 
-  js2019__tools__mocha__experience: String 
-  js2019__tools__storybook__experience: String 
-  js2019__tools__cypress__experience: String 
-  js2019__tools__enzyme__experience: String 
-  js2019__tools__ava__experience: String 
-  js2019__tools__jasmine__experience: String 
-  js2019__tools__puppeteer__experience: String 
   js2019__tools_others__testing__others: String 
   js2019__happiness__testing: Float 
-  js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
   js2019__tools__native_apps__experience: String 
-  js2019__tools__cordova__experience: String 
-  js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
-  js2019__tools__expo__experience: String 
   js2019__tools_others__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
@@ -1161,7 +1130,7 @@ input CreateResponseInput {
 input CreateResponseDataInput {
   year: Float 
   email: String 
-  namespace: String 
+  context: String 
   surveySlug: String 
   common__user_info__device: String 
   common__user_info__browser: String 
@@ -1331,53 +1300,22 @@ input CreateResponseDataInput {
   js2019__patterns__object_oriented_programming__experience: String 
   js2019__patterns__functional_programming__experience: String 
   js2019__patterns__reactive_programming__experience: String 
-  js2019__tools__typescript__experience: String 
-  js2019__tools__reason__experience: String 
-  js2019__tools__elm__experience: String 
-  js2019__tools__clojurescript__experience: String 
-  js2019__tools__purescript__experience: String 
+  js2019__tools__undefined__experience: String 
   js2019__tools_others__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
-  js2019__tools__react__experience: String 
-  js2019__tools__vue__experience: String 
-  js2019__tools__angular__experience: String 
-  js2019__tools__preact__experience: String 
-  js2019__tools__ember__experience: String 
-  js2019__tools__svelte__experience: String 
   js2019__tools_others__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
-  js2019__tools__redux__experience: String 
-  js2019__tools__apollo__experience: String 
-  js2019__tools__graphql__experience: String 
-  js2019__tools__mobx__experience: String 
-  js2019__tools__relay__experience: String 
   js2019__tools_others__datalayer__others: String 
   js2019__happiness__datalayer: Float 
-  js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
-  js2019__tools__koa__experience: String 
-  js2019__tools__meteor__experience: String 
-  js2019__tools__sails__experience: String 
   js2019__tools__feathers__experience: String 
   js2019__tools__nuxtjs__experience: String 
   js2019__tools__gatsby__experience: String 
-  js2019__tools__jest__experience: String 
-  js2019__tools__mocha__experience: String 
-  js2019__tools__storybook__experience: String 
-  js2019__tools__cypress__experience: String 
-  js2019__tools__enzyme__experience: String 
-  js2019__tools__ava__experience: String 
-  js2019__tools__jasmine__experience: String 
-  js2019__tools__puppeteer__experience: String 
   js2019__tools_others__testing__others: String 
   js2019__happiness__testing: Float 
-  js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
   js2019__tools__native_apps__experience: String 
-  js2019__tools__cordova__experience: String 
-  js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
-  js2019__tools__expo__experience: String 
   js2019__tools_others__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
@@ -1434,7 +1372,7 @@ input UpsertResponseInput{
 input UpdateResponseDataInput {
   year: Float 
   email: String 
-  namespace: String 
+  context: String 
   surveySlug: String 
   common__user_info__device: String 
   common__user_info__browser: String 
@@ -1604,53 +1542,22 @@ input UpdateResponseDataInput {
   js2019__patterns__object_oriented_programming__experience: String 
   js2019__patterns__functional_programming__experience: String 
   js2019__patterns__reactive_programming__experience: String 
-  js2019__tools__typescript__experience: String 
-  js2019__tools__reason__experience: String 
-  js2019__tools__elm__experience: String 
-  js2019__tools__clojurescript__experience: String 
-  js2019__tools__purescript__experience: String 
+  js2019__tools__undefined__experience: String 
   js2019__tools_others__javascript_flavors__others: String 
   js2019__happiness__javascript_flavors: Float 
-  js2019__tools__react__experience: String 
-  js2019__tools__vue__experience: String 
-  js2019__tools__angular__experience: String 
-  js2019__tools__preact__experience: String 
-  js2019__tools__ember__experience: String 
-  js2019__tools__svelte__experience: String 
   js2019__tools_others__front_end_frameworks__others: String 
   js2019__happiness__front_end_frameworks: Float 
-  js2019__tools__redux__experience: String 
-  js2019__tools__apollo__experience: String 
-  js2019__tools__graphql__experience: String 
-  js2019__tools__mobx__experience: String 
-  js2019__tools__relay__experience: String 
   js2019__tools_others__datalayer__others: String 
   js2019__happiness__datalayer: Float 
-  js2019__tools__express__experience: String 
   js2019__tools__nextjs__experience: String 
-  js2019__tools__koa__experience: String 
-  js2019__tools__meteor__experience: String 
-  js2019__tools__sails__experience: String 
   js2019__tools__feathers__experience: String 
   js2019__tools__nuxtjs__experience: String 
   js2019__tools__gatsby__experience: String 
-  js2019__tools__jest__experience: String 
-  js2019__tools__mocha__experience: String 
-  js2019__tools__storybook__experience: String 
-  js2019__tools__cypress__experience: String 
-  js2019__tools__enzyme__experience: String 
-  js2019__tools__ava__experience: String 
-  js2019__tools__jasmine__experience: String 
-  js2019__tools__puppeteer__experience: String 
   js2019__tools_others__testing__others: String 
   js2019__happiness__testing: Float 
-  js2019__tools__electron__experience: String 
   js2019__tools__react_native__experience: String 
   js2019__tools__native_apps__experience: String 
-  js2019__tools__cordova__experience: String 
-  js2019__tools__ionic__experience: String 
   js2019__tools__nwjs__experience: String 
-  js2019__tools__expo__experience: String 
   js2019__tools_others__mobile_desktop__others: String 
   js2019__happiness__mobile_desktop: Float 
   js2019__other_tools__utilities__choices: [String] 
@@ -1702,7 +1609,7 @@ input ResponseFilterInput {
   completion: Float_Selector
   isSynced: Boolean_Selector
   email: String_Selector
-  namespace: String_Selector
+  context: String_Selector
   surveySlug: String_Selector
   common__user_info__device: String_Selector
   common__user_info__browser: String_Selector
@@ -1872,53 +1779,22 @@ input ResponseFilterInput {
   js2019__patterns__object_oriented_programming__experience: String_Selector
   js2019__patterns__functional_programming__experience: String_Selector
   js2019__patterns__reactive_programming__experience: String_Selector
-  js2019__tools__typescript__experience: String_Selector
-  js2019__tools__reason__experience: String_Selector
-  js2019__tools__elm__experience: String_Selector
-  js2019__tools__clojurescript__experience: String_Selector
-  js2019__tools__purescript__experience: String_Selector
+  js2019__tools__undefined__experience: String_Selector
   js2019__tools_others__javascript_flavors__others: String_Selector
   js2019__happiness__javascript_flavors: Float_Selector
-  js2019__tools__react__experience: String_Selector
-  js2019__tools__vue__experience: String_Selector
-  js2019__tools__angular__experience: String_Selector
-  js2019__tools__preact__experience: String_Selector
-  js2019__tools__ember__experience: String_Selector
-  js2019__tools__svelte__experience: String_Selector
   js2019__tools_others__front_end_frameworks__others: String_Selector
   js2019__happiness__front_end_frameworks: Float_Selector
-  js2019__tools__redux__experience: String_Selector
-  js2019__tools__apollo__experience: String_Selector
-  js2019__tools__graphql__experience: String_Selector
-  js2019__tools__mobx__experience: String_Selector
-  js2019__tools__relay__experience: String_Selector
   js2019__tools_others__datalayer__others: String_Selector
   js2019__happiness__datalayer: Float_Selector
-  js2019__tools__express__experience: String_Selector
   js2019__tools__nextjs__experience: String_Selector
-  js2019__tools__koa__experience: String_Selector
-  js2019__tools__meteor__experience: String_Selector
-  js2019__tools__sails__experience: String_Selector
   js2019__tools__feathers__experience: String_Selector
   js2019__tools__nuxtjs__experience: String_Selector
   js2019__tools__gatsby__experience: String_Selector
-  js2019__tools__jest__experience: String_Selector
-  js2019__tools__mocha__experience: String_Selector
-  js2019__tools__storybook__experience: String_Selector
-  js2019__tools__cypress__experience: String_Selector
-  js2019__tools__enzyme__experience: String_Selector
-  js2019__tools__ava__experience: String_Selector
-  js2019__tools__jasmine__experience: String_Selector
-  js2019__tools__puppeteer__experience: String_Selector
   js2019__tools_others__testing__others: String_Selector
   js2019__happiness__testing: Float_Selector
-  js2019__tools__electron__experience: String_Selector
   js2019__tools__react_native__experience: String_Selector
   js2019__tools__native_apps__experience: String_Selector
-  js2019__tools__cordova__experience: String_Selector
-  js2019__tools__ionic__experience: String_Selector
   js2019__tools__nwjs__experience: String_Selector
-  js2019__tools__expo__experience: String_Selector
   js2019__tools_others__mobile_desktop__others: String_Selector
   js2019__happiness__mobile_desktop: Float_Selector
   js2019__other_tools__utilities__choices: String_Array_Selector
@@ -1965,7 +1841,7 @@ input ResponseSortInput {
   completion: SortOptions
   isSynced: SortOptions
   email: SortOptions
-  namespace: SortOptions
+  context: SortOptions
   surveySlug: SortOptions
   common__user_info__device: SortOptions
   common__user_info__browser: SortOptions
@@ -2135,53 +2011,22 @@ input ResponseSortInput {
   js2019__patterns__object_oriented_programming__experience: SortOptions
   js2019__patterns__functional_programming__experience: SortOptions
   js2019__patterns__reactive_programming__experience: SortOptions
-  js2019__tools__typescript__experience: SortOptions
-  js2019__tools__reason__experience: SortOptions
-  js2019__tools__elm__experience: SortOptions
-  js2019__tools__clojurescript__experience: SortOptions
-  js2019__tools__purescript__experience: SortOptions
+  js2019__tools__undefined__experience: SortOptions
   js2019__tools_others__javascript_flavors__others: SortOptions
   js2019__happiness__javascript_flavors: SortOptions
-  js2019__tools__react__experience: SortOptions
-  js2019__tools__vue__experience: SortOptions
-  js2019__tools__angular__experience: SortOptions
-  js2019__tools__preact__experience: SortOptions
-  js2019__tools__ember__experience: SortOptions
-  js2019__tools__svelte__experience: SortOptions
   js2019__tools_others__front_end_frameworks__others: SortOptions
   js2019__happiness__front_end_frameworks: SortOptions
-  js2019__tools__redux__experience: SortOptions
-  js2019__tools__apollo__experience: SortOptions
-  js2019__tools__graphql__experience: SortOptions
-  js2019__tools__mobx__experience: SortOptions
-  js2019__tools__relay__experience: SortOptions
   js2019__tools_others__datalayer__others: SortOptions
   js2019__happiness__datalayer: SortOptions
-  js2019__tools__express__experience: SortOptions
   js2019__tools__nextjs__experience: SortOptions
-  js2019__tools__koa__experience: SortOptions
-  js2019__tools__meteor__experience: SortOptions
-  js2019__tools__sails__experience: SortOptions
   js2019__tools__feathers__experience: SortOptions
   js2019__tools__nuxtjs__experience: SortOptions
   js2019__tools__gatsby__experience: SortOptions
-  js2019__tools__jest__experience: SortOptions
-  js2019__tools__mocha__experience: SortOptions
-  js2019__tools__storybook__experience: SortOptions
-  js2019__tools__cypress__experience: SortOptions
-  js2019__tools__enzyme__experience: SortOptions
-  js2019__tools__ava__experience: SortOptions
-  js2019__tools__jasmine__experience: SortOptions
-  js2019__tools__puppeteer__experience: SortOptions
   js2019__tools_others__testing__others: SortOptions
   js2019__happiness__testing: SortOptions
-  js2019__tools__electron__experience: SortOptions
   js2019__tools__react_native__experience: SortOptions
   js2019__tools__native_apps__experience: SortOptions
-  js2019__tools__cordova__experience: SortOptions
-  js2019__tools__ionic__experience: SortOptions
   js2019__tools__nwjs__experience: SortOptions
-  js2019__tools__expo__experience: SortOptions
   js2019__tools_others__mobile_desktop__others: SortOptions
   js2019__happiness__mobile_desktop: SortOptions
   js2019__other_tools__utilities__choices: SortOptions

@@ -2,7 +2,7 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "js2019",
-  "namespace": "js",
+  "context": "state_of_js",
   "topic": "JavaScript",
   "createdAt": "December 1, 2019",
   "prettySlug": "state-of-js",

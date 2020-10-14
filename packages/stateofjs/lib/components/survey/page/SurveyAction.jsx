@@ -24,13 +24,13 @@ const SurveyAction = ({ survey, currentUser }) => {
   const history = useHistory();
   const [errors, setErrors] = useState();
 
-  const { slug, status, namespace } = survey;
+  const { slug, status, context } = survey;
   const currentSurveyResponse = currentUser && currentUser.responses.find((r) => r.surveySlug === slug);
 
   // prefilled data
   let data = {
     surveySlug: slug,
-    namespace,
+    context,
     email: currentUser && currentUser.email,
   };
 

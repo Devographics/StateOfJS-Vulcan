@@ -116,17 +116,17 @@ export const normalizeResponseSource = (response) => {
   );
   if (isValidNormalization(normalizedSource, sourceNormalizationRules)) {
     // if response has explicitly passed source, use that
-    return [normalizedSource, sourcePattern];
+    return [normalizedSource, sourcePattern, response.user_info.source];
   } else if (
     isValidNormalization(normalizedFindOut, sourceNormalizationRules)
   ) {
     // else if freeform 'how did you hear…' can be normalized, use that
-    return [normalizedFindOut, findOutPattern];
+    return [normalizedFindOut, findOutPattern, response.user_info.how_did_user_find_out_about_the_survey];
   } else if (
     isValidNormalization(normalizedReferrer, sourceNormalizationRules)
   ) {
     // else try to normalize referrer
-    return [normalizedReferrer, referrerPattern];
+    return [normalizedReferrer, referrerPattern, response.user_info.referrer];
   } else {
     // else leave field empty
     return [];

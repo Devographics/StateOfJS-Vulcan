@@ -9,7 +9,7 @@ TODO
 - Refactor to make DRYer
 
 */
-import React, { useState } from 'react';
+import React, { useState, useRef, useImperativeHandle } from 'react';
 import { getThanksPath } from '../../../modules/responses/helpers.js';
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import { Components } from 'meteor/vulcan:core';
@@ -28,6 +28,7 @@ const FormSubmit = ({
   variant = 'bottom',
   readOnly,
 }) => {
+  const buttonRef = useRef();
   const history = useHistory();
   const [prevLoading, setPrevLoading] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
@@ -40,6 +41,7 @@ const FormSubmit = ({
             loading={nextLoading}
             type="submit"
             variant="primary"
+            inputRef={buttonRef}
             onClick={async (e) => {
               e.preventDefault();
               setNextLoading(true);

@@ -78,7 +78,7 @@ const schema = {
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
-  namespace: {
+  context: {
     type: String,
     optional: true,
     canRead: ['members'],
