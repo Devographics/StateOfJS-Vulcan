@@ -157,7 +157,7 @@ outline:
         options:
           - id: descendant
           - id: child
-          - id: next_subling
+          - id: next_sibling
           - id: subsequent_sibling
 
       - id: tree_document_structure
@@ -419,7 +419,7 @@ outline:
           - id: samsung_internet
           - id: vivaldi
           - id: brave
-          - id: ub_browser
+          - id: uc_browser
           - id: opera
           - id: polypane
       - id: browsers
