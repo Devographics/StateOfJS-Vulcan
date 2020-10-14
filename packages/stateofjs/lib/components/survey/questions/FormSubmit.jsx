@@ -9,7 +9,7 @@ TODO
 - Refactor to make DRYer
 
 */
-import React, { useState, useRef, useImperativeHandle } from 'react';
+import React, { useState, useRef } from 'react';
 import { getThanksPath } from '../../../modules/responses/helpers.js';
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import { Components } from 'meteor/vulcan:core';

@@ -26,7 +26,7 @@ const routes = [
 { name: 'privacypolicy', path: '/privacy-policy', component: PrivacyPolicy },
 
 { name: 'surveyPage', path: '/survey/:slug/:year/', component: SurveyPage },
-{ name: 'thanks', path: '/survey/:slug/:year/thanks/', component: Thanks },
+{ name: 'thanks', path: '/survey/:slug/:year/:responseId/thanks/', component: Thanks },
 // { name: 'responsePageReadOnly', path: '/survey/:slug/:year/read-only/:sectionNumber?', component: SurveySectionSwitcher },
 { name: 'responsePage', path: '/survey/:slug/:year/:responseId/:sectionNumber?', component: SurveySectionSwitcher },
 // { name: 'mainSurveyPage', path: '/survey/:slug/', component: SurveyLandingPage },

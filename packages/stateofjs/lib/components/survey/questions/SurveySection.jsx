@@ -16,7 +16,7 @@ import SurveySectionContents from './SurveySectionContents.jsx';
 import SurveyHeadTags from '../SurveyHeadTags';
 
 const SurveySection = () => {
-  let { responseId, sectionNumber = 0 } = useParams();
+  let { responseId, sectionNumber = 1 } = useParams();
   sectionNumber = parseInt(sectionNumber);
 
   const history = useHistory();
@@ -31,9 +31,10 @@ const SurveySection = () => {
   }
   const survey = surveys.find((s) => s.slug === response.survey.slug);
   const surveyOutline = survey.outline;
-  const section = surveyOutline[sectionNumber];
-  const previousSection = surveyOutline[sectionNumber - 1];
-  const nextSection = surveyOutline[sectionNumber + 1];
+  const sectionIndex = sectionNumber - 1;
+  const section = surveyOutline[sectionIndex];
+  const previousSection = surveyOutline[sectionIndex - 1];
+  const nextSection = surveyOutline[sectionIndex + 1];
   const sectionProps = {
     sectionNumber,
     section,

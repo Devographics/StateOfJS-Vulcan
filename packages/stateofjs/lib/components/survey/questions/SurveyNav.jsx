@@ -96,7 +96,7 @@ const SurveyNav = ({ survey, response }) => {
                 setShown={setShown}
                 response={response}
                 section={section}
-                number={i}
+                number={i+1}
                 key={i}
                 currentTabindex={currentTabindex}
                 setCurrentTabindex={setCurrentTabindex}

@@ -48,7 +48,7 @@ export const getQuestionFieldName = (survey, section, question) =>{
 
 export const getThanksPath = (response) =>{
   const { name, year } = getSurveyFromResponse(response);
-  const path = `/survey/${Utils.slugify(name)}/${year}/thanks`;
+  const path = `/survey/${Utils.slugify(name)}/${year}/${response._id}/thanks`;
   return path;
 }
 

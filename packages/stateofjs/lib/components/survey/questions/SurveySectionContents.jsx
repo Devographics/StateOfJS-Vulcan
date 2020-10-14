@@ -72,7 +72,7 @@ const SurveySectionContents = ({
         itemProperties={{
           layout: 'vertical',
         }}
-        warnUnsavedChanges={true}
+        warnUnsavedChanges={false}
         disabled={readOnly || survey.status !== statuses.open}
         components={{
           FormLayout,
