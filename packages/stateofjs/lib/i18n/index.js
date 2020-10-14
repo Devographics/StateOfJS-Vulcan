@@ -2,9 +2,19 @@
 // import { default as enCSS } from './state-of-css/js/en-US.js';
 // import { default as enJS } from './state-of-js/js/en-US.js';
 
+<<<<<<< HEAD
 // import { default as itCommon } from './common/js/it-IT.js';
 // import { default as itCSS } from './state-of-css/js/it-IT.js';
 // import { default as itJS } from './state-of-js/js/it-IT.js';
+=======
+import { default as esCommon } from './common/js/es-ES.js';
+import { default as esCSS } from './state-of-css/js/es-ES.js';
+import { default as esJS } from './state-of-js/js/es-ES.js';
+
+import { default as itCommon } from './common/js/it-IT.js';
+import { default as itCSS } from './state-of-css/js/it-IT.js';
+import { default as itJS } from './state-of-js/js/it-IT.js';
+>>>>>>> 73448462390535a3ce067bd73ca7908dfb563434
 
 // import { default as zhCommon } from './common/js/zh-Hans.js';
 // import { default as zhCSS } from './state-of-css/js/zh-Hans.js';
@@ -49,7 +59,7 @@
 //   },
 //   {
 //     id: 'fr-FR',
-//     label: 'Français',
+//     label: 'Fran çais',
 //     stringFiles: [frCommon, frCSS],
 //     translators: ['arnauddrain']
 //   },

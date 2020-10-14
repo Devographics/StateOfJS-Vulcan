@@ -1,4 +1,4 @@
-locale: en-US
+locale: es-ES
 translations:
   
   ###########################################################################
@@ -7,90 +7,90 @@ translations:
 
   # homepage
   - key: general.why_create_account
-    t: Why do I need to create an account?
+    t: ¿Por qué necesito crear una cuenta?
   - key: general.create_account_reasons
     t: >
-      We ask you to create an account in order to:
+      Te pedimos que crees una cuenta para:
 
-      - Avoid duplicate responses
+      - Evitar respuestas duplicadas
 
-      - Give you access to your data
+      - Darte acceso a tu información
       
-      - Save your session as you go
+      - Salvar tu sesión según avanzas
       
-      - Notify you when results are live
+      - Notificarte cuando tengamos los resultados
   - key: general.survey_closed
     t: >
-      Sorry, the survey is now closed! You can still review your data but you won't be able to modify it.
+      ¡Lo sentimos, la encuesta ha finalizado! Aún puedes revisar tu información, pero no puedes modificarla.
   - key: general.survey_read_only
     t: >
-      You are currently viewing this survey in read-only mode. 
+      Actualmente estás viendo esta encuesta en modo de sólo lectura.
   - key: general.survey_read_only_back
     t: >
-      <a href="{link}">Go back</a> to the main survey page to start or resume a session.
+      <a href="{link}">Volver</a> a la página principal para continuar con la encuesta o empezarla.
 
   # surveys
   - key: general.open_surveys
-    t: Open Surveys
+    t: Abrir Encuestas
   - key: general.no_open_surveys
-    t: No surveys are currently open.
+    t: No hay encuestas abiertas actualmente.
   - key: general.closed_surveys
-    t: Closed Surveys
+    t: Encuestas Cerradas
   - key: general.start_survey
-    t: Start Survey »
+    t: Empezar Encuesta »
   - key: general.continue_survey
-    t: Continue Survey »
+    t: Continuar Encuesta »
   - key: general.review_survey
-    t: Review Survey »
+    t: Repasar Encuesta »
   - key: general.preview_survey
-    t: Preview Survey »
+    t: Vista Previa de la Encuesta »
   - key: general.finish_survey
-    t: Finish Survey »
+    t: Terminar Encuesta »
   - key: general.survey_closed
-    t: This survey is now closed.
+    t: Esta encuesta está cerrada.
   - key: general.survey_results
-    t: View Survey Results »
+    t: Ver Resultados de la Encuesta »
   - key: general.surveys_available_languages
-    t: "Surveys available in:"
+    t: "Encuestas disponibles en:"
   - key: general.help_us_translate
-    t: Help us translate the surveys »
+    t: Ayúdanos a traducir las encuestas »
 
   # footer
   - key: general.privacy_policy
-    t: Privacy Policy
+    t: Política de Privacidad
   - key: general.leave_issue
-    t: Questions? Found a bug? <a href="{link}" target="_blank">Leave an issue</a>.
+    t: ¿Preguntas? ¿Has encontrado un fallo? <a href="{link}" target="_blank">Déjanos lo que has encontrado</a>.
   - key: general.emoji_icons
-    t: Emoji icons by <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>
+    t: Emojis por <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>
     
   # navigation
   - key: general.table_of_contents
-    t: Table of Contents
+    t: Tabla de Contenidos
   - key: general.all_questions_optional
     t: >
-      Note: all questions are optional, reaching 100% completion is not required.
+      Nota: todas las preguntas son opcionales, así que no necesitas responderlas todas.
   - key: general.data_is_saved
-    t: Your data is saved whenever you navigate to the previous or next section.
+    t: Salvamos tus respuestas cada vez que navegas entre secciones.
   
   # thanks
   - key: general.back
-    t: Back
+    t: Volver
   - key: general.thanks
     t: >
-      Thanks for filling out the survey!
+      ¡Gracias por rellenar la encuesta!
       
-      Your data is saved. You can review or modify it until the survey closes.
+      Tu información está salvada. Puedes revisarla o modificarla hasta que la encuesta esté cerrada.
 
-      Also, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even
-      more representative:
+      También puedes ayudarnos a llegar a todo el mundo compartiendo esta encuesta. Todo ayuda es poca, y así podremos hacer
+      los datos recibidos más representativos:
 
   # share
   - key: general.share_subject
     t: >
-      {surveyName} survey
+      Encuesta {surveyName}
   - key: general.share_text
     t: >
-      This year's {surveyName} survey is now open! {link}
+      ¡La encuesta {surveyName} de este año, está abierta! {link}
 
   
   ###########################################################################
@@ -98,62 +98,62 @@ translations:
   ###########################################################################
   
   - key: nav.surveys
-    t: Surveys
+    t: Encuestas
   - key: nav.account
-    t: Account
+    t: Cuenta
 
   ###########################################################################
   # Accounts
   ###########################################################################
 
   - key: accounts.sign_up
-    t: Sign Up
+    t: Registrarse
   - key: accounts.sign_in
-    t: Log In
+    t: Entrar
   - key: accounts.sign_out
-    t: Sign Out
+    t: Salir
   - key: accounts.cancel
-    t: Cancel
+    t: Cancelar
   - key: accounts.email
-    t: Email
+    t: Correo Electrónico
   - key: accounts.enter_email
-    t: Enter Email
+    t: Introduce tu Correo Electrónico
 
   - key: accounts.please_pick_password
-    t: Please pick a new password to continue.
+    t: Por favor, elige una nueva contraseña para continuar.
   - key: accounts.please_log_in
-    t: Please log in or sign up to begin.
+    t: Por favor, regístrate o entra para continuar.
   - key: accounts.logged_in_as
-    t: Logged in as {email}
+    t: Registrado como {email}
   - key: accounts.questions
     t: >
-      If you have any questions about how we use your data, or would like
-      us to remove your data from our records,
-      please <a href="mailto:hello@stateofjs.com">get in touch</a>.
+      Si tienes alguna pregunta sobre como usamos tus datos, o te gustaría
+      que los eliminásemos de nuestros registros,
+      por favor, <a href="mailto:hello@stateofjs.com">mándanos un email</a>.
       
   ###########################################################################
   # Sections
   ###########################################################################
 
   - key: sections.user_info.title
-    t: About You
+    t: Sobre Tí
   - key: sections.user_info.description
-    t: Let's get to know the real you.
+    t: Déjanos conocer a tu verdadero yo.
 
   - key: sections.resources.title
-    t: Resources
+    t: Recursos
   - key: sections.resources.description
-    t: What {topic} resources do you consult?
+    t: ¿Qué recursos consultas en relación a {topic}?
 
   - key: sections.opinions.title
-    t: Opinions
+    t: Opiniones
   - key: sections.opinions.description
-    t: How do you feel about the state of {topic}?
+    t: ¿Qué opinas sobre el estado de {topic}?
 
   - key: sections.other_tools.title
-    t: Other Tools
+    t: Otras Herramientas
   - key: sections.other_tools.description
-    t: For these tools & technologies, just check the ones that you use regularly.
+    t: De estas herramientas y tecnologías, marca las que uses habitualmente.
 
   ###########################################################################
   # Options
@@ -161,93 +161,93 @@ translations:
 
   # features
   - key: options.features.never_heard
-    t: 🤷 Never heard of it/Not sure what it is
+    t: 🤷 Nunca he oído hablar de ello/No estoy seguro de lo que es
   - key: options.features.heard
-    t: ✅ Know what it is, but haven't used it
+    t: ✅ Sé lo que es, pero nunca lo he usado
   - key: options.features.used
-    t: 👍 I've used it
+    t: 👍 Lo he usado
 
   # features (short versions)
   - key: options.features.never_heard.short
-    t: Never heard of it
+    t: Nunca he oído hablar de ello
   - key: options.features.heard.short
-    t: Know about it
+    t: Lo conozco
   - key: options.features.used.short
-    t: Have used it
+    t: Lo he usado
 
   # patterns
   - key: options.patterns.use_never
-    t: Almost always avoid
+    t: Casi siempre lo evito
   - key: options.patterns.use_sparingly
-    t: Use sparingly
+    t: Raramente lo uso
   - key: optionspatterns..use_neutral
     t: Neutral
   - key: options.patterns.use_frequently
-    t: Use frequently
+    t: Lo uso con frecuencia
   - key: options.patterns.use_always
-    t: Use as much as I can
+    t: Lo uso todo lo que puedo
 
   # tools experience
   - key: options.tools.never_heard
-    t: 🤷 Never heard of it/Not sure what it is
+    t: 🤷 Nunca he oído hablar de ello/No estoy seguro de lo que es
   - key: options.tools.interested
-    t: ✅ Heard of it > Would like to learn
+    t: ✅ He oído hablar de ello > Quiero aprenderlo
   - key: options.tools.not_interested
-    t: 🚫 Heard of it > Not interested
+    t: 🚫 He oído hablar de ello > No estoy interesado
   - key: options.tools.would_use
-    t: 👍 Used it > Would use again
+    t: 👍 Lo uso > Lo volvería a usar
   - key: options.tools.would_not_use
-    t: 👎 Used it > Would not use again
+    t: 👎 Lo uso > No lo volvería a usar
 
   # tools experience (short versions)
   - key: options.tools.never_heard.short
-    t: Never heard
+    t: Nunca lo he oído
   - key: options.tools.interested.short
-    t: Interested
+    t: Interesado
   - key: options.tools.not_interested.short
-    t: Not interested
+    t: No estoy interesado
   - key: options.tools.would_use.short
-    t: Would use again
+    t: Lo volvería a usar
   - key: options.tools.would_not_use.short
-    t: Would not use
+    t: No lo usaría
   
   # happiness
   - key: options.happiness.very_unhappy
-    t: Very Unhappy
+    t: Muy Descontento
   - key: options.happiness.unhappy
-    t: Unhappy
+    t: Descontento
   - key: options.happiness.neutral
     t: Neutral
   - key: options.happiness.happy
-    t: Happy
+    t: Contento
   - key: options.happiness.very_happy
-    t: Very Happy
+    t: Muy Contento
 
   # opinions
   - key: options.opinions.disagree_strongly
-    t: Disagree Strongly
+    t: Estoy Fuertemente en Desacuerdo
   - key: options.opinions.disagree
-    t: Disagree
+    t: Estoy en Desacuerdo
   - key: options.opinions.neutral
     t: Neutral
   - key: options.opinions.agree
-    t: Agree
+    t: Estoy de Acuerdo
   - key: options.opinions.agree_strongly
-    t: Agree Strongly
-    
+    t: Estoy Fuertemente de Acuerdo
+
   # years of experience
   - key: options.years_of_experience.range_less_than_1
-    t: Less than one year
+    t: Menos de un Año
   - key: options.years_of_experience.range_1_2
-    t: 1 to 2 years
+    t: De 1 a 2 años
   - key: options.years_of_experience.range_2_5
-    t: 2 to 5 years
+    t: De 2 a 5 años
   - key: options.years_of_experience.range_5_10
-    t: 5 to 10 years
+    t: De 5 a 10 años
   - key: options.years_of_experience.range_10_20
-    t: 10 to 20 years
+    t: De 10 a 20 años
   - key: options.years_of_experience.range_more_than_20
-    t: More than 20 years
+    t: Más de 20 años
 
   # years of experience (short versions)
   - key: options.years_of_experience.range_less_than_1.short
@@ -265,21 +265,21 @@ translations:
 
   # company size
   - key: options.company_size.range_1
-    t: One employee
+    t: Un empleado
   - key: options.company_size.range_1_5
-    t: 1 to 5 employees
+    t: De 1 a 5 empleados
   - key: options.company_size.range_5_10
-    t: 5 to 10 employees
+    t: De 5 a 10 empleados
   - key: options.company_size.range_10_20
-    t: 10 to 20 employees
+    t: De 10 a 20 empleados
   - key: options.company_size.range_20_50
-    t: 20 to 50 employees
+    t: De 20 a 50 empleados
   - key: options.company_size.range_50_100
-    t: 50 to 100 employees
+    t: De 50 a 100 empleados
   - key: options.company_size.range_100_1000
-    t: 100 to 1000 employees
+    t: De 100 a 1000 empleados
   - key: options.company_size.range_more_than_1000
-    t: More than 1000 employees
+    t: Más de 1000 empleados
 
   # company size (short versions)
   - key: options.company_size.range_1.short
@@ -301,7 +301,7 @@ translations:
 
   # salary
   - key: options.yearly_salary.range_work_for_free
-    t: I work for free
+    t: Trabajo por la cara
   - key: options.yearly_salary.range_0_10
     t: $0k-$10k
   - key: options.yearly_salary.range_10_30
@@ -313,7 +313,7 @@ translations:
   - key: options.yearly_salary.range_100_200
     t: $100k-$200k
   - key: options.yearly_salary.range_more_than_200
-    t: more than $200k
+    t: más de $200k
 
   # salary (short versions)
   - key: options.yearly_salary.range_work_for_free.short
@@ -335,119 +335,123 @@ translations:
   - key: options.job_title.cto
     t: CTO
   - key: options.job_title.front_end_developer
-    t: Front End Developer/Engineer
+    t: Desarrollador o Ingeniero de Front
   - key: options.job_title.back_end_developer
-    t: Back End Developer/Engineer
+    t: Desarrollador o Ingeniero de Back
   - key: options.job_title.full_stack_developer
-    t: Full Stack Developer/Engineer
+    t: Desarrollador o Ingeniero Full Stack
   - key: options.job_title.web_developer
-    t: Web Developer
+    t: Desarrollador Web
   - key: options.job_title.web_designer
-    t: Web Designer
+    t: Diseñador Web
   - key: options.job_title.ux_designer
-    t: UX Designer
+    t: Diseñador UX
   - key: options.job_title.ui_designer
-    t: UI Designer
+    t: Diseñador UI
   - key: options.job_title.back_end_dev
-    t: Back-end Developer/Engineer
+    t: Desarrollador o Ingeniero de Back
 
   # JavaScript proficiency
 
   - key: options.javascript_proficiency.0
-    t: Not able to write any JavaScript
+    t: No soy capaz de escribir JavaScript
   - key: options.javascript_proficiency.1
-    t: Writing short, simple JavaScript or jQuery statements
+    t: Escribo código sencillo en JavaScript o jQuery
   - key: options.javascript_proficiency.2
-    t: Working on existing front-end codebases using modern frameworks (React, Vue, etc.)
+    t: Trabajo en proyectos existentes de front usando frameworks modernos (React, Vue, etc.)
   - key: options.javascript_proficiency.3
-    t: Architecturing entire front-end codebases from scratch
+    t: Creo proyectos completos desde cero
   - key: options.javascript_proficiency.4
-    t: Handling advanced front-end patterns (state management, data loading, etc.)
+    t: Manejo patrones complejos en el front (manejo de estado, carga de datos, etc.)
 
   # CSS proficiency
 
   - key: options.css_proficiency.0
-    t: Virtually no knowledge of CSS
+    t: No tengo ningún conocimiento de CSS
   - key: options.css_proficiency.1
-    t: Using CSS frameworks and tweaking existing styles
+    t: Uso CSS frameworks y modifico estilos existentes
   - key: options.css_proficiency.2
-    t: Knowing specificity rules, being able to create layouts
+    t: Conozco las reglas de especificidad, y soy capaz de crear layouts
   - key: options.css_proficiency.3
-    t: Mastering animations, interactions, transitions, etc.
+    t: Domino las animaciones, interacciones, transiciones, etc.
   - key: options.css_proficiency.4
-    t: Able to style an entire front-end from scratch following a consistent methodology
+    t: Soy capaz de dar estilos desde cero a un proyecto siguiendo metodologías consistentes
 
   # Back-end proficiency
 
   - key: options.backend_proficiency.0
-    t: Not able to handle any back-end work
+    t: No soy capaz de hacer nada en el backend.
   - key: options.backend_proficiency.1
-    t: Able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)
+    t: Soy capaz de montar CMSs (WordPress, etc.) o usar generadores de páginas estáticas (Jekyll, etc.)
   - key: options.backend_proficiency.2
-    t: Able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)
+    t: Soy capaz de desarrollar aplicaciones usando frameworks existentes (Rails, Laravel, etc.)
   - key: options.backend_proficiency.3
-    t: Setting up an entire back-end from scratch (Go, Node, etc.)
+    t: Soy capaz de montar un backend desde cero (Go, Node, etc.)
   - key: options.backend_proficiency.4
-    t: Able to handle complex multi-server or microservices architectures
+    t: Soy capaz de manejar arquitecturas complejas con multi-servicios o micro-servicios
 
   # Proficiency (generic versions)
   - key: options.proficiency.0
-    t: None
+    t: Ninguna
   - key: options.proficiency.1
-    t: Beginner
+    t: Principiante
   - key: options.proficiency.2
-    t: Intermediate
+    t: Intermedio
   - key: options.proficiency.3
-    t: Advanced
+    t: Avanzado
   - key: options.proficiency.4
-    t: Expert
+    t: Experto
 
   # Gender
 
   - key: options.gender.female
-    t: Female
+    t: Mujer
   - key: options.gender.male
-    t: Male
+    t: Hombre
   - key: options.gender.non_binary
-    t: Non-Binary/Third Gender
+    t: No-Binario/Tercer Género
   - key: options.gender.prefer_not_to_say
-    t: Prefer not to say
+    t: Prefiero no decirlo
 
-  # Race & Ethnicity
+  # Skin Tone
 
-  - key: options.race_ethnicity.white_european
-    t: White or of European descent
-  - key: options.race_ethnicity.south_asian
-    t: South Asian
-  - key: options.race_ethnicity.hispanic_latin
-    t: Hispanic or Latino/Latina
-  - key: options.race_ethnicity.east_asian
-    t: East Asian
-  - key: options.race_ethnicity.middle_eastern
-    t: Middle Eastern
-  - key: options.race_ethnicity.black_african
-    t: Black or of African descent
-  - key: options.race_ethnicity.multiracial
-    t: Multiracial
-  - key: options.race_ethnicity.biracial
-    t: Biracial
-  - key: options.race_ethnicity.native_american_islander_australian
-    t: Native American, Pacific Islander, or Indigenous Australian
+  - key: options.skin_tone.0
+    t: 🧑🏻‍🦲
+  - key: options.skin_tone.1
+    t: 🧑🏼‍🦲
+  - key: options.skin_tone.2
+    t: 🧑🏽‍🦲
+  - key: options.skin_tone.3
+    t: 🧑🏾‍🦲
+  - key: options.skin_tone.4
+    t: 🧑🏿‍🦲
+
+  # image fallback
+  - key: options.skin_tone.0
+    t: <img src="/emojis/icons8-bald-man-light-skin-tone-100.png" alt="Emoji de piel clara"/>
+  - key: options.skin_tone.1
+    t: <img src="/emojis/icons8-bald-man-medium-light-skin-tone-100.png" alt="Emoji de piel medio clara"/>
+  - key: options.skin_tone.2
+    t: <img src="/emojis/icons8-bald-man-medium-skin-tone-100.png" alt="Emoji de piel media"/>
+  - key: options.skin_tone.3
+    t: <img src="/emojis/icons8-bald-man-medium-dark-skin-tone-100.png" alt="Emoji de piel medio oscura"/>
+  - key: options.skin_tone.4
+    t: <img src="/emojis/icons8-bald-man-dark-skin-tone-100.png" alt="Emoji de piel oscura"/>
 
   ###########################################################################
   # Tools
   ###########################################################################
 
   - key: tools.other_tools
-    t: Other Options
+    t: Otras Opciones
   - key: tools.other_tools.description
-    t: Other options you use for the current section not mentioned in the list above
+    t: Otras opciones que uses en esta sección y que no hayamos mencionado
   - key: tools.happiness
-    t: Overall Happiness
+    t: Satisfacción General
   - key: tools.happiness.description
     t: >
-      On a scale of one (very unhappy) to five (very happy), how happy are
-      you with the current overall state of things as it relates to the options listed above?
+      En una escala de uno (muy insatisfecho) a cinco (muy satisfecho), ¿cómo de satisfecho estás
+      con el estado general de las cosas relacionadas con las opciones expuestas anteriormente?
 
   ###########################################################################
   # Demographics (About You/User Info)
@@ -455,112 +459,120 @@ translations:
 
   # years of experience
   - key: user_info.years_of_experience
-    t: Years of Experience
+    t: Años de Experiencia
   - key: user_info.years_of_experience.description
-    t: How long you've been working or studying in this field.
+    t: ¿Cuánto tiempo llevas trabajando o estudiando en este campo?
 
   # company size
   - key: user_info.company_size
-    t: Company Size
+    t: Tamaño de tu Empresa
   - key: user_info.company_size.description
-    t: How big your company is.
+    t: ¿Cómo es tu empresa de grande?
 
   # salary ranges
   - key: user_info.yearly_salary
-    t: Yearly Salary
+    t: Sueldo Anual
   - key: user_info.yearly_salary.description
-    t: In USD.
+    t: En USD.
 
   # job title
   - key: user_info.job_title
-    t: Job Title
+    t: Título Laboral
   - key: user_info.job_title.description
-    t: How do you introduce yourself at parties?
+    t: ¿Cómo te presentas a ti mismo en las fiestas?
 
   # javascript proficiency
 
   - key: user_info.javascript_proficiency
-    t: JavaScript Proficiency
+    t: Competencia con JavaScript
   - key: user_info.javascript_proficiency.description
-    t: How proficient are you at JavaScript?
+    t: ¿Cómo de competente eres con JavaScript?
 
   # css proficiency
 
   - key: user_info.css_proficiency
-    t: CSS Proficiency
+    t: Competencia con CSS
   - key: user_info.css_proficiency.description
-    t: How proficient are you at CSS?
+    t: ¿Cómo de competente eres con CSS?
 
   # backend proficiency
   - key: user_info.backend_proficiency
-    t: Back-end Proficiency
+    t: Competencia en el Backend
   - key: user_info.backend_proficiency.description
-    t: How proficient are you at back-end development?
+    t: ¿Cómo de competente eres en el backend?
 
   # gender
   - key: user_info.gender
-    t: Gender
+    t: Género
 
   # skin tone/appearance
-  - key: user_info.race_ethnicity
-    t: Race & Ethnicity
+  - key: user_info.skin_tone
+    t: Apariencia
+  - key: user_info.skin_tone.description
+    t: >
+        ¿Qué emoji crees que te representa mejor? <br/><br/>
+
+        Nota: Estamos experimentando con un nuevo formato de preguntas para
+        probar a capturar mejor la diversidad racial de nuestros encuestados. 
+        <a href="https://github.com/StateOfJS/StateOfCSS-2020/issues/5" target="_blank">Déjanos tus comentarios</a>
+        en GitHub.
 
   # other info
   - key: user_info.how_did_user_find_out_about_the_survey
-    t: How did you find out about this survey?
+    t: ¿Cómo has conocido esta encuesta?
   - key: user_info.email
-    t: Your Email
+    t: Tu Correo Electrónico
   - key: user_info.country
-    t: Your Country
+    t: Tu País
 
   ###########################################################################
   # Other Tools
   ###########################################################################
 
-  - key: tools_other.text_editors
-    t: Text Editors
-  - key: tools_other.text_editors.description
-    t: Which text editor(s) do you regularly use?
-  - key: tools_other.text_editors.others
-    t: Other Text Editors
-  - key: tools_other.text_editors.others.description
-    t: Other answers (freeform field).
+  - key: other_tools.text_editors
+    t: Editores de Texto
+  - key: other_tools.text_editors.description
+    t: ¿Qué editor(es) de texto usas habitualmente?
+  - key: other_tools.text_editors.others
+    t: Otros Editores de Texto
+  - key: other_tools.text_editors.others.description
+    t: Otras respuestas (campo de texto libre).
 
-  - key: tools_other.utilities
-    t: Utilities
-  - key: tools_other.utilities.description
-    t: Which utility libraries do you regularly use?
-  - key: tools_other.utilities.others
-    t: Other Utilities
-  - key: tools_other.utilities.others.description
-    t: Other answers (freeform field).
+  - key: other_tools.utilities
+    t: Utilidades
+  - key: other_tools.utilities.description
+    t: ¿Qué librerías de utilidades usas habitualmente?
+  - key: other_tools.utilities.others
+    t: Otras Utilidades
+  - key: other_tools.utilities.others.description
+    t: Otras respuestas (campo de texto libre).
 
-  - key: tools_other.browsers
-    t: Browsers
-  - key: tools_other.browsers.description
-    t: Which browser(s) do you primarily work in during initial development?
-  - key: tools_other.browsers.others
-    t: Other Browsers
-  - key: tools_other.browsers.others.description
-    t: Other answers (freeform field).
+  - key: other_tools.browsers
+    t: Navegadores
+  - key: other_tools.browsers.description
+    t: ¿Con qué navegador(es) trabajas principalmente durante el desarrollo inicial?
+  - key: other_tools.browsers.others
+    t: Otros Navegadores
+  - key: other_tools.browsers.others.description
+    t: Otras respuestas (campo de texto libre).
 
-  - key: tools_other.build_tools
-    t: Build Tools
-  - key: tools_other.build_tools.description
-    t: Which build tools do you use?
-  - key: tools_other.build_tools.others
-    t: Other Build Tools
-  - key: tools_other.build_tools.others.description
-    t: Other answers (freeform field).
+  - key: other_tools.build_tools
+    t: Herramientas de Construcción
+  - key: other_tools.build_tools.description
+    t: ¿Qué herramientas de construcción utilizas?
+  - key: other_tools.build_tools.others
+    t: Otras Herramientas de Construcción
+  - key: other_tools.build_tools.others.description
+    t: Otras respuestas (campo de texto libre).
 
-  - key: tools_other.non_js_languages
-    t: Non-JavaScript Languages
-  - key: tools_other.non_js_languages.description
-    t: Which other programming languages do you use?
-  - key: tools_other.non_js_languages.others
-    t: Other Languages
-  - key: tools_other.non_js_languages.others.description
-    t: Other answers (freeform field).
+  - key: other_tools.non_js_languages
+    t: Otros Lenguajes (no relacionados con JavaScript)
+  - key: other_tools.non_js_languages.description
+    t: ¿Qué otros lenguajes de programación utilizas?
+  - key: other_tools.non_js_languages.others
+    t: Otros Lenguajes
+  - key: other_tools.non_js_languages.others.description
+    t: Otras respuestas (campo de texto libre).
 
 ###########################################################################
 # Resources
@@ -568,30 +580,30 @@ translations:
 
   # blogs & magazines
   - key: resources.blogs_news_magazines
-    t: Blogs & Magazines
+    t: Blogs y Revistas
   - key: resources.blogs_news_magazines.description
-    t: Which blogs/magazines/etc. do you read?
+    t: ¿Qué blogs/revistas/etc. sueles leer?
   - key: resources.blogs_news_magazines.others
-    t: Other Blogs & Magazines
+    t: Otros Blogs y Revistas
   - key: resources.blogs_news_magazines.others.description
-    t: Other answers (freeform field).
+    t: Otras respuestas (campo de texto libre).
 
   # sites & courses
   - key: resources.sites_courses
-    t: Sites & Courses
+    t: Sitios Web y Cursos
   - key: resources.sites_courses.description
-    t: Which sites/courses/etc. do you consult?
+    t: ¿Qué sitios web/cursos/etc. sueles consultar?
   - key: resources.sites_courses.others
-    t: Other Sites & Courses
+    t: Otros Sitios Web y Cursos
   - key: resources.sites_courses.others.description
-    t: Other answers (freeform field).
+    t: Otras respuestas (campo de texto libre).
 
   # podcasts
   - key: resources.podcasts
     t: Podcasts
   - key: resources.podcasts.description
-    t: Which programming-related podcasts do you listen to?
+    t: ¿Qué podcast sobre programación sueles escuchar?
   - key: resources.podcasts.others
-    t: Other Podcasts
+    t: Otros Podcasts
   - key: resources.podcasts.others.description
-    t: Other answers (freeform field).
+    t: Otras respuestas (campo de texto libre).
