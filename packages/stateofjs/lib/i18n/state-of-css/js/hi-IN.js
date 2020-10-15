@@ -6,139 +6,142 @@ export default {
     {
       key: "general.survey_intro_css2020",
       t:
-        "CSS is evolving faster than ever.\n\nFlexbox, Grid, Multi-Column… To say nothing of whole new paradigms like CSS-in-JS.\n\nSo after the success of our annual State Of JavaScript survey,  we’ve decided to take on the world of styles and selectors to help  identify the latests trends… and try to bridge the ever-growing “great front-end divide”!\n",
+        'सीएसएस पहले से ज्यादा तेजी से विकसित हो रहा है।\n\nFlexbox, Grid, Multi-Column… सीएसएस-इन-जेएस जैसे पूरे नए प्रतिमानों के बारे में कुछ नहीं कहना।\n\nइसलिए हमारे वार्षिक स्टेट ऑफ़ जावास्क्रिप्ट सर्वेक्षण की सफलता के बाद, हमने लेटस्ट ट्रेंड की पहचान करने में मदद करने के लिए शैलियों और चयनकर्ताओं की दुनिया में जाने का फैसला किया है ... और बढ़ते-बढ़ते "महान फ्रंट-एंड डिवाइड" को पाटने की कोशिश करें!\n',
     },
     {
       key: "sections.layout.title",
-      t: "Layout",
+      t: "ख़ाका",
     },
     {
       key: "sections.layout.description",
-      t: "How do you position elements on the screen?",
+      t: "आप स्क्रीन पर तत्वों को कैसे स्थिति में रखते हैं?",
     },
     {
       key: "sections.shapes_graphics.title",
-      t: "Shapes & Graphics",
+      t: "आकार और ग्राफिक्स",
     },
     {
       key: "sections.shapes_graphics.description",
-      t: "Controlling the shape and display of elements.",
+      t: "तत्वों के आकार और प्रदर्शन को नियंत्रित करना।",
     },
     {
       key: "sections.interactions.title",
-      t: "Interactions",
+      t: "इंटरैक्शन",
     },
     {
       key: "sections.interactions.description",
-      t: "Controlling how the user interacts with the page.",
+      t: "यह नियंत्रित करना कि उपयोगकर्ता पृष्ठ के साथ कैसे इंटरैक्ट करता है।",
     },
     {
       key: "sections.typography.title",
-      t: "Typography",
+      t: "टाइपोग्राफी",
     },
     {
       key: "sections.typography.description",
-      t: "Setting and laying out text.",
+      t: "टेक्स्ट को सेट करना और रखना।",
     },
     {
       key: "sections.animations_transforms.title",
-      t: "Animations & Transforms",
+      t: "एनिमेशन और ट्रांसफ़ॉर्म",
     },
     {
       key: "sections.animations_transforms.description",
-      t: "Animating and transforming elements.",
+      t: "तत्वों को एनिमेटेड और बदलना।",
     },
     {
       key: "sections.other_features.title",
-      t: "Other Features",
+      t: "अन्य सुविधाओं",
     },
     {
       key: "sections.other_features.description",
-      t: "Other CSS features.",
+      t: "अन्य सीएसएस विशेषताएं।",
     },
     {
       key: "sections.units_selectors.title",
-      t: "Units & Selectors",
+      t: "इकाइयां और चयनकर्ता",
     },
     {
       key: "sections.units_selectors.description",
-      t: "Test your knowledge of CSS units and selectors.",
+      t: "सीएसएस इकाइयों और चयनकर्ताओं के अपने ज्ञान का परीक्षण करें।",
     },
     {
       key: "sections.pre_post_processors.title",
-      t: "Pre-/Post-processors",
+      t: "पूर्व / पोस्ट-प्रोसेसर",
     },
     {
       key: "sections.pre_post_processors.description",
-      t: "Utilities that augment CSS.",
+      t: "उपयोगिताएँ जो सीएसएस को बढ़ाती हैं।",
     },
     {
       key: "sections.css_frameworks.title",
-      t: "CSS Frameworks",
+      t: "सीएसएस फ्रेमवर्क",
     },
     {
       key: "sections.css_frameworks.description",
-      t: "Libraries that give you pre-made components and styles.",
+      t: "लाइब्रेरी जो आपको पूर्व-निर्मित घटक और शैली देते हैं।",
     },
     {
       key: "sections.css_methodologies.title",
-      t: "CSS Methodologies",
+      t: "सीएसएस तरीके",
     },
     {
       key: "sections.css_methodologies.description",
-      t: "Codified ways to write cleaner CSS.",
+      t: "क्लीनर सीएसएस लिखने के लिए संहिताबद्ध तरीके।",
     },
     {
       key: "sections.css_in_js.title",
-      t: "CSS-in-JS",
+      t: "सीएसएस-इन-जेएस",
     },
     {
       key: "sections.css_in_js.description",
-      t: "Libraries that help integrate CSS into JavaScript code.",
+      t:
+        "लाइब्रेरी जो सीएसएस को जावास्क्रिप्ट कोड में एकीकृत करने में मदद करती है।",
     },
     {
       key: "sections.environments.title",
-      t: "Environments",
+      t: "वातावरण",
     },
     {
       key: "sections.environments.description",
-      t: "Which environments do you write CSS for?",
+      t: "आप किस वातावरण के लिए CSS लिखते हैं?",
     },
     {
       key: "options.css_for_print.0",
-      t: "I (almost) never write print styles",
+      t: "मैं (लगभग) प्रिंट शैली कभी नहीं लिखता",
     },
     {
       key: "options.css_for_print.1",
-      t: "I occasionally write print styles",
+      t: "मैं कभी-कभी प्रिंट शैलियाँ लिखता हूँ",
     },
     {
       key: "options.css_for_print.2",
-      t: "I write print styles as part of most projects",
+      t:
+        "मैं अधिकांश परियोजनाओं के हिस्से के रूप में प्रिंट शैलियों को लिखता हूं",
     },
     {
       key: "options.css_for_print.3",
-      t: "I focus mainly on CSS for print",
+      t: "मैं मुख्य रूप से प्रिंट के लिए सीएसएस पर ध्यान केंद्रित करता हूं",
     },
     {
       key: "options.css_for_email.0",
-      t: "I (almost) never write CSS for email clients",
+      t: "मैं (लगभग) ईमेल क्लाइंट के लिए कभी भी CSS नहीं लिखता",
     },
     {
       key: "options.css_for_email.1",
-      t: "I occasionally write CSS for email clients",
+      t: "मैं कभी-कभी ईमेल क्लाइंट के लिए CSS लिखता हूं",
     },
     {
       key: "options.css_for_email.2",
-      t: "I write CSS for email clients as part of most projects",
+      t:
+        "मैं अधिकांश परियोजनाओं के हिस्से के रूप में ईमेल क्लाइंट के लिए CSS लिखता हूं",
     },
     {
       key: "options.css_for_email.3",
-      t: "I focus mainly on CSS for email clients",
+      t: "मैं मुख्य रूप से ईमेल क्लाइंट के लिए CSS पर ध्यान केंद्रित करता हूं",
     },
     {
       key: "features.grid",
-      t: "CSS Grid",
+      t: "सीएसएस ग्रिड",
     },
     {
       key: "features.subgrid",
@@ -146,7 +149,7 @@ export default {
     },
     {
       key: "features.regions",
-      t: "CSS Regions",
+      t: "सीएसएस क्षेत्र",
     },
     {
       key: "features.flexbox",
@@ -154,23 +157,23 @@ export default {
     },
     {
       key: "features.multi_column",
-      t: "CSS Multi-Column",
+      t: "सीएसएस मल्टी-कॉलम",
     },
     {
       key: "features.writing_modes",
-      t: "CSS Writing Modes",
+      t: "सीएसएस लेखन मोड",
     },
     {
       key: "features.exclusions",
-      t: "CSS Exclusions",
+      t: "सीएसएस बहिष्करण",
     },
     {
       key: "features.position_sticky",
-      t: "Position: sticky",
+      t: "स्थिति: चिपचिपा",
     },
     {
       key: "features.logical_properties",
-      t: "Logical Properties",
+      t: "तार्किक गुण",
     },
     {
       key: "features.logical_properties.description",
@@ -182,7 +185,7 @@ export default {
     },
     {
       key: "features.shapes",
-      t: "CSS Shapes",
+      t: "सीएसएस आकार",
     },
     {
       key: "features.object_fit",
@@ -194,23 +197,23 @@ export default {
     },
     {
       key: "features.masks",
-      t: "CSS Masks",
+      t: "सीएसएस मास्क",
     },
     {
       key: "features.blend_modes",
-      t: "Blend Modes",
+      t: "ब्लेंड मोड्स",
     },
     {
       key: "features.blend_modes.description",
-      t: "The mix-blend-mode property",
+      t: "मिक्स-ब्लेंड-मोड संपत्ति",
     },
     {
       key: "features.filter_effects",
-      t: "CSS Filter Effects",
+      t: "सीएसएस फ़िल्टर प्रभाव",
     },
     {
       key: "features.scroll_snap",
-      t: "CSS Scroll Snap",
+      t: "सीएसएस स्क्रॉल स्नैप",
     },
     {
       key: "features.overscroll_behavior",
@@ -222,16 +225,15 @@ export default {
     },
     {
       key: "features.web_fonts",
-      t: "Web fonts (@font-face)",
+      t: "वेब फोंट (@font-face)",
     },
     {
       key: "features.variables_fonts",
-      t: "Variable fonts",
+      t: "चर फोंट",
     },
     {
       key: "features.line_breaking",
-      t:
-        "Line breaking properties (overflow-wrap, word-break, line-break, hyphens)",
+      t: "लाइन ब्रेकिंग गुण (overflow-wrap, word-break, line-break, hyphens)",
     },
     {
       key: "features.font_variant",
@@ -255,31 +257,31 @@ export default {
     },
     {
       key: "features.transitions",
-      t: "CSS Transitions",
+      t: "सीएसएस बदलाव",
     },
     {
       key: "features.transforms",
-      t: "CSS Transforms",
+      t: "सीएसएस रूपांतरण",
     },
     {
       key: "features.animations",
-      t: "CSS Animations",
+      t: "सीएसएस एनिमेशन",
     },
     {
       key: "features.variables",
-      t: "CSS Variables",
+      t: "सीएसएस चर",
     },
     {
       key: "features.feature_support_queries",
-      t: "Feature Support Queries (@supports)",
+      t: "फ़ीचर सपोर्ट क्वेरीज़ (@supports)",
     },
     {
       key: "features.containment",
-      t: "CSS Containment",
+      t: "सीएसएस कंटेनर",
     },
     {
       key: "features.will_change",
-      t: "Will-change",
+      t: "बदल जाएगा",
     },
     {
       key: "features.calc",
@@ -291,7 +293,7 @@ export default {
     },
     {
       key: "features.comparison_functions",
-      t: "CSS Comparison Functions",
+      t: "सीएसएस तुलना कार्य",
     },
     {
       key: "features.comparison_functions.description",
@@ -299,19 +301,19 @@ export default {
     },
     {
       key: "features.units",
-      t: "Units",
+      t: "इकाइयों",
     },
     {
       key: "features.units.description",
-      t: "Which of these CSS units have you used?",
+      t: "आपने इनमें से कौन सी सीएसएस इकाइयों का उपयोग किया है?",
     },
     {
       key: "features.pseudo_elements",
-      t: "Pseudo Elements",
+      t: "छद्म तत्व",
     },
     {
       key: "features.pseudo_elements.description",
-      t: "Which of these CSS selectors have you used?",
+      t: "आपने इनमें से कौन सी CSS चयनकर्ताओं का उपयोग किया है?",
     },
     {
       key: "features.combinators",
@@ -319,100 +321,100 @@ export default {
     },
     {
       key: "features.tree_document_structure",
-      t: "Tree / Document Structure",
+      t: "ट्री / डॉक्यूमेंट स्ट्रक्चर",
     },
     {
       key: "features.attributes",
-      t: "Attributes",
+      t: "विशेषता",
     },
     {
       key: "features.links_urls",
-      t: "Links/URLs",
+      t: "लिंक / यूआरएल",
     },
     {
       key: "features.interaction",
-      t: "Interaction",
+      t: "इंटरैक्शन",
     },
     {
       key: "features.form_controls",
-      t: "Form Controls",
+      t: "फॉर्म नियंत्रण",
     },
     {
       key: "tools.atomiccss",
-      t: "Utility-First/Atomic CSS",
+      t: "उपयोगिता-प्रथम / परमाणु सीएसएस",
     },
     {
       key: "environments.browsers",
-      t: "Browsers",
+      t: "ब्राउज़र",
     },
     {
       key: "environments.browsers.description",
-      t: "Which browsers do you test in?",
+      t: "आप किन ब्राउज़रों का परीक्षण करते हैं?",
     },
     {
       key: "environments.form_factors",
-      t: "Form Factors",
+      t: "फ़ार्म के कारक",
     },
     {
       key: "environments.form_factors.description",
-      t: "Which form factors do you test on?",
+      t: "आप किस फार्म के कारकों का परीक्षण करते हैं?",
     },
     {
       key: "environments.css_for_print",
-      t: "CSS for Print",
+      t: "सीएसएस प्रिंट के लिए",
     },
     {
       key: "environments.css_for_print.description",
-      t: "Do you write print styles?",
+      t: "क्या आप प्रिंट शैली लिखते हैं?",
     },
     {
       key: "environments.css_for_email",
-      t: "CSS for Email Clients",
+      t: "ईमेल ग्राहकों के लिए सीएसएस",
     },
     {
       key: "environments.css_for_email.description",
-      t: "Do you write CSS for email clients?",
+      t: "क्या आप ईमेल क्लाइंट के लिए CSS लिखते हैं?",
     },
     {
       key: "opinions.css_easy_to_learn",
-      t: "CSS is easy to learn",
+      t: "CSS सीखना आसान है",
     },
     {
       key: "opinions.css_evolving_slowly",
-      t: "CSS is evolving too slowly",
+      t: "सीएसएस बहुत धीरे-धीरे विकसित हो रहा है",
     },
     {
       key: "opinions.utility_classes_to_be_avoided",
       t:
-        "Utility (non-semantic) classes (.center, .large-text, etc.) should be avoided",
+        "उपयोगिता (गैर-अर्थ) कक्षाएं (.center, .large-text, etc.) से बचा जाना चाहिए",
     },
     {
       key: "opinions.selector_nesting_to_be_avoided",
-      t: "Selector nesting (.foo .bar ul li {...}) should be avoided",
+      t: "सिलेक्टर नेस्टिंग (.foo .bar ul li {...}) से बचा जाना चाहिए",
     },
     {
       key: "opinions.css_is_programming_language",
-      t: "CSS is a programming language",
+      t: "CSS एक प्रोग्रामिंग लैंग्वेज है",
     },
     {
       key: "opinions.enjoy_writing_css",
-      t: "I enjoy writing CSS",
+      t: "मुझे CSS लिखने में मज़ा आता है",
     },
     {
       key: "opinions.currently_missing_from_css.others",
-      t: "What do you feel is currently missing from CSS?",
+      t: "आपको क्या लगता है वर्तमान में CSS से गायब है?",
     },
     {
       key: "opinions.currently_missing_from_css.others.description",
-      t: "Features you'd like to see in CSS one day.",
+      t: "विशेषताएँ आप सीएसएस में एक दिन देखना चाहेंगे।",
     },
     {
       key: "opinions.sum_up_one_word_css",
-      t: "CSS in one word",
+      t: "एक शब्द में सीएसएस",
     },
     {
       key: "opinions.sum_up_one_word_css.description",
-      t: "How would you sum up your opinion of CSS in one word?",
+      t: "आप एक शब्द में सीएसएस की अपनी राय कैसे लिखेंगे?",
     },
   ],
 };
