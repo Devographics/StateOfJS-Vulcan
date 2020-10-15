@@ -4,336 +4,336 @@ export default {
   translations: [
     {
       key: "general.why_create_account",
-      t: "Why do I need to create an account?",
+      t: "मुझे खाता बनाने की आवश्यकता क्यों है?",
     },
     {
       key: "general.create_account_reasons",
       t:
-        "We ask you to create an account in order to:\n- Avoid duplicate responses\n- Give you access to your data\n- Save your session as you go\n- Notify you when results are live\n",
+        "हम आपसे एक खाता बनाने के लिए कहते हैं: \n- डुप्लिकेट प्रतिक्रियाओं से बचें \n- आपको अपने डेटा तक पहुँच प्रदान करें \n- अपना सत्र सहेजें जैसे ही आप जाते हैं \n- परिणाम लाइव होने पर आपको सूचित करें",
     },
     {
       key: "general.survey_closed",
       t:
-        "Sorry, the survey is now closed! You can still review your data but you won't be able to modify it.\n",
+        "क्षमा करें, सर्वेक्षण अब बंद है! आप अभी भी अपने डेटा की समीक्षा कर सकते हैं लेकिन आप इसे संशोधित नहीं कर पाएंगेे।\n",
     },
     {
       key: "general.survey_read_only",
-      t: "You are currently viewing this survey in read-only mode. \n",
+      t: "आप वर्तमान में इस सर्वेक्षण को केवल-पढ़ने के मोड में देख रहे हैं। \n",
     },
     {
       key: "general.survey_read_only_back",
       t:
-        '<a href="{link}">Go back</a> to the main survey page to start or resume a session.\n',
+        'सत्र शुरू करने या फिर से शुरू करने के लिए मुख्य सर्वेक्षण पृष्ठ पर <a href="{link}">वापस जाएं</a>।\n',
     },
     {
       key: "general.open_surveys",
-      t: "Open Surveys",
+      t: "सर्वेक्षण खोलें",
     },
     {
       key: "general.no_open_surveys",
-      t: "No surveys are currently open.",
+      t: "वर्तमान में कोई सर्वेक्षण नहीं खुला है।",
     },
     {
       key: "general.closed_surveys",
-      t: "Closed Surveys",
+      t: "बंद सर्वेक्षण",
     },
     {
       key: "general.start_survey",
-      t: "Start Survey »",
+      t: "सर्वेक्षण शुरू करें »",
     },
     {
       key: "general.continue_survey",
-      t: "Continue Survey »",
+      t: "सर्वेक्षण जारी रखें »",
     },
     {
       key: "general.review_survey",
-      t: "Review Survey »",
+      t: "सर्वेक्षण की समीक्षा करें »",
     },
     {
       key: "general.preview_survey",
-      t: "Preview Survey »",
+      t: "सर्वेक्षण का पूर्वावलोकन करें »",
     },
     {
       key: "general.finish_survey",
-      t: "Finish Survey »",
+      t: "सर्वे खत्म करो »",
     },
     {
       key: "general.survey_closed",
-      t: "This survey is now closed.",
+      t: "यह सर्वेक्षण अब बंद हो गया है।",
     },
     {
       key: "general.survey_results",
-      t: "View Survey Results »",
+      t: "सर्वेक्षण परिणाम देखें »",
     },
     {
       key: "general.privacy_policy",
-      t: "Privacy Policy",
+      t: "गोपनीयता नीति",
     },
     {
       key: "general.leave_issue",
       t:
-        'Questions? Found a bug? <a href="{link}" target="_blank">Leave an issue</a>.',
+        'प्रशन? एक बग मिला? <a href="{link}" target="_blank">एक इशू छोड़ो</a>.',
     },
     {
       key: "general.table_of_contents",
-      t: "Table of Contents",
+      t: "विषय - सूची",
     },
     {
       key: "general.all_questions_optional",
       t:
-        "Note: all questions are optional, reaching 100% completion is not required.\n",
+        "नोट: सभी प्रश्न वैकल्पिक हैं, 100% पूर्णता तक पहुंचने की आवश्यकता नहीं है।\n",
     },
     {
       key: "general.data_is_saved",
       t:
-        "Your data is saved whenever you navigate to the previous or next section.",
+        "जब भी आप पिछले या अगले अनुभाग पर जाते हैं तो आपका डेटा सहेजा जाता है।",
     },
     {
       key: "general.back",
-      t: "Back",
+      t: "वापस",
     },
     {
       key: "general.thanks",
       t:
-        "Thanks for filling out the survey!\nYour data is saved. You can review or modify it until the survey closes.\nAlso, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even more representative:\n",
+        "सर्वेक्षण को भरने के लिए धन्यवाद!\nआपका डेटा सहेजा गया है। सर्वेक्षण बंद होने तक आप इसकी समीक्षा या संशोधन कर सकते हैं।\nइसके अलावा, आप इस सर्वेक्षण को साझा करके हमारी मदद कर सकते हैं। हर बिट गिना जाता है, और यह हमारे डेटा को और भी अधिक प्रतिनिधि बनाने में मदद करेगा:\n",
     },
     {
       key: "general.share_subject",
-      t: "{surveyName} survey\n",
+      t: "{surveyName} सर्वेक्षण\n",
     },
     {
       key: "general.share_text",
-      t: "This year's {surveyName} survey is now open! {link}\n",
+      t: "इस साल का {surveyName} सर्वेक्षण अब खुला है! {link}\n",
     },
     {
       key: "nav.surveys",
-      t: "Surveys",
+      t: "सर्वेक्षण",
     },
     {
       key: "nav.account",
-      t: "Account",
+      t: "खाता",
     },
     {
       key: "accounts.sign_up",
-      t: "Sign Up",
+      t: "साइन अप करें",
     },
     {
       key: "accounts.sign_in",
-      t: "Log In",
+      t: "लॉग इन करें",
     },
     {
       key: "accounts.sign_out",
-      t: "Sign Out",
+      t: "लॉग आउट करें",
     },
     {
       key: "accounts.cancel",
-      t: "Cancel",
+      t: "रद्द करें",
     },
     {
       key: "accounts.email",
-      t: "Email",
+      t: "ईमेल",
     },
     {
       key: "accounts.enter_email",
-      t: "Enter Email",
+      t: "ईमेल दर्ज करें",
     },
     {
       key: "accounts.please_pick_password",
-      t: "Please pick a new password to continue.",
+      t: "जारी रखने के लिए कृपया एक नया पासवर्ड चुनें।",
     },
     {
       key: "accounts.please_log_in",
-      t: "Please log in or sign up to begin.",
+      t: "शुरू करने के लिए कृप्या लॉग इन या साइन अप करें।",
     },
     {
       key: "accounts.logged_in_as",
-      t: "Logged in as {email}",
+      t: "{email} के रूप में लॉग इन किया",
     },
     {
       key: "accounts.questions",
       t:
-        'If you have any questions about how we use your data, or would like us to remove your data from our records, please <a href="mailto:hello@stateofjs.com">get in touch</a>.\n',
+        'यदि आपके पास कोई सवाल है कि हम आपके डेटा का उपयोग कैसे करते हैं, या हमें अपने डेटा को अपने रिकॉर्ड से निकालना चाहते हैं, तो <a href="mailto:hello@stateofjs.com">कृपया संपर्क करें</a>।\n',
     },
     {
       key: "sections.user_info.title",
-      t: "About You",
+      t: "आपके बारे में",
     },
     {
       key: "sections.user_info.description",
-      t: "Let's get to know the real you.",
+      t: "आइये जाने असली आपको।",
     },
     {
       key: "sections.resources.title",
-      t: "Resources",
+      t: "साधन",
     },
     {
       key: "sections.resources.description",
-      t: "What {topic} resources do you consult?",
+      t: "आप किस {topic} संसाधनों से परामर्श करते हैं?",
     },
     {
       key: "sections.opinions.title",
-      t: "Opinions",
+      t: "राय",
     },
     {
       key: "sections.opinions.description",
-      t: "How do you feel about the state of {topic}?",
+      t: "आप {topic} की स्थिति के बारे में कैसा महसूस करते हैं?",
     },
     {
       key: "sections.other_tools.title",
-      t: "Other Tools",
+      t: "अन्य उपकरण",
     },
     {
       key: "sections.other_tools.description",
       t:
-        "For these tools & technologies, just check the ones that you use regularly.",
+        "इन उपकरणों और तकनीकों के लिए, बस उन लोगों की जांच करें जिन्हें आप नियमित रूप से उपयोग करते हैं।",
     },
     {
       key: "options.features.never_heard",
-      t: "🤷 Never heard of it/Not sure what it is",
+      t: "🤷 इसके बारे में कभी नहीं सुना/निश्चित नहीं कि यह क्या है",
     },
     {
       key: "options.features.heard",
-      t: "✅ Know what it is, but haven't used it",
+      t: "✅ पता है कि यह क्या है, लेकिन इसका इस्तेमाल नहीं किया है",
     },
     {
       key: "options.features.used",
-      t: "👍 I've used it",
+      t: "👍 मैंने इसका इस्तेमाल किया है",
     },
     {
       key: "options.features.never_heard.short",
-      t: "Never heard of it",
+      t: "कभी नहीं सुना",
     },
     {
       key: "options.features.heard.short",
-      t: "Know about it",
+      t: "जानिए इसके बारे में",
     },
     {
       key: "options.features.used.short",
-      t: "Have used it",
+      t: "इसका इस्तेमाल किया है",
     },
     {
       key: "options.patterns.use_never",
-      t: "Almost always avoid",
+      t: "लगभग हमेशा बचें",
     },
     {
       key: "options.patterns.use_sparingly",
-      t: "Use sparingly",
+      t: "किफायत से इस्तेमाल करो",
     },
     {
       key: "optionspatterns..use_neutral",
-      t: "Neutral",
+      t: "निष्पक्ष",
     },
     {
       key: "options.patterns.use_frequently",
-      t: "Use frequently",
+      t: "बार-बार उपयोग करें",
     },
     {
       key: "options.patterns.use_always",
-      t: "Use as much as I can",
+      t: "जितना हो सके उतना उपयोग करें",
     },
     {
       key: "options.tools.never_heard",
-      t: "🤷 Never heard of it/Not sure what it is",
+      t: "🤷 इसके बारे में कभी नहीं सुना/निश्चित नहीं कि यह क्या है",
     },
     {
       key: "options.tools.interested",
-      t: "✅ Heard of it > Would like to learn",
+      t: "✅ इसके बारे में सुना> सीखना चाहेंगे",
     },
     {
       key: "options.tools.not_interested",
-      t: "🚫 Heard of it > Not interested",
+      t: "🚫 इसके बारे में सुना > दिलचस्पी नहीं है",
     },
     {
       key: "options.tools.would_use",
-      t: "👍 Used it > Would use again",
+      t: "👍 इसका इस्तेमाल किया > फिर से उपयोग करेगा",
     },
     {
       key: "options.tools.would_not_use",
-      t: "👎 Used it > Would not use again",
+      t: "👎 इसका इस्तेमाल किया > फिर से उपयोग नहीं करेगा",
     },
     {
       key: "options.tools.never_heard",
-      t: "Never heard",
+      t: "कभी नहीं सुना",
     },
     {
       key: "options.tools.interested",
-      t: "Interested",
+      t: "इच्छुक",
     },
     {
       key: "options.tools.not_interested",
-      t: "Not interested",
+      t: "रुचि नहीं",
     },
     {
       key: "options.tools.would_use",
-      t: "Would use again",
+      t: "फिर से उपयोग करेंगे",
     },
     {
       key: "options.tools.would_not_use",
-      t: "Would not use",
+      t: "उपयोग नहीं करेंगे",
     },
     {
       key: "options.happiness.very_unhappy",
-      t: "Very Unhappy",
+      t: "बहुत दुखी",
     },
     {
       key: "options.happiness.unhappy",
-      t: "Unhappy",
+      t: "नाखुश",
     },
     {
       key: "options.happiness.neutral",
-      t: "Neutral",
+      t: "निष्पक्ष",
     },
     {
       key: "options.happiness.happy",
-      t: "Happy",
+      t: "खुश",
     },
     {
       key: "options.happiness.very_happy",
-      t: "Very Happy",
+      t: "बहुत खुश",
     },
     {
       key: "options.opinions.disagree_strongly",
-      t: "Disagree Strongly",
+      t: "दृढ़ता से असहमत",
     },
     {
       key: "options.opinions.disagree",
-      t: "Disagree",
+      t: "असहमत",
     },
     {
       key: "options.opinions.neutral",
-      t: "Neutral",
+      t: "निष्पक्ष",
     },
     {
       key: "options.opinions.agree",
-      t: "Agree",
+      t: "इस बात से सहमत",
     },
     {
       key: "options.opinions.agree_strongly",
-      t: "Agree Strongly",
+      t: "दृढ़ता से सहमत",
     },
     {
       key: "options.years_of_experience.range_less_than_1",
-      t: "Less than one year",
+      t: "एक वर्ष से कम",
     },
     {
       key: "options.years_of_experience.range_1_2",
-      t: "1 to 2 years",
+      t: "1 से 2 साल",
     },
     {
       key: "options.years_of_experience.range_2_5",
-      t: "2 to 5 years",
+      t: "2 से 5 साल",
     },
     {
       key: "options.years_of_experience.range_5_10",
-      t: "5 to 10 years",
+      t: "5 से 10 साल",
     },
     {
       key: "options.years_of_experience.range_10_20",
-      t: "10 to 20 years",
+      t: "10 से 20 साल",
     },
     {
       key: "options.years_of_experience.range_more_than_20",
-      t: "More than 20 years",
+      t: "20 से अधिक वर्षों",
     },
     {
       key: "options.years_of_experience.range_less_than_1.short",
@@ -361,35 +361,35 @@ export default {
     },
     {
       key: "options.company_size.range_1",
-      t: "One employee",
+      t: "एक कर्मचारी",
     },
     {
       key: "options.company_size.range_1_5",
-      t: "1 to 5 employees",
+      t: "1 से 5 कर्मचारी",
     },
     {
       key: "options.company_size.range_5_10",
-      t: "5 to 10 employees",
+      t: "5 से 10 कर्मचारी",
     },
     {
       key: "options.company_size.range_10_20",
-      t: "10 to 20 employees",
+      t: "10 से 20 कर्मचारी",
     },
     {
       key: "options.company_size.range_20_50",
-      t: "20 to 50 employees",
+      t: "20 से 50 कर्मचारी",
     },
     {
       key: "options.company_size.range_50_100",
-      t: "50 to 100 employees",
+      t: "50 से 100 कर्मचारी",
     },
     {
       key: "options.company_size.range_100_1000",
-      t: "100 to 1000 employees",
+      t: "100 से 1000 कर्मचारी",
     },
     {
       key: "options.company_size.range_more_than_1000",
-      t: "More than 1000 employees",
+      t: "1000 से अधिक कर्मचारी",
     },
     {
       key: "options.company_size.range_1.short",
@@ -425,7 +425,7 @@ export default {
     },
     {
       key: "options.yearly_salary.range_work_for_free",
-      t: "I work for free",
+      t: "मैं मुफ्त में काम करता हूं",
     },
     {
       key: "options.yearly_salary.range_0_10",
@@ -449,7 +449,7 @@ export default {
     },
     {
       key: "options.yearly_salary.range_more_than_200",
-      t: "more than $200k",
+      t: "$200k से ज्यादा",
     },
     {
       key: "options.yearly_salary.range_work_for_free.short",
@@ -481,136 +481,136 @@ export default {
     },
     {
       key: "options.job_title.front_end_developer",
-      t: "Front End Developer/Engineer",
+      t: "फ्रंट एंड डेवलपर / इंजीनियर",
     },
     {
       key: "options.job_title.back_end_developer",
-      t: "Back End Developer/Engineer",
+      t: "बैक एंड डेवलपर / इंजीनियर",
     },
     {
       key: "options.job_title.full_stack_developer",
-      t: "Full Stack Developer/Engineer",
+      t: "पूर्ण स्टैक डेवलपर / इंजीनियर",
     },
     {
       key: "options.job_title.web_developer",
-      t: "Web Developer",
+      t: "वेब डेवलपर",
     },
     {
       key: "options.job_title.web_designer",
-      t: "Web Designer",
+      t: "वेब डिजाइनर",
     },
     {
       key: "options.job_title.ux_designer",
-      t: "UX Designer",
+      t: "UX डिज़ाइनर",
     },
     {
       key: "options.job_title.ui_designer",
-      t: "UI Designer",
+      t: "यूआई डिजाइनर",
     },
     {
       key: "options.job_title.back_end_dev",
-      t: "Back-end Developer/Engineer",
+      t: "बैक-एंड डेवलपर / इंजीनियर",
     },
     {
       key: "options.javascript_proficiency.0",
-      t: "Not able to write any JavaScript",
+      t: "कोई जावास्क्रिप्ट लिखने में सक्षम नहीं है",
     },
     {
       key: "options.javascript_proficiency.1",
-      t: "Writing short, simple JavaScript or jQuery statements",
+      t: "संक्षिप्त, सरल जावास्क्रिप्ट या jQuery कथन लिखना",
     },
     {
       key: "options.javascript_proficiency.2",
       t:
-        "Working on existing front-end codebases using modern frameworks (React, Vue, etc.)",
+        "आधुनिक फ्रेमवर्क (React, Vue, आदि) का उपयोग करके मौजूदा फ्रंट-एंड कोडबेस पर काम करना।",
     },
     {
       key: "options.javascript_proficiency.3",
-      t: "Architecturing entire front-end codebases from scratch",
+      t: "स्क्रैच से पूरे फ्रंट-एंड कोडबेस को आर्किटेक्चर करना",
     },
     {
       key: "options.javascript_proficiency.4",
       t:
-        "Handling advanced front-end patterns (state management, data loading, etc.)",
+        "उन्नत फ्रंट-एंड पैटर्न (स्टेट मैनेजमेंट, डेटा लोड करना, आदि) को संभालना",
     },
     {
       key: "options.css_proficiency.0",
-      t: "Virtually no knowledge of CSS",
+      t: "वस्तुतः CSS का कोई ज्ञान नहीं है",
     },
     {
       key: "options.css_proficiency.1",
-      t: "Using CSS frameworks and tweaking existing styles",
+      t: "CSS फ्रेमवर्क का उपयोग करना और मौजूदा शैलियों को ट्विक करना",
     },
     {
       key: "options.css_proficiency.2",
-      t: "Knowing specificity rules, being able to create layouts",
+      t: "विशिष्टता नियमों को जानना, लेआउट बनाने में सक्षम होना",
     },
     {
       key: "options.css_proficiency.3",
-      t: "Mastering animations, interactions, transitions, etc.",
+      t: "माहिर एनिमेशन, बातचीत, संक्रमण, आदि।",
     },
     {
       key: "options.css_proficiency.4",
       t:
-        "Able to style an entire front-end from scratch following a consistent methodology",
+        "एक सुसंगत कार्यप्रणाली के बाद खरोंच से पूरे फ्रंट-एंड को स्टाइल करने में सक्षम",
     },
     {
       key: "options.backend_proficiency.0",
-      t: "Not able to handle any back-end work",
+      t: "किसी भी बैक-एंड काम को संभालने में सक्षम नहीं",
     },
     {
       key: "options.backend_proficiency.1",
       t:
-        "Able to set up all-in-one CMSs (WordPress, etc.) or static site generators (Jekyll, etc.)",
+        "ऑल-इन-वन सीएमएस (वर्डप्रेस, आदि) या स्थिर साइट जनरेटर (Jekyll आदि) स्थापित करने में सक्षम।",
     },
     {
       key: "options.backend_proficiency.2",
       t:
-        "Able to develop apps using pre-existing frameworks (Rails, Laravel, etc.)",
+        "पहले से मौजूद फ़्रेमवर्क्स (रेल, लारवेल, आदि) का उपयोग करके ऐप्स विकसित करने में सक्षम",
     },
     {
       key: "options.backend_proficiency.3",
-      t: "Setting up an entire back-end from scratch (Go, Node, etc.)",
+      t: "स्क्रैच से पूरे बैक-एंड की स्थापना (गो, नोड, आदि)",
     },
     {
       key: "options.backend_proficiency.4",
-      t: "Able to handle complex multi-server or microservices architectures",
+      t: "जटिल मल्टी-सर्वर या माइक्रोसॉफ़्ट आर्किटेक्चर को संभालने में सक्षम",
     },
     {
       key: "options.proficiency.0",
-      t: "None",
+      t: "कोई नहीं",
     },
     {
       key: "options.proficiency.1",
-      t: "Beginner",
+      t: "शुरुआती",
     },
     {
       key: "options.proficiency.2",
-      t: "Intermediate",
+      t: "मध्यवर्ती",
     },
     {
       key: "options.proficiency.3",
-      t: "Advanced",
+      t: "उन्नत",
     },
     {
       key: "options.proficiency.4",
-      t: "Expert",
+      t: "विशेषज्ञ",
     },
     {
       key: "options.gender.female",
-      t: "Female",
+      t: "महिला",
     },
     {
       key: "options.gender.male",
-      t: "Male",
+      t: "नर",
     },
     {
       key: "options.gender.non_binary",
-      t: "Non-Binary/Third Gender",
+      t: "नॉन-बाइनरी / थर्ड जेंडर",
     },
     {
       key: "options.gender.prefer_not_to_say",
-      t: "Prefer not to say",
+      t: "चुप रहना पसंद करूंगा",
     },
     {
       key: "options.skin_tone.0",
@@ -634,231 +634,231 @@ export default {
     },
     {
       key: "tools.other_tools",
-      t: "Other Options",
+      t: "अन्य विकल्प",
     },
     {
       key: "tools.other_tools.description",
       t:
-        "Other options you use for the current section not mentioned in the list above",
+        "उपरोक्त सूची में उल्लिखित वर्तमान अनुभाग के लिए आपके द्वारा उपयोग किए जाने वाले अन्य विकल्प",
     },
     {
       key: "tools.happiness",
-      t: "Overall Happiness",
+      t: "कुल मिलाकर खुशी",
     },
     {
       key: "tools.happiness.description",
       t:
-        "On a scale of one (very unhappy) to five (very happy), how happy are you with the current overall state of things as it relates to the options listed above?\n",
+        "एक (बहुत दुखी) से पांच (बहुत खुश) के पैमाने पर, आप मौजूदा चीजों की वर्तमान स्थिति से कितने खुश हैं क्योंकि यह ऊपर सूचीबद्ध विकल्पों से संबंधित है?\n",
     },
     {
       key: "user_info.years_of_experience",
-      t: "Years of Experience",
+      t: "वर्षों का अनुभव",
     },
     {
       key: "user_info.years_of_experience.description",
-      t: "How long you've been working or studying in this field.",
+      t: "आप कब से इस क्षेत्र में काम कर रहे हैं या पढ़ रहे हैं।",
     },
     {
       key: "user_info.company_size",
-      t: "Company Size",
+      t: "कंपनी का आकार",
     },
     {
       key: "user_info.company_size.description",
-      t: "How big your company is.",
+      t: "आपकी कंपनी कितनी बड़ी है।",
     },
     {
       key: "user_info.yearly_salary",
-      t: "Yearly Salary",
+      t: "वार्षिक वेतन",
     },
     {
       key: "user_info.yearly_salary.description",
-      t: "In USD.",
+      t: "अमरीकी डालर में।",
     },
     {
       key: "user_info.job_title",
-      t: "Job Title",
+      t: "नौकरी का नाम",
     },
     {
       key: "user_info.job_title.description",
-      t: "How do you introduce yourself at parties?",
+      t: "आप खुद को पार्टियों में कैसे पेश करते हैं?",
     },
     {
       key: "user_info.javascript_proficiency",
-      t: "CSS Proficiency",
+      t: "जावास्क्रिप्ट प्रवीणता",
     },
     {
       key: "user_info.javascript_proficiency.description",
-      t: "How proficient are you at JavaScript?",
+      t: "आप जावास्क्रिप्ट में कितने कुशल हैं?",
     },
     {
       key: "user_info.css_proficiency",
-      t: "CSS Proficiency",
+      t: "सीएसएस प्रवीणता",
     },
     {
       key: "user_info.css_proficiency.description",
-      t: "How proficient are you at CSS?",
+      t: "आप सीएसएस में कितने कुशल हैं?",
     },
     {
       key: "user_info.backend_proficiency",
-      t: "Back-end Proficiency",
+      t: "बैक-एंड प्रवीणता",
     },
     {
       key: "user_info.backend_proficiency.description",
-      t: "How proficient are you at back-end development?",
+      t: "बैक-एंड डेवलपमेंट में आप कितने कुशल हैं?",
     },
     {
       key: "user_info.gender",
-      t: "Gender",
+      t: "लिंग",
     },
     {
       key: "user_info.skin_tone",
-      t: "Appearance",
+      t: "प्रकटन",
     },
     {
       key: "user_info.skin_tone.description",
       t:
-        'Which emoji do you feel represents you best? <br/><br/>\nNote: We are experimenting with a new question format in order to  try and better capture the demographic makeup of our respondents.  <a href="https://github.com/StateOfJS/StateOfCSS-2020/issues/5" target="_blank">Leave us your feedback</a> on GitHub. \n',
+        'आपको कौन सा इमोजी अच्छा लगता है? <br/><br/>\nनोट: हम अपने उत्तरदाताओं के जनसांख्यिकीय मेकअप को पकड़ने और बेहतर ढंग से पकड़ने के लिए एक नए प्रश्न प्रारूप के साथ प्रयोग कर रहे हैं। GitHub पर <a href="https://github.com/StateOfJS/StateOfCSS-2020/issues/5" target="_blank">हमें अपनी प्रतिक्रिया दें</a>. \n',
     },
     {
       key: "user_info.how_did_user_find_out_about_the_survey",
-      t: "How did you find out about this survey?",
+      t: "आपको इस सर्वेक्षण के बारे में कैसे पता चला?",
     },
     {
       key: "user_info.email",
-      t: "Your Email",
+      t: "तुम्हारा ईमेल",
     },
     {
       key: "user_info.country",
-      t: "Your Country",
+      t: "तुम्हारा देश",
     },
     {
       key: "other_tools.text_editors",
-      t: "Text Editors",
+      t: "टेक्स्ट एडिटर्स",
     },
     {
       key: "other_tools.text_editors.description",
-      t: "Which text editor(s) do you regularly use?",
+      t: "आप नियमित रूप से किस टेक्स्ट एडिटर का उपयोग करते हैं?",
     },
     {
       key: "other_tools.text_editors.others",
-      t: "Other Text Editors",
+      t: "अन्य टेक्स्ट एडिटर",
     },
     {
       key: "other_tools.text_editors.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "other_tools.utilities",
-      t: "Utilities",
+      t: "उपयोगिताएँ",
     },
     {
       key: "other_tools.utilities.description",
-      t: "Which utility libraries do you regularly use?",
+      t: "आप किस उपयोगिता लाइब्रेरी का उपयोग नियमित रूप से उपयोग करते हैं?",
     },
     {
       key: "other_tools.utilities.others",
-      t: "Other Utilities",
+      t: "अन्य उपयोगिताएँ",
     },
     {
       key: "other_tools.utilities.others.description",
-      t: "Other utilities (freeform field).",
+      t: "अन्य उपयोगिताओं (फ्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "other_tools.browsers",
-      t: "Browsers",
+      t: "ब्राउज़र",
     },
     {
       key: "other_tools.browsers.description",
       t:
-        "Which browser(s) do you primarily work in during initial development?",
+        "प्रारंभिक विकास के दौरान आप मुख्य रूप से किस ब्राउज़र पर काम करते हैं?",
     },
     {
       key: "other_tools.browsers.others",
-      t: "Other Browsers",
+      t: "अन्य ब्राउज़रों",
     },
     {
       key: "other_tools.browsers.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "other_tools.build_tools",
-      t: "Build Tools",
+      t: "बिल्ड टूल्स",
     },
     {
       key: "other_tools.build_tools.description",
-      t: "Which build tools do you use?",
+      t: "आप किस बिल्ड टूल्स का उपयोग करते हैं?",
     },
     {
       key: "other_tools.build_tools.others",
-      t: "Other Build Tools",
+      t: "अन्य बिल्ड टूल्स",
     },
     {
       key: "other_tools.build_tools.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "other_tools.non_js_languages",
-      t: "Non-JavaScript Languages",
+      t: "गैर-जावास्क्रिप्ट भाषाएं",
     },
     {
       key: "other_tools.non_js_languages.description",
-      t: "Which other programming languages do you use?",
+      t: "आप किन अन्य प्रोग्रामिंग भाषाओं का उपयोग करते हैं?",
     },
     {
       key: "other_tools.non_js_languages.others",
-      t: "Other Languages",
+      t: "अन्य भाषाएँ",
     },
     {
       key: "other_tools.non_js_languages.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "resources.blogs_news_magazines",
-      t: "Blogs & Magazines",
+      t: "ब्लॉग और पत्रिकाएँ",
     },
     {
       key: "resources.blogs_news_magazines.description",
-      t: "Which blogs/magazines/etc. do you read?",
+      t: "आप कौन से ब्लॉग / पत्रिका / आदि पढ़ते हैं?",
     },
     {
       key: "resources.blogs_news_magazines.others",
-      t: "Other Blogs & Magazines",
+      t: "अन्य ब्लॉग और पत्रिकाएँ",
     },
     {
       key: "resources.blogs_news_magazines.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "resources.sites_courses",
-      t: "Sites & Courses",
+      t: "साइटें और पाठ्यक्रम",
     },
     {
       key: "resources.sites_courses.description",
-      t: "Which sites/courses/etc. do you consult?",
+      t: "आप किन साइटों / पाठ्यक्रमों / आदि से परामर्श करते हैं?",
     },
     {
       key: "resources.sites_courses.others",
-      t: "Other Sites & Courses",
+      t: "अन्य साइटें और पाठ्यक्रम",
     },
     {
       key: "resources.sites_courses.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
     {
       key: "resources.podcasts",
-      t: "Podcasts",
+      t: "पॉडकास्ट",
     },
     {
       key: "resources.podcasts.description",
-      t: "Which programming-related podcasts do you listen to?",
+      t: "आप किस प्रोग्रामिंग से संबंधित पॉडकास्ट सुनते हैं?",
     },
     {
       key: "resources.podcasts.others",
-      t: "Other Podcasts",
+      t: "अन्य पॉडकास्ट",
     },
     {
       key: "resources.podcasts.others.description",
-      t: "Other answers (freeform field).",
+      t: "अन्य उत्तर (फ़्रीफ़ॉर्म फ़ील्ड)।",
     },
   ],
 };
