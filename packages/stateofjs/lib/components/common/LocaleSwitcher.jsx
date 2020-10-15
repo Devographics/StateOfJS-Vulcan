@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Components, Locales } from 'meteor/vulcan:core';
+import { Components, Locales, getLocale } from 'meteor/vulcan:core';
 
-const LocaleSwitcher = (props, { setLocale, getLocale }) => {
-  const currentLocaleId = getLocale(false);
-  const currentLocale = Locales.find((locale) => locale.id === currentLocaleId);
+const LocaleSwitcher = (props, { setLocale, getLocale: getLocaleContext }) => {
+  const currentLocaleId = getLocaleContext();
+  const currentLocale = getLocale(currentLocaleId);
   return (
     <Components.Dropdown
       buttonProps={{

@@ -36,6 +36,11 @@ export const locales = [
     label: 'Português',
     translators: ['danisal']
   },
+  {
+    id: 'es-ES',
+    label: 'Español',
+    translators: ['timbergus', 'ezkato']
+  }
 ];
 
 // export const convertStrings = (stringFile) => {

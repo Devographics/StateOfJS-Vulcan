@@ -9,7 +9,7 @@ const LocaleItem = ({ locale }) => {
       <h4 className="translators-locale-heading">{label}</h4>
       <div className="translators-locale-translators">
         {translators.map((name, i) => (
-          <>
+          <span key={name}>
             <a
               className="translators-locale-translator"
               key={name}
@@ -20,7 +20,7 @@ const LocaleItem = ({ locale }) => {
               {name}
             </a>
             {i < translators.length - 1 && ', '}
-          </>
+          </span>
         ))}
       </div>
     </div>

@@ -27,6 +27,7 @@ Locales
 */
 const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]) {
   locale(localeId: $localeId, contexts: $contexts) {
+    id
     strings {
       key
       t
@@ -47,16 +48,16 @@ const locale = async (root, { localeId }, context) => {
   });
   const json = await response.json();
 
-  const strings = get(json, 'data.locale.strings');
+  const locale = get(json, 'data.locale')
   if (json.errors) {
     console.log(json.errors);
     throw new Error('// locale API query error')
   }
   const convertedStrings = {};
-  strings.forEach(({ key, t }) => {
+  locale.strings && locale.strings.forEach(({ key, t }) => {
     convertedStrings[key] = t;
   });
-  return { id: localeId, strings: convertedStrings };
+  return { ...locale, strings: convertedStrings };
 };
 
 addGraphQLResolvers({ Query: { locale } });
