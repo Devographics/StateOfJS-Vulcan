@@ -1,13 +1,18 @@
 import { default as enCommon } from "./common/js/en-US.js";
 import { default as enCSS } from "./state-of-css/js/en-US.js";
 import { default as enJS } from "./state-of-js/js/en-US.js";
+
+import { default as esCommon } from "./common/js/es-ES.js";
+import { default as esCSS } from "./state-of-css/js/es-ES.js";
+import { default as esJS } from "./state-of-js/js/es-ES.js";
+
 import { default as hiCommon } from "./common/js/hi-IN.js";
 import { default as hiCSS } from "./state-of-css/js/hi-IN.js";
 import { default as hiJS } from "./state-of-js/js/hi-IN.js";
 
-import { default as zhCommon } from "./common/js/zh-Hans.js";
-import { default as zhCSS } from "./state-of-css/js/zh-Hans.js";
-import { default as zhJS } from "./state-of-js/js/zh-Hans.js";
+import { default as itCommon } from "./common/js/it-IT.js";
+import { default as itCSS } from "./state-of-css/js/it-IT.js";
+import { default as itJS } from "./state-of-js/js/it-IT.js";
 
 import { default as ruCommon } from "./common/js/ru-RU.js";
 import { default as ruCSS } from "./state-of-css/js/ru-RU.js";
@@ -28,6 +33,11 @@ const locales = [
     stringFiles: [enCommon, enCSS, enJS],
   },
   {
+    id: "es",
+    label: "Español",
+    stringFiles: [esCommon, esCSS, esJS],
+  },
+  {
     id: "hi",
     label: "Hindi",
     stringFiles: [hiCommon, hiCSS, hiJS],
@@ -38,12 +48,6 @@ const locales = [
     label: "Italiano",
     stringFiles: [itCommon, itCSS, itJS],
     translators: ["polettoweb"],
-  },
-  {
-    id: "zh",
-    label: "中文",
-    stringFiles: [zhCommon, zhCSS, zhJS],
-    translators: [],
   },
   {
     id: "ru-RU",
