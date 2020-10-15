@@ -180,9 +180,9 @@ export const getQuestionObject = (questionObject, section, number) => {
 export const parseOptions = (questionObject, options) => {
   return options.map(option => {
     if (typeof option === 'object') {
-      // if option is an object, use its id as translation key
+      // if option is an object, use its id or value as translation key
       const { id, value } = option;
-      const idString = String(id || value);
+      const idString = typeof id !== 'undefined' ? String(id) : String(value);
       return {
         value: id,
         label: idString, // only used as fallback
