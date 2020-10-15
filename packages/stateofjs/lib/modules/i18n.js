@@ -27,6 +27,11 @@ export const locales = [
     translators: ['arnauddrain']
   },
   {
+    id: 'hi-IN',
+    label: 'Hindi',
+    translators: ['jaideepghosh']
+  },
+  {
     id: 'sv-SE',
     label: 'Svenska',
     translators: ['m-hagberg']
