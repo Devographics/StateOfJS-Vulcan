@@ -224,7 +224,7 @@ export const resourceNormalizationRules = [
 
 ]
 
-export const sourceNormalizationRules = [...resourceNormalizationRules, 
+export const sourceNormalizationRules = [...resourceNormalizationRules,
 
   [/twee?t/i, 'twitter'],
   [/https\:\/\/t\.co/i, 'twitter'],
@@ -254,13 +254,34 @@ export const sourceNormalizationRules = [...resourceNormalizationRules,
 
 
 export const otherFeaturesNormalizationRules = [
-  [/container ?queries/i, 'container_queries'],
-  [/parent ?selector/i, 'parent_selector'],
+  // missing CSS features
+  [/container( |-)(media|width)? ?quer(y|ies)/i, 'container_queries'],
+  [/(element|object|component)s? (based )?(media )?quer(y|ies)/i, 'container_queries'],
+  [/parent select(or|ion)/i, 'parent_selector'],
+  [/parent (of )?(an )?element/i, 'parent_selector'],
+  [/\:parent/i, 'parent_selector'],
+  [/(target|select|style) (a )?parent/i, 'parent_selector'],
   [/nesting/i, 'nesting'],
-  [/scoping/i, 'scoping'],
-  [/mixins/i, 'mixins'],
-  [/has/i, 'has_selector'],
-  [/functions/i, 'functions'],
+  [/nested select(or|ion)/i, 'nesting'],
+  [/sub( |-)?grid/i, 'subgrid'],
+  [/\:has/i, 'has_selector'],
+  [/has\(\)/i, 'has_selector'],
+  [/mixins?/i, 'mixins'],
+  [/functions?/i, 'functions'],
+  [/houdini/i, 'houdini'],
+  [/encapsulation/i, 'scoping'],
+  [/isolation/i, 'scoping'],
+  [/scop(e|ing)/i, 'scoping'],
+  [/nothing/i, 'nothing'],
+  [/browser support/i, 'browser_support'],
+  [/browser adoption/i, 'browser_support'],
+  [/consistency/i, 'browser_support'],
+  [/consistent support/i, 'browser_support'],
+  [/cross( |-)browser/i, 'browser_support'],
+  [/conditional/i, 'conditional_logic'],
+  [/if statement/i, 'conditional_logic'],
+  [/simplicity/i, 'simplicity'],
+  [/sass/i, 'sass'],
 ];
 
 
@@ -553,7 +574,7 @@ export const toolNormalizationRules = [
   [/web( )?assembly/i, 'web_assembly'],
   [/service( )?workers/i, 'service_workers'],
   [/C\/C\+\+/i, 'c-cplusplus'],
-  
+
   [/ruby/i, 'ruby'],
   [/LitElement/i, 'litelement'],
 
