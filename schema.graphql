@@ -194,6 +194,7 @@ type Entity {
   type: String
   tags: [String]
   context: String
+  mdn: JSON
 }
 
 # A user object
@@ -829,6 +830,7 @@ type Response {
   user: User 
   year: Float 
   completion: Float 
+  knowledgeScore: Float 
   isSynced: Boolean 
   email: String 
   context: String 
@@ -1054,6 +1056,8 @@ type Response {
   js2019__user_info__country: String 
   pagePath: String 
   survey: Survey 
+  normalizedResponse: JSON 
+  knowledgeRanking: Int 
   createdAtFormatted(format: String = "YYYY/MM/DD"): String 
   updatedAtFormatted(format: String = "YYYY/MM/DD"): String 
 }
@@ -1607,6 +1611,7 @@ input ResponseFilterInput {
   userId: String_Selector
   year: Float_Selector
   completion: Float_Selector
+  knowledgeScore: Float_Selector
   isSynced: Boolean_Selector
   email: String_Selector
   context: String_Selector
@@ -1839,6 +1844,7 @@ input ResponseSortInput {
   userId: SortOptions
   year: SortOptions
   completion: SortOptions
+  knowledgeScore: SortOptions
   isSynced: SortOptions
   email: SortOptions
   context: SortOptions

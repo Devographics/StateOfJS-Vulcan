@@ -5,6 +5,7 @@ import { getSurveyPath } from '../../modules/surveys/helpers';
 import { Components, useSingle2 } from 'meteor/vulcan:core';
 import { useHistory, useParams } from 'react-router-dom';
 import surveys from '../../surveys';
+import Score from '../common/Score';
 
 const Thanks = () => {
   const { responseId } = useParams();
@@ -12,7 +13,7 @@ const Thanks = () => {
 
   const { document: response, loading } = useSingle2({
     collectionName: 'Responses',
-    fragmentName: 'ResponseFragment',
+    fragmentName: 'ResponseFragmentWithRanking',
     input: { id: responseId },
   });
 
@@ -25,9 +26,10 @@ const Thanks = () => {
 
   return (
     <div className="contents-narrow thanks">
-      <h1 className="survey-image">
+      <h1 className="survey-image survey-image-small">
         <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
       </h1>
+      <Score response={response} survey={survey} />
       <div>
         <FormattedMessage id="general.thanks" />
       </div>

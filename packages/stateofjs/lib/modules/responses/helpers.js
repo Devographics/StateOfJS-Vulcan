@@ -2,6 +2,7 @@ import countriesOptions from '../countriesOptions.js';
 import { Utils } from 'meteor/vulcan:core';
 import pickBy from 'lodash/pickBy';
 import { getSurveyFromResponse } from '../surveys/helpers';
+import surveys from '../../surveys';
 
 /*
 
@@ -317,4 +318,27 @@ export const getResponseData = response => {
   return pickBy(response, (r, k) => k.includes(response.surveySlug))
 }
 
+/*
 
+Calculate CSS features knowledge score
+
+*/
+export const getKnowledgeScore = (response) => {
+  const survey = surveys.find((s) => s.slug === response.surveySlug);
+  const featureSections = survey.outline.filter(section => section.slug === 'features');
+  const featureFields = featureSections.map(s => s.questions).flat()
+  const unknownFields = featureFields.filter(field => {
+    const value = response[field.fieldName];
+    return value !== 'heard' && value !== 'used';
+  })
+  const total = featureFields.length;
+  const unknown = unknownFields.length;
+  const known = total - unknown;
+  return {
+    total, 
+    unknown,
+    known,
+    score: Math.round(known * 100 / total),
+    unknownFields,
+  }
+}

@@ -6,6 +6,7 @@ import {
   getQuestionSchema,
   getCompletionPercentage,
   getQuestionFieldName,
+  getKnowledgeScore,
 } from './helpers.js';
 
 const schema = {
@@ -64,6 +65,14 @@ const schema = {
     canRead: ['guests'],
     onUpdate: ({ document }) => {
       return getCompletionPercentage(document);
+    },
+  }, 
+  knowledgeScore: {
+    type: Number,
+    optional: true,
+    canRead: ['guests'],
+    onUpdate: ({ document }) => {
+      return getKnowledgeScore(document).score;
     },
   },
   isSynced: {

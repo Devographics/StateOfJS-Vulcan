@@ -18,6 +18,7 @@ const entitiesQuery = `query EntitiesQuery {
     context
     description
     tags
+    mdn
   }
 }
 `;

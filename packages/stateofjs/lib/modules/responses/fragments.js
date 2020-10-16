@@ -28,13 +28,20 @@ registerFragment(/* GraphQL */ `
 `);
 
 registerFragment(/* GraphQL */ `
+  fragment ResponseFragmentWithRanking on Response {
+    ...ResponseFragment
+    knowledgeRanking
+  }
+`);
+
+registerFragment(/* GraphQL */ `
   fragment ResponseAdminFragment on Response {
 
     ...ResponseFragment
 
-    referrer
-    source
     completion
+
+    normalizedResponse
 
     user {
       _id

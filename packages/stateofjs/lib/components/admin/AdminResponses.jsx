@@ -10,6 +10,14 @@ const ResponseData = ({ document }) => {
   );
 };
 
+const NormalizedData = ({ document }) => {
+  return document.normalizedResponse ? (
+    <Components.ModalTrigger label="View Normalized Data">
+      <Components.Card document={document.normalizedResponse} />
+    </Components.ModalTrigger>
+  ) : null;
+};
+
 const AdminResponses = () => (
   <div className="admin-responses">
     <Components.Datatable
@@ -29,10 +37,10 @@ const AdminResponses = () => (
         { name: 'updatedAt', sortable: true },
         { name: 'completion', sortable: true, component: ({ document }) => <span>{document.completion}%</span> },
         // 'aboutyou_youremail',
-        'referrer',
         // 'isSynced',
         'user',
         { name: 'data', component: ResponseData },
+        { name: 'normalizedData', component: NormalizedData },
       ]}
     />
   </div>

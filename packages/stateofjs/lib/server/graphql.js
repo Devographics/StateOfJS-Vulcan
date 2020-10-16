@@ -77,6 +77,7 @@ const entityType = `type Entity {
   type: String
   tags: [String]
   context: String
+  mdn: JSON
 }`;
 
 addGraphQLSchema(entityType);
@@ -90,6 +91,12 @@ const entitiesQuery = `query EntitiesQuery {
     type
     category
     description
+    mdn {
+      locale
+      url
+      title
+      summary
+    }
   }
 }
 `;
