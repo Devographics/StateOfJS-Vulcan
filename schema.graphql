@@ -821,6 +821,135 @@ input AnalyticsEventSelectorUniqueInput {
 }
 
 
+# Type for Saves
+type Save {
+  _id: String 
+  createdAt: Date 
+  startedAt: Date 
+  finishedAt: Date 
+  duration: Float 
+  isError: Boolean 
+  responseId: String 
+  createdAtFormatted(format: String = "YYYY/MM/DD"): String 
+  startedAtFormatted(format: String = "YYYY/MM/DD"): String 
+  finishedAtFormatted(format: String = "YYYY/MM/DD"): String 
+}
+
+
+input DeleteSaveInput{
+  filter: SaveFilterInput
+  id: String
+}
+
+input SingleSaveInput {
+  # filtering
+  filter: SaveFilterInput
+  sort: SaveSortInput
+  search: String
+  id: String
+
+  # backwards-compatibility
+  # Deprecated (use 'filter/id' fields instead).
+  selector: SaveSelectorUniqueInput
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Return null instead of throwing MissingDocumentError
+  allowNull: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+}
+
+input MultiSaveInput {
+
+  # filtering
+  filter: SaveFilterInput
+  sort: SaveSortInput
+  search: String
+  offset: Int
+  limit: Int
+
+  # backwards-compatibility
+  # A JSON object that contains the query terms used to fetch data
+  # Deprecated (use 'filter/id' fields instead).
+  terms: JSON
+
+  # options (backwards-compatibility)
+  # Whether to enable caching for this query
+  enableCache: Boolean
+  # Whether to calculate totalCount for this query
+  enableTotal: Boolean
+  # An identifier to name the query's execution context
+  contextName: String
+
+}
+
+type SingleSaveOutput{
+  result: Save
+}
+
+type  MultiSaveOutput{
+  results: [Save]
+  totalCount: Int
+}
+
+type SaveMutationOutput{
+  data: Save
+}
+
+input CreateSaveInput {
+  data: CreateSaveDataInput!
+  # An identifier to name the mutation's execution context
+  contextName: String
+}
+
+input CreateSaveDataInput {
+  startedAt: Date 
+  finishedAt: Date 
+  isError: Boolean 
+  responseId: String 
+}
+
+input SaveFilterInput {
+  _and: [SaveFilterInput]
+  _not: SaveFilterInput
+  _or: [SaveFilterInput]
+
+
+  _id: String_Selector
+  createdAt: Date_Selector
+  startedAt: Date_Selector
+  finishedAt: Date_Selector
+  duration: Float_Selector
+  isError: Boolean_Selector
+  responseId: String_Selector
+}
+
+input SaveSortInput {
+  _id: SortOptions
+  createdAt: SortOptions
+  startedAt: SortOptions
+  finishedAt: SortOptions
+  duration: SortOptions
+  isError: SortOptions
+  responseId: SortOptions
+}
+
+input SaveSelectorInput {
+  _and: [SaveSelectorInput]
+  _or: [SaveSelectorInput]
+
+}
+
+input SaveSelectorUniqueInput {
+  _id: String
+  documentId: String # OpenCRUD backwards compatibility
+  slug: String
+
+}
+
+
 # Type for Responses
 type Response {
   _id: String 
@@ -843,7 +972,6 @@ type Response {
   common__user_info__source: String 
   css2020__features__grid__experience: String 
   css2020__features__subgrid__experience: String 
-  css2020__features__regions__experience: String 
   css2020__features__flexbox__experience: String 
   css2020__features__multi_column__experience: String 
   css2020__features__writing_modes__experience: String 
@@ -1144,7 +1272,6 @@ input CreateResponseDataInput {
   common__user_info__source: String 
   css2020__features__grid__experience: String 
   css2020__features__subgrid__experience: String 
-  css2020__features__regions__experience: String 
   css2020__features__flexbox__experience: String 
   css2020__features__multi_column__experience: String 
   css2020__features__writing_modes__experience: String 
@@ -1386,7 +1513,6 @@ input UpdateResponseDataInput {
   common__user_info__source: String 
   css2020__features__grid__experience: String 
   css2020__features__subgrid__experience: String 
-  css2020__features__regions__experience: String 
   css2020__features__flexbox__experience: String 
   css2020__features__multi_column__experience: String 
   css2020__features__writing_modes__experience: String 
@@ -1624,7 +1750,6 @@ input ResponseFilterInput {
   common__user_info__source: String_Selector
   css2020__features__grid__experience: String_Selector
   css2020__features__subgrid__experience: String_Selector
-  css2020__features__regions__experience: String_Selector
   css2020__features__flexbox__experience: String_Selector
   css2020__features__multi_column__experience: String_Selector
   css2020__features__writing_modes__experience: String_Selector
@@ -1857,7 +1982,6 @@ input ResponseSortInput {
   common__user_info__source: SortOptions
   css2020__features__grid__experience: SortOptions
   css2020__features__subgrid__experience: SortOptions
-  css2020__features__regions__experience: SortOptions
   css2020__features__flexbox__experience: SortOptions
   css2020__features__multi_column__experience: SortOptions
   css2020__features__writing_modes__experience: SortOptions
@@ -2210,6 +2334,12 @@ type Query {
   # A list of AnalyticsEvent documents matching a set of query terms
   analyticsEvents(input: MultiAnalyticsEventInput):  MultiAnalyticsEventOutput
   
+  # A single Save document fetched by ID or slug
+  save(input: SingleSaveInput!): SingleSaveOutput
+  
+  # A list of Save documents matching a set of query terms
+  saves(input: MultiSaveInput):  MultiSaveOutput
+  
   # A single Response document fetched by ID or slug
   response(input: SingleResponseInput!): SingleResponseOutput
   
@@ -2276,6 +2406,20 @@ type Mutation {
   # Deprecated (use 'input' field instead).
   data: CreateAnalyticsEventDataInput
 ) : AnalyticsEventMutationOutput
+
+  # Mutation for creating new Save documents
+  createSave(
+  input: CreateSaveInput,
+  # Deprecated (use 'input' field instead).
+  data: CreateSaveDataInput
+) : SaveMutationOutput
+
+  # Mutation for deleting a Save document
+  deleteSave(
+  input: DeleteSaveInput,
+  # Deprecated (use 'input' field instead).
+  selector: SaveSelectorUniqueInput
+) : SaveMutationOutput
 
   # Mutation for creating new Response documents
   createResponse(

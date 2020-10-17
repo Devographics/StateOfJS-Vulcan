@@ -9,16 +9,16 @@ import take from 'lodash/take';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { intlShape } from 'meteor/vulcan:i18n';
 
-const Features = ({ unknownFields, entities }) => {
+const Features = ({ unknownFields, entities, limit }) => {
   return (
     <div className="score-features">
       <h4 className="score-features-heading">
         <FormattedMessage id="thanks.learn_more_about" />
       </h4>{' '}
       <div className="score-features-items">
-        {unknownFields.map((field, i) => {
+        {take(unknownFields, limit).map((field, i) => {
           const entity = entities.find((e) => e.id === field.id);
-          return entity ? <FeatureItem key={field.id} entity={entity} showComma={i < 9} /> : null;
+          return entity && get(entity, 'mdn.url') ? <FeatureItem key={field.id} entity={entity} showComma={i < (limit-1)} /> : null;
         })}
       </div>
     </div>
@@ -87,14 +87,15 @@ const Score = ({ response, survey }, { intl }) => {
                 html={true}
               />
             </div>
+            <div className="score-share">
             <Components.Button
-              className="score-share"
               target="_blank"
               href={`https://twitter.com/intent/tweet/?text=${encodeURIComponent(text)}`}
             >
               <FormattedMessage id="thanks.share_on_twitter" />
             </Components.Button>
-            <Features unknownFields={take(unknownFields, 10)} entities={entities.filter((e) => e.type === 'feature')} />
+            </div>
+            <Features unknownFields={unknownFields} limit={10} entities={entities.filter((e) => e.type === 'feature')} />
           </div>
         </div>
       )}

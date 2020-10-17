@@ -29,9 +29,6 @@ export default {
           "id": "subgrid"
         },
         {
-          "id": "regions"
-        },
-        {
           "id": "flexbox"
         },
         {

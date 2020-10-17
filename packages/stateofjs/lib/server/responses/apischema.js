@@ -19,7 +19,7 @@ export const apiSchema = {
   normalizedResponse: {
     typeName: 'JSON',
     resolver: (response) => {
-      return NormalizedResponses.findOne({ _id: response._id });
+      return NormalizedResponses.findOne({ responseId: response._id });
     },
   },
 

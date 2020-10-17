@@ -38,7 +38,7 @@
 
     path,
     circle {
-      fill: $grey;
+      fill: var(--text-color);
     }
   }
   &:hover {

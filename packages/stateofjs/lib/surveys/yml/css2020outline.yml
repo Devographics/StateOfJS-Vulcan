@@ -28,7 +28,6 @@ outline:
     questions:
       - id: grid # used as third part of field name
       - id: subgrid
-      - id: regions # intl key is of the form ${section.slug}.${question.id}
       - id: flexbox
       - id: multi_column
       - id: writing_modes

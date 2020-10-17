@@ -30,8 +30,7 @@
   overflow: hidden;
 }
 .score-share {
-  max-width: 250px;
-  margin: 0 auto;
+  @include flex-center;  
   margin-top: $spacing * 2;
 }
 

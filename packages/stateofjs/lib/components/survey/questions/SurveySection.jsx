@@ -21,14 +21,20 @@ const SurveySection = () => {
 
   const history = useHistory();
 
-  const { document: response, loading } = useSingle2({
+  const data = useSingle2({
     collectionName: 'Responses',
     fragmentName: 'ResponseFragment',
     input: { id: responseId },
   });
+  const { document: response, loading } = data;
   if (loading) {
     return <Components.Loading />;
   }
+  if (!response) {
+    console.log(data);
+    return <div>Could not find survey response document.</div>
+  }
+  
   const survey = surveys.find((s) => s.slug === response.survey.slug);
   const surveyOutline = survey.outline;
   const sectionIndex = sectionNumber - 1;

@@ -4,7 +4,7 @@ import { getResponseData } from '../../modules/responses/helpers';
 
 const ResponseData = ({ document }) => {
   return (
-    <Components.ModalTrigger label="View Data">
+    <Components.ModalTrigger label="View Data" size="xl">
       <Components.Card document={getResponseData(document)} />
     </Components.ModalTrigger>
   );
@@ -12,7 +12,7 @@ const ResponseData = ({ document }) => {
 
 const NormalizedData = ({ document }) => {
   return document.normalizedResponse ? (
-    <Components.ModalTrigger label="View Normalized Data">
+    <Components.ModalTrigger label="View Normalized Data" size="xl">
       <Components.Card document={document.normalizedResponse} />
     </Components.ModalTrigger>
   ) : null;

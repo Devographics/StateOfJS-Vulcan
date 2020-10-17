@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { statuses } from '../../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 import FormLabel from './FormLabel.jsx';
 import FormOptionLabel from './FormOptionLabel.jsx';
-import { Components, useCurrentUser } from 'meteor/vulcan:core';
+import { Components, useCurrentUser, useCreate2 } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { getSurveyPath } from '../../../modules/surveys/helpers';
+import Saves from '../../../modules/saves/collection';
 
 const SurveySectionContents = ({
   survey,
@@ -20,8 +21,25 @@ const SurveySectionContents = ({
 }) => {
   const { currentUser } = useCurrentUser();
 
+  const [startedAt, setStartedAt] = useState();
+
+  const [createSave, { data, loading, error }] = useCreate2({
+    collection: Saves,
+    fragmentName: 'SaveFragment',
+  });
+
   const fields = section.questions.map((question) => question.fieldName);
   const { id } = section;
+
+  const trackSave = ({ isError = false }) => {
+    const data = {
+      startedAt,
+      finishedAt: new Date(),
+      responseId: response._id,
+      isError,
+    };
+    createSave({ input: { data } });
+  };
 
   const FormSubmitWrapper = (props) => (
     <FormSubmit
@@ -72,6 +90,11 @@ const SurveySectionContents = ({
         itemProperties={{
           layout: 'vertical',
         }}
+        submitCallback={() => {
+          setStartedAt(new Date());
+        }}
+        successCallback={() => trackSave({ isError: false })}
+        errorCallback={() => trackSave({ isError: true })}
         warnUnsavedChanges={false}
         disabled={readOnly || survey.status !== statuses.open}
         components={{

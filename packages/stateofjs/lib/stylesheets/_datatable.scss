@@ -6,7 +6,7 @@
   margin-left: $spacing/2;
 }
 .datatable-list{
-  background: $greyLight;
+  background: $white;
   overflow: scroll;
 }
 .dashboard-user{
@@ -18,4 +18,6 @@
     width: 24px;
     font-size: $small-font;
   }
+}
+.datatable{
 }
