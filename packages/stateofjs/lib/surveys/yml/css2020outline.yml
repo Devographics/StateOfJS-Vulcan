@@ -71,7 +71,7 @@ outline:
       - id: font_variant_numeric
       - id: font_display
       - id: line_clamp
-      - id: leading_trim
+      # - id: leading_trim
       - id: direction
 
   - id: animations_transforms

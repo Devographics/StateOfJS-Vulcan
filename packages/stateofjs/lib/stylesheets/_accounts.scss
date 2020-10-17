@@ -5,10 +5,11 @@
     }
   }
   .buttons{
+    @include flex-center;
+    flex-direction: column;
     .btn-primary{
-      width: 100%;
-      max-width: 200px;
       margin: $spacing auto $spacing auto !important;
+      min-width: 200px;
     }
     a{
       display: block;
