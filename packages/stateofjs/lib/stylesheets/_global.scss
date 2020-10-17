@@ -133,12 +133,19 @@ Page-specific styles
   }
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .main-logo-wrapper {
   max-width: 500px;
   margin: 0 auto $spacing * 2 auto;
 }
 
 .main-contents {
+  flex: 1 0 auto;
   padding: 20px;
 }
 
