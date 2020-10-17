@@ -18,6 +18,8 @@ const NormalizedData = ({ document }) => {
   ) : null;
 };
 
+const Completion = ({ document }) => <span>{document.completion}%</span>;
+
 const AdminResponses = () => (
   <div className="admin-responses">
     <Components.Datatable
@@ -35,7 +37,7 @@ const AdminResponses = () => (
         // '_id',
         { name: 'createdAt', sortable: true },
         { name: 'updatedAt', sortable: true },
-        { name: 'completion', sortable: true, component: ({ document }) => <span>{document.completion}%</span> },
+        { name: 'completion', sortable: true, component: Completion },
         // 'aboutyou_youremail',
         // 'isSynced',
         'user',

@@ -23,9 +23,13 @@ const loggedInNavContents = [
 
 const adminNavContents = [
   {
-    label: 'Surveys',
-    to: '/admin/surveys',
+    label: 'Stats',
+    to: '/admin/stats',
   },
+  // {
+  //   label: 'Surveys',
+  //   to: '/admin/surveys',
+  // },
   {
     label: 'Users',
     to: '/admin/users',

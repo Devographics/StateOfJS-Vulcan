@@ -56,12 +56,14 @@ strong {
   line-height: 1;
 }
 
-code {
-  background: $bg-color-light;
-  color: var(--text-color) !important;
-  // background: #F3F4F4;
-  // color: #24292e;
-  padding: 3px 8px;
-  @include font-regular;
-  @include border-radius;
+.section-questions {
+  code {
+    background: $bg-color-light;
+    color: var(--text-color) !important;
+    // background: #F3F4F4;
+    // color: #24292e;
+    padding: 3px 8px;
+    @include font-regular;
+    @include border-radius;
+  }
 }

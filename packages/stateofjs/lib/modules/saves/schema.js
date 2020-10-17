@@ -1,3 +1,4 @@
+import { getSetting } from 'meteor/vulcan:core';
 import moment from 'moment';
 
 const schema = {
@@ -28,12 +29,20 @@ const schema = {
     canCreate: ['members'],
     canRead: ['admins'],
   },
+  host: {
+    type: String,
+    optional: true,
+    canRead: ['admins'],
+    onCreate: () => {
+      return getSetting('host');
+    },
+  },
   duration: {
     type: Number,
     optional: true,
     canRead: ['admins'],
     onCreate: ({ data }) => {
-      return moment(data.finishedAt).diff(moment(data.startedAt), 'seconds');
+      return moment(data.finishedAt).diff(moment(data.startedAt));
     },
   },
   isError: {

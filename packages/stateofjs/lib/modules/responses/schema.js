@@ -1,4 +1,4 @@
-
+import moment from 'moment';
 import surveys from '../../surveys';
 
 import {
@@ -59,6 +59,14 @@ const schema = {
       return new Date().getFullYear();
     },
   },  
+  duration: {
+    type: Number,
+    optional: true,
+    canRead: ['guests'],
+    onUpdate: ({ document }) => {
+      return moment(document.updatedAt).diff(moment(document.createdAt), 'minutes');
+    },
+  }, 
   completion: {
     type: Number,
     optional: true,

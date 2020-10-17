@@ -174,12 +174,14 @@ Page-specific styles
   padding: $spacing;
 }
 
-pre,
-code {
-  color: $text-color;
+.survey-section {
+  pre,
+  code {
+    color: $text-color;
+  }
 }
 
-.app-secondary-loading{
+.app-secondary-loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -189,5 +191,4 @@ code {
   background: white(0.3);
   z-index: 1000;
   backdrop-filter: blur(5px);
-
 }

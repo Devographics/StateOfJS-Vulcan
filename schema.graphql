@@ -196,6 +196,9 @@ type Entity {
   context: String
   mdn: JSON
 }
+type Stats {
+  contents: JSON
+}
 
 # A user object
 type User {
@@ -827,6 +830,7 @@ type Save {
   createdAt: Date 
   startedAt: Date 
   finishedAt: Date 
+  host: String 
   duration: Float 
   isError: Boolean 
   responseId: String 
@@ -921,6 +925,7 @@ input SaveFilterInput {
   createdAt: Date_Selector
   startedAt: Date_Selector
   finishedAt: Date_Selector
+  host: String_Selector
   duration: Float_Selector
   isError: Boolean_Selector
   responseId: String_Selector
@@ -931,6 +936,7 @@ input SaveSortInput {
   createdAt: SortOptions
   startedAt: SortOptions
   finishedAt: SortOptions
+  host: SortOptions
   duration: SortOptions
   isError: SortOptions
   responseId: SortOptions
@@ -958,6 +964,7 @@ type Response {
   userId: String 
   user: User 
   year: Float 
+  duration: Float 
   completion: Float 
   knowledgeScore: Float 
   isSynced: Boolean 
@@ -1736,6 +1743,7 @@ input ResponseFilterInput {
   updatedAt: Date_Selector
   userId: String_Selector
   year: Float_Selector
+  duration: Float_Selector
   completion: Float_Selector
   knowledgeScore: Float_Selector
   isSynced: Boolean_Selector
@@ -1968,6 +1976,7 @@ input ResponseSortInput {
   updatedAt: SortOptions
   userId: SortOptions
   year: SortOptions
+  duration: SortOptions
   completion: SortOptions
   knowledgeScore: SortOptions
   isSynced: SortOptions
@@ -2315,6 +2324,8 @@ type Query {
   getDatabaseObject(id: String): JSON
   
   entities: [Entity]
+  
+  stats: Stats
   
   # A single User document fetched by ID or slug
   user(input: SingleUserInput!): SingleUserOutput

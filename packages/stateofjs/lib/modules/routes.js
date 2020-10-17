@@ -11,6 +11,7 @@ import SurveySectionSwitcher from '../components/survey/SurveySectionSwitcher';
 // import SurveySection from '../components/survey/SurveySection';
 // import SurveySectionReadOnly from '../components/survey/SurveySectionReadOnly';
 
+import AdminStats from '../components/admin/AdminStats';
 import AdminSurveys from '../components/admin/AdminSurveys';
 import AdminResponses from '../components/admin/AdminResponses';
 import AdminUsers from '../components/admin/AdminUsers';
@@ -19,6 +20,7 @@ const routes = [
 { name: 'home', path: '/', component: Surveys },
 { name: 'account', path: '/account', component: AccountPage },
 
+{ name: 'adminStats', path: '/admin/stats', component: AdminStats },
 { name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys },
 { name: 'adminResponses', path: '/admin/responses', component: AdminResponses },
 { name: 'adminUsers', path: '/admin/users', component: AdminUsers },
