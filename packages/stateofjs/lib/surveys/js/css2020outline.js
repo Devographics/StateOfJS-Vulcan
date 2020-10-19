@@ -134,9 +134,6 @@ export default {
           "id": "line_clamp"
         },
         {
-          "id": "leading_trim"
-        },
-        {
           "id": "direction"
         }
       ]

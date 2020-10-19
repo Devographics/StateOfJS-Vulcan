@@ -8,6 +8,13 @@ export const Saves = createCollection({
 
   schema,
 
+  queries: null,
+
+  mutations: {
+    update: null,
+    delete: null
+  },
+
   permissions: {
     canRead: ['owners', 'admins'],
     canCreate: ['members'],

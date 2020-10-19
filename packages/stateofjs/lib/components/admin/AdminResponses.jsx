@@ -21,7 +21,7 @@ const NormalizedData = ({ document }) => {
 const Completion = ({ document }) => <span>{document.completion}%</span>;
 
 const AdminResponses = () => (
-  <div className="admin-responses">
+  <div className="admin-responses admin-content">
     <Components.Datatable
       collectionName="Responses"
       options={{

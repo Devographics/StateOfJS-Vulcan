@@ -8,6 +8,7 @@ const statsQuery = `query StatsQuery {
   stats {
     contents
   }
+  cacheStats
 }
 `;
 
@@ -18,8 +19,22 @@ const AdminStats = () => {
     return <Components.Loading />;
   }
   return (
-    <div className="admin-stats">
+    <div className="admin-stats admin-content">
+      <h3>Responses Stats</h3>
       <Components.Card document={get(data, 'stats.contents')} />
+      <h3>
+        <span>Cache Stats</span>
+        <Components.MutationButton
+          label="Clear Cache"
+          mutationOptions={{
+            name: 'clearCache',
+          }}
+          successCallback={() => {
+            alert('Cache flushed');
+          }}
+        />
+      </h3>
+      <Components.Card document={get(data, 'cacheStats')} />
     </div>
   );
 };

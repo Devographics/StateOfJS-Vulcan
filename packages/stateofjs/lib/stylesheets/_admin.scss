@@ -1,3 +1,11 @@
-.debug-database, .admin-stats{
-  background: $white; 
+.debug-database,
+.admin-stats {
+  background: $white;
+  padding: $spacing;
+  h3{
+    color: $text-color-inverted;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

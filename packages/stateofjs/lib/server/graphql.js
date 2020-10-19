@@ -1,13 +1,16 @@
 import {
   addGraphQLSchema,
   addGraphQLResolvers,
+  addGraphQLMutation,
   getSetting,
   addGraphQLQuery,
+  nodeCache,
 } from 'meteor/vulcan:core';
 import fetch from 'node-fetch';
 import get from 'lodash/get';
 import Saves from '../modules/saves/collection.js';
 import Responses from '../modules/responses/collection.js';
+import Users from 'meteor/vulcan:users';
 
 const translationAPI = getSetting('translationAPI');
 
@@ -29,6 +32,32 @@ addGraphQLSchema(surveyType);
 
 /*
 
+Cache
+
+*/
+const clearCache = (root, args, { currentUser }) => {
+  if (!Users.isAdmin(currentUser)) {
+    throw new Error('You cannot perform this operation');
+  }
+  nodeCache.flushAll();
+  return nodeCache.getStats();
+}
+
+addGraphQLMutation('clearCache: JSON');
+addGraphQLResolvers({ Mutation: { clearCache } });
+
+const cacheStats = (root, args, { currentUser }) => {
+  if (!Users.isAdmin(currentUser)) {
+    throw new Error('You cannot perform this operation');
+  }
+  return { keys: nodeCache.keys(), stats: nodeCache.getStats() };
+}
+
+addGraphQLQuery('cacheStats: JSON');
+addGraphQLResolvers({ Query: { cacheStats } });
+
+/*
+
 Locales
 
 */
@@ -44,27 +73,34 @@ const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]
 `;
 
 const locale = async (root, { localeId }, context) => {
-  const response = await fetch(translationAPI, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({ query: localeQuery, variables: { localeId } }),
-  });
-  const json = await response.json();
-
-  const locale = get(json, 'data.locale');
-  if (json.errors) {
-    console.log(json.errors);
-    throw new Error('// locale API query error');
-  }
-  const convertedStrings = {};
-  locale.strings &&
-    locale.strings.forEach(({ key, t }) => {
-      convertedStrings[key] = t;
+  let convertedLocale = nodeCache.get(localeId);
+  if (!convertedLocale) {
+    const response = await fetch(translationAPI, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ query: localeQuery, variables: { localeId } }),
     });
-  return { ...locale, strings: convertedStrings };
+    const json = await response.json();
+
+    if (json.errors) {
+      console.log(json.errors);
+      throw new Error('// locale API query error');
+    }
+    const locale = get(json, 'data.locale');
+
+    const convertedStrings = {};
+    locale.strings &&
+      locale.strings.forEach(({ key, t }) => {
+        convertedStrings[key] = t;
+      });
+
+    convertedLocale = { ...locale, strings: convertedStrings };
+    nodeCache.set(locale.id, convertedLocale);
+  }
+  return convertedLocale;
 };
 
 addGraphQLResolvers({ Query: { locale } });
@@ -109,20 +145,26 @@ const entitiesQuery = `query EntitiesQuery {
 `;
 
 const entities = async () => {
-  const response = await fetch(translationAPI, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({ query: entitiesQuery, variables: {} }),
-  });
-  const json = await response.json();
-  if (json.errors) {
-    console.log(json.errors);
-    throw new Error('// entities API query error');
+  let entities = nodeCache.get('entities');
+
+  if (!entities) {
+    const response = await fetch(translationAPI, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ query: entitiesQuery, variables: {} }),
+    });
+    const json = await response.json();
+    if (json.errors) {
+      console.log(json.errors);
+      throw new Error('// entities API query error');
+    }
+    entities = get(json, 'data.entities');
+    nodeCache.set('entities', entities);
   }
-  const entities = get(json, 'data.entities');
+
   return entities;
 };
 
@@ -167,10 +209,7 @@ const stats = async () => {
   return {
     contents: {
       averageSaveDuration: formatResult(saves[0].average, 'ms'),
-      averageCompletionRate: formatResult(
-        responses[0].averageCompletion,
-        '%'
-      ),
+      averageCompletionRate: formatResult(responses[0].averageCompletion, '%'),
       averageCompletionDuration: formatResult(
         responsesOver50[0] && responsesOver50[0].averageDuration,
         'min'

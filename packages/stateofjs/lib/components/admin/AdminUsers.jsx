@@ -3,7 +3,7 @@ import { Components } from 'meteor/vulcan:core';
 import Users from 'meteor/vulcan:users';
 
 const AdminUsers = () => (
-  <div className="admin-users">
+  <div className="admin-users admin-content">
     <Components.Datatable
       collection={Users}
       columns={[
