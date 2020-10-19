@@ -11,11 +11,11 @@ export const locales = [
     label: 'Italiano',
     translators: ['polettoweb']
   },
-  {
-    id: 'zh-Hans',
-    label: '中文',
-    translators: []
-  },
+  // {
+  //   id: 'zh-Hans',
+  //   label: '中文',
+  //   translators: []
+  // },
   {
     id: 'ru-RU',
     label: 'Русский',

@@ -4,7 +4,7 @@ import { getResponseData } from '../../modules/responses/helpers';
 
 const ResponseData = ({ document }) => {
   return (
-    <Components.ModalTrigger label="View Data" size="xl">
+    <Components.ModalTrigger label="Raw Data" size="xl">
       <Components.Card document={getResponseData(document)} />
     </Components.ModalTrigger>
   );
@@ -12,7 +12,7 @@ const ResponseData = ({ document }) => {
 
 const NormalizedData = ({ document }) => {
   return document.normalizedResponse ? (
-    <Components.ModalTrigger label="View Normalized Data" size="xl">
+    <Components.ModalTrigger label="Norm. Data" size="xl">
       <Components.Card document={document.normalizedResponse} />
     </Components.ModalTrigger>
   ) : null;
@@ -24,6 +24,7 @@ const AdminResponses = () => (
   <div className="admin-responses admin-content">
     <Components.Datatable
       collectionName="Responses"
+      showDelete={true}
       options={{
         fragmentName: 'ResponseAdminFragment',
       }}
@@ -38,6 +39,7 @@ const AdminResponses = () => (
         { name: 'createdAt', sortable: true },
         { name: 'updatedAt', sortable: true },
         { name: 'completion', sortable: true, component: Completion },
+        { name: 'surveySlug', label: 'Survey', filterable: true },
         // 'aboutyou_youremail',
         // 'isSynced',
         'user',

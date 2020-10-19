@@ -58,15 +58,18 @@ const schema = {
     onCreate: () => {
       return new Date().getFullYear();
     },
-  },  
+  },
   duration: {
     type: Number,
     optional: true,
     canRead: ['guests'],
     onUpdate: ({ document }) => {
-      return moment(document.updatedAt).diff(moment(document.createdAt), 'minutes');
+      return moment(document.updatedAt).diff(
+        moment(document.createdAt),
+        'minutes'
+      );
     },
-  }, 
+  },
   completion: {
     type: Number,
     optional: true,
@@ -74,7 +77,7 @@ const schema = {
     onUpdate: ({ document }) => {
       return getCompletionPercentage(document);
     },
-  }, 
+  },
   knowledgeScore: {
     type: Number,
     optional: true,
@@ -108,6 +111,10 @@ const schema = {
     canRead: ['guests'],
     canCreate: ['members'],
     canUpdate: ['admins'],
+    options: surveys.map(({ slug }) => ({
+      value: slug,
+      label: slug,
+    })),
   },
   common__user_info__device: {
     type: String,
@@ -187,14 +194,22 @@ Just put all questions for all surveys on the root of the schema
 
 */
 let i = 0;
-surveys.forEach(survey => {
-  survey.outline.forEach(section => {
+surveys.forEach((survey) => {
+  survey.outline.forEach((section) => {
     section.questions &&
-      section.questions.forEach(questionOrId => {
+      section.questions.forEach((questionOrId) => {
         i++;
         const questionObject = getQuestionObject(questionOrId, section, i);
-        const questionSchema = getQuestionSchema(questionObject, section, survey);
-        const questionId = getQuestionFieldName(survey, section, questionObject);
+        const questionSchema = getQuestionSchema(
+          questionObject,
+          section,
+          survey
+        );
+        const questionId = getQuestionFieldName(
+          survey,
+          section,
+          questionObject
+        );
         schema[questionId] = questionSchema;
       });
   });

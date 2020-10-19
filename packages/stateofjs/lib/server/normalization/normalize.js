@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import set from 'lodash/set';
 import last from 'lodash/last';
 import NormalizedResponses from '../../modules/normalized_responses/collection';
+import Users from 'meteor/vulcan:users';
 
 const fieldsToCopy = [
   'surveySlug',
@@ -19,6 +20,8 @@ export const normalizeResponse = ({ document: response }) => {
   // eslint-disable-next-line
   console.log(`// Normalizing response ${response._id}…`)
   const keysToNormalize = [];
+
+  const user = Users.findOne({ _id: response.userId });
 
   // 1. Copy over root fields and assign id
   const normalizedResp = pick(response, fieldsToCopy);
@@ -41,6 +44,11 @@ export const normalizeResponse = ({ document: response }) => {
 
   // 3. generate email hash
   set(normalizedResp, 'user_info.hash', encrypt(response.email));
+
+  // 4. store user locale
+  if (user) {
+    set(normalizedResp, 'user_info.locale', user.locale);
+  }
 
   // 4. normalize country (if provided)
   if (normalizedResp.user_info.country) {
