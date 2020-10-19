@@ -45,7 +45,7 @@ const AdminResponses = () => (
         // 'isSynced',
         'user',
         { name: 'data', component: ResponseData },
-        { name: 'normalizedData', component: NormalizedData },
+        { name: 'normalizedData', label: 'Normalized', component: NormalizedData },
       ]}
     />
   </div>

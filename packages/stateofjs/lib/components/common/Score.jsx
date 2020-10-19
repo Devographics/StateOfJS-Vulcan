@@ -40,7 +40,7 @@ const Score = ({ response, survey }, { intl }) => {
   const [showConfetti, setShowConfetti] = useState(false);
   const { knowledgeRanking } = response;
   const { known, total, score, unknownFields } = getKnowledgeScore(response, survey);
-  const knowledgeRankingFromTop = 100 - knowledgeRanking;
+  const knowledgeRankingFromTop = knowledgeRanking;
   const { imageUrl, name, year, shareUrl, hashtag } = survey;
 
   const text = intl.formatMessage({ id: 'thanks.share_score_message' }, { score, name, shareUrl, hashtag });

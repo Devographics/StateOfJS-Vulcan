@@ -38,10 +38,9 @@ export const apiSchema = {
         knowledgeScore: { $gt: knowledgeScore },
       }).count();
 
-      const scoreAbovePercent = Math.round(
-        ((scoredAboveCount - 1) * 100) / totalResults
-      );
-
+      const scoreAbovePercent = Math.max(1, Math.round(
+        (scoredAboveCount * 100) / totalResults
+      ));
       return scoreAbovePercent;
     },
   },
