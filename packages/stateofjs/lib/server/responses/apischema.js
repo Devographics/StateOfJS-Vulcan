@@ -27,29 +27,22 @@ export const apiSchema = {
     typeName: 'Int',
     resolver: async (response) => {
       const { surveySlug, knowledgeScore } = response;
-      const match = {
+
+      const totalResults = await Responses.find({
         surveySlug,
         knowledgeScore: { $exists: true },
-      };
-      const totalResults = await Responses.find(match).count();
-      const results = await Responses.rawCollection()
-        .aggregate([
-          {
-            $match: match,
-          },
-          {
-            $project: {
-              scoredAbove: { $gt: ['$knowledgeScore', knowledgeScore] },
-            },
-          },
-          {
-            $count: 'scoredAboveCount',
-          },
-        ])
-        .toArray();
-      // remove 1 to account for own response
-      const scoredAboveCount = results[0].scoredAboveCount - 1;
-      return Math.round((scoredAboveCount * 100) / totalResults);
+      }).count();
+
+      const scoredAboveCount = await Responses.find({
+        surveySlug,
+        knowledgeScore: { $gt: knowledgeScore },
+      }).count();
+
+      const scoreAbovePercent = Math.round(
+        ((scoredAboveCount - 1) * 100) / totalResults
+      );
+
+      return scoreAbovePercent;
     },
   },
 };
