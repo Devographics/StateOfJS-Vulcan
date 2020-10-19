@@ -64,7 +64,7 @@ outline:
     slug: features
     questions:
       - id: web_fonts
-      - id: variables_fonts
+      - id: variables_fonts # TODO: change to variable_fonts ?
       - id: line_breaking
       - id: font_variant
       - id: initial_letter
@@ -639,14 +639,16 @@ outline:
       - id: race_ethnicity
         template: multiple
         options:
-          - id: white_european
-          - id: hispanic_latin
-          - id: east_asian
-          - id: middle_eastern
-          - id: black_african
-          - id: multiracial
           - id: biracial
+          - id: black_african
+          - id: east_asian
+          - id: hispanic_latin
+          - id: middle_eastern
+          - id: multiracial
           - id: native_american_islander_australian
+          - id: south_asian
+          - id: white_european
+
       - id: country
         template: country
 

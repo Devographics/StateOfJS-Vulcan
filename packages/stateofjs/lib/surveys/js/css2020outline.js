@@ -1240,28 +1240,31 @@ export default {
           "template": "multiple",
           "options": [
             {
-              "id": "white_european"
-            },
-            {
-              "id": "hispanic_latin"
-            },
-            {
-              "id": "east_asian"
-            },
-            {
-              "id": "middle_eastern"
+              "id": "biracial"
             },
             {
               "id": "black_african"
             },
             {
+              "id": "east_asian"
+            },
+            {
+              "id": "hispanic_latin"
+            },
+            {
+              "id": "middle_eastern"
+            },
+            {
               "id": "multiracial"
             },
             {
-              "id": "biracial"
+              "id": "native_american_islander_australian"
             },
             {
-              "id": "native_american_islander_australian"
+              "id": "south_asian"
+            },
+            {
+              "id": "white_european"
             }
           ]
         },
