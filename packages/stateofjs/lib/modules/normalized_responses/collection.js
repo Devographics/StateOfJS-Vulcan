@@ -5,7 +5,7 @@ export const NormalizedResponses = createCollection({
 
   typeName: 'NormalizedResponse',
 
-  dbCollectionName: 'normalized_responses_2',
+  dbCollectionName: 'normalized_responses',
 
   mutations: null,
 
