@@ -2417,6 +2417,20 @@ type Mutation {
   data: CreateAnalyticsEventDataInput
 ) : AnalyticsEventMutationOutput
 
+  # Mutation for creating new Save documents
+  createSave(
+  input: CreateSaveInput,
+  # Deprecated (use 'input' field instead).
+  data: CreateSaveDataInput
+) : SaveMutationOutput
+
+  # Mutation for deleting a Save document
+  deleteSave(
+  input: DeleteSaveInput,
+  # Deprecated (use 'input' field instead).
+  selector: SaveSelectorUniqueInput
+) : SaveMutationOutput
+
   # Mutation for creating new Response documents
   createResponse(
   input: CreateResponseInput,

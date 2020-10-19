@@ -31,8 +31,9 @@ const Layout = ({ children }) => {
 
   if (slug && year) {
     const survey = getSurvey(slug, year);
-    const { bgColor, textColor, linkColor, hoverColor } = survey;
-    style = `
+    if (survey) {
+      const { bgColor, textColor, linkColor, hoverColor } = survey;
+      style = `
 :root {
   --bg-color: ${bgColor};
   --text-color: ${textColor};
@@ -40,8 +41,9 @@ const Layout = ({ children }) => {
   --hover-color: ${hoverColor};
 }
   `;
+    }
   }
-
+  
   return loading ? (
     <Components.Loading />
   ) : (

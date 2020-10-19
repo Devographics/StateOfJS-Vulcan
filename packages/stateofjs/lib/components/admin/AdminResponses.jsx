@@ -27,6 +27,7 @@ const AdminResponses = () => (
       showDelete={true}
       options={{
         fragmentName: 'ResponseAdminFragment',
+        pollInterval: 0,
       }}
       initialState={{
         sort: {
