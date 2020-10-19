@@ -1,6 +1,6 @@
 locale: es-ES
 translations:
-  
+
   ###########################################################################
   # General
   ###########################################################################
@@ -15,9 +15,9 @@ translations:
       - Evitar respuestas duplicadas
 
       - Darte acceso a tu información
-      
+
       - Salvar tu sesión según avanzas
-      
+
       - Notificarte cuando tengamos los resultados
   - key: general.survey_closed
     t: >
@@ -62,7 +62,7 @@ translations:
     t: ¿Preguntas? ¿Has encontrado un fallo? <a href="{link}" target="_blank">Déjanos lo que has encontrado</a>.
   - key: general.emoji_icons
     t: Emojis por <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>
-    
+
   # navigation
   - key: general.table_of_contents
     t: Tabla de Contenidos
@@ -71,14 +71,14 @@ translations:
       Nota: todas las preguntas son opcionales, así que no necesitas responderlas todas.
   - key: general.data_is_saved
     t: Salvamos tus respuestas cada vez que navegas entre secciones.
-  
+
   # thanks
   - key: general.back
     t: Volver
   - key: general.thanks
     t: >
       ¡Gracias por rellenar la encuesta!
-      
+
       Tu información está salvada. Puedes revisarla o modificarla hasta que la encuesta esté cerrada.
 
       También puedes ayudarnos a llegar a todo el mundo compartiendo esta encuesta. Todo ayuda es poca, y así podremos hacer
@@ -92,11 +92,10 @@ translations:
     t: >
       ¡La encuesta {surveyName} de este año, está abierta! {link}
 
-  
   ###########################################################################
   # Nav
   ###########################################################################
-  
+
   - key: nav.surveys
     t: Encuestas
   - key: nav.account
@@ -130,7 +129,7 @@ translations:
       Si tienes alguna pregunta sobre como usamos tus datos, o te gustaría
       que los eliminásemos de nuestros registros,
       por favor, <a href="mailto:hello@stateofjs.com">mándanos un email</a>.
-      
+
   ###########################################################################
   # Sections
   ###########################################################################
@@ -195,9 +194,9 @@ translations:
   - key: options.tools.not_interested
     t: 🚫 He oído hablar de ello > No estoy interesado
   - key: options.tools.would_use
-    t: 👍 Lo uso > Lo volvería a usar
+    t: 👍 Lo he usado > Lo volveré a usar
   - key: options.tools.would_not_use
-    t: 👎 Lo uso > No lo volvería a usar
+    t: 👎 Lo he usado > No lo volveré a usar
 
   # tools experience (short versions)
   - key: options.tools.never_heard.short
@@ -210,7 +209,7 @@ translations:
     t: Lo volvería a usar
   - key: options.tools.would_not_use.short
     t: No lo usaría
-  
+
   # happiness
   - key: options.happiness.very_unhappy
     t: Muy Descontento
@@ -256,7 +255,7 @@ translations:
     t: 1-2
   - key: options.years_of_experience.range_2_5.short
     t: 2-5
-  - key: options.years_of_experience.range_5_10
+  - key: options.years_of_experience.range_5_10.short
     t: 5-10
   - key: options.years_of_experience.range_10_20.short
     t: 10-20
@@ -301,7 +300,7 @@ translations:
 
   # salary
   - key: options.yearly_salary.range_work_for_free
-    t: Trabajo por la cara
+    t: Trabajo gratis
   - key: options.yearly_salary.range_0_10
     t: $0k-$10k
   - key: options.yearly_salary.range_10_30
@@ -413,6 +412,27 @@ translations:
   - key: options.gender.prefer_not_to_say
     t: Prefiero no decirlo
 
+  # Race & Ethnicity
+
+  - key: options.race_ethnicity.white_european
+    t: Blanco o descendiente de Europeos
+  - key: options.race_ethnicity.south_asian
+    t: Asiático del Sur
+  - key: options.race_ethnicity.hispanic_latin
+    t: Hispano o Latino
+  - key: options.race_ethnicity.east_asian
+    t: Asiático del Este
+  - key: options.race_ethnicity.middle_eastern
+    t: De Oriente Medio
+  - key: options.race_ethnicity.black_african
+    t: Negro o descendiente de Africanos
+  - key: options.race_ethnicity.multiracial
+    t: Multiracial
+  - key: options.race_ethnicity.biracial
+    t: Con dos razas
+  - key: options.race_ethnicity.native_american_islander_australian
+    t: Nativo Americano, de las Islas del Pacífico o Indígena Australiano
+
   # Skin Tone
 
   - key: options.skin_tone.0
@@ -451,7 +471,7 @@ translations:
   - key: tools.happiness.description
     t: >
       En una escala de uno (muy insatisfecho) a cinco (muy satisfecho), ¿cómo de satisfecho estás
-      con el estado general de las cosas relacionadas con las opciones expuestas anteriormente?
+      con el estado general de los elementos relacionados con las opciones expuestas anteriormente?
 
   ###########################################################################
   # Demographics (About You/User Info)
@@ -529,54 +549,54 @@ translations:
   # Other Tools
   ###########################################################################
 
-  - key: other_tools.text_editors
+  - key: tools_other.text_editors
     t: Editores de Texto
-  - key: other_tools.text_editors.description
+  - key: tools_other.text_editors.description
     t: ¿Qué editor(es) de texto usas habitualmente?
-  - key: other_tools.text_editors.others
+  - key: tools_other.text_editors.others
     t: Otros Editores de Texto
-  - key: other_tools.text_editors.others.description
+  - key: tools_other.text_editors.others.description
     t: Otras respuestas (campo de texto libre).
 
-  - key: other_tools.utilities
+  - key: tools_other.utilities
     t: Utilidades
-  - key: other_tools.utilities.description
+  - key: tools_other.utilities.description
     t: ¿Qué librerías de utilidades usas habitualmente?
-  - key: other_tools.utilities.others
+  - key: tools_other.utilities.others
     t: Otras Utilidades
-  - key: other_tools.utilities.others.description
+  - key: tools_other.utilities.others.description
     t: Otras respuestas (campo de texto libre).
 
-  - key: other_tools.browsers
+  - key: tools_other.browsers
     t: Navegadores
-  - key: other_tools.browsers.description
+  - key: tools_other.browsers.description
     t: ¿Con qué navegador(es) trabajas principalmente durante el desarrollo inicial?
-  - key: other_tools.browsers.others
+  - key: tools_other.browsers.others
     t: Otros Navegadores
-  - key: other_tools.browsers.others.description
+  - key: tools_other.browsers.others.description
     t: Otras respuestas (campo de texto libre).
 
-  - key: other_tools.build_tools
+  - key: tools_other.build_tools
     t: Herramientas de Construcción
-  - key: other_tools.build_tools.description
+  - key: tools_other.build_tools.description
     t: ¿Qué herramientas de construcción utilizas?
-  - key: other_tools.build_tools.others
+  - key: tools_other.build_tools.others
     t: Otras Herramientas de Construcción
-  - key: other_tools.build_tools.others.description
+  - key: tools_other.build_tools.others.description
     t: Otras respuestas (campo de texto libre).
 
-  - key: other_tools.non_js_languages
+  - key: tools_other.non_js_languages
     t: Otros Lenguajes (no relacionados con JavaScript)
-  - key: other_tools.non_js_languages.description
+  - key: tools_other.non_js_languages.description
     t: ¿Qué otros lenguajes de programación utilizas?
-  - key: other_tools.non_js_languages.others
+  - key: tools_other.non_js_languages.others
     t: Otros Lenguajes
-  - key: other_tools.non_js_languages.others.description
+  - key: tools_other.non_js_languages.others.description
     t: Otras respuestas (campo de texto libre).
 
-###########################################################################
-# Resources
-###########################################################################
+  ###########################################################################
+  # Resources
+  ###########################################################################
 
   # blogs & magazines
   - key: resources.blogs_news_magazines

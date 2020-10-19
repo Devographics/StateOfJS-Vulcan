@@ -1,6 +1,6 @@
 locale: en-US
 translations:
-  
+
   ###########################################################################
   # General
   ###########################################################################
@@ -15,16 +15,16 @@ translations:
       - Avoid duplicate responses
 
       - Give you access to your data
-      
+
       - Save your session as you go
-      
+
       - Notify you when results are live
   - key: general.survey_closed
     t: >
       Sorry, the survey is now closed! You can still review your data but you won't be able to modify it.
   - key: general.survey_read_only
     t: >
-      You are currently viewing this survey in read-only mode. 
+      You are currently viewing this survey in read-only mode.
   - key: general.survey_read_only_back
     t: >
       <a href="{link}">Go back</a> to the main survey page to start or resume a session.
@@ -62,7 +62,7 @@ translations:
     t: Questions? Found a bug? <a href="{link}" target="_blank">Leave an issue</a>.
   - key: general.emoji_icons
     t: Emoji icons by <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a>
-    
+
   # navigation
   - key: general.table_of_contents
     t: Table of Contents
@@ -71,14 +71,14 @@ translations:
       Note: all questions are optional, reaching 100% completion is not required.
   - key: general.data_is_saved
     t: Your data is saved whenever you navigate to the previous or next section.
-  
+
   # thanks
   - key: general.back
     t: Back
   - key: general.thanks
     t: >
       Thanks for filling out the survey!
-      
+
       Your data is saved. You can review or modify it until the survey closes.
 
       Also, you can help us get the word out by sharing this survey. Every bit counts, and it'll help make our data even
@@ -92,11 +92,10 @@ translations:
     t: >
       This year's {surveyName} survey is now open! {link}
 
-  
   ###########################################################################
   # Nav
   ###########################################################################
-  
+
   - key: nav.surveys
     t: Surveys
   - key: nav.account
@@ -130,7 +129,7 @@ translations:
       If you have any questions about how we use your data, or would like
       us to remove your data from our records,
       please <a href="mailto:hello@stateofjs.com">get in touch</a>.
-      
+
   ###########################################################################
   # Sections
   ###########################################################################
@@ -210,7 +209,7 @@ translations:
     t: Would use again
   - key: options.tools.would_not_use.short
     t: Would not use
-  
+
   # happiness
   - key: options.happiness.very_unhappy
     t: Very Unhappy
@@ -234,7 +233,7 @@ translations:
     t: Agree
   - key: options.opinions.agree_strongly
     t: Agree Strongly
-    
+
   # years of experience
   - key: options.years_of_experience.range_less_than_1
     t: Less than one year
@@ -256,7 +255,7 @@ translations:
     t: 1-2
   - key: options.years_of_experience.range_2_5.short
     t: 2-5
-  - key: options.years_of_experience.range_5_10
+  - key: options.years_of_experience.range_5_10.short
     t: 5-10
   - key: options.years_of_experience.range_10_20.short
     t: 10-20
@@ -562,9 +561,9 @@ translations:
   - key: tools_other.non_js_languages.others.description
     t: Other answers (freeform field).
 
-###########################################################################
-# Resources
-###########################################################################
+  ###########################################################################
+  # Resources
+  ###########################################################################
 
   # blogs & magazines
   - key: resources.blogs_news_magazines
