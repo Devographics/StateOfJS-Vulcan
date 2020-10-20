@@ -32,7 +32,12 @@ const SurveySection = () => {
   }
   if (!response) {
     console.log(data);
-    return <div>Could not find survey response document.</div>
+    return (
+      <div>
+        Could not find survey response document. Please reload, or if that doesn’t work{' '}
+        <a href="https://github.com/StateOfJS/StateOfJS-Vulcan/issues">leave an issue</a>.
+      </div>
+    );
   }
   
   const survey = surveys.find((s) => s.slug === response.survey.slug);
