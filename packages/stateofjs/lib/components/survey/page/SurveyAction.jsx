@@ -55,7 +55,7 @@ const SurveyAction = ({ survey, currentUser }) => {
       data.common__user_info__referrer = document.referrer;
     }
   }
-  console.log(data)
+
   const hasResponse = currentSurveyResponse && !isEmpty(currentSurveyResponse);
 
   const mutationButtonProps = {

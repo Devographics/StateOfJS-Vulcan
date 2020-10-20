@@ -18,7 +18,7 @@ const fieldsToCopy = [
 
 export const normalizeResponse = ({ document: response }) => {
   // eslint-disable-next-line
-  console.log(`// Normalizing response ${response._id}…`)
+  // console.log(`// Normalizing response ${response._id}…`)
   const keysToNormalize = [];
 
   const user = Users.findOne({ _id: response.userId });
@@ -28,7 +28,7 @@ export const normalizeResponse = ({ document: response }) => {
   normalizedResp.responseId = response._id;
   normalizedResp.generatedAt = new Date();
   normalizedResp.survey = response.context;
-
+  
   // 2. split off response into subfields
   Object.keys(response).forEach((fieldName) => {
     const [initialSegment, ...restOfPath] = fieldName.split('__');
@@ -45,12 +45,13 @@ export const normalizeResponse = ({ document: response }) => {
   // 3. generate email hash
   set(normalizedResp, 'user_info.hash', encrypt(response.email));
 
-  // 4. store user locale
+  // 4. store user locale and other fields
   if (user) {
     set(normalizedResp, 'user_info.locale', user.locale);
   }
+  set(normalizedResp, 'user_info.knowledge_score', response.knowledgeScore);
 
-  // 4. normalize country (if provided)
+  // 5. normalize country (if provided)
   if (normalizedResp.user_info.country) {
     const countryNormalized = countries.find(
       (c) => c['alpha-2'] === normalizedResp.user_info.country
@@ -59,7 +60,7 @@ export const normalizeResponse = ({ document: response }) => {
     set(normalizedResp, 'user_info.country_alpha3', countryNormalized['alpha-3']);
   }
 
-  // 5. normalize 'other' fields
+  // 6. normalize 'other' fields
   keysToNormalize.forEach((path) => {
     const value = cleanupValue(get(normalizedResp, path));
     if (value) {
@@ -84,7 +85,7 @@ export const normalizeResponse = ({ document: response }) => {
     }
   });
 
-  // 6. handle source field separately
+  // 7. handle source field separately
   const [normalizedSource, sourcePattern, rawSource] = normalizeResponseSource(normalizedResp);
   if (normalizedSource) {
     set(normalizedResp, 'user_info.source.raw', rawSource);
@@ -98,5 +99,5 @@ export const normalizeResponse = ({ document: response }) => {
 
   const result = NormalizedResponses.upsert({responseId: response._id}, normalizedResp);
   // eslint-disable-next-line
-  console.log(result);
+  // console.log(result);
 };
