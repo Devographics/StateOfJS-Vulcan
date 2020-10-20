@@ -10,11 +10,12 @@ import React, { useState } from 'react';
 import { Components, getErrors } from 'meteor/vulcan:core';
 import { LinkContainer } from 'react-router-bootstrap';
 import get from 'lodash/get';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import { statuses } from '../../../modules/constants.js';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
+import qs from 'qs';
 
 // for some reason this throws error?
 import bowser from 'bowser';
@@ -23,6 +24,10 @@ import bowser from 'bowser';
 const SurveyAction = ({ survey, currentUser }) => {
   const history = useHistory();
   const [errors, setErrors] = useState();
+  const location = useLocation();
+
+  const query = qs.parse(location.search, { ignoreQueryPrefix: true, decoder: (c) => c });
+  const { source, referrer } = query;
 
   const { slug, status, context } = survey;
   const currentSurveyResponse = currentUser && currentUser.responses.find((r) => r.surveySlug === slug);
@@ -32,6 +37,8 @@ const SurveyAction = ({ survey, currentUser }) => {
     surveySlug: slug,
     context,
     email: currentUser && currentUser.email,
+    common__user_info__source: source,
+    common__user_info__referrer: referrer,
   };
 
   if (typeof window !== 'undefined') {
@@ -43,13 +50,14 @@ const SurveyAction = ({ survey, currentUser }) => {
       common__user_info__browser: info.browser.name,
       common__user_info__version: info.browser.version,
       common__user_info__os: info.os.name,
-      common__user_info__referrer: document.referrer,
-      common__user_info__source: window.source,
     };
+    if (!data.common__user_info__referrer) {
+      data.common__user_info__referrer = document.referrer;
+    }
   }
-
+  console.log(data)
   const hasResponse = currentSurveyResponse && !isEmpty(currentSurveyResponse);
-  
+
   const mutationButtonProps = {
     label: <FormattedMessage id="general.start_survey" />,
     variant: 'primary',

@@ -19,20 +19,21 @@ const SurveyPageWrapper = (props, { intl }) => {
       {(props) => {
         // console.log(props)
         return (
-        <div className="survey-page contents-narrow">
-          <SurveyHeadTags survey={survey} />
-          <h1 className="survey-image">
-            <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
-          </h1>
-          <div className="survey-intro">
-            <ReactMarkdown
-              source={intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })}
-              escapeHtml={false}
-            />
+          <div className="survey-page contents-narrow">
+            <SurveyHeadTags survey={survey} />
+            <h1 className="survey-image">
+              <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
+            </h1>
+            <div className="survey-intro">
+              <ReactMarkdown
+                source={intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })}
+                escapeHtml={false}
+              />
+            </div>
+            <SurveyPage survey={survey} />
           </div>
-          <SurveyPage survey={survey} />
-        </div>
-      )}}
+        );
+      }}
     </IntlContext.Consumer>
   );
 };
@@ -47,7 +48,7 @@ const SurveyPage = ({ survey }) => {
   const location = useLocation();
 
   const query = qs.parse(location.search, { ignoreQueryPrefix: true, decoder: (c) => c });
-  const { email, source } = query;
+  const { email } = query;
 
   if (currentUserLoading) {
     return <Components.Loading />;
@@ -63,7 +64,7 @@ const SurveyPage = ({ survey }) => {
             <FormattedMessage id="accounts.please_log_in" />
           </div>
         )}
-        <Components.AccountsLoginForm formState={STATES.SIGN_UP} email={email} />
+        <Components.AccountsLoginForm redirect={false} formState={STATES.SIGN_UP} email={email} />
         <AccountMessage />
       </div>
     );
