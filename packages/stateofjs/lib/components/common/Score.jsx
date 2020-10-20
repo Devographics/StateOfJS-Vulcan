@@ -10,15 +10,17 @@ import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { intlShape } from 'meteor/vulcan:i18n';
 
 const Features = ({ unknownFields, entities, limit }) => {
+  const fields = take(unknownFields, limit);
+  
   return (
     <div className="score-features">
       <h4 className="score-features-heading">
         <FormattedMessage id="thanks.learn_more_about" />
       </h4>{' '}
       <div className="score-features-items">
-        {take(unknownFields, limit).map((field, i) => {
+        {fields.map((field, i) => {
           const entity = entities.find((e) => e.id === field.id);
-          return entity && get(entity, 'mdn.url') ? <FeatureItem key={field.id} entity={entity} showComma={i < (limit-1)} /> : null;
+          return entity && get(entity, 'mdn.url') ? <FeatureItem key={field.id} entity={entity} showComma={i < (fields.length - 1)} /> : null;
         })}
       </div>
     </div>
