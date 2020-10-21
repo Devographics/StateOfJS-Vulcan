@@ -54,6 +54,8 @@ const SurveySectionContents = ({
     />
   );
 
+  const isLastSection = !nextSection;
+
   return (
     <div className="section-questions">
       {survey.status === statuses.preview ? (
@@ -90,8 +92,12 @@ const SurveySectionContents = ({
         itemProperties={{
           layout: 'vertical',
         }}
-        submitCallback={() => {
+        submitCallback={(data) => {
           setStartedAt(new Date());
+          if (isLastSection) {
+            data.isFinished = true;
+          }
+          return data;
         }}
         successCallback={() => trackSave({ isError: false })}
         errorCallback={() => trackSave({ isError: true })}

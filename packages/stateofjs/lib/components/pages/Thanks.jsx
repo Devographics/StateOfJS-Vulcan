@@ -11,11 +11,12 @@ const Thanks = () => {
   const { responseId } = useParams();
   const history = useHistory();
 
-  const { document: response, loading } = useSingle2({
+  const data = useSingle2({
     collectionName: 'Responses',
     fragmentName: 'ResponseFragmentWithRanking',
     input: { id: responseId },
   });
+  const { document: response, loading } = data;
 
   if (loading) {
     return <Components.Loading />;

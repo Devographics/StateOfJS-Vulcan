@@ -116,6 +116,13 @@ const schema = {
       label: slug,
     })),
   },
+  isFinished: {
+    type: Boolean,
+    optional: true,
+    canRead: ['members'],
+    canCreate: ['members'],
+    canUpdate: ['admins'],
+  },
   common__user_info__device: {
     type: String,
     optional: true,

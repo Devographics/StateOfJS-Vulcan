@@ -16,7 +16,6 @@ import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
 
-
 const FormSubmit = ({
   survey,
   submitForm,

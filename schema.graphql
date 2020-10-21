@@ -971,6 +971,7 @@ type Response {
   email: String 
   context: String 
   surveySlug: String 
+  isFinished: Boolean 
   common__user_info__device: String 
   common__user_info__browser: String 
   common__user_info__version: String 
@@ -1270,6 +1271,7 @@ input CreateResponseDataInput {
   email: String 
   context: String 
   surveySlug: String 
+  isFinished: Boolean 
   common__user_info__device: String 
   common__user_info__browser: String 
   common__user_info__version: String 
@@ -1510,6 +1512,7 @@ input UpdateResponseDataInput {
   email: String 
   context: String 
   surveySlug: String 
+  isFinished: Boolean 
   common__user_info__device: String 
   common__user_info__browser: String 
   common__user_info__version: String 
@@ -1747,6 +1750,7 @@ input ResponseFilterInput {
   email: String_Selector
   context: String_Selector
   surveySlug: String_Selector
+  isFinished: Boolean_Selector
   common__user_info__device: String_Selector
   common__user_info__browser: String_Selector
   common__user_info__version: String_Selector
@@ -1979,6 +1983,7 @@ input ResponseSortInput {
   email: SortOptions
   context: SortOptions
   surveySlug: SortOptions
+  isFinished: SortOptions
   common__user_info__device: SortOptions
   common__user_info__browser: SortOptions
   common__user_info__version: SortOptions
