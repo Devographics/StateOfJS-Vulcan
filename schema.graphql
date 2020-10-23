@@ -1008,7 +1008,6 @@ type Response {
   css2020__features__font_variant_numeric__experience: String 
   css2020__features__font_display__experience: String 
   css2020__features__line_clamp__experience: String 
-  css2020__features__direction__experience: String 
   css2020__features__transitions__experience: String 
   css2020__features__transforms__experience: String 
   css2020__features__animations__experience: String 
@@ -1308,7 +1307,6 @@ input CreateResponseDataInput {
   css2020__features__font_variant_numeric__experience: String 
   css2020__features__font_display__experience: String 
   css2020__features__line_clamp__experience: String 
-  css2020__features__direction__experience: String 
   css2020__features__transitions__experience: String 
   css2020__features__transforms__experience: String 
   css2020__features__animations__experience: String 
@@ -1549,7 +1547,6 @@ input UpdateResponseDataInput {
   css2020__features__font_variant_numeric__experience: String 
   css2020__features__font_display__experience: String 
   css2020__features__line_clamp__experience: String 
-  css2020__features__direction__experience: String 
   css2020__features__transitions__experience: String 
   css2020__features__transforms__experience: String 
   css2020__features__animations__experience: String 
@@ -1787,7 +1784,6 @@ input ResponseFilterInput {
   css2020__features__font_variant_numeric__experience: String_Selector
   css2020__features__font_display__experience: String_Selector
   css2020__features__line_clamp__experience: String_Selector
-  css2020__features__direction__experience: String_Selector
   css2020__features__transitions__experience: String_Selector
   css2020__features__transforms__experience: String_Selector
   css2020__features__animations__experience: String_Selector
@@ -2020,7 +2016,6 @@ input ResponseSortInput {
   css2020__features__font_variant_numeric__experience: SortOptions
   css2020__features__font_display__experience: SortOptions
   css2020__features__line_clamp__experience: SortOptions
-  css2020__features__direction__experience: SortOptions
   css2020__features__transitions__experience: SortOptions
   css2020__features__transforms__experience: SortOptions
   css2020__features__animations__experience: SortOptions

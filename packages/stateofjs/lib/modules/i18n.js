@@ -2,50 +2,65 @@ import { registerLocale, addStrings } from 'meteor/vulcan:core';
 
 export const locales = [
   {
+    id: 'cs-CZ',
+    label: 'Česky',
+    translators: ['adamkudrna'],
+  },
+  {
+    id: 'de-DE',
+    label: 'Deutsch',
+    translators: ['abaldeweg'],
+  },
+  {
     id: 'en-US',
     label: 'English',
-    translators: []
-  },
-  {
-    id: 'it-IT',
-    label: 'Italiano',
-    translators: ['polettoweb']
-  },
-  // {
-  //   id: 'zh-Hans',
-  //   label: '中文',
-  //   translators: []
-  // },
-  {
-    id: 'ru-RU',
-    label: 'Русский',
-    translators: ['lex111', 'Omhet']
-  },
-  {
-    id: 'fr-FR',
-    label: 'Français',
-    translators: ['arnauddrain']
-  },
-  {
-    id: 'hi-IN',
-    label: 'Hindi',
-    translators: ['jaideepghosh']
-  },
-  {
-    id: 'sv-SE',
-    label: 'Svenska',
-    translators: ['m-hagberg']
-  },
-  {
-    id: 'pt-PT',
-    label: 'Português',
-    translators: ['danisal']
+    translators: [],
   },
   {
     id: 'es-ES',
     label: 'Español',
-    translators: ['timbergus', 'ezkato']
-  }
+    translators: ['timbergus', 'ezkato'],
+  },
+  {
+    id: 'fr-FR',
+    label: 'Français',
+    translators: ['arnauddrain'],
+  },
+  {
+    id: 'hi-IN',
+    label: 'Hindi',
+    translators: ['jaideepghosh'],
+  },
+  {
+    id: 'it-IT',
+    label: 'Italiano',
+    translators: ['polettoweb'],
+  },
+  {
+    id: 'pt-PT',
+    label: 'Português',
+    translators: ['danisal'],
+  },
+  {
+    id: 'ru-RU',
+    label: 'Русский',
+    translators: ['lex111', 'Omhet'],
+  },
+  {
+    id: 'sv-SE',
+    label: 'Svenska',
+    translators: ['m-hagberg'],
+  },
+  {
+    id: 'tr-TR',
+    label: 'Türkçe',
+    translators: ['berkayyildiz'],
+  },
+  {
+    id: 'zh-Hant',
+    label: '正體',
+    translators: ['ymcheung'],
+  },
 ];
 
 // export const convertStrings = (stringFile) => {
@@ -74,5 +89,4 @@ locales.forEach((locale) => {
   //     addStrings(id, convertStrings(stringFile));
   //   });
   // }
-
 });

@@ -72,7 +72,7 @@ outline:
       - id: font_display
       - id: line_clamp
       # - id: leading_trim
-      - id: direction
+      # - id: direction
 
   - id: animations_transforms
     template: feature

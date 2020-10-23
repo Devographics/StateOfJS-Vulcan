@@ -19,3 +19,5 @@ vulcan:events-internal
 vulcan:errors-sentry
 vulcan:debug
 vulcan:i18n
+
+# mdg:meteor-apm-agent

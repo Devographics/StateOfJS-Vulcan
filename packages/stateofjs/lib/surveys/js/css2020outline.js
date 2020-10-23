@@ -132,9 +132,6 @@ export default {
         },
         {
           "id": "line_clamp"
-        },
-        {
-          "id": "direction"
         }
       ]
     },

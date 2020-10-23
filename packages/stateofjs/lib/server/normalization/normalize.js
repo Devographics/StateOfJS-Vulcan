@@ -57,8 +57,10 @@ export const normalizeResponse = ({ document: response }) => {
     const countryNormalized = countries.find(
       (c) => c['alpha-2'] === normalizedResp.user_info.country
     );
-    set(normalizedResp, 'user_info.country_name', countryNormalized.name);
-    set(normalizedResp, 'user_info.country_alpha3', countryNormalized['alpha-3']);
+    if (countryNormalized) {
+      set(normalizedResp, 'user_info.country_name', countryNormalized.name);
+      set(normalizedResp, 'user_info.country_alpha3', countryNormalized['alpha-3']);
+    }
   }
 
   // 6. normalize 'other' fields

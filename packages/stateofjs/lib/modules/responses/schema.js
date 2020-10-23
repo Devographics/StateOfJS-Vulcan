@@ -121,7 +121,7 @@ const schema = {
     optional: true,
     canRead: ['members'],
     canCreate: ['members'],
-    canUpdate: ['admins'],
+    canUpdate: ['members'],
   },
   common__user_info__device: {
     type: String,
