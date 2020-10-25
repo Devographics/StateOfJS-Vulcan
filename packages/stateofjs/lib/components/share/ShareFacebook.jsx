@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { intlShape } from 'meteor/vulcan:i18n';
 
-const ShareFacebook = ({ link, trackingId }, { intl }) => {
+const ShareFacebook = ({ link, quote, trackingId }, { intl }) => {
   return (
     <a
       // onClick={track('Facebook', trackingId)}
       className="share__link--facebook share__link"
-      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`}
+      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}&quote=${encodeURIComponent(quote)}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={intl.formatMessage({ id: 'share.facebook' })}
@@ -41,6 +41,7 @@ ShareFacebook.contextTypes = {
 
 ShareFacebook.propTypes = {
   link: PropTypes.string.isRequired,
+  quote: PropTypes.string,
   trackingId: PropTypes.string,
 };
 
