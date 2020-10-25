@@ -27,21 +27,27 @@ const Features = ({ unknownFields, entities, limit }) => {
   );
 };
 
-const FeatureItem = ({ entity, showComma }) => {
+
+const FeatureItem = ({entity, showComma}) => {
   const mdnUrl = get(entity, 'mdn.url');
-  const TagName = mdnUrl ? 'a' : 'span'; 
+  const TagName = mdnUrl ? 'a' : 'span';
 
   return (
     <div className="score-feature">
-      <TagName className="score-feature-name" href={mdnUrl ? `https://developer.mozilla.org${mdnUrl}` : undefined}>
+      <TagName
+        className="score-feature-name"
+        {...(mdnUrl && {
+          href: `https://developer.mozilla.org${mdnUrl}`,
+          target: '_blank',
+          rel: 'norefferer',
+        })}>
         {entity.name}
       </TagName>
       {showComma && ', '}
       {/* <p className="score-feature-summary" dangerouslySetInnerHTML={{ __html: get(entity, 'mdn.summary') }} /> */}
     </div>
-  )
+  );
 };
-
 const Score = ({ response, survey }, { intl }) => {
   const containerRef = useRef(null);
   const [showConfetti, setShowConfetti] = useState(false);
