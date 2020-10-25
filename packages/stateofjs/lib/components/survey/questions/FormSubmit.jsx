@@ -15,6 +15,7 @@ import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import { Components } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
+import { intlShape } from 'meteor/vulcan:i18n';
 
 const FormSubmit = ({
   survey,
@@ -26,7 +27,7 @@ const FormSubmit = ({
   showMessage = true,
   variant = 'bottom',
   readOnly,
-}) => {
+}, { intl }) => {
   const history = useHistory();
   const [prevLoading, setPrevLoading] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
@@ -35,6 +36,7 @@ const FormSubmit = ({
       <div className="form-submit-actions">
         {nextSection ? (
           <Components.LoadingButton
+            title={intl.formatMessage({ id: `sections.${nextSection.id}.title` })}
             className="form-btn-next"
             loading={nextLoading}
             type="submit"
@@ -51,6 +53,7 @@ const FormSubmit = ({
           </Components.LoadingButton>
         ) : readOnly ? null : (
           <Components.LoadingButton
+            title={intl.formatMessage({ id: 'general.finish_survey' })}            
             className="form-btn-next form-btn-finish"
             loading={nextLoading}
             type="submit"
@@ -68,6 +71,7 @@ const FormSubmit = ({
         )}
         {previousSection ? (
           <Components.LoadingButton
+            title={intl.formatMessage({ id: `sections.${previousSection.id}.title` })}
             className="form-btn-prev"
             loading={prevLoading}
             type="submit"
@@ -94,6 +98,10 @@ const FormSubmit = ({
       )}
     </div>
   );
+};
+
+FormSubmit.contextTypes = {
+  intl: intlShape,
 };
 
 export default FormSubmit;
