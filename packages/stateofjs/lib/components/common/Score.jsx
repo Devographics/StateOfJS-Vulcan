@@ -11,7 +11,7 @@ import { intlShape } from 'meteor/vulcan:i18n';
 
 const Features = ({ unknownFields, entities, limit }) => {
   const fields = take(unknownFields, limit);
-  
+
   return (
     <div className="score-features">
       <h4 className="score-features-heading">
@@ -20,22 +20,27 @@ const Features = ({ unknownFields, entities, limit }) => {
       <div className="score-features-items">
         {fields.map((field, i) => {
           const entity = entities.find((e) => e.id === field.id);
-          return entity && get(entity, 'mdn.url') ? <FeatureItem key={field.id} entity={entity} showComma={i < (fields.length - 1)} /> : null;
-        })}
+          return entity ? <FeatureItem key={field.id} entity={entity} showComma={i < (fields.length - 1)} /> : null;
+        })}.
       </div>
     </div>
   );
 };
 
-const FeatureItem = ({ entity, showComma }) => (
-  <div className="score-feature">
-    <a className="score-feature-name" href={`https://developer.mozilla.org${get(entity, 'mdn.url')}`}>
-      {entity.name}
-    </a>
-    {showComma && ', '}
-    {/* <p className="score-feature-summary" dangerouslySetInnerHTML={{ __html: get(entity, 'mdn.summary') }} /> */}
-  </div>
-);
+const FeatureItem = ({ entity, showComma }) => {
+  const mdnUrl = get(entity, 'mdn.url');
+  const TagName = mdnUrl ? 'a' : 'span'; 
+
+  return (
+    <div className="score-feature">
+      <TagName className="score-feature-name" href={mdnUrl ? `https://developer.mozilla.org${mdnUrl}` : undefined}>
+        {entity.name}
+      </TagName>
+      {showComma && ', '}
+      {/* <p className="score-feature-summary" dangerouslySetInnerHTML={{ __html: get(entity, 'mdn.summary') }} /> */}
+    </div>
+  )
+};
 
 const Score = ({ response, survey }, { intl }) => {
   const containerRef = useRef(null);
@@ -97,7 +102,7 @@ const Score = ({ response, survey }, { intl }) => {
               <FormattedMessage id="thanks.share_on_twitter" />
             </Components.Button>
             </div>
-            <Features unknownFields={unknownFields} limit={10} entities={entities.filter((e) => e.type === 'feature')} />
+            {unknownFields.length > 0 && <Features unknownFields={unknownFields} limit={10} entities={entities.filter((e) => e.type === 'feature')} />}
           </div>
         </div>
       )}
