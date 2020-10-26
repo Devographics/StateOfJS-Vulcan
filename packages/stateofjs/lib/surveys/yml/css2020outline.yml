@@ -479,16 +479,6 @@ outline:
           - id: css_weekly
           - id: frontend_horse
 
-          # - CSS Tricks
-          # - Smashing Magazine
-          # - CoDrops
-          # - SitePoint
-          # - David Walsh
-          # - Dev.to
-          # - Sidebar
-          # - HeyDesigner
-          # - CSS Weekly
-          # - Frontend Horse
       - id: blogs_news_magazines
         template: others
 
@@ -505,15 +495,6 @@ outline:
           - id: pluralsight
           - id: designcode
 
-          # - Stack Overflow
-          # - MDN
-          # - W3Schools
-          # - FreeCodeCamp
-          # - Codecademy
-          # - LevelUp Tutorials
-          # - Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)
-          # - Pluralsight
-          # - DesignCode
       - id: sites_courses
         template: others
 
@@ -529,14 +510,6 @@ outline:
           - id: syntaxfm
           - id: css_podcast
 
-          # - Shop Talk Show
-          # - Style Guide Podcast
-          # - The Big Web Show
-          # - The Web Ahead
-          # - Non Breaking Space Show
-          # - The Changelog
-          # - Syntax
-          # - CSS Podcast
       - id: podcasts
         template: others
 
@@ -620,12 +593,14 @@ outline:
           - id: web_designer
           - id: ui_designer
           - id: ux_designer
+
       - id: css_proficiency
         template: proficiency
       - id: javascript_proficiency
         template: proficiency
       - id: backend_proficiency
         template: proficiency
+        
       - id: how_did_user_find_out_about_the_survey
         template: text
       - id: gender
