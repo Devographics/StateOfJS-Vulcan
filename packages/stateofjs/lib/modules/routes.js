@@ -16,14 +16,18 @@ import AdminSurveys from '../components/admin/AdminSurveys';
 import AdminResponses from '../components/admin/AdminResponses';
 import AdminUsers from '../components/admin/AdminUsers';
 
+const adminAccessOptions = {
+  groups: ['admins'],
+}
+
 const routes = [
 { name: 'home', path: '/', component: Surveys },
 { name: 'account', path: '/account', component: AccountPage },
 
-{ name: 'adminStats', path: '/admin/stats', component: AdminStats },
-{ name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys },
-{ name: 'adminResponses', path: '/admin/responses', component: AdminResponses },
-{ name: 'adminUsers', path: '/admin/users', component: AdminUsers },
+{ name: 'adminStats', path: '/admin/stats', component: AdminStats, access: adminAccessOptions },
+{ name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys, access: adminAccessOptions },
+{ name: 'adminResponses', path: '/admin/responses', component: AdminResponses, access: adminAccessOptions },
+{ name: 'adminUsers', path: '/admin/users', component: AdminUsers, access: adminAccessOptions },
 
 { name: 'privacypolicy', path: '/privacy-policy', component: PrivacyPolicy },
 
