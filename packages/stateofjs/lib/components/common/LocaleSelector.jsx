@@ -25,7 +25,7 @@ const LocaleSelector = (props, { setLocale, getLocale }) => {
       </p>
       <a
         className="locale-selector-help"
-        href="https://github.com/StateOfJS/StateOfCSS-2020/issues/2"
+        href="https://github.com/StateOfJS/Translations/issues/1"
         target="_blank"
         rel="norefferer"
       >
