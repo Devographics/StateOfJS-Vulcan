@@ -18,7 +18,7 @@ const ShareSite = ({ survey }, { intl }) => {
     <div className="ShareSite">
       <div className="ShareSite__Content">
         <ShareTwitter text={twitterText}/>
-        <ShareFacebook link={link} />
+        <ShareFacebook link={link} quote={body} />
         <ShareLinkedIn link={link} title={title} />
         <ShareEmail subject={title} body={body} />
       </div>
