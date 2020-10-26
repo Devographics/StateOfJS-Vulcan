@@ -224,6 +224,9 @@ export default {
           "id": "svelte"
         },
         {
+          "id": "alpine_js"
+        },
+        {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "text",
@@ -303,6 +306,15 @@ export default {
           "id": "gatsby"
         },
         {
+          "id": "nest"
+        },
+        {
+          "id": "strapi"
+        },
+        {
+          "id": "razzle"
+        },
+        {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "text",
@@ -358,6 +370,46 @@ export default {
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
+        }
+      ]
+    },
+    {
+      "id": "graphics_animation",
+      "template": "tool",
+      "slug": "tools",
+      "questions": [
+        {
+          "id": "d3"
+        },
+        {
+          "id": "three_js"
+        },
+        {
+          "id": "fabric_js"
+        },
+        {
+          "id": "visx"
+        },
+        {
+          "id": "nivo"
+        },
+        {
+          "id": "recharts"
+        },
+        {
+          "id": "anime_js"
+        },
+        {
+          "id": "popmotion"
+        },
+        {
+          "id": "gsap"
+        },
+        {
+          "id": "lottie"
+        },
+        {
+          "id": "velocity"
         }
       ]
     },
@@ -553,6 +605,15 @@ export default {
             },
             {
               "id": "browserify"
+            },
+            {
+              "id": "rome"
+            },
+            {
+              "id": "snowpack"
+            },
+            {
+              "id": "deno"
             }
           ]
         },
