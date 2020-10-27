@@ -246,6 +246,28 @@ outline:
         template: happiness
         sectionSlug: happiness
 
+  - id: build_tools
+    template: tool
+    slug: tools
+    questions:
+      - id: webpack
+      - id: parcel
+      - id: gulp
+      - id: rollup
+      - id: fusebox
+      - id: browserify
+      - id: rome
+      - id: snowpack
+      - id: build_tools
+        intlId: tools.other_tools
+        template: project
+        sectionSlug: tools_others
+        suffix: others
+      - id: build_tools
+        intlId: tools.happiness
+        template: happiness
+        sectionSlug: happiness
+
   - id: mobile_desktop
     template: tool
     slug: tools
@@ -279,7 +301,8 @@ outline:
           - id: lodash
           - id: underscore
           - id: moment
-          - id: date Fns
+          - id: date_fns
+          - id: luxon
           - id: ramda
           - id: jquery
           - id: rxjs
@@ -320,19 +343,6 @@ outline:
           - id: opera
           - id: polypane
       - id: browsers
-        template: others
-      - id: build_tools
-        template: multiple
-        options:
-          - id: webpack
-          - id: parcel
-          - id: gulp
-          - id: rollup
-          - id: fusebox
-          - id: browserify
-          - id: rome
-          - id: snowpack
-      - id: build_tools
         template: others
       - id: non_js_languages
         template: multiple
