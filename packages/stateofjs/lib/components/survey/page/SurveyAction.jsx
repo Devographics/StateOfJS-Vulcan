@@ -16,12 +16,14 @@ import isEmpty from 'lodash/isEmpty';
 import { statuses } from '../../../modules/constants.js';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import qs from 'qs';
+import Users from 'meteor/vulcan:users';
 
 // for some reason this throws error?
 import bowser from 'bowser';
 // const bowser = require("bowser"); // CommonJS
 
 const SurveyAction = ({ survey, currentUser }) => {
+  const isAdmin = Users.isAdmin(currentUser);
   const history = useHistory();
   const [errors, setErrors] = useState();
   const location = useLocation();
@@ -78,7 +80,9 @@ const SurveyAction = ({ survey, currentUser }) => {
   return (
     <div className="survey-action">
       <div className="survey-action-inner">
-        {status === statuses.preview ? (
+        {isAdmin ? (
+          <Components.MutationButton {...mutationButtonProps} />
+        ) : status === statuses.preview ? (
           <SurveyLink survey={survey} message="general.preview_survey" />
         ) : status === statuses.open ? (
           hasResponse ? (

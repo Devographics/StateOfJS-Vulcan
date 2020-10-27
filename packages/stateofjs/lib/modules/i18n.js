@@ -19,7 +19,7 @@ export const locales = [
   {
     id: 'es-ES',
     label: 'Español',
-    translators: ['timbergus', 'ezkato'],
+    translators: ['timbergus', 'ezakto'],
   },
   {
     id: 'fr-FR',

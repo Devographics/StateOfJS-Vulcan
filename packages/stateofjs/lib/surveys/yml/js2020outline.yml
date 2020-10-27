@@ -123,7 +123,7 @@ outline:
       - id: purescript
       - id: javascript_flavors
         intlId: tools.other_tools
-        template: text
+        template: project
         sectionSlug: tools_others
         suffix: others
       - id: javascript_flavors
@@ -144,7 +144,7 @@ outline:
       - id: alpine_js
       - id: front_end_frameworks
         intlId: tools.other_tools
-        template: text
+        template: project
         sectionSlug: tools_others
         suffix: others
       - id: front_end_frameworks
@@ -163,7 +163,7 @@ outline:
       - id: relay
       - id: datalayer
         intlId: tools.other_tools
-        template: text
+        template: project
         sectionSlug: tools_others
         suffix: others
       - id: datalayer
@@ -186,9 +186,11 @@ outline:
       - id: nest
       - id: strapi
       - id: razzle
+      - id: fastify
+      - id: deno
       - id: datalayer
         intlId: tools.other_tools
-        template: text
+        template: project
         sectionSlug: tools_others
         suffix: others
       - id: datalayer
@@ -208,9 +210,10 @@ outline:
       - id: ava
       - id: jasmine
       - id: puppeteer
+      - id: testing_library
       - id: testing
         intlId: tools.other_tools
-        template: text
+        template: project
         sectionSlug: tools_others
         suffix: others
       - id: testing
@@ -233,6 +236,15 @@ outline:
       - id: gsap
       - id: lottie
       - id: velocity
+      - id: graphics_animation
+        intlId: tools.other_tools
+        template: project
+        sectionSlug: tools_others
+        suffix: others
+      - id: graphics_animation
+        intlId: tools.happiness
+        template: happiness
+        sectionSlug: happiness
 
   - id: mobile_desktop
     template: tool
@@ -247,7 +259,7 @@ outline:
       - id: expo
       - id: mobile_desktop
         intlId: tools.other_tools
-        template: text
+        template: project
         sectionSlug: tools_others
         suffix: others
       - id: mobile_desktop
@@ -271,6 +283,8 @@ outline:
           - id: ramda
           - id: jquery
           - id: rxjs
+          - id: prettier
+          - id: eslint
       - id: utilities
         template: others
       - id: text_editors
@@ -318,7 +332,6 @@ outline:
           - id: browserify
           - id: rome
           - id: snowpack
-          - id: deno
       - id: build_tools
         template: others
       - id: non_js_languages

@@ -1,5 +1,6 @@
 import countriesOptions from '../countriesOptions.js';
-import { Utils } from 'meteor/vulcan:core';
+import { Utils, makeAutocomplete, additionalFieldKeys } from 'meteor/vulcan:core';
+import pick from 'lodash/pick';
 import pickBy from 'lodash/pickBy';
 import { getSurveyFromResponse } from '../surveys/helpers';
 import surveys from '../../surveys';
@@ -91,6 +92,18 @@ export const templates = {
       { value: 'would_use', intlId: 'options.tools.would_use', },
       { value: 'would_not_use', intlId: 'options.tools.would_not_use', },
     ],
+  }),
+  project: () => makeAutocomplete({ 
+    type: Array, 
+    arrayItem: { 
+      type: String, 
+      optional: true 
+    }
+  }, { 
+    autocompletePropertyName: 'name',
+    queryResolverName: 'projects',
+    fragmentName: 'ProjectFragment',
+    valuePropertyName: 'id', 
   }),
   proficiency: ({ allowother = false }) => ({
     allowmultiple: false,
@@ -219,36 +232,31 @@ export const getQuestionSchema = (questionObject, section, survey) => {
   const {
     id,
     title,
-    description,
-    input,
     options,
-    type,
-    searchable = false,
     allowmultiple = false,
     alias,
   } = questionObject;
 
   const intlId = generateIntlId(questionObject, section, survey);
 
+  const fieldKeys = ['type', 'description', 'input', 'searchable', ...additionalFieldKeys];
+
   const questionSchema = {
+    ...pick(questionObject, fieldKeys),
     // label: title,
     label: alias || title,
     intlId,
-    description,
-    type,
     optional: true,
     // canRead: isprivate ? ['owners'] : ['members'],
     canRead: ['members'], // note: for now data is not public so all fields can be set to ['members']
     canCreate: ['members'],
     canUpdate: ['members'],
-    input,
-    searchable,
     itemProperties: {
       questionId: id,
     }
   };
 
-  if (options) {
+  if (options && Array.isArray(options)) {
     questionSchema.options = parseOptions(questionObject, options);
   }
 

@@ -5,7 +5,8 @@ Startup
 */
 import scripts from './scripts.js';
 import { getSetting } from 'meteor/vulcan:core';
-import { convertAllYAML  }from './yaml';
+import { convertAllYAML } from './yaml';
+import { loadProjects } from './projects.js';
 
 const startup = getSetting('startup', []);
 const environment = getSetting('environment');
@@ -29,4 +30,6 @@ Meteor.startup(async function () {
   if (environment === 'development') {
     await convertAllYAML();
   }
+
+  await loadProjects();
 });

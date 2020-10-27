@@ -8,6 +8,7 @@ import { Components, useCurrentUser, useCreate2 } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { getSurveyPath } from '../../../modules/surveys/helpers';
 import Saves from '../../../modules/saves/collection';
+import Users from 'meteor/vulcan:users';
 
 const SurveySectionContents = ({
   survey,
@@ -20,6 +21,8 @@ const SurveySectionContents = ({
   readOnly,
 }) => {
   const { currentUser } = useCurrentUser();
+
+  const isAdmin = Users.isAdmin(currentUser);
 
   const [startedAt, setStartedAt] = useState();
 
@@ -55,6 +58,8 @@ const SurveySectionContents = ({
   );
 
   const isLastSection = !nextSection;
+
+  const isDisabled = !isAdmin && (readOnly || survey.status !== statuses.open);
 
   return (
     <div className="section-questions">
@@ -102,7 +107,7 @@ const SurveySectionContents = ({
         successCallback={() => trackSave({ isError: false })}
         errorCallback={() => trackSave({ isError: true })}
         warnUnsavedChanges={false}
-        disabled={readOnly || survey.status !== statuses.open}
+        disabled={isDisabled}
         components={{
           FormLayout,
           FormSubmit: FormSubmitWrapper,

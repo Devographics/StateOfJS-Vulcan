@@ -21,4 +21,7 @@
   .warning{
     display: block;
   }
+  .error, .warning{
+    background: $redTransparent;
+  }
 }

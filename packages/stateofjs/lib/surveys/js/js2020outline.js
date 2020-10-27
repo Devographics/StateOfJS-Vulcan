@@ -188,7 +188,7 @@ export default {
         {
           "id": "javascript_flavors",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "project",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
@@ -229,7 +229,7 @@ export default {
         {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "project",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
@@ -264,7 +264,7 @@ export default {
         {
           "id": "datalayer",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "project",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
@@ -315,9 +315,15 @@ export default {
           "id": "razzle"
         },
         {
+          "id": "fastify"
+        },
+        {
+          "id": "deno"
+        },
+        {
           "id": "datalayer",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "project",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
@@ -359,9 +365,12 @@ export default {
           "id": "puppeteer"
         },
         {
+          "id": "testing_library"
+        },
+        {
           "id": "testing",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "project",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
@@ -410,6 +419,19 @@ export default {
         },
         {
           "id": "velocity"
+        },
+        {
+          "id": "graphics_animation",
+          "intlId": "tools.other_tools",
+          "template": "project",
+          "sectionSlug": "tools_others",
+          "suffix": "others"
+        },
+        {
+          "id": "graphics_animation",
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
         }
       ]
     },
@@ -442,7 +464,7 @@ export default {
         {
           "id": "mobile_desktop",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "project",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
@@ -485,6 +507,12 @@ export default {
             },
             {
               "id": "rxjs"
+            },
+            {
+              "id": "prettier"
+            },
+            {
+              "id": "eslint"
             }
           ]
         },
@@ -611,9 +639,6 @@ export default {
             },
             {
               "id": "snowpack"
-            },
-            {
-              "id": "deno"
             }
           ]
         },
