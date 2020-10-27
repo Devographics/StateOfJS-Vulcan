@@ -30,7 +30,7 @@ const PrivacyPolicy = () => (
     </p>
     <h3>Why do you need me to create an account?</h3>
     <p>
-      We ask respondents to create an account because this makes it eaiser for us to save in-progress sessions, as well
+      We ask respondents to create an account because this makes it easier for us to save in-progress sessions, as well
       as give you access to your own data in the future.{' '}
     </p>
     <h3>What will you use my email for?</h3>
