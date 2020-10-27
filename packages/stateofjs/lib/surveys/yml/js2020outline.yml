@@ -58,7 +58,7 @@ outline:
         id: typed_arrays
       - title: Array.prototype.flat
         id: array_prototype_flat
-      - title: big_int
+      - title: Big Int
         id: big_int
 
   - id: browser_apis
