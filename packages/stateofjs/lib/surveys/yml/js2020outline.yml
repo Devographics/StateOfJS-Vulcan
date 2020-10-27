@@ -59,7 +59,7 @@ outline:
       - title: Array.prototype.flat
         id: array_prototype_flat
       - title: big_int
-        id: array_prototype_flat
+        id: big_int
 
   - id: browser_apis
     template: feature
