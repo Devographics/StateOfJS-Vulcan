@@ -74,24 +74,19 @@ export default {
       "slug": "features",
       "questions": [
         {
-          "title": "Maps",
           "id": "maps"
         },
         {
-          "title": "Sets",
           "id": "sets"
         },
         {
-          "title": "Typed Arrays",
           "id": "typed_arrays"
         },
         {
-          "title": "Array.prototype.flat",
           "id": "array_prototype_flat"
         },
         {
-          "title": "big_int",
-          "id": "array_prototype_flat"
+          "id": "big_int"
         }
       ]
     },
@@ -101,51 +96,39 @@ export default {
       "slug": "features",
       "questions": [
         {
-          "title": "Service Workers",
           "id": "service_workers"
         },
         {
-          "title": "LocalStorage",
           "id": "local_storage"
         },
         {
-          "title": "i18n",
           "id": "i18n"
         },
         {
-          "title": "Web Components",
           "id": "web_components"
         },
         {
-          "title": "Web Audio API",
           "id": "web_audio"
         },
         {
-          "title": "WebGL",
           "id": "webgl"
         },
         {
-          "title": "Web Animations API",
           "id": "web_animations"
         },
         {
-          "title": "WebRTC",
           "id": "webrtc"
         },
         {
-          "title": "Web Speech API",
           "id": "web_speech"
         },
         {
-          "title": "WebVR",
           "id": "webvr"
         },
         {
-          "title": "Websocket",
           "id": "websocket"
         },
         {
-          "title": "Fetch API",
           "id": "fetch"
         }
       ]
@@ -156,11 +139,9 @@ export default {
       "slug": "features",
       "questions": [
         {
-          "title": "Progressive Web Apps (PWA)",
           "id": "pwa"
         },
         {
-          "title": "WebAssembly (WASM)",
           "id": "wasm"
         }
       ]
@@ -436,6 +417,56 @@ export default {
       ]
     },
     {
+      "id": "build_tools",
+      "template": "tool",
+      "slug": "tools",
+      "questions": [
+        {
+          "id": "webpack"
+        },
+        {
+          "id": "parcel"
+        },
+        {
+          "id": "gulp"
+        },
+        {
+          "id": "rollup"
+        },
+        {
+          "id": "fusebox"
+        },
+        {
+          "id": "browserify"
+        },
+        {
+          "id": "rome"
+        },
+        {
+          "id": "snowpack"
+        },
+        {
+          "id": "swc"
+        },
+        {
+          "id": "esbuild"
+        },
+        {
+          "id": "build_tools",
+          "intlId": "tools.other_tools",
+          "template": "project",
+          "sectionSlug": "tools_others",
+          "suffix": "others"
+        },
+        {
+          "id": "build_tools",
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        }
+      ]
+    },
+    {
       "id": "mobile_desktop",
       "template": "tool",
       "slug": "tools",
@@ -481,7 +512,7 @@ export default {
       "slug": "tools_others",
       "questions": [
         {
-          "id": "utilities",
+          "id": "libraries",
           "template": "multiple",
           "options": [
             {
@@ -497,7 +528,13 @@ export default {
               "id": "moment"
             },
             {
-              "id": "date Fns"
+              "id": "dayjs"
+            },
+            {
+              "id": "date_fns"
+            },
+            {
+              "id": "luxon"
             },
             {
               "id": "ramda"
@@ -509,16 +546,35 @@ export default {
               "id": "rxjs"
             },
             {
+              "id": "axios"
+            }
+          ]
+        },
+        {
+          "id": "libraries",
+          "template": "project"
+        },
+        {
+          "id": "utilities",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "lerna"
+            },
+            {
               "id": "prettier"
             },
             {
               "id": "eslint"
+            },
+            {
+              "id": "nvm"
             }
           ]
         },
         {
           "id": "utilities",
-          "template": "others"
+          "template": "project"
         },
         {
           "id": "text_editors",
@@ -613,40 +669,6 @@ export default {
           "template": "others"
         },
         {
-          "id": "build_tools",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "webpack"
-            },
-            {
-              "id": "parcel"
-            },
-            {
-              "id": "gulp"
-            },
-            {
-              "id": "rollup"
-            },
-            {
-              "id": "fusebox"
-            },
-            {
-              "id": "browserify"
-            },
-            {
-              "id": "rome"
-            },
-            {
-              "id": "snowpack"
-            }
-          ]
-        },
-        {
-          "id": "build_tools",
-          "template": "others"
-        },
-        {
           "id": "non_js_languages",
           "template": "multiple",
           "options": [
@@ -699,8 +721,7 @@ export default {
         },
         {
           "id": "non_js_languages",
-          "suffix": "others",
-          "template": "text"
+          "template": "others"
         }
       ]
     },

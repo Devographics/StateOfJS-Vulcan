@@ -62,8 +62,7 @@ outline:
     questions:
       - id: service_workers
       - id: local_storage
-      - id: i18n
-      - id: web_components
+      - id: intl
       - id: web_audio
       - id: webgl
       - id: web_animations
@@ -72,6 +71,9 @@ outline:
       - id: webvr
       - id: websocket
       - id: fetch
+      - id: custom_elements
+      - id: shadow_dom
+
 
   - id: other_features
     template: feature
@@ -118,11 +120,13 @@ outline:
     questions:
       - id: react
       - id: vue
+      # - id: angularjs # TODO: decide if we include it or not…
       - id: angular
       - id: preact
       - id: ember
       - id: svelte
       - id: alpine_js
+      - id: lit_element
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -142,6 +146,8 @@ outline:
       - id: graphql
       - id: mobx
       - id: relay
+      - id: firebase
+      - id: xstate
       - id: datalayer
         intlId: tools.other_tools
         template: project
@@ -277,22 +283,31 @@ outline:
   - id: other_tools
     slug: tools_others
     questions:
-      - id: utilities
+      - id: libraries
         template: multiple
         options:
           - id: immer
           - id: lodash
           - id: underscore
           - id: moment
+          - id: dayjs
           - id: date_fns
           - id: luxon
           - id: ramda
           - id: jquery
           - id: rxjs
+          - id: axios
+      - id: libraries
+        template: project
+      - id: utilities
+        template: multiple
+        options:
+          - id: lerna
           - id: prettier
           - id: eslint
+          - id: nvm
       - id: utilities
-        template: others
+        template: project
       - id: text_editors
         template: multiple
         options:
@@ -346,8 +361,7 @@ outline:
           - id: ocaml
           - id: dart
       - id: non_js_languages
-        suffix: others
-        template: text
+        template: others
 
   ### RESOURCES ###
 
@@ -390,8 +404,6 @@ outline:
         options:
           - id: shop_talk_show
           - id: big_web_show
-          - id: web_ahead
-          - id: non_breaking_space_show
           - id: changelog
           - id: syntaxfm
           - id: js_party
