@@ -257,9 +257,8 @@ outline:
       # - Stylus
       - id: pre_post_processors
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
       - id: pre_post_processors
         intlId: tools.happiness
         template: happiness
@@ -288,9 +287,8 @@ outline:
 
       - id: css_frameworks
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
       - id: css_frameworks
         intlId: tools.happiness
         template: happiness
@@ -308,9 +306,8 @@ outline:
       - id: cube_css
       - id: css_methodologies
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
       - id: css_methodologies
         intlId: tools.happiness
         template: happiness
@@ -347,9 +344,8 @@ outline:
       # - Astroturf
       - id: css_in_js
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
       - id: css_in_js
         intlId: tools.happiness
         template: happiness

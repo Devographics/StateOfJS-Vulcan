@@ -7,9 +7,9 @@ import { parseSurvey } from '../modules/responses/helpers';
 
 // make sure array is properly sorted here
 const surveys = [
+  js2020,
   css2020,
   js2019,
-  js2020,
 ];
 
 const parsedSurveys = surveys.map(parseSurvey);

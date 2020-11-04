@@ -12,6 +12,7 @@ import SurveySectionSwitcher from '../components/survey/SurveySectionSwitcher';
 // import SurveySectionReadOnly from '../components/survey/SurveySectionReadOnly';
 
 import AdminStats from '../components/admin/AdminStats';
+import AdminNormalization from '../components/admin/AdminNormalization';
 import AdminSurveys from '../components/admin/AdminSurveys';
 import AdminResponses from '../components/admin/AdminResponses';
 import AdminUsers from '../components/admin/AdminUsers';
@@ -25,6 +26,7 @@ const routes = [
 { name: 'account', path: '/account', component: AccountPage },
 
 { name: 'adminStats', path: '/admin/stats', component: AdminStats, access: adminAccessOptions },
+{ name: 'adminNormalization', path: '/admin/normalization', component: AdminNormalization, access: adminAccessOptions },
 { name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys, access: adminAccessOptions },
 { name: 'adminResponses', path: '/admin/responses', component: AdminResponses, access: adminAccessOptions },
 { name: 'adminUsers', path: '/admin/users', component: AdminUsers, access: adminAccessOptions },

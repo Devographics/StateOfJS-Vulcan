@@ -499,9 +499,8 @@ export default {
         {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
-          "template": "text",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "template": "others",
+          "sectionSlug": "tools_others"
         },
         {
           "id": "pre_post_processors",
@@ -558,9 +557,8 @@ export default {
         {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
-          "template": "text",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "template": "others",
+          "sectionSlug": "tools_others"
         },
         {
           "id": "css_frameworks",
@@ -596,9 +594,8 @@ export default {
         {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
-          "template": "text",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "template": "others",
+          "sectionSlug": "tools_others"
         },
         {
           "id": "css_methodologies",
@@ -652,9 +649,8 @@ export default {
         {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
-          "template": "text",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "template": "others",
+          "sectionSlug": "tools_others"
         },
         {
           "id": "css_in_js",

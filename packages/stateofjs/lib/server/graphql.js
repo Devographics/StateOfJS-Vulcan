@@ -10,6 +10,7 @@ import fetch from 'node-fetch';
 import get from 'lodash/get';
 import Saves from '../modules/saves/collection.js';
 import Responses from '../modules/responses/collection.js';
+import NormalizedResponses from '../modules/normalized_responses/collection.js';
 import Users from 'meteor/vulcan:users';
 
 const translationAPI = getSetting('translationAPI');
@@ -220,3 +221,44 @@ const stats = async () => {
 
 addGraphQLQuery('stats: Stats');
 addGraphQLResolvers({ Query: { stats } });
+
+
+/*
+
+Normalization Debugging
+
+*/
+// const normalizationType = `type Normalization {
+//   raw: String
+//   normalized: [String]
+//   pattern: [String]
+// }`;
+
+// addGraphQLSchema(normalizationType);
+
+const surveyNormalization = async (root, { surveySlug, fieldName }) => {
+  console.log('// surveyNormalization');
+  console.log(surveySlug);
+  console.log(fieldName);
+  const [initialSegment, sectionSegment, fieldSegment, ...restOfPath] = fieldName.split('__');
+  const rawFieldPath = `${sectionSegment}.${fieldSegment}.others.raw`;
+  const normalizedFieldPath = `${sectionSegment}.${fieldSegment}.others.normalized`;
+  const query = {
+    surveySlug,
+    [rawFieldPath]: { $exists: true },
+    [normalizedFieldPath]: [],
+  }
+  console.log(JSON.stringify(query, '', 2));
+
+  const responses = NormalizedResponses.find(
+    query,
+    { fields: { [rawFieldPath]: 1 } }
+  ).fetch().map(r => get(r, rawFieldPath));
+
+  console.log(responses);
+
+  return responses;
+};
+
+addGraphQLQuery('surveyNormalization(surveySlug: String, fieldName: String): [String]');
+addGraphQLResolvers({ Query: { surveyNormalization } });
