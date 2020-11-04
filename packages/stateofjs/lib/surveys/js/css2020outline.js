@@ -1013,12 +1013,6 @@ export default {
               "id": "big_web_show"
             },
             {
-              "id": "web_ahead"
-            },
-            {
-              "id": "non_breaking_space_show"
-            },
-            {
               "id": "changelog"
             },
             {

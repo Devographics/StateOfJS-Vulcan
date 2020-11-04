@@ -15,7 +15,6 @@ const entitiesQuery = `query EntitiesQuery {
     id
     type
     category
-    context
     description
     tags
     mdn

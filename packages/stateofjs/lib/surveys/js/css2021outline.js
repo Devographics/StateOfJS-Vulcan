@@ -1,137 +1,172 @@
 
 /* Generated automatically, do not modify */
 export default {
-  "slug": "js2020",
-  "context": "state_of_js",
-  "topic": "JavaScript",
-  "createdAt": "December 1, 2020",
-  "prettySlug": "state-of-js",
-  "hashtag": "StateOfJS",
-  "shareUrl": "https://stateofjs.com",
-  "name": "State of JavaScript",
-  "year": 2020,
+  "slug": "css2021",
+  "context": "state_of_css",
+  "topic": "CSS",
+  "createdAt": "October 30, 2020",
+  "prettySlug": "state-of-css",
+  "hashtag": "StateOfCSS",
+  "shareUrl": "https://stateofcss.com",
+  "name": "State of CSS",
+  "year": 2021,
   "status": 1,
-  "imageUrl": "stateofjs2019.png",
-  "bgColor": "rgb(34, 36, 41)",
-  "textColor": "rgb(224, 228, 228)",
-  "linkColor": "rgb(65, 199, 199)",
-  "hoverColor": "rgb(254, 106, 106)",
+  "imageUrl": "stateofcss2020.png",
+  "bgColor": "#232840",
+  "textColor": "#9ac6c9",
+  "linkColor": "#f649a7",
+  "hoverColor": "#59df7f",
   "outline": [
     {
-      "id": "syntax",
+      "id": "layout",
       "template": "feature",
       "slug": "features",
       "questions": [
         {
-          "id": "destructuring"
+          "id": "grid"
         },
         {
-          "id": "spread_operator"
+          "id": "subgrid"
         },
         {
-          "id": "arrow_functions"
+          "id": "flexbox"
         },
         {
-          "id": "nullish_coalescing"
+          "id": "multi_column"
         },
         {
-          "id": "optional_chaining"
+          "id": "writing_modes"
         },
         {
-          "id": "private_fields"
+          "id": "exclusions"
+        },
+        {
+          "id": "position_sticky"
+        },
+        {
+          "id": "logical_properties"
+        },
+        {
+          "id": "aspect_ratio"
+        },
+        {
+          "id": "content_visibility"
         }
       ]
     },
     {
-      "id": "language",
+      "id": "shapes_graphics",
       "template": "feature",
       "slug": "features",
       "questions": [
         {
-          "id": "proxies"
+          "id": "shapes"
         },
         {
-          "id": "async_await"
+          "id": "object_fit"
         },
         {
-          "id": "promises"
+          "id": "clip_path"
         },
         {
-          "id": "decorators"
+          "id": "masks"
         },
         {
-          "id": "promise_all_settled"
+          "id": "blend_modes"
         },
         {
-          "id": "dynamic_import"
+          "id": "filter_effects"
+        },
+        {
+          "id": "backdrop_filter"
         }
       ]
     },
     {
-      "id": "data_structures",
+      "id": "interactions",
       "template": "feature",
       "slug": "features",
       "questions": [
         {
-          "id": "maps"
+          "id": "scroll_snap"
         },
         {
-          "id": "sets"
+          "id": "overscroll_behavior"
         },
         {
-          "id": "typed_arrays"
+          "id": "overflow_anchor"
         },
         {
-          "id": "array_prototype_flat"
+          "id": "touch_action"
         },
         {
-          "id": "big_int"
+          "id": "pointer_events"
         }
       ]
     },
     {
-      "id": "browser_apis",
+      "id": "typography",
       "template": "feature",
       "slug": "features",
       "questions": [
         {
-          "id": "service_workers"
+          "id": "web_fonts"
         },
         {
-          "id": "local_storage"
+          "id": "variables_fonts"
         },
         {
-          "id": "intl"
+          "id": "line_breaking"
         },
         {
-          "id": "web_audio"
+          "id": "font_variant"
         },
         {
-          "id": "webgl"
+          "id": "initial_letter"
         },
         {
-          "id": "web_animations"
+          "id": "font_variant_numeric"
         },
         {
-          "id": "webrtc"
+          "id": "font_display"
         },
         {
-          "id": "web_speech"
+          "id": "line_clamp"
+        }
+      ]
+    },
+    {
+      "id": "animations_transforms",
+      "template": "feature",
+      "slug": "features",
+      "questions": [
+        {
+          "id": "transitions"
         },
         {
-          "id": "webvr"
+          "id": "transforms"
         },
         {
-          "id": "websocket"
+          "id": "animations"
         },
         {
-          "id": "fetch"
+          "id": "perspective"
+        }
+      ]
+    },
+    {
+      "id": "media_queries",
+      "template": "feature",
+      "slug": "features",
+      "questions": [
+        {
+          "id": "prefers_reduced_motion"
         },
         {
-          "id": "custom_elements"
+          "id": "prefers_color_scheme"
         },
         {
-          "id": "shadow_dom"
+          "id": "color_gamut"
         }
       ]
     },
@@ -141,351 +176,335 @@ export default {
       "slug": "features",
       "questions": [
         {
-          "id": "pwa"
+          "id": "variables"
         },
         {
-          "id": "wasm"
+          "id": "feature_support_queries"
+        },
+        {
+          "id": "containment"
+        },
+        {
+          "id": "will_change"
+        },
+        {
+          "id": "calc"
+        },
+        {
+          "id": "houdini"
+        },
+        {
+          "id": "comparison_functions"
         }
       ]
     },
     {
-      "id": "javascript_flavors",
-      "template": "tool",
-      "slug": "tools",
+      "id": "units_selectors",
+      "slug": "features_others",
       "questions": [
         {
-          "id": "typescript"
+          "id": "units",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "px"
+            },
+            {
+              "id": "pt"
+            },
+            {
+              "id": "percent"
+            },
+            {
+              "id": "em"
+            },
+            {
+              "id": "rem"
+            },
+            {
+              "id": "vh_vw"
+            },
+            {
+              "id": "vmin_vmax"
+            },
+            {
+              "id": "ch"
+            },
+            {
+              "id": "ex"
+            },
+            {
+              "id": "mm"
+            },
+            {
+              "id": "cm"
+            },
+            {
+              "id": "in"
+            }
+          ]
         },
         {
-          "id": "reason"
+          "id": "pseudo_elements",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "before"
+            },
+            {
+              "id": "after"
+            },
+            {
+              "id": "first_line"
+            },
+            {
+              "id": "first_letter"
+            },
+            {
+              "id": "selection"
+            },
+            {
+              "id": "placeholder"
+            },
+            {
+              "id": "marker"
+            },
+            {
+              "id": "backdrop"
+            }
+          ]
         },
         {
-          "id": "elm"
+          "id": "combinators",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "descendant"
+            },
+            {
+              "id": "child"
+            },
+            {
+              "id": "next_sibling"
+            },
+            {
+              "id": "subsequent_sibling"
+            }
+          ]
         },
         {
-          "id": "clojurescript"
+          "id": "tree_document_structure",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "root"
+            },
+            {
+              "id": "empty"
+            },
+            {
+              "id": "not"
+            },
+            {
+              "id": "nth_child"
+            },
+            {
+              "id": "nth_last_child"
+            },
+            {
+              "id": "first_child"
+            },
+            {
+              "id": "last_child"
+            },
+            {
+              "id": "only_child"
+            },
+            {
+              "id": "nth_of_type"
+            },
+            {
+              "id": "nth_last_of_type"
+            },
+            {
+              "id": "first_of_type"
+            },
+            {
+              "id": "last_of_type"
+            },
+            {
+              "id": "only_of_type"
+            },
+            {
+              "id": "lang"
+            },
+            {
+              "id": "is"
+            },
+            {
+              "id": "where"
+            }
+          ]
         },
         {
-          "id": "purescript"
+          "id": "attributes",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "presence"
+            },
+            {
+              "id": "equality"
+            },
+            {
+              "id": "starts_with"
+            },
+            {
+              "id": "ends_with"
+            },
+            {
+              "id": "contains_word"
+            },
+            {
+              "id": "contains_substring"
+            }
+          ]
         },
         {
-          "id": "javascript_flavors",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "id": "links_urls",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "any_link"
+            },
+            {
+              "id": "link_visited"
+            },
+            {
+              "id": "local_link"
+            },
+            {
+              "id": "target"
+            }
+          ]
         },
         {
-          "id": "javascript_flavors",
-          "intlId": "tools.happiness",
-          "sectionSlug": "happiness",
-          "template": "happiness"
+          "id": "interaction",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "hover"
+            },
+            {
+              "id": "active"
+            },
+            {
+              "id": "focus"
+            },
+            {
+              "id": "focus_within"
+            },
+            {
+              "id": "focus_visible"
+            }
+          ]
+        },
+        {
+          "id": "form_controls",
+          "template": "multiple",
+          "allowmultiple": true,
+          "allowother": false,
+          "randomize": false,
+          "suffix": "choices",
+          "options": [
+            {
+              "id": "enabled_disabled"
+            },
+            {
+              "id": "read_only_write"
+            },
+            {
+              "id": "placeholder_shown"
+            },
+            {
+              "id": "default"
+            },
+            {
+              "id": "checked"
+            },
+            {
+              "id": "indeterminate"
+            },
+            {
+              "id": "valid_invalid"
+            },
+            {
+              "id": "user_invalid"
+            },
+            {
+              "id": "in_out_range"
+            },
+            {
+              "id": "required_optional"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "front_end_frameworks",
+      "id": "pre_post_processors",
       "template": "tool",
       "slug": "tools",
       "questions": [
         {
-          "id": "react"
+          "id": "sass"
         },
         {
-          "id": "vue"
+          "id": "less"
         },
         {
-          "id": "angular"
+          "id": "post_css"
         },
         {
-          "id": "preact"
+          "id": "stylus"
         },
         {
-          "id": "ember"
-        },
-        {
-          "id": "svelte"
-        },
-        {
-          "id": "alpinejs"
-        },
-        {
-          "id": "litelement"
-        },
-        {
-          "id": "front_end_frameworks",
+          "id": "pre_post_processors",
           "intlId": "tools.other_tools",
-          "template": "project",
+          "template": "text",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
-          "id": "front_end_frameworks",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "datalayer",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "redux"
-        },
-        {
-          "id": "apollo"
-        },
-        {
-          "id": "graphql"
-        },
-        {
-          "id": "mobx"
-        },
-        {
-          "id": "relay"
-        },
-        {
-          "id": "firebase"
-        },
-        {
-          "id": "xstate"
-        },
-        {
-          "id": "vuex"
-        },
-        {
-          "id": "datalayer",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
-        },
-        {
-          "id": "datalayer",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "back_end_frameworks",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "express"
-        },
-        {
-          "id": "nextjs"
-        },
-        {
-          "id": "koa"
-        },
-        {
-          "id": "meteor"
-        },
-        {
-          "id": "sails"
-        },
-        {
-          "id": "feathers"
-        },
-        {
-          "id": "nuxt"
-        },
-        {
-          "id": "gatsby"
-        },
-        {
-          "id": "nest"
-        },
-        {
-          "id": "strapi"
-        },
-        {
-          "id": "razzle"
-        },
-        {
-          "id": "fastify"
-        },
-        {
-          "id": "redwood"
-        },
-        {
-          "id": "hapi"
-        },
-        {
-          "id": "back_end_frameworks",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
-        },
-        {
-          "id": "back_end_frameworks",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "testing",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "jest"
-        },
-        {
-          "id": "mocha"
-        },
-        {
-          "id": "storybook"
-        },
-        {
-          "id": "cypress"
-        },
-        {
-          "id": "enzyme"
-        },
-        {
-          "id": "ava"
-        },
-        {
-          "id": "jasmine"
-        },
-        {
-          "id": "puppeteer"
-        },
-        {
-          "id": "react_testing_library"
-        },
-        {
-          "id": "webdriverio"
-        },
-        {
-          "id": "testing",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
-        },
-        {
-          "id": "testing",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "graphics_animation",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "d3"
-        },
-        {
-          "id": "threejs"
-        },
-        {
-          "id": "fabricjs"
-        },
-        {
-          "id": "visx"
-        },
-        {
-          "id": "nivo"
-        },
-        {
-          "id": "recharts"
-        },
-        {
-          "id": "animejs"
-        },
-        {
-          "id": "popmotion"
-        },
-        {
-          "id": "greensock"
-        },
-        {
-          "id": "lottie"
-        },
-        {
-          "id": "velocity"
-        },
-        {
-          "id": "graphics_animation",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
-        },
-        {
-          "id": "graphics_animation",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "build_tools",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "webpack"
-        },
-        {
-          "id": "babel"
-        },
-        {
-          "id": "parcel"
-        },
-        {
-          "id": "gulp"
-        },
-        {
-          "id": "rollup"
-        },
-        {
-          "id": "fusebox"
-        },
-        {
-          "id": "browserify"
-        },
-        {
-          "id": "rome"
-        },
-        {
-          "id": "snowpack"
-        },
-        {
-          "id": "swc"
-        },
-        {
-          "id": "esbuild"
-        },
-        {
-          "id": "deno"
-        },
-        {
-          "id": "build_tools",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
-        },
-        {
-          "id": "build_tools",
+          "id": "pre_post_processors",
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
@@ -493,43 +512,152 @@ export default {
       ]
     },
     {
-      "id": "mobile_desktop",
+      "id": "css_frameworks",
       "template": "tool",
       "slug": "tools",
       "questions": [
         {
-          "id": "electron"
+          "id": "bootstrap"
         },
         {
-          "id": "react_native"
+          "id": "materialize_css"
         },
         {
-          "id": "native_apps"
+          "id": "ant_design"
         },
         {
-          "id": "cordova"
+          "id": "semantic_ui"
         },
         {
-          "id": "ionic"
+          "id": "bulma"
         },
         {
-          "id": "capacitor"
+          "id": "foundation"
         },
         {
-          "id": "nwjs"
+          "id": "ui_kit"
         },
         {
-          "id": "expo"
+          "id": "tachyons"
         },
         {
-          "id": "mobile_desktop",
+          "id": "primer"
+        },
+        {
+          "id": "tailwind_css"
+        },
+        {
+          "id": "pure_css"
+        },
+        {
+          "id": "skeleton"
+        },
+        {
+          "id": "spectre_css"
+        },
+        {
+          "id": "css_frameworks",
           "intlId": "tools.other_tools",
-          "template": "project",
+          "template": "text",
           "sectionSlug": "tools_others",
           "suffix": "others"
         },
         {
-          "id": "mobile_desktop",
+          "id": "css_frameworks",
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        }
+      ]
+    },
+    {
+      "id": "css_methodologies",
+      "template": "tool",
+      "slug": "tools",
+      "questions": [
+        {
+          "id": "bem"
+        },
+        {
+          "id": "atomic_css"
+        },
+        {
+          "id": "oocss"
+        },
+        {
+          "id": "smacss"
+        },
+        {
+          "id": "it_css"
+        },
+        {
+          "id": "cube_css"
+        },
+        {
+          "id": "css_methodologies",
+          "intlId": "tools.other_tools",
+          "template": "text",
+          "sectionSlug": "tools_others",
+          "suffix": "others"
+        },
+        {
+          "id": "css_methodologies",
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        }
+      ]
+    },
+    {
+      "id": "css_in_js",
+      "template": "tool",
+      "slug": "tools",
+      "questions": [
+        {
+          "id": "styled_components"
+        },
+        {
+          "id": "jss"
+        },
+        {
+          "id": "styled_jsx"
+        },
+        {
+          "id": "radium"
+        },
+        {
+          "id": "emotion"
+        },
+        {
+          "id": "css_modules"
+        },
+        {
+          "id": "styled_system"
+        },
+        {
+          "id": "stitches"
+        },
+        {
+          "id": "styletron"
+        },
+        {
+          "id": "fela"
+        },
+        {
+          "id": "linaria"
+        },
+        {
+          "id": "astroturf"
+        },
+        {
+          "id": "css_in_js",
+          "intlId": "tools.other_tools",
+          "template": "text",
+          "sectionSlug": "tools_others",
+          "suffix": "others"
+        },
+        {
+          "id": "css_in_js",
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
@@ -541,75 +669,23 @@ export default {
       "slug": "tools_others",
       "questions": [
         {
-          "id": "libraries",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "immer"
-            },
-            {
-              "id": "lodash"
-            },
-            {
-              "id": "underscore"
-            },
-            {
-              "id": "moment"
-            },
-            {
-              "id": "dayjs"
-            },
-            {
-              "id": "date_fns"
-            },
-            {
-              "id": "luxon"
-            },
-            {
-              "id": "ramda"
-            },
-            {
-              "id": "jquery"
-            },
-            {
-              "id": "rxjs"
-            },
-            {
-              "id": "axios"
-            }
-          ]
-        },
-        {
-          "id": "libraries",
-          "template": "project"
-        },
-        {
           "id": "utilities",
           "template": "multiple",
           "options": [
             {
-              "id": "lerna"
+              "id": "stylelint"
             },
             {
-              "id": "prettier"
+              "id": "purge_css"
             },
             {
-              "id": "eslint"
-            },
-            {
-              "id": "nvm"
-            },
-            {
-              "id": "npm"
-            },
-            {
-              "id": "yarn"
+              "id": "purify_css"
             }
           ]
         },
         {
           "id": "utilities",
-          "template": "project"
+          "template": "others"
         },
         {
           "id": "text_editors",
@@ -702,64 +778,140 @@ export default {
         {
           "id": "browsers",
           "template": "others"
-        },
+        }
+      ]
+    },
+    {
+      "id": "environments",
+      "slug": "environments",
+      "questions": [
         {
-          "id": "non_js_languages",
+          "id": "browsers",
           "template": "multiple",
           "options": [
             {
-              "id": "php"
+              "id": "edge"
             },
             {
-              "id": "ruby"
+              "id": "chrome"
             },
             {
-              "id": "python"
+              "id": "safari"
             },
             {
-              "id": "go"
+              "id": "firefox"
             },
             {
-              "id": "rust"
+              "id": "internet_explorer_11"
             },
             {
-              "id": "java"
+              "id": "internet_explorer_8_9_10"
             },
             {
-              "id": "c_cplusplus"
+              "id": "opera_mini"
             },
             {
-              "id": "objective_c"
+              "id": "safari_ios"
             },
             {
-              "id": "scala"
+              "id": "chrome_ios"
             },
             {
-              "id": "swift"
+              "id": "chrome_android"
             },
             {
-              "id": "c_sharp"
+              "id": "firefox_android"
             },
             {
-              "id": "dot_net"
+              "id": "samsung_internet"
             },
             {
-              "id": "haskell"
+              "id": "vivaldi"
             },
             {
-              "id": "ocaml"
+              "id": "brave"
             },
             {
-              "id": "dart"
+              "id": "ucbrowser"
             },
             {
-              "id": "kotlin"
+              "id": "opera"
+            },
+            {
+              "id": "polypane"
             }
           ]
         },
         {
-          "id": "non_js_languages",
-          "template": "others"
+          "id": "form_factors",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "desktop"
+            },
+            {
+              "id": "smartphone"
+            },
+            {
+              "id": "feature_phone"
+            },
+            {
+              "id": "tablet"
+            },
+            {
+              "id": "smart_watch"
+            },
+            {
+              "id": "tv"
+            },
+            {
+              "id": "gaming_console"
+            },
+            {
+              "id": "screen_reader"
+            },
+            {
+              "id": "print"
+            }
+          ]
+        },
+        {
+          "id": "css_for_print",
+          "template": "single",
+          "fieldType": "Number",
+          "options": [
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            }
+          ]
+        },
+        {
+          "id": "css_for_email",
+          "template": "single",
+          "fieldType": "Number",
+          "options": [
+            {
+              "id": 0
+            },
+            {
+              "id": 1
+            },
+            {
+              "id": 2
+            },
+            {
+              "id": 3
+            }
+          ]
         }
       ]
     },
@@ -793,31 +945,16 @@ export default {
               "id": "devto"
             },
             {
-              "id": "dailyjs"
+              "id": "sidebar"
             },
             {
-              "id": "echojs"
+              "id": "heydesigner"
             },
             {
-              "id": "front_end_front"
+              "id": "css_weekly"
             },
             {
-              "id": "javascript_weekly"
-            },
-            {
-              "id": "best_of_js"
-            },
-            {
-              "id": "overreacted"
-            },
-            {
-              "id": "kentcdodds"
-            },
-            {
-              "id": "alligator_io"
-            },
-            {
-              "id": "medium"
+              "id": "frontend_horse"
             }
           ]
         },
@@ -855,15 +992,6 @@ export default {
             },
             {
               "id": "designcode"
-            },
-            {
-              "id": "udemy"
-            },
-            {
-              "id": "egghead"
-            },
-            {
-              "id": "frontend_masters"
             }
           ]
         },
@@ -879,6 +1007,9 @@ export default {
               "id": "shop_talk_show"
             },
             {
+              "id": "style_guide_podcast"
+            },
+            {
               "id": "big_web_show"
             },
             {
@@ -888,64 +1019,10 @@ export default {
               "id": "syntaxfm"
             },
             {
-              "id": "js_party"
-            },
-            {
-              "id": "javascript_jabber"
-            },
-            {
-              "id": "full_stack_radio"
-            },
-            {
-              "id": "front_end_happy_hour"
-            },
-            {
-              "id": "jamstack_radio"
-            },
-            {
-              "id": "the_web_platform_podcast"
-            },
-            {
-              "id": "modern_web"
-            },
-            {
-              "id": "codepen_radio"
-            },
-            {
-              "id": "ladybug"
-            },
-            {
-              "id": "react_podcast"
-            },
-            {
-              "id": "software_engineering_daily"
-            },
-            {
-              "id": "real_talk_javascript"
-            },
-            {
-              "id": "frontend_weekend"
-            },
-            {
-              "id": "web_standards_ru"
+              "id": "css_podcast"
             },
             {
               "id": "frontend_first"
-            },
-            {
-              "id": "http_203"
-            },
-            {
-              "id": "a11y_rules"
-            },
-            {
-              "id": "toolsday"
-            },
-            {
-              "id": "the_bike_shed"
-            },
-            {
-              "id": "css_podcast"
             }
           ]
         },
@@ -960,32 +1037,44 @@ export default {
       "slug": "opinions",
       "questions": [
         {
-          "id": "js_moving_in_right_direction",
+          "id": "css_easy_to_learn",
           "template": "opinion"
         },
         {
-          "id": "building_js_apps_overly_complex",
+          "id": "css_evolving_slowly",
           "template": "opinion"
         },
         {
-          "id": "js_over_used_online",
+          "id": "utility_classes_to_be_avoided",
           "template": "opinion"
         },
         {
-          "id": "enjoy_building_js_apps",
+          "id": "selector_nesting_to_be_avoided",
           "template": "opinion"
         },
         {
-          "id": "would_like_js_to_be_main_lang",
+          "id": "css_is_programming_language",
           "template": "opinion"
         },
         {
-          "id": "js_ecosystem_changing_to_fast",
+          "id": "enjoy_writing_css",
           "template": "opinion"
         },
         {
-          "id": "missing_from_js",
+          "id": "currently_missing_from_css",
+          "sectionSlug": "opinions_other",
+          "suffix": "others",
           "template": "longtext"
+        },
+        {
+          "id": "state_of_the_web",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        },
+        {
+          "id": "state_of_css",
+          "template": "happiness",
+          "sectionSlug": "happiness"
         }
       ]
     },
@@ -1096,15 +1185,21 @@ export default {
             },
             {
               "id": "web_designer"
+            },
+            {
+              "id": "ui_designer"
+            },
+            {
+              "id": "ux_designer"
             }
           ]
         },
         {
-          "id": "javascript_proficiency",
+          "id": "css_proficiency",
           "template": "proficiency"
         },
         {
-          "id": "css_proficiency",
+          "id": "javascript_proficiency",
           "template": "proficiency"
         },
         {

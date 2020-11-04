@@ -123,11 +123,14 @@ export const resourceNormalizationRules = [
   [/css ?weekly/i, 'css_weekly'],
   [/angular ?in ?depth/i, 'angular_in_depth'],
 
+  //  podcasts
+
   [/web\-standards/i, 'web_standards_ru'],
   [/web ?standards/i, 'web_standards_ru'],
   [/web ?standarts/i, 'web_standards_ru'],
+  [/Веб(-| )?стандарты/i, 'web_standards_ru'],
   [/undefined/i, 'undefined_podcast'],
-  [/toolsday/i, 'toolsday'],
+  [/tools ?day/i, 'toolsday'],
   [/software ?engineering ?daily/i, 'software_engineering_daily'],
   [/react ?podcast/i, 'react_podcast'],
   [/putaindecode/i, 'putaindecode'],
@@ -150,9 +153,8 @@ export const resourceNormalizationRules = [
   [/real ?talk/i, 'real_talk_javascript'],
   [/react ?native ?radio/i, 'react_native_radio'],
   [/hipsters/i, 'hipsters_tech'],
-  [/http203/i, 'http203'],
+  [/http ?203/i, 'http203'],
   [/functional ?geekery/i, 'functional_geekery'],
-  [/frontend ?weekend/i, 'frontend_weekend'],
   [/frontend ?weekend/i, 'frontend_weekend'],
   [/happy ?hour/i, 'frontend_happyhour'],
   [/front ?end ?happy ?hour/i, 'frontend_happyhour'],
@@ -164,6 +166,9 @@ export const resourceNormalizationRules = [
   [/angular ?air/i, 'angular_air'],
   [/adventures ?in ?angular/i, 'adventures_in_angular'],
   [/net ?rocks/i, 'dot_net_rocks'],
+  [/a11y ?rules/, 'a11y_rules'],
+  [/vzhurudolu/, 'vzhurudolu'],
+  [/bike ?shed/, 'the_bike_shed'],
 
   [/schwarzmuller/i, 'schwarzmuller'],
   [/schwarzmüller/i, 'schwarzmuller'],
@@ -209,7 +214,7 @@ export const resourceNormalizationRules = [
   [/w3schools/i, 'w3schools'],
   [/codecademy/i, 'codecademy'],
   [/levelup/i, 'levelup'],
-  [/pluralsight/i, 'w3schools'],
+  [/pluralsight/i, 'pluralsight'],
   [/designcode/i, 'designcode'],
   [/design\+code/i, 'designcode'],
 
@@ -217,7 +222,7 @@ export const resourceNormalizationRules = [
   [/changelog/i, 'changelog'],
   [/js ?party/i, 'js_party'],
   [/javaScript ?jabber/i, 'javascript_jabber'],
-  [/full ?stack ?radio/i, 'full_stack_radio'],
+  [/full( |-)?stack ?radio/i, 'full_stack_radio'],
   [/jamstack ?radio/i, 'jamstack_radio'],
   [/web ?platform/i, 'web_platform_podcast'],
   [/modern ?web/i, 'modern_web'],
@@ -712,8 +717,6 @@ export const toolNormalizationRules = [
   [/nodemon/i, 'nodemon'],
   [/greensock/i, 'gsap'],
   [/emotion/i, 'emotion'],
-  [/sanctuary/i, 'sanctuary'],
-  [/sanctuary/i, 'sanctuary'],
 
   [/sql/i, 'sql'],
   [/shell/i, 'shell'],

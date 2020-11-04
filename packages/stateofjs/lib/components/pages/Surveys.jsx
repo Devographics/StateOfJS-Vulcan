@@ -1,6 +1,8 @@
 import React from 'react';
 import surveys from '../../surveys';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
+import Users from 'meteor/vulcan:users';
+import { useCurrentUser, Utils } from 'meteor/vulcan:core';
 import { getSurveyPath } from '../../modules/surveys/helpers';
 import { Link } from 'react-router-dom';
 import { statuses } from '../../modules/constants';
@@ -34,33 +36,33 @@ const SurveyItem = ({ survey }) => {
   );
 };
 
+const SurveyGroup = ({ status }) => {
+  const filteredSurveys = surveys.filter((s) => s.status === statuses[status]);
+  return (
+    <div className="surveys-group">
+      <h3 className="surveys-group-heading">
+        <FormattedMessage id={`general.${status}_surveys`} defaultMessage={`${Utils.capitalize(status)} Surveys`} />
+      </h3>
+      {filteredSurveys.length > 0 ? (
+        filteredSurveys.map((survey) => <SurveyItem key={survey.slug} survey={survey} />)
+      ) : (
+        <div className={`surveys-no${status}`}>
+          <FormattedMessage id={`general.no_${status}_surveys`} />
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Surveys = () => {
-  const openSurveys = surveys.filter((s) => s.status === statuses.open);
-  const closedSurveys = surveys.filter((s) => s.status === statuses.closed);
-  
+  const { currentUser } = useCurrentUser();
+  const isAdmin = Users.isAdmin(currentUser);
   return (
     <div className="surveys">
       <LocaleSelector />
-      <div className="surveys-group">
-        <h3 className="surveys-group-heading">
-          <FormattedMessage id="general.open_surveys" />
-        </h3>
-        {openSurveys.length > 0 ? (
-          openSurveys.map((survey) => <SurveyItem key={survey.slug} survey={survey} />)
-        ) : (
-          <div className="surveys-noopen">
-            <FormattedMessage id="general.no_open_surveys" />
-          </div>
-        )}
-      </div>
-      <div className="surveys-group">
-        <h3 className="surveys-group-heading">
-          <FormattedMessage id="general.closed_surveys" />
-        </h3>
-        {closedSurveys.map((survey) => (
-          <SurveyItem key={survey.slug} survey={survey} />
-        ))}
-      </div>
+      {isAdmin && <SurveyGroup status="preview" />}
+      <SurveyGroup status="open" />
+      <SurveyGroup status="closed" />
       <Translators />
     </div>
   );

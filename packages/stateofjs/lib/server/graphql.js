@@ -14,6 +14,8 @@ import Users from 'meteor/vulcan:users';
 
 const translationAPI = getSetting('translationAPI');
 
+const disableAPICache = getSetting('disableAPICache', false);
+
 /*
 
 Survey Type
@@ -74,7 +76,7 @@ const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]
 
 const locale = async (root, { localeId }, context) => {
   let convertedLocale = nodeCache.get(localeId);
-  if (!convertedLocale) {
+  if (disableAPICache || !convertedLocale) {
     const response = await fetch(translationAPI, {
       method: 'POST',
       headers: {
@@ -119,7 +121,6 @@ const entityType = `type Entity {
   description: String
   type: String
   tags: [String]
-  context: String
   mdn: JSON
 }`;
 
@@ -130,7 +131,6 @@ const entitiesQuery = `query EntitiesQuery {
     id
     name
     tags
-    context
     type
     category
     description
@@ -147,7 +147,7 @@ const entitiesQuery = `query EntitiesQuery {
 const entities = async () => {
   let entities = nodeCache.get('entities');
 
-  if (!entities) {
+  if (disableAPICache || !entities) {
     const response = await fetch(translationAPI, {
       method: 'POST',
       headers: {

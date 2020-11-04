@@ -15,3 +15,4 @@ const surveys = [
 const parsedSurveys = surveys.map(parseSurvey);
 
 export default parsedSurveys;
+

@@ -13,7 +13,7 @@ createdAt: December 1, 2020
 prettySlug: state-of-js
 hashtag: StateOfJS
 shareUrl: https://stateofjs.com
-resultsUrl: https://2019.stateofjs.com/
+# resultsUrl: https://2019.stateofjs.com/
 name: 'State of JavaScript'
 year: 2020
 status: 1
@@ -125,8 +125,8 @@ outline:
       - id: preact
       - id: ember
       - id: svelte
-      - id: alpine_js
-      - id: lit_element
+      - id: alpinejs
+      - id: litelement
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -148,6 +148,7 @@ outline:
       - id: relay
       - id: firebase
       - id: xstate
+      - id: vuex
       - id: datalayer
         intlId: tools.other_tools
         template: project
@@ -168,19 +169,23 @@ outline:
       - id: meteor
       - id: sails
       - id: feathers
-      - id: nuxtjs
+      - id: nuxt
       - id: gatsby
       - id: nest
       - id: strapi
       - id: razzle
       - id: fastify
-      - id: deno
-      - id: datalayer
+      - id: redwood
+      - id: hapi
+      # - id: blitzjs
+      # - id: remix
+      # - id: vulcan
+      - id: back_end_frameworks
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
         suffix: others
-      - id: datalayer
+      - id: back_end_frameworks
         intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
@@ -197,7 +202,8 @@ outline:
       - id: ava
       - id: jasmine
       - id: puppeteer
-      - id: testing_library
+      - id: react_testing_library
+      - id: webdriverio
       - id: testing
         intlId: tools.other_tools
         template: project
@@ -213,14 +219,14 @@ outline:
     slug: tools
     questions:
       - id: d3
-      - id: three_js
-      - id: fabric_js
+      - id: threejs
+      - id: fabricjs
       - id: visx
       - id: nivo
       - id: recharts
-      - id: anime_js
+      - id: animejs
       - id: popmotion
-      - id: gsap
+      - id: greensock
       - id: lottie
       - id: velocity
       - id: graphics_animation
@@ -238,6 +244,7 @@ outline:
     slug: tools
     questions:
       - id: webpack
+      - id: babel
       - id: parcel
       - id: gulp
       - id: rollup
@@ -247,6 +254,7 @@ outline:
       - id: snowpack
       - id: swc
       - id: esbuild
+      - id: deno
       - id: build_tools
         intlId: tools.other_tools
         template: project
@@ -266,6 +274,7 @@ outline:
       - id: native_apps
       - id: cordova
       - id: ionic
+      - id: capacitor
       - id: nwjs
       - id: expo
       - id: mobile_desktop
@@ -306,6 +315,8 @@ outline:
           - id: prettier
           - id: eslint
           - id: nvm
+          - id: npm
+          - id: yarn
       - id: utilities
         template: project
       - id: text_editors
@@ -360,6 +371,7 @@ outline:
           - id: haskell
           - id: ocaml
           - id: dart
+          - id: kotlin
       - id: non_js_languages
         template: others
 
@@ -383,6 +395,10 @@ outline:
           - id: front_end_front
           - id: javascript_weekly
           - id: best_of_js
+          - id: overreacted
+          - id: kentcdodds
+          - id: alligator_io
+          - id: medium
       - id: blogs_news_magazines
         template: others
       - id: sites_courses
@@ -397,6 +413,9 @@ outline:
           - id: wesbos
           - id: pluralsight
           - id: designcode
+          - id: udemy
+          - id: egghead
+          - id: frontend_masters
       - id: sites_courses
         template: others
       - id: podcasts
@@ -415,6 +434,17 @@ outline:
           - id: modern_web
           - id: codepen_radio
           - id: ladybug
+          - id: react_podcast
+          - id: software_engineering_daily
+          - id: real_talk_javascript
+          - id: frontend_weekend
+          - id: web_standards_ru
+          - id: frontend_first
+          - id: http_203
+          - id: a11y_rules
+          - id: toolsday
+          - id: the_bike_shed
+          - id: css_podcast
       - id: podcasts
         template: others
 

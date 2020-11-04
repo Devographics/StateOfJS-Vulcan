@@ -6,6 +6,9 @@ const EntityLabel = ({ id, label, fallback }) => {
     <EntitiesContext.Consumer>
       {({ entities }) => {
         const entity = entities && entities.find((e) => e.id === id);
+        console.log(id)
+        console.log(entities)
+        console.log(entity)
         if (label) {
           // if label is provided, use that
           return <span className="entity-label entity-label-i18n" dangerouslySetInnerHTML={{ __html: label }} />;

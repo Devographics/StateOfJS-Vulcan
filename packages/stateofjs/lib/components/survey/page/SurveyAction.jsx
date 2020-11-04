@@ -80,10 +80,16 @@ const SurveyAction = ({ survey, currentUser }) => {
   return (
     <div className="survey-action">
       <div className="survey-action-inner">
-        {isAdmin ? (
-          <Components.MutationButton {...mutationButtonProps} />
-        ) : status === statuses.preview ? (
-          <SurveyLink survey={survey} message="general.preview_survey" />
+        {status === statuses.preview ? (
+          isAdmin ? (
+            hasResponse ? (
+              <SurveyLink survey={survey} response={currentSurveyResponse} message="general.continue_survey" />
+            ) : (
+              <Components.MutationButton {...mutationButtonProps} />
+            )
+          ) : (
+            <SurveyLink survey={survey} message="general.preview_survey" />
+          )
         ) : status === statuses.open ? (
           hasResponse ? (
             <SurveyLink survey={survey} response={currentSurveyResponse} message="general.continue_survey" />
