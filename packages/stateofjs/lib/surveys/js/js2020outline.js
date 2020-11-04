@@ -257,6 +257,12 @@ export default {
           "id": "vuex"
         },
         {
+          "id": "react_query"
+        },
+        {
+          "id": "swr"
+        },
+        {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "project",

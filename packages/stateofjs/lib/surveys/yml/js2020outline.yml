@@ -149,6 +149,8 @@ outline:
       - id: firebase
       - id: xstate
       - id: vuex
+      - id: react_query
+      - id: swr
       - id: datalayer
         intlId: tools.other_tools
         template: project

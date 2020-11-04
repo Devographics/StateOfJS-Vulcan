@@ -1034,6 +1034,8 @@ type Response {
   js2020__tools__firebase__experience: String 
   js2020__tools__xstate__experience: String 
   js2020__tools__vuex__experience: String 
+  js2020__tools__react_query__experience: String 
+  js2020__tools__swr__experience: String 
   js2020__tools_others__datalayer__others: [String] 
   js2020__happiness__datalayer: Float 
   js2020__tools__express__experience: String 
@@ -1491,6 +1493,8 @@ input CreateResponseDataInput {
   js2020__tools__firebase__experience: String 
   js2020__tools__xstate__experience: String 
   js2020__tools__vuex__experience: String 
+  js2020__tools__react_query__experience: String 
+  js2020__tools__swr__experience: String 
   js2020__tools_others__datalayer__others: [String] 
   js2020__happiness__datalayer: Float 
   js2020__tools__express__experience: String 
@@ -1889,6 +1893,8 @@ input UpdateResponseDataInput {
   js2020__tools__firebase__experience: String 
   js2020__tools__xstate__experience: String 
   js2020__tools__vuex__experience: String 
+  js2020__tools__react_query__experience: String 
+  js2020__tools__swr__experience: String 
   js2020__tools_others__datalayer__others: [String] 
   js2020__happiness__datalayer: Float 
   js2020__tools__express__experience: String 
@@ -2284,6 +2290,8 @@ input ResponseFilterInput {
   js2020__tools__firebase__experience: String_Selector
   js2020__tools__xstate__experience: String_Selector
   js2020__tools__vuex__experience: String_Selector
+  js2020__tools__react_query__experience: String_Selector
+  js2020__tools__swr__experience: String_Selector
   js2020__tools_others__datalayer__others: String_Array_Selector
   js2020__happiness__datalayer: Float_Selector
   js2020__tools__express__experience: String_Selector
@@ -2674,6 +2682,8 @@ input ResponseSortInput {
   js2020__tools__firebase__experience: SortOptions
   js2020__tools__xstate__experience: SortOptions
   js2020__tools__vuex__experience: SortOptions
+  js2020__tools__react_query__experience: SortOptions
+  js2020__tools__swr__experience: SortOptions
   js2020__tools_others__datalayer__others: SortOptions
   js2020__happiness__datalayer: SortOptions
   js2020__tools__express__experience: SortOptions
