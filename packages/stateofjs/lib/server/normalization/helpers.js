@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import { getSetting, runGraphQL, logToFile } from 'meteor/vulcan:core';
 import get from 'lodash/get';
+import intersection from 'lodash/intersection';
 
 const encryptionKey = process.env.ENCRYPTION_KEY || getSetting('encriptionKey');
 
@@ -40,24 +41,35 @@ export const ignoreValues = [
 export const cleanupValue = (value) =>
   ignoreValues.includes(value) ? null : value;
 
-export const extraRules = [];
+const entitiesQuery = `query EntitiesQuery {
+  entities{
+    id
+    category
+    tags
+    patterns
+  }
+}
+`;
 
-export const exclusions = ['react'];
+export const getEntities = async () => {
+  try {
+    return get(await runGraphQL(entitiesQuery), 'data.entities');
+  } catch (error) {
+    console.log('// getEntities error');
+    console.log(error);
+  }
+};
 
-export const normalize = async (
-  value,
-  matchCategories,
-  matchMultiple = true
-) => {
-  const allEntities = get(await runGraphQL(entitiesQuery), 'data.entities');
-  const allRules = [...generateEntityRules(allEntities), ...extraRules];
-  const rules = matchCategories
-    ? allRules.filter((r) => matchCategories.includes(r.category))
-    : allRules;
-
+export const normalize = async (value, tags, matchMultiple = true) => {
   const normalizedItems = [];
 
   try {
+    const allEntities = await getEntities();
+    const allRules = generateEntityRules(allEntities);
+    const rules = tags
+      ? allRules.filter((r) => intersection(tags, r.tags).length > 0)
+      : allRules;
+
     if (!value) {
       return [];
     }
@@ -94,27 +106,34 @@ three different fields (source field, referrer field, 'how did you hear' field)
 
 */
 export const normalizeSource = async (r) => {
-  const categories = ['sites', 'podcasts', 'youtube', 'sources'];
+  try {
+    const tags = ['sites', 'podcasts', 'youtube', 'sources'];
 
-  const rawSource = get(r, 'user_info.source');
-  const rawFindOut = get(r, 'user_info.how_did_user_find_out_about_the_survey');
-  const rawRef = get(r, 'user_info.referrer');
+    const rawSource = get(r, 'user_info.source');
+    const rawFindOut = get(
+      r,
+      'user_info.how_did_user_find_out_about_the_survey'
+    );
+    const rawRef = get(r, 'user_info.referrer');
 
-  const normSource = await normalizeSingle(rawSource, categories);
-  const normFindOut = await normalizeSingle(rawFindOut, categories);
-  const normReferrer = await normalizeSingle(rawRef, categories);
+    const normSource = await normalizeSingle(rawSource, tags);
+    const normFindOut = await normalizeSingle(rawFindOut, tags);
+    const normReferrer = await normalizeSingle(rawRef, tags);
 
-  if (normSource) {
-    return normSource;
-  } else if (normFindOut) {
-    return normFindOut;
-  } else if (normReferrer) {
-    return normReferrer;
-  } else {
-    return;
+    if (normSource) {
+      return normSource;
+    } else if (normFindOut) {
+      return normFindOut;
+    } else if (normReferrer) {
+      return normReferrer;
+    } else {
+      return;
+    }
+  } catch (error) {
+    console.log('// normalizeSource error');
+    console.log(error);
   }
 };
-
 
 export const generateEntityRules = (entities) => {
   const rules = [];
@@ -155,23 +174,13 @@ export const generateEntityRules = (entities) => {
   return rules;
 };
 
-const entitiesQuery = `query EntitiesQuery {
-  entities{
-    id
-    category
-    tags
-    patterns
-  }
-}
-`;
-
 export const logAllRules = async () => {
-  const allEntities = get(await runGraphQL(entitiesQuery), 'data.entities');
+  const allEntities = await getEntities();
   let rules = generateEntityRules(allEntities);
-  rules = rules.map(({ id, pattern, category }) => ({
+  rules = rules.map(({ id, pattern, tags }) => ({
     id,
     pattern: pattern.toString(),
-    category,
+    tags,
   }));
   const json = JSON.stringify(rules, null, 2);
 

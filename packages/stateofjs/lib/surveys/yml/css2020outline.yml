@@ -258,7 +258,7 @@ outline:
       - id: pre_post_processors
         intlId: tools.other_tools
         template: others
-        matchCategories: [libraries]
+        matchTags: [libraries]
         sectionSlug: tools_others
       - id: pre_post_processors
         intlId: tools.happiness
@@ -289,7 +289,7 @@ outline:
       - id: css_frameworks
         intlId: tools.other_tools
         template: others
-        matchCategories: [libraries]
+        matchTags: [libraries]
         sectionSlug: tools_others
       - id: css_frameworks
         intlId: tools.happiness
@@ -309,7 +309,7 @@ outline:
       - id: css_methodologies
         intlId: tools.other_tools
         template: others
-        matchCategories: [libraries, other]
+        matchTags: [methodologies, other, libraries]
         sectionSlug: tools_others
       - id: css_methodologies
         intlId: tools.happiness
@@ -348,7 +348,7 @@ outline:
       - id: css_in_js
         intlId: tools.other_tools
         template: others
-        matchCategories: [libraries]
+        matchTags: [libraries]
         sectionSlug: tools_others
       - id: css_in_js
         intlId: tools.happiness
@@ -368,7 +368,7 @@ outline:
           - id: purify_css
       - id: utilities
         template: others
-        matchCategories: [libraries]
+        matchTags: [libraries]
       - id: text_editors
         template: multiple
         options:
@@ -381,7 +381,7 @@ outline:
           - id: nova
       - id: text_editors
         template: others
-        matchCategories: [text_editors]
+        matchTags: [text_editors]
       - id: browsers
         template: multiple
         options:
@@ -404,7 +404,7 @@ outline:
           - id: polypane
       - id: browsers
         template: others
-        matchCategories: [browsers]
+        matchTags: [browsers]
 
   ### ENVIRONMENTS ###
   - id: environments
@@ -484,7 +484,7 @@ outline:
 
       - id: blogs_news_magazines
         template: others
-        matchCategories: [sites]
+        matchTags: [sites, newsletters, people, courses, youtube, socialmedia]
 
       - id: sites_courses
         template: multiple
@@ -501,7 +501,7 @@ outline:
 
       - id: sites_courses
         template: others
-        matchCategories: [sites]
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: podcasts
         template: multiple
@@ -515,7 +515,7 @@ outline:
 
       - id: podcasts
         template: others
-        matchCategories: [podcasts]
+        matchTags: [podcasts, people, sites]
 
     ### OPINIONS ###
 
@@ -536,8 +536,7 @@ outline:
         template: opinion
       - id: currently_missing_from_css
         sectionSlug: opinions_other
-        suffix: others
-        template: longtext
+        template: others
       - id: state_of_the_web
         template: happiness
         sectionSlug: happiness

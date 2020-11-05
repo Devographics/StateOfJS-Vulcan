@@ -500,7 +500,7 @@ export default {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
           "template": "others",
-          "matchCategories": [
+          "matchTags": [
             "libraries"
           ],
           "sectionSlug": "tools_others"
@@ -561,7 +561,7 @@ export default {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
           "template": "others",
-          "matchCategories": [
+          "matchTags": [
             "libraries"
           ],
           "sectionSlug": "tools_others"
@@ -601,9 +601,10 @@ export default {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
           "template": "others",
-          "matchCategories": [
-            "libraries",
-            "other"
+          "matchTags": [
+            "methodologies",
+            "other",
+            "libraries"
           ],
           "sectionSlug": "tools_others"
         },
@@ -660,7 +661,7 @@ export default {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
           "template": "others",
-          "matchCategories": [
+          "matchTags": [
             "libraries"
           ],
           "sectionSlug": "tools_others"
@@ -695,7 +696,7 @@ export default {
         {
           "id": "utilities",
           "template": "others",
-          "matchCategories": [
+          "matchTags": [
             "libraries"
           ]
         },
@@ -729,7 +730,7 @@ export default {
         {
           "id": "text_editors",
           "template": "others",
-          "matchCategories": [
+          "matchTags": [
             "text_editors"
           ]
         },
@@ -793,7 +794,7 @@ export default {
         {
           "id": "browsers",
           "template": "others",
-          "matchCategories": [
+          "matchTags": [
             "browsers"
           ]
         }
@@ -979,8 +980,13 @@ export default {
         {
           "id": "blogs_news_magazines",
           "template": "others",
-          "matchCategories": [
-            "sites"
+          "matchTags": [
+            "sites",
+            "newsletters",
+            "people",
+            "courses",
+            "youtube",
+            "socialmedia"
           ]
         },
         {
@@ -1019,8 +1025,13 @@ export default {
         {
           "id": "sites_courses",
           "template": "others",
-          "matchCategories": [
-            "sites"
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
           ]
         },
         {
@@ -1050,8 +1061,10 @@ export default {
         {
           "id": "podcasts",
           "template": "others",
-          "matchCategories": [
-            "podcasts"
+          "matchTags": [
+            "podcasts",
+            "people",
+            "sites"
           ]
         }
       ]
@@ -1087,8 +1100,7 @@ export default {
         {
           "id": "currently_missing_from_css",
           "sectionSlug": "opinions_other",
-          "suffix": "others",
-          "template": "longtext"
+          "template": "others"
         },
         {
           "id": "state_of_the_web",
