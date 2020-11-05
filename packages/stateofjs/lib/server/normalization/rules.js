@@ -1,96 +1,7 @@
 
 export const resourceNormalizationRules = [
 
-  [/overeacted/i, 'overreacted'],
-  [/overreacted/i, 'overreacted'],
-  [/abramov/i, 'overreacted'],
 
-  // twitter
-  [/twii?t/i, 'twitter'],
-
-  // stateofjs
-  [/state ?of ?js/i, 'stateofjs'],
-
-  // bestofjs
-  [/best ?of ?\.?js/i, 'bestofjs'],
-
-  // js weekly
-  [/javascript ?weekly/i, 'js_weekly'],
-  [/js ?weekly/i, 'js_weekly'],
-
-  // ionic newsletter
-  [/ionic/i, 'ionic_newsletter'],
-
-  // freecodecamp
-  [/free ?code ?camp/i, 'freecodecamp'],
-  [/fcc/i, 'freecodecamp'],
-
-
-  // reddit
-  [/redd?it/i, 'reddit'],
-  [/r3dd1t/i, 'reddit'],
-  [/\/?r\/(javascript|clojure|reactjs|angular|webdev|programming)/i, 'reddit'],
-  [/\/?r\/clojure/i, 'reddit'],
-
-  // hacker news
-  [/hacker ?news/i, 'hn'],
-  [/hacknews/i, 'hn'],
-  [/hckrnews/i, 'hn'],
-  [/hn/i, 'hn'],
-  [/ycombinator/i, 'hn'],
-
-  // medium
-  [/med(iu|ui)m/i, 'medium'],
-
-  // post
-  // [/post/i, 'post'],
-  // [/blog/i, 'post'],
-  // [/article/i, 'post'],
-
-  // wesbos
-  [/we(s|b) ?br?o(s|z)/i, 'wesbos'],
-  [/wes the bos/i, 'wesbos'],
-  [/^wes$/i, 'wesbos'],
-
-  // codrops
-  [/codrops/i, 'codrops'],
-  [/codedrops/i, 'codrops'],
-  [/tympanus/i, 'codrops'],
-
-  // elm slack
-  [/elm/i, 'elm_slack'],
-
-  // facebook
-  [/facebook/i, 'facebook'],
-  [/fb/i, 'facebook'],
-
-  [/code ?pen ?radio/i, 'codepen_radio'],
-
-  [/slack/i, 'slack'],
-  [/telegram/i, 'telegram'],
-  [/friends?/i, 'friend'],
-  [/slashdot/i, 'slashdot'],
-
-  [/web\.dev/i, 'web_dev'],
-  [/webdev/i, 'web_dev'],
-  [/mcginnis/i, 'tyler_mcginnis'],
-  [/twitter/i, 'twitter'],
-  [/scotch/i, 'scotchio'],
-  [/wieruch/i, 'robin_wieruch'],
-  [/oreilly/i, 'oreilly'],
-  [/o\'reilly/i, 'overreacted'],
-  [/node weekly/i, 'node_weekly'],
-  [/nodeweekly/i, 'node_weekly'],
-  [/hackernoon/i, 'hackernoon'],
-  [/kentcdodds/i, 'kentcdodds'],
-  [/dodds/i, 'kentcdodds'],
-  [/juejin/i, 'juejin'],
-  [/kicks/i, 'javascriptkicks'],
-  [/mozilla hacks/i, 'mozilla_hacks'],
-  [/mozillahacks/i, 'mozilla_hacks'],
-  [/gomakethings/i, 'gomakethings'],
-  [/flaviocopes/i, 'flaviocopes'],
-  [/alligator/i, 'alligator'],
   [/2ality/i, '2ality'],
   [/habr/i, 'habr'],
   [/bitsofco\.de/i, 'bitsofcode'],
@@ -111,13 +22,8 @@ export const resourceNormalizationRules = [
   [/rascia/i, 'tania_rascia'],
   [/sidebar/i, 'sidebar'],
   [/react ?status/i, 'react_status'],
-  [/ponyfoo/i, 'ponyfoo'],
-  [/frontend focus/i, 'frontend_focus'],
-  [/frontendfocus/i, 'frontend_focus'],
-  [/egghead/i, 'egghead'],
   [/esnext/i, 'esnext'],
   [/es\.next/i, 'esnext'],
-  [/codyhouse/i, 'codyhouse'],
   [/(^|\s)codepen($|\s)/i, 'codepen'],
   [/changelog/i, 'changelog'],
   [/css ?weekly/i, 'css_weekly'],
@@ -261,65 +167,7 @@ export const resourceNormalizationRules = [
 
 ]
 
-export const sourceNormalizationRules = [...resourceNormalizationRules,
 
-  [/twee?t/i, 'twitter'],
-  [/https\:\/\/t\.co/i, 'twitter'],
-
-  // email
-  [/e?mail/i, 'email'],
-  [/e-mail/i, 'email'],
-  [/subscribed/i, 'email'],
-  [/subscription/i, 'email'],
-  // assuming people who did it before fall into the 'email' category
-  [/(previous|last|every) (year|survey)/i, 'email'],
-  [/it before/i, 'email'],
-
-  // work
-  [/work/i, 'work'],
-  [/cto/i, 'work'],
-  [/coworkers?/i, 'work'],
-  [/co workers?/i, 'work'],
-  [/co-workers?/i, 'work'],
-  [/coll?ea?gu?a?es?/i, 'work'],
-  [/fellow/i, 'work'],
-  [/company/i, 'work'],
-
-  // newsletter
-  [/newsletter/i, 'newsletter'],
-]
-
-
-export const otherFeaturesNormalizationRules = [
-  // missing CSS features
-  [/container( |-)(media|width)? ?quer(y|ies)/i, 'container_queries'],
-  [/(element|object|component)s? (based )?(media )?quer(y|ies)/i, 'container_queries'],
-  [/parent select(or|ion)/i, 'parent_selector'],
-  [/parent (of )?(an )?element/i, 'parent_selector'],
-  [/\:parent/i, 'parent_selector'],
-  [/(target|select|style) (a )?parent/i, 'parent_selector'],
-  [/nesting/i, 'nesting'],
-  [/nested select(or|ion)/i, 'nesting'],
-  [/sub( |-)?grid/i, 'subgrid'],
-  [/\:has/i, 'has_selector'],
-  [/has\(\)/i, 'has_selector'],
-  [/mixins?/i, 'mixins'],
-  [/functions?/i, 'functions'],
-  [/houdini/i, 'houdini'],
-  [/encapsulation/i, 'scoping'],
-  [/isolation/i, 'scoping'],
-  [/scop(e|ing)/i, 'scoping'],
-  [/nothing/i, 'nothing'],
-  [/browser support/i, 'browser_support'],
-  [/browser adoption/i, 'browser_support'],
-  [/consistency/i, 'browser_support'],
-  [/consistent support/i, 'browser_support'],
-  [/cross( |-)browser/i, 'browser_support'],
-  [/conditional/i, 'conditional_logic'],
-  [/if statement/i, 'conditional_logic'],
-  [/simplicity/i, 'simplicity'],
-  [/sass/i, 'sass'],
-];
 
 
 /**
@@ -601,6 +449,7 @@ export const toolNormalizationRules = [
   [/bbedit/i, 'bbedit'],
   [/dart/i, 'dart'],
   [/lua/i, 'lua'],
+
   [/webgl/i, 'webgl'],
   [/webrtc/i, 'webrtc'],
   [/webvr/i, 'webvr'],

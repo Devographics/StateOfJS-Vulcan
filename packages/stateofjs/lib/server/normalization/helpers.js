@@ -1,6 +1,6 @@
 import crypto from 'crypto';
-import { getSetting } from 'meteor/vulcan:core';
-import normalizationRules, { sourceNormalizationRules } from './rules';
+import { getSetting, runGraphQL, logToFile } from 'meteor/vulcan:core';
+import get from 'lodash/get';
 
 const encryptionKey = process.env.ENCRYPTION_KEY || getSetting('encriptionKey');
 
@@ -40,61 +40,52 @@ export const ignoreValues = [
 export const cleanupValue = (value) =>
   ignoreValues.includes(value) ? null : value;
 
-/**
- * Generates a normalizer from an array of rules.
- * The normalizer will return the first matching
- * rule normalized value.
- *
- * @see multiNormalizer
- */
-export const uniNormalizer = (rules) => (value) => {
-  if (!value) {
-    return [value];
-  }
+export const extraRules = [];
 
-  for (let rule of rules) {
-    const [pattern, normalized] = rule;
-    if (value.match(pattern) !== null) {
-      return [normalized, pattern, value];
-    }
-  }
+export const exclusions = ['react'];
 
-  return [value];
-};
+export const normalize = async (
+  value,
+  matchCategories,
+  matchMultiple = true
+) => {
+  const allEntities = get(await runGraphQL(entitiesQuery), 'data.entities');
+  const allRules = [...generateEntityRules(allEntities), ...extraRules];
+  const rules = matchCategories
+    ? allRules.filter((r) => matchCategories.includes(r.category))
+    : allRules;
 
-/**
- * Generates a normalizer from an array of rules.
- * The normalizer will return all matching
- * rules normalized value.
- *
- * @see uniNormalizer
- */
-export const multiNormalizer = (rules) => (value) => {
   const normalizedItems = [];
+
   try {
     if (!value) {
       return [];
     }
     for (let rule of rules) {
-      const [pattern, normalized] = rule;
+      const { id, pattern } = rule;
       if (value.match(pattern) !== null) {
-        normalizedItems.push([normalized, pattern, value]);
+        normalizedItems.push({
+          value: id,
+          pattern: pattern.toString(),
+          raw: value,
+        });
+        if (!matchMultiple) {
+          break;
+        }
       }
     }
   } catch (error) {
-    console.log('// multiNormalizer error');
+    console.log('// normalize error');
     console.log(value);
     console.log(error);
   }
   return normalizedItems;
 };
 
-// test if a value corresponds to a valid normalisation value
-export const isValidNormalization = (value, rules) =>
-  rules.some((ruleArray) => {
-    const [reg, rule] = ruleArray;
-    return value === rule;
-  });
+export const normalizeSingle = async (value, matchCategories) => {
+  const values = await normalize(value, matchCategories, false);
+  return values[0];
+};
 
 /*
 
@@ -102,35 +93,88 @@ Handle source normalization separately since its value can come from
 three different fields (source field, referrer field, 'how did you hear' field)
 
 */
-export const normalizeResponseSource = (response) => {
-  const normalizeSource = uniNormalizer(sourceNormalizationRules);
+export const normalizeSource = async (r) => {
+  const categories = ['sites', 'podcasts', 'youtube', 'sources'];
 
-  const [normalizedSource, sourcePattern] = normalizeSource(
-    response.user_info.source
-  );
-  const [normalizedFindOut, findOutPattern] = normalizeSource(
-    response.user_info.how_did_user_find_out_about_the_survey
-  );
-  const [normalizedReferrer, referrerPattern] = normalizeSource(
-    response.user_info.referrer
-  );
-  if (isValidNormalization(normalizedSource, sourceNormalizationRules)) {
-    // if response has explicitly passed source, use that
-    return [normalizedSource, sourcePattern, response.user_info.source];
-  } else if (
-    isValidNormalization(normalizedFindOut, sourceNormalizationRules)
-  ) {
-    // else if freeform 'how did you hear…' can be normalized, use that
-    return [normalizedFindOut, findOutPattern, response.user_info.how_did_user_find_out_about_the_survey];
-  } else if (
-    isValidNormalization(normalizedReferrer, sourceNormalizationRules)
-  ) {
-    // else try to normalize referrer
-    return [normalizedReferrer, referrerPattern, response.user_info.referrer];
+  const rawSource = get(r, 'user_info.source');
+  const rawFindOut = get(r, 'user_info.how_did_user_find_out_about_the_survey');
+  const rawRef = get(r, 'user_info.referrer');
+
+  const normSource = await normalizeSingle(rawSource, categories);
+  const normFindOut = await normalizeSingle(rawFindOut, categories);
+  const normReferrer = await normalizeSingle(rawRef, categories);
+
+  if (normSource) {
+    return normSource;
+  } else if (normFindOut) {
+    return normFindOut;
+  } else if (normReferrer) {
+    return normReferrer;
   } else {
-    // else leave field empty
-    return [];
+    return;
   }
 };
 
-export const normalizeInput = multiNormalizer(normalizationRules);
+export const generateEntityRules = (entities) => {
+  const rules = [];
+  entities.forEach((entity) => {
+    const { id, patterns, category } = entity;
+    const separator = '( |-|_|.)*';
+
+    // 1. replace "_" by separator
+    const idPatternString = id.replaceAll('_', separator);
+    const idPattern = new RegExp(idPatternString, 'i');
+    rules.push({
+      id,
+      pattern: idPattern,
+      category,
+    });
+
+    // 2. replace "js" at the end by separator+js
+    if (id.substr(-2) === 'js') {
+      const patternString = id.substr(0, id.length - 2) + separator + 'js';
+      const pattern = new RegExp(patternString, 'i');
+      rules.push({ id, pattern, category });
+    }
+
+    // 3. replace "css" at the end by separator+css
+    if (id.substr(-3) === 'css') {
+      const patternString = id.substr(0, id.length - 3) + separator + 'css';
+      const pattern = new RegExp(patternString, 'i');
+      rules.push({ id, pattern, category });
+    }
+
+    // 4. add custom patterns
+    patterns &&
+      patterns.forEach((patternString) => {
+        const pattern = new RegExp(patternString, 'i');
+        rules.push({ id, pattern, category });
+      });
+  });
+  return rules;
+};
+
+const entitiesQuery = `query EntitiesQuery {
+  entities{
+    id
+    category
+    tags
+    patterns
+  }
+}
+`;
+
+export const logAllRules = async () => {
+  const allEntities = get(await runGraphQL(entitiesQuery), 'data.entities');
+  let rules = generateEntityRules(allEntities);
+  rules = rules.map(({ id, pattern, category }) => ({
+    id,
+    pattern: pattern.toString(),
+    category,
+  }));
+  const json = JSON.stringify(rules, null, 2);
+
+  logToFile('rules.js', 'export default ' + json, {
+    mode: 'overwrite',
+  });
+};

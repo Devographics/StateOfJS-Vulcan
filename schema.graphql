@@ -194,6 +194,7 @@ type Entity {
   type: String
   tags: [String]
   mdn: JSON
+  patterns: [String]
 }
 type Stats {
   contents: JSON

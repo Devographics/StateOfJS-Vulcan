@@ -123,6 +123,7 @@ const entityType = `type Entity {
   type: String
   tags: [String]
   mdn: JSON
+  patterns: [String]
 }`;
 
 addGraphQLSchema(entityType);
@@ -135,6 +136,7 @@ const entitiesQuery = `query EntitiesQuery {
     type
     category
     description
+    patterns
     mdn {
       locale
       url
