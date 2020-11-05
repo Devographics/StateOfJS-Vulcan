@@ -115,10 +115,11 @@ export const normalizeSource = async (r) => {
   }
 };
 
+
 export const generateEntityRules = (entities) => {
   const rules = [];
   entities.forEach((entity) => {
-    const { id, patterns, category } = entity;
+    const { id, patterns, tags } = entity;
     const separator = '( |-|_|.)*';
 
     // 1. replace "_" by separator
@@ -127,28 +128,28 @@ export const generateEntityRules = (entities) => {
     rules.push({
       id,
       pattern: idPattern,
-      category,
+      tags,
     });
 
     // 2. replace "js" at the end by separator+js
     if (id.substr(-2) === 'js') {
       const patternString = id.substr(0, id.length - 2) + separator + 'js';
       const pattern = new RegExp(patternString, 'i');
-      rules.push({ id, pattern, category });
+      rules.push({ id, pattern, tags });
     }
 
     // 3. replace "css" at the end by separator+css
     if (id.substr(-3) === 'css') {
       const patternString = id.substr(0, id.length - 3) + separator + 'css';
       const pattern = new RegExp(patternString, 'i');
-      rules.push({ id, pattern, category });
+      rules.push({ id, pattern, tags });
     }
 
     // 4. add custom patterns
     patterns &&
       patterns.forEach((patternString) => {
         const pattern = new RegExp(patternString, 'i');
-        rules.push({ id, pattern, category });
+        rules.push({ id, pattern, tags });
       });
   });
   return rules;
