@@ -227,6 +227,38 @@ export const resourceNormalizationRules = [
   [/web ?platform/i, 'web_platform_podcast'],
   [/modern ?web/i, 'modern_web'],
 
+  [/daily( |.|-)?dev/i, 'daily_dev'],
+  [/ishadeed/i, 'ishadeed'],
+  [/front( |.|-)?end( |.|-)?foc\.?us/i, 'front_end_focus'],
+  [/front( |.|-)?end( |.|-)?front/i, 'front_end_front'],
+  [/picc?alil\.?l?(i|y)/i, 'picalilli'],
+  [/chenhuijing/i, 'chenhuijing'],
+  [/adactio/i, 'adactio'],
+  [/jeremy ?keith/i, 'adactio'],
+  [/lea ?verou/i, 'lea_verou'],
+  [/sara ?soueidan/i, 'sara_soueidan'],
+  [/josh ?w? ?comeau/i, 'josh_comeau'],
+  [/rwd ?weekly/i, 'rwd_weekly'],
+  [/responsive ?design ?weekly/i, 'rwd_weekly'],
+  [/web ?designer ?news/i, 'webdesignernews'],
+  [/heydon/i, 'heydon_pickering'],
+  [/awwwards/i, 'awwwards'],
+  [/quirksmode/i, 'quirksmode'],
+  [/sarah ?drasner/i, 'sarah_drasner'],
+  [/front( |-)?end( |-)?masters?/i, 'front_end_masters'],
+
+  [/design( |-)?course/i, 'design_course'],
+  [/grafikart/i, 'grafikart'],
+  [/rachel ?andrew/i, 'rachel_andrew'],
+  [/una ?kravets/i, 'una_kravets'],
+  [/jen ?simmons/i, 'jen_simmons'],
+  [/every ?layout/i, 'every_layout'],
+  [/super ?hi/i, 'superhi'],
+  [/kevin ?powell/i, 'kevin_powell'],
+  [/flavio ?copes/i, 'flavio_copes'],
+
+  [/enjoy ?the ?vue/i, 'enjoy_the_vue'],
+
 ]
 
 export const sourceNormalizationRules = [...resourceNormalizationRules,
@@ -476,7 +508,7 @@ export const toolNormalizationRules = [
   [/material design/i, 'material_design'],
   [/skeleton/i, 'skeleton'],
   [/material(\.| |-|_)?ui/i, 'material_ui'],
-  [/styled(\.| |-|_)?components/i, 'styled_components'],
+  [/style(d)?(\.| |-|_)?co(m|n)ponent(s)?/i, 'styled_components'],
   [/bourbon/i, 'bourbon'],
   [/mill?igram/i, 'milligram'],
   [/uikit/i, 'uikit'],
@@ -730,6 +762,31 @@ export const toolNormalizationRules = [
   [/coldfusion/i, 'coldfusion'],
   [/cfml/i, 'coldfusion'],
   [/apex/i, 'apex'],
+
+  [/stylis/i, 'stylis'],
+  [/tailwind/i, 'tailwind_css'],
+  [/auto( |-)?prefixer/i, 'autoprefixer'],
+  [/codyframe/i, 'codyframe'],
+  [/chakra/i, 'chakraui'],
+  [/theme( |.|-)?ui/i, 'themeui'],
+  [/element( |.|-)?ui/i, 'elementui'],
+  [/blueprint/i, 'blueprint'],
+  [/suit/i, 'suit'],
+  [/goober/i, 'goober'],
+
+  [/idea/i, 'idea'],
+  [/vscodium/i, 'vscodium'],
+  [/dreamweaver/i, 'dreamweaver'],
+  [/kate/i, 'kate'],
+  [/textwrangler/i, 'textwrangler'],
+  [/textedit/i, 'textedit'],
+
+  [/yandex/i, 'yandex'],
+  [/responsively/i, 'responsively'],
+  [/blisk/i, 'blisk'],
+  [/epiphany/i, 'epiphany'],
+
+
 
 ]
 

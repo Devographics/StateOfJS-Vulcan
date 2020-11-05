@@ -258,6 +258,7 @@ outline:
       - id: pre_post_processors
         intlId: tools.other_tools
         template: others
+        matchCategories: [libraries]
         sectionSlug: tools_others
       - id: pre_post_processors
         intlId: tools.happiness
@@ -288,6 +289,7 @@ outline:
       - id: css_frameworks
         intlId: tools.other_tools
         template: others
+        matchCategories: [libraries]
         sectionSlug: tools_others
       - id: css_frameworks
         intlId: tools.happiness
@@ -307,6 +309,7 @@ outline:
       - id: css_methodologies
         intlId: tools.other_tools
         template: others
+        matchCategories: [libraries, other]
         sectionSlug: tools_others
       - id: css_methodologies
         intlId: tools.happiness
@@ -345,6 +348,7 @@ outline:
       - id: css_in_js
         intlId: tools.other_tools
         template: others
+        matchCategories: [libraries]
         sectionSlug: tools_others
       - id: css_in_js
         intlId: tools.happiness
@@ -364,6 +368,7 @@ outline:
           - id: purify_css
       - id: utilities
         template: others
+        matchCategories: [libraries]
       - id: text_editors
         template: multiple
         options:
@@ -376,6 +381,7 @@ outline:
           - id: nova
       - id: text_editors
         template: others
+        matchCategories: [text_editors]
       - id: browsers
         template: multiple
         options:
@@ -398,6 +404,7 @@ outline:
           - id: polypane
       - id: browsers
         template: others
+        matchCategories: [browsers]
 
   ### ENVIRONMENTS ###
   - id: environments
@@ -477,6 +484,7 @@ outline:
 
       - id: blogs_news_magazines
         template: others
+        matchCategories: [sites]
 
       - id: sites_courses
         template: multiple
@@ -493,6 +501,7 @@ outline:
 
       - id: sites_courses
         template: others
+        matchCategories: [sites]
 
       - id: podcasts
         template: multiple
@@ -506,6 +515,7 @@ outline:
 
       - id: podcasts
         template: others
+        matchCategories: [podcasts]
 
     ### OPINIONS ###
 

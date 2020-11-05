@@ -1014,7 +1014,7 @@ type Response {
   js2020__tools__elm__experience: String 
   js2020__tools__clojurescript__experience: String 
   js2020__tools__purescript__experience: String 
-  js2020__tools_others__javascript_flavors__others: [String] 
+  js2020__tools_others__javascript_flavors__prenormalized: [String] 
   js2020__happiness__javascript_flavors: Float 
   js2020__tools__react__experience: String 
   js2020__tools__vue__experience: String 
@@ -1024,63 +1024,55 @@ type Response {
   js2020__tools__svelte__experience: String 
   js2020__tools__alpinejs__experience: String 
   js2020__tools__litelement__experience: String 
-  js2020__tools_others__front_end_frameworks__others: [String] 
+  js2020__tools__stimulus__experience: String 
+  js2020__tools_others__front_end_frameworks__prenormalized: [String] 
   js2020__happiness__front_end_frameworks: Float 
   js2020__tools__redux__experience: String 
   js2020__tools__apollo__experience: String 
   js2020__tools__graphql__experience: String 
   js2020__tools__mobx__experience: String 
   js2020__tools__relay__experience: String 
-  js2020__tools__firebase__experience: String 
   js2020__tools__xstate__experience: String 
   js2020__tools__vuex__experience: String 
-  js2020__tools__react_query__experience: String 
-  js2020__tools__swr__experience: String 
-  js2020__tools_others__datalayer__others: [String] 
+  js2020__tools_others__datalayer__prenormalized: [String] 
   js2020__happiness__datalayer: Float 
   js2020__tools__express__experience: String 
   js2020__tools__nextjs__experience: String 
   js2020__tools__koa__experience: String 
   js2020__tools__meteor__experience: String 
-  js2020__tools__sails__experience: String 
-  js2020__tools__feathers__experience: String 
   js2020__tools__nuxt__experience: String 
   js2020__tools__gatsby__experience: String 
   js2020__tools__nest__experience: String 
   js2020__tools__strapi__experience: String 
-  js2020__tools__razzle__experience: String 
   js2020__tools__fastify__experience: String 
-  js2020__tools__redwood__experience: String 
   js2020__tools__hapi__experience: String 
-  js2020__tools_others__back_end_frameworks__others: [String] 
+  js2020__tools_others__back_end_frameworks__prenormalized: [String] 
   js2020__happiness__back_end_frameworks: Float 
   js2020__tools__jest__experience: String 
   js2020__tools__mocha__experience: String 
   js2020__tools__storybook__experience: String 
   js2020__tools__cypress__experience: String 
-  js2020__tools__enzyme__experience: String 
   js2020__tools__ava__experience: String 
   js2020__tools__jasmine__experience: String 
   js2020__tools__puppeteer__experience: String 
-  js2020__tools__react_testing_library__experience: String 
+  js2020__tools__testing_library__experience: String 
+  js2020__tools__playwright__experience: String 
   js2020__tools__webdriverio__experience: String 
-  js2020__tools_others__testing__others: [String] 
+  js2020__tools_others__testing__prenormalized: [String] 
   js2020__happiness__testing: Float 
+  js2020__tools__echarts__experience: String 
+  js2020__tools__chartjs__experience: String 
   js2020__tools__d3__experience: String 
   js2020__tools__threejs__experience: String 
+  js2020__tools__pixijs__experience: String 
   js2020__tools__fabricjs__experience: String 
-  js2020__tools__visx__experience: String 
-  js2020__tools__nivo__experience: String 
-  js2020__tools__recharts__experience: String 
   js2020__tools__animejs__experience: String 
-  js2020__tools__popmotion__experience: String 
-  js2020__tools__greensock__experience: String 
   js2020__tools__lottie__experience: String 
-  js2020__tools__velocity__experience: String 
-  js2020__tools_others__graphics_animation__others: [String] 
+  js2020__tools__greensock__experience: String 
+  js2020__tools__popmotion__experience: String 
+  js2020__tools_others__graphics_animation__prenormalized: [String] 
   js2020__happiness__graphics_animation: Float 
   js2020__tools__webpack__experience: String 
-  js2020__tools__babel__experience: String 
   js2020__tools__parcel__experience: String 
   js2020__tools__gulp__experience: String 
   js2020__tools__rollup__experience: String 
@@ -1090,8 +1082,7 @@ type Response {
   js2020__tools__snowpack__experience: String 
   js2020__tools__swc__experience: String 
   js2020__tools__esbuild__experience: String 
-  js2020__tools__deno__experience: String 
-  js2020__tools_others__build_tools__others: [String] 
+  js2020__tools_others__build_tools__prenormalized: [String] 
   js2020__happiness__build_tools: Float 
   js2020__tools__electron__experience: String 
   js2020__tools__react_native__experience: String 
@@ -1101,12 +1092,13 @@ type Response {
   js2020__tools__capacitor__experience: String 
   js2020__tools__nwjs__experience: String 
   js2020__tools__expo__experience: String 
-  js2020__tools_others__mobile_desktop__others: [String] 
+  js2020__tools__quasar__experience: String 
+  js2020__tools_others__mobile_desktop__prenormalized: [String] 
   js2020__happiness__mobile_desktop: Float 
   js2020__tools_others__libraries__choices: [String] 
-  js2020__tools_others__libraries: [String] 
+  js2020__tools_others__libraries__prenormalized: [String] 
   js2020__tools_others__utilities__choices: [String] 
-  js2020__tools_others__utilities: [String] 
+  js2020__tools_others__utilities__prenormalized: [String] 
   js2020__tools_others__text_editors__choices: [String] 
   js2020__tools_others__text_editors__others: String 
   js2020__tools_others__browsers__choices: [String] 
@@ -1473,7 +1465,7 @@ input CreateResponseDataInput {
   js2020__tools__elm__experience: String 
   js2020__tools__clojurescript__experience: String 
   js2020__tools__purescript__experience: String 
-  js2020__tools_others__javascript_flavors__others: [String] 
+  js2020__tools_others__javascript_flavors__prenormalized: [String] 
   js2020__happiness__javascript_flavors: Float 
   js2020__tools__react__experience: String 
   js2020__tools__vue__experience: String 
@@ -1483,63 +1475,55 @@ input CreateResponseDataInput {
   js2020__tools__svelte__experience: String 
   js2020__tools__alpinejs__experience: String 
   js2020__tools__litelement__experience: String 
-  js2020__tools_others__front_end_frameworks__others: [String] 
+  js2020__tools__stimulus__experience: String 
+  js2020__tools_others__front_end_frameworks__prenormalized: [String] 
   js2020__happiness__front_end_frameworks: Float 
   js2020__tools__redux__experience: String 
   js2020__tools__apollo__experience: String 
   js2020__tools__graphql__experience: String 
   js2020__tools__mobx__experience: String 
   js2020__tools__relay__experience: String 
-  js2020__tools__firebase__experience: String 
   js2020__tools__xstate__experience: String 
   js2020__tools__vuex__experience: String 
-  js2020__tools__react_query__experience: String 
-  js2020__tools__swr__experience: String 
-  js2020__tools_others__datalayer__others: [String] 
+  js2020__tools_others__datalayer__prenormalized: [String] 
   js2020__happiness__datalayer: Float 
   js2020__tools__express__experience: String 
   js2020__tools__nextjs__experience: String 
   js2020__tools__koa__experience: String 
   js2020__tools__meteor__experience: String 
-  js2020__tools__sails__experience: String 
-  js2020__tools__feathers__experience: String 
   js2020__tools__nuxt__experience: String 
   js2020__tools__gatsby__experience: String 
   js2020__tools__nest__experience: String 
   js2020__tools__strapi__experience: String 
-  js2020__tools__razzle__experience: String 
   js2020__tools__fastify__experience: String 
-  js2020__tools__redwood__experience: String 
   js2020__tools__hapi__experience: String 
-  js2020__tools_others__back_end_frameworks__others: [String] 
+  js2020__tools_others__back_end_frameworks__prenormalized: [String] 
   js2020__happiness__back_end_frameworks: Float 
   js2020__tools__jest__experience: String 
   js2020__tools__mocha__experience: String 
   js2020__tools__storybook__experience: String 
   js2020__tools__cypress__experience: String 
-  js2020__tools__enzyme__experience: String 
   js2020__tools__ava__experience: String 
   js2020__tools__jasmine__experience: String 
   js2020__tools__puppeteer__experience: String 
-  js2020__tools__react_testing_library__experience: String 
+  js2020__tools__testing_library__experience: String 
+  js2020__tools__playwright__experience: String 
   js2020__tools__webdriverio__experience: String 
-  js2020__tools_others__testing__others: [String] 
+  js2020__tools_others__testing__prenormalized: [String] 
   js2020__happiness__testing: Float 
+  js2020__tools__echarts__experience: String 
+  js2020__tools__chartjs__experience: String 
   js2020__tools__d3__experience: String 
   js2020__tools__threejs__experience: String 
+  js2020__tools__pixijs__experience: String 
   js2020__tools__fabricjs__experience: String 
-  js2020__tools__visx__experience: String 
-  js2020__tools__nivo__experience: String 
-  js2020__tools__recharts__experience: String 
   js2020__tools__animejs__experience: String 
-  js2020__tools__popmotion__experience: String 
-  js2020__tools__greensock__experience: String 
   js2020__tools__lottie__experience: String 
-  js2020__tools__velocity__experience: String 
-  js2020__tools_others__graphics_animation__others: [String] 
+  js2020__tools__greensock__experience: String 
+  js2020__tools__popmotion__experience: String 
+  js2020__tools_others__graphics_animation__prenormalized: [String] 
   js2020__happiness__graphics_animation: Float 
   js2020__tools__webpack__experience: String 
-  js2020__tools__babel__experience: String 
   js2020__tools__parcel__experience: String 
   js2020__tools__gulp__experience: String 
   js2020__tools__rollup__experience: String 
@@ -1549,8 +1533,7 @@ input CreateResponseDataInput {
   js2020__tools__snowpack__experience: String 
   js2020__tools__swc__experience: String 
   js2020__tools__esbuild__experience: String 
-  js2020__tools__deno__experience: String 
-  js2020__tools_others__build_tools__others: [String] 
+  js2020__tools_others__build_tools__prenormalized: [String] 
   js2020__happiness__build_tools: Float 
   js2020__tools__electron__experience: String 
   js2020__tools__react_native__experience: String 
@@ -1560,12 +1543,13 @@ input CreateResponseDataInput {
   js2020__tools__capacitor__experience: String 
   js2020__tools__nwjs__experience: String 
   js2020__tools__expo__experience: String 
-  js2020__tools_others__mobile_desktop__others: [String] 
+  js2020__tools__quasar__experience: String 
+  js2020__tools_others__mobile_desktop__prenormalized: [String] 
   js2020__happiness__mobile_desktop: Float 
   js2020__tools_others__libraries__choices: [String] 
-  js2020__tools_others__libraries: [String] 
+  js2020__tools_others__libraries__prenormalized: [String] 
   js2020__tools_others__utilities__choices: [String] 
-  js2020__tools_others__utilities: [String] 
+  js2020__tools_others__utilities__prenormalized: [String] 
   js2020__tools_others__text_editors__choices: [String] 
   js2020__tools_others__text_editors__others: String 
   js2020__tools_others__browsers__choices: [String] 
@@ -1873,7 +1857,7 @@ input UpdateResponseDataInput {
   js2020__tools__elm__experience: String 
   js2020__tools__clojurescript__experience: String 
   js2020__tools__purescript__experience: String 
-  js2020__tools_others__javascript_flavors__others: [String] 
+  js2020__tools_others__javascript_flavors__prenormalized: [String] 
   js2020__happiness__javascript_flavors: Float 
   js2020__tools__react__experience: String 
   js2020__tools__vue__experience: String 
@@ -1883,63 +1867,55 @@ input UpdateResponseDataInput {
   js2020__tools__svelte__experience: String 
   js2020__tools__alpinejs__experience: String 
   js2020__tools__litelement__experience: String 
-  js2020__tools_others__front_end_frameworks__others: [String] 
+  js2020__tools__stimulus__experience: String 
+  js2020__tools_others__front_end_frameworks__prenormalized: [String] 
   js2020__happiness__front_end_frameworks: Float 
   js2020__tools__redux__experience: String 
   js2020__tools__apollo__experience: String 
   js2020__tools__graphql__experience: String 
   js2020__tools__mobx__experience: String 
   js2020__tools__relay__experience: String 
-  js2020__tools__firebase__experience: String 
   js2020__tools__xstate__experience: String 
   js2020__tools__vuex__experience: String 
-  js2020__tools__react_query__experience: String 
-  js2020__tools__swr__experience: String 
-  js2020__tools_others__datalayer__others: [String] 
+  js2020__tools_others__datalayer__prenormalized: [String] 
   js2020__happiness__datalayer: Float 
   js2020__tools__express__experience: String 
   js2020__tools__nextjs__experience: String 
   js2020__tools__koa__experience: String 
   js2020__tools__meteor__experience: String 
-  js2020__tools__sails__experience: String 
-  js2020__tools__feathers__experience: String 
   js2020__tools__nuxt__experience: String 
   js2020__tools__gatsby__experience: String 
   js2020__tools__nest__experience: String 
   js2020__tools__strapi__experience: String 
-  js2020__tools__razzle__experience: String 
   js2020__tools__fastify__experience: String 
-  js2020__tools__redwood__experience: String 
   js2020__tools__hapi__experience: String 
-  js2020__tools_others__back_end_frameworks__others: [String] 
+  js2020__tools_others__back_end_frameworks__prenormalized: [String] 
   js2020__happiness__back_end_frameworks: Float 
   js2020__tools__jest__experience: String 
   js2020__tools__mocha__experience: String 
   js2020__tools__storybook__experience: String 
   js2020__tools__cypress__experience: String 
-  js2020__tools__enzyme__experience: String 
   js2020__tools__ava__experience: String 
   js2020__tools__jasmine__experience: String 
   js2020__tools__puppeteer__experience: String 
-  js2020__tools__react_testing_library__experience: String 
+  js2020__tools__testing_library__experience: String 
+  js2020__tools__playwright__experience: String 
   js2020__tools__webdriverio__experience: String 
-  js2020__tools_others__testing__others: [String] 
+  js2020__tools_others__testing__prenormalized: [String] 
   js2020__happiness__testing: Float 
+  js2020__tools__echarts__experience: String 
+  js2020__tools__chartjs__experience: String 
   js2020__tools__d3__experience: String 
   js2020__tools__threejs__experience: String 
+  js2020__tools__pixijs__experience: String 
   js2020__tools__fabricjs__experience: String 
-  js2020__tools__visx__experience: String 
-  js2020__tools__nivo__experience: String 
-  js2020__tools__recharts__experience: String 
   js2020__tools__animejs__experience: String 
-  js2020__tools__popmotion__experience: String 
-  js2020__tools__greensock__experience: String 
   js2020__tools__lottie__experience: String 
-  js2020__tools__velocity__experience: String 
-  js2020__tools_others__graphics_animation__others: [String] 
+  js2020__tools__greensock__experience: String 
+  js2020__tools__popmotion__experience: String 
+  js2020__tools_others__graphics_animation__prenormalized: [String] 
   js2020__happiness__graphics_animation: Float 
   js2020__tools__webpack__experience: String 
-  js2020__tools__babel__experience: String 
   js2020__tools__parcel__experience: String 
   js2020__tools__gulp__experience: String 
   js2020__tools__rollup__experience: String 
@@ -1949,8 +1925,7 @@ input UpdateResponseDataInput {
   js2020__tools__snowpack__experience: String 
   js2020__tools__swc__experience: String 
   js2020__tools__esbuild__experience: String 
-  js2020__tools__deno__experience: String 
-  js2020__tools_others__build_tools__others: [String] 
+  js2020__tools_others__build_tools__prenormalized: [String] 
   js2020__happiness__build_tools: Float 
   js2020__tools__electron__experience: String 
   js2020__tools__react_native__experience: String 
@@ -1960,12 +1935,13 @@ input UpdateResponseDataInput {
   js2020__tools__capacitor__experience: String 
   js2020__tools__nwjs__experience: String 
   js2020__tools__expo__experience: String 
-  js2020__tools_others__mobile_desktop__others: [String] 
+  js2020__tools__quasar__experience: String 
+  js2020__tools_others__mobile_desktop__prenormalized: [String] 
   js2020__happiness__mobile_desktop: Float 
   js2020__tools_others__libraries__choices: [String] 
-  js2020__tools_others__libraries: [String] 
+  js2020__tools_others__libraries__prenormalized: [String] 
   js2020__tools_others__utilities__choices: [String] 
-  js2020__tools_others__utilities: [String] 
+  js2020__tools_others__utilities__prenormalized: [String] 
   js2020__tools_others__text_editors__choices: [String] 
   js2020__tools_others__text_editors__others: String 
   js2020__tools_others__browsers__choices: [String] 
@@ -2270,7 +2246,7 @@ input ResponseFilterInput {
   js2020__tools__elm__experience: String_Selector
   js2020__tools__clojurescript__experience: String_Selector
   js2020__tools__purescript__experience: String_Selector
-  js2020__tools_others__javascript_flavors__others: String_Array_Selector
+  js2020__tools_others__javascript_flavors__prenormalized: String_Array_Selector
   js2020__happiness__javascript_flavors: Float_Selector
   js2020__tools__react__experience: String_Selector
   js2020__tools__vue__experience: String_Selector
@@ -2280,63 +2256,55 @@ input ResponseFilterInput {
   js2020__tools__svelte__experience: String_Selector
   js2020__tools__alpinejs__experience: String_Selector
   js2020__tools__litelement__experience: String_Selector
-  js2020__tools_others__front_end_frameworks__others: String_Array_Selector
+  js2020__tools__stimulus__experience: String_Selector
+  js2020__tools_others__front_end_frameworks__prenormalized: String_Array_Selector
   js2020__happiness__front_end_frameworks: Float_Selector
   js2020__tools__redux__experience: String_Selector
   js2020__tools__apollo__experience: String_Selector
   js2020__tools__graphql__experience: String_Selector
   js2020__tools__mobx__experience: String_Selector
   js2020__tools__relay__experience: String_Selector
-  js2020__tools__firebase__experience: String_Selector
   js2020__tools__xstate__experience: String_Selector
   js2020__tools__vuex__experience: String_Selector
-  js2020__tools__react_query__experience: String_Selector
-  js2020__tools__swr__experience: String_Selector
-  js2020__tools_others__datalayer__others: String_Array_Selector
+  js2020__tools_others__datalayer__prenormalized: String_Array_Selector
   js2020__happiness__datalayer: Float_Selector
   js2020__tools__express__experience: String_Selector
   js2020__tools__nextjs__experience: String_Selector
   js2020__tools__koa__experience: String_Selector
   js2020__tools__meteor__experience: String_Selector
-  js2020__tools__sails__experience: String_Selector
-  js2020__tools__feathers__experience: String_Selector
   js2020__tools__nuxt__experience: String_Selector
   js2020__tools__gatsby__experience: String_Selector
   js2020__tools__nest__experience: String_Selector
   js2020__tools__strapi__experience: String_Selector
-  js2020__tools__razzle__experience: String_Selector
   js2020__tools__fastify__experience: String_Selector
-  js2020__tools__redwood__experience: String_Selector
   js2020__tools__hapi__experience: String_Selector
-  js2020__tools_others__back_end_frameworks__others: String_Array_Selector
+  js2020__tools_others__back_end_frameworks__prenormalized: String_Array_Selector
   js2020__happiness__back_end_frameworks: Float_Selector
   js2020__tools__jest__experience: String_Selector
   js2020__tools__mocha__experience: String_Selector
   js2020__tools__storybook__experience: String_Selector
   js2020__tools__cypress__experience: String_Selector
-  js2020__tools__enzyme__experience: String_Selector
   js2020__tools__ava__experience: String_Selector
   js2020__tools__jasmine__experience: String_Selector
   js2020__tools__puppeteer__experience: String_Selector
-  js2020__tools__react_testing_library__experience: String_Selector
+  js2020__tools__testing_library__experience: String_Selector
+  js2020__tools__playwright__experience: String_Selector
   js2020__tools__webdriverio__experience: String_Selector
-  js2020__tools_others__testing__others: String_Array_Selector
+  js2020__tools_others__testing__prenormalized: String_Array_Selector
   js2020__happiness__testing: Float_Selector
+  js2020__tools__echarts__experience: String_Selector
+  js2020__tools__chartjs__experience: String_Selector
   js2020__tools__d3__experience: String_Selector
   js2020__tools__threejs__experience: String_Selector
+  js2020__tools__pixijs__experience: String_Selector
   js2020__tools__fabricjs__experience: String_Selector
-  js2020__tools__visx__experience: String_Selector
-  js2020__tools__nivo__experience: String_Selector
-  js2020__tools__recharts__experience: String_Selector
   js2020__tools__animejs__experience: String_Selector
-  js2020__tools__popmotion__experience: String_Selector
-  js2020__tools__greensock__experience: String_Selector
   js2020__tools__lottie__experience: String_Selector
-  js2020__tools__velocity__experience: String_Selector
-  js2020__tools_others__graphics_animation__others: String_Array_Selector
+  js2020__tools__greensock__experience: String_Selector
+  js2020__tools__popmotion__experience: String_Selector
+  js2020__tools_others__graphics_animation__prenormalized: String_Array_Selector
   js2020__happiness__graphics_animation: Float_Selector
   js2020__tools__webpack__experience: String_Selector
-  js2020__tools__babel__experience: String_Selector
   js2020__tools__parcel__experience: String_Selector
   js2020__tools__gulp__experience: String_Selector
   js2020__tools__rollup__experience: String_Selector
@@ -2346,8 +2314,7 @@ input ResponseFilterInput {
   js2020__tools__snowpack__experience: String_Selector
   js2020__tools__swc__experience: String_Selector
   js2020__tools__esbuild__experience: String_Selector
-  js2020__tools__deno__experience: String_Selector
-  js2020__tools_others__build_tools__others: String_Array_Selector
+  js2020__tools_others__build_tools__prenormalized: String_Array_Selector
   js2020__happiness__build_tools: Float_Selector
   js2020__tools__electron__experience: String_Selector
   js2020__tools__react_native__experience: String_Selector
@@ -2357,12 +2324,13 @@ input ResponseFilterInput {
   js2020__tools__capacitor__experience: String_Selector
   js2020__tools__nwjs__experience: String_Selector
   js2020__tools__expo__experience: String_Selector
-  js2020__tools_others__mobile_desktop__others: String_Array_Selector
+  js2020__tools__quasar__experience: String_Selector
+  js2020__tools_others__mobile_desktop__prenormalized: String_Array_Selector
   js2020__happiness__mobile_desktop: Float_Selector
   js2020__tools_others__libraries__choices: String_Array_Selector
-  js2020__tools_others__libraries: String_Array_Selector
+  js2020__tools_others__libraries__prenormalized: String_Array_Selector
   js2020__tools_others__utilities__choices: String_Array_Selector
-  js2020__tools_others__utilities: String_Array_Selector
+  js2020__tools_others__utilities__prenormalized: String_Array_Selector
   js2020__tools_others__text_editors__choices: String_Array_Selector
   js2020__tools_others__text_editors__others: String_Selector
   js2020__tools_others__browsers__choices: String_Array_Selector
@@ -2662,7 +2630,7 @@ input ResponseSortInput {
   js2020__tools__elm__experience: SortOptions
   js2020__tools__clojurescript__experience: SortOptions
   js2020__tools__purescript__experience: SortOptions
-  js2020__tools_others__javascript_flavors__others: SortOptions
+  js2020__tools_others__javascript_flavors__prenormalized: SortOptions
   js2020__happiness__javascript_flavors: SortOptions
   js2020__tools__react__experience: SortOptions
   js2020__tools__vue__experience: SortOptions
@@ -2672,63 +2640,55 @@ input ResponseSortInput {
   js2020__tools__svelte__experience: SortOptions
   js2020__tools__alpinejs__experience: SortOptions
   js2020__tools__litelement__experience: SortOptions
-  js2020__tools_others__front_end_frameworks__others: SortOptions
+  js2020__tools__stimulus__experience: SortOptions
+  js2020__tools_others__front_end_frameworks__prenormalized: SortOptions
   js2020__happiness__front_end_frameworks: SortOptions
   js2020__tools__redux__experience: SortOptions
   js2020__tools__apollo__experience: SortOptions
   js2020__tools__graphql__experience: SortOptions
   js2020__tools__mobx__experience: SortOptions
   js2020__tools__relay__experience: SortOptions
-  js2020__tools__firebase__experience: SortOptions
   js2020__tools__xstate__experience: SortOptions
   js2020__tools__vuex__experience: SortOptions
-  js2020__tools__react_query__experience: SortOptions
-  js2020__tools__swr__experience: SortOptions
-  js2020__tools_others__datalayer__others: SortOptions
+  js2020__tools_others__datalayer__prenormalized: SortOptions
   js2020__happiness__datalayer: SortOptions
   js2020__tools__express__experience: SortOptions
   js2020__tools__nextjs__experience: SortOptions
   js2020__tools__koa__experience: SortOptions
   js2020__tools__meteor__experience: SortOptions
-  js2020__tools__sails__experience: SortOptions
-  js2020__tools__feathers__experience: SortOptions
   js2020__tools__nuxt__experience: SortOptions
   js2020__tools__gatsby__experience: SortOptions
   js2020__tools__nest__experience: SortOptions
   js2020__tools__strapi__experience: SortOptions
-  js2020__tools__razzle__experience: SortOptions
   js2020__tools__fastify__experience: SortOptions
-  js2020__tools__redwood__experience: SortOptions
   js2020__tools__hapi__experience: SortOptions
-  js2020__tools_others__back_end_frameworks__others: SortOptions
+  js2020__tools_others__back_end_frameworks__prenormalized: SortOptions
   js2020__happiness__back_end_frameworks: SortOptions
   js2020__tools__jest__experience: SortOptions
   js2020__tools__mocha__experience: SortOptions
   js2020__tools__storybook__experience: SortOptions
   js2020__tools__cypress__experience: SortOptions
-  js2020__tools__enzyme__experience: SortOptions
   js2020__tools__ava__experience: SortOptions
   js2020__tools__jasmine__experience: SortOptions
   js2020__tools__puppeteer__experience: SortOptions
-  js2020__tools__react_testing_library__experience: SortOptions
+  js2020__tools__testing_library__experience: SortOptions
+  js2020__tools__playwright__experience: SortOptions
   js2020__tools__webdriverio__experience: SortOptions
-  js2020__tools_others__testing__others: SortOptions
+  js2020__tools_others__testing__prenormalized: SortOptions
   js2020__happiness__testing: SortOptions
+  js2020__tools__echarts__experience: SortOptions
+  js2020__tools__chartjs__experience: SortOptions
   js2020__tools__d3__experience: SortOptions
   js2020__tools__threejs__experience: SortOptions
+  js2020__tools__pixijs__experience: SortOptions
   js2020__tools__fabricjs__experience: SortOptions
-  js2020__tools__visx__experience: SortOptions
-  js2020__tools__nivo__experience: SortOptions
-  js2020__tools__recharts__experience: SortOptions
   js2020__tools__animejs__experience: SortOptions
-  js2020__tools__popmotion__experience: SortOptions
-  js2020__tools__greensock__experience: SortOptions
   js2020__tools__lottie__experience: SortOptions
-  js2020__tools__velocity__experience: SortOptions
-  js2020__tools_others__graphics_animation__others: SortOptions
+  js2020__tools__greensock__experience: SortOptions
+  js2020__tools__popmotion__experience: SortOptions
+  js2020__tools_others__graphics_animation__prenormalized: SortOptions
   js2020__happiness__graphics_animation: SortOptions
   js2020__tools__webpack__experience: SortOptions
-  js2020__tools__babel__experience: SortOptions
   js2020__tools__parcel__experience: SortOptions
   js2020__tools__gulp__experience: SortOptions
   js2020__tools__rollup__experience: SortOptions
@@ -2738,8 +2698,7 @@ input ResponseSortInput {
   js2020__tools__snowpack__experience: SortOptions
   js2020__tools__swc__experience: SortOptions
   js2020__tools__esbuild__experience: SortOptions
-  js2020__tools__deno__experience: SortOptions
-  js2020__tools_others__build_tools__others: SortOptions
+  js2020__tools_others__build_tools__prenormalized: SortOptions
   js2020__happiness__build_tools: SortOptions
   js2020__tools__electron__experience: SortOptions
   js2020__tools__react_native__experience: SortOptions
@@ -2749,12 +2708,13 @@ input ResponseSortInput {
   js2020__tools__capacitor__experience: SortOptions
   js2020__tools__nwjs__experience: SortOptions
   js2020__tools__expo__experience: SortOptions
-  js2020__tools_others__mobile_desktop__others: SortOptions
+  js2020__tools__quasar__experience: SortOptions
+  js2020__tools_others__mobile_desktop__prenormalized: SortOptions
   js2020__happiness__mobile_desktop: SortOptions
   js2020__tools_others__libraries__choices: SortOptions
-  js2020__tools_others__libraries: SortOptions
+  js2020__tools_others__libraries__prenormalized: SortOptions
   js2020__tools_others__utilities__choices: SortOptions
-  js2020__tools_others__utilities: SortOptions
+  js2020__tools_others__utilities__prenormalized: SortOptions
   js2020__tools_others__text_editors__choices: SortOptions
   js2020__tools_others__text_editors__others: SortOptions
   js2020__tools_others__browsers__choices: SortOptions

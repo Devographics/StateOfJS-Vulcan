@@ -500,6 +500,9 @@ export default {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
           "template": "others",
+          "matchCategories": [
+            "libraries"
+          ],
           "sectionSlug": "tools_others"
         },
         {
@@ -558,6 +561,9 @@ export default {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
           "template": "others",
+          "matchCategories": [
+            "libraries"
+          ],
           "sectionSlug": "tools_others"
         },
         {
@@ -595,6 +601,10 @@ export default {
           "id": "css_methodologies",
           "intlId": "tools.other_tools",
           "template": "others",
+          "matchCategories": [
+            "libraries",
+            "other"
+          ],
           "sectionSlug": "tools_others"
         },
         {
@@ -650,6 +660,9 @@ export default {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
           "template": "others",
+          "matchCategories": [
+            "libraries"
+          ],
           "sectionSlug": "tools_others"
         },
         {
@@ -681,7 +694,10 @@ export default {
         },
         {
           "id": "utilities",
-          "template": "others"
+          "template": "others",
+          "matchCategories": [
+            "libraries"
+          ]
         },
         {
           "id": "text_editors",
@@ -712,7 +728,10 @@ export default {
         },
         {
           "id": "text_editors",
-          "template": "others"
+          "template": "others",
+          "matchCategories": [
+            "text_editors"
+          ]
         },
         {
           "id": "browsers",
@@ -773,7 +792,10 @@ export default {
         },
         {
           "id": "browsers",
-          "template": "others"
+          "template": "others",
+          "matchCategories": [
+            "browsers"
+          ]
         }
       ]
     },
@@ -956,7 +978,10 @@ export default {
         },
         {
           "id": "blogs_news_magazines",
-          "template": "others"
+          "template": "others",
+          "matchCategories": [
+            "sites"
+          ]
         },
         {
           "id": "sites_courses",
@@ -993,7 +1018,10 @@ export default {
         },
         {
           "id": "sites_courses",
-          "template": "others"
+          "template": "others",
+          "matchCategories": [
+            "sites"
+          ]
         },
         {
           "id": "podcasts",
@@ -1021,7 +1049,10 @@ export default {
         },
         {
           "id": "podcasts",
-          "template": "others"
+          "template": "others",
+          "matchCategories": [
+            "podcasts"
+          ]
         }
       ]
     },

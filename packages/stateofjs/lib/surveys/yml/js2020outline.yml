@@ -108,7 +108,6 @@ outline:
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: javascript_flavors
         intlId: tools.happiness
         sectionSlug: happiness
@@ -127,11 +126,11 @@ outline:
       - id: svelte
       - id: alpinejs
       - id: litelement
+      - id: stimulus
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: front_end_frameworks
         intlId: tools.happiness
         template: happiness
@@ -146,16 +145,15 @@ outline:
       - id: graphql
       - id: mobx
       - id: relay
-      - id: firebase
       - id: xstate
       - id: vuex
-      - id: react_query
-      - id: swr
+      # - id: firebase
+      # - id: react_query
+      # - id: swr
       - id: datalayer
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: datalayer
         intlId: tools.happiness
         template: happiness
@@ -169,24 +167,26 @@ outline:
       - id: nextjs
       - id: koa
       - id: meteor
-      - id: sails
-      - id: feathers
       - id: nuxt
       - id: gatsby
       - id: nest
       - id: strapi
-      - id: razzle
       - id: fastify
-      - id: redwood
       - id: hapi
+      # - id: egg
+      # - id: redwood
+
+      # - id: sails
+      # - id: feathers
+
       # - id: blitzjs
       # - id: remix
+      # - id: razzle
       # - id: vulcan
       - id: back_end_frameworks
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: back_end_frameworks
         intlId: tools.happiness
         template: happiness
@@ -200,17 +200,17 @@ outline:
       - id: mocha
       - id: storybook
       - id: cypress
-      - id: enzyme
       - id: ava
       - id: jasmine
       - id: puppeteer
-      - id: react_testing_library
+      - id: testing_library
+      - id: playwright
       - id: webdriverio
+      # - id: enzyme
       - id: testing
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: testing
         intlId: tools.happiness
         template: happiness
@@ -220,22 +220,31 @@ outline:
     template: tool
     slug: tools
     questions:
+      # charts
+      - id: echarts
+      - id: chartjs
       - id: d3
+      # - id: recharts
+      # - id: visx
+      # - id: nivo
+
+      # drawing/3D
       - id: threejs
+      - id: pixijs
       - id: fabricjs
-      - id: visx
-      - id: nivo
-      - id: recharts
+
+      # animation
       - id: animejs
-      - id: popmotion
-      - id: greensock
       - id: lottie
-      - id: velocity
+      - id: greensock
+      - id: popmotion
+      # - id: motion
+      # - id: velocity
+
       - id: graphics_animation
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: graphics_animation
         intlId: tools.happiness
         template: happiness
@@ -246,7 +255,6 @@ outline:
     slug: tools
     questions:
       - id: webpack
-      - id: babel
       - id: parcel
       - id: gulp
       - id: rollup
@@ -256,12 +264,10 @@ outline:
       - id: snowpack
       - id: swc
       - id: esbuild
-      - id: deno
       - id: build_tools
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: build_tools
         intlId: tools.happiness
         template: happiness
@@ -279,11 +285,11 @@ outline:
       - id: capacitor
       - id: nwjs
       - id: expo
+      - id: quasar
       - id: mobile_desktop
         intlId: tools.other_tools
         template: project
         sectionSlug: tools_others
-        suffix: others
       - id: mobile_desktop
         intlId: tools.happiness
         template: happiness
@@ -313,12 +319,15 @@ outline:
       - id: utilities
         template: multiple
         options:
+          - id: babel
           - id: lerna
           - id: prettier
           - id: eslint
           - id: nvm
+          - id: 'n'
           - id: npm
           - id: yarn
+          - id: deno
       - id: utilities
         template: project
       - id: text_editors

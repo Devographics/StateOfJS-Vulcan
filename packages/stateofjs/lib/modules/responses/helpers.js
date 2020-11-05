@@ -93,7 +93,8 @@ export const templates = {
       { value: 'would_not_use', intlId: 'options.tools.would_not_use', },
     ],
   }),
-  project: () => makeAutocomplete({ 
+  project: () => makeAutocomplete({
+    suffix: 'prenormalized',
     type: Array, 
     arrayItem: { 
       type: String, 

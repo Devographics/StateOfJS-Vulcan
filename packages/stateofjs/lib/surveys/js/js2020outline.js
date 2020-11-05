@@ -172,8 +172,7 @@ export default {
           "id": "javascript_flavors",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "javascript_flavors",
@@ -213,11 +212,13 @@ export default {
           "id": "litelement"
         },
         {
+          "id": "stimulus"
+        },
+        {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "front_end_frameworks",
@@ -248,26 +249,16 @@ export default {
           "id": "relay"
         },
         {
-          "id": "firebase"
-        },
-        {
           "id": "xstate"
         },
         {
           "id": "vuex"
         },
         {
-          "id": "react_query"
-        },
-        {
-          "id": "swr"
-        },
-        {
           "id": "datalayer",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "datalayer",
@@ -295,12 +286,6 @@ export default {
           "id": "meteor"
         },
         {
-          "id": "sails"
-        },
-        {
-          "id": "feathers"
-        },
-        {
           "id": "nuxt"
         },
         {
@@ -313,13 +298,7 @@ export default {
           "id": "strapi"
         },
         {
-          "id": "razzle"
-        },
-        {
           "id": "fastify"
-        },
-        {
-          "id": "redwood"
         },
         {
           "id": "hapi"
@@ -328,8 +307,7 @@ export default {
           "id": "back_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "back_end_frameworks",
@@ -357,9 +335,6 @@ export default {
           "id": "cypress"
         },
         {
-          "id": "enzyme"
-        },
-        {
           "id": "ava"
         },
         {
@@ -369,7 +344,10 @@ export default {
           "id": "puppeteer"
         },
         {
-          "id": "react_testing_library"
+          "id": "testing_library"
+        },
+        {
+          "id": "playwright"
         },
         {
           "id": "webdriverio"
@@ -378,8 +356,7 @@ export default {
           "id": "testing",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "testing",
@@ -395,44 +372,40 @@ export default {
       "slug": "tools",
       "questions": [
         {
+          "id": "echarts"
+        },
+        {
+          "id": "chartjs"
+        },
+        {
           "id": "d3"
         },
         {
           "id": "threejs"
         },
         {
+          "id": "pixijs"
+        },
+        {
           "id": "fabricjs"
-        },
-        {
-          "id": "visx"
-        },
-        {
-          "id": "nivo"
-        },
-        {
-          "id": "recharts"
         },
         {
           "id": "animejs"
         },
         {
-          "id": "popmotion"
+          "id": "lottie"
         },
         {
           "id": "greensock"
         },
         {
-          "id": "lottie"
-        },
-        {
-          "id": "velocity"
+          "id": "popmotion"
         },
         {
           "id": "graphics_animation",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "graphics_animation",
@@ -449,9 +422,6 @@ export default {
       "questions": [
         {
           "id": "webpack"
-        },
-        {
-          "id": "babel"
         },
         {
           "id": "parcel"
@@ -481,14 +451,10 @@ export default {
           "id": "esbuild"
         },
         {
-          "id": "deno"
-        },
-        {
           "id": "build_tools",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "build_tools",
@@ -528,11 +494,13 @@ export default {
           "id": "expo"
         },
         {
+          "id": "quasar"
+        },
+        {
           "id": "mobile_desktop",
           "intlId": "tools.other_tools",
           "template": "project",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
+          "sectionSlug": "tools_others"
         },
         {
           "id": "mobile_desktop",
@@ -594,6 +562,9 @@ export default {
           "template": "multiple",
           "options": [
             {
+              "id": "babel"
+            },
+            {
               "id": "lerna"
             },
             {
@@ -606,10 +577,16 @@ export default {
               "id": "nvm"
             },
             {
+              "id": "n"
+            },
+            {
               "id": "npm"
             },
             {
               "id": "yarn"
+            },
+            {
+              "id": "deno"
             }
           ]
         },
