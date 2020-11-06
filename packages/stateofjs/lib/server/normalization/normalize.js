@@ -21,91 +21,110 @@ export const normalizeResponse = async ({ document: response }) => {
   const survey = getSurveyBySlug(response.surveySlug);
   const user = Users.findOne({ _id: response.userId });
 
-  // Copy over root fields and assign id
-  const normalizedResp = pick(response, fieldsToCopy);
-  normalizedResp.responseId = response._id;
-  normalizedResp.generatedAt = new Date();
-  normalizedResp.survey = response.context;
+  /*
+  
+  1. Copy over root fields and assign id
+  
+  */
+  const normResp = pick(response, fieldsToCopy);
+  normResp.responseId = response._id;
+  normResp.generatedAt = new Date();
+  normResp.survey = response.context;
 
-  // Generate email hash
-  set(normalizedResp, 'user_info.hash', encrypt(response.email));
+  /*
+  
+  2. Generate email hash
+  
+  */
+  set(normResp, 'user_info.hash', encrypt(response.email));
 
-  // Store user locale and other fields
+  /*
+  
+  3. Store user locale and other fields
+  
+  */
   if (user) {
-    set(normalizedResp, 'user_info.locale', user.locale);
+    set(normResp, 'user_info.locale', user.locale);
   }
-  set(normalizedResp, 'user_info.knowledge_score', response.knowledgeScore);
+  set(normResp, 'user_info.knowledge_score', response.knowledgeScore);
 
-  // Normalize country (if provided)
-  if (normalizedResp.user_info.country) {
+  /*
+  
+  4. Normalize country (if provided)
+  
+  */
+  if (normResp.user_info.country) {
     const countryNormalized = countries.find(
-      (c) => c['alpha-2'] === normalizedResp.user_info.country
+      (c) => c['alpha-2'] === normResp.user_info.country
     );
     if (countryNormalized) {
-      set(normalizedResp, 'user_info.country_name', countryNormalized.name);
-      set(
-        normalizedResp,
-        'user_info.country_alpha3',
-        countryNormalized['alpha-3']
-      );
+      set(normResp, 'user_info.country_name', countryNormalized.name);
+      set(normResp, 'user_info.country_alpha3', countryNormalized['alpha-3']);
     }
   }
 
-  // Loop over survey fields
+  /*
+  
+  5. Loop over survey sections and fields (a.k.a. questions)
+  
+  */
   for (const s of survey.outline) {
     for (const field of s.questions) {
       const { fieldName, matchCategories } = field;
-
+      const [initialSegment, ...restOfPath] = fieldName.split('__');
+      const normPath = restOfPath.join('.');
       const value = response[fieldName];
 
-      if (value) {
+      if (last(restOfPath) === 'others') {
+        // A. "others" fields needing to be normalized
+        set(normResp, `${normPath}.raw`, value);
+        // clean value to eliminate empty spaces, "none", "n/a", etc.
+        const cleanValue = cleanupValue(value);
+        if (cleanValue) {
+          const normTokens = await normalize(cleanValue, matchCategories);
+          // console.log(`// Normalizing key "${path}" with value "${value}"…`);
+          // console.log(`  -> Normalized values: ${normalizedValues}`);
 
-        const [initialSegment, ...restOfPath] = fieldName.split('__');
-        const normalizedPath = restOfPath.join('.');
-        if (last(restOfPath) === 'others') {
-          const value = cleanupValue(response[fieldName]);
-          if (value) {
-            // console.log(`// Normalizing key "${path}" with value "${value}"…`);
-            const normalizedValues = await normalize(value, matchCategories);
-            // console.log(`  -> Normalized value: ${normalizedValues}`);
-            set(normalizedResp, `${normalizedPath}.raw`, value);
-            set(
-              normalizedResp,
-              `${normalizedPath}.normalized`,
-              normalizedValues.map((v) => v.value)
+          // if normalization fails an empty array will be returned
+          if (normTokens.length > 0) {
+            const normIds = normTokens.map((token) => token.id);
+            const normPatterns = normTokens.map((token) =>
+              token.pattern.toString()
             );
-            set(
-              normalizedResp,
-              `${normalizedPath}.patterns`,
-              normalizedValues.map((v) => v.pattern)
-            );
+            set(normResp, `${normPath}.normalized`, normIds);
+            set(normResp, `${normPath}.patterns`, normPatterns);
           }
-        } else if (last(restOfPath) === 'prenormalized') {
-          // these keys are "prenormalized" through autocomplete inputs
-          const newPath = normalizedPath.replace('.prenormalized', '.others');
-          set(normalizedResp, `${newPath}.raw`, value);
-          set(normalizedResp, `${newPath}.normalized`, value);
-          set(normalizedResp, `${newPath}.patterns`, ['prenormalized']);
-        } else {
-          set(normalizedResp, normalizedPath, value);
         }
+      } else if (last(restOfPath) === 'prenormalized') {
+        // B. these fields are "prenormalized" through autocomplete inputs
+        const newPath = normPath.replace('.prenormalized', '.others');
+        set(normResp, `${newPath}.raw`, value);
+        set(normResp, `${newPath}.normalized`, value);
+        set(normResp, `${newPath}.patterns`, ['prenormalized']);
+      } else {
+        // C. any other field
+        set(normResp, normPath, value);
       }
     }
   }
 
-  // Handle source field separately
-  const normSource = await normalizeSource(normalizedResp);
+  /*
+  
+  6. Handle source field separately
+  
+  */
+  const normSource = await normalizeSource(normResp);
   if (normSource) {
-    set(normalizedResp, 'user_info.source.raw', normSource.raw);
-    set(normalizedResp, 'user_info.source.normalized', normSource.value);
-    set(normalizedResp, 'user_info.source.pattern', normSource.pattern);
+    set(normResp, 'user_info.source.raw', normSource.raw);
+    set(normResp, 'user_info.source.normalized', normSource.value);
+    set(normResp, 'user_info.source.pattern', normSource.pattern);
   }
 
   // console.log(JSON.stringify(normalizedResp, '', 2));
 
   const result = NormalizedResponses.upsert(
     { responseId: response._id },
-    normalizedResp
+    normResp
   );
   // eslint-disable-next-line
   // console.log(result);
