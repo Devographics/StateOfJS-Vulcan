@@ -44,7 +44,7 @@ const clearCache = (root, args, { currentUser }) => {
   }
   nodeCache.flushAll();
   return nodeCache.getStats();
-}
+};
 
 addGraphQLMutation('clearCache: JSON');
 addGraphQLResolvers({ Mutation: { clearCache } });
@@ -54,7 +54,7 @@ const cacheStats = (root, args, { currentUser }) => {
     throw new Error('You cannot perform this operation');
   }
   return { keys: nodeCache.keys(), stats: nodeCache.getStats() };
-}
+};
 
 addGraphQLQuery('cacheStats: JSON');
 addGraphQLResolvers({ Query: { cacheStats } });
@@ -230,20 +230,32 @@ Normalization Debugging
 
 */
 const surveyNormalization = async (root, { surveySlug, fieldName }) => {
-  const [initialSegment, sectionSegment, fieldSegment, ...restOfPath] = fieldName.split('__');
+  const [
+    initialSegment,
+    sectionSegment,
+    fieldSegment,
+    ...restOfPath
+  ] = fieldName.split('__');
   const rawFieldPath = `${sectionSegment}.${fieldSegment}.others.raw`;
   const normalizedFieldPath = `${sectionSegment}.${fieldSegment}.others.normalized`;
   const query = {
     surveySlug,
     [rawFieldPath]: { $exists: true },
-    [normalizedFieldPath]: [],
-  }
-  const responses = NormalizedResponses.find(
-    query,
-    { fields: { [rawFieldPath]: 1 } }
-  ).fetch().map(r => get(r, rawFieldPath));
+    $or: [
+      { [normalizedFieldPath]: [] },
+      { [normalizedFieldPath]: { $exists: false } },
+    ],
+  };
+  const responses = NormalizedResponses.find(query, {
+    fields: { [rawFieldPath]: 1 },
+  })
+    .fetch()
+    .map((r) => get(r, rawFieldPath));
   return responses;
 };
 
-addGraphQLQuery('surveyNormalization(surveySlug: String, fieldName: String): [String]');
+addGraphQLQuery(
+  'surveyNormalization(surveySlug: String, fieldName: String): [String]'
+);
 addGraphQLResolvers({ Query: { surveyNormalization } });
+

@@ -9,6 +9,7 @@ import SurveyAction from './SurveyAction';
 import { getSurvey } from '../../../modules/surveys/helpers';
 import ReactMarkdown from 'react-markdown';
 import SurveyHeadTags from '../SurveyHeadTags';
+import { statuses } from '../../../modules/constants.js';
 
 const SurveyPageWrapper = (props, { intl }) => {
   const { slug, year } = useParams();
@@ -21,6 +22,11 @@ const SurveyPageWrapper = (props, { intl }) => {
         return (
           <div className="survey-page contents-narrow">
             <SurveyHeadTags survey={survey} />
+            {survey.status === statuses.closed && (
+              <div className="survey-message survey-closed">
+                <FormattedMessage id="general.survey_closed" />
+              </div>
+            )}
             <h1 className="survey-image">
               <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
             </h1>

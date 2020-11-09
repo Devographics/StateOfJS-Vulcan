@@ -63,11 +63,7 @@ const SurveySectionContents = ({
 
   return (
     <div className="section-questions">
-      {isDisabled ? (
-        <div className="survey-message survey-readonly">
-          <FormattedMessage id="general.survey_read_only" />
-        </div>
-      ) : survey.status === statuses.open && readOnly ? (
+      {survey.status === statuses.open && readOnly ? (
         <div className="survey-message survey-readonly">
           <FormattedMessage id="general.survey_read_only" />
           <FormattedMessage
