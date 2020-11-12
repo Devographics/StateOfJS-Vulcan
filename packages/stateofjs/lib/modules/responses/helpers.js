@@ -136,8 +136,9 @@ export const templates = {
   others: () => ({
     input: 'text',
     suffix: 'others',
+    limit: 150,
   }),
-  text: () => ({ input: 'text' }),
+  text: () => ({ input: 'text', limit: 150 }),
   longtext: () => ({ input: 'textarea' }),
   email: () => ({ input: 'email' }),
   opinion: () => ({

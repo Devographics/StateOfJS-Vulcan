@@ -14,3 +14,4 @@ Responses.rawCollection().createIndex({ createdAt: 1 });
 Responses.rawCollection().createIndex({ updatedAt: 1 });
 
 NormalizedResponses.rawCollection().createIndex({ responseId: 1 });
+NormalizedResponses.rawCollection().createIndex({ generatedAt: -1 });

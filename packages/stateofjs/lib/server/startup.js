@@ -13,12 +13,20 @@ const startup = getSetting('startup', []);
 const environment = getSetting('environment');
 
 Meteor.startup(async function () {
+
+  if (environment === 'development') {
+    await convertAllYAML();
+    await logAllRules();
+  }
+
+  await loadProjects();
+  
   // for some reason JSON arrays are of the form: { '0': 'testScript', '1': 'testScript2' },
   // convert it to regular array first to make things easier
   const scriptsToRun = Object.keys(startup).map((k) => startup[k]);
   console.log(`// Found ${scriptsToRun.length} startup scripts to run`); // eslint-disable-line
   for (const script of scriptsToRun) {
-    console.log(`// Running script ${script}…`); // eslint-disable-line
+    console.log(`// Running script ${script}… (${new Date()})`); // eslint-disable-line
     try {
       const f = scripts[script];
       await f();
@@ -27,11 +35,4 @@ Meteor.startup(async function () {
       console.log(error); // eslint-disable-line
     }
   }
-
-  if (environment === 'development') {
-    await convertAllYAML();
-    await logAllRules();
-  }
-
-  await loadProjects();
 });

@@ -501,7 +501,8 @@ export default {
           "intlId": "tools.other_tools",
           "template": "others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ],
           "sectionSlug": "tools_others"
         },
@@ -562,7 +563,8 @@ export default {
           "intlId": "tools.other_tools",
           "template": "others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ],
           "sectionSlug": "tools_others"
         },
@@ -662,7 +664,8 @@ export default {
           "intlId": "tools.other_tools",
           "template": "others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ],
           "sectionSlug": "tools_others"
         },
@@ -1100,7 +1103,10 @@ export default {
         {
           "id": "currently_missing_from_css",
           "sectionSlug": "opinions_other",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "missing_features"
+          ]
         },
         {
           "id": "state_of_the_web",

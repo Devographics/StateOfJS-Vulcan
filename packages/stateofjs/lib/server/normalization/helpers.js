@@ -30,6 +30,11 @@ Clean up values to remove 'none', 'n/a', etc.
 */
 export const ignoreValues = [
   ' ',
+  '  ',
+  '   ',
+  '    ',
+  '     ',
+  '      ',
   '\n',
   '\n\n',
   '/',
@@ -80,9 +85,18 @@ export const getEntities = async () => {
 Extract matching tokens from a string
 
 */
-const extractTokens = (rawString, rules) => {
-  const tokens = [];
+const lowStringLimit = 150;
+const highStringLimit = 190;
+const extractTokens = async (rawString, rules) => {
+  const stringLimit = rules.length > 50 ? lowStringLimit : highStringLimit;
 
+  if (rawString.length > stringLimit) {
+    await logToFile('normalization_errors.txt', rawString + '\n---\n');
+    return [];
+  }
+
+  const tokens = [];
+  let count = 0;
   // extract tokens for each rule, storing
   // the start/end index for each match
   // to be used later to detect overlap.
@@ -90,15 +104,18 @@ const extractTokens = (rawString, rules) => {
     let scanCompleted = false;
     let scanStartIndex = 0;
 
-    while (scanCompleted !== true) {
+    // add count to prevent infinite looping
+    while (scanCompleted !== true && count < 400) {
+      count++;
       const stringToScan = rawString.slice(scanStartIndex);
       const match = stringToScan.match(pattern);
       if (match !== null) {
         tokens.push({
           id,
-          pattern,
+          pattern: pattern.toString(),
           match: match[0],
           length: match[0].length,
+          rules: rules.length,
           range: [
             scanStartIndex + match.index,
             scanStartIndex + match.index + match[0].length,
@@ -162,17 +179,13 @@ Normalize a string value
 (Can be limited by tags)
 
 */
-export const normalize = async (value, tags) => {
-
+export const normalize = async (value, allRules, tags) => {
   try {
-    const allEntities = await getEntities();
-    const allRules = generateEntityRules(allEntities);
     const rules = tags
       ? allRules.filter((r) => intersection(tags, r.tags).length > 0)
       : allRules;
 
-    return extractTokens(value, rules);
-
+    return await extractTokens(value, rules);
   } catch (error) {
     console.log('// normalize error');
     console.log(value);
@@ -185,8 +198,8 @@ export const normalize = async (value, tags) => {
 Normalize a string value and only keep the first result
 
 */
-export const normalizeSingle = async (value, matchCategories) => {
-  const values = await normalize(value, matchCategories, false);
+export const normalizeSingle = async (value, allRules, matchCategories) => {
+  const values = await normalize(value, allRules, matchCategories, false);
   return values[0];
 };
 
@@ -196,7 +209,7 @@ Handle source normalization separately since its value can come from
 three different fields (source field, referrer field, 'how did you hear' field)
 
 */
-export const normalizeSource = async (r) => {
+export const normalizeSource = async (r, allRules) => {
   try {
     const tags = ['sites', 'podcasts', 'youtube', 'sources'];
 
@@ -207,16 +220,19 @@ export const normalizeSource = async (r) => {
     );
     const rawRef = get(r, 'user_info.referrer');
 
-    const normSource = rawSource && await normalizeSingle(rawSource, tags);
-    const normFindOut = rawFindOut && await normalizeSingle(rawFindOut, tags);
-    const normReferrer = rawRef && await normalizeSingle(rawRef, tags);
+    const normSource =
+      rawSource && (await normalizeSingle(rawSource, allRules, tags));
+    const normFindOut =
+      rawFindOut && (await normalizeSingle(rawFindOut, allRules, tags));
+    const normReferrer =
+      rawRef && (await normalizeSingle(rawRef, allRules, tags));
 
     if (normSource) {
-      return normSource;
+      return { ...normSource, raw: rawSource };
     } else if (normFindOut) {
-      return normFindOut;
+      return { ...normFindOut, raw: rawFindOut };
     } else if (normReferrer) {
-      return normReferrer;
+      return { ...normReferrer, raw: rawRef };
     } else {
       return;
     }
@@ -280,7 +296,7 @@ export const logAllRules = async () => {
   }));
   const json = JSON.stringify(rules, null, 2);
 
-  logToFile('rules.js', 'export default ' + json, {
+  await logToFile('rules.js', 'export default ' + json, {
     mode: 'overwrite',
   });
 };

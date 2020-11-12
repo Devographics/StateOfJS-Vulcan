@@ -116,6 +116,13 @@ const schema = {
       label: slug,
     })),
   },
+  normalizedResponseId: {
+    type: String,
+    optional: true,
+    canRead: ['admins'],
+    canCreate: ['admins'],
+    canUpdate: ['admins'],
+  },
   isFinished: {
     type: Boolean,
     optional: true,

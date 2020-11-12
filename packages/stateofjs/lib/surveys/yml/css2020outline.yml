@@ -258,7 +258,7 @@ outline:
       - id: pre_post_processors
         intlId: tools.other_tools
         template: others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
         sectionSlug: tools_others
       - id: pre_post_processors
         intlId: tools.happiness
@@ -289,7 +289,7 @@ outline:
       - id: css_frameworks
         intlId: tools.other_tools
         template: others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
         sectionSlug: tools_others
       - id: css_frameworks
         intlId: tools.happiness
@@ -348,7 +348,7 @@ outline:
       - id: css_in_js
         intlId: tools.other_tools
         template: others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
         sectionSlug: tools_others
       - id: css_in_js
         intlId: tools.happiness
@@ -537,6 +537,7 @@ outline:
       - id: currently_missing_from_css
         sectionSlug: opinions_other
         template: others
+        matchTags: [missing_features]
       - id: state_of_the_web
         template: happiness
         sectionSlug: happiness
