@@ -1102,7 +1102,7 @@ export default {
         },
         {
           "id": "currently_missing_from_css",
-          "sectionSlug": "opinions_other",
+          "sectionSlug": "opinions_others",
           "template": "others",
           "matchTags": [
             "missing_features"

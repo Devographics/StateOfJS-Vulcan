@@ -8,6 +8,31 @@ import { logToFile } from 'meteor/vulcan:core';
 import { getSurveyBySlug } from '../modules/surveys/helpers';
 import last from 'lodash/last';
 
+/*
+
+Migrations
+
+*/
+export const renameFieldMigration = (collection, field1, field2) => {
+
+  const items = collection.find({
+    [field1]: { $exists: true },
+    [field2]: { $exists: false },
+  }).fetch();
+
+  if (items.length) {
+    // eslint-disable-next-line no-console
+    console.log(`// Starting ${field1} -> ${field2} mutation…`);
+    items.forEach(document => {
+      // eslint-disable-next-line no-console
+      console.log(`Migrating document ${document._id}`);
+      collection.update(document._id, {$set: {[field2]: document[field1]}});
+    });
+    // eslint-disable-next-line no-console
+    console.log(`// ${field1} -> ${field2} mutation done.`);
+  }
+}
+
 const js2019 = surveys.find((s) => s.slug === 'js2019');
 
 export const surveyIdToSlug = async () => {
@@ -95,6 +120,16 @@ export const assignNormalizedResponseId = async () => {
   });
   console.log(`-> Done assigning normalizedResponseId field (${new Date()})`);
 };
+
+
+/*
+
+Migrate opinions_other to opinions_others for consistency
+
+*/
+export const renameOpinionsOther = async () => {
+  await renameFieldMigration(Responses, 'css2020__opinions_other__currently_missing_from_css__others', 'css2020__opinions_others__currently_missing_from_css__others');
+}
 
 /*
 

@@ -535,7 +535,7 @@ outline:
       - id: enjoy_writing_css
         template: opinion
       - id: currently_missing_from_css
-        sectionSlug: opinions_other
+        sectionSlug: opinions_others
         template: others
         matchTags: [missing_features]
       - id: state_of_the_web
