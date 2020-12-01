@@ -7,11 +7,10 @@ import {
   getEntities,
   generateEntityRules,
 } from './helpers';
-import pick from 'lodash/pick';
 import set from 'lodash/set';
 import last from 'lodash/last';
 import NormalizedResponses from '../../modules/normalized_responses/collection';
-import Users from 'meteor/vulcan:users';
+import Responses from '../../modules/responses/collection';
 import { getSurveyBySlug } from '../../modules/surveys/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 
@@ -32,21 +31,30 @@ const convertForCSV = (obj) => {
   }
 };
 
-const logColumn = async (columns) => {
+const logRow = async (columns) => {
   await logToFile(
     'normalization.csv',
     columns.map((c) => `"${convertForCSV(c)}"`).join(', ')
   );
 };
 
+// fields to copy, along with the path at which to copy them (if different)
 const fieldsToCopy = [
-  'surveySlug',
-  'createdAt',
-  'updatedAt',
-  'year',
-  'completion',
-  'userId',
-  'isFinished',
+  ['surveySlug'],
+  ['createdAt'],
+  ['updatedAt'],
+  ['year'],
+  ['completion'],
+  ['userId'],
+  ['isFinished'],
+  ['context', 'survey'],
+  ['knowledgeScore', 'user_info.knowledge_score'],
+  ['common__user_info__device', 'user_info.device'],
+  ['common__user_info__browser', 'user_info.browser'],
+  ['common__user_info__version', 'user_info.version'],
+  ['common__user_info__os', 'user_info.os'],
+  ['common__user_info__referrer', 'user_info.referrer'],
+  ['common__user_info__source', 'user_info.sourcetag'],
 ];
 
 export const normalizeResponse = async ({
@@ -55,9 +63,9 @@ export const normalizeResponse = async ({
   log = false,
 }) => {
   try {
+    const normResp = {};
     const normalizedFields = [];
     const survey = getSurveyBySlug(response.surveySlug);
-    const user = Users.findOne({ _id: response.userId });
     const allEntities = entities || (await getEntities());
     const allRules = generateEntityRules(allEntities);
 
@@ -66,10 +74,12 @@ export const normalizeResponse = async ({
     1. Copy over root fields and assign id
     
     */
-    const normResp = pick(response, fieldsToCopy);
+    fieldsToCopy.forEach((field) => {
+      const [fieldName, fieldPath = fieldName] = field;
+      set(normResp, fieldPath, response[fieldName]);
+    });
     normResp.responseId = response._id;
     normResp.generatedAt = new Date();
-    normResp.survey = response.context;
 
     /*
   
@@ -80,13 +90,13 @@ export const normalizeResponse = async ({
 
     /*
   
-    3. Store user locale and other fields
+    3. Store locale
     
+    Note: change 'en' to 'en-US' for consistency
+
     */
-    if (user) {
-      set(normResp, 'user_info.locale', user.locale);
-    }
-    set(normResp, 'user_info.knowledge_score', response.knowledgeScore);
+    const locale = response.locale === 'en' ? 'en-US' : response.locale;
+    set(normResp, 'user_info.locale', locale);
 
     /*
   
@@ -127,7 +137,7 @@ export const normalizeResponse = async ({
               if (normTokens.length > 0) {
                 normTokens.forEach(async (token) => {
                   const { id, pattern, rules, match } = token;
-                  await logColumn([
+                  await logRow([
                     response._id,
                     fieldName,
                     value,
@@ -139,7 +149,7 @@ export const normalizeResponse = async ({
                   ]);
                 });
               } else {
-                await logColumn([
+                await logRow([
                   response._id,
                   fieldName,
                   value,
@@ -187,12 +197,20 @@ export const normalizeResponse = async ({
     
     */
     if (normResp.user_info.country) {
+      set(normResp, 'user_info.country_alpha2', normResp.user_info.country);
       const countryNormalized = countries.find(
         (c) => c['alpha-2'] === normResp.user_info.country
       );
       if (countryNormalized) {
         set(normResp, 'user_info.country_name', countryNormalized.name);
         set(normResp, 'user_info.country_alpha3', countryNormalized['alpha-3']);
+      } else {
+        if (log) {
+          await logToFile(
+            'countries_normalization.txt',
+            normResp.user_info.country
+          );
+        }
       }
     }
 
@@ -201,7 +219,7 @@ export const normalizeResponse = async ({
     6. Handle source field separately
     
     */
-    const normSource = await normalizeSource(normResp, allRules);
+    const normSource = await normalizeSource(normResp, allRules, survey);
     if (normSource) {
       set(normResp, 'user_info.source.raw', normSource.raw);
       set(normResp, 'user_info.source.normalized', normSource.id);
@@ -223,12 +241,13 @@ export const normalizeResponse = async ({
         { responseId: response._id },
         normResp
       );
+      if (result.insertedId) {
+        Responses.update(
+          { _id: response._id },
+          { $set: { normalizedResponseId: result.insertedId } }
+        );
+      }
     }
-
-    // const result = NormalizedResponses.upsert(
-    //   { responseId: response._id },
-    //   normResp
-    // );
 
     // eslint-disable-next-line
     // console.log(result);

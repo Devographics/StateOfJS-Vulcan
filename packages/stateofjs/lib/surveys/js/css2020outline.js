@@ -3,6 +3,7 @@
 export default {
   "slug": "css2020",
   "context": "state_of_css",
+  "normalizationId": "stateofcss",
   "topic": "CSS",
   "createdAt": "October 1, 2020",
   "prettySlug": "state-of-css",

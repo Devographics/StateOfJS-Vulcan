@@ -75,6 +75,8 @@ const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]
 }
 `;
 
+const contexts = ['common', 'state_of_css', 'accounts', 'state_of_js'];
+
 const locale = async (root, { localeId }, context) => {
   let convertedLocale = nodeCache.get(localeId);
   if (disableAPICache || !convertedLocale) {
@@ -84,7 +86,7 @@ const locale = async (root, { localeId }, context) => {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({ query: localeQuery, variables: { localeId } }),
+      body: JSON.stringify({ query: localeQuery, variables: { localeId, contexts } }),
     });
     const json = await response.json();
 

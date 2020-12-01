@@ -7,6 +7,7 @@ import { getEntities } from './normalization/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 import { getSurveyBySlug } from '../modules/surveys/helpers';
 import last from 'lodash/last';
+import Users from 'meteor/vulcan:users';
 
 /*
 
@@ -14,24 +15,25 @@ Migrations
 
 */
 export const renameFieldMigration = (collection, field1, field2) => {
-
-  const items = collection.find({
-    [field1]: { $exists: true },
-    [field2]: { $exists: false },
-  }).fetch();
+  const items = collection
+    .find({
+      [field1]: { $exists: true },
+      [field2]: { $exists: false },
+    })
+    .fetch();
 
   if (items.length) {
     // eslint-disable-next-line no-console
     console.log(`// Starting ${field1} -> ${field2} mutation…`);
-    items.forEach(document => {
+    items.forEach((document) => {
       // eslint-disable-next-line no-console
       console.log(`Migrating document ${document._id}`);
-      collection.update(document._id, {$set: {[field2]: document[field1]}});
+      collection.update(document._id, { $set: { [field2]: document[field1] } });
     });
     // eslint-disable-next-line no-console
     console.log(`// ${field1} -> ${field2} mutation done.`);
   }
-}
+};
 
 const js2019 = surveys.find((s) => s.slug === 'js2019');
 
@@ -94,11 +96,17 @@ export const migrateResponsesFieldNames = async () => {
   console.log(`-> Done migrating field names.`);
 };
 
+/*
+
+Add a normalizedResponseId field to responses
+
+*/
 export const assignNormalizedResponseId = async () => {
   const count = Responses.find({
     surveySlug: 'css2020',
     normalizedResponseId: { $exists: false },
   }).count();
+
   console.log(
     `// Found ${count} responses with no normalizedResponseId field… (${new Date()})`
   );
@@ -121,15 +129,18 @@ export const assignNormalizedResponseId = async () => {
   console.log(`-> Done assigning normalizedResponseId field (${new Date()})`);
 };
 
-
 /*
 
 Migrate opinions_other to opinions_others for consistency
 
 */
 export const renameOpinionsOther = async () => {
-  await renameFieldMigration(Responses, 'css2020__opinions_other__currently_missing_from_css__others', 'css2020__opinions_others__currently_missing_from_css__others');
-}
+  await renameFieldMigration(
+    Responses,
+    'css2020__opinions_other__currently_missing_from_css__others',
+    'css2020__opinions_others__currently_missing_from_css__others'
+  );
+};
 
 /*
 
@@ -137,20 +148,20 @@ Renormalize a survey's results
 
 */
 const renormalizeSurvey = async (surveySlug) => {
-  const limit = 10000;
-  const survey = getSurveyBySlug(surveySlug);
-  const selector = { surveySlug, $or: [] };
+  const limit = 99999;
+  // const survey = getSurveyBySlug(surveySlug);
+  const selector = { surveySlug };
   const entities = await getEntities();
 
-  for (const s of survey.outline) {
-    for (const field of s.questions) {
-      const { fieldName } = field;
-      const [initialSegment, ...restOfPath] = fieldName.split('__');
-      if (last(restOfPath) === 'others') {
-        selector['$or'].push({ [fieldName]: { $exists: true } });
-      }
-    }
-  }
+  // for (const s of survey.outline) {
+  //   for (const field of s.questions) {
+  //     const { fieldName } = field;
+  //     const [initialSegment, ...restOfPath] = fieldName.split('__');
+  //     if (last(restOfPath) === 'others') {
+  //       selector['$or'].push({ [fieldName]: { $exists: true } });
+  //     }
+  //   }
+  // }
 
   const startAt = new Date();
   let progress = 0;
@@ -212,6 +223,11 @@ export const renormalizeCSS2020 = async () => {
   await renormalizeSurvey('css2020');
 };
 
+/*
+
+Log all "currently missing features from CSS" answers to file
+
+*/
 export const logMissingFeatures = async () => {
   let results = Responses.find(
     {
@@ -226,6 +242,39 @@ export const logMissingFeatures = async () => {
       },
     }
   ).fetch();
-  results = results.map(r => r.css2020__opinions_other__currently_missing_from_css__others);
-  await logToFile('missing_from_css.json', results, { mode: 'overwrite'});
+  results = results.map(
+    (r) => r.css2020__opinions_other__currently_missing_from_css__others
+  );
+  await logToFile('missing_from_css.json', results, { mode: 'overwrite' });
+};
+
+/*
+
+Add a locale field to responses
+
+*/
+export const assignLocale = async () => {
+  const responses = Responses.find(
+    {
+      surveySlug: 'css2020',
+      locale: { $exists: false },
+    },
+    { sort: { createdAt: -1 } }
+  );
+  const count = responses.count();
+
+  console.log(
+    `// Found ${count} responses with no locale field… (${new Date()})`
+  );
+
+  responses.forEach((response) => {
+    const user = Users.findOne({ _id: response.userId });
+    if (user && user.locale) {
+      Responses.update(
+        { _id: response._id },
+        { $set: { locale: user.locale } }
+      );
+    }
+  });
+  console.log(`-> Done assigning locale field (${new Date()})`);
 };

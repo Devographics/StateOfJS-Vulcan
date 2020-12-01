@@ -3,6 +3,7 @@ import { statuses } from '../../../modules/constants.js';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 import FormLabel from './FormLabel.jsx';
+import FormDescription from './FormDescription.jsx';
 import FormOptionLabel from './FormOptionLabel.jsx';
 import { Components, useCurrentUser, useCreate2 } from 'meteor/vulcan:core';
 import { FormattedMessage } from 'meteor/vulcan:i18n';
@@ -109,6 +110,7 @@ const SurveySectionContents = ({
           FormSubmit: FormSubmitWrapper,
           FormOptionLabel,
           FormLabel,
+          FormDescription,
         }}
       />
     </div>

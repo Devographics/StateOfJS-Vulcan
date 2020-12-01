@@ -108,7 +108,7 @@ const Score = ({ response, survey }, { intl }) => {
               <FormattedMessage id="thanks.share_on_twitter" />
             </Components.Button>
             </div>
-            {unknownFields.length > 0 && <Features unknownFields={unknownFields} limit={10} entities={entities.filter((e) => e.type === 'feature')} />}
+            {unknownFields.length > 0 && <Features unknownFields={unknownFields} limit={10} entities={entities} />}
           </div>
         </div>
       )}

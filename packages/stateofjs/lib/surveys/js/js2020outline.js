@@ -2,6 +2,7 @@
 /* Generated automatically, do not modify */
 export default {
   "slug": "js2020",
+  "normalizationId": "stateofjs",
   "context": "state_of_js",
   "topic": "JavaScript",
   "createdAt": "December 1, 2020",
@@ -10,7 +11,7 @@ export default {
   "shareUrl": "https://stateofjs.com",
   "name": "State of JavaScript",
   "year": 2020,
-  "status": 1,
+  "status": 2,
   "imageUrl": "stateofjs2019.png",
   "bgColor": "rgb(34, 36, 41)",
   "textColor": "rgb(224, 228, 228)",
@@ -367,55 +368,6 @@ export default {
       ]
     },
     {
-      "id": "graphics_animation",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "echarts"
-        },
-        {
-          "id": "chartjs"
-        },
-        {
-          "id": "d3"
-        },
-        {
-          "id": "threejs"
-        },
-        {
-          "id": "pixijs"
-        },
-        {
-          "id": "fabricjs"
-        },
-        {
-          "id": "animejs"
-        },
-        {
-          "id": "lottie"
-        },
-        {
-          "id": "greensock"
-        },
-        {
-          "id": "popmotion"
-        },
-        {
-          "id": "graphics_animation",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others"
-        },
-        {
-          "id": "graphics_animation",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
       "id": "build_tools",
       "template": "tool",
       "slug": "tools",
@@ -433,10 +385,10 @@ export default {
           "id": "rollup"
         },
         {
-          "id": "fusebox"
+          "id": "browserify"
         },
         {
-          "id": "browserify"
+          "id": "tsc"
         },
         {
           "id": "rome"
@@ -562,6 +514,12 @@ export default {
           "template": "multiple",
           "options": [
             {
+              "id": "npm"
+            },
+            {
+              "id": "yarn"
+            },
+            {
               "id": "babel"
             },
             {
@@ -578,21 +536,37 @@ export default {
             },
             {
               "id": "n"
-            },
-            {
-              "id": "npm"
-            },
-            {
-              "id": "yarn"
-            },
-            {
-              "id": "deno"
             }
           ]
         },
         {
           "id": "utilities",
           "template": "project"
+        },
+        {
+          "id": "runtimes",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "browser_environment"
+            },
+            {
+              "id": "node"
+            },
+            {
+              "id": "deno"
+            },
+            {
+              "id": "chakracore"
+            },
+            {
+              "id": "hermes"
+            }
+          ]
+        },
+        {
+          "id": "runtimes",
+          "template": "others"
         },
         {
           "id": "text_editors",
@@ -721,10 +695,10 @@ export default {
               "id": "swift"
             },
             {
-              "id": "c_sharp"
+              "id": "csharp"
             },
             {
-              "id": "dot_net"
+              "id": "dotnet"
             },
             {
               "id": "haskell"
@@ -776,19 +750,19 @@ export default {
               "id": "devto"
             },
             {
-              "id": "dailyjs"
+              "id": "daily_js"
             },
             {
-              "id": "echojs"
+              "id": "echo_js"
             },
             {
               "id": "front_end_front"
             },
             {
-              "id": "javascript_weekly"
+              "id": "js_weekly"
             },
             {
-              "id": "best_of_js"
+              "id": "bestofjs"
             },
             {
               "id": "overreacted"
@@ -797,7 +771,7 @@ export default {
               "id": "kentcdodds"
             },
             {
-              "id": "alligator_io"
+              "id": "alligator"
             },
             {
               "id": "medium"
@@ -846,7 +820,7 @@ export default {
               "id": "egghead"
             },
             {
-              "id": "frontend_masters"
+              "id": "frontendmasters"
             }
           ]
         },
@@ -886,7 +860,7 @@ export default {
               "id": "jamstack_radio"
             },
             {
-              "id": "the_web_platform_podcast"
+              "id": "web_platform_podcast"
             },
             {
               "id": "modern_web"
@@ -922,7 +896,7 @@ export default {
               "id": "a11y_rules"
             },
             {
-              "id": "toolsday"
+              "id": "tools_day"
             },
             {
               "id": "the_bike_shed"
@@ -968,7 +942,21 @@ export default {
         },
         {
           "id": "missing_from_js",
-          "template": "longtext"
+          "sectionSlug": "opinions_others",
+          "template": "others",
+          "matchTags": [
+            "missing_features"
+          ]
+        },
+        {
+          "id": "state_of_the_web",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        },
+        {
+          "id": "state_of_js",
+          "template": "happiness",
+          "sectionSlug": "happiness"
         }
       ]
     },
@@ -1149,6 +1137,59 @@ export default {
               "id": "white_european"
             }
           ]
+        },
+        {
+          "id": "github_username",
+          "template": "text"
+        },
+        {
+          "id": "industry_sector",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "ecommerce"
+            },
+            {
+              "id": "news_media"
+            },
+            {
+              "id": "healthcare"
+            },
+            {
+              "id": "finance"
+            },
+            {
+              "id": "programming_tools"
+            },
+            {
+              "id": "socialmedia"
+            },
+            {
+              "id": "marketing_tools"
+            },
+            {
+              "id": "saas"
+            },
+            {
+              "id": "education"
+            },
+            {
+              "id": "real_estate"
+            },
+            {
+              "id": "entertainment"
+            },
+            {
+              "id": "retail"
+            },
+            {
+              "id": "consulting"
+            }
+          ]
+        },
+        {
+          "id": "industry_sector",
+          "template": "others"
         },
         {
           "id": "country",

@@ -81,7 +81,7 @@ export const templates = {
   tool: () => ({
     input: 'radiogroup',
     suffix: 'experience',
-    intlPrefix: 'entities',
+    intlPrefix: 'tools',
     options: [
       {
         value: 'never_heard',

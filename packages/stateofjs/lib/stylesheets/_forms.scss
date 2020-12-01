@@ -68,6 +68,9 @@
     padding: $spacing/2;
     order: 1;
     margin-bottom: $spacing/2;
+    p:last-child{
+      margin: 0;
+    }
   }
   .form-submit-actions {
     display: flex;

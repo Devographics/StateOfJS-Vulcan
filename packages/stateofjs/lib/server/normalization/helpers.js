@@ -199,8 +199,10 @@ Normalize a string value and only keep the first result
 
 */
 export const normalizeSingle = async (value, allRules, matchCategories) => {
-  const values = await normalize(value, allRules, matchCategories, false);
-  return values[0];
+  const tokens = await normalize(value, allRules, matchCategories, false);
+  // put longer tokens first as a proxy for relevancy
+  const sortedTokens = sortBy(tokens, (v) => v.id.length).reverse();
+  return sortedTokens[0];
 };
 
 /*
@@ -209,23 +211,47 @@ Handle source normalization separately since its value can come from
 three different fields (source field, referrer field, 'how did you hear' field)
 
 */
-export const normalizeSource = async (r, allRules) => {
+export const normalizeSource = async (normResp, allRules, survey) => {
   try {
-    const tags = ['sites', 'podcasts', 'youtube', 'sources'];
+    const tags = [
+      'sites',
+      'podcasts',
+      'youtube',
+      'socialmedia',
+      'newsletters',
+      'people',
+      'sources',
+    ];
 
-    const rawSource = get(r, 'user_info.source');
+    // add a special rule for emails to normalize "email" sources into current survey id
+    const allRulesWithEmail = [
+      ...allRules,
+      {
+        id: survey.normalizationId,
+        pattern: /e( |-)*mail/i,
+        tags: ['sources'],
+      },
+      {
+        id: survey.normalizationId,
+        pattern: /mail.google.com/i,
+        tags: ['sources'],
+      },
+    ];
+
+    const rawSource = get(normResp, 'user_info.sourcetag');
     const rawFindOut = get(
-      r,
+      normResp,
       'user_info.how_did_user_find_out_about_the_survey'
     );
-    const rawRef = get(r, 'user_info.referrer');
+    const rawRef = get(normResp, 'user_info.referrer');
 
     const normSource =
       rawSource && (await normalizeSingle(rawSource, allRules, tags));
     const normFindOut =
-      rawFindOut && (await normalizeSingle(rawFindOut, allRules, tags));
+      rawFindOut &&
+      (await normalizeSingle(rawFindOut, allRulesWithEmail, tags));
     const normReferrer =
-      rawRef && (await normalizeSingle(rawRef, allRules, tags));
+      rawRef && (await normalizeSingle(rawRef, allRulesWithEmail, tags));
 
     if (normSource) {
       return { ...normSource, raw: rawSource };
@@ -300,3 +326,4 @@ export const logAllRules = async () => {
     mode: 'overwrite',
   });
 };
+

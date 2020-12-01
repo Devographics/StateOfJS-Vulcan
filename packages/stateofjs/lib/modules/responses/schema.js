@@ -1,5 +1,6 @@
 import moment from 'moment';
 import surveys from '../../surveys';
+import Users from 'meteor/vulcan:users';
 
 import {
   getQuestionObject,
@@ -84,6 +85,15 @@ const schema = {
     canRead: ['guests'],
     onUpdate: ({ document }) => {
       return getKnowledgeScore(document).score;
+    },
+  },
+  locale: {
+    type: String,
+    optional: true,
+    canRead: ['guests'],
+    onUpdate: ({ document }) => {
+      const user = Users.findOne({ _id: document.userId });
+      return user && user.locale
     },
   },
   isSynced: {
