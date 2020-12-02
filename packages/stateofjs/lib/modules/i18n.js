@@ -32,11 +32,6 @@ export const locales = [
     translators: ['jaideepghosh'],
   },
   {
-    id: 'id-ID',
-    label: 'Indonesia',
-    translators: ['ervinismu'],
-  },
-  {
     id: 'it-IT',
     label: 'Italiano',
     translators: ['polettoweb'],
@@ -60,6 +55,16 @@ export const locales = [
     id: 'tr-TR',
     label: 'Türkçe',
     translators: ['berkayyildiz'],
+  },
+  {
+    id: 'id-ID',
+    label: 'Indonesia',
+    translators: ['ervinismu'],
+  },
+  {
+    id: 'zh-Hans',
+    label: '简体中文',
+    translators: ['TIOvOIT'],
   },
   {
     id: 'zh-Hant',

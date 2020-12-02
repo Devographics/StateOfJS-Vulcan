@@ -1,10 +1,12 @@
-import { Components, registerComponent } from 'meteor/vulcan:lib';
+import { Components, registerComponent, useLocaleData, getSetting } from 'meteor/vulcan:core';
 import React from 'react';
 import Footer from './Footer.jsx';
 import Header from './Header';
 import { useParams } from 'react-router-dom';
 import { getSurvey } from '../../modules/surveys/helpers.js';
 import EntitiesContext from './EntitiesContext';
+import DefaultLocaleContext from './DefaultLocaleContext';
+import { KeydownContextProvider } from './KeydownContext';
 import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import get from 'lodash/get';
@@ -23,6 +25,10 @@ const entitiesQuery = `query EntitiesQuery {
 `;
 
 const Layout = ({ children }) => {
+  const defaultLocaleId = getSetting('defaultLocaleId');
+  const defaultLocaleResult = useLocaleData({ locale: defaultLocaleId });
+  const defaultLocale = get(defaultLocaleResult, 'data.locale');
+
   const { loading, data = {} } = useQuery(gql(entitiesQuery));
 
   const { slug, year } = useParams();
@@ -42,18 +48,22 @@ const Layout = ({ children }) => {
   `;
     }
   }
-  
+
   return loading ? (
     <Components.Loading />
   ) : (
-    <EntitiesContext.Provider value={{ entities: get(data, 'entities') }}>
-      <div className="wrapper" id="wrapper">
-        <style dangerouslySetInnerHTML={{ __html: style }} />
-        <Header />
-        <main className="main-contents">{children}</main>
-        <Footer />
-      </div>
-    </EntitiesContext.Provider>
+    <DefaultLocaleContext.Provider value={{ defaultLocale }}>
+      <KeydownContextProvider>
+        <EntitiesContext.Provider value={{ entities: get(data, 'entities') }}>
+          <div className="wrapper" id="wrapper">
+            <style dangerouslySetInnerHTML={{ __html: style }} />
+            <Header />
+            <main className="main-contents">{children}</main>
+            <Footer />
+          </div>
+        </EntitiesContext.Provider>
+      </KeydownContextProvider>
+    </DefaultLocaleContext.Provider>
   );
 };
 

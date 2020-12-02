@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Locales } from 'meteor/vulcan:core';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { Components, Locales } from 'meteor/vulcan:core';
 
 const LocaleSelector = (props, { setLocale, getLocale }) => {
   return (
     <div className="locale-selector">
       <p className="locale-selector-languages">
-        <FormattedMessage id="general.surveys_available_languages" />{' '}
+        <Components.FormattedMessage id="general.surveys_available_languages" />{' '}
         {Locales.map(({ label, id }, i) => (
           <span key={id} className="locale-selector-item">
             <a
@@ -29,7 +28,7 @@ const LocaleSelector = (props, { setLocale, getLocale }) => {
         target="_blank"
         rel="norefferer"
       >
-        <FormattedMessage id="general.help_us_translate" />
+        <Components.FormattedMessage id="general.help_us_translate" />
       </a>
     </div>
   );

@@ -1,4 +1,6 @@
-:focus:not(:focus-visible) { outline: none }
+:focus:not(:focus-visible) {
+  outline: none;
+}
 
 html {
   box-sizing: border-box;
@@ -200,4 +202,15 @@ Page-specific styles
   background: white(0.3);
   z-index: 1000;
   backdrop-filter: blur(5px);
+}
+
+.t-modkeydown {
+  &.t-fallback,
+  &.t-missing {
+    text-shadow: 0px 2px 5px rgba($green, 0.6);
+    &:hover {
+      cursor: pointer;
+      text-shadow: 0px 2px 5px rgba($pink, 0.6);
+    }
+  }
 }

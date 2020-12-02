@@ -1,6 +1,6 @@
 import React from 'react';
 import { locales } from '../../modules/i18n.js';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { Components } from 'meteor/vulcan:core';
 
 const LocaleItem = ({ locale }) => {
   const { label, translators } = locale;
@@ -31,7 +31,7 @@ const Translators = () => {
   return (
     <div className="translators">
       <h3 className="translators-heading">
-        <FormattedMessage id="general.translation_help" />
+        <Components.FormattedMessage id="general.translation_help" />
       </h3>
       <div className="translators-locales">
         {locales

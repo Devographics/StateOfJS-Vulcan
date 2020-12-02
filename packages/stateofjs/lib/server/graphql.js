@@ -65,12 +65,17 @@ Locales
 
 */
 const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]) {
-  locale(localeId: $localeId, contexts: $contexts) {
+  locale(localeId: $localeId, contexts: $contexts, enableFallbacks: true) {
     id
+    completion
+    label
     strings {
-      key
-      t
+        key
+        t
+        context
+        fallback
     }
+    translators
   }
 }
 `;

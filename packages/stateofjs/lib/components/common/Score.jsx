@@ -6,7 +6,6 @@ import CountUp from 'react-countup';
 import Confetti from 'react-confetti';
 import { Components } from 'meteor/vulcan:core';
 import take from 'lodash/take';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { intlShape } from 'meteor/vulcan:i18n';
 
 const Features = ({ unknownFields, entities, limit }) => {
@@ -15,7 +14,7 @@ const Features = ({ unknownFields, entities, limit }) => {
   return (
     <div className="score-features">
       <h4 className="score-features-heading">
-        <FormattedMessage id="thanks.learn_more_about" />
+        <Components.FormattedMessage id="thanks.learn_more_about" />
       </h4>{' '}
       <div className="score-features-items">
         {fields.map((field, i) => {
@@ -64,7 +63,7 @@ const Score = ({ response, survey }, { intl }) => {
         <div className="score">
           <div className="score-calculation">
             <div className="score-calcuation-heading">
-              <FormattedMessage id="thanks.knowledge_score" />
+              <Components.FormattedMessage id="thanks.knowledge_score" />
             </div>
             <div className="score-percent">
               <CountUp
@@ -94,7 +93,7 @@ const Score = ({ response, survey }, { intl }) => {
               </div>
             </div>
             <div className="score-ratio">
-              <FormattedMessage
+              <Components.FormattedMessage
                 id="thanks.score_explanation"
                 values={{ known, total, knowledgeRankingFromTop }}
                 html={true}
@@ -105,7 +104,7 @@ const Score = ({ response, survey }, { intl }) => {
               target="_blank"
               href={`https://twitter.com/intent/tweet/?text=${encodeURIComponent(text)}`}
             >
-              <FormattedMessage id="thanks.share_on_twitter" />
+              <Components.FormattedMessage id="thanks.share_on_twitter" />
             </Components.Button>
             </div>
             {unknownFields.length > 0 && <Features unknownFields={unknownFields} limit={10} entities={entities} />}

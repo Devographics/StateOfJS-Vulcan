@@ -1,7 +1,7 @@
 import React from 'react';
 import EntitiesContext from './EntitiesContext';
 
-const EntityLabel = ({ id, label, fallback }) => {
+const EntityLabel = ({ id, intlId, label, fallback }) => {
   return (
     <EntitiesContext.Consumer>
       {({ entities }) => {

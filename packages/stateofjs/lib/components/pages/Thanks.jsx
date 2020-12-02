@@ -1,6 +1,5 @@
 import React from 'react';
 import ShareSite from '../share/ShareSite.jsx';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { getSurveyPath } from '../../modules/surveys/helpers';
 import { Components, useSingle2 } from 'meteor/vulcan:core';
 import { useHistory, useParams } from 'react-router-dom';
@@ -41,7 +40,7 @@ const Thanks = () => {
       </h1>
       <Score response={response} survey={survey} />
       <div>
-        <FormattedMessage id="general.thanks" />
+        <Components.FormattedMessage id="general.thanks" />
       </div>
       <ShareSite survey={survey} />
       <div className="form-submit form-section-nav form-section-nav-bottom">
@@ -55,7 +54,7 @@ const Thanks = () => {
               history.push(getSurveyPath({ survey, response, number: survey.outline.length }));
             }}
           >
-            « <FormattedMessage id="general.back" />
+            « <Components.FormattedMessage id="general.back" />
           </Components.Button>
         </div>
       </div>

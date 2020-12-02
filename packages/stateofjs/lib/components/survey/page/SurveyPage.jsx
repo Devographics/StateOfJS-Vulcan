@@ -3,7 +3,7 @@ import { Components, useCurrentUser } from 'meteor/vulcan:core';
 import { useParams, useLocation } from 'react-router-dom';
 import { STATES } from 'meteor/vulcan:accounts';
 import AccountMessage from '../../users/AccountMessage.jsx';
-import { FormattedMessage, intlShape, IntlContext } from 'meteor/vulcan:i18n';
+import { intlShape, IntlContext } from 'meteor/vulcan:i18n';
 import qs from 'qs';
 import SurveyAction from './SurveyAction';
 import { getSurvey } from '../../../modules/surveys/helpers';
@@ -24,7 +24,7 @@ const SurveyPageWrapper = (props, { intl }) => {
             <SurveyHeadTags survey={survey} />
             {survey.status === statuses.closed && (
               <div className="survey-message survey-closed">
-                <FormattedMessage id="general.survey_closed" />
+                <Components.FormattedMessage id="general.survey_closed" />
               </div>
             )}
             <h1 className="survey-image">
@@ -63,11 +63,11 @@ const SurveyPage = ({ survey }) => {
       <div className="survey-actions">
         {email ? (
           <div className="message survey-page-message">
-            <FormattedMessage id="accounts.please_pick_password" />
+            <Components.FormattedMessage id="accounts.please_pick_password" />
           </div>
         ) : (
           <div className="message survey-page-message">
-            <FormattedMessage id="accounts.please_log_in" />
+            <Components.FormattedMessage id="accounts.please_log_in" />
           </div>
         )}
         <Components.AccountsLoginForm redirect={false} formState={STATES.SIGN_UP} email={email} />

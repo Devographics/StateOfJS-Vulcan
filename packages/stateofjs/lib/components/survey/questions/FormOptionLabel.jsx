@@ -2,9 +2,10 @@ import React from 'react';
 import EntityLabel from '../../common/EntityLabel';
 
 const FormOptionLabel = ({ option }) => {
-  const { label, id, value } = option;
+  const { label, id, intlId, value } = option;
   const entityProps = {
     id,
+    intlId,
     fallback: label,
   };
 

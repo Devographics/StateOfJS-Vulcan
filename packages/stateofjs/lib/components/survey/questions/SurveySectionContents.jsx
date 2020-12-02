@@ -6,7 +6,6 @@ import FormLabel from './FormLabel.jsx';
 import FormDescription from './FormDescription.jsx';
 import FormOptionLabel from './FormOptionLabel.jsx';
 import { Components, useCurrentUser, useCreate2 } from 'meteor/vulcan:core';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { getSurveyPath } from '../../../modules/surveys/helpers';
 import Saves from '../../../modules/saves/collection';
 import Users from 'meteor/vulcan:users';
@@ -66,8 +65,8 @@ const SurveySectionContents = ({
     <div className="section-questions">
       {survey.status === statuses.open && readOnly ? (
         <div className="survey-message survey-readonly">
-          <FormattedMessage id="general.survey_read_only" />
-          <FormattedMessage
+          <Components.FormattedMessage id="general.survey_read_only" />
+          <Components.FormattedMessage
             id="general.survey_read_only_back"
             html={true}
             values={{ link: getSurveyPath({ survey, home: true }) }}
@@ -75,14 +74,14 @@ const SurveySectionContents = ({
         </div>
       ) : survey.status === statuses.closed ? (
         <div className="survey-message survey-closed">
-          <FormattedMessage id="general.survey_closed" />
+          <Components.FormattedMessage id="general.survey_closed" />
         </div>
       ) : null}
       <h2 className="section-title">
-        <FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
+        <Components.FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
       </h2>
       <h3 className="section-description">
-        <FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />
+        <Components.FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />
       </h3>
       <Components.SmartForm
         documentId={response && response._id}

@@ -14,7 +14,6 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import { statuses } from '../../../modules/constants.js';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 import qs from 'qs';
 import Users from 'meteor/vulcan:users';
 
@@ -61,7 +60,7 @@ const SurveyAction = ({ survey, currentUser }) => {
   const hasResponse = currentSurveyResponse && !isEmpty(currentSurveyResponse);
 
   const mutationButtonProps = {
-    label: <FormattedMessage id="general.start_survey" />,
+    label: <Components.FormattedMessage id="general.start_survey" />,
     variant: 'primary',
     mutationOptions: {
       name: 'createResponse',
@@ -118,7 +117,7 @@ Link to the "naked" survey path or to the actual response
 const SurveyLink = ({ survey, response = {}, message }) => (
   <LinkContainer to={response.pagePath || getSurveyPath({ survey })}>
     <Components.Button>
-      <FormattedMessage id={message} />
+      <Components.FormattedMessage id={message} />
     </Components.Button>
   </LinkContainer>
 );

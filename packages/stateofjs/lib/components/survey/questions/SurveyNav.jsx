@@ -14,7 +14,7 @@ import { getQuestionObject, ignoredFieldTypes } from '../../../modules/responses
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import surveys from '../../../surveys';
 import { Link, NavLink } from 'react-router-dom';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
+import { Components } from 'meteor/vulcan:core';
 
 // TODO
 // const getOverallCompletionPercentage = (response) => {
@@ -84,7 +84,7 @@ const SurveyNav = ({ survey, response }) => {
           }}
         >
           <h3 className="section-nav-toc">
-            <FormattedMessage id="general.table_of_contents" />
+            <Components.FormattedMessage id="general.table_of_contents" />
           </h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
         </div>
@@ -106,7 +106,7 @@ const SurveyNav = ({ survey, response }) => {
             {/* {response && <li>Overall: {getOverallCompletionPercentage(response)}%</li>} */}
           </ul>
           <p className="completion-message">
-            <FormattedMessage id="general.all_questions_optional" />
+            <Components.FormattedMessage id="general.all_questions_optional" />
           </p>
         </div>
       </div>
@@ -142,7 +142,7 @@ const SectionNavItem = ({ survey, response, section, number, setShown, currentTa
           setCurrentFocusIndex(null);
         }}
       >
-        <FormattedMessage id={`sections.${section.id}.title`} />{' '}
+        <Components.FormattedMessage id={`sections.${section.id}.title`} />{' '}
         {showCompletion && <span className="section-nav-item-completion">{completion}%</span>}
       </NavLink>
     </li>

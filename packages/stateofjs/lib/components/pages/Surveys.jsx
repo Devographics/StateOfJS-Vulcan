@@ -1,8 +1,7 @@
 import React from 'react';
 import surveys from '../../surveys';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 import Users from 'meteor/vulcan:users';
-import { useCurrentUser, Utils } from 'meteor/vulcan:core';
+import { Components, useCurrentUser, Utils } from 'meteor/vulcan:core';
 import { getSurveyPath } from '../../modules/surveys/helpers';
 import { Link } from 'react-router-dom';
 import { statuses } from '../../modules/constants';
@@ -28,7 +27,7 @@ const SurveyItem = ({ survey }) => {
         </div>
         {resultsUrl && (
           <a className="survey-item-results" href={resultsUrl} target="_blank" rel="noopener">
-            <FormattedMessage id="general.survey_results" />
+            <Components.FormattedMessage id="general.survey_results" />
           </a>
         )}
       </div>
@@ -41,13 +40,13 @@ const SurveyGroup = ({ status }) => {
   return (
     <div className="surveys-group">
       <h3 className="surveys-group-heading">
-        <FormattedMessage id={`general.${status}_surveys`} defaultMessage={`${Utils.capitalize(status)} Surveys`} />
+        <Components.FormattedMessage id={`general.${status}_surveys`} defaultMessage={`${Utils.capitalize(status)} Surveys`} />
       </h3>
       {filteredSurveys.length > 0 ? (
         filteredSurveys.map((survey) => <SurveyItem key={survey.slug} survey={survey} />)
       ) : (
         <div className={`surveys-no${status}`}>
-          <FormattedMessage id={`general.no_${status}_surveys`} />
+          <Components.FormattedMessage id={`general.no_${status}_surveys`} />
         </div>
       )}
     </div>

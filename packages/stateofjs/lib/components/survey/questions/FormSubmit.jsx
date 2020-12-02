@@ -13,7 +13,6 @@ import React, { useState } from 'react';
 import { getThanksPath } from '../../../modules/responses/helpers.js';
 import { getSurveyPath } from '../../../modules/surveys/helpers.js';
 import { Components } from 'meteor/vulcan:core';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 import { useHistory } from 'react-router-dom';
 import { intlShape } from 'meteor/vulcan:i18n';
 
@@ -49,7 +48,7 @@ const FormSubmit = ({
               history.push(getSurveyPath({ survey, response, number: sectionNumber + 1 }));
             }}
           >
-            <FormattedMessage id={`sections.${nextSection.id}.title`} /> »
+            <Components.FormattedMessage id={`sections.${nextSection.id}.title`} /> »
           </Components.LoadingButton>
         ) : readOnly ? null : (
           <Components.LoadingButton
@@ -66,7 +65,7 @@ const FormSubmit = ({
               history.push(getThanksPath(response));
             }}
           >
-            <FormattedMessage id="general.finish_survey" />
+            <Components.FormattedMessage id="general.finish_survey" />
           </Components.LoadingButton>
         )}
         {previousSection ? (
@@ -84,7 +83,7 @@ const FormSubmit = ({
               history.push(getSurveyPath({ survey, response, number: sectionNumber - 1 }));
             }}
           >
-            « <FormattedMessage id={`sections.${previousSection.id}.title`} />
+            « <Components.FormattedMessage id={`sections.${previousSection.id}.title`} />
           </Components.LoadingButton>
         ) : (
           <div className="prev-placeholder" />
@@ -93,7 +92,7 @@ const FormSubmit = ({
 
       {showMessage && (
         <div className="form-submit-help">
-          <FormattedMessage id="general.data_is_saved" />
+          <Components.FormattedMessage id="general.data_is_saved" />
         </div>
       )}
     </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Components, useCurrentUser } from 'meteor/vulcan:core';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 const AccountPage = () => {
   const { currentUser } = useCurrentUser();
@@ -8,12 +7,12 @@ const AccountPage = () => {
     <div className="contents-narrow account">
       {currentUser && (
         <p>
-          <FormattedMessage id="accounts.logged_in_as" values={{ email: currentUser.email }} />
+          <Components.FormattedMessage id="accounts.logged_in_as" values={{ email: currentUser.email }} />
         </p>
       )}
       <Components.AccountsLoginForm />
       <p>
-        <FormattedMessage id="accounts.questions" html={true} />
+        <Components.FormattedMessage id="accounts.questions" html={true} />
       </p>
     </div>
   );

@@ -1,11 +1,10 @@
 import React from 'react';
-import { useCurrentUser } from 'meteor/vulcan:core';
+import { Components, useCurrentUser } from 'meteor/vulcan:core';
 import Users from 'meteor/vulcan:users';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { IndexLinkContainer } from 'react-router-bootstrap';
 import LocaleSwitcher from './LocaleSwitcher';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 const navContents = [
   {
@@ -80,7 +79,7 @@ const Navigation = () => {
 const NavItem = ({ to, label, id }) => (
   <Nav.Item>
     <IndexLinkContainer to={to}>
-      <Nav.Link>{label ? label : <FormattedMessage id={id} />}</Nav.Link>
+      <Nav.Link>{label ? label : <Components.FormattedMessage id={id} />}</Nav.Link>
     </IndexLinkContainer>
   </Nav.Item>
 );

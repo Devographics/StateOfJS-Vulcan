@@ -1,5 +1,6 @@
 
 import '../components/common/Layout';
+import '../components/common/FormattedMessage';
 // import '../components/common/Header';
 
 // import '../components/pages/Surveys';

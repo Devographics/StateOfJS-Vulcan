@@ -14,7 +14,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { getSurveyPath } from '../../modules/surveys/helpers.js';
 import isEmpty from 'lodash/isEmpty';
 import { statuses } from '../../modules/constants.js';
-import { FormattedMessage } from 'meteor/vulcan:i18n';
 
 // for some reason this throws error?
 // import bowser from 'bowser';
@@ -61,15 +60,15 @@ const SurveyItem = ({ survey, currentUser }) => {
             <LinkContainer to={currentSurveyResponse.pagePath}>
               <Components.Button>
                 {status === statuses.open ? (
-                  <FormattedMessage id="general.continue_survey" />
+                  <Components.FormattedMessage id="general.continue_survey" />
                 ) : (
-                  <FormattedMessage id="general.review_survey" />
+                  <Components.FormattedMessage id="general.review_survey" />
                 )}
               </Components.Button>
             </LinkContainer>
           ) : status === statuses.open ? (
             <Components.MutationButton
-              label={<FormattedMessage id="general.start_survey" />}
+              label={<Components.FormattedMessage id="general.start_survey" />}
               variant="primary"
               mutationOptions={{
                 name: 'createResponse',

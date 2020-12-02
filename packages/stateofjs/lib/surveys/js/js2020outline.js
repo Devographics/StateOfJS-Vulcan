@@ -12,7 +12,7 @@ export default {
   "name": "State of JavaScript",
   "year": 2020,
   "status": 2,
-  "imageUrl": "stateofjs2019.png",
+  "imageUrl": "stateofjs2020.png",
   "bgColor": "rgb(34, 36, 41)",
   "textColor": "rgb(224, 228, 228)",
   "linkColor": "rgb(65, 199, 199)",
@@ -1168,9 +1168,6 @@ export default {
               "id": "marketing_tools"
             },
             {
-              "id": "saas"
-            },
-            {
               "id": "education"
             },
             {
@@ -1180,7 +1177,7 @@ export default {
               "id": "entertainment"
             },
             {
-              "id": "retail"
+              "id": "government"
             },
             {
               "id": "consulting"
