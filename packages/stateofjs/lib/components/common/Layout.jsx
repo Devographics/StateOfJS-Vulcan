@@ -25,9 +25,14 @@ const entitiesQuery = `query EntitiesQuery {
 `;
 
 const Layout = ({ children }) => {
-  const defaultLocaleId = getSetting('defaultLocaleId');
-  const defaultLocaleResult = useLocaleData({ locale: defaultLocaleId });
-  const defaultLocale = get(defaultLocaleResult, 'data.locale');
+  // do not load default locale for now since we are using fallbacks
+  
+  // const defaultLocaleId = getSetting('defaultLocaleId');
+  // const defaultLocaleResult = useLocaleData({ locale: defaultLocaleId });
+  // const defaultLocale = get(defaultLocaleResult, 'data.locale');
+  
+  // use stubbed version instead for now
+  const defaultLocale = { id: 'en-US', strings: []}
 
   const { loading, data = {} } = useQuery(gql(entitiesQuery));
 

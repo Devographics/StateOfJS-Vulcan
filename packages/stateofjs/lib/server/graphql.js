@@ -80,7 +80,7 @@ const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]
 }
 `;
 
-const contexts = ['common', 'state_of_css', 'accounts', 'state_of_js'];
+const contexts = ['common', 'state_of_css', 'accounts', 'state_of_js', 'state_of_css_2020', 'state_of_js_2020'];
 
 const locale = async (root, { localeId }, context) => {
   let convertedLocale = nodeCache.get(localeId);
