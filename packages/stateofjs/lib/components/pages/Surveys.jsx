@@ -26,7 +26,7 @@ const SurveyItem = ({ survey }) => {
           </Link>
         </div>
         {resultsUrl && (
-          <a className="survey-item-results" href={resultsUrl} target="_blank" rel="noopener">
+          <a className="survey-item-results" href={resultsUrl} target="_blank" rel="noreferrer noopener">
             <Components.FormattedMessage id="general.survey_results" />
           </a>
         )}

@@ -109,14 +109,14 @@ export const normalizeResponse = async ({
         const [initialSegment, ...restOfPath] = fieldName.split('__');
         const normPath = restOfPath.join('.');
         const value = response[fieldName];
+        // clean value to eliminate empty spaces, "none", "n/a", etc.
+        const cleanValue = cleanupValue(value);
 
-        if (last(restOfPath) === 'others') {
-          // A. "others" fields needing to be normalized
-          set(normResp, `${normPath}.raw`, value);
-          // clean value to eliminate empty spaces, "none", "n/a", etc.
-          const cleanValue = cleanupValue(value);
+        if (cleanValue) {
+          if (last(restOfPath) === 'others') {
+            // A. "others" fields needing to be normalized
+            set(normResp, `${normPath}.raw`, value);
 
-          if (cleanValue) {
             if (log) {
               await logToFile(
                 'normalization.txt',
@@ -177,16 +177,16 @@ export const normalizeResponse = async ({
               value,
               normTokens,
             });
+          } else if (last(restOfPath) === 'prenormalized') {
+            // B. these fields are "prenormalized" through autocomplete inputs
+            const newPath = normPath.replace('.prenormalized', '.others');
+            set(normResp, `${newPath}.raw`, value);
+            set(normResp, `${newPath}.normalized`, value);
+            set(normResp, `${newPath}.patterns`, ['prenormalized']);
+          } else {
+            // C. any other field
+            set(normResp, normPath, value);
           }
-        } else if (last(restOfPath) === 'prenormalized') {
-          // B. these fields are "prenormalized" through autocomplete inputs
-          const newPath = normPath.replace('.prenormalized', '.others');
-          set(normResp, `${newPath}.raw`, value);
-          set(normResp, `${newPath}.normalized`, value);
-          set(normResp, `${newPath}.patterns`, ['prenormalized']);
-        } else {
-          // C. any other field
-          set(normResp, normPath, value);
         }
       }
     }

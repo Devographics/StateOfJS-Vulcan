@@ -62,13 +62,19 @@
   }
   .form-item-input {
     order: 2;
+    textarea,
+    input[type='text'],
+    select {
+      background: $greyLightest;
+      color: $greyDarker;
+    }
   }
   .form-text {
     background: $bg-color-light;
     padding: $spacing/2;
     order: 1;
     margin-bottom: $spacing/2;
-    p:last-child{
+    p:last-child {
       margin: 0;
     }
   }
@@ -122,4 +128,9 @@
       width: 32px;
     }
   }
+}
+
+.rbt-token {
+  background-color: $grey;
+  color: $greyDarker;
 }

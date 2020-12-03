@@ -592,6 +592,12 @@ export default {
             },
             {
               "id": "nova"
+            },
+            {
+              "id": "phpstorm"
+            },
+            {
+              "id": "notepad"
             }
           ]
         },
@@ -943,7 +949,7 @@ export default {
         {
           "id": "missing_from_js",
           "sectionSlug": "opinions_others",
-          "template": "others",
+          "template": "others_textarea",
           "matchTags": [
             "missing_features"
           ]
