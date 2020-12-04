@@ -452,11 +452,12 @@ outline:
           - id: codecademy
           - id: levelup
           - id: wesbos
+          - id: frontendmasters
           - id: pluralsight
           - id: designcode
           - id: udemy
           - id: egghead
-          - id: frontendmasters
+          - id: newline
       - id: sites_courses
         template: others
 
@@ -487,6 +488,7 @@ outline:
           - id: tools_day
           - id: the_bike_shed
           - id: css_podcast
+          - id: undefined_podcast
       - id: podcasts
         template: others
 

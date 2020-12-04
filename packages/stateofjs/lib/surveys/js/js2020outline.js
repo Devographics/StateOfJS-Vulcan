@@ -814,6 +814,9 @@ export default {
               "id": "wesbos"
             },
             {
+              "id": "frontendmasters"
+            },
+            {
               "id": "pluralsight"
             },
             {
@@ -826,7 +829,7 @@ export default {
               "id": "egghead"
             },
             {
-              "id": "frontendmasters"
+              "id": "newline"
             }
           ]
         },
@@ -909,6 +912,9 @@ export default {
             },
             {
               "id": "css_podcast"
+            },
+            {
+              "id": "undefined_podcast"
             }
           ]
         },
