@@ -3,11 +3,20 @@ import NormalizedResponses from '../modules/normalized_responses/collection';
 import surveys from '../surveys';
 import { makeId, getQuestionFieldName } from '../modules/responses/helpers.js';
 import { normalizeResponse } from './normalization/normalize';
-import { getEntities } from './normalization/helpers';
+import { getEntities, generateEntityRules } from './normalization/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 import { getSurveyBySlug } from '../modules/surveys/helpers';
 import last from 'lodash/last';
 import Users from 'meteor/vulcan:users';
+import {
+  js2019FieldMigrations,
+  js2019ChoicesFieldsToNormalize,
+  js2019ChoicesNormalizationValues,
+  js2019OptionsFieldsToNormalize,
+  js2019OptionsNormalizationValues,
+  js2019ExperienceNormalizationValues,
+  normalizeJS2019Value,
+} from './migrations';
 
 /*
 
@@ -67,33 +76,52 @@ To:
 
   js2019__tools__apollo
 
+Also migrate values at the same time (neverheard -> never_heard)
+
 */
 export const migrateResponsesFieldNames = async () => {
+  await logToFile('2019migration.txt', `${new Date()}\n\n`, {
+    mode: 'overwrite',
+  });
+
   const responses = Responses.find(
     { fieldNamesMigrated: { $exists: false }, surveySlug: 'js2019' },
-    { limit: 1000 }
+    { limit: 99000 }
   ).fetch();
-  console.log(`// Migrating field names for ${responses.length} responses…`);
-  responses.forEach((response) => {
-    let newResponse = { fieldNamesMigrated: true };
-    Object.keys(response).forEach((fieldName) => {
-      const [sectionSlug, questionSlug] = fieldName.split('_');
 
-      const section = js2019.outline.find(
-        (s) => makeId(s.title) === sectionSlug
-      );
-      if (section) {
-        const questionFieldName = getQuestionFieldName(js2019, section, {
-          id: questionSlug,
-        });
-        newResponse[questionFieldName] = response[fieldName];
+  console.log(`// Migrating field names for ${responses.length} responses…`);
+  responses.forEach(async (response) => {
+    let newResponse = { fieldNamesMigrated: true };
+
+    // convert field names & normalize values
+    Object.keys(response).forEach((oldFieldName) => {
+      let value = response[oldFieldName];
+      const newFieldName = js2019FieldMigrations[oldFieldName];
+      if (typeof newFieldName === 'undefined') {
+        throw new Error(
+          `// Field ${oldFieldName} not defined in JS2019 migration object.`
+        );
+      } else if (newFieldName === null) {
+        // copy over value to same field name
+        newResponse[oldFieldName] = value;
       } else {
-        newResponse[fieldName] = response[fieldName];
+        if (Array.isArray(value)) {
+          value = value.map(normalizeJS2019Value)
+        } else {
+          value = normalizeJS2019Value(value)
+        }
       }
     });
+    await logToFile('2019migration.txt', newResponse, { mode: 'append' });
+
     Responses.update({ _id: response._id }, newResponse);
   });
-  console.log(`-> Done migrating field names.`);
+
+  console.log(
+    `-> Done migrating field names for ${
+      responses.length
+    } documents at ${new Date()}.`
+  );
 };
 
 /*
@@ -131,6 +159,58 @@ export const assignNormalizedResponseId = async () => {
 
 /*
 
+Add a normalizedResponseId field to JS2019 responses
+
+*/
+export const assignJS2019NormalizedResponseId = async () => {
+  const limit = 3000;
+  const selector = {
+    surveySlug: 'js2019',
+    normalizedResponseId: { $exists: false },
+  };
+  const count = Responses.find(selector, { limit }).count();
+  let noNormRespCount = 0;
+
+  console.log(
+    `// Found ${count} responses with no normalizedResponseId field… (${new Date()})`
+  );
+
+  Responses.find(selector, { limit, sort: { createdAt: -1 } }).forEach(
+    (response) => {
+      const nrSelector = {
+        'user_info.email': response.email,
+        survey: 'js',
+        year: 2019,
+      };
+      const normResp = NormalizedResponses.findOne(nrSelector);
+      if (normResp) {
+        // console.log(
+        //   `// Found corresponding normalized response ${normResp._id} for response id ${response._id}`
+        // );
+        // NormalizedResponses.update(
+        //   { _id: normResp._id },
+        //   { $set: { responseId: response._id, surveySlug: 'js2019' } }
+        // );
+        // Responses.update(
+        //   { _id: response._id },
+        //   { $set: { normalizedResponseId: normResp._id } }
+        // );
+      } else {
+        noNormRespCount++;
+        // console.log(
+        //   `// Could not find corresponding normalized response for response id ${response._id}`
+        // );
+        // console.log(nrSelector)
+      }
+    }
+  );
+  console.log(
+    `-> Done assigning normalizedResponseId field. Also found ${noNormRespCount} reponses with no matching normalized response (${new Date()})`
+  );
+};
+
+/*
+
 Migrate opinions_other to opinions_others for consistency
 
 */
@@ -148,6 +228,7 @@ Renormalize a survey's results
 
 */
 const renormalizeSurvey = async (surveySlug) => {
+  const fileName = `${surveySlug}_normalization`;
   const limit = 99999;
   // const survey = getSurveyBySlug(surveySlug);
   const selector = { surveySlug };
@@ -170,11 +251,11 @@ const renormalizeSurvey = async (surveySlug) => {
   const tickInterval = Math.round(count / 200);
 
   await logToFile(
-    'normalization.csv',
+    `${fileName}.txt`,
     'id, fieldName, value, matchTags, id, pattern, rules, match \n',
     { mode: 'overwrite' }
   );
-  await logToFile('normalization.txt', '', { mode: 'overwrite' });
+  await logToFile(`${fileName}.txt`, '', { mode: 'overwrite' });
   await logToFile('normalization_errors.txt', '', { mode: 'overwrite' });
   console.log(
     `// Renormalizing survey ${surveySlug}… Found ${count} responses to renormalize. (${startAt})`
@@ -188,6 +269,7 @@ const renormalizeSurvey = async (surveySlug) => {
         document: response,
         entities,
         log: true,
+        fileName,
       });
       progress++;
       if (progress % tickInterval === 0) {
@@ -223,31 +305,47 @@ export const renormalizeCSS2020 = async () => {
   await renormalizeSurvey('css2020');
 };
 
+export const renormalizeJS2019 = async () => {
+  await renormalizeSurvey('js2019');
+};
+
 /*
 
 Log all "currently missing features from CSS" answers to file
 
 */
-export const logMissingFeatures = async () => {
+export const logField = async (fieldName, surveySlug) => {
   let results = Responses.find(
     {
-      surveySlug: 'css2020',
-      css2020__opinions_other__currently_missing_from_css__others: {
+      surveySlug,
+      [fieldName]: {
         $exists: 1,
       },
     },
     {
       fields: {
-        css2020__opinions_other__currently_missing_from_css__others: 1,
+        [fieldName]: 1,
       },
     }
   ).fetch();
-  results = results.map(
-    (r) => r.css2020__opinions_other__currently_missing_from_css__others
-  );
-  await logToFile('missing_from_css.json', results, { mode: 'overwrite' });
+  results = results.map((r) => r[fieldName]);
+  await logToFile(`${fieldName}.json`, results, { mode: 'overwrite' });
 };
 
+export const logMissingCSSFeatures = async () => {
+  await logField(
+    'css2020__opinions_other__currently_missing_from_css__others',
+    'css2020'
+  );
+};
+
+export const logEmail = async () => {
+  await logField('email', 'css2020');
+};
+
+export const logMissingJSFeatures = async () => {
+  await logField('js2019__opinions_others__missing_from_js__others', 'js2019');
+};
 /*
 
 Add a locale field to responses

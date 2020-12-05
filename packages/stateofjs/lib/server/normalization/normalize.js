@@ -31,9 +31,9 @@ const convertForCSV = (obj) => {
   }
 };
 
-const logRow = async (columns) => {
+const logRow = async (columns, fileName) => {
   await logToFile(
-    'normalization.csv',
+    `${fileName}.csv`,
     columns.map((c) => `"${convertForCSV(c)}"`).join(', ')
   );
 };
@@ -61,6 +61,7 @@ export const normalizeResponse = async ({
   document: response,
   entities,
   log = false,
+  fileName,
 }) => {
   try {
     const normResp = {};
@@ -119,7 +120,7 @@ export const normalizeResponse = async ({
 
             if (log) {
               await logToFile(
-                'normalization.txt',
+                `${fileName}.txt`,
                 `${
                   response._id
                 }, ${fieldName}, ${cleanValue}, ${matchTags.toString()}`
@@ -146,7 +147,7 @@ export const normalizeResponse = async ({
                     pattern,
                     rules,
                     match,
-                  ]);
+                  ], fileName);
                 });
               } else {
                 await logRow([
@@ -158,7 +159,7 @@ export const normalizeResponse = async ({
                   'n/a',
                   'n/a',
                   'n/a',
-                ]);
+                ], fileName);
               }
             }
 

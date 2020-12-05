@@ -23,6 +23,7 @@ textColor: rgb(224, 228, 228)
 linkColor: rgb(65, 199, 199)
 hoverColor: rgb(254, 106, 106)
 outline: 
+
   - id: syntax
     template: feature
     slug: features
@@ -30,6 +31,7 @@ outline:
       - id: destructuring
       - id: spread_operator
       - id: arrow_functions
+
   - id: language
     template: feature
     slug: features
@@ -43,63 +45,42 @@ outline:
     template: feature
     slug: features
     questions:
-      - title: Maps
-        id: maps
-      - title: Sets
-        id: sets
-      - title: Typed Arrays
-        id: typed_arrays
-      - title: Array.prototype.flat
-        id: array_prototype_flat
+      - id: maps
+      - id: sets
+      - id: typed_arrays
+      - id: array_prototype_flat
 
   - id: browser_apis
     template: feature
     slug: features
     questions:
-      - title: Service Workers
-        id: service_workers
-      - title: LocalStorage
-        id: local_storage
-      - title: i18n
-        id: i18n
-      - title: Web Components
-        id: web_components
-      - title: Web Audio API
-        id: web_audio
-      - title: WebGL
-        id: webgl
-      - title: Web Animations API
-        id: web_animations
-      - title: WebRTC
-        id: webrtc
-      - title: Web Speech API
-        id: web_speech
-      - title: WebVR
-        id: webvr
-      - title: Websocket
-        id: websocket
-      - title: Fetch API
-        id: fetch
+      - id: service_workers
+      - id: local_storage
+      - id: i18n
+      - id: web_components
+      - id: web_audio
+      - id: webgl
+      - id: web_animations
+      - id: webrtc
+      - id: web_speech
+      - id: webvr
+      - id: websocket
+      - id: fetch
 
   - id: other_features
     template: feature
     slug: features
     questions:
-      - title: Progressive Web Apps (PWA)
-        id: pwa
-      - title: WebAssembly (WASM)
-        id: wasm
+      - id: pwa
+      - id: wasm
 
   - id: patterns
     template: pattern
     slug: patterns
     questions:
-      - title: Object-Oriented Programming
-        id: object_oriented_programming
-      - title: Functional Programming
-        id: functional_programming
-      - title: Reactive Programming
-        id: reactive_programming
+      - id: object_oriented_programming
+      - id: functional_programming
+      - id: reactive_programming
 
   ### TOOLS ###
 
@@ -107,14 +88,14 @@ outline:
     template: tool
     slug: tools
     questions:
-      - TypeScript
-      - Reason
-      - Elm
-      - ClojureScript
-      - PureScript
+      - id: typescript
+      - id: reason
+      - id: elm
+      - id: clojurescript
+      - id: purescript
       - id: javascript_flavors
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
         suffix: others
       - id: javascript_flavors
@@ -126,15 +107,15 @@ outline:
     template: tool
     slug: tools
     questions:
-      - React
-      - Vue
-      - Angular
-      - Preact
-      - Ember
-      - Svelte
+      - id: react
+      - id: vue
+      - id: angular
+      - id: preact
+      - id: ember
+      - id: svelte
       - id: front_end_frameworks
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
         suffix: others
       - id: front_end_frameworks
@@ -146,11 +127,11 @@ outline:
     template: tool
     slug: tools
     questions:
-      - Redux
-      - Apollo
-      - GraphQL
-      - MobX
-      - Relay
+      - id: redux
+      - id: apollo
+      - id: graphql
+      - id: mobx
+      - id: relay
       - id: datalayer
         intlId: tools.other_tools
         template: text
@@ -165,24 +146,20 @@ outline:
     template: tool
     slug: tools
     questions:
-      - Express
-      - title: Next.js
-        id: nextjs
-      - Koa
-      - Meteor
-      - Sails
-      - title: FeathersJS
-        id: feathers
-      - title: Nuxt.js
-        id: nuxtjs
-      - title: Gatsby.js
-        id: gatsby
-      - id: datalayer
+      - id: express
+      - id: nextjs
+      - id: koa
+      - id: meteor
+      - id: sails
+      - id: feathers
+      - id: nuxtjs
+      - id: gatsby
+      - id: back_end_frameworks
         intlId: tools.other_tools
         template: text
         sectionSlug: tools_others
         suffix: others
-      - id: datalayer
+      - id: back_end_frameworks
         intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
@@ -191,14 +168,14 @@ outline:
     template: tool
     slug: tools
     questions:
-      - Jest
-      - Mocha
-      - Storybook
-      - Cypress
-      - Enzyme
-      - Ava
-      - Jasmine
-      - Puppeteer
+      - id: jest
+      - id: mocha
+      - id: storybook
+      - id: cypress
+      - id: enzyme
+      - id: ava
+      - id: jasmine
+      - id: puppeteer
       - id: testing
         intlId: tools.other_tools
         template: text
@@ -213,16 +190,13 @@ outline:
     template: tool
     slug: tools
     questions:
-      - Electron
-      - title: React Native
-        id: react_native
-      - title: Native Apps
-        id: native_apps
-      - Cordova
-      - Ionic
-      - title: NW.js
-        id: nwjs
-      - Expo
+      - id: electron
+      - id: react_native
+      - id: native_apps
+      - id: cordova
+      - id: ionic
+      - id: nwjs
+      - id: expo
       - id: mobile_desktop
         intlId: tools.other_tools
         template: text
@@ -238,130 +212,130 @@ outline:
   - id: other_tools
     slug: other_tools
     questions:
+
       - id: utilities
         template: multiple
-        options:
-          - Immer
-          - Lodash
-          - Underscore
-          - Moment
-          - Date Fns
-          - Ramda
-          - jQuery
-          - RxJS
+        options: 
+          - id: immer
+          - id: lodash
+          - id: underscore
+          - id: moment
+          - id: date_fns
+          - id: ramda
+          - id: jquery
+          - id: rxjs
       - id: utilities
-        suffix: others
-        template: text
+        template: others
+
       - id: text_editors
         template: multiple
         options:
-          - VS Code
-          - Sublime Text
-          - Atom
-          - Vim
-          - Emacs
-          - Webstorm
+          - id: visual_studio
+          - id: sublime_text
+          - id: atom
+          - id: vim
+          - id: emacs
+          - id: webstorm
       - id: text_editors
-        suffix: others
-        template: text
+        template: others
+
       - id: browsers
         template: multiple
         options:
-          - Edge
-          - Chrome
-          - Safari
-          - Firefox
+          - id: edge
+          - id: chrome
+          - id: safari
+          - id: firefox
       - id: browsers
-        suffix: others
-        template: text
+        template: others
+
       - id: build_tools
         template: multiple
         options:
-          - Webpack
-          - Parcel
-          - Gulp
-          - RollUp
-          - FuseBox
-          - Browserify
+          - webpack
+          - parcel
+          - gulp
+          - rollup
+          - fusebox
+          - browserify
       - id: build_tools
-        suffix: others
-        template: text
+        template: others
+        
       - id: non_js_languages
         template: multiple
         options:
-          - PHP
-          - Ruby
-          - Python
-          - Go
-          - Rust
-          - Java
-          - C/C++
-          - Objective-C
-          - Scala
-          - Swift
-          - C#
-          - .NET
-          - Haskell
-          - OCaml
-          - Dart
+          - id: php
+          - id: ruby
+          - id: python
+          - id: go
+          - id: rust
+          - id: java
+          - id: c_cplusplus
+          - id: objective_c
+          - id: scala
+          - id: swift
+          - id: csharp
+          - id: dotnet
+          - id: haskell
+          - id: ocaml
+          - id: dart
       - id: non_js_languages
-        suffix: others
-        template: text
+        template: others
 
   ### RESOURCES ###
 
   - id: resources
     slug: resources
     questions:
+
       - id: blogs_news_magazines
         template: multiple
         options:
-          - CSS Tricks
-          - Smashing Magazine
-          - CoDrops
-          - SitePoint
-          - David Walsh
-          - DailyJS
-          - Echo JS
-          - Front-End Front
-          - JavaScript Weekly
-          - Dev.to
-          - Best of JS
+          - id: css_tricks
+          - id: smashing_magazine
+          - id: codrops
+          - id: sitepoint
+          - id: david_walsh
+          - id: devto
+          - id: daily_js
+          - id: echo_js
+          - id: front_end_front
+          - id: js_weekly
+          - id: bestofjs
       - id: blogs_news_magazines
-        template: text
-        suffix: others
+        template: others
+
       - id: sites_courses
         template: multiple
         options:
-          - Stack Overflow
-          - MDN
-          - W3Schools
-          - FreeCodeCamp
-          - Codecademy
-          - LevelUp Tutorials
-          - Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)
-          - Pluralsight
-          - DesignCode
+          - id: stack_overflow
+          - id: mdn
+          - id: w3schools
+          - id: freecodecamp
+          - id: codecademy
+          - id: levelup
+          - id: wesbos
+          - id: pluralsight
+          - id: designcode
       - id: sites_courses
-        template: text
-        suffix: others
+        template: others
+
       - id: podcasts
         template: multiple
         options:
-          - Shop Talk Show
-          - The Changelog
-          - Syntax
-          - JS Party
-          - JavaScript Jabber
-          - Full Stack Radio
-          - Front End Happy Hour
-          - JAMstack Radio
-          - The Web Platform Podcast
-          - Modern Web
-          - CodePen Radio
+          - id: shop_talk_show
+          - id: changelog
+          - id: syntaxfm
+          - id: js_party
+          - id: javascript_jabber
+          - id: full_stack_radio
+          - id: front_end_happy_hour
+          - id: jamstack_radio
+          - id: web_platform_podcast
+          - id: modern_web
+          - id: codepen_radio
       - id: podcasts
-        template: text
-        suffix: others
+        template: others
 
   ### OPINIONS ###
 
@@ -381,14 +355,16 @@ outline:
       - id: js_ecosystem_changing_to_fast
         template: opinion
       - id: missing_from_js
-        template: longtext
+        sectionSlug: opinions_others
+        template: others_textarea
+        matchTags: [missing_features]
 
   ### DEMOGRAPHICS ###
 
   - id: user_info
-    description: Let's get to know the real you.
     slug: user_info
     questions:
+
       - id: years_of_experience
         template: single
         options:
@@ -398,20 +374,7 @@ outline:
           - id: range_5_10
           - id: range_10_20
           - id: range_more_than_20
-      - id: job_title
-        template: single
-        allowother: true
-        options:
-          - id: front_end_developer
-          - id: full_stack_developer
-          - id: back_end_developer
-          - id: web_developer
-      - id: javascript_proficiency
-        template: proficiency
-      - id: css_proficiency
-        template: proficiency
-      - id: backend_proficiency
-        template: proficiency
+
       - id: company_size
         template: single
         options:
@@ -423,6 +386,7 @@ outline:
           - id: range_50_100
           - id: range_100_1000
           - id: range_more_than_1000
+
       - id: yearly_salary
         template: single
         options:
@@ -433,8 +397,24 @@ outline:
           - id: range_50_100
           - id: range_100_200
           - id: range_more_than_200
+
+      - id: job_title
+        template: single
+        allowother: true
+        options:
+          - id: front_end_developer
+          - id: full_stack_developer
+          - id: back_end_developer
+          - id: web_developer
+
+      - id: css_proficiency
+        template: proficiency
+      - id: backend_proficiency
+        template: proficiency
+      
       - id: how_did_user_find_out_about_the_survey
         template: text
+
       - id: gender
         template: single
         allowother: true
@@ -443,5 +423,6 @@ outline:
           - id: male
           - id: non_binary
           - id: prefer_not_to_say
+          
       - id: country
         template: country
