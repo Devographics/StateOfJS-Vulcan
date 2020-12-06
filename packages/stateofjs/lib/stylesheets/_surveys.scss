@@ -109,7 +109,6 @@
   }
   a {
     @include font-regular;
-    white-space: nowrap;
   }
   .active {
     @include font-bold;
