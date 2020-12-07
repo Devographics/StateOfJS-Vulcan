@@ -107,6 +107,11 @@ export const normalizeResponse = async ({
     for (const s of survey.outline) {
       for (const field of s.questions) {
         const { fieldName, matchTags } = field;
+
+        if (!matchTags) {
+          throw new Error(`Field ${fieldName} should have matchTags defined`);
+        }
+
         const [initialSegment, ...restOfPath] = fieldName.split('__');
         const normPath = restOfPath.join('.');
         const value = response[fieldName];

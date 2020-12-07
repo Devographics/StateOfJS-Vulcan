@@ -53,7 +53,7 @@ export const js2019FieldMigrations = {
   frontendframeworks_preact: 'js2019__tools__preact__experience',
   frontendframeworks_react: 'js2019__tools__react__experience',
   frontendframeworks_svelte: 'js2019__tools__svelte__experience',
-  frontendframeworks_vue: 'js2019__tools__vue__experience',
+  frontendframeworks_vue: 'js2019__tools__vuejs__experience',
   frontendframeworks_otherfrontendframeworks:
     'js2019__tools_others__front_end_frameworks__others',
   frontendframeworks_overallhappiness:
@@ -64,8 +64,8 @@ export const js2019FieldMigrations = {
   datalayer_mobx: 'js2019__tools__mobx__experience',
   datalayer_redux: 'js2019__tools__redux__experience',
   datalayer_relay: 'js2019__tools__relay__experience',
-  datalayer_otherdatalayertools: 'js2019__tools_others__datalayer__others',
-  datalayer_overallhappiness: 'js2019__happiness__datalayer',
+  datalayer_otherdatalayertools: 'js2019__tools_others__data_layer__others',
+  datalayer_overallhappiness: 'js2019__happiness__data_layer',
 
   backendframeworks_express: 'js2019__tools__express__experience',
   backendframeworks_feathersjs: 'js2019__tools__feathers__experience',
