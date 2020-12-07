@@ -199,10 +199,10 @@ Normalize a string value and only keep the first result
 
 */
 export const normalizeSingle = async (value, allRules, matchCategories) => {
-  const tokens = await normalize(value, allRules, matchCategories, false);
-  // put longer tokens first as a proxy for relevancy
-  const sortedTokens = sortBy(tokens, (v) => v.id.length).reverse();
-  return sortedTokens[0];
+    const tokens = await normalize(value, allRules, matchCategories, false);
+    // put longer tokens first as a proxy for relevancy
+    const sortedTokens = sortBy(tokens, (v) => v.id && v.id.length).reverse();
+    return sortedTokens[0];
 };
 
 /*
@@ -212,39 +212,39 @@ three different fields (source field, referrer field, 'how did you hear' field)
 
 */
 export const normalizeSource = async (normResp, allRules, survey) => {
+  const tags = [
+    'sites',
+    'podcasts',
+    'youtube',
+    'socialmedia',
+    'newsletters',
+    'people',
+    'sources',
+  ];
+
+  // add a special rule for emails to normalize "email" sources into current survey id
+  const allRulesWithEmail = [
+    ...allRules,
+    {
+      id: survey.normalizationId,
+      pattern: /e( |-)*mail/i,
+      tags: ['sources'],
+    },
+    {
+      id: survey.normalizationId,
+      pattern: /mail.google.com/i,
+      tags: ['sources'],
+    },
+  ];
+
+  const rawSource = get(normResp, 'user_info.sourcetag');
+  const rawFindOut = get(
+    normResp,
+    'user_info.how_did_user_find_out_about_the_survey'
+  );
+  const rawRef = get(normResp, 'user_info.referrer');
+
   try {
-    const tags = [
-      'sites',
-      'podcasts',
-      'youtube',
-      'socialmedia',
-      'newsletters',
-      'people',
-      'sources',
-    ];
-
-    // add a special rule for emails to normalize "email" sources into current survey id
-    const allRulesWithEmail = [
-      ...allRules,
-      {
-        id: survey.normalizationId,
-        pattern: /e( |-)*mail/i,
-        tags: ['sources'],
-      },
-      {
-        id: survey.normalizationId,
-        pattern: /mail.google.com/i,
-        tags: ['sources'],
-      },
-    ];
-
-    const rawSource = get(normResp, 'user_info.sourcetag');
-    const rawFindOut = get(
-      normResp,
-      'user_info.how_did_user_find_out_about_the_survey'
-    );
-    const rawRef = get(normResp, 'user_info.referrer');
-
     const normSource =
       rawSource && (await normalizeSingle(rawSource, allRules, tags));
     const normFindOut =
@@ -263,8 +263,10 @@ export const normalizeSource = async (normResp, allRules, survey) => {
       return;
     }
   } catch (error) {
-    console.log('// normalizeSource error');
-    console.log(error);
+    console.log(
+      `// normaliseSource error for response ${normResp.responseId} with values ${rawSource}, ${rawFindOut}, ${rawRef}`
+    );
+    throw new Error(error);
   }
 };
 
@@ -326,4 +328,3 @@ export const logAllRules = async () => {
     mode: 'overwrite',
   });
 };
-

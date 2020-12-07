@@ -43,11 +43,9 @@ const fieldsToCopy = [
   ['surveySlug'],
   ['createdAt'],
   ['updatedAt'],
-  ['year'],
   ['completion'],
   ['userId'],
   ['isFinished'],
-  ['context', 'survey'],
   ['knowledgeScore', 'user_info.knowledge_score'],
   ['common__user_info__device', 'user_info.device'],
   ['common__user_info__browser', 'user_info.browser'],
@@ -81,13 +79,17 @@ export const normalizeResponse = async ({
     });
     normResp.responseId = response._id;
     normResp.generatedAt = new Date();
+    normResp.survey = survey.context;
+    normResp.year = survey.year;
 
     /*
   
     2. Generate email hash
     
     */
-    set(normResp, 'user_info.hash', encrypt(response.email));
+    if (response.email) {
+      set(normResp, 'user_info.hash', encrypt(response.email));
+    }
 
     /*
   
@@ -107,11 +109,6 @@ export const normalizeResponse = async ({
     for (const s of survey.outline) {
       for (const field of s.questions) {
         const { fieldName, matchTags } = field;
-
-        if (!matchTags) {
-          throw new Error(`Field ${fieldName} should have matchTags defined`);
-        }
-
         const [initialSegment, ...restOfPath] = fieldName.split('__');
         const normPath = restOfPath.join('.');
         const value = response[fieldName];
@@ -120,6 +117,11 @@ export const normalizeResponse = async ({
 
         if (cleanValue) {
           if (last(restOfPath) === 'others') {
+
+            if (!matchTags) {
+              throw new Error(`Field ${fieldName} should have matchTags defined`);
+            }
+
             // A. "others" fields needing to be normalized
             set(normResp, `${normPath}.raw`, value);
 
@@ -237,10 +239,16 @@ export const normalizeResponse = async ({
     let result;
     if (response.normalizedResponseId) {
       // if a normalizedResponse for the current response already exists, update it
-      result = NormalizedResponses.update(
+      result = NormalizedResponses.upsert(
         { _id: response.normalizedResponseId },
         normResp
       );
+      if (result.insertedId) {
+        Responses.update(
+          { _id: response._id },
+          { $set: { normalizedResponseId: result.insertedId } }
+        );
+      }
     } else {
       // else, use upsert just for safety (to avoid creating duplicate normalized responses)
       result = NormalizedResponses.upsert(
