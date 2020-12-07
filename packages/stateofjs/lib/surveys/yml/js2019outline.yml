@@ -97,7 +97,7 @@ outline:
         intlId: tools.other_tools
         template: others
         sectionSlug: tools_others
-        suffix: others
+        matchTags: [libraries, other]
       - id: javascript_flavors
         intlId: tools.happiness
         sectionSlug: happiness
@@ -108,7 +108,7 @@ outline:
     slug: tools
     questions:
       - id: react
-      - id: vue
+      - id: vuejs
       - id: angular
       - id: preact
       - id: ember
@@ -117,7 +117,7 @@ outline:
         intlId: tools.other_tools
         template: others
         sectionSlug: tools_others
-        suffix: others
+        matchTags: [libraries, other]
       - id: front_end_frameworks
         intlId: tools.happiness
         template: happiness
@@ -134,9 +134,9 @@ outline:
       - id: relay
       - id: datalayer
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
+        matchTags: [libraries, other]
       - id: datalayer
         intlId: tools.happiness
         template: happiness
@@ -156,8 +156,9 @@ outline:
       - id: gatsby
       - id: back_end_frameworks
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
+        matchTags: [libraries, other]
         suffix: others
       - id: back_end_frameworks
         intlId: tools.happiness
@@ -178,9 +179,10 @@ outline:
       - id: puppeteer
       - id: testing
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
         suffix: others
+        matchTags: [libraries, other]
       - id: testing
         intlId: tools.happiness
         template: happiness
@@ -199,9 +201,10 @@ outline:
       - id: expo
       - id: mobile_desktop
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
         suffix: others
+        matchTags: [libraries, other]
       - id: mobile_desktop
         intlId: tools.happiness
         template: happiness
@@ -226,6 +229,7 @@ outline:
           - id: rxjs
       - id: utilities
         template: others
+        matchTags: [libraries]
 
       - id: text_editors
         template: multiple
@@ -238,6 +242,7 @@ outline:
           - id: webstorm
       - id: text_editors
         template: others
+        matchTags: [text_editors]
 
       - id: browsers
         template: multiple
@@ -248,6 +253,7 @@ outline:
           - id: firefox
       - id: browsers
         template: others
+        matchTags: [browsers]
 
       - id: build_tools
         template: multiple
@@ -260,6 +266,7 @@ outline:
           - browserify
       - id: build_tools
         template: others
+        matchTags: [libraries]
         
       - id: non_js_languages
         template: multiple
@@ -281,6 +288,7 @@ outline:
           - id: dart
       - id: non_js_languages
         template: others
+        matchTags: [languages]
 
   ### RESOURCES ###
 
@@ -304,6 +312,7 @@ outline:
           - id: bestofjs
       - id: blogs_news_magazines
         template: others
+        matchTags: [sites, newsletters, people, courses, youtube, socialmedia]
 
       - id: sites_courses
         template: multiple
@@ -318,7 +327,7 @@ outline:
           - id: pluralsight
           - id: designcode
       - id: sites_courses
-        template: others
+        matchTags: [sites, newsletters, people, courses, youtube, socialmedia]
 
       - id: podcasts
         template: multiple
@@ -336,6 +345,7 @@ outline:
           - id: codepen_radio
       - id: podcasts
         template: others
+        matchTags: [podcasts, people, sites]
 
   ### OPINIONS ###
 

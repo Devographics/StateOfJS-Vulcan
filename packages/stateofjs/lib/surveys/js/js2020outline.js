@@ -192,7 +192,7 @@ export default {
           "id": "react"
         },
         {
-          "id": "vue"
+          "id": "vuejs"
         },
         {
           "id": "angular"
@@ -230,7 +230,7 @@ export default {
       ]
     },
     {
-      "id": "datalayer",
+      "id": "data_layer",
       "template": "tool",
       "slug": "tools",
       "questions": [
@@ -566,7 +566,11 @@ export default {
         },
         {
           "id": "runtimes",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
           "id": "text_editors",
@@ -603,7 +607,10 @@ export default {
         },
         {
           "id": "text_editors",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "text_editors"
+          ]
         },
         {
           "id": "browsers",
@@ -664,7 +671,10 @@ export default {
         },
         {
           "id": "browsers",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "browsers"
+          ]
         },
         {
           "id": "non_js_languages",
@@ -722,7 +732,10 @@ export default {
         },
         {
           "id": "non_js_languages",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "languages"
+          ]
         }
       ]
     },
@@ -786,7 +799,15 @@ export default {
         },
         {
           "id": "blogs_news_magazines",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
+          ]
         },
         {
           "id": "sites_courses",
@@ -835,7 +856,15 @@ export default {
         },
         {
           "id": "sites_courses",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
+          ]
         },
         {
           "id": "podcasts",
@@ -920,7 +949,12 @@ export default {
         },
         {
           "id": "podcasts",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "podcasts",
+            "people",
+            "sites"
+          ]
         }
       ]
     },

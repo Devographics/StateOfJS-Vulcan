@@ -118,7 +118,7 @@ outline:
     slug: tools
     questions:
       - id: react
-      - id: vue
+      - id: vuejs
       # - id: angularjs
       - id: angular
       - id: preact
@@ -136,7 +136,7 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  - id: datalayer
+  - id: data_layer
     template: tool
     slug: tools
     questions:
@@ -343,6 +343,7 @@ outline:
             - id: hermes
       - id: runtimes
         template: others
+        matchTags: [libraries, other]
 
       # - id: package_registries
       #   template: multiple
@@ -368,6 +369,7 @@ outline:
           - id: notepad
       - id: text_editors
         template: others
+        matchTags: [text_editors]
 
       - id: browsers
         template: multiple
@@ -391,6 +393,7 @@ outline:
           - id: polypane
       - id: browsers
         template: others
+        matchTags: [browsers]
 
       - id: non_js_languages
         template: multiple
@@ -413,6 +416,7 @@ outline:
           - id: kotlin
       - id: non_js_languages
         template: others
+        matchTags: [languages]
 
   ### RESOURCES ###
 
@@ -441,6 +445,7 @@ outline:
           - id: medium
       - id: blogs_news_magazines
         template: others
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: sites_courses
         template: multiple
@@ -460,6 +465,7 @@ outline:
           - id: newline
       - id: sites_courses
         template: others
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: podcasts
         template: multiple
@@ -491,6 +497,7 @@ outline:
           - id: undefined_podcast
       - id: podcasts
         template: others
+        matchTags: [podcasts, people, sites]
 
   ### OPINIONS ###
 

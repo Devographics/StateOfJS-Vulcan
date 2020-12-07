@@ -169,7 +169,10 @@ export default {
           "intlId": "tools.other_tools",
           "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
           "id": "javascript_flavors",
@@ -188,7 +191,7 @@ export default {
           "id": "react"
         },
         {
-          "id": "vue"
+          "id": "vuejs"
         },
         {
           "id": "angular"
@@ -207,7 +210,10 @@ export default {
           "intlId": "tools.other_tools",
           "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
           "id": "front_end_frameworks",
@@ -240,9 +246,12 @@ export default {
         {
           "id": "datalayer",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
           "id": "datalayer",
@@ -284,8 +293,12 @@ export default {
         {
           "id": "back_end_frameworks",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
+          "matchTags": [
+            "libraries",
+            "other"
+          ],
           "suffix": "others"
         },
         {
@@ -328,9 +341,13 @@ export default {
         {
           "id": "testing",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "suffix": "others",
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
           "id": "testing",
@@ -369,9 +386,13 @@ export default {
         {
           "id": "mobile_desktop",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "suffix": "others",
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
           "id": "mobile_desktop",
@@ -417,7 +438,10 @@ export default {
         },
         {
           "id": "utilities",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "text_editors",
@@ -445,7 +469,10 @@ export default {
         },
         {
           "id": "text_editors",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "text_editors"
+          ]
         },
         {
           "id": "browsers",
@@ -467,7 +494,10 @@ export default {
         },
         {
           "id": "browsers",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "browsers"
+          ]
         },
         {
           "id": "build_tools",
@@ -483,7 +513,10 @@ export default {
         },
         {
           "id": "build_tools",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "non_js_languages",
@@ -538,7 +571,10 @@ export default {
         },
         {
           "id": "non_js_languages",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "languages"
+          ]
         }
       ]
     },
@@ -587,7 +623,15 @@ export default {
         },
         {
           "id": "blogs_news_magazines",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "sites",
+            "newsletters",
+            "people",
+            "courses",
+            "youtube",
+            "socialmedia"
+          ]
         },
         {
           "id": "sites_courses",
@@ -624,7 +668,14 @@ export default {
         },
         {
           "id": "sites_courses",
-          "template": "others"
+          "matchTags": [
+            "sites",
+            "newsletters",
+            "people",
+            "courses",
+            "youtube",
+            "socialmedia"
+          ]
         },
         {
           "id": "podcasts",
@@ -667,7 +718,12 @@ export default {
         },
         {
           "id": "podcasts",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "podcasts",
+            "people",
+            "sites"
+          ]
         }
       ]
     },
