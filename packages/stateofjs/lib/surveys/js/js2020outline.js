@@ -354,6 +354,9 @@ export default {
           "id": "webdriverio"
         },
         {
+          "id": "web-test-runner"
+        },
+        {
           "id": "testing",
           "intlId": "tools.other_tools",
           "template": "project",

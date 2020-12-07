@@ -5498,6 +5498,17 @@ export default [
      ]
   },
   {
+    "id": "web-test-runner",
+    "name": "Web Test Runner",
+    "npm": "@web/test-runner",
+    "github": "modernweb-dev/web",
+    "description": "Test runner for browser based testing and debugging",
+    "homepage": "https://modern-web.dev/docs/test-runner/overview/",
+    "aliases": [
+      "@web/test-runner"
+    ]
+  },
+  {
      "id": "morgan",
      "name": "Morgan",
      "npm": "morgan",
