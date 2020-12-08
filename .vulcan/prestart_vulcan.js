@@ -59,7 +59,7 @@ console.log("Vulcan requires Meteor but it's not installed. Trying to Install...
 //Check exist file settings and create if not exist
 if (!existsSync("settings.json")) {
   console.log(">  "+chalk.bold.yellow("Creating your own settings.json file...\n"));
-  if (!copySync("sample_settings.json","settings.json")) {
+  if (!copySync("settings-sample.json","settings.json")) {
     console.log(">  "+chalk.bold.red("Error Creating your own settings.json file...check files and permissions\n"));
     process.exit(-1);
   }
