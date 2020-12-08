@@ -425,10 +425,10 @@ export default {
           "id": "electron"
         },
         {
-          "id": "react_native"
+          "id": "reactnative"
         },
         {
-          "id": "native_apps"
+          "id": "nativeapps"
         },
         {
           "id": "cordova"
@@ -1232,7 +1232,10 @@ export default {
         },
         {
           "id": "industry_sector",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "industry_sectors"
+          ]
         },
         {
           "id": "country",

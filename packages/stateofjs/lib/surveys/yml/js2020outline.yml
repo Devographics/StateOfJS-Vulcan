@@ -279,8 +279,8 @@ outline:
     slug: tools
     questions:
       - id: electron
-      - id: react_native
-      - id: native_apps
+      - id: reactnative
+      - id: nativeapps
       - id: cordova
       - id: ionic
       - id: capacitor
@@ -633,6 +633,7 @@ outline:
           
       - id: industry_sector
         template: others
+        matchTags: [industry_sectors]
 
       - id: country
         template: country

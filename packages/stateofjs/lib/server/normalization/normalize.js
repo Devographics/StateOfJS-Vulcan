@@ -81,7 +81,7 @@ export const normalizeResponse = async ({
     normResp.generatedAt = new Date();
     normResp.survey = survey.context;
     normResp.year = survey.year;
-
+    
     /*
   
     2. Generate email hash
@@ -236,31 +236,16 @@ export const normalizeResponse = async ({
 
     // console.log(JSON.stringify(normResp, '', 2));
 
-    let result;
-    if (response.normalizedResponseId) {
-      // if a normalizedResponse for the current response already exists, update it
-      result = NormalizedResponses.upsert(
-        { _id: response.normalizedResponseId },
-        normResp
+    // update normalized response, or insert it if it doesn't exist
+    const result = NormalizedResponses.upsert(
+      { responseId: response._id },
+      normResp
+    );
+    if (result.insertedId) {
+      Responses.update(
+        { _id: response._id },
+        { $set: { normalizedResponseId: result.insertedId } }
       );
-      if (result.insertedId) {
-        Responses.update(
-          { _id: response._id },
-          { $set: { normalizedResponseId: result.insertedId } }
-        );
-      }
-    } else {
-      // else, use upsert just for safety (to avoid creating duplicate normalized responses)
-      result = NormalizedResponses.upsert(
-        { responseId: response._id },
-        normResp
-      );
-      if (result.insertedId) {
-        Responses.update(
-          { _id: response._id },
-          { $set: { normalizedResponseId: result.insertedId } }
-        );
-      }
     }
 
     // eslint-disable-next-line
