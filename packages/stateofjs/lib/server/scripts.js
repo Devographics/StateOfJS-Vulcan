@@ -5,38 +5,24 @@ import { normalizeResponse } from './normalization/normalize';
 import { getEntities } from './normalization/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 // import Users from 'meteor/vulcan:users';
-import { js2019FieldMigrations, normalizeJS2019Value } from './migrations';
+import {
+  js2019FieldMigrations,
+  normalizeJS2019Value,
+  otherValueNormalisations,
+} from './migrations';
 
 /*
 
 Migrations
 
 */
-export const renameFieldMigration = (collection, field1, field2) => {
-  const items = collection
-    .find({
-      [field1]: { $exists: true },
-      [field2]: { $exists: false },
-    })
-    .fetch();
+export const renameFieldMigration = async (collection, field1, field2) => {
+  const result = await collection
+    .rawCollection()
+    .updateMany({}, { $rename: { [field1]: field2 } });
 
-  if (items.length) {
-    // eslint-disable-next-line no-console
-    console.log(
-      `// Starting ${field1} -> ${field2} migration on ${items.length} documents…`
-    );
-    items.forEach((document) => {
-      // eslint-disable-next-line no-console
-      console.log(`Migrating document ${document._id}`);
-      collection.update(document._id, { $set: { [field2]: document[field1] } });
-    });
-    // eslint-disable-next-line no-console
-    console.log(
-      `// ${field1} -> ${field2} mutation done (${items.length} documents).`
-    );
-  } else {
-    console.log(`// Migration ${field1} -> ${field2}: no documents to migrate`);
-  }
+  // eslint-disable-next-line no-console
+  console.log(`// ${field1} -> ${field2} migration done `);
 };
 
 /*
@@ -60,13 +46,17 @@ export const migrateJS2019ResponsesFieldNames = async () => {
 
   const responses = Responses.find(
     { fieldNamesMigrated: { $exists: false }, surveySlug: 'js2019' },
-    { limit: 10000 }
+    { limit: 30000 }
   ).fetch();
 
   console.log(`// Migrating field names for ${responses.length} responses…`);
 
   responses.forEach(async (response, i) => {
-    const newResponse = { fieldNamesMigrated: true };
+    const newResponse = {
+      fieldNamesMigrated: true,
+      survey: 'state_of_js',
+      year: 2019,
+    };
 
     // convert field names & normalize values
     Object.keys(response).forEach((oldFieldName) => {
@@ -106,64 +96,10 @@ export const migrateJS2019ResponsesFieldNames = async () => {
 
 /*
 
-Add a normalizedResponseId field to JS2019 responses
-
-WIP
-
-*/
-export const assignJS2019NormalizedResponseId = async () => {
-  const limit = 3000;
-  const selector = {
-    surveySlug: 'js2019',
-    normalizedResponseId: { $exists: false },
-  };
-  const count = Responses.find(selector, { limit }).count();
-  let noNormRespCount = 0;
-
-  console.log(
-    `// Found ${count} responses with no normalizedResponseId field… (${new Date()})`
-  );
-
-  Responses.find(selector, { limit, sort: { createdAt: -1 } }).forEach(
-    (response) => {
-      const nrSelector = {
-        'user_info.email': response.email,
-        survey: 'js',
-        year: 2019,
-      };
-      const normResp = NormalizedResponses.findOne(nrSelector);
-      if (normResp) {
-        // console.log(
-        //   `// Found corresponding normalized response ${normResp._id} for response id ${response._id}`
-        // );
-        // NormalizedResponses.update(
-        //   { _id: normResp._id },
-        //   { $set: { responseId: response._id, surveySlug: 'js2019' } }
-        // );
-        // Responses.update(
-        //   { _id: response._id },
-        //   { $set: { normalizedResponseId: normResp._id } }
-        // );
-      } else {
-        noNormRespCount++;
-        // console.log(
-        //   `// Could not find corresponding normalized response for response id ${response._id}`
-        // );
-        // console.log(nrSelector)
-      }
-    }
-  );
-  console.log(
-    `-> Done assigning normalizedResponseId field. Also found ${noNormRespCount} reponses with no matching normalized response (${new Date()})`
-  );
-};
-
-/*
-
 In JS 2020 raw responses, migrate vue to vuejs and datalayer to data_layer
 
 */
-export const migrateVueAndDataLayerJS2020 = async () => {
+export const migrateJS2020ResponsesFieldNames = async () => {
   await renameFieldMigration(
     Responses,
     'js2020__tools__vue__experience',
@@ -171,13 +107,23 @@ export const migrateVueAndDataLayerJS2020 = async () => {
   );
   await renameFieldMigration(
     Responses,
-    'js2020__tools_others__datalayer__prenormalized',
-    'js2020__tools_others__data_layer__prenormalized'
+    'js2020__tools__react_native__experience',
+    'js2020__tools__reactnative__experience'
   );
   await renameFieldMigration(
     Responses,
-    'js2020__happiness__datalayer',
-    'js2020__happiness__data_layer'
+    'js2020__tools__native_apps__experience',
+    'js2020__tools__nativeapps__experience'
+  );
+  await renameFieldMigration(
+    Responses,
+    'js2020__tools_others__data_layer__prenormalized',
+    'js2020__tools_others__datalayer__prenormalized'
+  );
+  await renameFieldMigration(
+    Responses,
+    'js2020__happiness__data_layer',
+    'js2020__happiness__datalayer'
   );
 };
 
@@ -264,6 +210,10 @@ export const renormalizeCSS2020 = async () => {
   await renormalizeSurvey('css2020');
 };
 
+export const deleteJS2019NormalizedData = async () => {
+  await NormalizedResponses.remove({ survey: 'js', year: 2019});
+}
+
 export const renormalizeJS2019 = async () => {
   await renormalizeSurvey('js2019');
 };
@@ -308,4 +258,46 @@ export const logEmail = async () => {
 
 export const logMissingJSFeatures = async () => {
   await logField('js2019__opinions_others__missing_from_js__others', 'js2019');
+};
+
+export const logOtherSectors = async () => {
+  await logField('js2020__user_info__industry_sector__others', 'js2020');
+};
+
+/*
+
+Migrate all normalized data
+
+*/
+export const migrateAllNormalizedData = async () => {
+  console.log('// Migrating all normalized data…');
+
+  console.log(`// 1. Renaming 'other_tools' to 'tools_others'…`);
+  await renameFieldMigration(
+    NormalizedResponses,
+    'other_tools',
+    'tools_others'
+  );
+
+  console.log(`// 2. Updating survey field ('js' to 'state_of_js')…`);
+  const result = NormalizedResponses.update(
+    { survey: 'js' },
+    { $set: { survey: 'state_of_js' } },
+    { multi: true }
+  );
+  console.log(`-> Updated ${result} documents`)
+
+  console.log(`// 3. Renormalizing values…`);
+  Object.keys(otherValueNormalisations).forEach((fieldName) => {
+    console.log(`// ${fieldName}`);
+    const fieldValues = otherValueNormalisations[fieldName];
+    Object.keys(fieldValues).forEach((oldValue) => {
+      const newValue = otherValueNormalisations[fieldName][oldValue];
+      console.log(`// ${oldValue} to ${newValue}`);
+      const selector = { [fieldName]: oldValue };
+      const operation = { $set: { [fieldName]: newValue } };
+      const result = NormalizedResponses.update(selector, operation, { multi: true });
+      console.log(`-> Updated ${result} documents`)
+    });
+  });
 };

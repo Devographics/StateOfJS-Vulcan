@@ -1,3 +1,9 @@
+/*
+
+Raw Responses Migrations
+
+*/
+
 // null = "do nothing with this field"
 
 export const js2019FieldMigrations = {
@@ -94,9 +100,9 @@ export const js2019FieldMigrations = {
   mobiledesktop_electron: 'js2019__tools__electron__experience',
   mobiledesktop_expo: 'js2019__tools__expo__experience',
   mobiledesktop_ionic: 'js2019__tools__ionic__experience',
-  mobiledesktop_nativeapps: 'js2019__tools__native_apps__experience',
+  mobiledesktop_nativeapps: 'js2019__tools__nativeapps__experience',
   mobiledesktop_nwjs: 'js2019__tools__nwjs__experience',
-  mobiledesktop_reactnative: 'js2019__tools__react_native__experience',
+  mobiledesktop_reactnative: 'js2019__tools__reactnative__experience',
   mobiledesktop_othermobiledesktoptools:
     'js2019__tools_others__mobile_desktop__others',
   mobiledesktop_overallhappiness: 'js2019__happiness__mobile_desktop',
@@ -335,10 +341,50 @@ export const allValuesMigrations = {
   ...js2019ExperienceNormalizationValues,
 };
 
-export const normalizeJS2019Value = value => {
+export const normalizeJS2019Value = (value) => {
   if (allValuesMigrations[value]) {
     return allValuesMigrations[value];
   } else {
     return value;
   }
-}
+};
+
+/*
+
+Normalized Responses Migrations
+
+*/
+
+export const otherValueNormalisations = {
+  'user_info.yearly_salary': {
+    work_for_free: 'range_work_for_free',
+    '0_10': 'range_0_10',
+    '10_30': 'range_10_30',
+    '30_50': 'range_30_50',
+    '50_100': 'range_50_100',
+    '100_200': 'range_100_200',
+    more_than_200: 'range_more_than_200',
+  },
+  'user_info.gender': {
+    'non-binary/ third gender': 'non_binary',
+    'prefer not to say': 'prefer_not_to_say',
+  },
+  'user_info.company_size': {
+    '1': 'range_1',
+    '1_5': 'range_1_5',
+    '5_10': 'range_5_10',
+    '10_20': 'range_10_20',
+    '20_50': 'range_20_50',
+    '50_100': 'range_50_100',
+    '100_1000': 'range_100_1000',
+    'more_than_1000': 'range_more_than_1000',
+  },
+  'user_info.years_of_experience': {
+    'less_than_1': 'range_less_than_1',
+    '1_2': 'range_1_2',
+    '2_5': 'range_2_5',
+    '5_10': 'range_5_10',
+    '10_20': 'range_10_20',
+    'more_than_20': 'range_more_than_20',
+  }
+};
