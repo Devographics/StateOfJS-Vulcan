@@ -230,7 +230,7 @@ export default {
       ]
     },
     {
-      "id": "data_layer",
+      "id": "datalayer",
       "template": "tool",
       "slug": "tools",
       "questions": [

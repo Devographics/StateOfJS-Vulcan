@@ -59,15 +59,19 @@ export default {
       "slug": "features",
       "questions": [
         {
+          "title": "Maps",
           "id": "maps"
         },
         {
+          "title": "Sets",
           "id": "sets"
         },
         {
+          "title": "Typed Arrays",
           "id": "typed_arrays"
         },
         {
+          "title": "Array.prototype.flat",
           "id": "array_prototype_flat"
         }
       ]
@@ -78,39 +82,51 @@ export default {
       "slug": "features",
       "questions": [
         {
+          "title": "Service Workers",
           "id": "service_workers"
         },
         {
+          "title": "LocalStorage",
           "id": "local_storage"
         },
         {
+          "title": "i18n",
           "id": "i18n"
         },
         {
+          "title": "Web Components",
           "id": "web_components"
         },
         {
+          "title": "Web Audio API",
           "id": "web_audio"
         },
         {
+          "title": "WebGL",
           "id": "webgl"
         },
         {
+          "title": "Web Animations API",
           "id": "web_animations"
         },
         {
+          "title": "WebRTC",
           "id": "webrtc"
         },
         {
+          "title": "Web Speech API",
           "id": "web_speech"
         },
         {
+          "title": "WebVR",
           "id": "webvr"
         },
         {
+          "title": "Websocket",
           "id": "websocket"
         },
         {
+          "title": "Fetch API",
           "id": "fetch"
         }
       ]
@@ -121,9 +137,11 @@ export default {
       "slug": "features",
       "questions": [
         {
+          "title": "Progressive Web Apps (PWA)",
           "id": "pwa"
         },
         {
+          "title": "WebAssembly (WASM)",
           "id": "wasm"
         }
       ]
@@ -134,12 +152,15 @@ export default {
       "slug": "patterns",
       "questions": [
         {
+          "title": "Object-Oriented Programming",
           "id": "object_oriented_programming"
         },
         {
+          "title": "Functional Programming",
           "id": "functional_programming"
         },
         {
+          "title": "Reactive Programming",
           "id": "reactive_programming"
         }
       ]
@@ -149,30 +170,17 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        {
-          "id": "typescript"
-        },
-        {
-          "id": "reason"
-        },
-        {
-          "id": "elm"
-        },
-        {
-          "id": "clojurescript"
-        },
-        {
-          "id": "purescript"
-        },
+        "TypeScript",
+        "Reason",
+        "Elm",
+        "ClojureScript",
+        "PureScript",
         {
           "id": "javascript_flavors",
           "intlId": "tools.other_tools",
-          "template": "others",
+          "template": "text",
           "sectionSlug": "tools_others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
+          "suffix": "others"
         },
         {
           "id": "javascript_flavors",
@@ -187,33 +195,18 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        {
-          "id": "react"
-        },
-        {
-          "id": "vuejs"
-        },
-        {
-          "id": "angular"
-        },
-        {
-          "id": "preact"
-        },
-        {
-          "id": "ember"
-        },
-        {
-          "id": "svelte"
-        },
+        "React",
+        "Vue",
+        "Angular",
+        "Preact",
+        "Ember",
+        "Svelte",
         {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
-          "template": "others",
+          "template": "text",
           "sectionSlug": "tools_others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
+          "suffix": "others"
         },
         {
           "id": "front_end_frameworks",
@@ -228,30 +221,17 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        {
-          "id": "redux"
-        },
-        {
-          "id": "apollo"
-        },
-        {
-          "id": "graphql"
-        },
-        {
-          "id": "mobx"
-        },
-        {
-          "id": "relay"
-        },
+        "Redux",
+        "Apollo",
+        "GraphQL",
+        "MobX",
+        "Relay",
         {
           "id": "datalayer",
           "intlId": "tools.other_tools",
-          "template": "others",
+          "template": "text",
           "sectionSlug": "tools_others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
+          "suffix": "others"
         },
         {
           "id": "datalayer",
@@ -266,43 +246,35 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
+        "Express",
         {
-          "id": "express"
-        },
-        {
+          "title": "Next.js",
           "id": "nextjs"
         },
+        "Koa",
+        "Meteor",
+        "Sails",
         {
-          "id": "koa"
-        },
-        {
-          "id": "meteor"
-        },
-        {
-          "id": "sails"
-        },
-        {
+          "title": "FeathersJS",
           "id": "feathers"
         },
         {
+          "title": "Nuxt.js",
           "id": "nuxtjs"
         },
         {
+          "title": "Gatsby.js",
           "id": "gatsby"
         },
         {
-          "id": "back_end_frameworks",
+          "id": "datalayer",
           "intlId": "tools.other_tools",
-          "template": "others",
+          "template": "text",
           "sectionSlug": "tools_others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ],
           "suffix": "others"
         },
         {
-          "id": "back_end_frameworks",
+          "id": "datalayer",
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
@@ -314,40 +286,20 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
-        {
-          "id": "jest"
-        },
-        {
-          "id": "mocha"
-        },
-        {
-          "id": "storybook"
-        },
-        {
-          "id": "cypress"
-        },
-        {
-          "id": "enzyme"
-        },
-        {
-          "id": "ava"
-        },
-        {
-          "id": "jasmine"
-        },
-        {
-          "id": "puppeteer"
-        },
+        "Jest",
+        "Mocha",
+        "Storybook",
+        "Cypress",
+        "Enzyme",
+        "Ava",
+        "Jasmine",
+        "Puppeteer",
         {
           "id": "testing",
           "intlId": "tools.other_tools",
-          "template": "others",
+          "template": "text",
           "sectionSlug": "tools_others",
-          "suffix": "others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
+          "suffix": "others"
         },
         {
           "id": "testing",
@@ -362,37 +314,28 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
+        "Electron",
         {
-          "id": "electron"
+          "title": "React Native",
+          "id": "react_native"
         },
         {
-          "id": "reactnative"
+          "title": "Native Apps",
+          "id": "native_apps"
         },
+        "Cordova",
+        "Ionic",
         {
-          "id": "nativeapps"
-        },
-        {
-          "id": "cordova"
-        },
-        {
-          "id": "ionic"
-        },
-        {
+          "title": "NW.js",
           "id": "nwjs"
         },
-        {
-          "id": "expo"
-        },
+        "Expo",
         {
           "id": "mobile_desktop",
           "intlId": "tools.other_tools",
-          "template": "others",
+          "template": "text",
           "sectionSlug": "tools_others",
-          "suffix": "others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
+          "suffix": "others"
         },
         {
           "id": "mobile_desktop",
@@ -410,171 +353,95 @@ export default {
           "id": "utilities",
           "template": "multiple",
           "options": [
-            {
-              "id": "immer"
-            },
-            {
-              "id": "lodash"
-            },
-            {
-              "id": "underscore"
-            },
-            {
-              "id": "moment"
-            },
-            {
-              "id": "date_fns"
-            },
-            {
-              "id": "ramda"
-            },
-            {
-              "id": "jquery"
-            },
-            {
-              "id": "rxjs"
-            }
+            "Immer",
+            "Lodash",
+            "Underscore",
+            "Moment",
+            "Date Fns",
+            "Ramda",
+            "jQuery",
+            "RxJS"
           ]
         },
         {
           "id": "utilities",
-          "template": "others",
-          "matchTags": [
-            "libraries"
-          ]
+          "suffix": "others",
+          "template": "text"
         },
         {
           "id": "text_editors",
           "template": "multiple",
           "options": [
-            {
-              "id": "visual_studio"
-            },
-            {
-              "id": "sublime_text"
-            },
-            {
-              "id": "atom"
-            },
-            {
-              "id": "vim"
-            },
-            {
-              "id": "emacs"
-            },
-            {
-              "id": "webstorm"
-            }
+            "VS Code",
+            "Sublime Text",
+            "Atom",
+            "Vim",
+            "Emacs",
+            "Webstorm"
           ]
         },
         {
           "id": "text_editors",
-          "template": "others",
-          "matchTags": [
-            "text_editors"
-          ]
+          "suffix": "others",
+          "template": "text"
         },
         {
           "id": "browsers",
           "template": "multiple",
           "options": [
-            {
-              "id": "edge"
-            },
-            {
-              "id": "chrome"
-            },
-            {
-              "id": "safari"
-            },
-            {
-              "id": "firefox"
-            }
+            "Edge",
+            "Chrome",
+            "Safari",
+            "Firefox"
           ]
         },
         {
           "id": "browsers",
-          "template": "others",
-          "matchTags": [
-            "browsers"
-          ]
+          "suffix": "others",
+          "template": "text"
         },
         {
           "id": "build_tools",
           "template": "multiple",
           "options": [
-            "webpack",
-            "parcel",
-            "gulp",
-            "rollup",
-            "fusebox",
-            "browserify"
+            "Webpack",
+            "Parcel",
+            "Gulp",
+            "RollUp",
+            "FuseBox",
+            "Browserify"
           ]
         },
         {
           "id": "build_tools",
-          "template": "others",
-          "matchTags": [
-            "libraries"
-          ]
+          "suffix": "others",
+          "template": "text"
         },
         {
           "id": "non_js_languages",
           "template": "multiple",
           "options": [
-            {
-              "id": "php"
-            },
-            {
-              "id": "ruby"
-            },
-            {
-              "id": "python"
-            },
-            {
-              "id": "go"
-            },
-            {
-              "id": "rust"
-            },
-            {
-              "id": "java"
-            },
-            {
-              "id": "c_cplusplus"
-            },
-            {
-              "id": "objective_c"
-            },
-            {
-              "id": "scala"
-            },
-            {
-              "id": "swift"
-            },
-            {
-              "id": "csharp"
-            },
-            {
-              "id": "dotnet"
-            },
-            {
-              "id": "haskell"
-            },
-            {
-              "id": "ocaml"
-            },
-            {
-              "id": "dart"
-            }
+            "PHP",
+            "Ruby",
+            "Python",
+            "Go",
+            "Rust",
+            "Java",
+            "C/C++",
+            "Objective-C",
+            "Scala",
+            "Swift",
+            "C#",
+            ".NET",
+            "Haskell",
+            "OCaml",
+            "Dart"
           ]
         },
         {
           "id": "non_js_languages",
-          "template": "others",
-          "matchTags": [
-            "languages"
-          ]
+          "suffix": "others",
+          "template": "text"
         }
       ]
     },
@@ -586,144 +453,65 @@ export default {
           "id": "blogs_news_magazines",
           "template": "multiple",
           "options": [
-            {
-              "id": "css_tricks"
-            },
-            {
-              "id": "smashing_magazine"
-            },
-            {
-              "id": "codrops"
-            },
-            {
-              "id": "sitepoint"
-            },
-            {
-              "id": "david_walsh"
-            },
-            {
-              "id": "devto"
-            },
-            {
-              "id": "daily_js"
-            },
-            {
-              "id": "echo_js"
-            },
-            {
-              "id": "front_end_front"
-            },
-            {
-              "id": "js_weekly"
-            },
-            {
-              "id": "bestofjs"
-            }
+            "CSS Tricks",
+            "Smashing Magazine",
+            "CoDrops",
+            "SitePoint",
+            "David Walsh",
+            "DailyJS",
+            "Echo JS",
+            "Front-End Front",
+            "JavaScript Weekly",
+            "Dev.to",
+            "Best of JS"
           ]
         },
         {
           "id": "blogs_news_magazines",
-          "template": "others",
-          "matchTags": [
-            "sites",
-            "newsletters",
-            "people",
-            "courses",
-            "youtube",
-            "socialmedia"
-          ]
+          "template": "text",
+          "suffix": "others"
         },
         {
           "id": "sites_courses",
           "template": "multiple",
           "options": [
-            {
-              "id": "stack_overflow"
-            },
-            {
-              "id": "mdn"
-            },
-            {
-              "id": "w3schools"
-            },
-            {
-              "id": "freecodecamp"
-            },
-            {
-              "id": "codecademy"
-            },
-            {
-              "id": "levelup"
-            },
-            {
-              "id": "wesbos"
-            },
-            {
-              "id": "pluralsight"
-            },
-            {
-              "id": "designcode"
-            }
+            "Stack Overflow",
+            "MDN",
+            "W3Schools",
+            "FreeCodeCamp",
+            "Codecademy",
+            "LevelUp Tutorials",
+            "Wes Bos Courses (CSSGrid.io, Flexbox.io, etc.)",
+            "Pluralsight",
+            "DesignCode"
           ]
         },
         {
           "id": "sites_courses",
-          "matchTags": [
-            "sites",
-            "newsletters",
-            "people",
-            "courses",
-            "youtube",
-            "socialmedia"
-          ]
+          "template": "text",
+          "suffix": "others"
         },
         {
           "id": "podcasts",
           "template": "multiple",
           "options": [
-            {
-              "id": "shop_talk_show"
-            },
-            {
-              "id": "changelog"
-            },
-            {
-              "id": "syntaxfm"
-            },
-            {
-              "id": "js_party"
-            },
-            {
-              "id": "javascript_jabber"
-            },
-            {
-              "id": "full_stack_radio"
-            },
-            {
-              "id": "front_end_happy_hour"
-            },
-            {
-              "id": "jamstack_radio"
-            },
-            {
-              "id": "web_platform_podcast"
-            },
-            {
-              "id": "modern_web"
-            },
-            {
-              "id": "codepen_radio"
-            }
+            "Shop Talk Show",
+            "The Changelog",
+            "Syntax",
+            "JS Party",
+            "JavaScript Jabber",
+            "Full Stack Radio",
+            "Front End Happy Hour",
+            "JAMstack Radio",
+            "The Web Platform Podcast",
+            "Modern Web",
+            "CodePen Radio"
           ]
         },
         {
           "id": "podcasts",
-          "template": "others",
-          "matchTags": [
-            "podcasts",
-            "people",
-            "sites"
-          ]
+          "template": "text",
+          "suffix": "others"
         }
       ]
     },
@@ -757,16 +545,13 @@ export default {
         },
         {
           "id": "missing_from_js",
-          "sectionSlug": "opinions_others",
-          "template": "others_textarea",
-          "matchTags": [
-            "missing_features"
-          ]
+          "template": "longtext"
         }
       ]
     },
     {
       "id": "user_info",
+      "description": "Let's get to know the real you.",
       "slug": "user_info",
       "questions": [
         {
@@ -792,6 +577,37 @@ export default {
               "id": "range_more_than_20"
             }
           ]
+        },
+        {
+          "id": "job_title",
+          "template": "single",
+          "allowother": true,
+          "options": [
+            {
+              "id": "front_end_developer"
+            },
+            {
+              "id": "full_stack_developer"
+            },
+            {
+              "id": "back_end_developer"
+            },
+            {
+              "id": "web_developer"
+            }
+          ]
+        },
+        {
+          "id": "javascript_proficiency",
+          "template": "proficiency"
+        },
+        {
+          "id": "css_proficiency",
+          "template": "proficiency"
+        },
+        {
+          "id": "backend_proficiency",
+          "template": "proficiency"
         },
         {
           "id": "company_size",
@@ -849,33 +665,6 @@ export default {
               "id": "range_more_than_200"
             }
           ]
-        },
-        {
-          "id": "job_title",
-          "template": "single",
-          "allowother": true,
-          "options": [
-            {
-              "id": "front_end_developer"
-            },
-            {
-              "id": "full_stack_developer"
-            },
-            {
-              "id": "back_end_developer"
-            },
-            {
-              "id": "web_developer"
-            }
-          ]
-        },
-        {
-          "id": "css_proficiency",
-          "template": "proficiency"
-        },
-        {
-          "id": "backend_proficiency",
-          "template": "proficiency"
         },
         {
           "id": "how_did_user_find_out_about_the_survey",

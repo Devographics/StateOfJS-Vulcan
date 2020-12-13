@@ -193,8 +193,8 @@ outline:
     slug: tools
     questions:
       - id: electron
-      - id: react_native
-      - id: native_apps
+      - id: reactnative
+      - id: nativeapps
       - id: cordova
       - id: ionic
       - id: nwjs
