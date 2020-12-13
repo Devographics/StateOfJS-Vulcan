@@ -37,6 +37,11 @@ export const locales = [
     translators: ['polettoweb'],
   },
   {
+    id: 'ja-JP',
+    label: '日本語',
+    translators: ['myakura', 'Spice-Z'],
+  },
+  {
     id: 'pt-PT',
     label: 'Português',
     translators: ['danisal'],
