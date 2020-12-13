@@ -44,7 +44,12 @@ export const locales = [
   {
     id: 'ru-RU',
     label: 'Русский',
-    translators: ['lex111', 'Omhet'],
+    translators: ['lex111', 'Omhet', 'shramkoweb'],
+  },
+  {
+    id: 'ua-UA',
+    label: 'Українська',
+    translators: ['shramkoweb'],
   },
   {
     id: 'sv-SE',
