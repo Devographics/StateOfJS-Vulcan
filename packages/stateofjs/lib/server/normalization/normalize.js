@@ -115,7 +115,7 @@ export const normalizeResponse = async ({
         // clean value to eliminate empty spaces, "none", "n/a", etc.
         const cleanValue = cleanupValue(value);
 
-        if (cleanValue) {
+        if (cleanValue !== null) {
           if (last(restOfPath) === 'others') {
 
             if (!matchTags) {

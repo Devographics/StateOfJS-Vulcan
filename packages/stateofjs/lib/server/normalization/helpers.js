@@ -54,7 +54,7 @@ export const ignoreValues = [
   '?',
 ];
 export const cleanupValue = (value) =>
-  ignoreValues.includes(value) ? null : value;
+  typeof value === 'undefined' || ignoreValues.includes(value) ? null : value;
 
 /*
 
@@ -199,10 +199,10 @@ Normalize a string value and only keep the first result
 
 */
 export const normalizeSingle = async (value, allRules, matchCategories) => {
-    const tokens = await normalize(value, allRules, matchCategories, false);
-    // put longer tokens first as a proxy for relevancy
-    const sortedTokens = sortBy(tokens, (v) => v.id && v.id.length).reverse();
-    return sortedTokens[0];
+  const tokens = await normalize(value, allRules, matchCategories, false);
+  // put longer tokens first as a proxy for relevancy
+  const sortedTokens = sortBy(tokens, (v) => v.id && v.id.length).reverse();
+  return sortedTokens[0];
 };
 
 /*
