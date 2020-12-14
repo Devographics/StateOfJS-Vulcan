@@ -22,6 +22,12 @@ export const locales = [
     translators: ['timbergus', 'ezakto'],
   },
   {
+    id: 'fa-IR',
+    label: 'فارسی',
+    rtl: true,
+    translators: ['fghamsary'],
+  },
+  {
     id: 'fr-FR',
     label: 'Français',
     translators: ['arnauddrain'],
@@ -96,11 +102,12 @@ export const locales = [
 // };
 
 locales.forEach((locale) => {
-  const { id, stringFiles, label } = locale;
+  const { id, stringFiles, label, rtl } = locale;
   registerLocale({
     id,
     label,
     dynamic: true,
+    rtl,
   });
 
   // if (id === 'en') {
