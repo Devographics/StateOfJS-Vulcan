@@ -11,7 +11,7 @@ export default {
   "shareUrl": "https://stateofjs.com",
   "name": "State of JavaScript",
   "year": 2020,
-  "status": 2,
+  "status": 3,
   "imageUrl": "stateofjs2020.png",
   "bgColor": "rgb(34, 36, 41)",
   "textColor": "rgb(224, 228, 228)",
