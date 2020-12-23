@@ -37,7 +37,7 @@
   margin: 0 auto;
   margin-bottom: $spacing * 3;
 }
-.surveys-noopen {
+.surveys-none {
   text-align: center;
   font-size: $medium-font;
 }
@@ -109,7 +109,6 @@
   }
   a {
     @include font-regular;
-    white-space: nowrap;
   }
   .active {
     @include font-bold;

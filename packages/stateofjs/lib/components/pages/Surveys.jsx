@@ -45,7 +45,7 @@ const SurveyGroup = ({ status }) => {
       {filteredSurveys.length > 0 ? (
         filteredSurveys.map((survey) => <SurveyItem key={survey.slug} survey={survey} />)
       ) : (
-        <div className={`surveys-no${status}`}>
+        <div className={`surveys-none surveys-no${status}`}>
           <Components.FormattedMessage id={`general.no_${status}_surveys`} />
         </div>
       )}

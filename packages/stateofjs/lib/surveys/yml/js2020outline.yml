@@ -17,7 +17,7 @@ shareUrl: https://stateofjs.com
 # resultsUrl: https://2019.stateofjs.com/
 name: 'State of JavaScript'
 year: 2020
-status: 2
+status: 3 # closed
 imageUrl: 'stateofjs2020.png'
 bgColor: rgb(34, 36, 41)
 textColor: rgb(224, 228, 228)

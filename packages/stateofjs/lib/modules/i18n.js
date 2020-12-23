@@ -22,6 +22,12 @@ export const locales = [
     translators: ['timbergus', 'ezakto'],
   },
   {
+    id: 'fa-IR',
+    label: 'فارسی',
+    rtl: true,
+    translators: ['fghamsary'],
+  },
+  {
     id: 'fr-FR',
     label: 'Français',
     translators: ['arnauddrain'],
@@ -37,6 +43,11 @@ export const locales = [
     translators: ['polettoweb'],
   },
   {
+    id: 'ja-JP',
+    label: '日本語',
+    translators: ['myakura', 'Spice-Z'],
+  },
+  {
     id: 'pt-PT',
     label: 'Português',
     translators: ['danisal'],
@@ -44,7 +55,12 @@ export const locales = [
   {
     id: 'ru-RU',
     label: 'Русский',
-    translators: ['lex111', 'Omhet'],
+    translators: ['lex111', 'Omhet', 'shramkoweb'],
+  },
+  {
+    id: 'ua-UA',
+    label: 'Українська',
+    translators: ['shramkoweb'],
   },
   {
     id: 'sv-SE',
@@ -86,11 +102,12 @@ export const locales = [
 // };
 
 locales.forEach((locale) => {
-  const { id, stringFiles, label } = locale;
+  const { id, stringFiles, label, rtl } = locale;
   registerLocale({
     id,
     label,
     dynamic: true,
+    rtl,
   });
 
   // if (id === 'en') {

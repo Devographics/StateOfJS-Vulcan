@@ -134,3 +134,16 @@
   background-color: $grey;
   color: $greyDarker;
 }
+
+.rbt-menu {
+  a {
+    &,
+    &:link,
+    &:visited {
+      color: $text-color-inverted;
+    }
+    &:hover{
+      background: $bg-color-lightest;
+    }
+  }
+}
