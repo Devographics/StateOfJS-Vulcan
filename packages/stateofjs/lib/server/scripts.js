@@ -2,7 +2,7 @@ import Responses from '../modules/responses/collection';
 import NormalizedResponses from '../modules/normalized_responses/collection';
 import surveys from '../surveys';
 import { normalizeResponse } from './normalization/normalize';
-import { getEntities } from './normalization/helpers';
+import { getEntities, encrypt } from './normalization/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 // import Users from 'meteor/vulcan:users';
 import {
@@ -211,8 +211,8 @@ export const renormalizeCSS2020 = async () => {
 };
 
 export const deleteJS2019NormalizedData = async () => {
-  await NormalizedResponses.remove({ survey: 'js', year: 2019});
-}
+  await NormalizedResponses.remove({ survey: 'js', year: 2019 });
+};
 
 export const renormalizeJS2019 = async () => {
   await renormalizeSurvey('js2019');
@@ -227,41 +227,70 @@ export const renormalizeJS2020 = async () => {
 Log all "currently missing features from CSS" answers to file
 
 */
-export const logField = async (fieldName, surveySlug) => {
-  let results = Responses.find(
-    {
-      surveySlug,
-      [fieldName]: {
-        $exists: 1,
-      },
+export const logField = async (collection, fieldName, surveySlug) => {
+  const selector = {
+    [fieldName]: {
+      $exists: 1,
     },
-    {
+  };
+  if (surveySlug) {
+    selector.surveySlug = surveySlug;
+  }
+  let results = collection
+    .find(selector, {
       fields: {
         [fieldName]: 1,
       },
-    }
-  ).fetch();
+    })
+    .fetch();
   results = results.map((r) => r[fieldName]);
   await logToFile(`${fieldName}.json`, results, { mode: 'overwrite' });
 };
 
 export const logMissingCSSFeatures = async () => {
   await logField(
+    Responses,
     'css2020__opinions_other__currently_missing_from_css__others',
     'css2020'
   );
 };
 
 export const logEmail = async () => {
-  await logField('email', 'css2020');
+  await logField(Responses, 'email', 'css2020');
 };
 
 export const logMissingJSFeatures = async () => {
-  await logField('js2019__opinions_others__missing_from_js__others', 'js2019');
+  await logField(
+    Responses,
+    'js2019__opinions_others__missing_from_js__others',
+    'js2019'
+  );
 };
 
 export const logOtherSectors = async () => {
-  await logField('js2020__user_info__industry_sector__others', 'js2020');
+  await logField(
+    Responses,
+    'js2020__user_info__industry_sector__others',
+    'js2020'
+  );
+};
+
+export const logEmailsAndIDs = async () => {
+  let results = NormalizedResponses.find(
+    {
+      'user_info.email': {
+        $exists: 1,
+      },
+    },
+    {
+      fields: {
+        _id: 1,
+        'user_info.email': 1,
+        'user_info.hash': 1,
+      },
+    }
+  ).fetch();
+  await logToFile('emails_ids.json', results, { mode: 'overwrite' });
 };
 
 /*
@@ -285,7 +314,7 @@ export const migrateAllNormalizedData = async () => {
     { $set: { survey: 'state_of_js' } },
     { multi: true }
   );
-  console.log(`-> Updated ${result} documents`)
+  console.log(`-> Updated ${result} documents`);
 
   console.log(`// 3. Renormalizing values…`);
   Object.keys(otherValueNormalisations).forEach((fieldName) => {
@@ -296,8 +325,33 @@ export const migrateAllNormalizedData = async () => {
       console.log(`// ${oldValue} to ${newValue}`);
       const selector = { [fieldName]: oldValue };
       const operation = { $set: { [fieldName]: newValue } };
-      const result = NormalizedResponses.update(selector, operation, { multi: true });
-      console.log(`-> Updated ${result} documents`)
+      const result = NormalizedResponses.update(selector, operation, {
+        multi: true,
+      });
+      console.log(`-> Updated ${result} documents`);
     });
   });
 };
+
+export const generateEmailHash = async () => {
+  const count = NormalizedResponses.find({
+    'user_info.email': { $exists: true },
+    'user_info.hash': { $exists: false },
+  }).count();
+  console.log(`// Found ${count} emails in normalized responses`);
+
+  NormalizedResponses.find({
+    'user_info.email': { $exists: true },
+    'user_info.hash': { $exists: false },
+  }).forEach((response, i) => {
+    if (i % 100 === 0) {
+      console.log(`// Generated ${i}/${count} email hashes…`);
+    }
+    const hash = encrypt(response.user_info.email);
+    NormalizedResponses.update(
+      { _id: response._id },
+      { $set: { 'user_info.hash': hash } }
+    );
+  });
+};
+

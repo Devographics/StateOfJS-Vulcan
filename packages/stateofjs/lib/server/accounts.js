@@ -1,3 +1,5 @@
+import { Accounts } from 'meteor/accounts-base';
+
 /*
 
 Accounts Config (server)

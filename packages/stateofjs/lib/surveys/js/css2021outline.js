@@ -1263,6 +1263,91 @@ export default {
           ]
         },
         {
+          "id": "github_username",
+          "template": "text"
+        },
+        {
+          "id": "industry_sector",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "ecommerce"
+            },
+            {
+              "id": "news_media"
+            },
+            {
+              "id": "healthcare"
+            },
+            {
+              "id": "finance"
+            },
+            {
+              "id": "programming_tools"
+            },
+            {
+              "id": "socialmedia"
+            },
+            {
+              "id": "marketing_tools"
+            },
+            {
+              "id": "education"
+            },
+            {
+              "id": "real_estate"
+            },
+            {
+              "id": "entertainment"
+            },
+            {
+              "id": "government"
+            },
+            {
+              "id": "consulting"
+            },
+            {
+              "id": "travel"
+            },
+            {
+              "id": "insurance"
+            },
+            {
+              "id": "logistics"
+            },
+            {
+              "id": "energy"
+            },
+            {
+              "id": "telecommunications"
+            },
+            {
+              "id": "student"
+            },
+            {
+              "id": "hospitality"
+            },
+            {
+              "id": "cyber_security"
+            },
+            {
+              "id": "construction"
+            },
+            {
+              "id": "automotive"
+            },
+            {
+              "id": "agriculture"
+            },
+            {
+              "id": "transport"
+            },
+            {
+              "id": "manufacturing"
+            }
+          ]
+        },
+        {
           "id": "country",
           "template": "country"
         }

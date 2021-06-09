@@ -617,6 +617,7 @@ outline:
           - id: male
           - id: non_binary
           - id: prefer_not_to_say
+
       - id: race_ethnicity
         template: multiple
         options:
