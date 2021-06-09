@@ -3,25 +3,40 @@
 
     "debug": false,
 
-    "title": "The 2020 State of JS and State of CSS Surveys",
-    "tagline":"Take the 2020 State of JS and State of CSS surveys",
+    "title": "The 2020 State of JavaScript Survey",
+    "tagline":"Take the State of JavaScript survey",
     "siteImage": "https://survey.stateofjs.com/stateofjs-social.png",
 
     "environment": "development",
     
     "faviconUrl": "/favicon.png",
 
-    "locale": "en-US"
+    "defaultLocaleId": "en-US",
+    "locale": "en-US",
 
+    "host": "lh",
+    "hosting": "Localhost",
+    "hostingLink": "http://localhost:5000/",
+    
+    "sentryXXX": {
+      "clientDSN": "foobar"
+    }
   },
 
-  "defaultEmail": "hello@example.com",
-  "mailUrl": "smtp://username:password@smtp.mailgun.org:587/",
+  "defaultEmail": "hello@stateofjs.com",
+  "mailUrlXXX": "smtp://foo:foobar@smtp.mailgun.org:587/",
 
-  "startupDisabled": [],
-  "startup": [],
+  "sentryXXX": {
+    "serverDSN": "foobar"
+  },
+
+  "translationAPIXXX": "http://localhost:4000/graphql",
 
   "translationAPI": "http://api.stateofjs.com/graphql",
 
-  "encriptionKey": "foobar"
+  "apiKeyXXX": "foobar",
+  
+  "encriptionKeyXXX": "foobar",
+
+  "disableAPICache": true
 }
