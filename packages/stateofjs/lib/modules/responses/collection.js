@@ -1,8 +1,6 @@
 import { createCollection } from 'meteor/vulcan:core';
-import Users from 'meteor/vulcan:users';
 import schema from './schema.js';
-import { statuses } from '../constants.js';
-import surveys from '../../surveys';
+import { canModifyResponse } from './helpers';
 
 export const Responses = createCollection({
   collectionName: 'Responses',
@@ -16,8 +14,7 @@ export const Responses = createCollection({
     canCreate: ['members'],
     // canUpdate: ['owners', 'admins'],
     canUpdate: ({ user, document: response }) => {
-      const survey = surveys.find(s => s.slug === response.surveySlug);
-      return Users.isAdmin(user) || user._id === response.userId && survey.status === statuses.open
+      return canModifyResponse(response, user);
     },
     canDelete: ['admins'],
   },

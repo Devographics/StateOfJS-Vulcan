@@ -10,10 +10,11 @@ export const Saves = createCollection({
 
   // queries: null,
 
-  // mutations: {
-  //   update: null,
-  //   delete: null
-  // },
+  mutations: {
+    update: null,
+    upsert: null,
+    delete: null
+  },
 
   permissions: {
     canRead: ['owners', 'admins'],

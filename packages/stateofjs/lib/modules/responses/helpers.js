@@ -8,6 +8,8 @@ import pick from 'lodash/pick';
 import pickBy from 'lodash/pickBy';
 import { getSurveyFromResponse } from '../surveys/helpers';
 import surveys from '../../surveys';
+import { statuses } from '../constants.js';
+import Users from 'meteor/vulcan:users';
 
 /*
 
@@ -379,4 +381,19 @@ export const getKnowledgeScore = (response) => {
     score: Math.round((known * 100) / total),
     unknownFields,
   };
+};
+
+export const canModifyResponse = (response, user) => {
+  const survey = surveys.find((s) => s.slug === response.surveySlug);
+  switch (survey.status) {
+    case statuses.preview:
+      // only admins can modify previews
+      return Users.isAdmin(user);
+    case statuses.open:
+      // admins can modify any open survey; users can modify their own surveys
+      return Users.isAdmin(user) || user._id === response.userId;
+    case statuses.closed:
+      // nobody can modify closed survey
+      return false;
+  }
 };

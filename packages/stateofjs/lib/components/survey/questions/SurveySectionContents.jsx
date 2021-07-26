@@ -9,6 +9,7 @@ import { Components, useCurrentUser, useCreate2 } from 'meteor/vulcan:core';
 import { getSurveyPath } from '../../../modules/surveys/helpers';
 import Saves from '../../../modules/saves/collection';
 import Users from 'meteor/vulcan:users';
+import { canModifyResponse } from '../../../modules/responses/helpers';
 
 const SurveySectionContents = ({
   survey,
@@ -59,7 +60,7 @@ const SurveySectionContents = ({
 
   const isLastSection = !nextSection;
 
-  const isDisabled = !isAdmin && (readOnly || survey.status !== statuses.open);
+  const isDisabled = !canModifyResponse(response, currentUser);
 
   return (
     <div className="section-questions">
