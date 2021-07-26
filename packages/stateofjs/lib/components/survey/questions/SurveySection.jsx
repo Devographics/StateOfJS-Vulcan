@@ -14,6 +14,7 @@ import surveys from '../../../surveys';
 import SurveyNav from './SurveyNav.jsx';
 import SurveySectionContents from './SurveySectionContents.jsx';
 import SurveyHeadTags from '../SurveyHeadTags';
+import SurveyMessage from '../SurveyMessage';
 
 const SurveySection = () => {
   let { responseId, sectionNumber = 1 } = useParams();
@@ -39,7 +40,7 @@ const SurveySection = () => {
       </div>
     );
   }
-  
+
   const survey = surveys.find((s) => s.slug === response.survey.slug);
   const surveyOutline = survey.outline;
   const sectionIndex = sectionNumber - 1;
@@ -54,18 +55,22 @@ const SurveySection = () => {
     nextSection,
     history,
   };
+  
   return (
-    <div className="survey-section">
-      <SurveyNav survey={response.survey} response={response} currentSectionNumber={sectionNumber} />
-      <div className="section-contents">
-        <SurveyHeadTags survey={survey} />
-        {loading ? (
-          <Components.Loading />
-        ) : !response ? (
-          <p>Could not find survey.</p>
-        ) : (
-          <SurveySectionContents survey={survey} response={response} {...sectionProps} />
-        )}
+    <div className="survey-section-wrapper">
+      <SurveyMessage survey={survey} />
+      <div className="survey-section">
+        <SurveyNav survey={response.survey} response={response} currentSectionNumber={sectionNumber} />
+        <div className="section-contents">
+          <SurveyHeadTags survey={survey} />
+          {loading ? (
+            <Components.Loading />
+          ) : !response ? (
+            <p>Could not find survey.</p>
+          ) : (
+            <SurveySectionContents survey={survey} response={response} {...sectionProps} />
+          )}
+        </div>
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ const schema = {
   userId: {
     type: String,
     optional: true,
-    canRead: ['admins'],
+    canRead: ['members'],
     relation: {
       fieldName: 'user',
       typeName: 'User',

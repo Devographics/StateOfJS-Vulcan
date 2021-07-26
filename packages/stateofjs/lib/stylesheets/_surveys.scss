@@ -215,9 +215,14 @@
 }
 
 .survey-message {
-  background: $redTransparent;
   padding: $spacing;
   margin-bottom: $spacing * 2;
+  &.survey-closed{
+    background: $redTransparent;
+  }
+  &.survey-preview{
+    background: $greenTransparent;
+  }
 }
 
 .translators {

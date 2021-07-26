@@ -16,7 +16,8 @@ registerFragment(/* GraphQL */ `
       displayName
       pagePath
     }
-
+    userId
+    
     survey {
       name
       year

@@ -22,7 +22,6 @@ const SurveySectionContents = ({
   readOnly,
 }) => {
   const { currentUser } = useCurrentUser();
-
   const isAdmin = Users.isAdmin(currentUser);
 
   const [startedAt, setStartedAt] = useState();
@@ -64,7 +63,7 @@ const SurveySectionContents = ({
 
   return (
     <div className="section-questions">
-      {survey.status === statuses.open && readOnly ? (
+      {/* {survey.status === statuses.open && readOnly ? (
         <div className="survey-message survey-readonly">
           <Components.FormattedMessage id="general.survey_read_only" />
           <Components.FormattedMessage
@@ -77,7 +76,7 @@ const SurveySectionContents = ({
         <div className="survey-message survey-closed">
           <Components.FormattedMessage id="general.survey_closed" />
         </div>
-      ) : null}
+      ) : null} */}
       <h2 className="section-title">
         <Components.FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
       </h2>

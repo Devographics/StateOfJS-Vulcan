@@ -387,8 +387,8 @@ export const canModifyResponse = (response, user) => {
   const survey = surveys.find((s) => s.slug === response.surveySlug);
   switch (survey.status) {
     case statuses.preview:
-      // only admins can modify previews
-      return Users.isAdmin(user);
+      // admins can modify any open survey; users can modify their own surveys
+      return Users.isAdmin(user) || user._id === response.userId;
     case statuses.open:
       // admins can modify any open survey; users can modify their own surveys
       return Users.isAdmin(user) || user._id === response.userId;
