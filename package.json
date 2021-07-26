@@ -1,6 +1,6 @@
 {
   "name": "Vulcan",
-  "version": "1.16.0",
+  "version": "1.16.3",
   "engines": {
     "npm": "^3.0"
   },
@@ -13,7 +13,7 @@
     "deploy": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy survey.stateofjs.com --settings settings-production.json",
     "deploy-cached": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy survey.stateofjs.com --settings settings-production.json --cache-build"
   },
-  "dependencies": {
+  "dependencies": { 
     "@apollo/client": "^3.2.1",
     "@apollo/react-hoc": "^4.0.0",
     "@babel/runtime": "^7.11.2",
