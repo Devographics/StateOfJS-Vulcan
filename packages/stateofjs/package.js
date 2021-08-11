@@ -4,7 +4,7 @@ Package.describe({
 
 Package.onUse(function (api) {
 
-  const version='1.16.0';
+  const version='1.16.6';
 
   api.use([
 
