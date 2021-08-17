@@ -62,8 +62,11 @@ const Layout = ({ children }) => {
         <EntitiesContext.Provider value={{ entities: get(data, 'entities') }}>
           <div className="wrapper" id="wrapper">
             <style dangerouslySetInnerHTML={{ __html: style }} />
+            <a href="#section-questions" className="skip">
+              <Components.FormattedMessage id="general.skip_to_content" />
+            </a>
             <Header />
-            <main className="main-contents">{children}</main>
+            <main className="main-contents" id="main-contents">{children}</main>
             <Footer />
           </div>
         </EntitiesContext.Provider>

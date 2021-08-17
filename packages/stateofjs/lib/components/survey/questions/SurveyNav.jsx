@@ -70,7 +70,7 @@ const SurveyNav = ({ survey, response }) => {
   }, [currentFocusIndex]);
 
   return (
-    <nav className={`section-nav ${shown ? 'section-nav-shown' : 'section-nav-hidden'}`}>
+    <nav className={`section-nav ${shown ? 'section-nav-shown' : 'section-nav-hidden'}`} aria-label={`${survey.name} ${survey.year}`}>
       <div className="section-nav-inner">
         <h2 className="section-nav-heading">
           <Link to={getSurveyPath({ survey, home: true })}>

@@ -58,13 +58,16 @@ const Navigation = () => {
   }
   return (
     <div className="nav-wrapper">
-      <Navbar collapseOnSelect expand="lg" variant="dark">
+      <Navbar collapseOnSelect expand="lg" variant="dark" aria-labelledby="visually-hidden">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+          <h2 className="visually-hidden" id="global-nav">
+            <Components.FormattedMessage id={'general.global_nav'} />
+          </h2>
           <Nav expand="lg">
-            {navItems.map((item, i) => (
-              <NavItem {...item} key={i} />
-            ))}
+            {navItems.map((item, i) => {
+              return <NavItem {...item} key={i} />
+            })}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
