@@ -17,7 +17,7 @@ export const convertYAMLDir = async dirPath => {
   for (const fileName of fileNames) {
     const yamlData = await fs.readFile(yamlPath + '/' + fileName, 'utf8');
 
-    const json = yaml.safeLoad(yamlData, 'utf8');
+    const json = yaml.load(yamlData, 'utf8');
     const jsonString = JSON.stringify(json, '', 2);
     const jsContents = `
 /* Generated automatically, do not modify */

@@ -16,7 +16,7 @@ shareUrl: https://stateofcss.com
 name: 'State of CSS'
 year: 2021
 status: 1
-imageUrl: 'stateofcss2020.png'
+imageUrl: 'stateofcss2021.png'
 bgColor: '#232840'
 textColor: '#9ac6c9'
 linkColor: '#f649a7'
@@ -31,12 +31,17 @@ outline:
       - id: flexbox
       - id: multi_column
       - id: writing_modes
-      - id: exclusions
+      # - id: exclusions
       - id: position_sticky
       - id: logical_properties
       - id: aspect_ratio
       - id: content_visibility
 
+      # 2021
+      - id: flexbox_gaps
+      - id: break_inside_before_after
+      - id: at_container # (@container)
+      
   - id: shapes_graphics
     template: feature
     slug: features
@@ -48,6 +53,10 @@ outline:
       - id: blend_modes
       - id: filter_effects
       - id: backdrop_filter
+
+      # 2021
+      - id: intrinsic_sizing #min-, max, and fit-content
+      - id: repeating_linear_gradient
 
   - id: interactions
     template: feature
@@ -74,6 +83,9 @@ outline:
       # - id: leading_trim
       # - id: direction
 
+      # 2021
+      - id: text_decoration_style
+
   - id: animations_transforms
     template: feature
     slug: features
@@ -90,23 +102,33 @@ outline:
       - id: prefers_reduced_motion
       - id: prefers_color_scheme
       - id: color_gamut
+
+      # 2021
+      - id: prefers_reduced_data
       # - prefers-reduced-data # not supported yet
       # - prefers-reduced-transparency # not supported yet
       # - prefers-contrast # not supported yet
       # - forced-colors # not supported yet
       # - inverted-colors # not supported yet
 
+
   - id: other_features
     template: feature
     slug: features
     questions:
       - id: variables
-      - id: feature_support_queries
+      - id: feature_support_queries # (@supports)
       - id: containment
       - id: will_change
       - id: calc
       - id: houdini
       - id: comparison_functions
+
+      # 2021
+      - id: scroll_margin_scroll_padding
+      - id: at_property #(@property)
+      - id: resize
+      - id: content_visibility
 
   - id: units_selectors
     slug: features_others
@@ -325,7 +347,7 @@ outline:
       # - Aphrodite # not actively maintained?
       - id: jss
       - id: styled_jsx
-      - id: radium
+      # - id: radium
       - id: emotion
       - id: css_modules
       - id: styled_system

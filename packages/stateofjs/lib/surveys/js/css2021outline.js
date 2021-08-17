@@ -11,7 +11,7 @@ export default {
   "name": "State of CSS",
   "year": 2021,
   "status": 1,
-  "imageUrl": "stateofcss2020.png",
+  "imageUrl": "stateofcss2021.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
   "linkColor": "#f649a7",
@@ -38,9 +38,6 @@ export default {
           "id": "writing_modes"
         },
         {
-          "id": "exclusions"
-        },
-        {
           "id": "position_sticky"
         },
         {
@@ -51,6 +48,15 @@ export default {
         },
         {
           "id": "content_visibility"
+        },
+        {
+          "id": "flexbox_gaps"
+        },
+        {
+          "id": "break_inside_before_after"
+        },
+        {
+          "id": "at_container"
         }
       ]
     },
@@ -79,6 +85,12 @@ export default {
         },
         {
           "id": "backdrop_filter"
+        },
+        {
+          "id": "intrinsic_sizing"
+        },
+        {
+          "id": "repeating_linear_gradient"
         }
       ]
     },
@@ -132,6 +144,9 @@ export default {
         },
         {
           "id": "line_clamp"
+        },
+        {
+          "id": "text_decoration_style"
         }
       ]
     },
@@ -167,6 +182,9 @@ export default {
         },
         {
           "id": "color_gamut"
+        },
+        {
+          "id": "prefers_reduced_data"
         }
       ]
     },
@@ -195,6 +213,18 @@ export default {
         },
         {
           "id": "comparison_functions"
+        },
+        {
+          "id": "scroll_margin_scroll_padding"
+        },
+        {
+          "id": "at_property"
+        },
+        {
+          "id": "resize"
+        },
+        {
+          "id": "content_visibility"
         }
       ]
     },
@@ -621,9 +651,6 @@ export default {
         },
         {
           "id": "styled_jsx"
-        },
-        {
-          "id": "radium"
         },
         {
           "id": "emotion"
