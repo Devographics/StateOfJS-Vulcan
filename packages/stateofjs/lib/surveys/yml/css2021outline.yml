@@ -603,16 +603,23 @@ outline:
       - id: how_did_user_find_out_about_the_survey
         template: text
       - id: gender
-        template: single
+        template: multiple
         allowother: true
         options:
           - id: female
           - id: male
           - id: non_binary
+          - id: third_gender
+          - id: two_spirit
+          - id: genderqueer
+          - id: genderfluid
+          - id: questioning
+          - id: not_listed
           - id: prefer_not_to_say
 
       - id: race_ethnicity
         template: multiple
+        allowother: true
         options:
           - id: biracial
           - id: black_african
@@ -622,8 +629,10 @@ outline:
           - id: multiracial
           - id: native_american_islander_australian
           - id: south_asian
+          - id: south_east_asian
           - id: white_european
-
+          - id: not_listed
+          - id: prefer_not_to_say
 
       - id: github_username
         template: text
