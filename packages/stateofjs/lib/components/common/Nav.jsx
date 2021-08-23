@@ -65,9 +65,9 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav expand="lg">
-            {navItems.map((item, i) => {
-              return <NavItem {...item} key={i} />
-            })}
+            {navItems.map((item, i) => (
+              <NavItem {...item} key={i} />
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

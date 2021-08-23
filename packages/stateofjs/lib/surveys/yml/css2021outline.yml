@@ -610,10 +610,6 @@ outline:
           - id: male
           - id: non_binary
           - id: third_gender
-          - id: two_spirit
-          - id: genderqueer
-          - id: genderfluid
-          - id: questioning
           - id: not_listed
           - id: prefer_not_to_say
 
