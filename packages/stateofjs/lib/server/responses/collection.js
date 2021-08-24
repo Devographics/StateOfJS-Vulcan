@@ -17,6 +17,7 @@ function duplicateCheck(validationErrors, { document, currentUser }) {
       properties: { responseId: existingResponse._id }
     });
   }
+
 }
 
 extendCollection(Responses, {

@@ -8,6 +8,7 @@ import qs from 'qs';
 import SurveyAction from './SurveyAction';
 import { getSurvey } from '../../../modules/surveys/helpers';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import SurveyHeadTags from '../SurveyHeadTags';
 import SurveyMessage from '../SurveyMessage';
 
@@ -28,10 +29,9 @@ const SurveyPageWrapper = (props, { intl }) => {
               <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
             </h1>
             <div className="survey-intro">
-              <ReactMarkdown
-                source={intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })}
-                escapeHtml={false}
-              />
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })}
+              </ReactMarkdown>
             </div>
             <SurveyPage survey={survey} />
           </div>

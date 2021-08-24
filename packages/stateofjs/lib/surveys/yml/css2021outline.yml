@@ -16,7 +16,7 @@ shareUrl: https://stateofcss.com
 name: 'State of CSS'
 year: 2021
 status: 1
-imageUrl: 'stateofcss2020.png'
+imageUrl: 'stateofcss2021.png'
 bgColor: '#232840'
 textColor: '#9ac6c9'
 linkColor: '#f649a7'
@@ -31,12 +31,17 @@ outline:
       - id: flexbox
       - id: multi_column
       - id: writing_modes
-      - id: exclusions
+      # - id: exclusions
       - id: position_sticky
       - id: logical_properties
       - id: aspect_ratio
       - id: content_visibility
 
+      # 2021
+      - id: flexbox_gaps
+      - id: break_inside_before_after
+      - id: at_container # (@container)
+      
   - id: shapes_graphics
     template: feature
     slug: features
@@ -48,6 +53,10 @@ outline:
       - id: blend_modes
       - id: filter_effects
       - id: backdrop_filter
+
+      # 2021
+      - id: intrinsic_sizing #min-, max, and fit-content
+      - id: repeating_linear_gradient
 
   - id: interactions
     template: feature
@@ -74,6 +83,9 @@ outline:
       # - id: leading_trim
       # - id: direction
 
+      # 2021
+      - id: text_decoration_style
+
   - id: animations_transforms
     template: feature
     slug: features
@@ -90,23 +102,33 @@ outline:
       - id: prefers_reduced_motion
       - id: prefers_color_scheme
       - id: color_gamut
+
+      # 2021
+      - id: prefers_reduced_data
       # - prefers-reduced-data # not supported yet
       # - prefers-reduced-transparency # not supported yet
       # - prefers-contrast # not supported yet
       # - forced-colors # not supported yet
       # - inverted-colors # not supported yet
 
+
   - id: other_features
     template: feature
     slug: features
     questions:
       - id: variables
-      - id: feature_support_queries
+      - id: feature_support_queries # (@supports)
       - id: containment
       - id: will_change
       - id: calc
       - id: houdini
       - id: comparison_functions
+
+      # 2021
+      - id: scroll_margin_scroll_padding
+      - id: at_property #(@property)
+      - id: resize
+      - id: content_visibility
 
   - id: units_selectors
     slug: features_others
@@ -325,7 +347,7 @@ outline:
       # - Aphrodite # not actively maintained?
       - id: jss
       - id: styled_jsx
-      - id: radium
+      # - id: radium
       - id: emotion
       - id: css_modules
       - id: styled_system
@@ -461,9 +483,48 @@ outline:
 
     ### RESOURCES ###
 
-  - id: resources
+  - id: resources # new for 2021
     slug: resources
     questions:
+      - id: people
+        template: multiple
+        options:
+          - id: david_walsh
+          - id: ishadeed
+          - id: sara_soueidan
+          - id: lea_verou
+          - id: josh_comeau
+          - id: chris_coyier
+          - id: christian_heilmann
+          - id: adrian_roselli
+          - id: andy_bell
+          - id: bruce_lawson
+          - id: eric_meyer
+          - id: heydon_pickering
+          - id: jen_simmons
+          - id: peter_paul_koch
+          - id: una_kravets
+          - id: rachel_andrew
+          - id: chen_hui_jing
+          - id: brad_frost
+          - id: ethan_marcotte
+          - id: kitty_giraudel
+          - id: stephanie_walter
+          - id: stephanie_eckles
+          - id: hidde_de_vries
+          - id: adam_argyle
+          - id: ana_tudor
+          - id: kilian_valkhof
+          - id: eric_bailey
+          - id: max_bock
+          - id: miriam_suzanne
+          - id: bramus_van_damme
+
+      - id: blogs_news_magazines
+        template: others
+        matchTags: [people]
+
+
       - id: blogs_news_magazines
         template: multiple
         options:
@@ -472,15 +533,18 @@ outline:
           - id: smashing_magazine
           - id: codrops
           - id: sitepoint
-          - id: david_walsh
           - id: devto
           - id: sidebar
           - id: heydesigner
           - id: css_weekly
           - id: frontend_horse
+          - id: frontend_focus
+          - id: css_irl
+          - id: moderncss
 
       - id: blogs_news_magazines
         template: others
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: sites_courses
         template: multiple
@@ -492,25 +556,45 @@ outline:
           - id: codecademy
           - id: levelup
           - id: wesbos
+          - id: frontendmasters
           - id: pluralsight
           - id: designcode
+          - id: udemy
+          - id: egghead
+          - id: newline
 
       - id: sites_courses
         template: others
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: podcasts
         template: multiple
         options:
           - id: shop_talk_show
-          - id: style_guide_podcast
           - id: big_web_show
           - id: changelog
           - id: syntaxfm
-          - id: css_podcast
+          - id: full_stack_radio
+          - id: front_end_happy_hour
+          - id: jamstack_radio
+          - id: web_platform_podcast
+          - id: modern_web
+          - id: codepen_radio
+          - id: ladybug
+          - id: software_engineering_daily
+          - id: frontend_weekend
+          - id: web_standards_ru
           - id: frontend_first
+          - id: http_203
+          - id: a11y_rules
+          - id: tools_day
+          - id: the_bike_shed
+          - id: css_podcast
+          - id: undefined_podcast
 
       - id: podcasts
         template: others
+        matchTags: [podcasts, people, sites]
 
     ### OPINIONS ###
 
@@ -648,19 +732,10 @@ outline:
           - id: entertainment
           - id: government
           - id: consulting
-          - id: travel
-          - id: insurance
-          - id: logistics
-          - id: energy
-          - id: telecommunications
-          - id: student
-          - id: hospitality
-          - id: cyber_security
-          - id: construction
-          - id: automotive
-          - id: agriculture
-          - id: transport
-          - id: manufacturing
+          
+      - id: industry_sector
+        template: others
+        matchTags: [industry_sectors]
 
       - id: country
         template: country

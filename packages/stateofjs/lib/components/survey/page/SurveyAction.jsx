@@ -94,7 +94,7 @@ const SurveyAction = ({ survey, currentUser }) => {
         ) : null}
       </div>
       {errors &&
-        errors.map((error) => <ErrorItem key={error.id} {...error} survey={survey} response={currentSurveyResponse} />)}
+        errors.map((error, i) => <ErrorItem key={i} {...error} survey={survey} response={currentSurveyResponse} />)}
     </div>
   );
 };
@@ -116,11 +116,12 @@ const ErrorItem = ({ survey, id, message, properties, response }) => {
   if (id === 'responses.duplicate_responses') {
     return (
       <div className="survey-item-error error message">
-        {message} <Link to={getSurveyPath({ survey, response })}>Continue Survey →</Link>
+        {message} 
+        <Link to={getSurveyPath({ survey, response })}><Components.FormattedMessage id="general.continue_survey"/></Link>
       </div>
     );
   } else {
-    return <div className="survey-item-error error">{message}</div>;
+    return <div className="survey-item-error error message">{message}</div>;
   }
 };
 

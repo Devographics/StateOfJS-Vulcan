@@ -11,7 +11,7 @@ export default {
   "name": "State of CSS",
   "year": 2021,
   "status": 1,
-  "imageUrl": "stateofcss2020.png",
+  "imageUrl": "stateofcss2021.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
   "linkColor": "#f649a7",
@@ -38,9 +38,6 @@ export default {
           "id": "writing_modes"
         },
         {
-          "id": "exclusions"
-        },
-        {
           "id": "position_sticky"
         },
         {
@@ -51,6 +48,15 @@ export default {
         },
         {
           "id": "content_visibility"
+        },
+        {
+          "id": "flexbox_gaps"
+        },
+        {
+          "id": "break_inside_before_after"
+        },
+        {
+          "id": "at_container"
         }
       ]
     },
@@ -79,6 +85,12 @@ export default {
         },
         {
           "id": "backdrop_filter"
+        },
+        {
+          "id": "intrinsic_sizing"
+        },
+        {
+          "id": "repeating_linear_gradient"
         }
       ]
     },
@@ -132,6 +144,9 @@ export default {
         },
         {
           "id": "line_clamp"
+        },
+        {
+          "id": "text_decoration_style"
         }
       ]
     },
@@ -167,6 +182,9 @@ export default {
         },
         {
           "id": "color_gamut"
+        },
+        {
+          "id": "prefers_reduced_data"
         }
       ]
     },
@@ -195,6 +213,18 @@ export default {
         },
         {
           "id": "comparison_functions"
+        },
+        {
+          "id": "scroll_margin_scroll_padding"
+        },
+        {
+          "id": "at_property"
+        },
+        {
+          "id": "resize"
+        },
+        {
+          "id": "content_visibility"
         }
       ]
     },
@@ -623,9 +653,6 @@ export default {
           "id": "styled_jsx"
         },
         {
-          "id": "radium"
-        },
-        {
           "id": "emotion"
         },
         {
@@ -920,6 +947,109 @@ export default {
       "slug": "resources",
       "questions": [
         {
+          "id": "people",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "david_walsh"
+            },
+            {
+              "id": "ishadeed"
+            },
+            {
+              "id": "sara_soueidan"
+            },
+            {
+              "id": "lea_verou"
+            },
+            {
+              "id": "josh_comeau"
+            },
+            {
+              "id": "chris_coyier"
+            },
+            {
+              "id": "christian_heilmann"
+            },
+            {
+              "id": "adrian_roselli"
+            },
+            {
+              "id": "andy_bell"
+            },
+            {
+              "id": "bruce_lawson"
+            },
+            {
+              "id": "eric_meyer"
+            },
+            {
+              "id": "heydon_pickering"
+            },
+            {
+              "id": "jen_simmons"
+            },
+            {
+              "id": "peter_paul_koch"
+            },
+            {
+              "id": "una_kravets"
+            },
+            {
+              "id": "rachel_andrew"
+            },
+            {
+              "id": "chen_hui_jing"
+            },
+            {
+              "id": "brad_frost"
+            },
+            {
+              "id": "ethan_marcotte"
+            },
+            {
+              "id": "kitty_giraudel"
+            },
+            {
+              "id": "stephanie_walter"
+            },
+            {
+              "id": "stephanie_eckles"
+            },
+            {
+              "id": "hidde_de_vries"
+            },
+            {
+              "id": "adam_argyle"
+            },
+            {
+              "id": "ana_tudor"
+            },
+            {
+              "id": "kilian_valkhof"
+            },
+            {
+              "id": "eric_bailey"
+            },
+            {
+              "id": "max_bock"
+            },
+            {
+              "id": "miriam_suzanne"
+            },
+            {
+              "id": "bramus_van_damme"
+            }
+          ]
+        },
+        {
+          "id": "blogs_news_magazines",
+          "template": "others",
+          "matchTags": [
+            "people"
+          ]
+        },
+        {
           "id": "blogs_news_magazines",
           "template": "multiple",
           "options": [
@@ -939,9 +1069,6 @@ export default {
               "id": "sitepoint"
             },
             {
-              "id": "david_walsh"
-            },
-            {
               "id": "devto"
             },
             {
@@ -955,12 +1082,29 @@ export default {
             },
             {
               "id": "frontend_horse"
+            },
+            {
+              "id": "frontend_focus"
+            },
+            {
+              "id": "css_irl"
+            },
+            {
+              "id": "moderncss"
             }
           ]
         },
         {
           "id": "blogs_news_magazines",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
+          ]
         },
         {
           "id": "sites_courses",
@@ -988,16 +1132,36 @@ export default {
               "id": "wesbos"
             },
             {
+              "id": "frontendmasters"
+            },
+            {
               "id": "pluralsight"
             },
             {
               "id": "designcode"
+            },
+            {
+              "id": "udemy"
+            },
+            {
+              "id": "egghead"
+            },
+            {
+              "id": "newline"
             }
           ]
         },
         {
           "id": "sites_courses",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
+          ]
         },
         {
           "id": "podcasts",
@@ -1005,9 +1169,6 @@ export default {
           "options": [
             {
               "id": "shop_talk_show"
-            },
-            {
-              "id": "style_guide_podcast"
             },
             {
               "id": "big_web_show"
@@ -1019,16 +1180,66 @@ export default {
               "id": "syntaxfm"
             },
             {
-              "id": "css_podcast"
+              "id": "full_stack_radio"
+            },
+            {
+              "id": "front_end_happy_hour"
+            },
+            {
+              "id": "jamstack_radio"
+            },
+            {
+              "id": "web_platform_podcast"
+            },
+            {
+              "id": "modern_web"
+            },
+            {
+              "id": "codepen_radio"
+            },
+            {
+              "id": "ladybug"
+            },
+            {
+              "id": "software_engineering_daily"
+            },
+            {
+              "id": "frontend_weekend"
+            },
+            {
+              "id": "web_standards_ru"
             },
             {
               "id": "frontend_first"
+            },
+            {
+              "id": "http_203"
+            },
+            {
+              "id": "a11y_rules"
+            },
+            {
+              "id": "tools_day"
+            },
+            {
+              "id": "the_bike_shed"
+            },
+            {
+              "id": "css_podcast"
+            },
+            {
+              "id": "undefined_podcast"
             }
           ]
         },
         {
           "id": "podcasts",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "podcasts",
+            "people",
+            "sites"
+          ]
         }
       ]
     },
@@ -1333,46 +1544,14 @@ export default {
             },
             {
               "id": "consulting"
-            },
-            {
-              "id": "travel"
-            },
-            {
-              "id": "insurance"
-            },
-            {
-              "id": "logistics"
-            },
-            {
-              "id": "energy"
-            },
-            {
-              "id": "telecommunications"
-            },
-            {
-              "id": "student"
-            },
-            {
-              "id": "hospitality"
-            },
-            {
-              "id": "cyber_security"
-            },
-            {
-              "id": "construction"
-            },
-            {
-              "id": "automotive"
-            },
-            {
-              "id": "agriculture"
-            },
-            {
-              "id": "transport"
-            },
-            {
-              "id": "manufacturing"
             }
+          ]
+        },
+        {
+          "id": "industry_sector",
+          "template": "others",
+          "matchTags": [
+            "industry_sectors"
           ]
         },
         {
