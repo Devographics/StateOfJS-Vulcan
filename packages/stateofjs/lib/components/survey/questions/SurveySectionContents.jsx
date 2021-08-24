@@ -62,7 +62,7 @@ const SurveySectionContents = ({
   const isDisabled = !canModifyResponse(response, currentUser);
 
   return (
-    <div className="section-questions">
+    <div className="section-questions" id="section-questions">
       {/* {survey.status === statuses.open && readOnly ? (
         <div className="survey-message survey-readonly">
           <Components.FormattedMessage id="general.survey_read_only" />

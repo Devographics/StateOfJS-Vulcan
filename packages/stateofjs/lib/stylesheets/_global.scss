@@ -215,3 +215,35 @@ Page-specific styles
     }
   }
 }
+
+/* Hides elements in the UI, but still allows them to be read by screen readers. */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.skip {
+  display: block;
+  padding: 1rem 1rem;
+
+  position: absolute;
+  top: -900px;
+  left: -900px;
+
+  &:focus {
+    display: inline-block;
+    position: static !important;
+    top: 0 !important;
+    left: 0 !important;
+    border: 2px solid white;
+  }
+}

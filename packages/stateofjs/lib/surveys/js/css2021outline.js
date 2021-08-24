@@ -1423,7 +1423,7 @@ export default {
         },
         {
           "id": "gender",
-          "template": "single",
+          "template": "multiple",
           "allowother": true,
           "options": [
             {
@@ -1436,6 +1436,24 @@ export default {
               "id": "non_binary"
             },
             {
+              "id": "third_gender"
+            },
+            {
+              "id": "two_spirit"
+            },
+            {
+              "id": "genderqueer"
+            },
+            {
+              "id": "genderfluid"
+            },
+            {
+              "id": "questioning"
+            },
+            {
+              "id": "not_listed"
+            },
+            {
               "id": "prefer_not_to_say"
             }
           ]
@@ -1443,6 +1461,7 @@ export default {
         {
           "id": "race_ethnicity",
           "template": "multiple",
+          "allowother": true,
           "options": [
             {
               "id": "biracial"
@@ -1469,7 +1488,16 @@ export default {
               "id": "south_asian"
             },
             {
+              "id": "south_east_asian"
+            },
+            {
               "id": "white_european"
+            },
+            {
+              "id": "not_listed"
+            },
+            {
+              "id": "prefer_not_to_say"
             }
           ]
         },

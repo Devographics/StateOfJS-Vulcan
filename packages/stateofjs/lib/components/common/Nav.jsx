@@ -58,7 +58,10 @@ const Navigation = () => {
   }
   return (
     <div className="nav-wrapper">
-      <Navbar collapseOnSelect expand="lg" variant="dark">
+      <Navbar collapseOnSelect expand="lg" variant="dark" aria-labelledby="global-nav">
+        <p className="hidden" id="global-nav">
+          <Components.FormattedMessage id={'general.global_nav'} />
+        </p>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav expand="lg">
