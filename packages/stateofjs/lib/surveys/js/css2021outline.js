@@ -50,10 +50,10 @@ export default {
           "id": "content_visibility"
         },
         {
-          "id": "flexbox_gaps"
+          "id": "flexbox_gap"
         },
         {
-          "id": "break_inside_before_after"
+          "id": "break_rules"
         },
         {
           "id": "at_container"
@@ -90,7 +90,10 @@ export default {
           "id": "intrinsic_sizing"
         },
         {
-          "id": "repeating_linear_gradient"
+          "id": "conic_gradient"
+        },
+        {
+          "id": "color_function"
         }
       ]
     },
@@ -125,7 +128,7 @@ export default {
           "id": "web_fonts"
         },
         {
-          "id": "variables_fonts"
+          "id": "variable_fonts"
         },
         {
           "id": "line_breaking"
@@ -144,9 +147,6 @@ export default {
         },
         {
           "id": "line_clamp"
-        },
-        {
-          "id": "text_decoration_style"
         }
       ]
     },
@@ -215,13 +215,7 @@ export default {
           "id": "comparison_functions"
         },
         {
-          "id": "scroll_margin_scroll_padding"
-        },
-        {
           "id": "at_property"
-        },
-        {
-          "id": "resize"
         },
         {
           "id": "content_visibility"
@@ -580,10 +574,7 @@ export default {
           "id": "pure_css"
         },
         {
-          "id": "skeleton"
-        },
-        {
-          "id": "spectre_css"
+          "id": "halfmoon"
         },
         {
           "id": "css_frameworks",
@@ -665,9 +656,6 @@ export default {
           "id": "stitches"
         },
         {
-          "id": "styletron"
-        },
-        {
           "id": "fela"
         },
         {
@@ -675,6 +663,12 @@ export default {
         },
         {
           "id": "astroturf"
+        },
+        {
+          "id": "twin"
+        },
+        {
+          "id": "theme_ui"
         },
         {
           "id": "css_in_js",
@@ -707,42 +701,20 @@ export default {
             },
             {
               "id": "purify_css"
+            },
+            {
+              "id": "prettier"
+            },
+            {
+              "id": "autoprefixer"
+            },
+            {
+              "id": "cssnano"
             }
           ]
         },
         {
           "id": "utilities",
-          "template": "others"
-        },
-        {
-          "id": "text_editors",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "visual_studio"
-            },
-            {
-              "id": "sublime_text"
-            },
-            {
-              "id": "atom"
-            },
-            {
-              "id": "vim"
-            },
-            {
-              "id": "emacs"
-            },
-            {
-              "id": "webstorm"
-            },
-            {
-              "id": "nova"
-            }
-          ]
-        },
-        {
-          "id": "text_editors",
           "template": "others"
         },
         {
@@ -903,6 +875,39 @@ export default {
           ]
         },
         {
+          "id": "accessibility_features",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "keyboard_navigation"
+            },
+            {
+              "id": "increased_contrast"
+            },
+            {
+              "id": "focus_indicators"
+            },
+            {
+              "id": "skip_to_content_link"
+            },
+            {
+              "id": "dark_mode"
+            },
+            {
+              "id": "prefers_reduced_motion"
+            },
+            {
+              "id": "alt_text"
+            },
+            {
+              "id": "semantic_markup"
+            },
+            {
+              "id": "aria_roles"
+            }
+          ]
+        },
+        {
           "id": "css_for_print",
           "template": "single",
           "fieldType": "Number",
@@ -939,6 +944,36 @@ export default {
               "id": 3
             }
           ]
+        },
+        {
+          "id": "tool_evaluation",
+          "template": "brackets",
+          "options": [
+            {
+              "id": "1_learning_curve_documentation"
+            },
+            {
+              "id": "2_momentum_popularity"
+            },
+            {
+              "id": "3_user_base_size"
+            },
+            {
+              "id": "4_developer_experience_tooling"
+            },
+            {
+              "id": "5_performance_user_experience"
+            },
+            {
+              "id": "6_creator_team"
+            },
+            {
+              "id": "7_accessibility_features"
+            },
+            {
+              "id": "8_community_inclusivity"
+            }
+          ]
         }
       ]
     },
@@ -946,102 +981,6 @@ export default {
       "id": "resources",
       "slug": "resources",
       "questions": [
-        {
-          "id": "people",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "david_walsh"
-            },
-            {
-              "id": "ishadeed"
-            },
-            {
-              "id": "sara_soueidan"
-            },
-            {
-              "id": "lea_verou"
-            },
-            {
-              "id": "josh_comeau"
-            },
-            {
-              "id": "chris_coyier"
-            },
-            {
-              "id": "christian_heilmann"
-            },
-            {
-              "id": "adrian_roselli"
-            },
-            {
-              "id": "andy_bell"
-            },
-            {
-              "id": "bruce_lawson"
-            },
-            {
-              "id": "eric_meyer"
-            },
-            {
-              "id": "heydon_pickering"
-            },
-            {
-              "id": "jen_simmons"
-            },
-            {
-              "id": "peter_paul_koch"
-            },
-            {
-              "id": "una_kravets"
-            },
-            {
-              "id": "rachel_andrew"
-            },
-            {
-              "id": "chen_hui_jing"
-            },
-            {
-              "id": "brad_frost"
-            },
-            {
-              "id": "ethan_marcotte"
-            },
-            {
-              "id": "kitty_giraudel"
-            },
-            {
-              "id": "stephanie_walter"
-            },
-            {
-              "id": "stephanie_eckles"
-            },
-            {
-              "id": "hidde_de_vries"
-            },
-            {
-              "id": "adam_argyle"
-            },
-            {
-              "id": "ana_tudor"
-            },
-            {
-              "id": "kilian_valkhof"
-            },
-            {
-              "id": "eric_bailey"
-            },
-            {
-              "id": "max_bock"
-            },
-            {
-              "id": "miriam_suzanne"
-            },
-            {
-              "id": "bramus_van_damme"
-            }
-          ]
-        },
         {
           "id": "blogs_news_magazines",
           "template": "others",
@@ -1091,6 +1030,9 @@ export default {
             },
             {
               "id": "moderncss"
+            },
+            {
+              "id": "medium"
             }
           ]
         },
@@ -1406,24 +1348,12 @@ export default {
           ]
         },
         {
-          "id": "css_proficiency",
-          "template": "proficiency"
-        },
-        {
-          "id": "javascript_proficiency",
-          "template": "proficiency"
-        },
-        {
-          "id": "backend_proficiency",
-          "template": "proficiency"
-        },
-        {
           "id": "how_did_user_find_out_about_the_survey",
           "template": "text"
         },
         {
           "id": "gender",
-          "template": "multiple",
+          "template": "single",
           "allowother": true,
           "options": [
             {
@@ -1436,25 +1366,7 @@ export default {
               "id": "non_binary"
             },
             {
-              "id": "third_gender"
-            },
-            {
-              "id": "two_spirit"
-            },
-            {
-              "id": "genderqueer"
-            },
-            {
-              "id": "genderfluid"
-            },
-            {
-              "id": "questioning"
-            },
-            {
               "id": "not_listed"
-            },
-            {
-              "id": "prefer_not_to_say"
             }
           ]
         },
@@ -1495,14 +1407,41 @@ export default {
             },
             {
               "id": "not_listed"
-            },
-            {
-              "id": "prefer_not_to_say"
             }
           ]
         },
         {
+          "id": "disability_status",
+          "template": "multiple",
+          "allowother": true,
+          "options": [
+            {
+              "id": "visual_impairments"
+            },
+            {
+              "id": "hearing_impairments"
+            },
+            {
+              "id": "mobility_impairments"
+            },
+            {
+              "id": "cognitive_impairments"
+            }
+          ]
+        },
+        {
+          "id": "disability_status",
+          "template": "others",
+          "matchTags": [
+            "disabilities"
+          ]
+        },
+        {
           "id": "github_username",
+          "template": "text"
+        },
+        {
+          "id": "twitter_username",
           "template": "text"
         },
         {

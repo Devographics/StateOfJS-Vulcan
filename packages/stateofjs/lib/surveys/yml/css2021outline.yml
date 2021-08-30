@@ -38,8 +38,8 @@ outline:
       - id: content_visibility
 
       # 2021
-      - id: flexbox_gaps
-      - id: break_inside_before_after
+      - id: flexbox_gap
+      - id: break_rules
       - id: at_container # (@container)
       
   - id: shapes_graphics
@@ -56,7 +56,9 @@ outline:
 
       # 2021
       - id: intrinsic_sizing #min-, max, and fit-content
-      - id: repeating_linear_gradient
+      # - id: repeating_linear_gradient
+      - id: conic_gradient
+      - id: color_function
 
   - id: interactions
     template: feature
@@ -73,7 +75,7 @@ outline:
     slug: features
     questions:
       - id: web_fonts
-      - id: variables_fonts # TODO: change to variable_fonts ?
+      - id: variable_fonts
       - id: line_breaking
       - id: font_variant
       - id: initial_letter
@@ -84,7 +86,7 @@ outline:
       # - id: direction
 
       # 2021
-      - id: text_decoration_style
+      # - id: text_decoration_style
 
   - id: animations_transforms
     template: feature
@@ -105,7 +107,6 @@ outline:
 
       # 2021
       - id: prefers_reduced_data
-      # - prefers-reduced-data # not supported yet
       # - prefers-reduced-transparency # not supported yet
       # - prefers-contrast # not supported yet
       # - forced-colors # not supported yet
@@ -125,9 +126,9 @@ outline:
       - id: comparison_functions
 
       # 2021
-      - id: scroll_margin_scroll_padding
+      # - id: scroll_margin_scroll_padding
       - id: at_property #(@property)
-      - id: resize
+      # - id: resize
       - id: content_visibility
 
   - id: units_selectors
@@ -302,8 +303,13 @@ outline:
       - id: primer
       - id: tailwind_css
       - id: pure_css
-      - id: skeleton
-      - id: spectre_css
+      
+      # 2021
+      - id: halfmoon
+      # removed in 2021
+      # - id: skeleton
+      # - id: spectre_css
+
       # id: - milligram
       # id: - basscss
       # id: - no_css_framework
@@ -343,30 +349,26 @@ outline:
     slug: tools
     questions:
       - id: styled_components
-      # - Glamor # deprecated
-      # - Aphrodite # not actively maintained?
       - id: jss
       - id: styled_jsx
-      # - id: radium
       - id: emotion
       - id: css_modules
       - id: styled_system
       - id: stitches
-      - id: styletron
       - id: fela
       - id: linaria
       - id: astroturf
-      # - JSS
-      # - Styled-JSX
-      # - Radium
-      # - Emotion
-      # - CSS Modules
-      # - Styled System
-      # - Stitches
-      # - Styletron
-      # - Fela
-      # - Linaria
-      # - Astroturf
+
+      # 2021
+      - id: twin
+      - id: theme_ui
+      # - id: goober # too early?
+
+      # removed in 2021
+      # - id: radium
+      # - id: styletron
+
+
       - id: css_in_js
         intlId: tools.other_tools
         template: text
@@ -388,20 +390,23 @@ outline:
           - id: stylelint
           - id: purge_css
           - id: purify_css
+          - id: prettier
+          - id: autoprefixer
+          - id: cssnano
       - id: utilities
         template: others
-      - id: text_editors
-        template: multiple
-        options:
-          - id: visual_studio
-          - id: sublime_text
-          - id: atom
-          - id: vim
-          - id: emacs
-          - id: webstorm
-          - id: nova
-      - id: text_editors
-        template: others
+      # - id: text_editors
+      #   template: multiple
+      #   options:
+      #     - id: visual_studio
+      #     - id: sublime_text
+      #     - id: atom
+      #     - id: vim
+      #     - id: emacs
+      #     - id: webstorm
+      #     - id: nova
+      # - id: text_editors
+      #   template: others
       - id: browsers
         template: multiple
         options:
@@ -463,6 +468,19 @@ outline:
           - id: screen_reader
           - id: print
 
+      - id: accessibility_features
+        template: multiple
+        options:
+          - id: keyboard_navigation
+          - id: increased_contrast
+          - id: focus_indicators
+          - id: skip_to_content_link
+          - id: dark_mode
+          - id: prefers_reduced_motion
+          - id: alt_text
+          - id: semantic_markup
+          - id: aria_roles
+
       - id: css_for_print
         template: single
         fieldType: Number
@@ -480,45 +498,63 @@ outline:
           - id: 1
           - id: 2
           - id: 3
+      
+      # option 1 : stored as [first option, second option, winning option] for each round
+      # e.g. [[8,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
+      - id: tool_evaluation
+        template: brackets
+        options:
+          - id: 1_learning_curve_documentation # is a tool is easy to learn?
+          - id: 2_momentum_popularity # does it have a lot of hype?
+          - id: 3_user_base_size # is it a well-established option?
+          - id: 4_developer_experience_tooling # does it provide a good developer experience?
+          - id: 5_performance_user_experience # does it provide a good user experience?
+          - id: 6_creator_team # is it backed by a well-known/well-funded team?
+          - id: 7_accessibility_features # does it implement accessibility features well?
+          - id: 8_community_inclusivity # does it have a good community?
 
     ### RESOURCES ###
 
   - id: resources # new for 2021
     slug: resources
     questions:
-      - id: people
-        template: multiple
-        options:
-          - id: david_walsh
-          - id: ishadeed
-          - id: sara_soueidan
-          - id: lea_verou
-          - id: josh_comeau
-          - id: chris_coyier
-          - id: christian_heilmann
-          - id: adrian_roselli
-          - id: andy_bell
-          - id: bruce_lawson
-          - id: eric_meyer
-          - id: heydon_pickering
-          - id: jen_simmons
-          - id: peter_paul_koch
-          - id: una_kravets
-          - id: rachel_andrew
-          - id: chen_hui_jing
-          - id: brad_frost
-          - id: ethan_marcotte
-          - id: kitty_giraudel
-          - id: stephanie_walter
-          - id: stephanie_eckles
-          - id: hidde_de_vries
-          - id: adam_argyle
-          - id: ana_tudor
-          - id: kilian_valkhof
-          - id: eric_bailey
-          - id: max_bock
-          - id: miriam_suzanne
-          - id: bramus_van_damme
+      # - id: people
+      #   template: multiple
+      #   options:
+      #     - id: heydon_pickering
+      #     - id: ahmad_shadeed
+      #     - id: andy_bell
+      #     - id: chen_hui_jing
+      #     - id: jeremy_keith
+      #     - id: lea_verou
+      #     - id: sara_soueidan
+      #     - id: josh_comeau
+      #     - id: rachel_andrew
+      #     - id: jen_simmons
+      #     - id: kevin_j_powell
+      #     - id: harry_roberts
+      #     - id: stephanie_walter
+      #     - id: brad_frost
+      #     - id: dave_rupert
+      #     - id: chris_coyier
+      #     - id: christian_heilmann
+      #     - id: adrian_roselli
+      #     - id: bruce_lawson
+      #     - id: eric_meyer
+      #     - id: peter_paul_koch
+      #     - id: una_kravets
+      #     - id: ethan_marcotte
+      #     - id: kitty_giraudel
+      #     - id: stephanie_eckles
+      #     - id: hidde_de_vries
+      #     - id: adam_argyle
+      #     - id: ana_tudor
+      #     - id: kilian_valkhof
+      #     - id: eric_w_bailey
+      #     - id: max_bock
+      #     - id: miriam_suzanne
+      #     - id: bramus_van_damme
+      #     - id: adam_wathan
 
       - id: blogs_news_magazines
         template: others
@@ -541,6 +577,7 @@ outline:
           - id: frontend_focus
           - id: css_irl
           - id: moderncss
+          - id: medium
 
       - id: blogs_news_magazines
         template: others
@@ -677,25 +714,25 @@ outline:
           - id: ui_designer
           - id: ux_designer
 
-      - id: css_proficiency
-        template: proficiency
-      - id: javascript_proficiency
-        template: proficiency
-      - id: backend_proficiency
-        template: proficiency
+      # too subjective?
+      # - id: css_proficiency
+      #   template: proficiency
+      # - id: javascript_proficiency
+      #   template: proficiency
+      # - id: backend_proficiency
+      #   template: proficiency
         
       - id: how_did_user_find_out_about_the_survey
         template: text
+
       - id: gender
-        template: multiple
+        template: single
         allowother: true
         options:
           - id: female
           - id: male
           - id: non_binary
-          - id: third_gender
           - id: not_listed
-          - id: prefer_not_to_say
 
       - id: race_ethnicity
         template: multiple
@@ -712,9 +749,24 @@ outline:
           - id: south_east_asian
           - id: white_european
           - id: not_listed
-          - id: prefer_not_to_say
+
+      - id: disability_status
+        template: multiple
+        allowother: true
+        options:
+          - id: visual_impairments
+          - id: hearing_impairments
+          - id: mobility_impairments
+          - id: cognitive_impairments
+          
+      - id: disability_status
+        template: others
+        matchTags: [disabilities]
 
       - id: github_username
+        template: text
+
+      - id: twitter_username
         template: text
         
       - id: industry_sector
