@@ -475,7 +475,7 @@ outline:
           - id: increased_contrast
           - id: focus_indicators
           - id: skip_to_content_link
-          - id: dark_mode
+          - id: color_themes # dark mode, high contrast mode, etc.
           - id: prefers_reduced_motion
           - id: alt_text
           - id: semantic_markup
@@ -500,18 +500,18 @@ outline:
           - id: 3
       
       # option 1 : stored as [first option, second option, winning option] for each round
-      # e.g. [[8,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
+      # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
       - id: tool_evaluation
         template: brackets
         options:
-          - id: 1_learning_curve_documentation # is a tool is easy to learn?
-          - id: 2_momentum_popularity # does it have a lot of hype?
-          - id: 3_user_base_size # is it a well-established option?
-          - id: 4_developer_experience_tooling # does it provide a good developer experience?
-          - id: 5_performance_user_experience # does it provide a good user experience?
-          - id: 6_creator_team # is it backed by a well-known/well-funded team?
-          - id: 7_accessibility_features # does it implement accessibility features well?
-          - id: 8_community_inclusivity # does it have a good community?
+          - id: learning_curve_documentation # is a tool is easy to learn?
+          - id: momentum_popularity # does it have a lot of hype?
+          - id: user_base_size # is it a well-established option?
+          - id: developer_experience_tooling # does it provide a good developer experience?
+          - id: performance_user_experience # does it provide a good user experience?
+          - id: creator_team # is it backed by a well-known/well-funded team?
+          - id: accessibility_features # does it implement accessibility features well?
+          - id: community_inclusivity # does it have a good community?
 
     ### RESOURCES ###
 
@@ -650,6 +650,17 @@ outline:
         template: opinion
       - id: enjoy_writing_css
         template: opinion
+      - id: currently_missing_from_css
+        sectionSlug: opinions_other
+        template: multiple
+        options: 
+          - id: container_queries
+          - id: parent_selector
+          - id: nesting
+          - id: functions
+          - id: browser_support
+          - id: mixins
+          - id: scoping
       - id: currently_missing_from_css
         sectionSlug: opinions_other
         suffix: others

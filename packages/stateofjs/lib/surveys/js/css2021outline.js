@@ -891,7 +891,7 @@ export default {
               "id": "skip_to_content_link"
             },
             {
-              "id": "dark_mode"
+              "id": "color_themes"
             },
             {
               "id": "prefers_reduced_motion"
@@ -950,28 +950,28 @@ export default {
           "template": "brackets",
           "options": [
             {
-              "id": "1_learning_curve_documentation"
+              "id": "learning_curve_documentation"
             },
             {
-              "id": "2_momentum_popularity"
+              "id": "momentum_popularity"
             },
             {
-              "id": "3_user_base_size"
+              "id": "user_base_size"
             },
             {
-              "id": "4_developer_experience_tooling"
+              "id": "developer_experience_tooling"
             },
             {
-              "id": "5_performance_user_experience"
+              "id": "performance_user_experience"
             },
             {
-              "id": "6_creator_team"
+              "id": "creator_team"
             },
             {
-              "id": "7_accessibility_features"
+              "id": "accessibility_features"
             },
             {
-              "id": "8_community_inclusivity"
+              "id": "community_inclusivity"
             }
           ]
         }
@@ -1212,6 +1212,34 @@ export default {
         {
           "id": "enjoy_writing_css",
           "template": "opinion"
+        },
+        {
+          "id": "currently_missing_from_css",
+          "sectionSlug": "opinions_other",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "container_queries"
+            },
+            {
+              "id": "parent_selector"
+            },
+            {
+              "id": "nesting"
+            },
+            {
+              "id": "functions"
+            },
+            {
+              "id": "browser_support"
+            },
+            {
+              "id": "mixins"
+            },
+            {
+              "id": "scoping"
+            }
+          ]
         },
         {
           "id": "currently_missing_from_css",

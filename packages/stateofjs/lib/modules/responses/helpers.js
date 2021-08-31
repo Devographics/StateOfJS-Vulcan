@@ -3,6 +3,7 @@ import {
   Utils,
   makeAutocomplete,
   additionalFieldKeys,
+  createSchema,
 } from 'meteor/vulcan:core';
 import pick from 'lodash/pick';
 import pickBy from 'lodash/pickBy';
@@ -11,6 +12,7 @@ import surveys from '../../surveys';
 import { statuses } from '../constants.js';
 import Users from 'meteor/vulcan:users';
 
+import Brackets from '../../components/forms/Brackets.jsx'
 /*
 
 Replace all occurences of a string
@@ -183,6 +185,19 @@ export const templates = {
     input: 'select',
     options: countriesOptions,
   }),
+  brackets: () => ({
+    input: Brackets,
+    type: Array,
+    arrayItem: {
+      type: Array,
+      // typeName: 'Int[]',
+      optional: true,
+      arrayItem: {
+        type: Number,
+        optional: true,
+      }
+    }
+  })
 };
 
 // build question object from outline
