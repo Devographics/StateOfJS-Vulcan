@@ -1,0 +1,54 @@
+.bracket-current-matchup {
+  margin-bottom: $spacing * 2;
+}
+
+.brackets-results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.brackets-matchgroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+  margin-right: $spacing;
+}
+
+.brackets-match {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+  margin-bottom: $spacing;
+  &-final {
+    flex-direction: row;
+    align-items: center;
+    .brackets-item {
+      margin-right: $spacing;
+    }
+  }
+  &-current {
+    .brackets-item {
+      opacity: 1;
+      box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.brackets-item {
+  opacity: 0.6;
+  border: 1px solid $border-color;
+  padding: $spacing/2;
+  margin-bottom: $spacing/2;
+  font-size: $small-font;
+  &-winner {
+    border-color: $contrast-color;
+    border-width: 2px;
+  }
+  &-overall-winner {
+    border-color: $contrast-color;
+    border-width: 4px;
+  }
+}
