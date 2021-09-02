@@ -50,13 +50,12 @@ export default {
           "id": "content_visibility"
         },
         {
-          "id": "flexbox_gap"
+          "id": "break_rules",
+          "year": 2021
         },
         {
-          "id": "break_rules"
-        },
-        {
-          "id": "at_container"
+          "id": "at_container",
+          "year": 2021
         }
       ]
     },
@@ -87,13 +86,20 @@ export default {
           "id": "backdrop_filter"
         },
         {
-          "id": "intrinsic_sizing"
+          "id": "intrinsic_sizing",
+          "year": 2021
         },
         {
-          "id": "conic_gradient"
+          "id": "conic_gradient",
+          "year": 2021
         },
         {
-          "id": "color_function"
+          "id": "color_function",
+          "year": 2021
+        },
+        {
+          "id": "color_contrast",
+          "year": 2021
         }
       ]
     },
@@ -184,7 +190,8 @@ export default {
           "id": "color_gamut"
         },
         {
-          "id": "prefers_reduced_data"
+          "id": "prefers_reduced_data",
+          "year": 2021
         }
       ]
     },
@@ -215,291 +222,12 @@ export default {
           "id": "comparison_functions"
         },
         {
-          "id": "at_property"
+          "id": "at_property",
+          "year": 2021
         },
         {
-          "id": "content_visibility"
-        }
-      ]
-    },
-    {
-      "id": "units_selectors",
-      "slug": "features_others",
-      "questions": [
-        {
-          "id": "units",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "px"
-            },
-            {
-              "id": "pt"
-            },
-            {
-              "id": "percent"
-            },
-            {
-              "id": "em"
-            },
-            {
-              "id": "rem"
-            },
-            {
-              "id": "vh_vw"
-            },
-            {
-              "id": "vmin_vmax"
-            },
-            {
-              "id": "ch"
-            },
-            {
-              "id": "ex"
-            },
-            {
-              "id": "mm"
-            },
-            {
-              "id": "cm"
-            },
-            {
-              "id": "in"
-            }
-          ]
-        },
-        {
-          "id": "pseudo_elements",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "before"
-            },
-            {
-              "id": "after"
-            },
-            {
-              "id": "first_line"
-            },
-            {
-              "id": "first_letter"
-            },
-            {
-              "id": "selection"
-            },
-            {
-              "id": "placeholder"
-            },
-            {
-              "id": "marker"
-            },
-            {
-              "id": "backdrop"
-            }
-          ]
-        },
-        {
-          "id": "combinators",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "descendant"
-            },
-            {
-              "id": "child"
-            },
-            {
-              "id": "next_sibling"
-            },
-            {
-              "id": "subsequent_sibling"
-            }
-          ]
-        },
-        {
-          "id": "tree_document_structure",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "root"
-            },
-            {
-              "id": "empty"
-            },
-            {
-              "id": "not"
-            },
-            {
-              "id": "nth_child"
-            },
-            {
-              "id": "nth_last_child"
-            },
-            {
-              "id": "first_child"
-            },
-            {
-              "id": "last_child"
-            },
-            {
-              "id": "only_child"
-            },
-            {
-              "id": "nth_of_type"
-            },
-            {
-              "id": "nth_last_of_type"
-            },
-            {
-              "id": "first_of_type"
-            },
-            {
-              "id": "last_of_type"
-            },
-            {
-              "id": "only_of_type"
-            },
-            {
-              "id": "lang"
-            },
-            {
-              "id": "is"
-            },
-            {
-              "id": "where"
-            }
-          ]
-        },
-        {
-          "id": "attributes",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "presence"
-            },
-            {
-              "id": "equality"
-            },
-            {
-              "id": "starts_with"
-            },
-            {
-              "id": "ends_with"
-            },
-            {
-              "id": "contains_word"
-            },
-            {
-              "id": "contains_substring"
-            }
-          ]
-        },
-        {
-          "id": "links_urls",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "any_link"
-            },
-            {
-              "id": "link_visited"
-            },
-            {
-              "id": "local_link"
-            },
-            {
-              "id": "target"
-            }
-          ]
-        },
-        {
-          "id": "interaction",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "hover"
-            },
-            {
-              "id": "active"
-            },
-            {
-              "id": "focus"
-            },
-            {
-              "id": "focus_within"
-            },
-            {
-              "id": "focus_visible"
-            }
-          ]
-        },
-        {
-          "id": "form_controls",
-          "template": "multiple",
-          "allowmultiple": true,
-          "allowother": false,
-          "randomize": false,
-          "suffix": "choices",
-          "options": [
-            {
-              "id": "enabled_disabled"
-            },
-            {
-              "id": "read_only_write"
-            },
-            {
-              "id": "placeholder_shown"
-            },
-            {
-              "id": "default"
-            },
-            {
-              "id": "checked"
-            },
-            {
-              "id": "indeterminate"
-            },
-            {
-              "id": "valid_invalid"
-            },
-            {
-              "id": "user_invalid"
-            },
-            {
-              "id": "in_out_range"
-            },
-            {
-              "id": "required_optional"
-            }
-          ]
+          "id": "content_visibility",
+          "year": 2021
         }
       ]
     },
@@ -574,7 +302,8 @@ export default {
           "id": "pure_css"
         },
         {
-          "id": "halfmoon"
+          "id": "halfmoon",
+          "year": 2021
         },
         {
           "id": "css_frameworks",
@@ -665,10 +394,12 @@ export default {
           "id": "astroturf"
         },
         {
-          "id": "twin"
+          "id": "twin",
+          "year": 2021
         },
         {
-          "id": "theme_ui"
+          "id": "theme_ui",
+          "year": 2021
         },
         {
           "id": "css_in_js",
@@ -777,6 +508,36 @@ export default {
         {
           "id": "browsers",
           "template": "others"
+        },
+        {
+          "id": "tool_evaluation",
+          "template": "brackets",
+          "options": [
+            {
+              "id": "learning_curve_documentation"
+            },
+            {
+              "id": "momentum_popularity"
+            },
+            {
+              "id": "user_base_size"
+            },
+            {
+              "id": "developer_experience_tooling"
+            },
+            {
+              "id": "performance_user_experience"
+            },
+            {
+              "id": "creator_team"
+            },
+            {
+              "id": "accessibility_features"
+            },
+            {
+              "id": "community_inclusivity"
+            }
+          ]
         }
       ]
     },
@@ -882,7 +643,7 @@ export default {
               "id": "keyboard_navigation"
             },
             {
-              "id": "increased_contrast"
+              "id": "compliant_contrast"
             },
             {
               "id": "focus_indicators"
@@ -944,36 +705,6 @@ export default {
               "id": 3
             }
           ]
-        },
-        {
-          "id": "tool_evaluation",
-          "template": "brackets",
-          "options": [
-            {
-              "id": "learning_curve_documentation"
-            },
-            {
-              "id": "momentum_popularity"
-            },
-            {
-              "id": "user_base_size"
-            },
-            {
-              "id": "developer_experience_tooling"
-            },
-            {
-              "id": "performance_user_experience"
-            },
-            {
-              "id": "creator_team"
-            },
-            {
-              "id": "accessibility_features"
-            },
-            {
-              "id": "community_inclusivity"
-            }
-          ]
         }
       ]
     },
@@ -981,13 +712,6 @@ export default {
       "id": "resources",
       "slug": "resources",
       "questions": [
-        {
-          "id": "blogs_news_magazines",
-          "template": "others",
-          "matchTags": [
-            "people"
-          ]
-        },
         {
           "id": "blogs_news_magazines",
           "template": "multiple",
@@ -1202,16 +926,48 @@ export default {
           "template": "opinion"
         },
         {
-          "id": "selector_nesting_to_be_avoided",
-          "template": "opinion"
-        },
-        {
-          "id": "css_is_programming_language",
-          "template": "opinion"
-        },
-        {
           "id": "enjoy_writing_css",
           "template": "opinion"
+        },
+        {
+          "id": "browser_interoperability_features",
+          "template": "longtext"
+        },
+        {
+          "id": "css_pain_points",
+          "template": "brackets",
+          "options": [
+            {
+              "id": "browser_interoperability"
+            },
+            {
+              "id": "animations"
+            },
+            {
+              "id": "architecture"
+            },
+            {
+              "id": "layout_positioning"
+            },
+            {
+              "id": "scoping_specificity"
+            },
+            {
+              "id": "responsive_design"
+            },
+            {
+              "id": "form_elements_styling"
+            },
+            {
+              "id": "performance_issues"
+            }
+          ]
+        },
+        {
+          "id": "css_pain_points",
+          "sectionSlug": "opinions_other",
+          "suffix": "others",
+          "template": "longtext"
         },
         {
           "id": "currently_missing_from_css",

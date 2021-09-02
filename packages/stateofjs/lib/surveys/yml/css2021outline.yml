@@ -38,9 +38,11 @@ outline:
       - id: content_visibility
 
       # 2021
-      - id: flexbox_gap
+      # - id: flexbox_gap
       - id: break_rules
+        year: 2021
       - id: at_container # (@container)
+        year: 2021
       
   - id: shapes_graphics
     template: feature
@@ -56,9 +58,14 @@ outline:
 
       # 2021
       - id: intrinsic_sizing #min-, max, and fit-content
+        year: 2021
       # - id: repeating_linear_gradient
       - id: conic_gradient
+        year: 2021
       - id: color_function
+        year: 2021
+      - id: color_contrast
+        year: 2021
 
   - id: interactions
     template: feature
@@ -107,6 +114,7 @@ outline:
 
       # 2021
       - id: prefers_reduced_data
+        year: 2021
       # - prefers-reduced-transparency # not supported yet
       # - prefers-contrast # not supported yet
       # - forced-colors # not supported yet
@@ -128,141 +136,143 @@ outline:
       # 2021
       # - id: scroll_margin_scroll_padding
       - id: at_property #(@property)
+        year: 2021
       # - id: resize
       - id: content_visibility
+        year: 2021
 
-  - id: units_selectors
-    slug: features_others
-    questions:
-      - id: units
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: px
-          - id: pt
-          - id: percent
-          - id: em
-          - id: rem
-          - id: vh_vw
-          - id: vmin_vmax
-          - id: ch
-          - id: ex
-          - id: mm
-          - id: cm
-          - id: in
+  # - id: units_selectors
+  #   slug: features_others
+  #   questions:
+  #     - id: units
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: px
+  #         - id: pt
+  #         - id: percent
+  #         - id: em
+  #         - id: rem
+  #         - id: vh_vw
+  #         - id: vmin_vmax
+  #         - id: ch
+  #         - id: ex
+  #         - id: mm
+  #         - id: cm
+  #         - id: in
 
-      - id: pseudo_elements
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: before
-          - id: after
-          - id: first_line
-          - id: first_letter
-          - id: selection
-          - id: placeholder
-          - id: marker
-          - id: backdrop
+  #     - id: pseudo_elements
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: before
+  #         - id: after
+  #         - id: first_line
+  #         - id: first_letter
+  #         - id: selection
+  #         - id: placeholder
+  #         - id: marker
+  #         - id: backdrop
 
-      - id: combinators
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: descendant
-          - id: child
-          - id: next_sibling
-          - id: subsequent_sibling
+  #     - id: combinators
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: descendant
+  #         - id: child
+  #         - id: next_sibling
+  #         - id: subsequent_sibling
 
-      - id: tree_document_structure
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: root
-          - id: empty
-          - id: not
-          - id: nth_child
-          - id: nth_last_child
-          - id: first_child
-          - id: last_child
-          - id: only_child
-          - id: nth_of_type
-          - id: nth_last_of_type
-          - id: first_of_type
-          - id: last_of_type
-          - id: only_of_type
-          - id: lang
-          - id: is
-          - id: where
-          # - id: has # not yet supported, add next year?
+  #     - id: tree_document_structure
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: root
+  #         - id: empty
+  #         - id: not
+  #         - id: nth_child
+  #         - id: nth_last_child
+  #         - id: first_child
+  #         - id: last_child
+  #         - id: only_child
+  #         - id: nth_of_type
+  #         - id: nth_last_of_type
+  #         - id: first_of_type
+  #         - id: last_of_type
+  #         - id: only_of_type
+  #         - id: lang
+  #         - id: is
+  #         - id: where
+  #         # - id: has # not yet supported, add next year?
 
-      - id: attributes
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: presence
-          - id: equality
-          - id: starts_with
-          - id: ends_with
-          - id: contains_word
-          - id: contains_substring
+  #     - id: attributes
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: presence
+  #         - id: equality
+  #         - id: starts_with
+  #         - id: ends_with
+  #         - id: contains_word
+  #         - id: contains_substring
 
-      - id: links_urls
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: any_link
-          - id: link_visited
-          - id: local_link
-          - id: target
+  #     - id: links_urls
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: any_link
+  #         - id: link_visited
+  #         - id: local_link
+  #         - id: target
 
-      - id: interaction
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: hover
-          - id: active
-          - id: focus
-          - id: focus_within
-          - id: focus_visible
+  #     - id: interaction
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: hover
+  #         - id: active
+  #         - id: focus
+  #         - id: focus_within
+  #         - id: focus_visible
 
-      - id: form_controls
-        template: multiple
-        allowmultiple: true
-        allowother: false
-        randomize: false
-        suffix: choices
-        options:
-          - id: enabled_disabled
-          - id: read_only_write
-          - id: placeholder_shown
-          - id: default
-          - id: checked
-          - id: indeterminate
-          - id: valid_invalid
-          - id: user_invalid
-          - id: in_out_range
-          - id: required_optional
+  #     - id: form_controls
+  #       template: multiple
+  #       allowmultiple: true
+  #       allowother: false
+  #       randomize: false
+  #       suffix: choices
+  #       options:
+  #         - id: enabled_disabled
+  #         - id: read_only_write
+  #         - id: placeholder_shown
+  #         - id: default
+  #         - id: checked
+  #         - id: indeterminate
+  #         - id: valid_invalid
+  #         - id: user_invalid
+  #         - id: in_out_range
+  #         - id: required_optional
 
   ### TOOLS ###
 
@@ -306,6 +316,7 @@ outline:
       
       # 2021
       - id: halfmoon
+        year: 2021
       # removed in 2021
       # - id: skeleton
       # - id: spectre_css
@@ -361,7 +372,9 @@ outline:
 
       # 2021
       - id: twin
+        year: 2021
       - id: theme_ui
+        year: 2021
       # - id: goober # too early?
 
       # removed in 2021
@@ -430,6 +443,20 @@ outline:
       - id: browsers
         template: others
 
+        # option 1 : stored as [first option, second option, winning option] for each round
+      # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
+      - id: tool_evaluation
+        template: brackets
+        options:
+          - id: learning_curve_documentation # is a tool is easy to learn?
+          - id: momentum_popularity # does it have a lot of hype?
+          - id: user_base_size # is it a well-established option?
+          - id: developer_experience_tooling # does it provide a good developer experience?
+          - id: performance_user_experience # does it provide a good user experience?
+          - id: creator_team # is it backed by a well-known/well-funded team?
+          - id: accessibility_features # does it implement accessibility features well?
+          - id: community_inclusivity # does it have a good community?
+
   ### ENVIRONMENTS ###
   - id: environments
     slug: environments
@@ -472,7 +499,7 @@ outline:
         template: multiple
         options:
           - id: keyboard_navigation
-          - id: increased_contrast
+          - id: compliant_contrast
           - id: focus_indicators
           - id: skip_to_content_link
           - id: color_themes # dark mode, high contrast mode, etc.
@@ -499,20 +526,6 @@ outline:
           - id: 2
           - id: 3
       
-      # option 1 : stored as [first option, second option, winning option] for each round
-      # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
-      - id: tool_evaluation
-        template: brackets
-        options:
-          - id: learning_curve_documentation # is a tool is easy to learn?
-          - id: momentum_popularity # does it have a lot of hype?
-          - id: user_base_size # is it a well-established option?
-          - id: developer_experience_tooling # does it provide a good developer experience?
-          - id: performance_user_experience # does it provide a good user experience?
-          - id: creator_team # is it backed by a well-known/well-funded team?
-          - id: accessibility_features # does it implement accessibility features well?
-          - id: community_inclusivity # does it have a good community?
-
     ### RESOURCES ###
 
   - id: resources # new for 2021
@@ -556,9 +569,9 @@ outline:
       #     - id: bramus_van_damme
       #     - id: adam_wathan
 
-      - id: blogs_news_magazines
-        template: others
-        matchTags: [people]
+      # - id: people
+      #   template: others
+      #   matchTags: [people]
 
 
       - id: blogs_news_magazines
@@ -635,6 +648,7 @@ outline:
 
     ### OPINIONS ###
 
+
   - id: opinions
     slug: opinions
     questions:
@@ -644,12 +658,32 @@ outline:
         template: opinion
       - id: utility_classes_to_be_avoided
         template: opinion
-      - id: selector_nesting_to_be_avoided
-        template: opinion
-      - id: css_is_programming_language
-        template: opinion
+      # - id: selector_nesting_to_be_avoided
+      #   template: opinion
+      # - id: css_is_programming_language
+      #   template: opinion
       - id: enjoy_writing_css
         template: opinion
+
+      - id: browser_interoperability_features
+        template: longtext
+
+      - id: css_pain_points
+        template: brackets
+        options:
+          - id: browser_interoperability
+          - id: animations
+          - id: architecture
+          - id: layout_positioning
+          - id: scoping_specificity
+          - id: responsive_design
+          - id: form_elements_styling
+          - id: performance_issues
+      - id: css_pain_points
+        sectionSlug: opinions_other
+        suffix: others
+        template: longtext
+
       - id: currently_missing_from_css
         sectionSlug: opinions_other
         template: multiple
@@ -665,12 +699,14 @@ outline:
         sectionSlug: opinions_other
         suffix: others
         template: longtext
+
       - id: state_of_the_web
         template: happiness
         sectionSlug: happiness
       - id: state_of_css
         template: happiness
         sectionSlug: happiness
+
       # - id: sum_up_one_word_css
       #   template: text
 

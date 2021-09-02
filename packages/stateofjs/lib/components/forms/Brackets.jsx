@@ -140,6 +140,7 @@ const BracketResults = ({ options, results = [], currentMatchIndex }) => {
   );
 };
 
+
 // a match group within the bracket
 const BracketMatchGroup = ({ options, results, isFinal, matchIndexes, currentMatchIndex }) => (
   <div className={`brackets-matchgroup brackets-matchgroup-${isFinal ? 'final' : ''}`}>
