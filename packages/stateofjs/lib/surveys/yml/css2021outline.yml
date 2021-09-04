@@ -38,7 +38,8 @@ outline:
       - id: content_visibility
 
       # 2021
-      # - id: flexbox_gap
+      - id: flexbox_gap
+        year: 2021
       - id: break_rules
         year: 2021
       - id: at_container # (@container)
@@ -55,6 +56,7 @@ outline:
       - id: blend_modes
       - id: filter_effects
       - id: backdrop_filter
+      - id: color_gamut
 
       # 2021
       - id: intrinsic_sizing #min-, max, and fit-content
@@ -63,8 +65,6 @@ outline:
       - id: conic_gradient
         year: 2021
       - id: color_function
-        year: 2021
-      - id: color_contrast
         year: 2021
 
   - id: interactions
@@ -104,22 +104,24 @@ outline:
       - id: animations
       - id: perspective
 
-  - id: media_queries
+  - id: accessibility
     template: feature
     slug: features
     questions:
       - id: prefers_reduced_motion
       - id: prefers_color_scheme
-      - id: color_gamut
 
       # 2021
       - id: prefers_reduced_data
+        year: 2021
+      - id: tabindex
+        year: 2021
+      - id: color_contrast
         year: 2021
       # - prefers-reduced-transparency # not supported yet
       # - prefers-contrast # not supported yet
       # - forced-colors # not supported yet
       # - inverted-colors # not supported yet
-
 
   - id: other_features
     template: feature
@@ -137,9 +139,9 @@ outline:
       # - id: scroll_margin_scroll_padding
       - id: at_property #(@property)
         year: 2021
-      # - id: resize
-      - id: content_visibility
+      - id: marker
         year: 2021
+      # - id: resize
 
   # - id: units_selectors
   #   slug: features_others
@@ -446,6 +448,7 @@ outline:
         # option 1 : stored as [first option, second option, winning option] for each round
       # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
       - id: tool_evaluation
+        year: 2021
         template: brackets
         options:
           - id: learning_curve_documentation # is a tool is easy to learn?
@@ -494,9 +497,13 @@ outline:
           - id: gaming_console
           - id: screen_reader
           - id: print
+          - id: keyboard_only
+          - id: testing_tools
+          - id: vision_simulator
 
       - id: accessibility_features
         template: multiple
+        year: 2021
         options:
           - id: keyboard_navigation
           - id: compliant_contrast
@@ -507,6 +514,10 @@ outline:
           - id: alt_text
           - id: semantic_markup
           - id: aria_roles
+
+      - id: accessibility_features
+        template: others
+        year: 2021
 
       - id: css_for_print
         template: single
@@ -666,9 +677,11 @@ outline:
         template: opinion
 
       - id: browser_interoperability_features
+        year: 2021
         template: longtext
 
       - id: css_pain_points
+        year: 2021
         template: brackets
         options:
           - id: browser_interoperability
@@ -680,11 +693,13 @@ outline:
           - id: form_elements_styling
           - id: performance_issues
       - id: css_pain_points
+        year: 2021
         sectionSlug: opinions_other
         suffix: others
         template: longtext
 
       - id: currently_missing_from_css
+        year: 2021
         sectionSlug: opinions_other
         template: multiple
         options: 
@@ -768,9 +783,9 @@ outline:
       #   template: proficiency
       # - id: backend_proficiency
       #   template: proficiency
-        
-      - id: how_did_user_find_out_about_the_survey
-        template: text
+
+      - id: country
+        template: country
 
       - id: gender
         template: single
@@ -798,6 +813,7 @@ outline:
           - id: not_listed
 
       - id: disability_status
+        year: 2021
         template: multiple
         allowother: true
         options:
@@ -805,8 +821,10 @@ outline:
           - id: hearing_impairments
           - id: mobility_impairments
           - id: cognitive_impairments
+          - id: not_listed
           
       - id: disability_status
+        year: 2021
         template: others
         matchTags: [disabilities]
 
@@ -814,6 +832,7 @@ outline:
         template: text
 
       - id: twitter_username
+        year: 2021
         template: text
         
       - id: industry_sector
@@ -836,6 +855,5 @@ outline:
         template: others
         matchTags: [industry_sectors]
 
-      - id: country
-        template: country
-
+      - id: how_did_user_find_out_about_the_survey
+        template: text

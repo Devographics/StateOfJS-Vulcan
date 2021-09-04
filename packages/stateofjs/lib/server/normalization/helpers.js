@@ -328,3 +328,4 @@ export const logAllRules = async () => {
     mode: 'overwrite',
   });
 };
+

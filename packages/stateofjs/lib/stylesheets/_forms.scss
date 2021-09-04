@@ -25,8 +25,20 @@
       font-size: $largeish-font;
     }
     @include font-bold;
+    display: flex;
+    align-items: center;
     code {
       font-size: $medium-font;
+    }
+    .question-label-new {
+      text-transform: uppercase;
+      background: $active-color-dark;
+      color: $text-color-inverted;
+      padding: 1px 5px;
+      margin-left: $spacing/2;
+      display: inline-block;
+      font-size: $smaller-font;
+      // @include font-regular;
     }
   }
   .form-check {

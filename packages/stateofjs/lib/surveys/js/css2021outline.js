@@ -50,6 +50,10 @@ export default {
           "id": "content_visibility"
         },
         {
+          "id": "flexbox_gap",
+          "year": 2021
+        },
+        {
           "id": "break_rules",
           "year": 2021
         },
@@ -86,6 +90,9 @@ export default {
           "id": "backdrop_filter"
         },
         {
+          "id": "color_gamut"
+        },
+        {
           "id": "intrinsic_sizing",
           "year": 2021
         },
@@ -95,10 +102,6 @@ export default {
         },
         {
           "id": "color_function",
-          "year": 2021
-        },
-        {
-          "id": "color_contrast",
           "year": 2021
         }
       ]
@@ -176,7 +179,7 @@ export default {
       ]
     },
     {
-      "id": "media_queries",
+      "id": "accessibility",
       "template": "feature",
       "slug": "features",
       "questions": [
@@ -187,10 +190,15 @@ export default {
           "id": "prefers_color_scheme"
         },
         {
-          "id": "color_gamut"
+          "id": "prefers_reduced_data",
+          "year": 2021
         },
         {
-          "id": "prefers_reduced_data",
+          "id": "tabindex",
+          "year": 2021
+        },
+        {
+          "id": "color_contrast",
           "year": 2021
         }
       ]
@@ -226,7 +234,7 @@ export default {
           "year": 2021
         },
         {
-          "id": "content_visibility",
+          "id": "marker",
           "year": 2021
         }
       ]
@@ -511,6 +519,7 @@ export default {
         },
         {
           "id": "tool_evaluation",
+          "year": 2021,
           "template": "brackets",
           "options": [
             {
@@ -632,12 +641,22 @@ export default {
             },
             {
               "id": "print"
+            },
+            {
+              "id": "keyboard_only"
+            },
+            {
+              "id": "testing_tools"
+            },
+            {
+              "id": "vision_simulator"
             }
           ]
         },
         {
           "id": "accessibility_features",
           "template": "multiple",
+          "year": 2021,
           "options": [
             {
               "id": "keyboard_navigation"
@@ -667,6 +686,11 @@ export default {
               "id": "aria_roles"
             }
           ]
+        },
+        {
+          "id": "accessibility_features",
+          "template": "others",
+          "year": 2021
         },
         {
           "id": "css_for_print",
@@ -931,10 +955,12 @@ export default {
         },
         {
           "id": "browser_interoperability_features",
+          "year": 2021,
           "template": "longtext"
         },
         {
           "id": "css_pain_points",
+          "year": 2021,
           "template": "brackets",
           "options": [
             {
@@ -965,12 +991,14 @@ export default {
         },
         {
           "id": "css_pain_points",
+          "year": 2021,
           "sectionSlug": "opinions_other",
           "suffix": "others",
           "template": "longtext"
         },
         {
           "id": "currently_missing_from_css",
+          "year": 2021,
           "sectionSlug": "opinions_other",
           "template": "multiple",
           "options": [
@@ -1132,8 +1160,8 @@ export default {
           ]
         },
         {
-          "id": "how_did_user_find_out_about_the_survey",
-          "template": "text"
+          "id": "country",
+          "template": "country"
         },
         {
           "id": "gender",
@@ -1196,6 +1224,7 @@ export default {
         },
         {
           "id": "disability_status",
+          "year": 2021,
           "template": "multiple",
           "allowother": true,
           "options": [
@@ -1210,11 +1239,15 @@ export default {
             },
             {
               "id": "cognitive_impairments"
+            },
+            {
+              "id": "not_listed"
             }
           ]
         },
         {
           "id": "disability_status",
+          "year": 2021,
           "template": "others",
           "matchTags": [
             "disabilities"
@@ -1226,6 +1259,7 @@ export default {
         },
         {
           "id": "twitter_username",
+          "year": 2021,
           "template": "text"
         },
         {
@@ -1278,8 +1312,8 @@ export default {
           ]
         },
         {
-          "id": "country",
-          "template": "country"
+          "id": "how_did_user_find_out_about_the_survey",
+          "template": "text"
         }
       ]
     }

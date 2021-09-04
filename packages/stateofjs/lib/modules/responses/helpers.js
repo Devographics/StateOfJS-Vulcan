@@ -265,7 +265,7 @@ export const generateIntlId = (questionObject, section, survey) => {
 
 // transform question object into SimpleSchema-compatible schema field
 export const getQuestionSchema = (questionObject, section, survey) => {
-  const { id, title, options, allowmultiple = false, alias } = questionObject;
+  const { id, title, options, allowmultiple = false, alias, year } = questionObject;
 
   const intlId = generateIntlId(questionObject, section, survey);
 
@@ -289,6 +289,7 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     canUpdate: ['members'],
     itemProperties: {
       questionId: id,
+      year,
     },
   };
 
@@ -412,3 +413,4 @@ export const canModifyResponse = (response, user) => {
       return false;
   }
 };
+
