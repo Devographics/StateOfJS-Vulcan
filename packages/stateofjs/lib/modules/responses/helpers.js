@@ -12,7 +12,8 @@ import surveys from '../../surveys';
 import { statuses } from '../constants.js';
 import Users from 'meteor/vulcan:users';
 
-import Brackets from '../../components/forms/Brackets.jsx'
+import Bracket from '../../components/forms/Brackets.jsx'
+
 /*
 
 Replace all occurences of a string
@@ -186,7 +187,7 @@ export const templates = {
     options: countriesOptions,
   }),
   brackets: () => ({
-    input: Brackets,
+    input: Bracket,
     type: Array,
     arrayItem: {
       type: Array,

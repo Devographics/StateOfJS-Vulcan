@@ -169,18 +169,18 @@ const BracketResults = ({ options, results = [], currentMatchIndex }) => {
   const props = { options, currentMatchIndex, results };
   return (
     <div className="bracket-results">
-      <BracketMatchGroup {...props} matchIndexes={[0, 1]} />
-      <BracketMatchGroup {...props} matchIndexes={[4]} />
-      <BracketMatchGroup {...props} matchIndexes={[6]} isFinal={true} />
-      <BracketMatchGroup {...props} matchIndexes={[5]} />
-      <BracketMatchGroup {...props} matchIndexes={[2, 3]} />
+      <BracketMatchGroup {...props} matchIndexes={[0, 1]} level={1} />
+      <BracketMatchGroup {...props} matchIndexes={[4]} level={2} />
+      <BracketMatchGroup {...props} matchIndexes={[6]} isFinal={true} level={3} />
+      <BracketMatchGroup {...props} matchIndexes={[5]} level={2} />
+      <BracketMatchGroup {...props} matchIndexes={[2, 3]} level={1} />
     </div>
   );
 };
 
 // a match group within the bracket
-const BracketMatchGroup = ({ options, results, isFinal, matchIndexes, currentMatchIndex }) => (
-  <div className={`bracket-matchgroup bracket-matchgroup-${isFinal ? 'final' : ''}`}>
+const BracketMatchGroup = ({ options, results, isFinal, matchIndexes, currentMatchIndex, level }) => (
+  <div className={`bracket-matchgroup bracket-matchgroup-level${level} bracket-matchgroup-${isFinal ? 'final' : ''}`}>
     {matchIndexes.map((matchIndex) => (
       <BracketMatch
         options={options}
@@ -232,3 +232,4 @@ const EmptyBracketItem = ({ variant = '' }) => (
 );
 
 export default Bracket;
+

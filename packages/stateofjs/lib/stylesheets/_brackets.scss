@@ -35,35 +35,32 @@
   margin-top: $spacing;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 
-  // display: grid;
-  // grid-template-columns: repeat(8, 1fr);
 }
 
 .bracket-matchgroup {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 1;
-  margin-bottom: $spacing;
+  margin-right: $spacing;
 }
 
 .bracket-match {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex: 1;
-  margin-right: $spacing;
+  flex-direction: column;
+  // margin-right: $spacing;
+  // flex: 1;
   &:last-child{
     margin-right: 0;
   }
   &-final {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     .bracket-item {
-      margin-bottom: $spacing;
+      margin-right: $spacing;
     }
   }
   &-current {
@@ -72,15 +69,43 @@
       box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
     }
   }
+  .bracket-matchgroup-level1 &{
+    flex-basis: 48%;
+    justify-content: space-between;
+  }
+  .bracket-matchgroup-level2 &{
+    flex-basis: 100%;
+    justify-content: space-around;
+  }
+  .bracket-matchgroup-level3 &{
+    flex-basis: 100%;
+    justify-content: space-around;
+  }
 }
 
 .bracket-item {
   opacity: 0.6;
   border: 1px solid $border-color;
   padding: $spacing/2;
-  margin-right: $spacing/2;
+  // margin-right: $spacing;
   font-size: $small-font;
+  text-align: center;
+  white-space: break-space;
+  @include flex-center;
+  .bracket-matchgroup-level1 &{
+    flex-basis: 46%;
+  }
+  .bracket-matchgroup-level2 &{
+    flex-basis: 22%;
+  }
+  .bracket-matchgroup-level3 &{
+    // flex-basis: 22%;
+    width: 22%;
+  }
   &:last-child{
+    margin-right: 0;
+  }
+  .bracket-match-final &{
     margin-right: 0;
   }
   &-winner {
