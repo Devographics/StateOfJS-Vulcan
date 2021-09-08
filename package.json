@@ -6,7 +6,7 @@
   },
   "scripts": {
     "prestart": "node .vulcan/prestart_vulcan.js",
-    "start": "meteor --settings settings.json --port 5000",
+    "start": "METEOR_PACKAGE_DIRS=/Users/sacha/dev/Vulcan/packages meteor --settings settings.json --port 5000",
     "lint": "eslint --cache --ext .jsx,js packages",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
