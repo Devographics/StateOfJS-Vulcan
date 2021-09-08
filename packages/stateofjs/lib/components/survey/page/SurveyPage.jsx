@@ -28,11 +28,7 @@ const SurveyPageWrapper = (props, { intl }) => {
             <h1 className="survey-image">
               <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
             </h1>
-            <div className="survey-intro">
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                {intl.formatMessage({ id: `general.survey_intro_${surveySlug}` })}
-              </ReactMarkdown>
-            </div>
+            <SurveyIntro survey={survey} />
             <SurveyPage survey={survey} />
           </div>
         );
@@ -42,6 +38,18 @@ const SurveyPageWrapper = (props, { intl }) => {
 };
 
 SurveyPageWrapper.contextTypes = {
+  intl: intlShape,
+};
+
+const SurveyIntro = ({ survey }, { intl }) => (
+  <div className="survey-intro">
+    <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+      {intl.formatMessage({ id: `general.survey_intro_${survey.slug}` })}
+    </ReactMarkdown>
+  </div>
+);
+
+SurveyIntro.contextTypes = {
   intl: intlShape,
 };
 

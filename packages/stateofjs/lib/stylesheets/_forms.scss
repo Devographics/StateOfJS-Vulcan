@@ -27,6 +27,7 @@
     @include font-bold;
     display: flex;
     align-items: center;
+    line-height: 1.7;
     code {
       font-size: $medium-font;
     }
