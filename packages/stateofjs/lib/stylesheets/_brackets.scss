@@ -37,49 +37,36 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .bracket-matchgroup {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex: 1;
+  // justify-content: space-around;
+
   margin-right: $spacing;
+  &:last-child{
+    margin-right: 0;
+  }
 }
 
 .bracket-match {
   display: flex;
   flex-direction: column;
-  // margin-right: $spacing;
-  // flex: 1;
-  &:last-child{
-    margin-right: 0;
-  }
-  &-final {
-    flex-direction: row;
-    align-items: center;
-    .bracket-item {
-      margin-right: $spacing;
-    }
-  }
+  flex: 1;
+  justify-content: space-around;
+
   &-current {
     .bracket-item {
       opacity: 1;
       box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
     }
   }
-  .bracket-matchgroup-level1 &{
-    flex-basis: 48%;
-    justify-content: space-between;
-  }
-  .bracket-matchgroup-level2 &{
-    flex-basis: 100%;
-    justify-content: space-around;
-  }
-  .bracket-matchgroup-level3 &{
-    flex-basis: 100%;
-    justify-content: space-around;
+
+  margin-bottom: $spacing;
+  &:last-child{
+    margin-bottom: 0;
   }
 }
 
@@ -91,23 +78,8 @@
   font-size: $small-font;
   text-align: center;
   white-space: break-space;
+  height: 65px;
   @include flex-center;
-  .bracket-matchgroup-level1 &{
-    flex-basis: 46%;
-  }
-  .bracket-matchgroup-level2 &{
-    flex-basis: 22%;
-  }
-  .bracket-matchgroup-level3 &{
-    // flex-basis: 22%;
-    width: 22%;
-  }
-  &:last-child{
-    margin-right: 0;
-  }
-  .bracket-match-final &{
-    margin-right: 0;
-  }
   &-winner {
     border-color: $contrast-color;
     border-width: 2px;
@@ -115,6 +87,12 @@
   &-overall-winner {
     border-color: $contrast-color;
     border-width: 4px;
+  }
+
+
+  margin-bottom: $spacing;
+  &:last-child{
+    margin-bottom: 0;
   }
 }
 

@@ -93,6 +93,9 @@ export default {
           "id": "color_gamut"
         },
         {
+          "id": "perspective"
+        },
+        {
           "id": "intrinsic_sizing",
           "year": 2021
         },
@@ -102,6 +105,10 @@ export default {
         },
         {
           "id": "color_function",
+          "year": 2021
+        },
+        {
+          "id": "accent_color",
           "year": 2021
         }
       ]
@@ -125,6 +132,9 @@ export default {
         },
         {
           "id": "pointer_events"
+        },
+        {
+          "id": "scroll_timeline"
         }
       ]
     },
@@ -133,15 +143,6 @@ export default {
       "template": "feature",
       "slug": "features",
       "questions": [
-        {
-          "id": "web_fonts"
-        },
-        {
-          "id": "variable_fonts"
-        },
-        {
-          "id": "line_breaking"
-        },
         {
           "id": "font_variant"
         },
@@ -156,25 +157,10 @@ export default {
         },
         {
           "id": "line_clamp"
-        }
-      ]
-    },
-    {
-      "id": "animations_transforms",
-      "template": "feature",
-      "slug": "features",
-      "questions": [
-        {
-          "id": "transitions"
         },
         {
-          "id": "transforms"
-        },
-        {
-          "id": "animations"
-        },
-        {
-          "id": "perspective"
+          "id": "variable_fonts",
+          "year": 2021
         }
       ]
     },
@@ -194,11 +180,19 @@ export default {
           "year": 2021
         },
         {
+          "id": "color_contrast",
+          "year": 2021
+        },
+        {
+          "id": "color_scheme",
+          "year": 2021
+        },
+        {
           "id": "tabindex",
           "year": 2021
         },
         {
-          "id": "color_contrast",
+          "id": "aria_attributes",
           "year": 2021
         }
       ]
@@ -329,44 +323,6 @@ export default {
       ]
     },
     {
-      "id": "css_methodologies",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "bem"
-        },
-        {
-          "id": "atomic_css"
-        },
-        {
-          "id": "oocss"
-        },
-        {
-          "id": "smacss"
-        },
-        {
-          "id": "it_css"
-        },
-        {
-          "id": "cube_css"
-        },
-        {
-          "id": "css_methodologies",
-          "intlId": "tools.other_tools",
-          "template": "text",
-          "sectionSlug": "tools_others",
-          "suffix": "others"
-        },
-        {
-          "id": "css_methodologies",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
       "id": "css_in_js",
       "template": "tool",
       "slug": "tools",
@@ -407,6 +363,14 @@ export default {
         },
         {
           "id": "theme_ui",
+          "year": 2021
+        },
+        {
+          "id": "vanilla_extract",
+          "year": 2021
+        },
+        {
+          "id": "goober",
           "year": 2021
         },
         {
@@ -683,7 +647,7 @@ export default {
               "id": "semantic_markup"
             },
             {
-              "id": "aria_roles"
+              "id": "aria_attributes"
             }
           ]
         },
@@ -967,7 +931,7 @@ export default {
               "id": "browser_interoperability"
             },
             {
-              "id": "animations"
+              "id": "interactions"
             },
             {
               "id": "architecture"
@@ -1012,9 +976,6 @@ export default {
               "id": "nesting"
             },
             {
-              "id": "functions"
-            },
-            {
               "id": "browser_support"
             },
             {
@@ -1047,6 +1008,36 @@ export default {
       "id": "user_info",
       "slug": "user_info",
       "questions": [
+        {
+          "id": "age",
+          "template": "single",
+          "options": [
+            {
+              "id": "range_less_than_10"
+            },
+            {
+              "id": "range_10_18"
+            },
+            {
+              "id": "range_18_24"
+            },
+            {
+              "id": "range_25_34"
+            },
+            {
+              "id": "range_35_44"
+            },
+            {
+              "id": "range_45_54"
+            },
+            {
+              "id": "range_55_64"
+            },
+            {
+              "id": "range_more_than_65"
+            }
+          ]
+        },
         {
           "id": "years_of_experience",
           "template": "single",
@@ -1187,9 +1178,6 @@ export default {
           "template": "multiple",
           "allowother": true,
           "options": [
-            {
-              "id": "biracial"
-            },
             {
               "id": "black_african"
             },

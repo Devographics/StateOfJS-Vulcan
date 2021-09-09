@@ -80,9 +80,9 @@ const SurveySectionContents = ({
       <h2 className="section-title">
         <Components.FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
       </h2>
-      <h3 className="section-description">
+      <p className="section-description">
         <Components.FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />
-      </h3>
+      </p>
       <Components.SmartForm
         documentId={response && response._id}
         fields={fields}

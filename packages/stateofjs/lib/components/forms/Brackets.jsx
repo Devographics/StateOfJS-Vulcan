@@ -169,53 +169,53 @@ const BracketResults = ({ options, results = [], currentMatchIndex }) => {
   const props = { options, currentMatchIndex, results };
   return (
     <div className="bracket-results">
-      <BracketMatchGroup {...props} matchIndexes={[0, 1]} level={1} />
-      <BracketMatchGroup {...props} matchIndexes={[4]} level={2} />
-      <BracketMatchGroup {...props} matchIndexes={[6]} isFinal={true} level={3} />
-      <BracketMatchGroup {...props} matchIndexes={[5]} level={2} />
-      <BracketMatchGroup {...props} matchIndexes={[2, 3]} level={1} />
+      <BracketMatchGroup {...props} matchIndexes={[0, 1, 2, 3]} level={1} />
+      <BracketMatchGroup {...props} matchIndexes={[4, 5]} level={2} />
+      <BracketMatchGroup {...props} matchIndexes={[6]} level={3} />
+      <BracketMatchGroup {...props} matchIndexes={[6]} isWinner={true} level={3} />
     </div>
   );
 };
 
 // a match group within the bracket
-const BracketMatchGroup = ({ options, results, isFinal, matchIndexes, currentMatchIndex, level }) => (
-  <div className={`bracket-matchgroup bracket-matchgroup-level${level} bracket-matchgroup-${isFinal ? 'final' : ''}`}>
+const BracketMatchGroup = ({ options, results, isWinner, matchIndexes, currentMatchIndex, level }) => (
+  <div className={`bracket-matchgroup bracket-matchgroup-level${level} bracket-matchgroup-${isWinner ? 'winner' : ''}`}>
     {matchIndexes.map((matchIndex) => (
       <BracketMatch
         options={options}
         result={results[matchIndex]}
         matchIndex={matchIndex}
         key={matchIndex}
-        isFinal={isFinal}
+        isWinner={isWinner}
         isCurrentMatch={matchIndex === currentMatchIndex}
       />
     ))}
   </div>
 );
 
-// bracket pair
-const BracketMatch = ({ options, result, index, isFinal = false, isCurrentMatch = false }) => {
+// bracket pair; or single winner
+const BracketMatch = ({ options, result, index, isWinner = false, isCurrentMatch = false }) => {
   const [p1Index, p2Index, winnerIndex] = result;
   const p1 = options[p1Index];
   const p2 = options[p2Index];
   const winner = options[winnerIndex];
-  return (
-    <div
-      key={index}
-      className={`bracket-match bracket-match-${isFinal ? 'final' : ''} bracket-match-${
-        isCurrentMatch ? 'current' : ''
-      }`}
-    >
+  return isWinner ? (
+    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+      <BracketWinner winner={winner} />
+    </div>
+  ) : (
+    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
       {p1 ? <BracketItem player={p1} isWinner={winnerIndex && p1Index === winnerIndex} /> : <EmptyBracketItem />}
-      {isFinal &&
-        (winner ? (
-          <BracketItem player={winner} isWinner={true} variant="overall-winner" />
-        ) : (
-          <EmptyBracketItem variant="overall-winner" />
-        ))}
       {p2 ? <BracketItem player={p2} isWinner={winnerIndex && p2Index === winnerIndex} /> : <EmptyBracketItem />}
     </div>
+  );
+};
+
+const BracketWinner = ({ winner }) => {
+  return winner ? (
+    <BracketItem player={winner} isWinner={true} variant="overall-winner" />
+  ) : (
+    <EmptyBracketItem variant="overall-winner" />
   );
 };
 
@@ -232,4 +232,3 @@ const EmptyBracketItem = ({ variant = '' }) => (
 );
 
 export default Bracket;
-

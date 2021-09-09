@@ -4,6 +4,7 @@ import EntityLabel from '../../common/EntityLabel';
 import { Components } from 'meteor/vulcan:core';
 import { intlShape } from 'meteor/vulcan:i18n';
 
+
 const FormLabel = ({ questionId, label, layout, path, year }, { intl }) => {
   const labelProps = layout === 'horizontal' ? { column: true, sm: 3 } : {};
   const entityProps = {
@@ -17,7 +18,7 @@ const FormLabel = ({ questionId, label, layout, path, year }, { intl }) => {
   }
 
   return (
-    <h3>
+    <h3 className="form-label-heading">
       <Form.Label {...labelProps}>
         <EntityLabel {...entityProps} />
         {year === 2021 && (

@@ -14,6 +14,7 @@ import Users from 'meteor/vulcan:users';
 
 import Bracket from '../../components/forms/Brackets.jsx'
 
+
 /*
 
 Replace all occurences of a string
@@ -414,4 +415,5 @@ export const canModifyResponse = (response, user) => {
       return false;
   }
 };
+
 

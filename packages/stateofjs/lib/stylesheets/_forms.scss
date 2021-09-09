@@ -17,6 +17,9 @@
       background: $greyDarkish;
     }
   }
+  .form-label-heading {
+    margin-bottom: $spacing/2;
+  }
   .form-label {
     @include small-medium {
       font-size: $large-font;
@@ -155,7 +158,7 @@
     &:visited {
       color: $text-color-inverted;
     }
-    &:hover{
+    &:hover {
       background: $bg-color-lightest;
     }
   }
