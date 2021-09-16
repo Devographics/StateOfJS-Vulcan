@@ -66,14 +66,6 @@ const Bracket = ({ inputProperties, itemProperties, options: _options }) => {
       const [nextRoundMatchIndex, nextRoundPlayerIndex] = matchTable[matchIndex];
       const nextRoundMatchResult = newResults[nextRoundMatchIndex];
       nextRoundMatchResult[nextRoundPlayerIndex] = winnerIndex;
-      // const nextRoundMatchResult = newResults[nextRoundMatchIndex];
-      // if (nextRoundMatchResult.length === 0) {
-      //   // no players yet for the next round, put the winner in first position
-      //   nextRoundMatchResult[0] = winnerIndex;
-      // } else {
-      //   // already one player set for the next round, put the winner in second position
-      //   nextRoundMatchResult[1] = winnerIndex;
-      // }
     }
     setResults(newResults);
   };
@@ -90,7 +82,6 @@ const Bracket = ({ inputProperties, itemProperties, options: _options }) => {
     <Components.FormItem path={inputProperties.path} label={inputProperties.label} {...itemProperties}>
       <div className="bracket">
         <BracketStartOver {...props} />
-        {/* <BracketCurrentMatchup {...props} /> */}
         <BracketResults {...props} />
       </div>
     </Components.FormItem>
@@ -147,11 +138,13 @@ const BracketMatchGroup = (props) => {
 
 // bracket pair; or single winner
 const BracketMatch = (props) => {
-  const { options, result, index, isOverallWinner = false, isCurrentMatch = false } = props;
+  const { options, result, index, isOverallWinner = false, isCurrentMatch = false, level } = props;
   const [p1Index, p2Index, winnerIndex] = result;
   const p1 = options[p1Index];
   const p2 = options[p2Index];
   const winner = options[winnerIndex];
+  // after first round every player has won at least a match
+  const isDefending = level > 1;
   // disable the buttons if
   // A) player 1 is not defined yet
   // B) player 2 is not defined yet
@@ -160,12 +153,13 @@ const BracketMatch = (props) => {
 
   const p = {
     ...props,
+    isDefending,
     isDisabled,
   };
 
   return isOverallWinner ? (
     <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
-      {winner ? <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} /> : <EmptyBracketItem />}
+      {winner ? <BracketItem {...p} playerIndex={0} player={winner} isDefending={true} isOverallWinner={true} /> : <EmptyBracketItem />}
     </div>
   ) : (
     <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
@@ -184,21 +178,6 @@ const BracketMatch = (props) => {
   );
 };
 
-// overall winner
-const BracketOverallWinner = ({ winner }) => {
-  return winner ? (
-    <div className="bracket-item bracket-item-overall-winner">
-      <div className="inner">
-        <Components.Button>
-          <Components.FormattedMessage id={winner.intlId} />
-          <Components.FormattedMessage className="bracket-item-description" id={`${winner.intlId}.description`} />
-        </Components.Button>
-      </div>
-    </div>
-  ) : (
-    <EmptyBracketItem variant="overall-winner" />
-  );
-};
 
 // bracket result item
 const BracketItem = ({
@@ -208,16 +187,19 @@ const BracketItem = ({
   isDisabled = false,
   isWinner,
   isOverallWinner,
+  isDefending,
   pickWinner,
 }) => {
-  
+
   const classnames = ['bracket-item'];
   if (isOverallWinner) classnames.push('bracket-item-overall-winner');
   if (isWinner) classnames.push('bracket-item-winner');
+  if (isDisabled) classnames.push('bracket-item-disabled');
+  if (isDefending) classnames.push('bracket-item-defending');
 
   return (
     <div className={classnames.join(' ')}>
-      <div className="inner">
+      <div className="bracket-item-inner">
         <Components.Button
           disabled={isDisabled}
           onClick={() => {
@@ -235,7 +217,7 @@ const BracketItem = ({
 // empty bracket result item
 const EmptyBracketItem = () => (
   <div className="bracket-item bracket-item-empty">
-    <div className="inner">
+    <div className="bracket-item-inner">
       <span>...</span>
     </div>
   </div>
@@ -243,70 +225,87 @@ const EmptyBracketItem = () => (
 
 export default Bracket;
 
-// current X vs Y matchup
-const BracketCurrentMatchup = (props) => {
-  const { currentMatchIndex, options, results, pickWinner } = props;
-  const currentMatch = results[currentMatchIndex];
-  return (
-    <div className="bracket-top">
-      {currentMatchIndex === -1 ? (
-        <BracketOver {...props} />
-      ) : (
-        <div className="bracket-current-matchup">
-          <BracketPlayer
-            player={options[currentMatch[0]]}
-            number={0}
-            pickWinner={pickWinner}
-            currentMatchIndex={currentMatchIndex}
-          />
-          <div className="bracket-current-matchup-vs">
-            <Components.FormattedMessage id="bracket.vs" />
-          </div>
-          <BracketPlayer
-            player={options[currentMatch[1]]}
-            number={1}
-            pickWinner={pickWinner}
-            currentMatchIndex={currentMatchIndex}
-          />
-        </div>
-      )}
-    </div>
-  );
-};
 
-// the bracket is over, show the winner
-const BracketOver = (props) => {
-  const { options, results } = props;
-  const winner = options[results[results.length - 1][2]];
-  return (
-    <div className="bracket-over">
-      <h4 className="bracket-winner">
-        <Components.FormattedMessage id="bracket.winner" />
-        <Components.FormattedMessage id={winner.intlId} />
-      </h4>
-      <BracketStartOver {...props} />
-    </div>
-  );
-};
+// // overall winner
+// const BracketOverallWinner = ({ winner }) => {
+//   return winner ? (
+//     <div className="bracket-item bracket-item-overall-winner">
+//       <div className="bracket-item-inner">
+//         <Components.Button>
+//           <Components.FormattedMessage id={winner.intlId} />
+//           <Components.FormattedMessage className="bracket-item-description" id={`${winner.intlId}.description`} />
+//         </Components.Button>
+//       </div>
+//     </div>
+//   ) : (
+//     <EmptyBracketItem variant="overall-winner" />
+//   );
+// };
 
-// a bracket "player" (item you can click to pick a winner)
-const BracketPlayer = ({ player = {}, number, pickWinner, currentMatchIndex }) => {
-  return (
-    <div className="bracket-player">
-      <Components.Button
-        onClick={(e) => {
-          console.log(e);
-          e.target.blur();
-          pickWinner(currentMatchIndex, number);
-        }}
-      >
-        <h4 className="bracket-player-name">
-          <Components.FormattedMessage id={player.intlId} />
-        </h4>
-        <span className="bracket-player-description">
-          <Components.FormattedMessage id={`${player.intlId}.description`} />
-        </span>
-      </Components.Button>
-    </div>
-  );
-};
+// // current X vs Y matchup
+// const BracketCurrentMatchup = (props) => {
+//   const { currentMatchIndex, options, results, pickWinner } = props;
+//   const currentMatch = results[currentMatchIndex];
+//   return (
+//     <div className="bracket-top">
+//       {currentMatchIndex === -1 ? (
+//         <BracketOver {...props} />
+//       ) : (
+//         <div className="bracket-current-matchup">
+//           <BracketPlayer
+//             player={options[currentMatch[0]]}
+//             number={0}
+//             pickWinner={pickWinner}
+//             currentMatchIndex={currentMatchIndex}
+//           />
+//           <div className="bracket-current-matchup-vs">
+//             <Components.FormattedMessage id="bracket.vs" />
+//           </div>
+//           <BracketPlayer
+//             player={options[currentMatch[1]]}
+//             number={1}
+//             pickWinner={pickWinner}
+//             currentMatchIndex={currentMatchIndex}
+//           />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// // the bracket is over, show the winner
+// const BracketOver = (props) => {
+//   const { options, results } = props;
+//   const winner = options[results[results.length - 1][2]];
+//   return (
+//     <div className="bracket-over">
+//       <h4 className="bracket-winner">
+//         <Components.FormattedMessage id="bracket.winner" />
+//         <Components.FormattedMessage id={winner.intlId} />
+//       </h4>
+//       <BracketStartOver {...props} />
+//     </div>
+//   );
+// };
+
+// // a bracket "player" (item you can click to pick a winner)
+// const BracketPlayer = ({ player = {}, number, pickWinner, currentMatchIndex }) => {
+//   return (
+//     <div className="bracket-player">
+//       <Components.Button
+//         onClick={(e) => {
+//           console.log(e);
+//           e.target.blur();
+//           pickWinner(currentMatchIndex, number);
+//         }}
+//       >
+//         <h4 className="bracket-player-name">
+//           <Components.FormattedMessage id={player.intlId} />
+//         </h4>
+//         <span className="bracket-player-description">
+//           <Components.FormattedMessage id={`${player.intlId}.description`} />
+//         </span>
+//       </Components.Button>
+//     </div>
+//   );
+// };
