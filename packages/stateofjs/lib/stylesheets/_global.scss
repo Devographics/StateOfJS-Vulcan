@@ -151,7 +151,11 @@ Page-specific styles
 
 .main-contents {
   flex: 1 0 auto;
-  padding: 20px;
+  padding: $spacing;
+
+  @include small {
+    padding: $spacing/2;
+  }
 }
 
 .datatable-above {

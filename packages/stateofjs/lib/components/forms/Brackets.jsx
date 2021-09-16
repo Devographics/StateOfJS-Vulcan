@@ -118,7 +118,7 @@ const BracketResults = (props) => {
       <BracketMatchGroup {...props} matchIndexes={[0, 1, 2, 3]} level={1} />
       <BracketMatchGroup {...props} matchIndexes={[4, 5]} level={2} />
       <BracketMatchGroup {...props} matchIndexes={[6]} level={3} />
-      <BracketMatchGroup {...props} matchIndexes={[6]} isOverallWinner={true} level={3} />
+      <BracketMatchGroup {...props} matchIndexes={[6]} isOverallWinner={true} level={4} />
     </div>
   );
 };
@@ -165,7 +165,7 @@ const BracketMatch = (props) => {
 
   return isOverallWinner ? (
     <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
-      <BracketWinner {...p} winner={winner} />
+      {winner ? <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} /> : <EmptyBracketItem />}
     </div>
   ) : (
     <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
@@ -174,6 +174,7 @@ const BracketMatch = (props) => {
       ) : (
         <EmptyBracketItem />
       )}
+      <div className="bracket-spacer" />
       {p2 ? (
         <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
       ) : (
@@ -184,10 +185,15 @@ const BracketMatch = (props) => {
 };
 
 // overall winner
-const BracketWinner = ({ winner }) => {
+const BracketOverallWinner = ({ winner }) => {
   return winner ? (
     <div className="bracket-item bracket-item-overall-winner">
-      <Components.FormattedMessage id={winner.intlId} />
+      <div className="inner">
+        <Components.Button>
+          <Components.FormattedMessage id={winner.intlId} />
+          <Components.FormattedMessage className="bracket-item-description" id={`${winner.intlId}.description`} />
+        </Components.Button>
+      </div>
     </div>
   ) : (
     <EmptyBracketItem variant="overall-winner" />
@@ -195,24 +201,44 @@ const BracketWinner = ({ winner }) => {
 };
 
 // bracket result item
-const BracketItem = ({ player, matchIndex, playerIndex, isDisabled = false, isWinner, variant = '', pickWinner }) => {
+const BracketItem = ({
+  player,
+  matchIndex,
+  playerIndex,
+  isDisabled = false,
+  isWinner,
+  isOverallWinner,
+  pickWinner,
+}) => {
+  
+  const classnames = ['bracket-item'];
+  if (isOverallWinner) classnames.push('bracket-item-overall-winner');
+  if (isWinner) classnames.push('bracket-item-winner');
+
   return (
-    <Components.Button
-      disabled={isDisabled}
-      onClick={() => {
-        pickWinner(matchIndex, playerIndex);
-      }}
-      className={`bracket-item bracket-item-${variant} bracket-item-${isWinner ? 'winner' : ''}`}
-    >
-      <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-      <Components.FormattedMessage className="bracket-item-description" id={`${player.intlId}.description`} />
-    </Components.Button>
+    <div className={classnames.join(' ')}>
+      <div className="inner">
+        <Components.Button
+          disabled={isDisabled}
+          onClick={() => {
+            pickWinner(matchIndex, playerIndex);
+          }}
+        >
+          <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
+          <Components.FormattedMessage className="bracket-item-description" id={`${player.intlId}.description`} />
+        </Components.Button>
+      </div>
+    </div>
   );
 };
 
 // empty bracket result item
-const EmptyBracketItem = ({ variant = '' }) => (
-  <div className={`bracket-item bracket-item-empty bracket-item-empty-${variant}`}>...</div>
+const EmptyBracketItem = () => (
+  <div className="bracket-item bracket-item-empty">
+    <div className="inner">
+      <span>...</span>
+    </div>
+  </div>
 );
 
 export default Bracket;

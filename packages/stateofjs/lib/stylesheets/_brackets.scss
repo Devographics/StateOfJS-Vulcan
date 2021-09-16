@@ -1,7 +1,9 @@
-$line-width: 10px;
-$item-height: 140px;
+$item-height: 80px;
+$horizontal-gap: $spacing;
 $vertical-gap: $spacing/2;
-$vertical-gap-match: $spacing * 1.5;
+$vertical-gap-match: $spacing * 3;
+$line-width: $horizontal-gap/2;
+// $vertical-gap-match: $spacing/2;
 
 .bracket {
   margin-top: $spacing;
@@ -11,8 +13,9 @@ $vertical-gap-match: $spacing * 1.5;
   margin-bottom: $spacing * 2;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  column-gap: $spacing;
   align-items: center;
+
+  column-gap: $spacing;
 }
 
 .bracket-player {
@@ -43,8 +46,13 @@ $vertical-gap-match: $spacing * 1.5;
   // flex-direction: row;
   // justify-content: space-between;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: $spacing;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  column-gap: $horizontal-gap;
+
+  @include small {
+    column-gap: $horizontal-gap/2;
+  }
 }
 
 .bracket-matchgroup {
@@ -57,14 +65,38 @@ $vertical-gap-match: $spacing * 1.5;
   &:last-child {
     margin-right: 0;
   }
+  // padding: (3*$vertical-gap-match)/2 0;
+
+  // &.bracket-matchgroup-level1{
+  // padding: 0;
+  // }
+  // background: rgba(255,0,0,0.2);
+  &.bracket-matchgroup-level1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  &.bracket-matchgroup-level2 {
+    grid-column: 3 / 5;
+    grid-row: 1;
+  }
+  &.bracket-matchgroup-level3 {
+    grid-column: 4 / 6;
+    grid-row: 1;
+  }
+  &.bracket-matchgroup-level4 {
+    grid-column: 5 / 7;
+    grid-row: 1;
+  }
 }
 
 .bracket-match {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: relative;
+
+  // background: rgba(0,255,0,0.2);
   // gap: $vertical-gap;
 
   margin-bottom: $vertical-gap-match;
@@ -74,26 +106,47 @@ $vertical-gap-match: $spacing * 1.5;
 }
 
 .bracket-item {
-  border: 1px solid $dark-border-color;
+  // background: rgba(0,255,255,0.2);
+  height: $item-height;
+  @include flex-center;
+  background: var(--bg-color);
+
+  .inner {
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
   &.bracket-item-empty {
     border-radius: 3px;
     border: 1px dashed $dark-border-color;
-    &:before,
+    .inner:before,
     &:after {
       border-style: dashed;
     }
   }
 
-  padding: $spacing/2 !important;
-  // margin-right: $spacing;
-  font-size: $small-font !important;
-  text-align: center;
-  white-space: break-spaces !important;
+  .btn {
+    padding: $spacing/2 !important;
+    // margin-right: $spacing;
+    text-align: center;
+    white-space: break-spaces !important;
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    z-index: 100;
+    font-size: $small-font !important;
 
-  height: $item-height;
+    @include small {
+      font-size: $smallest-font !important;
+    }
+  }
 
-  @include flex-center;
   &-winner {
     border-color: $contrast-color;
     border-width: 2px;
@@ -111,7 +164,7 @@ $vertical-gap-match: $spacing * 1.5;
     margin-bottom: 0;
   }
 
-  &:before,
+  .bracket-matchgroup-level2 & .inner:before,
   &:after {
     content: ' ';
     display: block;
@@ -120,7 +173,7 @@ $vertical-gap-match: $spacing * 1.5;
     border-left: none !important;
   }
 
-  &:before {
+  .inner:before {
     height: 1px;
     width: $line-width;
     left: -$line-width;
@@ -128,20 +181,30 @@ $vertical-gap-match: $spacing * 1.5;
     border-color: $border-color;
     border-top-width: 3px;
     border-bottom-width: 0px !important;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include small {
+      width: $line-width/2;
+      left: -$line-width/2;
+    }
   }
 
   &:after {
     // height = quarter of the match group height + quarter of the gap
     height: 25%;
+
     width: $line-width;
     right: -$line-width;
+
+    @include small {
+      width: $line-width/2;
+      right: -$line-width/2;
+    }
     border-right-width: 1px;
   }
 
   &:nth-child(1) {
-    &:before {
-      top: 25%;
-    }
     &:after {
       top: 25%;
       border-top-width: 1px;
@@ -149,10 +212,8 @@ $vertical-gap-match: $spacing * 1.5;
     }
   }
 
-  &:nth-child(2) {
-    &:before {
-      top: 75%;
-    }
+  // the spacer counts as the second child
+  &:nth-child(3) {
     &:after {
       top: 75%;
       border-bottom-width: 1px;
@@ -161,16 +222,9 @@ $vertical-gap-match: $spacing * 1.5;
     }
   }
 
-  // when there's only one player in the match (e.g. winner group)
-  &:first-child:last-child {
-    &:before {
-      top: 50%;
-    }
-  }
-
   &.bracket-item-winner {
     border-width: 3px;
-    &:before,
+    .inner:before,
     &:after {
       border-style: solid;
       border-color: $border-color;
@@ -179,14 +233,14 @@ $vertical-gap-match: $spacing * 1.5;
   }
 
   &.bracket-item-empty {
-    &:before {
+    .inner:before {
       border-style: dashed;
       border-color: $dark-border-color;
       border-top-width: 1px;
     }
   }
 
-  .bracket-matchgroup-level1 &:before {
+  .bracket-matchgroup-level1 & .inner:before {
     display: none;
   }
   .bracket-matchgroup-level1 &:nth-child(1):after {
@@ -200,6 +254,14 @@ $vertical-gap-match: $spacing * 1.5;
     transform: none;
   }
   .bracket-matchgroup-overall-winner &:after {
+    display: none;
+  }
+}
+
+.bracket-spacer {
+  height: $vertical-gap-match;
+  // background: rgba(45,45,255,0.2);
+  .bracket-matchgroup-level1 & {
     display: none;
   }
 }
@@ -220,4 +282,5 @@ $vertical-gap-match: $spacing * 1.5;
   display: block;
   @include font-regular;
   font-size: $smallest-font;
+  display: none;
 }

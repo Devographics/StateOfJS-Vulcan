@@ -2,8 +2,15 @@
   // .form-control {
   //   background: $bg-color-lightest;
   // }
+  .form-input {
+    @include small {
+      margin-bottom: $spacing * 2;
+    }
+  }
   .form-group {
-    @include small-medium {
+    @include small {
+    }
+    @include medium {
       @include border;
       padding: $spacing/2;
     }
