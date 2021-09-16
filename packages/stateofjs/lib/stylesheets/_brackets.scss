@@ -109,7 +109,7 @@ $highlight: $highlight-width solid var(--active-color);
     }
   }
 
-  .btn {
+  .bracket-item-button {
     padding: $spacing/2 !important;
     text-align: center;
     white-space: break-spaces !important;
@@ -120,13 +120,10 @@ $highlight: $highlight-width solid var(--active-color);
     height: 100%;
     display: flex !important;
     z-index: 100;
-    font-size: $small-font !important;
+    font-size: $smallish-font !important;
     @include small {
       font-size: $smallest-font !important;
     }
-  }
-  .btn:disabled {
-    @include disabled;
   }
 
   &-winner {
@@ -164,8 +161,10 @@ $highlight: $highlight-width solid var(--active-color);
     border-right-width: 1px;
   }
 
-  &.bracket-item-disabled:after {
-    @include disabled;
+  &.bracket-item-disabled:not(.bracket-item-overall-winner) {
+    .bracket-item-button, &:after {
+      @include disabled;
+    }
   }
 
   &:nth-child(1):after {
@@ -183,13 +182,13 @@ $highlight: $highlight-width solid var(--active-color);
   }
 
   &.bracket-item-defending {
-    .btn {
+    .bracket-item-button {
       border: $highlight;
     }
   }
 
   &.bracket-item-winner {
-    .btn {
+    .bracket-item-button {
       border: $highlight;
     }
     &:after {
@@ -284,4 +283,10 @@ $highlight: $highlight-width solid var(--active-color);
   @include font-regular;
   font-size: $smallest-font;
   display: none;
+}
+
+.bracket-startover {
+  margin-top: 3px;
+  padding: 5px 10px !important;
+  width: auto !important;
 }

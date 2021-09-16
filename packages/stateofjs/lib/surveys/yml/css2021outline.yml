@@ -645,6 +645,7 @@ outline:
           - id: udemy
           - id: egghead
           - id: newline
+          - id: web_dev
 
       - id: sites_courses
         template: others
