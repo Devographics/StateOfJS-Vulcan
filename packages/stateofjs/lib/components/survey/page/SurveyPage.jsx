@@ -37,6 +37,7 @@ const SurveyPageWrapper = (props, { intl }) => {
   );
 };
 
+
 SurveyPageWrapper.contextTypes = {
   intl: intlShape,
 };

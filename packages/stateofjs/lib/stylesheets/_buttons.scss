@@ -1,7 +1,9 @@
 .btn {
   &:not(:disabled):not(.disabled),
   &:not(:disabled):not(.disabled).active,
-  &.active {
+  &.active,
+  &-primary.disabled,
+  &-primary:disabled {
     background: none;
     @include border;
     padding: $spacing/2 $spacing;
@@ -20,7 +22,6 @@
     white-space: nowrap;
     // transition: color 400ms, border-color 400ms;
 
-
     &,
     &:link,
     &:visited {
@@ -29,23 +30,6 @@
       text-decoration: none;
     }
 
-    &:hover {
-      color: $hover-color;
-      color: var(--text-color);
-      border-color: var(--link-color);
-      border-style: solid;
-      text-decoration: none;
-      background: $bg-color-light;
-    }
-
-    &:active,
-    &:focus {
-      color: $white;
-      border-color: var(--link-color);
-      border-style: solid;
-      text-decoration: none;
-      background: var(--link-color);
-    }
     &--small {
       font-size: $small-font;
       padding: $spacing / 5 $spacing / 2;
@@ -67,13 +51,39 @@
       color: $text-color-inverted;
       border-color: $text-color-inverted;
     }
-    .modal-dialog &{
+    .modal-dialog & {
       color: $text-color-inverted;
     }
-    &.loading-button-loading{
+    &.loading-button-loading {
       background: $greyMediumer;
       cursor: default;
     }
+  }
+  &:not(:disabled):not(.disabled),
+  &:not(:disabled):not(.disabled).active,
+  &.active {
+    &:hover {
+      color: $hover-color;
+      color: var(--text-color);
+      border-color: var(--link-color);
+      border-style: solid;
+      text-decoration: none;
+      background: $bg-color-light;
+    }
+
+    &:active,
+    &:focus {
+      color: $white;
+      border-color: var(--link-color);
+      border-style: solid;
+      text-decoration: none;
+      background: var(--link-color);
+    }
+  }
+  &-primary.disabled,
+  &-primary:disabled {
+    // opacity: 0.4;
+    cursor: default;
   }
 }
 

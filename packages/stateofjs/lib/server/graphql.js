@@ -12,6 +12,7 @@ import Saves from '../modules/saves/collection.js';
 import Responses from '../modules/responses/collection.js';
 import NormalizedResponses from '../modules/normalized_responses/collection.js';
 import Users from 'meteor/vulcan:users';
+import sortBy from 'lodash/sortBy';
 
 const translationAPI = getSetting('translationAPI');
 
@@ -80,7 +81,15 @@ const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]
 }
 `;
 
-const contexts = ['common', 'surveys', 'accounts', 'state_of_css', 'state_of_js', 'state_of_js_2020_survey' ];
+const contexts = [
+  'common',
+  'surveys',
+  'accounts',
+  'state_of_css',
+  'state_of_css_2021_survey',
+  'state_of_js',
+  'state_of_js_2020_survey',
+];
 
 const locale = async (root, { localeId }, context) => {
   let convertedLocale = nodeCache.get(localeId);
@@ -91,7 +100,10 @@ const locale = async (root, { localeId }, context) => {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({ query: localeQuery, variables: { localeId, contexts } }),
+      body: JSON.stringify({
+        query: localeQuery,
+        variables: { localeId, contexts },
+      }),
     });
     const json = await response.json();
 
@@ -135,7 +147,7 @@ const entityType = `type Entity {
 
 addGraphQLSchema(entityType);
 
-const entitiesQuery = `query EntitiesQuery {
+const entitiesQuery = `query EntitiesQuery{
   entities {
     id
     name
@@ -154,7 +166,8 @@ const entitiesQuery = `query EntitiesQuery {
 }
 `;
 
-const entities = async () => {
+const entities = async (root, args) => {
+  const { tags, name, id } = args;
   let entities = nodeCache.get('entities');
 
   if (disableAPICache || !entities) {
@@ -175,10 +188,37 @@ const entities = async () => {
     nodeCache.set('entities', entities);
   }
 
+  if (tags) {
+    // filter by tags
+    entities = entities.filter((e) =>
+      tags.every((t) => e.tags && e.tags.includes(t))
+    );
+  }
+
+  if (name) {
+    if (name._like) {
+      // filter by keyword search on the name
+      entities = entities.filter((e) =>
+        e.name.toLowerCase().includes(name._like.toLowerCase())
+      );
+    }
+  }
+
+  if (id) {
+    if (id._in) {
+      // filter to only include a subset by id
+      entities = entities.filter((e) => id._in.includes(e.id));
+    }
+  }
+
+  entities = sortBy(entities, 'name');
+
   return entities;
 };
 
-addGraphQLQuery('entities: [Entity]');
+addGraphQLQuery(
+  'entities(tags: [String], name: String_Selector, id: String_Selector): [Entity]'
+);
 addGraphQLResolvers({ Query: { entities } });
 
 /*
@@ -237,12 +277,8 @@ Normalization Debugging
 
 */
 const surveyNormalization = async (root, { surveySlug, fieldName }) => {
-  const [
-    initialSegment,
-    sectionSegment,
-    fieldSegment,
-    ...restOfPath
-  ] = fieldName.split('__');
+  const [initialSegment, sectionSegment, fieldSegment, ...restOfPath] =
+    fieldName.split('__');
   const rawFieldPath = `${sectionSegment}.${fieldSegment}.others.raw`;
   const normalizedFieldPath = `${sectionSegment}.${fieldSegment}.others.normalized`;
   const query = {
@@ -265,4 +301,3 @@ addGraphQLQuery(
   'surveyNormalization(surveySlug: String, fieldName: String): [String]'
 );
 addGraphQLResolvers({ Query: { surveyNormalization } });
-

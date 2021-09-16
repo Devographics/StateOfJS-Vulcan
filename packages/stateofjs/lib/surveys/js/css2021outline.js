@@ -251,6 +251,10 @@ export default {
           "id": "stylus"
         },
         {
+          "id": "assembler_css",
+          "year": 2021
+        },
+        {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
           "template": "text",
@@ -374,6 +378,10 @@ export default {
           "year": 2021
         },
         {
+          "id": "windi_css",
+          "year": 2021
+        },
+        {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
           "template": "text",
@@ -413,6 +421,9 @@ export default {
             },
             {
               "id": "cssnano"
+            },
+            {
+              "id": "acss"
             }
           ]
         },
@@ -891,6 +902,15 @@ export default {
           "template": "others",
           "matchTags": [
             "podcasts",
+            "people",
+            "sites"
+          ]
+        },
+        {
+          "id": "people",
+          "year": 2021,
+          "template": "others",
+          "matchTags": [
             "people",
             "sites"
           ]

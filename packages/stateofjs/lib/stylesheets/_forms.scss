@@ -56,6 +56,11 @@
       background: $bg-color-light;
     }
   }
+  .form-component-text {
+    input {
+      resize: vertical;
+    }
+  }
   .form-component-radiogroup {
     .form-check-checked {
     }
@@ -162,4 +167,8 @@
       background: $bg-color-lightest;
     }
   }
+}
+
+.rbt-input {
+  resize: vertical;
 }

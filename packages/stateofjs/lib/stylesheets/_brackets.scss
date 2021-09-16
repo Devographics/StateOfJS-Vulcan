@@ -1,3 +1,8 @@
+$line-width: 10px;
+$item-height: 140px;
+$vertical-gap: $spacing/2;
+$vertical-gap-match: $spacing * 1.5;
+
 .bracket {
   margin-top: $spacing;
 }
@@ -34,9 +39,12 @@
 .bracket-results {
   margin-top: $spacing;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: $spacing;
 }
 
 .bracket-matchgroup {
@@ -45,8 +53,8 @@
   flex: 1;
   // justify-content: space-around;
 
-  margin-right: $spacing;
-  &:last-child{
+  // margin-right: $line-width * 2;
+  &:last-child {
     margin-right: 0;
   }
 }
@@ -56,29 +64,35 @@
   flex-direction: column;
   flex: 1;
   justify-content: space-around;
+  position: relative;
+  // gap: $vertical-gap;
 
-  &-current {
-    .bracket-item {
-      opacity: 1;
-      box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
-    }
-  }
-
-  margin-bottom: $spacing;
-  &:last-child{
+  margin-bottom: $vertical-gap-match;
+  &:last-child {
     margin-bottom: 0;
   }
 }
 
 .bracket-item {
-  opacity: 0.6;
-  border: 1px solid $border-color;
-  padding: $spacing/2;
+  border: 1px solid $dark-border-color;
+
+  &.bracket-item-empty {
+    border-radius: 3px;
+    border: 1px dashed $dark-border-color;
+    &:before,
+    &:after {
+      border-style: dashed;
+    }
+  }
+
+  padding: $spacing/2 !important;
   // margin-right: $spacing;
-  font-size: $small-font;
+  font-size: $small-font !important;
   text-align: center;
-  white-space: break-space;
-  height: 65px;
+  white-space: break-spaces !important;
+
+  height: $item-height;
+
   @include flex-center;
   &-winner {
     border-color: $contrast-color;
@@ -89,10 +103,104 @@
     border-width: 4px;
   }
 
+  .bracket-matchgroup-level1 & {
+    margin-bottom: $vertical-gap;
+  }
 
-  margin-bottom: $spacing;
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
+  }
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    border: 0px dashed $dark-border-color;
+    border-left: none !important;
+  }
+
+  &:before {
+    height: 1px;
+    width: $line-width;
+    left: -$line-width;
+    border-style: solid;
+    border-color: $border-color;
+    border-top-width: 3px;
+    border-bottom-width: 0px !important;
+  }
+
+  &:after {
+    // height = quarter of the match group height + quarter of the gap
+    height: 25%;
+    width: $line-width;
+    right: -$line-width;
+    border-right-width: 1px;
+  }
+
+  &:nth-child(1) {
+    &:before {
+      top: 25%;
+    }
+    &:after {
+      top: 25%;
+      border-top-width: 1px;
+      border-bottom: none !important;
+    }
+  }
+
+  &:nth-child(2) {
+    &:before {
+      top: 75%;
+    }
+    &:after {
+      top: 75%;
+      border-bottom-width: 1px;
+      border-top: none !important;
+      transform: translateY(-100%);
+    }
+  }
+
+  // when there's only one player in the match (e.g. winner group)
+  &:first-child:last-child {
+    &:before {
+      top: 50%;
+    }
+  }
+
+  &.bracket-item-winner {
+    border-width: 3px;
+    &:before,
+    &:after {
+      border-style: solid;
+      border-color: $border-color;
+      border-width: 3px;
+    }
+  }
+
+  &.bracket-item-empty {
+    &:before {
+      border-style: dashed;
+      border-color: $dark-border-color;
+      border-top-width: 1px;
+    }
+  }
+
+  .bracket-matchgroup-level1 &:before {
+    display: none;
+  }
+  .bracket-matchgroup-level1 &:nth-child(1):after {
+    height: calc(25% + #{$vertical-gap}/ 4);
+    // for first level, gap/margin is between each player instead of around
+    top: calc((100% - #{$vertical-gap}) / 4);
+  }
+  .bracket-matchgroup-level1 &:nth-child(2):after {
+    height: calc(25% + #{$vertical-gap}/ 4);
+    top: 50%;
+    transform: none;
+  }
+  .bracket-matchgroup-overall-winner &:after {
+    display: none;
   }
 }
 
@@ -102,4 +210,14 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+}
+
+.bracket-item-name {
+  display: block;
+  margin-bottom: 3px;
+}
+.bracket-item-description {
+  display: block;
+  @include font-regular;
+  font-size: $smallest-font;
 }

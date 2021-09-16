@@ -12,8 +12,8 @@ import surveys from '../../surveys';
 import { statuses } from '../constants.js';
 import Users from 'meteor/vulcan:users';
 
-import Bracket from '../../components/forms/Brackets.jsx'
-
+import Bracket from '../../components/forms/Brackets.jsx';
+import { data } from 'autoprefixer';
 
 /*
 
@@ -120,6 +120,47 @@ export const templates = {
         valuePropertyName: 'id',
       }
     ),
+
+  people: () =>
+    makeAutocomplete(
+      {
+        suffix: 'prenormalized',
+        type: Array,
+        arrayItem: {
+          type: String,
+          optional: true,
+        },
+        options: (props) => {
+          return props?.data?.entities.map((document) => ({
+            ...document,
+            value: document.id,
+            label: document.name,
+          }));
+        },
+        query: () => /* GraphQL */ `
+          query FormComponentDynamicEntityQuery($value: [String!]) {
+            entities(id: { _in: $value }) {
+              id
+              name
+            }
+          }
+        `,
+        autocompleteQuery: () => /* GraphQL */ `
+          query AutocompletePeopleQuery($queryString: String) {
+            entities(tags: ["people"], name: { _like: $queryString }) {
+              id
+              name
+            }
+          }
+        `,
+      },
+      {
+        autocompletePropertyName: 'name', // overridden by field definition above
+        queryResolverName: 'entities', // overridden by field definition above
+        fragmentName: 'EntityFragment', // overridden by field definition above
+        valuePropertyName: 'id', // overridden by field definition above
+      }
+    ),
   proficiency: ({ allowother = false }) => ({
     allowmultiple: false,
     allowother,
@@ -148,7 +189,7 @@ export const templates = {
     suffix: 'choices',
   }),
   others: () => ({
-    input: 'text',
+    input: 'textarea',
     suffix: 'others',
     limit: 150,
   }),
@@ -197,9 +238,9 @@ export const templates = {
       arrayItem: {
         type: Number,
         optional: true,
-      }
-    }
-  })
+      },
+    },
+  }),
 };
 
 // build question object from outline
@@ -267,7 +308,14 @@ export const generateIntlId = (questionObject, section, survey) => {
 
 // transform question object into SimpleSchema-compatible schema field
 export const getQuestionSchema = (questionObject, section, survey) => {
-  const { id, title, options, allowmultiple = false, alias, year } = questionObject;
+  const {
+    id,
+    title,
+    options,
+    allowmultiple = false,
+    alias,
+    year,
+  } = questionObject;
 
   const intlId = generateIntlId(questionObject, section, survey);
 
@@ -415,5 +463,4 @@ export const canModifyResponse = (response, user) => {
       return false;
   }
 };
-
 

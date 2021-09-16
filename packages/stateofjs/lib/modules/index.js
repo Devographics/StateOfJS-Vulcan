@@ -8,4 +8,4 @@ import './responses';
 import './users';
 import './saves';
 import './projects';
-// import './surveys';
+import './entities';

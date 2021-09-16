@@ -297,6 +297,11 @@ outline:
       - id: less
       - id: post_css
       - id: stylus
+
+      # 2021
+      - id: assembler_css
+        year: 2021
+
       # - Sass
       # - Less
       # - PostCSS
@@ -392,6 +397,8 @@ outline:
         year: 2021
       - id: goober 
         year: 2021
+      - id: windi_css 
+        year: 2021
 
       # removed in 2021
       # - id: radium
@@ -422,6 +429,7 @@ outline:
           - id: prettier
           - id: autoprefixer
           - id: cssnano
+          - id: acss
       - id: utilities
         template: others
       # - id: text_editors
@@ -670,6 +678,16 @@ outline:
       - id: podcasts
         template: others
         matchTags: [podcasts, people, sites]
+
+      # - id: people
+      #   year: 2021
+      #   template: people
+      #   intlId: resources.people
+
+      - id: people
+        year: 2021
+        template: others
+        matchTags: [people, sites]
 
     ### OPINIONS ###
 

@@ -1,7 +1,7 @@
 import { createCollection } from 'meteor/vulcan:core';
 import schema from './schema.js';
 
-export const Saves = createCollection({
+export const Projects = createCollection({
   collectionName: 'Projects',
 
   typeName: 'Project',
@@ -22,4 +22,4 @@ export const Saves = createCollection({
   },
 });
 
-export default Saves;
+export default Projects;
