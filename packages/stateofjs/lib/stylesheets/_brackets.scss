@@ -206,10 +206,8 @@ $highlight: $highlight-width solid var(--active-color);
     top: 50%;
     transform: none;
   }
-  &.bracket-item-overall-winner {
-    &:after {
+  &.bracket-item-overall-winner:after {
       display: none;
-    }
   }
 }
 
