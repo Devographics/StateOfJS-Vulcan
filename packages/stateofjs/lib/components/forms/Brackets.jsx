@@ -4,6 +4,7 @@ import sampleSize from 'lodash/sampleSize';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import cloneDeep from 'lodash/cloneDeep';
+import { intlShape } from 'meteor/vulcan:i18n';
 
 const sampleSizeAndRemove = (array, n) => {
   const sample = sampleSize(array, n);
@@ -188,7 +189,7 @@ const BracketItem = (props) => {
   return player ? (
     <div className={classnames.join(' ')}>
       <div className="bracket-item-inner">
-        {isOverallWinner ? <BrackerItemOverallWinner {...props} /> : <BracketItemButton {...props} />}
+        {isOverallWinner ? <BracketItemOverallWinner {...props} /> : <BracketItemButton {...props} />}
       </div>
     </div>
   ) : (
@@ -196,8 +197,8 @@ const BracketItem = (props) => {
   );
 };
 
-const BracketItemButton = (props) => {
-  const { isDisabled, pickWinner, matchIndex, playerIndex, player, isOverallWinner } = props;
+const BracketItemButton = (props, { intl }) => {
+  const { isDisabled, pickWinner, matchIndex, playerIndex } = props;
   return (
     <Components.Button
       className="bracket-item-button"
@@ -206,20 +207,38 @@ const BracketItemButton = (props) => {
         pickWinner(matchIndex, playerIndex);
       }}
     >
-      <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
+      <BracketItemLabel {...props} />
     </Components.Button>
   );
 };
 
-const BrackerItemOverallWinner = (props) => {
-  const { player } = props;
-  return (
-    <div className="bracket-item-button bracket-item-button-overall-winner">
-      <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-      <BracketStartOver {...props} />
-    </div>
-  );
+const BracketItemLabel = ({ player }, { intl }) => (
+  <span className="bracket-item-label">
+    <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
+    <Components.TooltipTrigger
+      trigger={
+        <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
+          <span>?</span>
+        </div>
+      }
+    >
+      <div className="bracket-item-details">
+        <Components.FormattedMessage id={`${player.intlId}.description`} />
+      </div>
+    </Components.TooltipTrigger>
+  </span>
+);
+
+BracketItemLabel.contextTypes = {
+  intl: intlShape,
 };
+
+const BracketItemOverallWinner = (props) => (
+  <div className="bracket-item-button bracket-item-button-overall-winner">
+    <BracketItemLabel {...props} />
+    <BracketStartOver {...props} />
+  </div>
+);
 
 // start over
 const BracketStartOver = ({ startOver }) => {

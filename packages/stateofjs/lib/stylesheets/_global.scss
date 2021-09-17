@@ -251,3 +251,10 @@ Page-specific styles
     border: 2px solid white;
   }
 }
+
+.tooltip-inner{
+  background: rgba(0,0,0,0.75);
+  border-radius: 3px;
+  @include primary-font;
+  padding: 8px 14px;
+}
