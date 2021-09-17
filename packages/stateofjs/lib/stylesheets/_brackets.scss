@@ -184,7 +184,8 @@ $highlight: $highlight-width solid var(--active-color);
   }
 
   // highlight first level items and any defending item
-  &.bracket-item-defending, &.bracket-item-active {
+  &.bracket-item-defending,
+  &.bracket-item-active {
     .bracket-item-button {
       border: $highlight;
     }
@@ -212,7 +213,6 @@ $highlight: $highlight-width solid var(--active-color);
   &.bracket-item-overall-winner:after {
     display: none;
   }
-
 }
 
 .bracket-item-inner {
@@ -288,7 +288,11 @@ $highlight: $highlight-width solid var(--active-color);
 }
 
 .bracket-startover {
-  margin-top: 3px;
+  margin-top: $spacing/2;
   padding: 5px 10px !important;
   width: auto !important;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  background: var(--bg-color) !important;
 }

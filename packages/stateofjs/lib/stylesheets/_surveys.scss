@@ -91,8 +91,14 @@
 .survey-section {
   @include large {
     display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: $spacing * 2;
+  }
+  @include xlarge {
+    display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     column-gap: $spacing * 2;
+    
   }
 }
 .section-contents {

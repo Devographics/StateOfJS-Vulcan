@@ -3,6 +3,7 @@
   //   background: $bg-color-lightest;
   // }
   .form-input {
+    position: relative;
     @include small {
       margin-bottom: $spacing * 2;
     }
@@ -137,6 +138,20 @@
     margin-top: $spacing;
     text-align: center;
     font-size: $small-font;
+  }
+
+  .form-component-clear{
+    @include flex-center;
+    height: 30px;
+    width: 30px;
+    @include border;
+    background: transparent;
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 3px;
+    span{
+      font-size: $medium-font;
+    }
   }
 }
 

@@ -37,7 +37,7 @@ const matchTable = {
   5: [6, 1],
 };
 
-const Bracket = ({ inputProperties, itemProperties, options: _options }) => {
+const Bracket = ({ inputProperties, itemProperties, options: _options, updateCurrentValues, path }) => {
   const { value } = inputProperties;
   const [results, setResults] = useState(isEmpty(value) ? initResults() : value);
 
@@ -68,6 +68,7 @@ const Bracket = ({ inputProperties, itemProperties, options: _options }) => {
       nextRoundMatchResult[nextRoundPlayerIndex] = winnerIndex;
     }
     setResults(newResults);
+    updateCurrentValues({ [path]: newResults });
   };
 
   const props = {
@@ -206,8 +207,6 @@ const BracketItemButton = (props) => {
       }}
     >
       <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-      {/* <Components.FormattedMessage className="bracket-item-description" id={`${player.intlId}.description`} /> */}
-      {isOverallWinner && <BracketStartOver {...props} />}
     </Components.Button>
   );
 };
@@ -217,7 +216,6 @@ const BrackerItemOverallWinner = (props) => {
   return (
     <div className="bracket-item-button bracket-item-button-overall-winner">
       <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-      {/* <Components.FormattedMessage className="bracket-item-description" id={`${player.intlId}.description`} /> */}
       <BracketStartOver {...props} />
     </div>
   );

@@ -230,10 +230,6 @@ export default {
         {
           "id": "marker",
           "year": 2021
-        },
-        {
-          "id": "at_layer",
-          "year": 2021
         }
       ]
     },
