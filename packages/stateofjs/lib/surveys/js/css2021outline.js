@@ -513,7 +513,7 @@ export default {
         {
           "id": "tool_evaluation",
           "year": 2021,
-          "template": "brackets",
+          "template": "bracket",
           "options": [
             {
               "id": "learning_curve_documentation"
@@ -966,7 +966,7 @@ export default {
         {
           "id": "css_pain_points",
           "year": 2021,
-          "template": "brackets",
+          "template": "bracket",
           "options": [
             {
               "id": "browser_interoperability"
@@ -1005,7 +1005,8 @@ export default {
           "id": "currently_missing_from_css",
           "year": 2021,
           "sectionSlug": "opinions_other",
-          "template": "multiple",
+          "optionsIntlId": "features",
+          "template": "bracket",
           "options": [
             {
               "id": "container_queries"
@@ -1015,6 +1016,12 @@ export default {
             },
             {
               "id": "nesting"
+            },
+            {
+              "id": "color_functions"
+            },
+            {
+              "id": "subgrid"
             },
             {
               "id": "browser_support"

@@ -212,22 +212,27 @@ const BracketItemButton = (props, { intl }) => {
   );
 };
 
-const BracketItemLabel = ({ player }, { intl }) => (
-  <span className="bracket-item-label">
-    <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-    <Components.TooltipTrigger
-      trigger={
-        <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
-          <span>?</span>
-        </div>
-      }
-    >
-      <div className="bracket-item-details">
-        <Components.FormattedMessage id={`${player.intlId}.description`} />
-      </div>
-    </Components.TooltipTrigger>
-  </span>
-);
+const BracketItemLabel = ({ player }, { intl }) => {
+  const description = intl.formatMessage({ id: `${player.intlId}.description` });
+  return (
+    <span className="bracket-item-label">
+      <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
+      {description && description.length && (
+        <Components.TooltipTrigger
+          trigger={
+            <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
+              <span>?</span>
+            </div>
+          }
+        >
+          <div className="bracket-item-details">
+            <Components.FormattedMessage id={description} />
+          </div>
+        </Components.TooltipTrigger>
+      )}
+    </span>
+  );
+};
 
 BracketItemLabel.contextTypes = {
   intl: intlShape,

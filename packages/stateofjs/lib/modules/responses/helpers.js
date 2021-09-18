@@ -228,7 +228,7 @@ export const templates = {
     input: 'select',
     options: countriesOptions,
   }),
-  brackets: () => ({
+  bracket: () => ({
     input: Bracket,
     type: Array,
     arrayItem: {
@@ -266,6 +266,7 @@ export const getQuestionObject = (questionObject, section, number) => {
 };
 
 export const parseOptions = (questionObject, options) => {
+  const { optionsIntlId } = questionObject;
   return options.map((option) => {
     if (typeof option === 'object') {
       // if option is an object, use its id or value as translation key
@@ -274,7 +275,9 @@ export const parseOptions = (questionObject, options) => {
       return {
         value: id,
         label: idString, // only used as fallback
-        intlId: `options.${questionObject.id}.${idString}`,
+        intlId: optionsIntlId
+          ? `${optionsIntlId}.${idString}`
+          : `options.${questionObject.id}.${idString}`,
         ...option,
       };
     } else {
@@ -463,4 +466,3 @@ export const canModifyResponse = (response, user) => {
       return false;
   }
 };
-

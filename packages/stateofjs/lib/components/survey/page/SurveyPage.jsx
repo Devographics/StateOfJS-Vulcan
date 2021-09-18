@@ -31,7 +31,7 @@ const SurveyPageWrapper = (props, { intl }) => {
             </h1>
             <SurveyIntro survey={survey} />
             <SurveyPage survey={survey} />
-            <SurveyCredits survey={survey} />
+            {survey.credits && <SurveyCredits survey={survey} />}
           </div>
         );
       }}
