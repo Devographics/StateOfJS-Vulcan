@@ -20,6 +20,11 @@ const entitiesQuery = `query EntitiesQuery {
     description
     tags
     mdn
+    twitterName
+    twitter {
+      userName
+      avatarUrl
+    }
   }
 }
 `;

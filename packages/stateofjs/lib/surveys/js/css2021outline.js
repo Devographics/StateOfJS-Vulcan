@@ -16,6 +16,24 @@ export default {
   "textColor": "#9ac6c9",
   "linkColor": "#f649a7",
   "hoverColor": "#59df7f",
+  "credits": [
+    {
+      "id": "sarah_fossheim",
+      "role": "accessibility"
+    },
+    {
+      "id": "una_kravets",
+      "role": "survey_design"
+    },
+    {
+      "id": "adam_argyle",
+      "role": "survey_design"
+    },
+    {
+      "id": "philip_jagenstedt",
+      "role": "survey_design"
+    }
+  ],
   "outline": [
     {
       "id": "layout",

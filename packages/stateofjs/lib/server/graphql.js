@@ -143,9 +143,19 @@ const entityType = `type Entity {
   tags: [String]
   mdn: JSON
   patterns: [String]
+  twitterName: String
+  twitter: Twitter
 }`;
 
 addGraphQLSchema(entityType);
+
+const twitterType = `type Twitter {
+  userName: String
+  avatarUrl: String
+}
+`;
+
+addGraphQLSchema(twitterType);
 
 const entitiesQuery = `query EntitiesQuery{
   entities {
@@ -161,6 +171,11 @@ const entitiesQuery = `query EntitiesQuery{
       url
       title
       summary
+    }
+    twitterName
+    twitter {
+      userName
+      avatarUrl
     }
   }
 }

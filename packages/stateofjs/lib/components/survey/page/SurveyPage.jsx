@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import SurveyHeadTags from '../SurveyHeadTags';
 import SurveyMessage from '../SurveyMessage';
+import SurveyCredits from '../SurveyCredits';
 
 const SurveyPageWrapper = (props, { intl }) => {
   const { slug, year } = useParams();
@@ -30,6 +31,7 @@ const SurveyPageWrapper = (props, { intl }) => {
             </h1>
             <SurveyIntro survey={survey} />
             <SurveyPage survey={survey} />
+            <SurveyCredits survey={survey} />
           </div>
         );
       }}
