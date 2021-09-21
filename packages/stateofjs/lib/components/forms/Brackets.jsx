@@ -226,7 +226,7 @@ const BracketItemLabel = ({ player }, { intl }) => {
           }
         >
           <div className="bracket-item-details">
-            <Components.FormattedMessage id={description} />
+            {description}
           </div>
         </Components.TooltipTrigger>
       )}
