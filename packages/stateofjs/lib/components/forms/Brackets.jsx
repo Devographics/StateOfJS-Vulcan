@@ -142,15 +142,17 @@ const BracketMatch = (props) => {
   };
 
   return isOverallWinner ? (
-    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+    <fieldset key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+      {/* <legend className="visually-hidden"><Components.FormattedMessage id={winner?.intlId} /></legend> */}
       <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} />
-    </div>
+    </fieldset>
   ) : (
-    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+    <fieldset key={index}  className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+      {/* <legend className="visually-hidden"><Components.FormattedMessage id={p1?.intlId} /> vs. <Components.FormattedMessage id={p2?.intlId} /></legend> */}
       <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
       <div className="bracket-spacer" />
       <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
-    </div>
+    </fieldset>
   );
 };
 
@@ -198,39 +200,46 @@ const BracketItem = (props) => {
 };
 
 const BracketItemButton = (props, { intl }) => {
-  const { isDisabled, pickWinner, matchIndex, playerIndex } = props;
+  const { isDisabled, pickWinner, matchIndex, playerIndex, result } = props;
   return (
-    <Components.Button
-      className="bracket-item-button"
-      disabled={isDisabled}
-      onClick={() => {
-        pickWinner(matchIndex, playerIndex);
-      }}
-    >
+    <div className="bracket-item-button btn btn-primary">
+      <input 
+        type="radio" 
+        name={`match-index-${result.join('_')}-${matchIndex}`} 
+        id={`bracket-item-${props.player.intlId}`} 
+        disabled={isDisabled}
+        className="bracket-item-radio"
+        onChange={() => {
+          pickWinner(matchIndex, playerIndex);
+        }}
+      />
       <BracketItemLabel {...props} />
-    </Components.Button>
+    </div>
+
   );
 };
 
 const BracketItemLabel = ({ player }, { intl }) => {
   const description = intl.formatMessage({ id: `${player.intlId}.description` });
   return (
-    <span className="bracket-item-label">
+    <>
+    <label className="bracket-item-label" htmlFor={`bracket-item-${player.intlId}`} >
       <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-      {description && description.length && (
-        <Components.TooltipTrigger
-          trigger={
-            <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
-              <span>?</span>
-            </div>
-          }
-        >
-          <div className="bracket-item-details">
-            <Components.FormattedMessage id={description} />
+    </label>
+    {description && description.length && (
+      <Components.TooltipTrigger
+        trigger={
+          <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
+            <span>?</span>
           </div>
-        </Components.TooltipTrigger>
-      )}
-    </span>
+        }
+      >
+        <div className="bracket-item-details">
+          <Components.FormattedMessage id={description} />
+        </div>
+      </Components.TooltipTrigger>
+    )}
+    </>
   );
 };
 
