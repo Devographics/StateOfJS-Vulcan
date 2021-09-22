@@ -38,6 +38,8 @@ const matchTable = {
   5: [6, 1],
 };
 
+let restarts = 0;
+
 const Bracket = ({ inputProperties, itemProperties, options: _options, updateCurrentValues, path }) => {
   const { value } = inputProperties;
   const [results, setResults] = useState(isEmpty(value) ? initResults() : value);
@@ -50,6 +52,7 @@ const Bracket = ({ inputProperties, itemProperties, options: _options, updateCur
   const currentMatchIndex = results.findIndex((result) => result.length < 3);
 
   const startOver = () => {
+    restarts++;
     setResults(initResults());
   };
 
@@ -201,12 +204,14 @@ const BracketItem = (props) => {
 
 const BracketItemButton = (props, { intl }) => {
   const { isDisabled, pickWinner, matchIndex, playerIndex, result } = props;
+  console.log(props);
   return (
     <div className="bracket-item-button btn btn-primary">
       <input 
         type="radio" 
-        name={`match-index-${result.join('_')}-${matchIndex}`} 
-        id={`bracket-item-${props.player.intlId}`} 
+        name={`match-index-${result.join('_')}-${matchIndex}-${restarts}`} 
+        id={`bracket-item-${props.player.intlId}-${restarts}`} 
+        key={`bracket-item-${props.player.intlId}-${restarts}`} 
         disabled={isDisabled}
         className="bracket-item-radio"
         onChange={() => {
@@ -223,7 +228,7 @@ const BracketItemLabel = ({ player }, { intl }) => {
   const description = intl.formatMessage({ id: `${player.intlId}.description` });
   return (
     <>
-    <label className="bracket-item-label" htmlFor={`bracket-item-${player.intlId}`} >
+    <label className="bracket-item-label" htmlFor={`bracket-item-${player.intlId}-${restarts}`} >
       <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
     </label>
     {description && description.length && (
