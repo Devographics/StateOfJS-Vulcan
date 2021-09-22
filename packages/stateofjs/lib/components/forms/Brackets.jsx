@@ -113,6 +113,7 @@ const BracketMatchGroup = (props) => {
         isOverallWinner ? 'overall-winner' : ''
       }`}
     >
+      <p class="visually-hidden">{isOverallWinner ? `Result` : `Round ${level}`}</p>
       {matchIndexes.map((matchIndex) => (
         <BracketMatch
           {...props}
@@ -277,7 +278,8 @@ const BracketStartOver = ({ startOver }) => {
 const EmptyBracketItem = ({ classnames }) => (
   <div className={[...classnames, 'bracket-item-empty'].join(' ')}>
     <div className="bracket-item-inner">
-      <span>...</span>
+      <span aria-hidden="true">...</span>
+      <span class="visually-hidden"><Components.FormattedMessage id="bracket.empty_bracket" /></span>
     </div>
   </div>
 );
