@@ -113,7 +113,7 @@ const BracketMatchGroup = (props) => {
         isOverallWinner ? 'overall-winner' : ''
       }`}
     >
-      <p class="visually-hidden">{isOverallWinner ? `Result` : `Round ${level}`}</p>
+      <p class="visually-hidden">{isOverallWinner ? <Components.FormattedMessage id='bracket.result' /> : <><Components.FormattedMessage id='bracket.round' /> {level}</>}</p>
       {matchIndexes.map((matchIndex) => (
         <BracketMatch
           {...props}
@@ -146,16 +146,19 @@ const BracketMatch = (props) => {
   };
 
   return isOverallWinner ? (
-    <fieldset key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
-      {/* <legend className="visually-hidden"><Components.FormattedMessage id={winner?.intlId} /></legend> */}
+    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
       <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} />
-    </fieldset>
+    </div>
   ) : (
-    <fieldset key={index}  className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
-      {/* <legend className="visually-hidden"><Components.FormattedMessage id={p1?.intlId} /> vs. <Components.FormattedMessage id={p2?.intlId} /></legend> */}
-      <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
-      <div className="bracket-spacer" />
-      <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
+    <fieldset key={index}  className='bracket-match'>
+      <legend className="visually-hidden">
+        <Components.FormattedMessage id={p1?.intlId} />, <Components.FormattedMessage id='bracket.vs' />. <Components.FormattedMessage id={p2?.intlId} />
+      </legend>
+      <div className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+        <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
+        <div className="bracket-spacer" />
+        <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
+      </div>
     </fieldset>
   );
 };
@@ -205,23 +208,23 @@ const BracketItem = (props) => {
 
 const BracketItemButton = (props, { intl }) => {
   const { isDisabled, pickWinner, matchIndex, playerIndex, result } = props;
-  console.log(props);
   return (
-    <div className="bracket-item-button btn btn-primary">
-      <input 
-        type="radio" 
+    <div className="bracket-item-button-wrapper">
+      <button 
         name={`match-index-${result.join('_')}-${matchIndex}-${restarts}`} 
         id={`bracket-item-${props.player.intlId}-${restarts}`} 
         key={`bracket-item-${props.player.intlId}-${restarts}`} 
         disabled={isDisabled}
-        className="bracket-item-radio"
-        onChange={() => {
+        aria-pressed={isDisabled}
+        className="bracket-item-button btn btn-primary"
+        onClick={() => {
           pickWinner(matchIndex, playerIndex);
         }}
-      />
-      <BracketItemLabel {...props} />
+      >
+        <Components.FormattedMessage id={props.player.intlId}/>
+      </button>
+      {/* <BracketItemLabel {...props} /> */}
     </div>
-
   );
 };
 
@@ -229,22 +232,24 @@ const BracketItemLabel = ({ player }, { intl }) => {
   const description = intl.formatMessage({ id: `${player.intlId}.description` });
   return (
     <>
-    <label className="bracket-item-label" htmlFor={`bracket-item-${player.intlId}-${restarts}`} >
-      <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-    </label>
-    {description && description.length && (
-      <Components.TooltipTrigger
-        trigger={
-          <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
-            <span>?</span>
-          </div>
-        }
-      >
-        <div className="bracket-item-details">
-          <Components.FormattedMessage id={description} />
-        </div>
-      </Components.TooltipTrigger>
-    )}
+      <p className="bracket-item-label" htmlFor={`bracket-item-${player.intlId}-${restarts}`} >
+        <span>
+          <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
+          {description && description.length && (
+            <Components.TooltipTrigger
+              trigger={
+                <span className="bracket-item-details-trigger" aria-label={intl.formatMessage({ id: 'forms.clear_field' })}>
+                  <span>?</span>
+                </span>
+              }
+            >
+              <span className="bracket-item-details tooltip">
+                <Components.FormattedMessage id={description} />
+              </span>
+            </Components.TooltipTrigger>
+          )}
+        </span>
+      </p>
     </>
   );
 };
