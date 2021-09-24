@@ -11,8 +11,10 @@ import set from 'lodash/set';
 import last from 'lodash/last';
 import NormalizedResponses from '../../modules/normalized_responses/collection';
 import Responses from '../../modules/responses/collection';
+import PrivateResponses from '../../modules/private_responses/collection';
 import { getSurveyBySlug } from '../../modules/surveys/helpers';
 import { logToFile } from 'meteor/vulcan:core';
+import isEmpty from 'lodash/isEmpty';
 
 const replaceAll = function (target, search, replacement) {
   return target.replace(new RegExp(search, 'g'), replacement);
@@ -55,6 +57,11 @@ const fieldsToCopy = [
   ['common__user_info__source', 'user_info.sourcetag'],
 ];
 
+const privateFieldPaths = [
+  'user_info.github_username',
+  'user_info.twitter_username',
+];
+
 export const normalizeResponse = async ({
   document: response,
   entities,
@@ -63,6 +70,7 @@ export const normalizeResponse = async ({
 }) => {
   try {
     const normResp = {};
+    const privateFields = {};
     const normalizedFields = [];
     const survey = getSurveyBySlug(response.surveySlug);
     const allEntities = entities || (await getEntities());
@@ -81,7 +89,7 @@ export const normalizeResponse = async ({
     normResp.generatedAt = new Date();
     normResp.survey = survey.context;
     normResp.year = survey.year;
-    
+
     /*
   
     2. Generate email hash
@@ -109,6 +117,7 @@ export const normalizeResponse = async ({
     for (const s of survey.outline) {
       for (const field of s.questions) {
         const { fieldName, matchTags } = field;
+
         const [initialSegment, ...restOfPath] = fieldName.split('__');
         const normPath = restOfPath.join('.');
         const value = response[fieldName];
@@ -116,84 +125,100 @@ export const normalizeResponse = async ({
         const cleanValue = cleanupValue(value);
 
         if (cleanValue !== null) {
-          if (last(restOfPath) === 'others') {
-
-            if (!matchTags) {
-              throw new Error(`Field ${fieldName} should have matchTags defined`);
-            }
-
-            // A. "others" fields needing to be normalized
-            set(normResp, `${normPath}.raw`, value);
-
-            if (log) {
-              await logToFile(
-                `${fileName}.txt`,
-                `${
-                  response._id
-                }, ${fieldName}, ${cleanValue}, ${matchTags.toString()}`
-              );
-            }
-            const normTokens = await normalize(cleanValue, allRules, matchTags);
-            // console.log(
-            //   `// Normalizing key "${fieldName}" with value "${value}"…`
-            // );
-            // console.log(
-            //   `  -> Normalized values: ${JSON.stringify(normTokens)}`
-            // );
-
-            if (log) {
-              if (normTokens.length > 0) {
-                normTokens.forEach(async (token) => {
-                  const { id, pattern, rules, match } = token;
-                  await logRow([
-                    response._id,
-                    fieldName,
-                    value,
-                    matchTags,
-                    id,
-                    pattern,
-                    rules,
-                    match,
-                  ], fileName);
-                });
-              } else {
-                await logRow([
-                  response._id,
-                  fieldName,
-                  value,
-                  matchTags,
-                  'n/a',
-                  'n/a',
-                  'n/a',
-                  'n/a',
-                ], fileName);
-              }
-            }
-
-            // if normalization fails an empty array will be returned
-            if (normTokens.length > 0) {
-              const normIds = normTokens.map((token) => token.id);
-              const normPatterns = normTokens.map((token) =>
-                token.pattern.toString()
-              );
-              set(normResp, `${normPath}.normalized`, normIds);
-              set(normResp, `${normPath}.patterns`, normPatterns);
-            }
-            // keep trace of fields that were normalized
-            normalizedFields.push({
-              fieldName,
-              value,
-              normTokens,
-            });
-          } else if (last(restOfPath) === 'prenormalized') {
-            // B. these fields are "prenormalized" through autocomplete inputs
-            const newPath = normPath.replace('.prenormalized', '.others');
-            set(normResp, `${newPath}.raw`, value);
-            set(normResp, `${newPath}.normalized`, value);
-            set(normResp, `${newPath}.patterns`, ['prenormalized']);
+          if (privateFieldPaths.includes(normPath)) {
+            // handle private info fields separately
+            set(privateFields, normPath, value);
           } else {
-            // C. any other field
-            set(normResp, normPath, value);
+            if (last(restOfPath) === 'others') {
+              if (!matchTags) {
+                throw new Error(
+                  `Field ${fieldName} should have matchTags defined`
+                );
+              }
+
+              // A. "others" fields needing to be normalized
+              set(normResp, `${normPath}.raw`, value);
+
+              if (log) {
+                await logToFile(
+                  `${fileName}.txt`,
+                  `${
+                    response._id
+                  }, ${fieldName}, ${cleanValue}, ${matchTags.toString()}`
+                );
+              }
+              const normTokens = await normalize(
+                cleanValue,
+                allRules,
+                matchTags
+              );
+              // console.log(
+              //   `// Normalizing key "${fieldName}" with value "${value}"…`
+              // );
+              // console.log(
+              //   `  -> Normalized values: ${JSON.stringify(normTokens)}`
+              // );
+
+              if (log) {
+                if (normTokens.length > 0) {
+                  normTokens.forEach(async (token) => {
+                    const { id, pattern, rules, match } = token;
+                    await logRow(
+                      [
+                        response._id,
+                        fieldName,
+                        value,
+                        matchTags,
+                        id,
+                        pattern,
+                        rules,
+                        match,
+                      ],
+                      fileName
+                    );
+                  });
+                } else {
+                  await logRow(
+                    [
+                      response._id,
+                      fieldName,
+                      value,
+                      matchTags,
+                      'n/a',
+                      'n/a',
+                      'n/a',
+                      'n/a',
+                    ],
+                    fileName
+                  );
+                }
+              }
+
+              // if normalization fails an empty array will be returned
+              if (normTokens.length > 0) {
+                const normIds = normTokens.map((token) => token.id);
+                const normPatterns = normTokens.map((token) =>
+                  token.pattern.toString()
+                );
+                set(normResp, `${normPath}.normalized`, normIds);
+                set(normResp, `${normPath}.patterns`, normPatterns);
+              }
+              // keep trace of fields that were normalized
+              normalizedFields.push({
+                fieldName,
+                value,
+                normTokens,
+              });
+            } else if (last(restOfPath) === 'prenormalized') {
+              // B. these fields are "prenormalized" through autocomplete inputs
+              const newPath = normPath.replace('.prenormalized', '.others');
+              set(normResp, `${newPath}.raw`, value);
+              set(normResp, `${newPath}.normalized`, value);
+              set(normResp, `${newPath}.patterns`, ['prenormalized']);
+            } else {
+              // C. any other field
+              set(normResp, normPath, value);
+            }
           }
         }
       }
@@ -234,6 +259,24 @@ export const normalizeResponse = async ({
       set(normResp, 'user_info.source.pattern', normSource.pattern.toString());
     }
 
+    /*
+  
+    7. Store identifying info in a separate collection
+    
+    */
+    if (!isEmpty(privateFields)) {
+      const info = {
+        ...privateFields,
+        surveySlug: response.surveySlug,
+        responseId: response._id,
+      };
+      if (response.email) {
+        info.email = response.email;
+      }
+      PrivateResponses.upsert({ responseId: response._id }, info);
+      set(normResp, 'user_info.hash', encrypt(response.email));
+    }
+
     // console.log(JSON.stringify(normResp, '', 2));
 
     // update normalized response, or insert it if it doesn't exist
@@ -256,3 +299,4 @@ export const normalizeResponse = async ({
     console.log(error);
   }
 };
+

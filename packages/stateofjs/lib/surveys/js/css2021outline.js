@@ -1299,55 +1299,6 @@ export default {
           "template": "text"
         },
         {
-          "id": "industry_sector",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "ecommerce"
-            },
-            {
-              "id": "news_media"
-            },
-            {
-              "id": "healthcare"
-            },
-            {
-              "id": "finance"
-            },
-            {
-              "id": "programming_tools"
-            },
-            {
-              "id": "socialmedia"
-            },
-            {
-              "id": "marketing_tools"
-            },
-            {
-              "id": "education"
-            },
-            {
-              "id": "real_estate"
-            },
-            {
-              "id": "entertainment"
-            },
-            {
-              "id": "government"
-            },
-            {
-              "id": "consulting"
-            }
-          ]
-        },
-        {
-          "id": "industry_sector",
-          "template": "others",
-          "matchTags": [
-            "industry_sectors"
-          ]
-        },
-        {
           "id": "how_did_user_find_out_about_the_survey",
           "template": "text"
         }
