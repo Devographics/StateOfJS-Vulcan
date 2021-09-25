@@ -206,7 +206,7 @@ const BracketItem = (props) => {
   );
 };
 
-const BracketItemButton = (props, { intl }) => {
+const BracketItemButton = (props) => {
   const { isDisabled, pickWinner, matchIndex, playerIndex, result } = props;
 
   return (
@@ -227,12 +227,33 @@ const BracketItemButton = (props, { intl }) => {
           (<Components.FormattedMessage id={`${props.player.intlId}.description`}/>)
         </span>
       </button>
-      <BracketItemLabel {...props} />
+      <BracketItemHover {...props} />
     </div>
   );
 };
 
 const BracketItemLabel = ({ player }, { intl }) => {
+  const description = intl.formatMessage({ id: `${player.intlId}.description` });
+  return (
+    <div className="bracket-item-label">
+      <Components.FormattedMessage id={player?.intlId}/>
+      {description && description.length && (
+        <Components.TooltipTrigger
+          trigger={
+            <span 
+              className="bracket-item-details-trigger">
+              <span aria-hidden="true">?</span>
+            </span>
+          }
+        >
+            {description}
+        </Components.TooltipTrigger>
+      )}
+    </div>
+  );
+};
+
+const BracketItemHover = ({ player }, { intl }) => {
   const description = intl.formatMessage({ id: `${player.intlId}.description` });
   return (
     <div className="bracket-item-label">
@@ -253,6 +274,10 @@ const BracketItemLabel = ({ player }, { intl }) => {
 };
 
 BracketItemLabel.contextTypes = {
+  intl: intlShape,
+};
+
+BracketItemHover.contextTypes = {
   intl: intlShape,
 };
 
