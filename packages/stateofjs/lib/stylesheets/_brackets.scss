@@ -125,7 +125,7 @@ $highlight: $highlight-width solid var(--active-color);
     width: 100%;
     height: 100%;
     display: flex !important;
-    z-index: 100;
+    z-index: 1;
     font-size: $smallish-font !important;
     border-radius: 3px;
     @include small {
@@ -133,28 +133,6 @@ $highlight: $highlight-width solid var(--active-color);
     }
   }
 
-  .bracket-item-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 600;
-
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    box-sizing: border-box;
-    padding: 0 0.75rem;
-  }
-  
   .bracket-item-details-trigger {
     margin-left: 5px;
     display: inline-block;
@@ -165,7 +143,13 @@ $highlight: $highlight-width solid var(--active-color);
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 2;
+
+    position: absolute;
+    top: 0.35rem;
+    right: 0.35rem;
+
+    cursor: pointer;
   }
 
   &-winner {
