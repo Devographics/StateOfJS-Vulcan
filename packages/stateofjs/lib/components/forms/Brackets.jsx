@@ -211,7 +211,7 @@ const BracketItemButton = (props) => {
 
   return (
     <div className="bracket-item-button-wrapper">
-      <button 
+      <button x
         name={`match-index-${result.join('_')}-${matchIndex}-${restarts}`} 
         id={`bracket-item-${props.player.intlId}-${restarts}`} 
         key={`bracket-item-${props.player.intlId}-${restarts}`} 
@@ -246,7 +246,7 @@ const BracketItemLabel = ({ player }, { intl }) => {
             </span>
           }
         >
-            {description}
+          <p aria-hidden="true">{description}</p>
         </Components.TooltipTrigger>
       )}
     </div>
@@ -266,7 +266,7 @@ const BracketItemHover = ({ player }, { intl }) => {
             </span>
           }
         >
-            {description}
+            <p aria-hidden="true">{description}</p>
         </Components.TooltipTrigger>
       )}
     </div>
