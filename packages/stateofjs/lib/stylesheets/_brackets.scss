@@ -105,7 +105,7 @@ $highlight: $highlight-width solid var(--active-color);
     border-color: $contrast-color;
     border-width: 2px;
   }
-  &-overall-winner {
+  &-overallwinner {
     border-color: $contrast-color;
     border-width: 4px;
   }
@@ -136,7 +136,7 @@ $highlight: $highlight-width solid var(--active-color);
     border-right-width: 1px;
   }
 
-  &.bracket-item-disabled:not(.bracket-item-overall-winner) {
+  &.bracket-item-disabled:not(.bracket-item-overallwinner) {
     .bracket-item-button,
     &:after {
       @include disabled;
@@ -184,7 +184,7 @@ $highlight: $highlight-width solid var(--active-color);
     top: 50%;
     transform: none;
   }
-  &.bracket-item-overall-winner:after {
+  &.bracket-item-overallwinner:after {
     display: none;
   }
 }
