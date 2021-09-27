@@ -40,7 +40,7 @@ const matchTable = {
 
 let restarts = 0;
 
-const Bracket = ({ inputProperties, itemProperties, options: _options, updateCurrentValues, path }) => {
+const Bracket = ({ inputProperties, itemProperties, options: _options, updateCurrentValues, path, formComponents }) => {
   const { value } = inputProperties;
   const [results, setResults] = useState(isEmpty(value) ? initResults() : value);
 
@@ -84,13 +84,29 @@ const Bracket = ({ inputProperties, itemProperties, options: _options, updateCur
   };
 
   return (
-    <Components.FormItem path={inputProperties.path} label={inputProperties.label} {...itemProperties}>
+    <formComponents.FormItem path={inputProperties.path} label={inputProperties.label} {...itemProperties}>
       <div className="bracket">
+        <BracketLegend {...props} />
         <BracketResults {...props} />
       </div>
-    </Components.FormItem>
+    </formComponents.FormItem>
   );
 };
+
+const BracketLegend = ({ options }) => (
+  <table className="bracket-legend">
+    {options.map(({ value, intlId }, index) => (
+      <tr className="bracket-legend-item" key={value}>
+        <th className="bracket-legend-heading">
+          <span className="bracket-legend-index">{index}.</span> <Components.FormattedMessage id={intlId} />
+        </th>
+        <td className="bracket-legend-description">
+          <Components.FormattedMessage id={`${intlId}.description`} />
+        </td>
+      </tr>
+    ))}
+  </table>
+);
 
 // live bracket results
 const BracketResults = (props) => {
@@ -113,7 +129,15 @@ const BracketMatchGroup = (props) => {
         isOverallWinner ? 'overall-winner' : ''
       }`}
     >
-      <p className="visually-hidden">{isOverallWinner ? <Components.FormattedMessage id='bracket.result' /> : <><Components.FormattedMessage id='bracket.round' /> {level}</>}</p>
+      <p className="visually-hidden">
+        {isOverallWinner ? (
+          <Components.FormattedMessage id="bracket.result" />
+        ) : (
+          <>
+            <Components.FormattedMessage id="bracket.round" /> {level}
+          </>
+        )}
+      </p>
       {matchIndexes.map((matchIndex) => (
         <BracketMatch
           {...props}
@@ -150,9 +174,10 @@ const BracketMatch = (props) => {
       <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} />
     </div>
   ) : (
-    <fieldset key={index}  className='bracket-match'>
+    <fieldset key={index} className="bracket-match">
       <legend className="visually-hidden">
-        <Components.FormattedMessage id={p1?.intlId} />, <Components.FormattedMessage id='bracket.vs' />. <Components.FormattedMessage id={p2?.intlId} />
+        <Components.FormattedMessage id={p1?.intlId} />, <Components.FormattedMessage id="bracket.vs" />.{' '}
+        <Components.FormattedMessage id={p2?.intlId} />
       </legend>
       <div className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
         <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
@@ -177,8 +202,14 @@ const BracketItem = (props) => {
 
   const isActive = !isDisabled;
 
+  // todo
+  const isAtEdge = false;
+
   // is this the overall winner of the whole bracket?
   if (isOverallWinner) classnames.push('bracket-item-overall-winner');
+
+  // is this the last item of a winning chain
+  if (isAtEdge) classnames.push('bracket-item-edge');
 
   // is this the winner of the current match?
   if (isWinner) classnames.push('bracket-item-winner');
@@ -211,10 +242,10 @@ const BracketItemButton = (props) => {
 
   return (
     <div className="bracket-item-button-wrapper">
-      <button x
-        name={`match-index-${result.join('_')}-${matchIndex}-${restarts}`} 
-        id={`bracket-item-${props.player.intlId}-${restarts}`} 
-        key={`bracket-item-${props.player.intlId}-${restarts}`} 
+      <button
+        name={`match-index-${result.join('_')}-${matchIndex}-${restarts}`}
+        id={`bracket-item-${props.player.intlId}-${restarts}`}
+        key={`bracket-item-${props.player.intlId}-${restarts}`}
         disabled={isDisabled}
         aria-pressed={isDisabled}
         className="bracket-item-button btn btn-primary"
@@ -222,9 +253,9 @@ const BracketItemButton = (props) => {
           pickWinner(matchIndex, playerIndex);
         }}
       >
-        <Components.FormattedMessage id={props.player.intlId}/>
+        <Components.FormattedMessage id={props.player.intlId} />
         <span className="visually-hidden">
-          (<Components.FormattedMessage id={`${props.player.intlId}.description`}/>)
+          (<Components.FormattedMessage id={`${props.player.intlId}.description`} />)
         </span>
       </button>
       <BracketItemHover {...props} />
@@ -236,12 +267,11 @@ const BracketItemLabel = ({ player }, { intl }) => {
   const description = intl.formatMessage({ id: `${player.intlId}.description` });
   return (
     <div className="bracket-item-label">
-      <Components.FormattedMessage id={player?.intlId}/>
+      <Components.FormattedMessage id={player?.intlId} />
       {description && description.length && (
         <Components.TooltipTrigger
           trigger={
-            <span 
-              className="bracket-item-details-trigger">
+            <span className="bracket-item-details-trigger">
               <span aria-hidden="true">?</span>
             </span>
           }
@@ -260,13 +290,14 @@ const BracketItemHover = ({ player }, { intl }) => {
       {description && description.length && (
         <Components.TooltipTrigger
           trigger={
-            <span 
-              className="bracket-item-details-trigger">
+            <span className="bracket-item-details-trigger">
               <span aria-hidden="true">?</span>
             </span>
           }
         >
-            <div className="bracket-item-details" aria-hidden="true">{description}</div>
+          <div className="bracket-item-details" aria-hidden="true">
+            {description}
+          </div>
         </Components.TooltipTrigger>
       )}
     </div>
@@ -307,7 +338,9 @@ const EmptyBracketItem = ({ classnames }) => (
   <div className={[...classnames, 'bracket-item-empty'].join(' ')}>
     <div className="bracket-item-inner">
       <span aria-hidden="true">...</span>
-      <span className="visually-hidden"><Components.FormattedMessage id="bracket.empty_bracket" /></span>
+      <span className="visually-hidden">
+        <Components.FormattedMessage id="bracket.empty_bracket" />
+      </span>
     </div>
   </div>
 );
