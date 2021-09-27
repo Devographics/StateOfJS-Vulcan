@@ -266,7 +266,7 @@ const BracketItemHover = ({ player }, { intl }) => {
             </span>
           }
         >
-            <p aria-hidden="true">{description}</p>
+            <div className="bracket-item-details" aria-hidden="true">{description}</div>
         </Components.TooltipTrigger>
       )}
     </div>
