@@ -47,10 +47,6 @@ const Bracket = ({ inputProperties, itemProperties, options: _options, updateCur
   // add index to all options since we use that to keep track of them
   const options = _options.map((o, index) => ({ ...o, index }));
 
-  // to know the current match number, find the first match that is not completed
-  // (e.g. has a p1, p2, and winner)
-  const currentMatchIndex = results.findIndex((result) => result.length < 3);
-
   const startOver = () => {
     restarts++;
     setResults(initResults());
@@ -75,10 +71,16 @@ const Bracket = ({ inputProperties, itemProperties, options: _options, updateCur
     updateCurrentValues({ [path]: newResults });
   };
 
+  const cancelMatch = (matchIndex) => {
+    const newResults = cloneDeep(results);
+
+    setResults(newResults);
+    updateCurrentValues({ [path]: newResults });
+  }
+
   const props = {
     options,
     results,
-    currentMatchIndex,
     pickWinner,
     startOver,
   };
@@ -122,7 +124,7 @@ const BracketResults = (props) => {
 
 // a match group within the bracket
 const BracketMatchGroup = (props) => {
-  const { results, isOverallWinner, matchIndexes, currentMatchIndex, level } = props;
+  const { results, isOverallWinner, matchIndexes, level } = props;
   return (
     <div
       className={`bracket-matchgroup bracket-matchgroup-level${level} bracket-matchgroup-${
@@ -144,7 +146,6 @@ const BracketMatchGroup = (props) => {
           result={results[matchIndex]}
           matchIndex={matchIndex}
           key={matchIndex}
-          isCurrentMatch={matchIndex === currentMatchIndex}
         />
       ))}
     </div>
@@ -153,7 +154,7 @@ const BracketMatchGroup = (props) => {
 
 // bracket pair; or single winner
 const BracketMatch = (props) => {
-  const { options, result, index, isOverallWinner = false, isCurrentMatch = false } = props;
+  const { options, result, index, isOverallWinner = false } = props;
   const [p1Index, p2Index, winnerIndex] = result;
   const p1 = options[p1Index];
   const p2 = options[p2Index];
@@ -170,7 +171,7 @@ const BracketMatch = (props) => {
   };
 
   return isOverallWinner ? (
-    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+    <div key={index} className="bracket-match">
       <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} />
     </div>
   ) : (
@@ -179,7 +180,7 @@ const BracketMatch = (props) => {
         <Components.FormattedMessage id={p1?.intlId} />, <Components.FormattedMessage id="bracket.vs" />.{' '}
         <Components.FormattedMessage id={p2?.intlId} />
       </legend>
-      <div className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+      <div className="bracket-match">
         <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
         <div className="bracket-spacer" />
         <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
@@ -211,7 +212,7 @@ const BracketItem = (props) => {
   // is this the last item of a winning chain
   if (isAtEdge) classnames.push('bracket-item-edge');
 
-  // is this the winner of the current match?
+  // is this the winner of its match?
   if (isWinner) classnames.push('bracket-item-winner');
 
   // is this item disabled?
