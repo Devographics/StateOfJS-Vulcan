@@ -65,8 +65,11 @@ addGraphQLResolvers({ Query: { cacheStats } });
 Locales
 
 */
-const localeQuery = `query LocaleQuery($localeId: String!, $contexts: [Contexts]) {
-  locale(localeId: $localeId, contexts: $contexts, enableFallbacks: true) {
+
+// fetch data from sojs api
+
+const localesQuery = `query LocaleQuery($contexts: [Contexts]) {
+  locales(contexts: $contexts, enableFallbacks: true) {
     id
     completion
     label
@@ -91,40 +94,75 @@ const contexts = [
   'state_of_js_2020_survey',
 ];
 
-const locale = async (root, { localeId }, context) => {
-  let convertedLocale = nodeCache.get(localeId);
-  if (disableAPICache || !convertedLocale) {
-    const response = await fetch(translationAPI, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: localeQuery,
-        variables: { localeId, contexts },
-      }),
-    });
-    const json = await response.json();
+const fetchLocales = async () => {
+  const response = await fetch(translationAPI, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({
+      query: localesQuery,
+      variables: { contexts },
+    }),
+  });
+  const json = await response.json();
 
-    if (json.errors) {
-      console.log(json.errors);
-      throw new Error('// locale API query error');
-    }
-    const locale = get(json, 'data.locale');
+  if (json.errors) {
+    console.log(json.errors);
+    throw new Error('// locale API query error');
+  }
+  const locales = get(json, 'data.locales');
 
+  const convertedLocales = locales.map((locale) => {
     const convertedStrings = {};
     locale.strings &&
       locale.strings.forEach(({ key, t }) => {
         convertedStrings[key] = t;
       });
+    const convertedLocale = { ...locale, strings: convertedStrings };
+    return convertedLocale;
+  });
 
-    convertedLocale = { ...locale, strings: convertedStrings };
-    nodeCache.set(locale.id, convertedLocale);
-  }
-  return convertedLocale;
+  return convertedLocales;
 };
 
+const getLocales = async () => {
+  let locales = nodeCache.get('locales');
+  if (disableAPICache || !locales) {
+    locales = await fetchLocales();
+    nodeCache.set('locales', locales);
+  }
+  return locales;
+};
+
+// all locales
+
+const surveyLocaleType = `type SurveyLocale {
+  id: String,
+  label: String
+  dynamic: Boolean
+  strings: JSON
+  translators: [String]
+  completion: Float
+  repo: String
+  translatedCount: Float
+  totalCount: Float
+}`;
+
+addGraphQLSchema(surveyLocaleType);
+
+const locales = async () => getLocales();
+
+addGraphQLQuery('locales: [SurveyLocale]');
+addGraphQLResolvers({ Query: { locales } });
+
+// specific locale (used by Vulcan i18n)
+const locale = async (root, { localeId }, context) => {
+  const locales = await getLocales();
+  const locale = locales.find((l) => l.id === localeId);
+  return locale;
+};
 addGraphQLResolvers({ Query: { locale } });
 
 /*

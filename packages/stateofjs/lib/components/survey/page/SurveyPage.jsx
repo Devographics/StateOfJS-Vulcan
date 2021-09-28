@@ -12,6 +12,7 @@ import rehypeRaw from 'rehype-raw';
 import SurveyHeadTags from '../SurveyHeadTags';
 import SurveyMessage from '../SurveyMessage';
 import SurveyCredits from '../SurveyCredits';
+import Translators from '../../common/Translators.jsx';
 
 const SurveyPageWrapper = (props, { intl }) => {
   const { slug, year } = useParams();
@@ -32,13 +33,13 @@ const SurveyPageWrapper = (props, { intl }) => {
             <SurveyIntro survey={survey} />
             <SurveyPage survey={survey} />
             {survey.credits && <SurveyCredits survey={survey} />}
+            <Translators />
           </div>
         );
       }}
     </IntlContext.Consumer>
   );
 };
-
 
 SurveyPageWrapper.contextTypes = {
   intl: intlShape,
