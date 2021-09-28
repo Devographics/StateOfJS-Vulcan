@@ -16,17 +16,21 @@ import { Components } from 'meteor/vulcan:core';
 import { useHistory } from 'react-router-dom';
 import { intlShape } from 'meteor/vulcan:i18n';
 
-const FormSubmit = ({
-  survey,
-  submitForm,
-  response,
-  sectionNumber,
-  nextSection,
-  previousSection,
-  showMessage = true,
-  variant = 'bottom',
-  readOnly,
-}, { intl }) => {
+const FormSubmit = (
+  {
+    survey,
+    submitForm,
+    response,
+    sectionNumber,
+    nextSection,
+    previousSection,
+    showMessage = true,
+    variant = 'bottom',
+    readOnly,
+  },
+  context
+) => {
+  // const { intl } = context;
   const history = useHistory();
   const [prevLoading, setPrevLoading] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
@@ -35,7 +39,7 @@ const FormSubmit = ({
       <div className="form-submit-actions">
         {nextSection ? (
           <Components.LoadingButton
-            title={intl.formatMessage({ id: `sections.${nextSection.id}.title` })}
+            // title={intl.formatMessage({ id: `sections.${nextSection.id}.title` })}
             className="form-btn-next"
             loading={nextLoading}
             type="submit"
@@ -52,7 +56,7 @@ const FormSubmit = ({
           </Components.LoadingButton>
         ) : readOnly ? null : (
           <Components.LoadingButton
-            title={intl.formatMessage({ id: 'general.finish_survey' })}            
+            // title={intl.formatMessage({ id: 'general.finish_survey' })}
             className="form-btn-next form-btn-finish"
             loading={nextLoading}
             type="submit"
@@ -70,7 +74,7 @@ const FormSubmit = ({
         )}
         {previousSection ? (
           <Components.LoadingButton
-            title={intl.formatMessage({ id: `sections.${previousSection.id}.title` })}
+            // title={intl.formatMessage({ id: `sections.${previousSection.id}.title` })}
             className="form-btn-prev"
             loading={prevLoading}
             type="submit"

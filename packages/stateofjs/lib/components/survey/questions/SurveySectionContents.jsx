@@ -25,8 +25,6 @@ const SurveySectionContents = ({
   const { currentUser } = useCurrentUser();
   const isAdmin = Users.isAdmin(currentUser);
 
-  const [startedAt, setStartedAt] = useState();
-
   const [createSave, { data, loading, error }] = useCreate2({
     collection: Saves,
     fragmentName: 'SaveFragment',
@@ -35,9 +33,9 @@ const SurveySectionContents = ({
   const fields = section.questions.map((question) => question.fieldName);
   const { id } = section;
 
-  const trackSave = ({ isError = false }) => {
+  const trackSave = ({ lastSavedAt, isError = false }) => {
     const data = {
-      startedAt,
+      startedAt: lastSavedAt,
       finishedAt: new Date(),
       responseId: response._id,
       isError,
@@ -95,14 +93,20 @@ const SurveySectionContents = ({
           layout: 'vertical',
         }}
         submitCallback={(data) => {
-          setStartedAt(new Date());
+          data.lastSavedAt = new Date();
           if (isLastSection) {
             data.isFinished = true;
           }
           return data;
         }}
-        successCallback={() => trackSave({ isError: false })}
-        errorCallback={() => trackSave({ isError: true })}
+        successCallback={(result) => {
+          const { lastSavedAt } = result;
+          trackSave({ lastSavedAt, isError: false });
+        }}
+        errorCallback={(result) => {
+          const { lastSavedAt } = result;
+          trackSave({ lastSavedAt, isError: true });
+        }}
         warnUnsavedChanges={false}
         disabled={isDisabled}
         components={{
