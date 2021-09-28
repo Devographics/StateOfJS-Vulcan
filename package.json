@@ -20,6 +20,7 @@
     "@graphql-tools/merge": "^7.0.0",
     "@graphql-tools/schema": "^8.0.3",
     "@graphql-tools/utils": "^8.0.2",
+    "@react-aria/ssr": "^3.1.0",
     "@sentry/browser": "^6.11.0",
     "@sentry/node": "6.11.0",
     "@sgrove/onegraph-apollo-server-auth": "^2.0.3-alpha-2",
