@@ -244,20 +244,17 @@ const BracketMatch = (props) => {
 };
 
 // bracket result item
-const BracketItem = (props, { intl }) => {
+const BracketItem = (props) => {
   const { player, isDisabled = false, isWinner, isOverallWinner, results, level, matchIndex } = props;
 
   // if this is the item located in the last position of the last match, it's the champion
   const isChampion = player && player.index === results?.[6]?.[2];
-
   // after first round every player has won at least a match
   const isDefending = player && level > 1;
-
   // is this item active?
   const isActive = !isDisabled;
-
+  // has a winner been picked for the current match or not
   const currentMatchHasWinner = !!results[matchIndex][2];
-
   // if the current match doesn't have a winner, or it's the overall winner, we're at the edge
   const isEdge = !currentMatchHasWinner || isOverallWinner;
 
@@ -287,6 +284,7 @@ const BracketItem = (props, { intl }) => {
   );
 };
 
+// wrap an item with a description or not based on its availability
 const WrapWithDescriptionTooltip = ({ player, children }, { intl }) => {
   const description = player && intl.formatMessage({ id: `${player.intlId}.description` });
   return description ? (
@@ -304,6 +302,7 @@ WrapWithDescriptionTooltip.contextTypes = {
   intl: intlShape,
 };
 
+// bracket item button
 const BracketItemButton = (props) => {
   const { player, isDisabled, pickWinner, matchIndex, playerIndex, result, canCancel } = props;
   return (
@@ -330,6 +329,7 @@ const BracketItemButton = (props) => {
   );
 };
 
+// cancel a match
 const BracketItemCancel = ({ matchIndex, playerIndex, isOverallWinner, cancelMatch }) => {
   return (
     <Components.TooltipTrigger
@@ -344,22 +344,7 @@ const BracketItemCancel = ({ matchIndex, playerIndex, isOverallWinner, cancelMat
             <span className="visually-hidden">
               <Components.FormattedMessage id="bracket.cancel" />
             </span>
-            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M17.25 6.75L6.75 17.25"
-              ></path>
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M6.75 6.75L17.25 17.25"
-              ></path>
-            </svg>
+            <BracketItemCancelIcon />
           </span>
         </button>
       }
@@ -371,6 +356,27 @@ const BracketItemCancel = ({ matchIndex, playerIndex, isOverallWinner, cancelMat
   );
 };
 
+// cancel (close) icon
+const BracketItemCancelIcon = () => (
+  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M17.25 6.75L6.75 17.25"
+    ></path>
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M6.75 6.75L17.25 17.25"
+    ></path>
+  </svg>
+);
+
+// overall winner of the entire bracket (not a button)
 const BracketItemOverallWinner = (props) => {
   const { player, canCancel } = props;
   return (

@@ -211,6 +211,10 @@ $highlight: $highlight-width solid var(--active-color);
   @include small {
     font-size: $smallest-font !important;
   }
+  .bracket-item-disabled &{
+    cursor: pointer;
+    pointer-events: none;
+  }
 }
 
 .bracket-item-details-trigger,
