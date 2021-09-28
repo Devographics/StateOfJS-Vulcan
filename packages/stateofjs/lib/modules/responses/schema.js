@@ -21,7 +21,7 @@ const schema = {
   createdAt: {
     type: Date,
     optional: true,
-    canRead: ['admins'],
+    canRead: ['owners'],
     onCreate: () => {
       return new Date();
     },
@@ -29,13 +29,22 @@ const schema = {
   updatedAt: {
     type: Date,
     optional: true,
-    canRead: ['admins'],
+    canRead: ['owners'],
     onCreate: () => {
       return new Date();
     },
     onUpdate: () => {
       return new Date();
     },
+  },
+  // unlike updatedAt, this tracks when the user clicked "submit" on the client, 
+  // not when the server finished the update
+  lastSavedAt: {
+    type: Date,
+    optional: true,
+    canRead: ['owners'],
+    canCreate: ['members'],
+    canUpdate: ['owners'],
   },
   userId: {
     type: String,
@@ -53,7 +62,7 @@ const schema = {
   year: {
     type: Number,
     optional: true,
-    canRead: ['guests'],
+    canRead: ['owners'],
     canCreate: ['admins'],
     canUpdate: ['admins'],
     onCreate: () => {
@@ -63,7 +72,7 @@ const schema = {
   duration: {
     type: Number,
     optional: true,
-    canRead: ['guests'],
+    canRead: ['owners'],
     onUpdate: ({ document }) => {
       return moment(document.updatedAt).diff(
         moment(document.createdAt),
@@ -74,7 +83,7 @@ const schema = {
   completion: {
     type: Number,
     optional: true,
-    canRead: ['guests'],
+    canRead: ['owners'],
     onUpdate: ({ document }) => {
       return getCompletionPercentage(document);
     },
@@ -82,7 +91,7 @@ const schema = {
   knowledgeScore: {
     type: Number,
     optional: true,
-    canRead: ['guests'],
+    canRead: ['owners'],
     onUpdate: ({ document }) => {
       return getKnowledgeScore(document).score;
     },
@@ -90,7 +99,7 @@ const schema = {
   locale: {
     type: String,
     optional: true,
-    canRead: ['guests'],
+    canRead: ['owners'],
     onUpdate: ({ document }) => {
       const user = Users.findOne({ _id: document.userId });
       return user && user.locale
@@ -104,21 +113,21 @@ const schema = {
   email: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   context: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   surveySlug: {
     type: String,
     optional: true,
-    canRead: ['guests'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
     options: surveys.map(({ slug }) => ({
@@ -136,49 +145,49 @@ const schema = {
   isFinished: {
     type: Boolean,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['members'],
   },
   common__user_info__device: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__browser: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__version: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__os: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__referrer: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__source: {
     type: String,
     optional: true,
-    canRead: ['members'],
+    canRead: ['owners'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
