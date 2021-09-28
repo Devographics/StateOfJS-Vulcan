@@ -155,16 +155,18 @@ Sub Components
 // bracket legend
 const BracketLegend = ({ options }) => (
   <table className="bracket-legend">
-    {options.map(({ value, intlId }, index) => (
-      <tr className="bracket-legend-item" key={value}>
-        <th className="bracket-legend-heading">
-          <Components.FormattedMessage id={intlId} />
-        </th>
-        <td className="bracket-legend-description">
-          <Components.FormattedMessage id={`${intlId}.description`} />
-        </td>
-      </tr>
-    ))}
+    <tbody>
+      {options.map(({ value, intlId }, index) => (
+        <tr className="bracket-legend-item" key={value}>
+          <th className="bracket-legend-heading">
+            <Components.FormattedMessage id={intlId} />
+          </th>
+          <td className="bracket-legend-description">
+            <Components.FormattedMessage id={`${intlId}.description`} />
+          </td>
+        </tr>
+      ))}
+    </tbody>
   </table>
 );
 

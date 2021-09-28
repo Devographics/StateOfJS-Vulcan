@@ -355,20 +355,38 @@ $highlight: $highlight-width solid var(--active-color);
 
 .bracket-legend {
   font-size: $small-font;
+  @include small{
+    display: block;
+  }
 }
 .bracket-legend-item {
+
+  @include small{
+    display: block;
+  }
 }
 
 .bracket-legend-heading {
   @include font-bold;
-  padding: $spacing/2 0;
-  padding-right: $spacing;
-  vertical-align: top;
-  text-align: right;
-  white-space: nowrap;
+
+  @include small{
+    display: block;
+  }
+  @include medium-large{
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: top;
+
+    padding: $spacing/2 0;
+    padding-right: $spacing;
+  }
 }
 
 .bracket-legend-description {
   padding: $spacing/2 0;
   vertical-align: top;
+
+  @include small{
+    display: block;
+  }
 }
