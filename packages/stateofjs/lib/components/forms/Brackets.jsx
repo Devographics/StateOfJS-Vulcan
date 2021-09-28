@@ -65,8 +65,6 @@ const getWonMatchIndex = (matchIndex, playerIndex) => {
   return wonMatchIndex;
 };
 
-let restarts = 0;
-
 const getItemClasses = (vars) => {
   const c = ['bracket-item'];
   Object.keys(vars).forEach((varName) => {
@@ -91,7 +89,6 @@ const Bracket = ({ inputProperties, itemProperties, options: _options, updateCur
   const options = _options.map((o, index) => ({ ...o, index }));
 
   const startOver = () => {
-    restarts++;
     setResults(initResults());
   };
 
@@ -313,9 +310,9 @@ const BracketItemButton = (props) => {
     <div className="bracket-item-button-wrapper">
       <WrapWithDescriptionTooltip player={player}>
         <button
-          name={`match-index-${result.join('_')}-${matchIndex}-${restarts}`}
-          id={`bracket-item-${props.player.intlId}-${restarts}`}
-          key={`bracket-item-${props.player.intlId}-${restarts}`}
+          name={`match-index-${result.join('_')}-${matchIndex}`}
+          id={`bracket-item-${props.player.intlId}`}
+          key={`bracket-item-${props.player.intlId}`}
           aria-pressed={isDisabled}
           className="bracket-item-button btn btn-primary"
           onClick={() => {
