@@ -316,7 +316,8 @@ const BracketItemButton = (props) => {
           key={`bracket-item-${props.player.intlId}`}
           aria-pressed={isDisabled}
           className="bracket-item-button btn btn-primary"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             pickWinner(matchIndex, playerIndex);
           }}
         >
@@ -338,7 +339,8 @@ const BracketItemCancel = ({ matchIndex, playerIndex, isOverallWinner, cancelMat
       trigger={
         <button
           className="bracket-item-cancel"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             cancelMatch(matchIndex, playerIndex, isOverallWinner);
           }}
         >
