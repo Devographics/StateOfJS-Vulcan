@@ -4,8 +4,8 @@ import EntitiesContext from '../common/EntitiesContext';
 
 const SurveyCredits = ({ survey }) => {
   return (
-    <div className="survey-credits">
-      <h3 className="survey-credits-heading">
+    <div className="survey-credits survey-page-block">
+      <h3 className="survey-credits-heading survey-page-block-heading">
         <Components.FormattedMessage id="credits.thanks" />
       </h3>
       <div className="survey-credits-items">

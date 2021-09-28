@@ -43,6 +43,7 @@ $bold: 800;
 pre,
 code {
   @include secondary-font;
+  color: $text-color;
 }
 
 strong {

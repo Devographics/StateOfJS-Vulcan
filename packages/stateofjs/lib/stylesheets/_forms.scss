@@ -4,12 +4,14 @@
   // }
   .form-input {
     position: relative;
+
+    margin-bottom: $spacing;
+    &:focus-within {
+      border-color: var(--link-color);
+      background: $greyDarkish;
+    }
     @include small {
       margin-bottom: $spacing * 2;
-    }
-  }
-  .form-group {
-    @include small {
     }
     @include medium {
       @include border;
@@ -18,11 +20,6 @@
     @include large {
       @include border;
       padding: $spacing;
-    }
-    margin-bottom: $spacing;
-    &:focus-within {
-      border-color: var(--link-color);
-      background: $greyDarkish;
     }
   }
   .form-label-heading {
@@ -138,7 +135,7 @@
     font-size: $small-font;
   }
 
-  .form-component-clear{
+  .form-component-clear {
     @include flex-center;
     height: 30px;
     width: 30px;
@@ -147,7 +144,7 @@
     top: 0;
     right: 0;
     border-radius: 0 0 0 3px;
-    span{
+    span {
       font-size: $medium-font;
     }
   }

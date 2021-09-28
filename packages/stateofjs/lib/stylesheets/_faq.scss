@@ -1,0 +1,25 @@
+
+.faq-contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: $spacing * 2;
+  row-gap: $spacing * 2;
+}
+.faq-item {
+  margin: 0;
+}
+.faq-item-heading {
+  button {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0;
+    color: var(--text-color);
+    @include font-bold;
+    color: var(--link-color);
+    &:hover {
+      color: var(--hover-color);
+      text-decoration: underline;
+    }
+  }
+}

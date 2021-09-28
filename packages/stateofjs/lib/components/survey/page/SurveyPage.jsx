@@ -13,6 +13,7 @@ import SurveyHeadTags from '../SurveyHeadTags';
 import SurveyMessage from '../SurveyMessage';
 import SurveyCredits from '../SurveyCredits';
 import Translators from '../../common/Translators.jsx';
+import Faq from '../../common/Faq.jsx';
 
 const SurveyPageWrapper = (props, { intl }) => {
   const { slug, year } = useParams();
@@ -30,8 +31,11 @@ const SurveyPageWrapper = (props, { intl }) => {
             <h1 className="survey-image">
               <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
             </h1>
-            <SurveyIntro survey={survey} />
-            <SurveyPage survey={survey} />
+            <div className="survey-page-block">
+              <SurveyIntro survey={survey} />
+              <SurveyPage survey={survey} />
+            </div>
+            <Faq />
             {survey.credits && <SurveyCredits survey={survey} />}
             <Translators />
           </div>
@@ -80,7 +84,7 @@ const SurveyPage = ({ survey }) => {
           </div>
         )}
         <Components.AccountsLoginForm redirect={false} formState={STATES.SIGN_UP} email={email} />
-        <AccountMessage />
+        {/* <AccountMessage /> */}
       </div>
     );
   } else {

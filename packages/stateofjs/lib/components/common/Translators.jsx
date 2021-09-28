@@ -22,8 +22,8 @@ const Translators = () => {
   const { locales } = data;
 
   return (
-    <div className="translators">
-      <h3 className="translators-heading">
+    <div className="translators survey-page-block">
+      <h3 className="translators-heading survey-page-block-heading">
         <Components.FormattedMessage id="general.translation_help" />
       </h3>
       <div className="translators-locales">
