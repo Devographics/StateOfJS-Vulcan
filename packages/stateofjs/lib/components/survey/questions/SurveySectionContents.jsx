@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { statuses } from '../../../modules/constants.js';
+import FormItem from './FormItem.jsx';
 import FormSubmit from './FormSubmit.jsx';
 import FormLayout from './FormLayout.jsx';
 import FormLabel from './FormLabel.jsx';
@@ -105,6 +106,7 @@ const SurveySectionContents = ({
         warnUnsavedChanges={false}
         disabled={isDisabled}
         components={{
+          FormItem,
           FormLayout,
           FormSubmit: FormSubmitWrapper,
           FormOptionLabel,

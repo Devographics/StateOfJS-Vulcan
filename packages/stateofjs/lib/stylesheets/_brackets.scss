@@ -20,14 +20,6 @@ $highlight: $highlight-width solid var(--active-color);
   margin-top: $spacing;
 }
 
-.bracket-current-matchup {
-  margin-bottom: $spacing * 2;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  column-gap: $spacing;
-}
-
 .bracket-player {
   height: 100%;
   display: flex;
@@ -109,29 +101,11 @@ $highlight: $highlight-width solid var(--active-color);
     }
   }
 
-  .bracket-item-button {
-    padding: $spacing/2 !important;
-    text-align: center;
-    white-space: break-spaces !important;
-    position: relative;
-    @include flex-center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    display: flex !important;
-    z-index: 100;
-    font-size: $smallish-font !important;
-    border-radius: 3px;
-    @include small {
-      font-size: $smallest-font !important;
-    }
-  }
-
   &-winner {
     border-color: $contrast-color;
     border-width: 2px;
   }
-  &-overall-winner {
+  &-overallwinner {
     border-color: $contrast-color;
     border-width: 4px;
   }
@@ -162,7 +136,7 @@ $highlight: $highlight-width solid var(--active-color);
     border-right-width: 1px;
   }
 
-  &.bracket-item-disabled:not(.bracket-item-overall-winner) {
+  &.bracket-item-disabled:not(.bracket-item-overallwinner) {
     .bracket-item-button,
     &:after {
       @include disabled;
@@ -210,18 +184,85 @@ $highlight: $highlight-width solid var(--active-color);
     top: 50%;
     transform: none;
   }
-  &.bracket-item-overall-winner:after {
+  &.bracket-item-overallwinner:after {
     display: none;
   }
 }
 
-.bracket-item-inner {
+.bracket-item-button-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bracket-item-button {
+  padding: $spacing/2 !important;
+  text-align: center;
+  white-space: break-spaces !important;
   position: relative;
   @include flex-center;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  display: flex !important;
+  z-index: 1;
+  font-size: $smallish-font !important;
+  border-radius: 3px;
+  @include small {
+    font-size: $smallest-font !important;
+  }
+  .bracket-item-disabled &{
+    cursor: pointer;
+    pointer-events: none;
+  }
+}
 
+.bracket-item-details-trigger,
+.bracket-item-cancel {
+  padding: 0;
+  display: inline-block;
+  // background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-color);
+  border-radius: 100%;
+  border: 3px solid var(--active-color);
+  color: var(--text-color);
+  height: 24px;
+  width: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transform: translateX(30%) translateY(-30%);
+
+  cursor: pointer;
+
+  &:hover{
+    border-color: var(--contrast-color);
+  }
+
+  span {
+    line-height: 1;
+  }
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.bracket-item-inner, .bracket-item-tooltip-trigger{
+  position: relative;
+  @include flex-center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.bracket-item-inner {
   &:before {
     display: none;
     content: ' ';
@@ -296,18 +337,38 @@ $highlight: $highlight-width solid var(--active-color);
   background: var(--bg-color) !important;
 }
 
-.bracket-item-label{
+.bracket-item-radio {
+  opacity: 0;
+  cursor: pointer;
 
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
 }
 
-.bracket-item-details-trigger{
-  margin-left: 5px;
-  display: inline-block;
-  background: rgba(255,255,255,0.1);
-  border-radius: 100%;
-  height: 18px;
-  width: 18px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+.bracket-legend {
+  font-size: $small-font;
+}
+.bracket-legend-item {
+}
+
+.bracket-legend-heading {
+  @include font-bold;
+  padding: $spacing/2 0;
+  padding-right: $spacing;
+  vertical-align: top;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bracket-legend-description {
+  padding: $spacing/2 0;
+  vertical-align: top;
 }

@@ -6,6 +6,11 @@ import isEmpty from 'lodash/isEmpty';
 import cloneDeep from 'lodash/cloneDeep';
 import { intlShape } from 'meteor/vulcan:i18n';
 
+/*
+
+Helpers
+
+*/
 const sampleSizeAndRemove = (array, n) => {
   const sample = sampleSize(array, n);
   const remaining = array.filter((a) => !sample.includes(a));
@@ -38,16 +43,50 @@ const matchTable = {
   5: [6, 1],
 };
 
-const Bracket = ({ inputProperties, itemProperties, options: _options, updateCurrentValues, path }) => {
+// based on a match participant, find out what match was won to get there
+const reverseMatchTable = {
+  4: {
+    0: 0,
+    1: 1,
+  },
+  5: {
+    0: 2,
+    1: 3,
+  },
+  6: {
+    0: 4,
+    1: 5,
+  },
+};
+
+// for a matchIndex and playerIndex, get the match that was just won by that player
+const getWonMatchIndex = (matchIndex, playerIndex) => {
+  const wonMatchIndex = reverseMatchTable[matchIndex][playerIndex];
+  return wonMatchIndex;
+};
+
+const getItemClasses = (vars) => {
+  const c = ['bracket-item'];
+  Object.keys(vars).forEach((varName) => {
+    if (vars[varName]) {
+      c.push(`bracket-item-${varName.replace('is', '').toLowerCase()}`);
+    }
+  });
+  return c;
+};
+
+/*
+
+Main Component
+
+*/
+
+const Bracket = ({ inputProperties, itemProperties, options: _options, updateCurrentValues, path, formComponents }) => {
   const { value } = inputProperties;
   const [results, setResults] = useState(isEmpty(value) ? initResults() : value);
 
   // add index to all options since we use that to keep track of them
   const options = _options.map((o, index) => ({ ...o, index }));
-
-  // to know the current match number, find the first match that is not completed
-  // (e.g. has a p1, p2, and winner)
-  const currentMatchIndex = results.findIndex((result) => result.length < 3);
 
   const startOver = () => {
     setResults(initResults());
@@ -72,22 +111,62 @@ const Bracket = ({ inputProperties, itemProperties, options: _options, updateCur
     updateCurrentValues({ [path]: newResults });
   };
 
+  // cancel a match
+  const cancelMatch = (matchIndex, playerIndex, isOverallWinner) => {
+    const newResults = cloneDeep(results);
+    if (isOverallWinner) {
+      // remove winner (3rd place array item) from current match
+      newResults[matchIndex].splice(2, 1);
+    } else {
+      const wonMatchIndex = getWonMatchIndex(matchIndex, playerIndex);
+      // remove item from current match
+      delete newResults[matchIndex][playerIndex];
+      // remove winner (3rd place array item) from previous match
+      newResults[wonMatchIndex].splice(2, 1);
+    }
+    setResults(newResults);
+    updateCurrentValues({ [path]: newResults });
+  };
+
   const props = {
     options,
     results,
-    currentMatchIndex,
     pickWinner,
+    cancelMatch,
     startOver,
   };
 
   return (
-    <Components.FormItem path={inputProperties.path} label={inputProperties.label} {...itemProperties}>
+    <formComponents.FormItem path={inputProperties.path} label={inputProperties.label} {...itemProperties}>
       <div className="bracket">
+        <BracketLegend {...props} />
         <BracketResults {...props} />
       </div>
-    </Components.FormItem>
+    </formComponents.FormItem>
   );
 };
+
+/*
+
+Sub Components
+
+*/
+
+// bracket legend
+const BracketLegend = ({ options }) => (
+  <table className="bracket-legend">
+    {options.map(({ value, intlId }, index) => (
+      <tr className="bracket-legend-item" key={value}>
+        <th className="bracket-legend-heading">
+          <Components.FormattedMessage id={intlId} />
+        </th>
+        <td className="bracket-legend-description">
+          <Components.FormattedMessage id={`${intlId}.description`} />
+        </td>
+      </tr>
+    ))}
+  </table>
+);
 
 // live bracket results
 const BracketResults = (props) => {
@@ -103,21 +182,25 @@ const BracketResults = (props) => {
 
 // a match group within the bracket
 const BracketMatchGroup = (props) => {
-  const { results, isOverallWinner, matchIndexes, currentMatchIndex, level } = props;
+  const { matchIndexes, ...rest } = props;
+  const { results, isOverallWinner, level } = rest;
   return (
     <div
       className={`bracket-matchgroup bracket-matchgroup-level${level} bracket-matchgroup-${
         isOverallWinner ? 'overall-winner' : ''
       }`}
     >
+      <p className="visually-hidden">
+        {isOverallWinner ? (
+          <Components.FormattedMessage id="bracket.result" />
+        ) : (
+          <>
+            <Components.FormattedMessage id="bracket.round" /> {level}
+          </>
+        )}
+      </p>
       {matchIndexes.map((matchIndex) => (
-        <BracketMatch
-          {...props}
-          result={results[matchIndex]}
-          matchIndex={matchIndex}
-          key={matchIndex}
-          isCurrentMatch={matchIndex === currentMatchIndex}
-        />
+        <BracketMatch {...rest} result={results[matchIndex]} matchIndex={matchIndex} key={matchIndex} />
       ))}
     </div>
   );
@@ -125,7 +208,7 @@ const BracketMatchGroup = (props) => {
 
 // bracket pair; or single winner
 const BracketMatch = (props) => {
-  const { options, result, index, isOverallWinner = false, isCurrentMatch = false } = props;
+  const { options, result, index, isOverallWinner = false } = props;
   const [p1Index, p2Index, winnerIndex] = result;
   const p1 = options[p1Index];
   const p2 = options[p2Index];
@@ -142,54 +225,58 @@ const BracketMatch = (props) => {
   };
 
   return isOverallWinner ? (
-    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
+    <div key={index} className="bracket-match">
       <BracketItem {...p} playerIndex={0} player={winner} isOverallWinner={true} />
     </div>
   ) : (
-    <div key={index} className={`bracket-match bracket-match-${isCurrentMatch ? 'current' : ''}`}>
-      <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
-      <div className="bracket-spacer" />
-      <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
-    </div>
+    <fieldset key={index} className="bracket-match">
+      <legend className="visually-hidden">
+        <Components.FormattedMessage id={p1?.intlId} />, <Components.FormattedMessage id="bracket.vs" />.{' '}
+        <Components.FormattedMessage id={p2?.intlId} />
+      </legend>
+      <div className="bracket-match">
+        <BracketItem {...p} playerIndex={0} player={p1} isWinner={!isNil(winnerIndex) && p1Index === winnerIndex} />
+        <div className="bracket-spacer" />
+        <BracketItem {...p} playerIndex={1} player={p2} isWinner={!isNil(winnerIndex) && p2Index === winnerIndex} />
+      </div>
+    </fieldset>
   );
 };
 
 // bracket result item
 const BracketItem = (props) => {
-  const { player, isDisabled = false, isWinner, isOverallWinner, results, level } = props;
-
-  const classnames = ['bracket-item'];
+  const { player, isDisabled = false, isWinner, isOverallWinner, results, level, matchIndex } = props;
 
   // if this is the item located in the last position of the last match, it's the champion
   const isChampion = player && player.index === results?.[6]?.[2];
-
   // after first round every player has won at least a match
   const isDefending = player && level > 1;
-
-  const isActive = !isDisabled;
-
-  // is this the overall winner of the whole bracket?
-  if (isOverallWinner) classnames.push('bracket-item-overall-winner');
-
-  // is this the winner of the current match?
-  if (isWinner) classnames.push('bracket-item-winner');
-
-  // is this item disabled?
-  if (isDisabled) classnames.push('bracket-item-disabled');
-
   // is this item active?
-  if (isActive) classnames.push('bracket-item-active');
+  const isActive = !isDisabled;
+  // has a winner been picked for the current match or not
+  const currentMatchHasWinner = !!results[matchIndex][2];
+  // if the current match doesn't have a winner, or it's the overall winner, we're at the edge
+  const isEdge = !currentMatchHasWinner || isOverallWinner;
 
-  // is this a defending item? (meaning it won its previous match)
-  if (isDefending) classnames.push('bracket-item-defending');
+  const classnames = getItemClasses({
+    isOverallWinner,
+    isEdge,
+    isWinner,
+    isDisabled,
+    isActive,
+    isDefending,
+    isChampion,
+  });
 
-  // is this the champion item? (meaning it won the whole bracket)
-  if (isChampion) classnames.push('bracket-item-champion');
+  // an item can be cancelled if it's at the edge; except for first level items
+  const canCancel = player && isDefending && isEdge;
+
+  const p = { ...props, canCancel };
 
   return player ? (
     <div className={classnames.join(' ')}>
       <div className="bracket-item-inner">
-        {isOverallWinner ? <BracketItemOverallWinner {...props} /> : <BracketItemButton {...props} />}
+        {isOverallWinner ? <BracketItemOverallWinner {...p} /> : <BracketItemButton {...p} />}
       </div>
     </div>
   ) : (
@@ -197,56 +284,118 @@ const BracketItem = (props) => {
   );
 };
 
-const BracketItemButton = (props, { intl }) => {
-  const { isDisabled, pickWinner, matchIndex, playerIndex } = props;
-  return (
-    <Components.Button
-      className="bracket-item-button"
-      disabled={isDisabled}
-      onClick={() => {
-        pickWinner(matchIndex, playerIndex);
-      }}
-    >
-      <BracketItemLabel {...props} />
-    </Components.Button>
+// wrap an item with a description or not based on its availability
+const WrapWithDescriptionTooltip = ({ player, children }, { intl }) => {
+  const description = player && intl.formatMessage({ id: `${player.intlId}.description` });
+  return description ? (
+    <Components.TooltipTrigger trigger={<div className="bracket-item-tooltip-trigger">{children}</div>}>
+      <div className="bracket-item-details" aria-hidden="true">
+        {description}
+      </div>
+    </Components.TooltipTrigger>
+  ) : (
+    children
   );
 };
 
-const BracketItemLabel = ({ player }, { intl }) => {
-  const description = intl.formatMessage({ id: `${player.intlId}.description` });
-  return (
-    <span className="bracket-item-label">
-      <Components.FormattedMessage className="bracket-item-name" id={player.intlId} />
-      {description && description.length && (
-        <Components.TooltipTrigger
-          trigger={
-            <div className="bracket-item-details-trigger" title={intl.formatMessage({ id: 'forms.clear_field' })}>
-              <span>?</span>
-            </div>
-          }
-        >
-          <div className="bracket-item-details">
-            {description}
-          </div>
-        </Components.TooltipTrigger>
-      )}
-    </span>
-  );
-};
-
-BracketItemLabel.contextTypes = {
+WrapWithDescriptionTooltip.contextTypes = {
   intl: intlShape,
 };
 
-const BracketItemOverallWinner = (props) => (
-  <div className="bracket-item-button bracket-item-button-overall-winner">
-    <BracketItemLabel {...props} />
-    <BracketStartOver {...props} />
-  </div>
+// bracket item button
+const BracketItemButton = (props) => {
+  const { player, isDisabled, pickWinner, matchIndex, playerIndex, result, canCancel } = props;
+  return (
+    <div className="bracket-item-button-wrapper">
+      <WrapWithDescriptionTooltip player={player}>
+        <button
+          name={`match-index-${result.join('_')}-${matchIndex}`}
+          id={`bracket-item-${props.player.intlId}`}
+          key={`bracket-item-${props.player.intlId}`}
+          aria-pressed={isDisabled}
+          className="bracket-item-button btn btn-primary"
+          onClick={() => {
+            pickWinner(matchIndex, playerIndex);
+          }}
+        >
+          <Components.FormattedMessage id={props.player.intlId} />
+          <span className="visually-hidden">
+            (<Components.FormattedMessage id={`${props.player.intlId}.description`} />)
+          </span>
+        </button>
+      </WrapWithDescriptionTooltip>
+      {canCancel && <BracketItemCancel {...props} />}
+    </div>
+  );
+};
+
+// cancel a match
+const BracketItemCancel = ({ matchIndex, playerIndex, isOverallWinner, cancelMatch }) => {
+  return (
+    <Components.TooltipTrigger
+      trigger={
+        <button
+          className="bracket-item-cancel"
+          onClick={() => {
+            cancelMatch(matchIndex, playerIndex, isOverallWinner);
+          }}
+        >
+          <span>
+            <span className="visually-hidden">
+              <Components.FormattedMessage id="bracket.cancel" />
+            </span>
+            <BracketItemCancelIcon />
+          </span>
+        </button>
+      }
+    >
+      <div className="bracket-item-details" aria-hidden="true">
+        <Components.FormattedMessage id="bracket.cancel" />
+      </div>
+    </Components.TooltipTrigger>
+  );
+};
+
+// cancel (close) icon
+const BracketItemCancelIcon = () => (
+  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M17.25 6.75L6.75 17.25"
+    ></path>
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M6.75 6.75L17.25 17.25"
+    ></path>
+  </svg>
 );
 
-// start over
-const BracketStartOver = ({ startOver }) => {
+// overall winner of the entire bracket (not a button)
+const BracketItemOverallWinner = (props) => {
+  const { player, canCancel } = props;
+  return (
+    <div className="bracket-item-button-wrapper">
+      <WrapWithDescriptionTooltip player={player}>
+        <div className="bracket-item-button bracket-item-button-overall-winner">
+          <div className="bracket-item-label">
+            <Components.FormattedMessage id={player?.intlId} />
+          </div>
+          {/* <BracketStartOver {...props} /> */}
+        </div>
+      </WrapWithDescriptionTooltip>
+      {canCancel && <BracketItemCancel {...props} />}
+    </div>
+  );
+};
+
+// start over (not used)
+export const BracketStartOver = ({ startOver }) => {
   return (
     <Components.Button
       className="bracket-startover"
@@ -263,7 +412,10 @@ const BracketStartOver = ({ startOver }) => {
 const EmptyBracketItem = ({ classnames }) => (
   <div className={[...classnames, 'bracket-item-empty'].join(' ')}>
     <div className="bracket-item-inner">
-      <span>...</span>
+      <span aria-hidden="true">...</span>
+      <span className="visually-hidden">
+        <Components.FormattedMessage id="bracket.empty_bracket" />
+      </span>
     </div>
   </div>
 );
