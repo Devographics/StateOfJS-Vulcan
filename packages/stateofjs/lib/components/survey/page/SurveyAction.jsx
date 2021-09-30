@@ -66,6 +66,11 @@ const SurveyAction = ({ survey, currentUser }) => {
       name: 'createResponse',
       args: { input: 'CreateResponseInput' },
       fragmentName: 'CreateResponseOutputFragment',
+      mutationOptions: {
+        refetchQueries: [
+          'getCurrentUser'
+        ],
+      }
     },
     mutationArguments: { input: { data } },
     successCallback: (result) => {
@@ -116,7 +121,7 @@ const ErrorItem = ({ survey, id, message, properties, response }) => {
   if (id === 'responses.duplicate_responses') {
     return (
       <div className="survey-item-error error message">
-        {message} 
+        {message}{' '}
         <Link to={getSurveyPath({ survey, response })}><Components.FormattedMessage id="general.continue_survey"/></Link>
       </div>
     );
