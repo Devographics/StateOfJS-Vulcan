@@ -189,3 +189,7 @@
 .rbt-input {
   resize: vertical;
 }
+
+.form-floating > label{
+  color: var(--text-color-inverted);
+}

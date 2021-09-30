@@ -28,13 +28,13 @@ const SurveyCredit = ({ id, role }) => (
 
 const SurveyCreditItem = ({ name, twitterName, twitter, role }) => (
   <div className="survey-credits-item">
-    <a href={`https://twitter.com/@${twitterName}`} className="survey-credits-item-avatar">
+    <a href={`https://twitter.com/${twitterName}`} className="survey-credits-item-avatar">
       <img src={twitter?.avatarUrl} />
     </a>
     <div className="survey-credits-item-details">
       <h4 className="survey-credits-item-name">{name}</h4>
       <p className="survey-credits-item-twitter">
-        <a href={`https://twitter.com/@${twitterName}`}>@{twitterName}</a>
+        <a href={`https://twitter.com/${twitterName}`}>@{twitterName}</a>
       </p>
       <p className="survey-credits-item-role">
         <Components.FormattedMessage id={`credits.${role}`} />

@@ -4,7 +4,7 @@ import { Components } from 'meteor/vulcan:core';
 
 const Footer = () => (
   <footer className="footer">
-    &copy; 2020 <a href="http://stateofjs.com/">State of JavaScript</a> |{' '}
+    &copy; 2021 <a href="https://stateofjs.com/">State of JavaScript</a> |{' '}
     <Link to="/privacy-policy">
       <Components.FormattedMessage id="general.privacy_policy" />
     </Link>{' '}

@@ -12,31 +12,13 @@ const Faq = () => (
     <h3 className="faq-heading survey-page-block-heading">
       <Components.FormattedMessage id="general.faq" />
     </h3>
-    <Accordion className="faq-contents">
+    <Accordion flush className="faq-contents">
       {items.map((item, index) => (
         <FaqItem item={item} index={index} key={item} />
       ))}
     </Accordion>
   </div>
 );
-
-// const FaqItem = ({ item, index }, { intl }) => {
-//   return (
-//     <Accordion.Item eventKey={index}>
-//     <dl className="faq-item">
-//       <dt>
-//         <Components.FormattedMessage id={`faq.${item}`} />
-//       </dt>
-//       <dd>
-//         <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-//           {intl.formatMessage({ id: `faq.${item}.description` })}
-//         </ReactMarkdown>
-//         {/* <Components.FormattedMessage id={`faq.${item}.description`} md={true} /> */}
-//       </dd>
-//     </dl>
-//     </Accordion.Item>
-//   );
-// };
 
 const FaqItem = ({ item, index }, { intl }) => {
   return (

@@ -1168,37 +1168,6 @@ export default {
           ]
         },
         {
-          "id": "job_title",
-          "template": "single",
-          "allowother": true,
-          "options": [
-            {
-              "id": "cto"
-            },
-            {
-              "id": "front_end_developer"
-            },
-            {
-              "id": "full_stack_developer"
-            },
-            {
-              "id": "back_end_developer"
-            },
-            {
-              "id": "web_developer"
-            },
-            {
-              "id": "web_designer"
-            },
-            {
-              "id": "ui_designer"
-            },
-            {
-              "id": "ux_designer"
-            }
-          ]
-        },
-        {
           "id": "country",
           "template": "country"
         },

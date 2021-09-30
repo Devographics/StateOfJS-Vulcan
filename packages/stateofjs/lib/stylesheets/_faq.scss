@@ -7,9 +7,11 @@
 }
 .faq-item {
   margin: 0;
+  background: none;
+  border: none;
 }
 .faq-item-heading {
-  button {
+  .accordion-button {
     background: none;
     border: none;
     text-align: left;
@@ -21,8 +23,16 @@
       color: var(--hover-color);
       text-decoration: underline;
     }
+    &:after{
+      display: none;
+    }
   }
 }
 .faq-item-body{
   font-size: $smallish-font;
+  padding: 0;
+  margin: 0;
+  p{
+    margin: 0;
+  }
 }
