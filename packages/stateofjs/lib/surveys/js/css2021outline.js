@@ -32,6 +32,10 @@ export default {
     {
       "id": "philip_jagenstedt",
       "role": "survey_design"
+    },
+    {
+      "id": "christopher_kirk_nielsen",
+      "role": "logo_design"
     }
   ],
   "outline": [
@@ -275,9 +279,11 @@ export default {
         {
           "id": "pre_post_processors",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "pre_post_processors",
@@ -332,9 +338,11 @@ export default {
         {
           "id": "css_frameworks",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "css_frameworks",
@@ -392,19 +400,17 @@ export default {
           "year": 2021
         },
         {
-          "id": "goober",
-          "year": 2021
-        },
-        {
           "id": "windi_css",
           "year": 2021
         },
         {
           "id": "css_in_js",
           "intlId": "tools.other_tools",
-          "template": "text",
+          "template": "others",
           "sectionSlug": "tools_others",
-          "suffix": "others"
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "css_in_js",
@@ -447,7 +453,10 @@ export default {
         },
         {
           "id": "utilities",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "browsers",
@@ -508,7 +517,10 @@ export default {
         },
         {
           "id": "browsers",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "libraries"
+          ]
         },
         {
           "id": "tool_evaluation",
@@ -686,42 +698,38 @@ export default {
           "year": 2021
         },
         {
-          "id": "css_for_print",
-          "template": "single",
-          "fieldType": "Number",
+          "id": "what_do_you_use_css_for",
+          "template": "multiple",
           "options": [
             {
-              "id": 0
+              "id": "marketing_sites"
             },
             {
-              "id": 1
+              "id": "design_systems"
             },
             {
-              "id": 2
+              "id": "blogs"
             },
             {
-              "id": 3
+              "id": "web_apps"
+            },
+            {
+              "id": "mobile_apps"
+            },
+            {
+              "id": "css_art"
+            },
+            {
+              "id": "emails"
+            },
+            {
+              "id": "printed_documents"
             }
           ]
         },
         {
-          "id": "css_for_email",
-          "template": "single",
-          "fieldType": "Number",
-          "options": [
-            {
-              "id": 0
-            },
-            {
-              "id": 1
-            },
-            {
-              "id": 2
-            },
-            {
-              "id": 3
-            }
-          ]
+          "id": "what_do_you_use_css_for",
+          "template": "others"
         }
       ]
     },
@@ -729,6 +737,54 @@ export default {
       "id": "resources",
       "slug": "resources",
       "questions": [
+        {
+          "id": "first_steps",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "books"
+            },
+            {
+              "id": "videos"
+            },
+            {
+              "id": "courses_free"
+            },
+            {
+              "id": "courses_paid"
+            },
+            {
+              "id": "school"
+            },
+            {
+              "id": "podcasts"
+            },
+            {
+              "id": "bootcamp"
+            },
+            {
+              "id": "on_the_job"
+            },
+            {
+              "id": "mentoring"
+            },
+            {
+              "id": "self_directed"
+            }
+          ]
+        },
+        {
+          "id": "first_steps",
+          "template": "others",
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
+          ]
+        },
         {
           "id": "blogs_news_magazines",
           "template": "multiple",
@@ -812,7 +868,7 @@ export default {
               "id": "levelup"
             },
             {
-              "id": "wesbos"
+              "id": "wes_bos"
             },
             {
               "id": "frontendmasters"
@@ -998,8 +1054,7 @@ export default {
           "id": "css_pain_points",
           "year": 2021,
           "sectionSlug": "opinions_other",
-          "suffix": "others",
-          "template": "longtext"
+          "template": "others"
         },
         {
           "id": "currently_missing_from_css",
@@ -1037,8 +1092,7 @@ export default {
         {
           "id": "currently_missing_from_css",
           "sectionSlug": "opinions_other",
-          "suffix": "others",
-          "template": "longtext"
+          "template": "others"
         },
         {
           "id": "state_of_the_web",
@@ -1164,6 +1218,21 @@ export default {
             },
             {
               "id": "range_more_than_200"
+            }
+          ]
+        },
+        {
+          "id": "higher_education_degree",
+          "template": "single",
+          "options": [
+            {
+              "id": "no"
+            },
+            {
+              "id": "yes_related"
+            },
+            {
+              "id": "yes_unrelated"
             }
           ]
         },

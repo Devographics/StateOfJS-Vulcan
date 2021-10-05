@@ -77,7 +77,7 @@ const SurveyNav = ({ survey, response }) => {
             {survey.name} {survey.year}
           </Link>
         </h2>
-        <div
+        <Components.Button
           className="section-nav-head"
           onClick={(e) => {
             setShown(!shown);
@@ -87,7 +87,7 @@ const SurveyNav = ({ survey, response }) => {
             <Components.FormattedMessage id="general.table_of_contents" />
           </h3>
           <span className="section-nav-toggle">{shown ? '▼' : '▶'}</span>
-        </div>
+        </Components.Button>
         <div className="section-nav-contents">
           <ul>
             {outline.map((section, i) => (

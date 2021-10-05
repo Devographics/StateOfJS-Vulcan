@@ -21,6 +21,7 @@ Package.onUse(function (api) {
     `vulcan:forms@${version}`,
     `vulcan:accounts@${version}`,
     `vulcan:ui-bootstrap@${version}`,
+    `vulcan:newsletter@${version}`,
 
     `vulcan:events-internal@${version}`,
 

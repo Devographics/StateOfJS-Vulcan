@@ -9,3 +9,4 @@ import './users';
 import './saves';
 import './projects';
 import './entities';
+import './private_responses';

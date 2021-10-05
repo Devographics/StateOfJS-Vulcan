@@ -15,6 +15,7 @@ import PrivateResponses from '../../modules/private_responses/collection';
 import { getSurveyBySlug } from '../../modules/surveys/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 import isEmpty from 'lodash/isEmpty';
+import { subscribeEmail } from 'meteor/vulcan:newsletter';
 
 const replaceAll = function (target, search, replacement) {
   return target.replace(new RegExp(search, 'g'), replacement);
@@ -66,7 +67,7 @@ export const normalizeResponse = async ({
   document: response,
   entities,
   log = false,
-  fileName,
+  fileName: _fileName,
 }) => {
   try {
     const normResp = {};
@@ -75,6 +76,7 @@ export const normalizeResponse = async ({
     const survey = getSurveyBySlug(response.surveySlug);
     const allEntities = entities || (await getEntities());
     const allRules = generateEntityRules(allEntities);
+    const fileName = _fileName || `${response.surveySlug}_normalization`;
 
     /*
   
@@ -116,7 +118,7 @@ export const normalizeResponse = async ({
     */
     for (const s of survey.outline) {
       for (const field of s.questions) {
-        const { fieldName, matchTags } = field;
+        const { fieldName, matchTags = [] } = field;
 
         const [initialSegment, ...restOfPath] = fieldName.split('__');
         const normPath = restOfPath.join('.');
@@ -130,11 +132,6 @@ export const normalizeResponse = async ({
             set(privateFields, normPath, value);
           } else {
             if (last(restOfPath) === 'others') {
-              if (!matchTags) {
-                throw new Error(
-                  `Field ${fieldName} should have matchTags defined`
-                );
-              }
 
               // A. "others" fields needing to be normalized
               set(normResp, `${normPath}.raw`, value);
@@ -287,7 +284,7 @@ export const normalizeResponse = async ({
     if (result.insertedId) {
       Responses.update(
         { _id: response._id },
-        { $set: { normalizedResponseId: result.insertedId } }
+        { $set: { normalizedResponseId: result.insertedId, isNormalized: true } }
       );
     }
 

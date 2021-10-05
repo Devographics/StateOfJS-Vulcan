@@ -8,11 +8,13 @@ import { getSetting } from 'meteor/vulcan:core';
 import { convertAllYAML } from './yaml';
 import { loadProjects } from './projects.js';
 import { logAllRules } from './normalization/helpers';
+import { normalizeJob } from './normalization/cronjob';
 
 const startup = getSetting('startup', []);
 const environment = getSetting('environment');
 
 Meteor.startup(async function () {
+  await normalizeJob();
 
   if (environment === 'development') {
     await convertAllYAML();
@@ -20,7 +22,7 @@ Meteor.startup(async function () {
   }
 
   await loadProjects();
-  
+
   // for some reason JSON arrays are of the form: { '0': 'testScript', '1': 'testScript2' },
   // convert it to regular array first to make things easier
   const scriptsToRun = Object.keys(startup).map((k) => startup[k]);

@@ -76,12 +76,14 @@ const SurveySectionContents = ({
           <Components.FormattedMessage id="general.survey_closed" />
         </div>
       ) : null} */}
-      <h2 className="section-title">
-        <Components.FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
-      </h2>
-      <p className="section-description">
-        <Components.FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />
-      </p>
+      <div className="section-heading">
+        <h2 className="section-title">
+          <Components.FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
+        </h2>
+        <p className="section-description">
+          <Components.FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />
+        </p>
+      </div>
       <Components.SmartForm
         documentId={response && response._id}
         fields={fields}

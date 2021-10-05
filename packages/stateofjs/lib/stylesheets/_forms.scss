@@ -39,13 +39,15 @@
     code {
       font-size: $medium-font;
     }
+    .entity-label{
+      white-space: nowrap;
+    }
     .question-label-new {
       text-transform: uppercase;
       background: $active-color-dark;
       color: $text-color-inverted;
       padding: 1px 5px;
       margin-left: $spacing/2;
-      display: inline-block;
       font-size: $smaller-font;
       // @include font-regular;
     }
@@ -95,9 +97,10 @@
     }
   }
   .form-text {
-    background: $bg-color-light;
+    background: var(--bg-color-light);
     padding: $spacing/2;
     margin-bottom: $spacing/2;
+    color: var(--text-color);
     p:last-child {
       margin: 0;
     }

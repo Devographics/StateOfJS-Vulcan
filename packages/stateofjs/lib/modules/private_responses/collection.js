@@ -10,7 +10,7 @@ export const PrivateResponses = createCollection({
   mutations: null,
 
   resolvers: null,
-  
+
   schema: {
     _id: {
       type: String,

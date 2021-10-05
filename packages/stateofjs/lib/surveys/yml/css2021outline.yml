@@ -30,6 +30,8 @@ credits:
     role: survey_design
   - id: philip_jagenstedt
     role: survey_design
+  - id: christopher_kirk_nielsen
+    role: logo_design
 outline:
   - id: layout
     template: feature
@@ -40,13 +42,10 @@ outline:
       - id: flexbox
       - id: multi_column
       - id: writing_modes
-      # - id: exclusions
       - id: position_sticky
       - id: logical_properties
       - id: aspect_ratio
       - id: content_visibility
-
-      # 2021
       - id: flexbox_gap
         year: 2021
       - id: break_rules
@@ -67,11 +66,8 @@ outline:
       - id: backdrop_filter
       - id: color_gamut
       - id: perspective
-
-      # 2021
       - id: intrinsic_sizing #min-, max, and fit-content
         year: 2021
-      # - id: repeating_linear_gradient
       - id: conic_gradient
         year: 2021
       - id: color_function
@@ -94,30 +90,13 @@ outline:
     template: feature
     slug: features
     questions:
-      # - id: web_fonts
-      # - id: line_breaking
       - id: font_variant
       - id: initial_letter
       - id: font_variant_numeric
       - id: font_display
       - id: line_clamp
-      # - id: leading_trim
-      # - id: direction
-
-      # 2021
       - id: variable_fonts
         year: 2021
-
-      # - id: text_decoration_style
-
-  # - id: animations_transforms
-  #   template: feature
-  #   slug: features
-  #   questions:
-  #     - id: transitions
-  #     - id: transforms
-  #     - id: animations
-  #     - id: perspective
 
   - id: accessibility
     template: feature
@@ -125,8 +104,6 @@ outline:
     questions:
       - id: prefers_reduced_motion
       - id: prefers_color_scheme
-
-      # 2021
       - id: prefers_reduced_data
         year: 2021
       - id: color_contrast
@@ -154,149 +131,10 @@ outline:
       - id: houdini
       - id: comparison_functions
 
-      # 2021
-      # - id: scroll_margin_scroll_padding
-
       - id: at_property #(@property)
         year: 2021
       - id: marker
         year: 2021
-      # - id: at_layer
-      #   year: 2022
-      # - id: resize
-
-  # - id: units_selectors
-  #   slug: features_others
-  #   questions:
-  #     - id: units
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: px
-  #         - id: pt
-  #         - id: percent
-  #         - id: em
-  #         - id: rem
-  #         - id: vh_vw
-  #         - id: vmin_vmax
-  #         - id: ch
-  #         - id: ex
-  #         - id: mm
-  #         - id: cm
-  #         - id: in
-
-  #     - id: pseudo_elements
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: before
-  #         - id: after
-  #         - id: first_line
-  #         - id: first_letter
-  #         - id: selection
-  #         - id: placeholder
-  #         - id: marker
-  #         - id: backdrop
-
-  #     - id: combinators
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: descendant
-  #         - id: child
-  #         - id: next_sibling
-  #         - id: subsequent_sibling
-
-  #     - id: tree_document_structure
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: root
-  #         - id: empty
-  #         - id: not
-  #         - id: nth_child
-  #         - id: nth_last_child
-  #         - id: first_child
-  #         - id: last_child
-  #         - id: only_child
-  #         - id: nth_of_type
-  #         - id: nth_last_of_type
-  #         - id: first_of_type
-  #         - id: last_of_type
-  #         - id: only_of_type
-  #         - id: lang
-  #         - id: is
-  #         - id: where
-  #         # - id: has # not yet supported, add next year?
-
-  #     - id: attributes
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: presence
-  #         - id: equality
-  #         - id: starts_with
-  #         - id: ends_with
-  #         - id: contains_word
-  #         - id: contains_substring
-
-  #     - id: links_urls
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: any_link
-  #         - id: link_visited
-  #         - id: local_link
-  #         - id: target
-
-  #     - id: interaction
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: hover
-  #         - id: active
-  #         - id: focus
-  #         - id: focus_within
-  #         - id: focus_visible
-
-  #     - id: form_controls
-  #       template: multiple
-  #       allowmultiple: true
-  #       allowother: false
-  #       randomize: false
-  #       suffix: choices
-  #       options:
-  #         - id: enabled_disabled
-  #         - id: read_only_write
-  #         - id: placeholder_shown
-  #         - id: default
-  #         - id: checked
-  #         - id: indeterminate
-  #         - id: valid_invalid
-  #         - id: user_invalid
-  #         - id: in_out_range
-  #         - id: required_optional
 
   ### TOOLS ###
 
@@ -308,20 +146,15 @@ outline:
       - id: less
       - id: post_css
       - id: stylus
-
-      # 2021
       - id: assembler_css
         year: 2021
 
-      # - Sass
-      # - Less
-      # - PostCSS
-      # - Stylus
       - id: pre_post_processors
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
+        matchTags: [libraries]
+
       - id: pre_post_processors
         intlId: tools.happiness
         template: happiness
@@ -342,47 +175,19 @@ outline:
       - id: primer
       - id: tailwind_css
       - id: pure_css
-      
-      # 2021
       - id: halfmoon
         year: 2021
-      # removed in 2021
-      # - id: skeleton
-      # - id: spectre_css
-
-      # id: - milligram
-      # id: - basscss
-      # id: - no_css_framework
 
       - id: css_frameworks
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
+        matchTags: [libraries]
+
       - id: css_frameworks
         intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
-
-  # - id: css_methodologies
-  #   template: tool
-  #   slug: tools
-  #   questions:
-  #     - id: bem
-  #     - id: atomic_css
-  #     - id: oocss
-  #     - id: smacss
-  #     - id: it_css
-  #     - id: cube_css
-  #     - id: css_methodologies
-  #       intlId: tools.other_tools
-  #       template: text
-  #       sectionSlug: tools_others
-  #       suffix: others
-  #     - id: css_methodologies
-  #       intlId: tools.happiness
-  #       template: happiness
-  #       sectionSlug: happiness
 
   - id: css_in_js
     template: tool
@@ -398,29 +203,21 @@ outline:
       - id: fela
       - id: linaria
       - id: astroturf
-
-      # 2021
       - id: twin
         year: 2021
       - id: theme_ui
         year: 2021
       - id: vanilla_extract
         year: 2021
-      - id: goober 
-        year: 2021
       - id: windi_css 
         year: 2021
 
-      # removed in 2021
-      # - id: radium
-      # - id: styletron
-
-
       - id: css_in_js
         intlId: tools.other_tools
-        template: text
+        template: others
         sectionSlug: tools_others
-        suffix: others
+        matchTags: [libraries]
+
       - id: css_in_js
         intlId: tools.happiness
         template: happiness
@@ -443,18 +240,8 @@ outline:
           - id: acss
       - id: utilities
         template: others
-      # - id: text_editors
-      #   template: multiple
-      #   options:
-      #     - id: visual_studio
-      #     - id: sublime_text
-      #     - id: atom
-      #     - id: vim
-      #     - id: emacs
-      #     - id: webstorm
-      #     - id: nova
-      # - id: text_editors
-      #   template: others
+        matchTags: [libraries]
+
       - id: browsers
         template: multiple
         options:
@@ -477,6 +264,7 @@ outline:
           - id: polypane
       - id: browsers
         template: others
+        matchTags: [libraries]
 
         # option 1 : stored as [first option, second option, winning option] for each round
       # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
@@ -551,72 +339,45 @@ outline:
       - id: accessibility_features
         template: others
         year: 2021
-
-      - id: css_for_print
-        template: single
-        fieldType: Number
-        options:
-          - id: 0
-          - id: 1
-          - id: 2
-          - id: 3
-
-      - id: css_for_email
-        template: single
-        fieldType: Number
-        options:
-          - id: 0
-          - id: 1
-          - id: 2
-          - id: 3
       
+      - id: what_do_you_use_css_for
+        template: multiple
+        options:
+          - id: marketing_sites
+          - id: design_systems
+          - id: blogs
+          - id: web_apps
+          - id: mobile_apps
+          - id: css_art
+          - id: emails
+          - id: printed_documents
+            
+      - id: what_do_you_use_css_for
+        template: others
+
     ### RESOURCES ###
 
   - id: resources # new for 2021
     slug: resources
     questions:
-      # - id: people
-      #   template: multiple
-      #   options:
-      #     - id: heydon_pickering
-      #     - id: ahmad_shadeed
-      #     - id: andy_bell
-      #     - id: chen_hui_jing
-      #     - id: jeremy_keith
-      #     - id: lea_verou
-      #     - id: sara_soueidan
-      #     - id: josh_comeau
-      #     - id: rachel_andrew
-      #     - id: jen_simmons
-      #     - id: kevin_j_powell
-      #     - id: harry_roberts
-      #     - id: stephanie_walter
-      #     - id: brad_frost
-      #     - id: dave_rupert
-      #     - id: chris_coyier
-      #     - id: christian_heilmann
-      #     - id: adrian_roselli
-      #     - id: bruce_lawson
-      #     - id: eric_meyer
-      #     - id: peter_paul_koch
-      #     - id: una_kravets
-      #     - id: ethan_marcotte
-      #     - id: kitty_giraudel
-      #     - id: stephanie_eckles
-      #     - id: hidde_de_vries
-      #     - id: adam_argyle
-      #     - id: ana_tudor
-      #     - id: kilian_valkhof
-      #     - id: eric_w_bailey
-      #     - id: max_bock
-      #     - id: miriam_suzanne
-      #     - id: bramus_van_damme
-      #     - id: adam_wathan
 
-      # - id: people
-      #   template: others
-      #   matchTags: [people]
+      - id: first_steps
+        template: multiple
+        options:
+          - id: books
+          - id: videos
+          - id: courses_free
+          - id: courses_paid
+          - id: school
+          - id: podcasts
+          - id: bootcamp
+          - id: on_the_job
+          - id: mentoring
+          - id: self_directed
 
+      - id: first_steps
+        template: others
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: blogs_news_magazines
         template: multiple
@@ -649,7 +410,7 @@ outline:
           - id: freecodecamp
           - id: codecademy
           - id: levelup
-          - id: wesbos
+          - id: wes_bos
           - id: frontendmasters
           - id: pluralsight
           - id: designcode
@@ -691,11 +452,6 @@ outline:
         template: others
         matchTags: [podcasts, people, sites]
 
-      # - id: people
-      #   year: 2021
-      #   template: people
-      #   intlId: resources.people
-
       - id: people
         year: 2021
         template: others
@@ -713,10 +469,6 @@ outline:
         template: opinion
       - id: utility_classes_to_be_avoided
         template: opinion
-      # - id: selector_nesting_to_be_avoided
-      #   template: opinion
-      # - id: css_is_programming_language
-      #   template: opinion
       - id: enjoy_writing_css
         template: opinion
 
@@ -739,8 +491,7 @@ outline:
       - id: css_pain_points
         year: 2021
         sectionSlug: opinions_other
-        suffix: others
-        template: longtext
+        template: others
 
       - id: currently_missing_from_css
         year: 2021
@@ -759,8 +510,7 @@ outline:
           - id: scoping
       - id: currently_missing_from_css
         sectionSlug: opinions_other
-        suffix: others
-        template: longtext
+        template: others
 
       - id: state_of_the_web
         template: happiness
@@ -768,9 +518,6 @@ outline:
       - id: state_of_css
         template: happiness
         sectionSlug: happiness
-
-      # - id: sum_up_one_word_css
-      #   template: text
 
   ### DEMOGRAPHICS ###
 
@@ -823,26 +570,12 @@ outline:
           - id: range_100_200
           - id: range_more_than_200
 
-      # - id: job_title
-      #   template: single
-      #   allowother: true
-      #   options:
-      #     - id: cto
-      #     - id: front_end_developer
-      #     - id: full_stack_developer
-      #     - id: back_end_developer
-      #     - id: web_developer
-      #     - id: web_designer
-      #     - id: ui_designer
-      #     - id: ux_designer
-
-      # too subjective?
-      # - id: css_proficiency
-      #   template: proficiency
-      # - id: javascript_proficiency
-      #   template: proficiency
-      # - id: backend_proficiency
-      #   template: proficiency
+      - id: higher_education_degree
+        template: single
+        options: 
+          - id: no
+          - id: yes_related
+          - id: yes_unrelated
 
       - id: country
         template: country
@@ -860,7 +593,6 @@ outline:
         template: multiple
         allowother: true
         options:
-          # - id: biracial
           - id: black_african
           - id: east_asian
           - id: hispanic_latin
@@ -895,7 +627,5 @@ outline:
         year: 2021
         template: text
         
-      # - id: industry_se       try_sectors]
-
       - id: how_did_user_find_out_about_the_survey
         template: text

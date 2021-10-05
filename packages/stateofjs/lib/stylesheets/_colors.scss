@@ -87,7 +87,9 @@ $hover-color: $contrast-color;
 
 :root {
   --bg-color: #{$bg-color};
+  --bg-color-light: #{$bg-color-light};
   --text-color: #{$text-color};
+  --text-color-dark: #{$text-color-dark};
   --text-color-inverted: #{$text-color-inverted};
   --link-color: #{$link-color};
   --hover-color: #{$contrast-color};

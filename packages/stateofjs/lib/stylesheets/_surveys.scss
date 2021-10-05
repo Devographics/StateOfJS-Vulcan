@@ -133,25 +133,28 @@
 
 .section-nav-heading {
   font-size: $large-font;
-  border-bottom: $border;
-  padding-bottom: $spacing;
   margin-bottom: $spacing;
   @include small-medium {
     text-align: center;
+  }
+  @include large {
+    border-bottom: $border;
+    padding-bottom: $spacing;
   }
 }
 .section-nav-head {
   @include small-medium {
     @include flex-center;
+    display: flex !important;
     margin-bottom: $spacing;
+    width: 100%;
   }
   @include large {
-    margin-bottom: $spacing/2;
+    display: none !important;
   }
 }
 .section-nav-toggle {
   margin-left: $spacing/2;
-  color: $text-color;
   font-size: $medium-font;
   @include large {
     display: none;
@@ -166,6 +169,7 @@
 }
 .section-nav-contents {
   @include small-medium {
+    margin-top: -$spacing - 1px;
     @include border;
     @include border-radius;
     padding: $spacing;
@@ -204,6 +208,16 @@
     margin-bottom: $spacing;
   }
 }
+.section-heading {
+  @include small {
+    margin: $spacing * 2 0;
+    padding: $spacing;
+    background: var(--bg-color-light);
+  }
+  @include medium-large {
+    margin-bottom: $spacing * 2;
+  }
+}
 .section-title {
   @include small-medium {
     font-size: $larger-font;
@@ -217,9 +231,8 @@
 .section-description {
   font-size: $large-font;
   @include font-regular;
-  color: $text-color-dark;
-  margin-bottom: $spacing;
   line-height: 1.7;
+  margin: 0;
 }
 
 .survey-message {
@@ -236,7 +249,6 @@
 .survey-page-block {
   margin-bottom: $spacing * 3;
 }
-
 
 .survey-page-block-heading {
   margin-bottom: $spacing * 2;
