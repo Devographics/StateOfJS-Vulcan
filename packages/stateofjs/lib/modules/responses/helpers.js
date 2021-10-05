@@ -453,6 +453,9 @@ export const getKnowledgeScore = (response) => {
 };
 
 export const canModifyResponse = (response, user) => {
+  if (!response || !user) {
+    return false;
+  }
   const survey = surveys.find((s) => s.slug === response.surveySlug);
   switch (survey.status) {
     case statuses.preview:

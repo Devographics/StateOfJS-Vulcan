@@ -48,6 +48,7 @@ const fieldsToCopy = [
   ['updatedAt'],
   ['completion'],
   ['userId'],
+  ['isFake'],
   ['isFinished'],
   ['knowledgeScore', 'user_info.knowledge_score'],
   ['common__user_info__device', 'user_info.device'],
