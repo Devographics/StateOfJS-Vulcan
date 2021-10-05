@@ -263,12 +263,13 @@ export const normalizeResponse = async ({
     */
     if (!isEmpty(privateFields)) {
       const info = {
+        user_info: {},
         ...privateFields,
         surveySlug: response.surveySlug,
         responseId: response._id,
       };
       if (response.email) {
-        info.email = response.email;
+        info.user_info.email = response.email;
       }
       PrivateResponses.upsert({ responseId: response._id }, info);
       set(normResp, 'user_info.hash', encrypt(response.email));
