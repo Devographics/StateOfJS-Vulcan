@@ -21,7 +21,7 @@ const schema = {
   createdAt: {
     type: Date,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     onCreate: () => {
       return new Date();
     },
@@ -29,7 +29,7 @@ const schema = {
   updatedAt: {
     type: Date,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     onCreate: () => {
       return new Date();
     },
@@ -42,9 +42,9 @@ const schema = {
   lastSavedAt: {
     type: Date,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
-    canUpdate: ['owners'],
+    canUpdate: ['owners', 'admins'],
   },
   userId: {
     type: String,
@@ -62,7 +62,7 @@ const schema = {
   year: {
     type: Number,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['admins'],
     canUpdate: ['admins'],
     onCreate: () => {
@@ -83,7 +83,7 @@ const schema = {
   completion: {
     type: Number,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     onUpdate: ({ document }) => {
       return getCompletionPercentage(document);
     },
@@ -91,7 +91,7 @@ const schema = {
   knowledgeScore: {
     type: Number,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     onUpdate: ({ document }) => {
       return getKnowledgeScore(document).score;
     },
@@ -99,7 +99,7 @@ const schema = {
   locale: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     onUpdate: ({ document }) => {
       const user = Users.findOne({ _id: document.userId });
       return user && user.locale
@@ -113,21 +113,21 @@ const schema = {
   email: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   context: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   surveySlug: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
     options: surveys.map(({ slug }) => ({
@@ -155,49 +155,49 @@ const schema = {
   isFinished: {
     type: Boolean,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['members'],
   },
   common__user_info__device: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__browser: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__version: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__os: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__referrer: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },
   common__user_info__source: {
     type: String,
     optional: true,
-    canRead: ['owners'],
+    canRead: ['owners', 'admins'],
     canCreate: ['members'],
     canUpdate: ['admins'],
   },

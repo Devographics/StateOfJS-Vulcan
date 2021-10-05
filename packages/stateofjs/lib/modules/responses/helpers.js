@@ -337,9 +337,9 @@ export const getQuestionSchema = (questionObject, section, survey) => {
     intlId,
     optional: true,
     // canRead: isprivate ? ['owners'] : ['members'],
-    canRead: ['owners'], // note: for now data is not public so all fields can be set to ['owners']
+    canRead: ['owners', 'admins'], // note: for now data is not public so all fields can be set to ['owners']
     canCreate: ['members'],
-    canUpdate: ['owners'],
+    canUpdate: ['owners', 'admins'],
     itemProperties: {
       questionId: id,
       year,
