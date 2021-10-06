@@ -20,7 +20,11 @@ export const exportEmailsJob = async () => {
     const { _id, user_info = {} } = response;
     const { email } = user_info;
     if (email) {
-      await subscribeEmail(email);
+      try {
+        await subscribeEmail(email);
+      } catch (error) {
+        // do nothing
+      }
     }
     PrivateResponses.update({ _id }, { $set: { emailExported: true } });
   }

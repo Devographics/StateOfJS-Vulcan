@@ -21,7 +21,6 @@ const Thanks = () => {
     return <Components.Loading />;
   }
   if (!response) {
-    console.log(data);
     return (
       <div>
         Could not find survey response document. Please reload, or if that doesn’t work{' '}
