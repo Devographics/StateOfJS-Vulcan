@@ -2,6 +2,7 @@ import { subscribeEmail } from 'meteor/vulcan:newsletter';
 import { PrivateResponses } from '../../modules/private_responses';
 
 export const exportEmailsJob = async () => {
+
   const startAt = new Date();
   const privateResponses = PrivateResponses.find({
     emailExported: { $ne: true },
@@ -23,7 +24,10 @@ export const exportEmailsJob = async () => {
       try {
         await subscribeEmail(email);
       } catch (error) {
-        // do nothing
+        if (error.id === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS') {
+          // set emailExported: true so we don't try to export again
+          PrivateResponses.update({ _id }, { $set: { emailExported: true } });
+        }
       }
     }
     PrivateResponses.update({ _id }, { $set: { emailExported: true } });
