@@ -14,6 +14,7 @@ import SurveyMessage from '../SurveyMessage';
 import SurveyCredits from '../SurveyCredits';
 import Translators from '../../common/Translators.jsx';
 import Faq from '../../common/Faq.jsx';
+import Support from '../../common/Support.jsx';
 
 const SurveyPageWrapper = (props, { intl }) => {
   const { slug, year } = useParams();
@@ -38,6 +39,7 @@ const SurveyPageWrapper = (props, { intl }) => {
             <Faq />
             {survey.credits && <SurveyCredits survey={survey} />}
             <Translators />
+            <Support />
           </div>
         );
       }}

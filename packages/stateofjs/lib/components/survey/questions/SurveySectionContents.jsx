@@ -78,7 +78,15 @@ const SurveySectionContents = ({
       ) : null} */}
       <div className="section-heading">
         <h2 className="section-title">
-          <Components.FormattedMessage id={`sections.${id}.title`} defaultMessage={id} values={{ ...survey }} />
+          <span className="section-title-pagenumber">
+            {sectionNumber}/{survey.outline.length}
+          </span>
+          <Components.FormattedMessage
+            className="section-title-label"
+            id={`sections.${id}.title`}
+            defaultMessage={id}
+            values={{ ...survey }}
+          />
         </h2>
         <p className="section-description">
           <Components.FormattedMessage id={`sections.${id}.description`} defaultMessage={id} values={{ ...survey }} />

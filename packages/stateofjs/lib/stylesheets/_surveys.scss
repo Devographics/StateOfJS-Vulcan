@@ -218,6 +218,7 @@
     margin-bottom: $spacing * 2;
   }
 }
+
 .section-title {
   @include small-medium {
     font-size: $larger-font;
@@ -227,6 +228,11 @@
   }
   margin-bottom: $spacing/2;
   line-height: 1;
+}
+.section-title-pagenumber{
+  @include font-regular;
+  opacity: 0.4;
+  display: none;
 }
 .section-description {
   font-size: $large-font;
