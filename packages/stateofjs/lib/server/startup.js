@@ -9,12 +9,14 @@ import { convertAllYAML } from './yaml';
 import { loadProjects } from './projects.js';
 import { logAllRules } from './normalization/helpers';
 import { normalizeJob } from './normalization/cronjob';
+import { exportEmailsJob } from './users/cronjob';
 
 const startup = getSetting('startup', []);
 const environment = getSetting('environment');
 
 Meteor.startup(async function () {
   await normalizeJob();
+  await exportEmailsJob();
 
   if (environment === 'development') {
     await convertAllYAML();

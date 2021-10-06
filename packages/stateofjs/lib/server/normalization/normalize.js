@@ -133,7 +133,6 @@ export const normalizeResponse = async ({
             set(privateFields, normPath, value);
           } else {
             if (last(restOfPath) === 'others') {
-
               // A. "others" fields needing to be normalized
               set(normResp, `${normPath}.raw`, value);
 
@@ -283,12 +282,10 @@ export const normalizeResponse = async ({
       { responseId: response._id },
       normResp
     );
-    if (result.insertedId) {
-      Responses.update(
-        { _id: response._id },
-        { $set: { normalizedResponseId: result.insertedId, isNormalized: true } }
-      );
-    }
+    Responses.update(
+      { _id: response._id },
+      { $set: { normalizedResponseId: result.insertedId, isNormalized: true } }
+    );
 
     // eslint-disable-next-line
     // console.log(result);
@@ -298,4 +295,3 @@ export const normalizeResponse = async ({
     console.log(error);
   }
 };
-

@@ -9,7 +9,7 @@ extendCollection(Users, {
 
   callbacks: {
     create: {
-      async: [addEmailToEmailOctopus]
+      async: [/* addEmailToEmailOctopus */]
     }
   }
 });

@@ -8,14 +8,14 @@ export const normalizeJob = async () => {
   const startAt = new Date();
   const unnormalizedResponses = Responses.find({ isNormalized: false }).fetch();
   const responsesToNormalize = Math.min(unnormalizedResponses.length, limit);
-  if (responsesToNormalize.length === 0) {
+  if (unnormalizedResponses.length === 0) {
     // eslint-disable-next-line
-    console.log('// Found 0 unnormalized responses.');
+    console.log('// 📊 Found 0 unnormalized responses.');
     return;
   }
   // eslint-disable-next-line
   console.log(
-    `// Normalizing ${responsesToNormalize}/${unnormalizedResponses.length} unnormalized responses at ${startAt}…`
+    `// 📊 Normalizing ${responsesToNormalize}/${unnormalizedResponses.length} unnormalized responses at ${startAt}…`
   );
   for (const response of unnormalizedResponses) {
     await normalizeResponse({ document: response });
@@ -24,5 +24,5 @@ export const normalizeJob = async () => {
   const diff = Math.abs(endAt - startAt);
   const duration = Math.ceil(diff / 1000);
   // eslint-disable-next-line
-  console.log(`-> Done normalizing ${responsesToNormalize} responses in ${duration}s`);
+  console.log(`-> 📊 Done normalizing ${responsesToNormalize} responses in ${duration}s`);
 };

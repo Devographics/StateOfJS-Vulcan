@@ -11,6 +11,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy survey.stateofjs.com --settings settings-production.json",
+    "deploy-jobs": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy survey-jobs.stateofjs.com --settings settings-production-jobs.json --cache-build",
     "deploy-cached": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy survey.stateofjs.com --settings settings-production.json --cache-build"
   },
   "dependencies": {
