@@ -14,7 +14,7 @@ export default {
   "imageUrl": "stateofcss2021.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
-  "linkColor": "#f649a7",
+  "linkColor": "#F95DB2",
   "hoverColor": "#59df7f",
   "credits": [
     {

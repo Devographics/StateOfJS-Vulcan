@@ -12,6 +12,13 @@ html {
   box-sizing: inherit;
 }
 
+::selection {
+  background: $text-color;
+  background: var(--text-color);
+  color: $bg-color;
+  color: var(--bg-color);
+}
+
 body {
   background: $bg-color;
   background: var(--bg-color);
