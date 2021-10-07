@@ -52,7 +52,8 @@ const FormSubmit = (
               history.push(getSurveyPath({ survey, response, number: sectionNumber + 1 }));
             }}
           >
-            <Components.FormattedMessage id={`sections.${nextSection.id}.title`} /> »
+            <span className="sr-only"><Components.FormattedMessage id="general.next_section" /></span>
+            <Components.FormattedMessage id={`sections.${nextSection.id}.title`} /> <span aria-hidden>»</span>
           </Components.LoadingButton>
         ) : readOnly ? null : (
           <Components.LoadingButton
@@ -87,7 +88,8 @@ const FormSubmit = (
               history.push(getSurveyPath({ survey, response, number: sectionNumber - 1 }));
             }}
           >
-            « <Components.FormattedMessage id={`sections.${previousSection.id}.title`} />
+            <span className="sr-only"><Components.FormattedMessage id="general.previous_section" /></span>
+            <span aria-hidden>«</span> <Components.FormattedMessage id={`sections.${previousSection.id}.title`} />
           </Components.LoadingButton>
         ) : (
           <div className="prev-placeholder" />
