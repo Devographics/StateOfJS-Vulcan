@@ -9,7 +9,7 @@ export const exportEmailsJob = async () => {
   }).fetch();
   if (privateResponses.length === 0) {
     // eslint-disable-next-line
-    console.log('// Found 0 emails to export.');
+    console.log('// ✉️ Found 0 emails to export.');
     return;
   }
 

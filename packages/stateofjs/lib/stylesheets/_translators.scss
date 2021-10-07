@@ -1,7 +1,8 @@
 
 .translators {
   max-width: 900px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: $spacing * 2;
   @include border2;
   @include border-radius;
