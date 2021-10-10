@@ -78,6 +78,8 @@ $bg-color-lightest: $greyLight;
 $border-color: $greyMedium;
 $dark-border-color: $greyDark;
 
+$selection-color: $greyLight;
+
 $text-color: $grey;
 $text-color-dark: $greyMediumish;
 $text-color-inverted: $greyDarker;
@@ -88,6 +90,7 @@ $hover-color: $contrast-color;
 :root {
   --bg-color: #{$bg-color};
   --bg-color-light: #{$bg-color-light};
+  --selection-color: #{$selection-color};
   --text-color: #{$text-color};
   --text-color-dark: #{$text-color-dark};
   --text-color-inverted: #{$text-color-inverted};

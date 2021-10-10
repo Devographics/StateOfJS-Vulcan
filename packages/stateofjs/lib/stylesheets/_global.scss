@@ -13,8 +13,8 @@ html {
 }
 
 ::selection {
-  background: $text-color;
-  background: var(--text-color);
+  background: $selection-color;
+  background: var(--selection-color);
   color: $bg-color;
   color: var(--bg-color);
 }
