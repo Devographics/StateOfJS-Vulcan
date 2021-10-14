@@ -354,6 +354,7 @@ outline:
           - id: printed_documents
             
       - id: what_do_you_use_css_for
+        matchTags: [css_uses]
         template: others
 
     ### RESOURCES ###
@@ -378,7 +379,7 @@ outline:
 
       - id: first_steps
         template: others
-        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia, css_first_steps]
 
       - id: blogs_news_magazines
         template: multiple
@@ -512,6 +513,7 @@ outline:
       - id: currently_missing_from_css
         sectionSlug: opinions_other
         template: others
+        matchTags: [css_missing_features]
 
       - id: state_of_the_web
         template: happiness

@@ -729,6 +729,9 @@ export default {
         },
         {
           "id": "what_do_you_use_css_for",
+          "matchTags": [
+            "css_uses"
+          ],
           "template": "others"
         }
       ]
@@ -782,7 +785,8 @@ export default {
             "youtube",
             "sites",
             "newsletters",
-            "socialmedia"
+            "socialmedia",
+            "first_steps"
           ]
         },
         {
