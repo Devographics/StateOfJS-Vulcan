@@ -76,7 +76,7 @@ export const getEntities = async () => {
     return get(await runGraphQL(entitiesQuery), 'data.entities');
   } catch (error) {
     console.log('// getEntities error');
-    console.log(error);
+    throw new Error(error);
   }
 };
 
@@ -91,8 +91,13 @@ const extractTokens = async (rawString, rules) => {
   const stringLimit = rules.length > 50 ? lowStringLimit : highStringLimit;
 
   if (rawString.length > stringLimit) {
-    await logToFile('normalization_errors.txt', rawString + '\n---\n');
-    return [];
+    await logToFile(
+      'normalization_errors.txt',
+      'Length Error!  ' + rawString + '\n---\n'
+    );
+    throw new Error(
+      `Over string limit (${rules.length} rules, ${rawString.length} characters)`
+    );
   }
 
   const tokens = [];
@@ -180,17 +185,11 @@ Normalize a string value
 
 */
 export const normalize = async (value, allRules, tags) => {
-  try {
-    const rules = tags
-      ? allRules.filter((r) => intersection(tags, r.tags).length > 0)
-      : allRules;
+  const rules = tags
+    ? allRules.filter((r) => intersection(tags, r.tags).length > 0)
+    : allRules;
 
-    return await extractTokens(value, rules);
-  } catch (error) {
-    console.log('// normalize error');
-    console.log(value);
-    console.log(error);
-  }
+  return await extractTokens(value, rules);
 };
 
 /*
@@ -278,8 +277,10 @@ Generate normalization rules from entities
 export const generateEntityRules = (entities) => {
   const rules = [];
   entities.forEach((entity) => {
-    const { id, patterns, tags } = entity;
-    const separator = '( |-|_|.)*';
+    const { id, patterns, tags, twitterName } = entity;
+    // we match the separator group 1 to 2 times to account for double spaces,
+    // double hyphens, etc.
+    const separator = '( |-|_|.){1,2}';
 
     // 1. replace "_" by separator
     const idPatternString = id.replaceAll('_', separator);
@@ -310,6 +311,12 @@ export const generateEntityRules = (entities) => {
         const pattern = new RegExp(patternString, 'i');
         rules.push({ id, pattern, tags });
       });
+
+    // 5. also add twitter username if available (useful for people entities)
+    if (twitterName) {
+      const pattern = new RegExp(twitterName, 'i');
+      rules.push({ id, pattern, tags });
+    }
   });
   return rules;
 };
@@ -328,4 +335,3 @@ export const logAllRules = async () => {
     mode: 'overwrite',
   });
 };
-

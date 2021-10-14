@@ -144,68 +144,71 @@ export const normalizeResponse = async ({
                   }, ${fieldName}, ${cleanValue}, ${matchTags.toString()}`
                 );
               }
-              const normTokens = await normalize(
-                cleanValue,
-                allRules,
-                matchTags
-              );
-              // console.log(
-              //   `// Normalizing key "${fieldName}" with value "${value}"…`
-              // );
-              // console.log(
-              //   `  -> Normalized values: ${JSON.stringify(normTokens)}`
-              // );
+              try {
+                const normTokens = await normalize(
+                  cleanValue,
+                  allRules,
+                  matchTags
+                );
 
-              if (log) {
-                if (normTokens.length > 0) {
-                  normTokens.forEach(async (token) => {
-                    const { id, pattern, rules, match } = token;
+                // console.log(
+                //   `// Normalizing key "${fieldName}" with value "${value}"…`
+                // );
+                // console.log(
+                //   `  -> Normalized values: ${JSON.stringify(normTokens)}`
+                // );
+
+                if (log) {
+                  if (normTokens.length > 0) {
+                    normTokens.forEach(async (token) => {
+                      const { id, pattern, rules, match } = token;
+                      await logRow(
+                        [
+                          response._id,
+                          fieldName,
+                          value,
+                          matchTags,
+                          id,
+                          pattern,
+                          rules,
+                          match,
+                        ],
+                        fileName
+                      );
+                    });
+                  } else {
                     await logRow(
                       [
                         response._id,
                         fieldName,
                         value,
                         matchTags,
-                        id,
-                        pattern,
-                        rules,
-                        match,
+                        'n/a',
+                        'n/a',
+                        'n/a',
+                        'n/a',
                       ],
                       fileName
                     );
-                  });
-                } else {
-                  await logRow(
-                    [
-                      response._id,
-                      fieldName,
-                      value,
-                      matchTags,
-                      'n/a',
-                      'n/a',
-                      'n/a',
-                      'n/a',
-                    ],
-                    fileName
-                  );
+                  }
                 }
-              }
 
-              // if normalization fails an empty array will be returned
-              if (normTokens.length > 0) {
                 const normIds = normTokens.map((token) => token.id);
                 const normPatterns = normTokens.map((token) =>
                   token.pattern.toString()
                 );
                 set(normResp, `${normPath}.normalized`, normIds);
                 set(normResp, `${normPath}.patterns`, normPatterns);
+
+                // keep trace of fields that were normalized
+                normalizedFields.push({
+                  fieldName,
+                  value,
+                  normTokens,
+                });
+              } catch (error) {
+                set(normResp, `${normPath}.error`, error.message);
               }
-              // keep trace of fields that were normalized
-              normalizedFields.push({
-                fieldName,
-                value,
-                normTokens,
-              });
             } else if (last(restOfPath) === 'prenormalized') {
               // B. these fields are "prenormalized" through autocomplete inputs
               const newPath = normPath.replace('.prenormalized', '.others');
