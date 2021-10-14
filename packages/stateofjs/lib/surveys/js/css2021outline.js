@@ -786,7 +786,7 @@ export default {
             "sites",
             "newsletters",
             "socialmedia",
-            "first_steps"
+            "css_first_steps"
           ]
         },
         {
@@ -1096,7 +1096,10 @@ export default {
         {
           "id": "currently_missing_from_css",
           "sectionSlug": "opinions_other",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "css_missing_features"
+          ]
         },
         {
           "id": "state_of_the_web",
