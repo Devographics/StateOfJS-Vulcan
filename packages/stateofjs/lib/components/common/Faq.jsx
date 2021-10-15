@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import Accordion from 'react-bootstrap/Accordion';
 
-const items = ['create_account', 'questions_required', 'data_published', 'survey_design', 'results_released', 'team'];
+const items = ['create_account', 'anonymous_survey', 'questions_required', 'data_published', 'survey_design', 'results_released', 'team'];
 
 const Faq = () => (
   <div className="faq survey-page-block">
