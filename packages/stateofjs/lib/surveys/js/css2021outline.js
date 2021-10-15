@@ -1063,7 +1063,6 @@ export default {
         {
           "id": "currently_missing_from_css",
           "year": 2021,
-          "sectionSlug": "opinions_other",
           "optionsIntlId": "features",
           "template": "bracket",
           "options": [

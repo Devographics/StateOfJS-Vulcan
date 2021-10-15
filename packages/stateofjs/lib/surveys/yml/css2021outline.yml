@@ -497,8 +497,6 @@ outline:
 
       - id: currently_missing_from_css
         year: 2021
-        sectionSlug: opinions_other
-        # template: multiple
         optionsIntlId: features
         template: bracket
         options: 

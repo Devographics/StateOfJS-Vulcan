@@ -355,3 +355,10 @@ export const generateEmailHash = async () => {
   });
 };
 
+export const renameMissingFromCSSField = async () => {
+  await renameFieldMigration(
+    Responses,
+    'css2021__opinions_other__currently_missing_from_css',
+    'css2021__opinions__currently_missing_from_css'
+  );
+};
