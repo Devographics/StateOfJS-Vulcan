@@ -234,8 +234,9 @@ const entities = async (root, args) => {
     });
     const json = await response.json();
     if (json.errors) {
-      console.log(json.errors);
-      throw new Error('// entities API query error');
+      console.log('// entities API query error');
+      console.log(JSON.stringify(json.errors, '', 2));
+      throw new Error();
     }
     entities = get(json, 'data.entities');
     nodeCache.set('entities', entities);
