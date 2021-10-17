@@ -367,6 +367,6 @@ export const renameBrowserInteroperabilityField = async () => {
   await renameFieldMigration(
     Responses,
     'css2021__opinions__browser_interoperability_features',
-    'css2021__opinions__browser_interoperability_features__others'
+    'css2021__opinions_other__browser_interoperability_features__others'
   );
 };

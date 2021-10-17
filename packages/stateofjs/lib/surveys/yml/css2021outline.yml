@@ -476,6 +476,7 @@ outline:
 
       - id: browser_interoperability_features
         year: 2021
+        sectionSlug: opinions_other
         template: others
 
       - id: css_pain_points

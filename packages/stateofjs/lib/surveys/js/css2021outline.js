@@ -1021,6 +1021,7 @@ export default {
         {
           "id": "browser_interoperability_features",
           "year": 2021,
+          "sectionSlug": "opinions_other",
           "template": "others"
         },
         {
