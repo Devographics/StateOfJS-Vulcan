@@ -13,6 +13,7 @@ import Responses from '../modules/responses/collection.js';
 import NormalizedResponses from '../modules/normalized_responses/collection.js';
 import Users from 'meteor/vulcan:users';
 import sortBy from 'lodash/sortBy';
+import { normalizeResponse } from './normalization/normalize';
 
 const translationAPI = getSetting('translationAPI');
 
@@ -33,6 +34,30 @@ const surveyType = `type Survey {
 }`;
 
 addGraphQLSchema(surveyType);
+
+/*
+
+Normalization
+
+*/
+const normalizeIds = async (root, args, { currentUser }) => {
+  // if (!Users.isAdmin(currentUser)) {
+  //   throw new Error('You cannot perform this operation');
+  // }
+  const results = [];
+  const { ids } = args;
+  const responses = Responses.find({ _id: { $in: ids } }).fetch();
+  for (const document of responses) {
+    const { _id } = document;
+    const normalization = await normalizeResponse({ document });
+    const { result, normalizedFields } = normalization;
+    results.push({ normalizedId: result._id, _id, normalizedFields });
+  }
+  return results;
+};
+
+addGraphQLMutation('normalizeIds(ids: [String]): [JSON]');
+addGraphQLResolvers({ Mutation: { normalizeIds } });
 
 /*
 
