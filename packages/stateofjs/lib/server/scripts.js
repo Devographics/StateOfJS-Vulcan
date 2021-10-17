@@ -362,3 +362,11 @@ export const renameMissingFromCSSField = async () => {
     'css2021__opinions__currently_missing_from_css'
   );
 };
+
+export const renameBrowserInteroperabilityField = async () => {
+  await renameFieldMigration(
+    Responses,
+    'css2021__opinions__browser_interoperability_features',
+    'css2021__opinions__browser_interoperability_features__others'
+  );
+};

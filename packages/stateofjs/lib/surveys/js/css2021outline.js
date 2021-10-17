@@ -1021,7 +1021,7 @@ export default {
         {
           "id": "browser_interoperability_features",
           "year": 2021,
-          "template": "longtext"
+          "template": "others"
         },
         {
           "id": "css_pain_points",
