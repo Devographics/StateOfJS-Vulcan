@@ -339,6 +339,7 @@ outline:
 
       - id: accessibility_features
         template: others
+        matchTags: [accessibility_features]
         year: 2021
       
       - id: what_do_you_use_css_for
@@ -457,7 +458,7 @@ outline:
       - id: people
         year: 2021
         template: others
-        matchTags: [people, sites]
+        matchTags: [people, sites, youtube]
 
     ### OPINIONS ###
 
@@ -478,6 +479,7 @@ outline:
         year: 2021
         sectionSlug: opinions_other
         template: others
+        matchTags: [features, browser_interoperability]
 
       - id: css_pain_points
         year: 2021
@@ -495,6 +497,7 @@ outline:
         year: 2021
         sectionSlug: opinions_other
         template: others
+        matchTags: [accessibility_features, features, css_missing_features, css_pain_points]
 
       - id: currently_missing_from_css
         year: 2021

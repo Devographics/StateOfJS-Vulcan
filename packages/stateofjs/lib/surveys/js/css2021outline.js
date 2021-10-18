@@ -695,6 +695,9 @@ export default {
         {
           "id": "accessibility_features",
           "template": "others",
+          "matchTags": [
+            "accessibility_features"
+          ],
           "year": 2021
         },
         {
@@ -993,7 +996,8 @@ export default {
           "template": "others",
           "matchTags": [
             "people",
-            "sites"
+            "sites",
+            "youtube"
           ]
         }
       ]
@@ -1022,7 +1026,11 @@ export default {
           "id": "browser_interoperability_features",
           "year": 2021,
           "sectionSlug": "opinions_other",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "features",
+            "browser_interoperability"
+          ]
         },
         {
           "id": "css_pain_points",
@@ -1059,7 +1067,13 @@ export default {
           "id": "css_pain_points",
           "year": 2021,
           "sectionSlug": "opinions_other",
-          "template": "others"
+          "template": "others",
+          "matchTags": [
+            "accessibility_features",
+            "features",
+            "css_missing_features",
+            "css_pain_points"
+          ]
         },
         {
           "id": "currently_missing_from_css",
