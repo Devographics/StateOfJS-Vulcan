@@ -87,8 +87,10 @@ const AdminNormalization = () => {
       </h3>
 
       <ol>
-        {results.map((value) => (
-          <li key={value}>{value}</li>
+        {results.map(({ _id, value }) => (
+          <li key={_id}>
+            {value} (<code>{_id}</code>)
+          </li>
         ))}
       </ol>
 

@@ -369,14 +369,16 @@ const surveyNormalization = async (root, { surveySlug, fieldName }) => {
     ],
   };
   const responses = NormalizedResponses.find(query, {
-    fields: { [rawFieldPath]: 1 },
-  })
-    .fetch()
-    .map((r) => get(r, rawFieldPath));
-  return responses;
+    fields: { _id: 1, [rawFieldPath]: 1 },
+  }).fetch();
+  const cleanResponses = responses.map((r) => ({
+    _id: r._id,
+    value: get(r, rawFieldPath),
+  }));
+  return cleanResponses;
 };
 
 addGraphQLQuery(
-  'surveyNormalization(surveySlug: String, fieldName: String): [String]'
+  'surveyNormalization(surveySlug: String, fieldName: String): [JSON]'
 );
 addGraphQLResolvers({ Query: { surveyNormalization } });
