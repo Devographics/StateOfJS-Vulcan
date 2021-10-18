@@ -85,10 +85,15 @@ export const getEntities = async () => {
 Extract matching tokens from a string
 
 */
+const enableLimit = false;
 const lowStringLimit = 150;
 const highStringLimit = 190;
 const extractTokens = async (rawString, rules) => {
-  const stringLimit = rules.length > 50 ? lowStringLimit : highStringLimit;
+  const stringLimit = enableLimit
+    ? rules.length > 50
+      ? lowStringLimit
+      : highStringLimit
+    : 1000;
 
   if (rawString.length > stringLimit) {
     await logToFile(

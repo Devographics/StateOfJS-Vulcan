@@ -145,15 +145,17 @@ export const normalizeResponse = async ({
                 );
               }
               try {
+
+                // console.log(
+                //   `// Normalizing key "${fieldName}" with value "${value}"…`
+                // );
+
                 const normTokens = await normalize(
                   cleanValue,
                   allRules,
                   matchTags
                 );
 
-                // console.log(
-                //   `// Normalizing key "${fieldName}" with value "${value}"…`
-                // );
                 // console.log(
                 //   `  -> Normalized values: ${JSON.stringify(normTokens)}`
                 // );
