@@ -372,7 +372,7 @@ const surveyNormalization = async (root, { surveySlug, fieldName }) => {
     fields: { _id: 1, [rawFieldPath]: 1 },
   }).fetch();
   const cleanResponses = responses.map((r) => ({
-    _id: r._id,
+    _id: r.responseId,
     value: get(r, rawFieldPath),
   }));
   return cleanResponses;

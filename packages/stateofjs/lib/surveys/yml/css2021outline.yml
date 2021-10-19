@@ -462,7 +462,6 @@ outline:
 
     ### OPINIONS ###
 
-
   - id: opinions
     slug: opinions
     questions:
@@ -477,7 +476,7 @@ outline:
 
       - id: browser_interoperability_features
         year: 2021
-        sectionSlug: opinions_other
+        sectionSlug: opinions_others
         template: others
         matchTags: [features, browser_interoperability]
 
@@ -495,7 +494,7 @@ outline:
           - id: performance_issues
       - id: css_pain_points
         year: 2021
-        sectionSlug: opinions_other
+        sectionSlug: opinions_others
         template: others
         matchTags: [accessibility_features, features, css_missing_features, css_pain_points]
 
@@ -513,7 +512,7 @@ outline:
           - id: mixins
           - id: scoping
       - id: currently_missing_from_css
-        sectionSlug: opinions_other
+        sectionSlug: opinions_others
         template: others
         matchTags: [css_missing_features]
 

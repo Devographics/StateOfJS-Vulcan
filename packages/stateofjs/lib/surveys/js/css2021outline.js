@@ -1025,7 +1025,7 @@ export default {
         {
           "id": "browser_interoperability_features",
           "year": 2021,
-          "sectionSlug": "opinions_other",
+          "sectionSlug": "opinions_others",
           "template": "others",
           "matchTags": [
             "features",
@@ -1066,7 +1066,7 @@ export default {
         {
           "id": "css_pain_points",
           "year": 2021,
-          "sectionSlug": "opinions_other",
+          "sectionSlug": "opinions_others",
           "template": "others",
           "matchTags": [
             "accessibility_features",
@@ -1109,7 +1109,7 @@ export default {
         },
         {
           "id": "currently_missing_from_css",
-          "sectionSlug": "opinions_other",
+          "sectionSlug": "opinions_others",
           "template": "others",
           "matchTags": [
             "css_missing_features"

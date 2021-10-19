@@ -370,3 +370,21 @@ export const renameBrowserInteroperabilityField = async () => {
     'css2021__opinions_other__browser_interoperability_features__others'
   );
 };
+
+export const renameOtherToOthers = async () => {
+  await renameFieldMigration(
+    Responses,
+    'css2021__opinions_other__browser_interoperability_features__others',
+    'css2021__opinions_others__browser_interoperability_features__others'
+  );
+  await renameFieldMigration(
+    Responses,
+    'css2021__opinions_other__css_pain_points__others',
+    'css2021__opinions_others__css_pain_points__others'
+  );
+  await renameFieldMigration(
+    Responses,
+    'css2021__opinions_other__currently_missing_from_css__others',
+    'css2021__opinions_others__currently_missing_from_css__others'
+  );
+};
