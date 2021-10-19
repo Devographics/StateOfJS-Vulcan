@@ -1247,7 +1247,7 @@ export default {
           "template": "single",
           "options": [
             {
-              "id": "no"
+              "id": "no_degree"
             },
             {
               "id": "yes_related"

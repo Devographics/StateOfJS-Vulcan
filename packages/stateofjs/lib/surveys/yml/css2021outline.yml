@@ -577,7 +577,7 @@ outline:
       - id: higher_education_degree
         template: single
         options: 
-          - id: no
+          - id: no_degree
           - id: yes_related
           - id: yes_unrelated
 
