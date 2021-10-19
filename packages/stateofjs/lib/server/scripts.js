@@ -363,15 +363,12 @@ export const renameMissingFromCSSField = async () => {
   );
 };
 
-export const renameBrowserInteroperabilityField = async () => {
+export const renameOtherToOthers = async () => {
   await renameFieldMigration(
     Responses,
-    'css2021__opinions__browser_interoperability_features',
-    'css2021__opinions_other__browser_interoperability_features__others'
+    'css2021__opinions__browser_interoperability_features__others',
+    'css2021__opinions_others__browser_interoperability_features__others'
   );
-};
-
-export const renameOtherToOthers = async () => {
   await renameFieldMigration(
     Responses,
     'css2021__opinions_other__browser_interoperability_features__others',
@@ -386,5 +383,13 @@ export const renameOtherToOthers = async () => {
     Responses,
     'css2021__opinions_other__currently_missing_from_css__others',
     'css2021__opinions_others__currently_missing_from_css__others'
+  );
+};
+
+export const changeNoToNoDegree = async () => {
+  Responses.update(
+    { css2021__user_info__higher_education_degree: 'no' },
+    { $set: { css2021__user_info__higher_education_degree: 'no_degree' } },
+    { multi: true }
   );
 };

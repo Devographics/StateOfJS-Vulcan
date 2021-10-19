@@ -369,10 +369,11 @@ const surveyNormalization = async (root, { surveySlug, fieldName }) => {
     ],
   };
   const responses = NormalizedResponses.find(query, {
-    fields: { _id: 1, [rawFieldPath]: 1 },
+    fields: { _id: 1, responseId: 1, [rawFieldPath]: 1 },
   }).fetch();
   const cleanResponses = responses.map((r) => ({
-    _id: r.responseId,
+    _id: r._id,
+    responseId: r.responseId,
     value: get(r, rawFieldPath),
   }));
   return cleanResponses;
