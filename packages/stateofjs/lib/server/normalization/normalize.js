@@ -15,7 +15,6 @@ import PrivateResponses from '../../modules/private_responses/collection';
 import { getSurveyBySlug } from '../../modules/surveys/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 import isEmpty from 'lodash/isEmpty';
-import { subscribeEmail } from 'meteor/vulcan:newsletter';
 
 const replaceAll = function (target, search, replacement) {
   return target.replace(new RegExp(search, 'g'), replacement);

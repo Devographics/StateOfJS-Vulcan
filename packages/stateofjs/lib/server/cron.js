@@ -4,7 +4,7 @@ import { getSetting } from 'meteor/vulcan:core';
 import { normalizeJob } from './normalization/cronjob';
 import { exportEmailsJob } from './users/cronjob';
 
-const runCrons = getSetting('runCrons', true);
+const runCrons = getSetting('runCrons', false);
 
 const allCrons = async () => {
   if (runCrons) {

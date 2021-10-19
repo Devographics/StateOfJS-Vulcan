@@ -1,5 +1,5 @@
-import { PrivateResponses } from '../../modules/private_responses';
-import { subscribeEmail } from 'meteor/vulcan:newsletter';
+// import { PrivateResponses } from '../../modules/private_responses';
+// import { subscribeEmail } from 'meteor/vulcan:newsletter';
 
 // TODO
 // not needed for now
