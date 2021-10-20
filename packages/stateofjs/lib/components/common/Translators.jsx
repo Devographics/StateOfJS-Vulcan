@@ -1,25 +1,12 @@
 import React from 'react';
 import { Components } from 'meteor/vulcan:core';
-import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag';
-
-const localesQuery = `query LocalesQuery {
-  locales{
-    id
-    label
-    translators
-    repo
-    translatedCount
-    totalCount
-    completion
-  }
-}
-`;
+import { useLocales } from '../../hooks/locales';
 
 const Translators = () => {
-  const { loading, data = {} } = useQuery(gql(localesQuery));
-
-  const { locales } = data;
+  const { loading, locales = [] } = useLocales();
+  if (loading) {
+    return <Components.Loading />;
+  }
 
   return (
     <div className="translators survey-page-block">
@@ -30,7 +17,6 @@ const Translators = () => {
         {loading ? (
           <Components.Loading />
         ) : (
-          locales &&
           locales
             .filter((l) => l.translators && l.translators.length > 0)
             .map((l) => <LocaleItem key={l.id} locale={l} />)

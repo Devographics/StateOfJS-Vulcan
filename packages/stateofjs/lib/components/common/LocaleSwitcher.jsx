@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Components, Locales, getLocale } from 'meteor/vulcan:core';
+import { Components, getLocale } from 'meteor/vulcan:core';
+import { useLocales } from '../../hooks/locales';
 
 const LocaleSwitcher = (props, { setLocale, getLocale: getLocaleContext }) => {
+  const { loading, locales = [] } = useLocales();
+  if (loading) {
+    return <Components.Loading />;
+  }
+
   const currentLocaleId = getLocaleContext();
   const currentLocale = getLocale(currentLocaleId);
   return (
@@ -16,10 +22,10 @@ const LocaleSwitcher = (props, { setLocale, getLocale: getLocaleContext }) => {
         if (!index) {
           index = 0;
         }
-        setLocale(Locales[index].id);
+        setLocale(locales[index].id);
       }}
       className="nav-locale-dropdown"
-      menuItems={Locales.map(({ label, id }) => ({
+      menuItems={locales.map(({ label, id }) => ({
         label: id === currentLocale && currentLocale.id ? `${label} ✓` : label,
       }))}
     />

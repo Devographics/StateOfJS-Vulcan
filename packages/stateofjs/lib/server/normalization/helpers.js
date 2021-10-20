@@ -67,6 +67,7 @@ const entitiesQuery = `query EntitiesQuery {
     category
     tags
     patterns
+    twitterName
   }
 }
 `;

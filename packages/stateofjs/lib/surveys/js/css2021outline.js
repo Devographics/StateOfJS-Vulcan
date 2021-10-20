@@ -1029,7 +1029,8 @@ export default {
           "template": "others",
           "matchTags": [
             "features",
-            "browser_interoperability"
+            "browser_interoperability",
+            "css_pain_points"
           ]
         },
         {

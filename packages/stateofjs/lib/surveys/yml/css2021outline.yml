@@ -478,7 +478,7 @@ outline:
         year: 2021
         sectionSlug: opinions_others
         template: others
-        matchTags: [features, browser_interoperability]
+        matchTags: [features, browser_interoperability, css_pain_points]
 
       - id: css_pain_points
         year: 2021

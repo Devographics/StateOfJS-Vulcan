@@ -2,6 +2,10 @@ import { registerLocale } from 'meteor/vulcan:core';
 
 export const locales = [
   {
+    id: 'ca-ES',
+    label: 'Català',
+  },
+  {
     id: 'cs-CZ',
     label: 'Česky',
   },
@@ -26,6 +30,7 @@ export const locales = [
     id: 'fr-FR',
     label: 'Français',
   },
+  { id: 'gl-ES', label: 'Galego' },
   {
     id: 'hi-IN',
     label: 'Hindi',
@@ -33,10 +38,6 @@ export const locales = [
   {
     id: 'it-IT',
     label: 'Italiano',
-  },
-  {
-    id: 'ja-JP',
-    label: '日本語',
   },
   {
     id: 'pt-PT',
@@ -69,6 +70,27 @@ export const locales = [
   {
     id: 'zh-Hant',
     label: '正體中文',
+  },
+
+  {
+    id: 'ja-JP',
+    label: '日本語',
+  },
+  {
+    id: 'pl-PL',
+    label: 'Polski',
+  },
+  {
+    id: 'ko-KR',
+    label: '한국어',
+  },
+  {
+    id: 'nl-NL',
+    label: 'Nederlands',
+  },
+  {
+    id: 'ro-RO',
+    label: 'Română',
   },
 ];
 
