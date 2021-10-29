@@ -496,7 +496,7 @@ outline:
         year: 2021
         sectionSlug: opinions_others
         template: others
-        matchTags: [accessibility_features, features, css_missing_features, css_pain_points]
+        matchTags: [css_pain_points, css_missing_features]
 
       - id: currently_missing_from_css
         year: 2021

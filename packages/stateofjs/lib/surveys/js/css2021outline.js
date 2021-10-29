@@ -1070,10 +1070,8 @@ export default {
           "sectionSlug": "opinions_others",
           "template": "others",
           "matchTags": [
-            "accessibility_features",
-            "features",
-            "css_missing_features",
-            "css_pain_points"
+            "css_pain_points",
+            "css_missing_features"
           ]
         },
         {

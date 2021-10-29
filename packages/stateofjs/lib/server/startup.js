@@ -17,6 +17,10 @@ const environment = getSetting('environment');
 const runScripts = getSetting('runScripts', false);
 
 Meteor.startup(async function () {
+
+  // todo
+  // await initLocales();
+
   if (runScripts) {
     await normalizeJob();
     await exportEmailsJob();
@@ -44,3 +48,4 @@ Meteor.startup(async function () {
     }
   }
 });
+
