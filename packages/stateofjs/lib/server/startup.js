@@ -48,4 +48,3 @@ Meteor.startup(async function () {
     }
   }
 });
-

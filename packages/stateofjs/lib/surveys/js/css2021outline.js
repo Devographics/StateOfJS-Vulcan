@@ -10,7 +10,7 @@ export default {
   "shareUrl": "https://stateofcss.com",
   "name": "State of CSS",
   "year": 2021,
-  "status": 2,
+  "status": 3,
   "imageUrl": "stateofcss2021.png",
   "bgColor": "#232840",
   "textColor": "#9ac6c9",
