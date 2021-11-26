@@ -181,8 +181,7 @@ export default {
           "id": "line_clamp"
         },
         {
-          "id": "variable_fonts",
-          "year": 2021
+          "id": "variable_fonts"
         }
       ]
     },

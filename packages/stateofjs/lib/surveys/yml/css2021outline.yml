@@ -97,7 +97,6 @@ outline:
       - id: font_display
       - id: line_clamp
       - id: variable_fonts
-        year: 2021
 
   - id: accessibility
     template: feature
