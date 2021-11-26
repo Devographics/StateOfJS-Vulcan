@@ -1,8 +1,9 @@
+/*
+TODO: tmp  remove until newsletter issue is fixed
 import { subscribeEmail } from 'meteor/vulcan:newsletter';
 import { PrivateResponses } from '../../modules/private_responses';
 
 export const exportEmailsJob = async () => {
-
   const startAt = new Date();
   const privateResponses = PrivateResponses.find({
     emailExported: { $ne: true },
@@ -41,3 +42,4 @@ export const exportEmailsJob = async () => {
     `-> ✉️ Done exporting ${privateResponses.length} emails in ${duration}s`
   );
 };
+*/

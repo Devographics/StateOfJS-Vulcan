@@ -21,4 +21,4 @@ vulcan:debug
 vulcan:i18n
 
 # mdg:meteor-apm-agent
-vulcan:newsletter
+# vulcan:newsletter
