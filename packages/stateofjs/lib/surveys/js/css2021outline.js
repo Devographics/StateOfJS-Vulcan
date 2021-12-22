@@ -281,7 +281,8 @@ export default {
           "template": "others",
           "sectionSlug": "tools_others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ]
         },
         {
@@ -340,7 +341,8 @@ export default {
           "template": "others",
           "sectionSlug": "tools_others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ]
         },
         {
@@ -408,7 +410,8 @@ export default {
           "template": "others",
           "sectionSlug": "tools_others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ]
         },
         {
@@ -454,7 +457,8 @@ export default {
           "id": "utilities",
           "template": "others",
           "matchTags": [
-            "libraries"
+            "libraries",
+            "other"
           ]
         },
         {
@@ -518,7 +522,7 @@ export default {
           "id": "browsers",
           "template": "others",
           "matchTags": [
-            "libraries"
+            "browsers"
           ]
         },
         {
@@ -782,13 +786,13 @@ export default {
           "id": "first_steps",
           "template": "others",
           "matchTags": [
+            "css_first_steps",
             "courses",
             "people",
             "youtube",
             "sites",
             "newsletters",
-            "socialmedia",
-            "css_first_steps"
+            "socialmedia"
           ]
         },
         {
@@ -1029,8 +1033,7 @@ export default {
           "matchTags": [
             "features",
             "browser_interoperability",
-            "css_missing_features",
-            "css_pain_points"
+            "css_missing_features"
           ]
         },
         {

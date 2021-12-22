@@ -153,7 +153,7 @@ outline:
         intlId: tools.other_tools
         template: others
         sectionSlug: tools_others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
 
       - id: pre_post_processors
         intlId: tools.happiness
@@ -182,7 +182,7 @@ outline:
         intlId: tools.other_tools
         template: others
         sectionSlug: tools_others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
 
       - id: css_frameworks
         intlId: tools.happiness
@@ -216,7 +216,7 @@ outline:
         intlId: tools.other_tools
         template: others
         sectionSlug: tools_others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
 
       - id: css_in_js
         intlId: tools.happiness
@@ -240,7 +240,7 @@ outline:
           - id: acss
       - id: utilities
         template: others
-        matchTags: [libraries]
+        matchTags: [libraries, other]
 
       - id: browsers
         template: multiple
@@ -264,7 +264,7 @@ outline:
           - id: polypane
       - id: browsers
         template: others
-        matchTags: [libraries]
+        matchTags: [browsers]
 
         # option 1 : stored as [first option, second option, winning option] for each round
       # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
@@ -359,7 +359,7 @@ outline:
 
     ### RESOURCES ###
 
-  - id: resources # new for 2021
+  - id: resources
     slug: resources
     questions:
 
@@ -379,7 +379,7 @@ outline:
 
       - id: first_steps
         template: others
-        matchTags: [courses, people, youtube, sites, newsletters, socialmedia, css_first_steps]
+        matchTags: [css_first_steps, courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: blogs_news_magazines
         template: multiple
@@ -477,7 +477,7 @@ outline:
         year: 2021
         sectionSlug: opinions_others
         template: others
-        matchTags: [features, browser_interoperability, css_missing_features, css_pain_points]
+        matchTags: [features, browser_interoperability, css_missing_features]
 
       - id: css_pain_points
         year: 2021

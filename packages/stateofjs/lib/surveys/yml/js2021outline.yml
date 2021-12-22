@@ -127,6 +127,8 @@ outline:
       - id: alpinejs
       - id: litelement
       - id: stimulus
+      - id: solid
+        year: 2021
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -136,28 +138,28 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  - id: datalayer
-    template: tool
-    slug: tools
-    questions:
-      - id: redux
-      - id: apollo
-      - id: graphql
-      - id: mobx
-      - id: relay
-      - id: xstate
-      - id: vuex
-      # - id: firebase
-      # - id: react_query
-      # - id: swr
-      - id: datalayer
-        intlId: tools.other_tools
-        template: project
-        sectionSlug: tools_others
-      - id: datalayer
-        intlId: tools.happiness
-        template: happiness
-        sectionSlug: happiness
+  # - id: datalayer
+  #   template: tool
+  #   slug: tools
+  #   questions:
+  #     - id: redux
+  #     - id: apollo
+  #     - id: graphql
+  #     - id: mobx
+  #     - id: relay
+  #     - id: xstate
+  #     - id: vuex
+  #     # - id: firebase
+  #     # - id: react_query
+  #     # - id: swr
+  #     - id: datalayer
+  #       intlId: tools.other_tools
+  #       template: project
+  #       sectionSlug: tools_others
+  #     - id: datalayer
+  #       intlId: tools.happiness
+  #       template: happiness
+  #       sectionSlug: happiness
 
   - id: back_end_frameworks
     template: tool
@@ -174,13 +176,16 @@ outline:
       - id: fastify
       - id: hapi
       # - id: egg
-      # - id: redwood
+      - id: redwood
+        year: 2021
 
       # - id: sails
       # - id: feathers
 
-      # - id: blitzjs
-      # - id: remix
+      - id: blitzjs
+        year: 2021
+      - id: remix
+        year: 2021
       # - id: razzle
       # - id: vulcan
       - id: back_end_frameworks
@@ -265,6 +270,12 @@ outline:
       - id: snowpack
       - id: swc
       - id: esbuild
+      - id: vite
+        year: 2021
+      - id: wmr
+        year: 2021
+      - id: turborepo
+        year: 2021
       - id: build_tools
         intlId: tools.other_tools
         template: project
@@ -287,6 +298,8 @@ outline:
       - id: nwjs
       - id: expo
       - id: quasar
+      - id: tauri
+        year: 2021
       - id: mobile_desktop
         intlId: tools.other_tools
         template: project
@@ -324,6 +337,7 @@ outline:
         options:
           - id: npm
           - id: yarn
+          - id: pnpm
           - id: babel
           - id: lerna
           - id: prettier
@@ -536,11 +550,23 @@ outline:
     slug: user_info
     questions:
 
+      - id: age
+        template: single
+        options:
+          - id: range_less_than_10
+          - id: range_10_18
+          - id: range_18_24
+          - id: range_25_34
+          - id: range_35_44
+          - id: range_45_54
+          - id: range_55_64
+          - id: range_more_than_65
+
       - id: years_of_experience
         template: single
         options:
           - id: range_less_than_1
-          - id: range_1_2 # for intl'd options, intl keys are of the form options.${question.id}.${option.id}
+          - id: range_1_2
           - id: range_2_5
           - id: range_5_10
           - id: range_10_20
@@ -569,26 +595,15 @@ outline:
           - id: range_100_200
           - id: range_more_than_200
 
-      - id: job_title
+      - id: higher_education_degree
         template: single
-        allowother: true
-        options:
-          - id: cto
-          - id: front_end_developer
-          - id: full_stack_developer
-          - id: back_end_developer
-          - id: web_developer
-          - id: web_designer
+        options: 
+          - id: no_degree
+          - id: yes_related
+          - id: yes_unrelated
 
-      - id: javascript_proficiency
-        template: proficiency
-      - id: css_proficiency
-        template: proficiency
-      - id: backend_proficiency
-        template: proficiency
-        
-      - id: how_did_user_find_out_about_the_survey
-        template: text
+      - id: country
+        template: country
 
       - id: gender
         template: single
@@ -597,12 +612,12 @@ outline:
           - id: female
           - id: male
           - id: non_binary
-          - id: prefer_not_to_say
+          - id: not_listed
 
       - id: race_ethnicity
         template: multiple
+        allowother: true
         options:
-          - id: biracial
           - id: black_african
           - id: east_asian
           - id: hispanic_latin
@@ -610,30 +625,32 @@ outline:
           - id: multiracial
           - id: native_american_islander_australian
           - id: south_asian
+          - id: south_east_asian
           - id: white_european
+          - id: not_listed
+
+      - id: disability_status
+        year: 2021
+        template: multiple
+        allowother: true
+        options:
+          - id: visual_impairments
+          - id: hearing_impairments
+          - id: mobility_impairments
+          - id: cognitive_impairments
+          - id: not_listed
+          
+      - id: disability_status
+        year: 2021
+        template: others
+        matchTags: [disabilities]
 
       - id: github_username
         template: text
 
-      - id: industry_sector
-        template: multiple
-        options: 
-          - id: ecommerce
-          - id: news_media
-          - id: healthcare
-          - id: finance
-          - id: programming_tools
-          - id: socialmedia
-          - id: marketing_tools
-          - id: education
-          - id: real_estate
-          - id: entertainment
-          - id: government
-          - id: consulting
-          
-      - id: industry_sector
-        template: others
-        matchTags: [industry_sectors]
-
-      - id: country
-        template: country
+      - id: twitter_username
+        year: 2021
+        template: text
+        
+      - id: how_did_user_find_out_about_the_survey
+        template: text
