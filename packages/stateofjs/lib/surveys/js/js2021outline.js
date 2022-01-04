@@ -19,43 +19,12 @@ export default {
   "hoverColor": "rgb(254, 106, 106)",
   "outline": [
     {
-      "id": "syntax",
-      "template": "feature",
-      "slug": "features",
-      "questions": [
-        {
-          "id": "destructuring"
-        },
-        {
-          "id": "spread_operator"
-        },
-        {
-          "id": "arrow_functions"
-        },
-        {
-          "id": "nullish_coalescing"
-        },
-        {
-          "id": "optional_chaining"
-        },
-        {
-          "id": "private_fields"
-        }
-      ]
-    },
-    {
       "id": "language",
       "template": "feature",
       "slug": "features",
       "questions": [
         {
           "id": "proxies"
-        },
-        {
-          "id": "async_await"
-        },
-        {
-          "id": "promises"
         },
         {
           "id": "decorators"
@@ -65,28 +34,46 @@ export default {
         },
         {
           "id": "dynamic_import"
-        }
-      ]
-    },
-    {
-      "id": "data_structures",
-      "template": "feature",
-      "slug": "features",
-      "questions": [
-        {
-          "id": "maps"
         },
         {
-          "id": "sets"
+          "id": "nullish_coalescing"
         },
         {
-          "id": "typed_arrays"
+          "id": "optional_chaining"
         },
         {
-          "id": "array_prototype_flat"
+          "id": "private_fields"
         },
         {
           "id": "big_int"
+        },
+        {
+          "id": "numeric_separators",
+          "year": 2021
+        },
+        {
+          "id": "string_replace_all",
+          "year": 2021
+        },
+        {
+          "id": "string_match_all",
+          "year": 2021
+        },
+        {
+          "id": "logical_assignment",
+          "year": 2021
+        },
+        {
+          "id": "promise_any",
+          "year": 2021
+        },
+        {
+          "id": "array_at",
+          "year": 2021
+        },
+        {
+          "id": "top_level_await",
+          "year": 2021
         }
       ]
     },
@@ -97,9 +84,6 @@ export default {
       "questions": [
         {
           "id": "service_workers"
-        },
-        {
-          "id": "local_storage"
         },
         {
           "id": "intl"
@@ -120,19 +104,37 @@ export default {
           "id": "web_speech"
         },
         {
-          "id": "webvr"
-        },
-        {
           "id": "websocket"
-        },
-        {
-          "id": "fetch"
         },
         {
           "id": "custom_elements"
         },
         {
           "id": "shadow_dom"
+        },
+        {
+          "id": "page_visibility",
+          "year": 2021
+        },
+        {
+          "id": "broadcast_channel",
+          "year": 2021
+        },
+        {
+          "id": "geolocation",
+          "year": 2021
+        },
+        {
+          "id": "file_system_access",
+          "year": 2021
+        },
+        {
+          "id": "web_share",
+          "year": 2021
+        },
+        {
+          "id": "webxr",
+          "year": 2021
         }
       ]
     },
@@ -186,10 +188,6 @@ export default {
           "year": 2021
         },
         {
-          "id": "htmx",
-          "year": 2021
-        },
-        {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "project",
@@ -215,12 +213,6 @@ export default {
           "id": "nextjs"
         },
         {
-          "id": "koa"
-        },
-        {
-          "id": "meteor"
-        },
-        {
           "id": "nuxt"
         },
         {
@@ -236,9 +228,6 @@ export default {
           "id": "fastify"
         },
         {
-          "id": "hapi"
-        },
-        {
           "id": "redwood",
           "year": 2021
         },
@@ -247,11 +236,19 @@ export default {
           "year": 2021
         },
         {
+          "id": "eleventy",
+          "year": 2021
+        },
+        {
           "id": "blitzjs",
           "year": 2021
         },
         {
           "id": "remix",
+          "year": 2021
+        },
+        {
+          "id": "sveltekit",
           "year": 2021
         },
         {
@@ -315,61 +312,6 @@ export default {
         },
         {
           "id": "testing",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "graphics_animation",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "echarts"
-        },
-        {
-          "id": "chartjs"
-        },
-        {
-          "id": "d3"
-        },
-        {
-          "id": "visx"
-        },
-        {
-          "id": "nivo"
-        },
-        {
-          "id": "threejs"
-        },
-        {
-          "id": "pixijs"
-        },
-        {
-          "id": "fabricjs"
-        },
-        {
-          "id": "animejs"
-        },
-        {
-          "id": "lottie"
-        },
-        {
-          "id": "greensock"
-        },
-        {
-          "id": "popmotion"
-        },
-        {
-          "id": "graphics_animation",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others"
-        },
-        {
-          "id": "graphics_animation",
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
@@ -573,7 +515,8 @@ export default {
               "id": "nx"
             },
             {
-              "id": "zx"
+              "id": "zx",
+              "year": 2021
             }
           ]
         },
@@ -621,7 +564,8 @@ export default {
               "id": "reason"
             },
             {
-              "id": "rescript"
+              "id": "rescript",
+              "year": 2021
             },
             {
               "id": "flow"
@@ -639,7 +583,8 @@ export default {
               "id": "coffeescript"
             },
             {
-              "id": "imba"
+              "id": "imba",
+              "year": 2021
             }
           ]
         },
@@ -686,9 +631,6 @@ export default {
             },
             {
               "id": "csharp"
-            },
-            {
-              "id": "dotnet"
             },
             {
               "id": "haskell"
@@ -1166,7 +1108,7 @@ export default {
               "id": "performance_issues"
             },
             {
-              "id": "responsive_design"
+              "id": "browser_apis"
             },
             {
               "id": "form_elements_styling"

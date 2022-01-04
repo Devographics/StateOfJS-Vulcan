@@ -13,7 +13,7 @@ createdAt: October 30, 2020
 prettySlug: state-of-css
 hashtag: StateOfCSS
 shareUrl: https://stateofcss.com
-# resultsUrl: https://2021.stateofcss.com/
+resultsUrl: https://2021.stateofcss.com/
 name: 'State of CSS'
 year: 2021
 status: 3 # preview/open/closed

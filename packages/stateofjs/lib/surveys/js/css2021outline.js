@@ -8,6 +8,7 @@ export default {
   "prettySlug": "state-of-css",
   "hashtag": "StateOfCSS",
   "shareUrl": "https://stateofcss.com",
+  "resultsUrl": "https://2021.stateofcss.com/",
   "name": "State of CSS",
   "year": 2021,
   "status": 3,

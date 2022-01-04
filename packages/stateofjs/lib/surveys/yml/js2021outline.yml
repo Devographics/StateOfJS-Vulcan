@@ -25,55 +25,81 @@ linkColor: rgb(65, 199, 199)
 hoverColor: rgb(254, 106, 106)
 outline:
 
-  - id: syntax
-    template: feature
-    slug: features
-    questions:
-      - id: destructuring
-      - id: spread_operator
-      - id: arrow_functions
-      - id: nullish_coalescing
-      - id: optional_chaining
-      - id: private_fields
+  # - id: syntax
+  #   template: feature
+  #   slug: features
+  #   questions:
 
   - id: language
     template: feature
     slug: features
     questions:
       - id: proxies
-      - id: async_await
-      - id: promises
-      - id: decorators
+      # - id: async_await
+      # - id: promises
+      # - id: decorators
       - id: promise_all_settled
       - id: dynamic_import
-
-  - id: data_structures
-    template: feature
-    slug: features
-    questions:
-      - id: maps
-      - id: sets
-      - id: typed_arrays
-      - id: array_prototype_flat
+      # - id: destructuring
+      # - id: spread_operator
+      # - id: arrow_functions
+      - id: nullish_coalescing
+      - id: optional_chaining
+      - id: private_fields
       - id: big_int
+      - id: numeric_separators
+        year: 2021
+      - id: string_replace_all
+        year: 2021
+      - id: string_match_all
+        year: 2021
+      - id: logical_assignment
+        year: 2021
+      - id: promise_any
+        year: 2021
+      - id: array_at
+        year: 2021
+      - id: top_level_await
+        year: 2021
+
+  # - id: data_structures
+  #   template: feature
+  #   slug: features
+  #   questions:
+  #     - id: maps
+  #     - id: sets
+  #     - id: typed_arrays
+  #     - id: array_prototype_flat
 
   - id: browser_apis
     template: feature
     slug: features
     questions:
       - id: service_workers
-      - id: local_storage
+      # - id: local_storage
       - id: intl
       - id: web_audio
       - id: webgl
       - id: web_animations
       - id: webrtc
       - id: web_speech
-      - id: webvr
+      # - id: webvr
       - id: websocket
-      - id: fetch
+      # - id: fetch
       - id: custom_elements
       - id: shadow_dom
+      - id: page_visibility
+        year: 2021
+      - id: broadcast_channel
+        year: 2021
+      - id: geolocation
+        year: 2021
+      - id: file_system_access
+        year: 2021
+      - id: web_share
+        year: 2021
+      - id: webxr
+        year: 2021
 
   - id: other_features
     template: feature
@@ -119,7 +145,6 @@ outline:
     questions:
       - id: react
       - id: vuejs
-      # - id: angularjs
       - id: angular
       - id: preact
       - id: ember
@@ -129,8 +154,8 @@ outline:
       - id: stimulus
       - id: solid
         year: 2021
-      - id: htmx
-        year: 2021
+      # - id: htmx
+      #   year: 2021
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -169,29 +194,26 @@ outline:
     questions:
       - id: express
       - id: nextjs
-      - id: koa
-      - id: meteor
+      # - id: koa
+      # - id: meteor
       - id: nuxt
       - id: gatsby
       - id: nest
       - id: strapi
       - id: fastify
-      - id: hapi
-      # - id: egg
+      # - id: hapi
       - id: redwood
         year: 2021
       - id: astro
         year: 2021
-
-      # - id: sails
-      # - id: feathers
-
+      - id: eleventy
+        year: 2021
       - id: blitzjs
         year: 2021
       - id: remix
         year: 2021
-      # - id: razzle
-      # - id: vulcan
+      - id: sveltekit
+        year: 2021
       - id: back_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -227,39 +249,39 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  - id: graphics_animation
-    template: tool
-    slug: tools
-    questions:
-      # charts
-      - id: echarts
-      - id: chartjs
-      - id: d3
-      # - id: recharts
-      - id: visx
-      - id: nivo
+  # - id: graphics_animation
+  #   template: tool
+  #   slug: tools
+  #   questions:
+  #     # charts
+  #     - id: echarts
+  #     - id: chartjs
+  #     - id: d3
+  #     # - id: recharts
+  #     - id: visx
+  #     - id: nivo
 
-      # drawing/3D
-      - id: threejs
-      - id: pixijs
-      - id: fabricjs
+  #     # drawing/3D
+  #     - id: threejs
+  #     - id: pixijs
+  #     - id: fabricjs
 
-      # animation
-      - id: animejs
-      - id: lottie
-      - id: greensock
-      - id: popmotion
-      # - id: motion
-      # - id: velocity
+  #     # animation
+  #     - id: animejs
+  #     - id: lottie
+  #     - id: greensock
+  #     - id: popmotion
+  #     # - id: motion
+  #     # - id: velocity
 
-      - id: graphics_animation
-        intlId: tools.other_tools
-        template: project
-        sectionSlug: tools_others
-      - id: graphics_animation
-        intlId: tools.happiness
-        template: happiness
-        sectionSlug: happiness
+  #     - id: graphics_animation
+  #       intlId: tools.other_tools
+  #       template: project
+  #       sectionSlug: tools_others
+  #     - id: graphics_animation
+  #       intlId: tools.happiness
+  #       template: happiness
+  #       sectionSlug: happiness
 
   - id: build_tools
     template: tool
@@ -354,6 +376,7 @@ outline:
           - id: 'n'
           - id: nx
           - id: zx
+            year: 2021
       - id: utilities
         template: project
 
@@ -401,12 +424,14 @@ outline:
           - id: typescript
           - id: reason
           - id: rescript
+            year: 2021
           - id: flow
           - id: elm
           - id: clojurescript
           - id: purescript
           - id: coffeescript
           - id: imba
+            year: 2021
       - id: javascript_flavors
         template: others
         matchTags: [languages]
@@ -425,7 +450,7 @@ outline:
           - id: scala
           - id: swift
           - id: csharp
-          - id: dotnet
+          # - id: dotnet
           - id: haskell
           - id: ocaml
           - id: dart
@@ -621,9 +646,9 @@ outline:
           - id: state_management
           - id: form_handling
           - id: performance_issues
-          - id: responsive_design
-          - id: form_elements_styling
-          - id: performance_issues
+          - id: browser_apis
+          - id: async_code
+          - id: managing_imports
       - id: js_pain_points
         year: 2021
         sectionSlug: opinions_others
