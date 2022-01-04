@@ -86,6 +86,8 @@ const AdminNormalization = () => {
         />
       </h3>
 
+      <h4>{field.fieldName}</h4>
+      
       <ol>
         {results.map(({ _id, responseId, value }) => (
           <li key={_id}>

@@ -72,6 +72,14 @@ const entitiesQuery = `query EntitiesQuery {
 }
 `;
 
+export const initEntities = async () => {
+  console.log(`// 🗄️ Initializing entities…`);
+  const entities = await getEntities();
+  const rules = generateEntityRules(entities);
+  console.log(`  -> Initializing entities done`);
+  return { entities, rules };
+};
+
 export const getEntities = async () => {
   try {
     return get(await runGraphQL(entitiesQuery), 'data.entities');
@@ -107,11 +115,11 @@ const extractTokens = async (rawString, rules) => {
   }
 
   const tokens = [];
-  let count = 0;
   // extract tokens for each rule, storing
   // the start/end index for each match
   // to be used later to detect overlap.
   for (const { pattern, id } of rules) {
+    let count = 0;
     let scanCompleted = false;
     let scanStartIndex = 0;
 
@@ -284,9 +292,9 @@ export const generateEntityRules = (entities) => {
   const rules = [];
   entities.forEach((entity) => {
     const { id, patterns, tags, twitterName } = entity;
-    // we match the separator group 1 to 2 times to account for double spaces,
+    // we match the separator group 0 to 2 times to account for double spaces,
     // double hyphens, etc.
-    const separator = '( |-|_|.){1,2}';
+    const separator = '( |-|_|.){0,2}';
 
     // 1. replace "_" by separator
     const idPatternString = id.replaceAll('_', separator);
@@ -297,19 +305,21 @@ export const generateEntityRules = (entities) => {
       tags,
     });
 
-    // 2. replace "js" at the end by separator+js
-    if (id.substr(-2) === 'js') {
-      const patternString = id.substr(0, id.length - 2) + separator + 'js';
-      const pattern = new RegExp(patternString, 'i');
-      rules.push({ id, pattern, tags });
-    }
+    // note: the following should not be needed because all entities
+    // should already follow the foo_js/foo_css format
+    // // 2. replace "js" at the end by separator+js
+    // if (id.substr(-2) === 'js') {
+    //   const patternString = id.substr(0, id.length - 2) + separator + 'js';
+    //   const pattern = new RegExp(patternString, 'i');
+    //   rules.push({ id, pattern, tags });
+    // }
 
-    // 3. replace "css" at the end by separator+css
-    if (id.substr(-3) === 'css') {
-      const patternString = id.substr(0, id.length - 3) + separator + 'css';
-      const pattern = new RegExp(patternString, 'i');
-      rules.push({ id, pattern, tags });
-    }
+    // // 3. replace "css" at the end by separator+css
+    // if (id.substr(-3) === 'css') {
+    //   const patternString = id.substr(0, id.length - 3) + separator + 'css';
+    //   const pattern = new RegExp(patternString, 'i');
+    //   rules.push({ id, pattern, tags });
+    // }
 
     // 4. add custom patterns
     patterns &&

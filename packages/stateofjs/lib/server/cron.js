@@ -3,6 +3,7 @@ import { CronJob } from 'cron';
 import { getSetting } from 'meteor/vulcan:core';
 import { normalizeJob } from './normalization/cronjob';
 import { exportEmailsJob } from './users/cronjob';
+import { getEntitiesData } from './startup';
 
 const runCrons = getSetting('runCrons', false);
 
@@ -12,14 +13,15 @@ const allCrons = async () => {
     console.log(
       `[Running cron jobs at ${moment().format('YYYY/MM/DD, hh:mm')}]`
     );
-    await normalizeJob();
+    const { entities, rules } = await getEntitiesData();
+    await normalizeJob({ entities, rules });
     await exportEmailsJob();
   }
 };
 
 new CronJob(
-  // '0 * * * *', // run every hour
-  '*/10 * * * *', // run every 10 min
+  '0 * * * *', // run every hour
+  // '*/1 * * * *', // run every N min
   Meteor.bindEnvironment(function () {
     allCrons();
   }),

@@ -66,16 +66,20 @@ const privateFieldPaths = [
 export const normalizeResponse = async ({
   document: response,
   entities,
+  rules,
   log = false,
   fileName: _fileName,
 }) => {
   try {
+
+    // console.log(`// Normalizing document ${response._id}…`);
+
     const normResp = {};
     const privateFields = {};
     const normalizedFields = [];
     const survey = getSurveyBySlug(response.surveySlug);
-    const allEntities = entities || (await getEntities());
-    const allRules = generateEntityRules(allEntities);
+    const allEntities = entities ?? (await getEntities());
+    const allRules = rules ?? generateEntityRules(allEntities);
     const fileName = _fileName || `${response.surveySlug}_normalization`;
 
     /*
@@ -282,11 +286,11 @@ export const normalizeResponse = async ({
     // console.log(JSON.stringify(normResp, '', 2));
 
     // update normalized response, or insert it if it doesn't exist
-    const result = NormalizedResponses.upsert(
+    const result = await NormalizedResponses.upsert(
       { responseId: response._id },
       normResp
     );
-    Responses.update(
+    await Responses.update(
       { _id: response._id },
       { $set: { normalizedResponseId: result.insertedId, isNormalized: true } }
     );

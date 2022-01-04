@@ -8,23 +8,25 @@ import { getSetting } from 'meteor/vulcan:core';
 import { convertAllYAML } from './yaml';
 import { loadProjects } from './projects.js';
 import { logAllRules } from './normalization/helpers';
-import { normalizeJob } from './normalization/cronjob';
-import { exportEmailsJob } from './users/cronjob';
+import { initEntities } from './normalization/helpers';
+import isEmpty from 'lodash/isEmpty';
 
 const startup = getSetting('startup', []);
 const environment = getSetting('environment');
 
 const runScripts = getSetting('runScripts', false);
 
+export let entitiesData = {};
+
+export const getEntitiesData = async () => {
+  if (isEmpty(entitiesData)) {
+    entitiesData = await initEntities();
+  }
+  return entitiesData;
+};
+
 Meteor.startup(async function () {
-
-  // todo
-  // await initLocales();
-
   if (runScripts) {
-    await normalizeJob();
-    await exportEmailsJob();
-
     if (environment === 'development') {
       await convertAllYAML();
       await logAllRules();
@@ -48,4 +50,3 @@ Meteor.startup(async function () {
     }
   }
 });
-

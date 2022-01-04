@@ -150,40 +150,6 @@ export default {
       ]
     },
     {
-      "id": "javascript_flavors",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "typescript"
-        },
-        {
-          "id": "reason"
-        },
-        {
-          "id": "elm"
-        },
-        {
-          "id": "clojurescript"
-        },
-        {
-          "id": "purescript"
-        },
-        {
-          "id": "javascript_flavors",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others"
-        },
-        {
-          "id": "javascript_flavors",
-          "intlId": "tools.happiness",
-          "sectionSlug": "happiness",
-          "template": "happiness"
-        }
-      ]
-    },
-    {
       "id": "front_end_frameworks",
       "template": "tool",
       "slug": "tools",
@@ -216,6 +182,14 @@ export default {
           "id": "stimulus"
         },
         {
+          "id": "solid",
+          "year": 2021
+        },
+        {
+          "id": "htmx",
+          "year": 2021
+        },
+        {
           "id": "front_end_frameworks",
           "intlId": "tools.other_tools",
           "template": "project",
@@ -223,46 +197,6 @@ export default {
         },
         {
           "id": "front_end_frameworks",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
-        }
-      ]
-    },
-    {
-      "id": "datalayer",
-      "template": "tool",
-      "slug": "tools",
-      "questions": [
-        {
-          "id": "redux"
-        },
-        {
-          "id": "apollo"
-        },
-        {
-          "id": "graphql"
-        },
-        {
-          "id": "mobx"
-        },
-        {
-          "id": "relay"
-        },
-        {
-          "id": "xstate"
-        },
-        {
-          "id": "vuex"
-        },
-        {
-          "id": "datalayer",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others"
-        },
-        {
-          "id": "datalayer",
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
@@ -303,6 +237,22 @@ export default {
         },
         {
           "id": "hapi"
+        },
+        {
+          "id": "redwood",
+          "year": 2021
+        },
+        {
+          "id": "astro",
+          "year": 2021
+        },
+        {
+          "id": "blitzjs",
+          "year": 2021
+        },
+        {
+          "id": "remix",
+          "year": 2021
         },
         {
           "id": "back_end_frameworks",
@@ -354,6 +304,10 @@ export default {
           "id": "webdriverio"
         },
         {
+          "id": "vitest",
+          "year": 2021
+        },
+        {
           "id": "testing",
           "intlId": "tools.other_tools",
           "template": "project",
@@ -361,6 +315,61 @@ export default {
         },
         {
           "id": "testing",
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        }
+      ]
+    },
+    {
+      "id": "graphics_animation",
+      "template": "tool",
+      "slug": "tools",
+      "questions": [
+        {
+          "id": "echarts"
+        },
+        {
+          "id": "chartjs"
+        },
+        {
+          "id": "d3"
+        },
+        {
+          "id": "visx"
+        },
+        {
+          "id": "nivo"
+        },
+        {
+          "id": "threejs"
+        },
+        {
+          "id": "pixijs"
+        },
+        {
+          "id": "fabricjs"
+        },
+        {
+          "id": "animejs"
+        },
+        {
+          "id": "lottie"
+        },
+        {
+          "id": "greensock"
+        },
+        {
+          "id": "popmotion"
+        },
+        {
+          "id": "graphics_animation",
+          "intlId": "tools.other_tools",
+          "template": "project",
+          "sectionSlug": "tools_others"
+        },
+        {
+          "id": "graphics_animation",
           "intlId": "tools.happiness",
           "template": "happiness",
           "sectionSlug": "happiness"
@@ -401,6 +410,18 @@ export default {
         },
         {
           "id": "esbuild"
+        },
+        {
+          "id": "vite",
+          "year": 2021
+        },
+        {
+          "id": "wmr",
+          "year": 2021
+        },
+        {
+          "id": "turborepo",
+          "year": 2021
         },
         {
           "id": "build_tools",
@@ -447,6 +468,10 @@ export default {
         },
         {
           "id": "quasar"
+        },
+        {
+          "id": "tauri",
+          "year": 2021
         },
         {
           "id": "mobile_desktop",
@@ -502,6 +527,9 @@ export default {
             },
             {
               "id": "axios"
+            },
+            {
+              "id": "d3"
             }
           ]
         },
@@ -520,6 +548,10 @@ export default {
               "id": "yarn"
             },
             {
+              "id": "pnpm",
+              "year": 2021
+            },
+            {
               "id": "babel"
             },
             {
@@ -536,6 +568,12 @@ export default {
             },
             {
               "id": "n"
+            },
+            {
+              "id": "nx"
+            },
+            {
+              "id": "zx"
             }
           ]
         },
@@ -573,43 +611,116 @@ export default {
           ]
         },
         {
-          "id": "text_editors",
+          "id": "javascript_flavors",
           "template": "multiple",
           "options": [
             {
-              "id": "visual_studio"
+              "id": "typescript"
             },
             {
-              "id": "sublime_text"
+              "id": "reason"
             },
             {
-              "id": "atom"
+              "id": "rescript"
             },
             {
-              "id": "vim"
+              "id": "flow"
             },
             {
-              "id": "emacs"
+              "id": "elm"
             },
             {
-              "id": "webstorm"
+              "id": "clojurescript"
             },
             {
-              "id": "nova"
+              "id": "purescript"
             },
             {
-              "id": "phpstorm"
+              "id": "coffeescript"
             },
             {
-              "id": "notepad"
+              "id": "imba"
             }
           ]
         },
         {
-          "id": "text_editors",
+          "id": "javascript_flavors",
           "template": "others",
           "matchTags": [
-            "text_editors"
+            "languages"
+          ]
+        },
+        {
+          "id": "non_js_languages",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "php"
+            },
+            {
+              "id": "ruby"
+            },
+            {
+              "id": "python"
+            },
+            {
+              "id": "go"
+            },
+            {
+              "id": "rust"
+            },
+            {
+              "id": "java"
+            },
+            {
+              "id": "c_cplusplus"
+            },
+            {
+              "id": "objective_c"
+            },
+            {
+              "id": "scala"
+            },
+            {
+              "id": "swift"
+            },
+            {
+              "id": "csharp"
+            },
+            {
+              "id": "dotnet"
+            },
+            {
+              "id": "haskell"
+            },
+            {
+              "id": "ocaml"
+            },
+            {
+              "id": "dart"
+            },
+            {
+              "id": "kotlin"
+            },
+            {
+              "id": "elixir"
+            },
+            {
+              "id": "bash"
+            },
+            {
+              "id": "clojure"
+            },
+            {
+              "id": "elm"
+            }
+          ]
+        },
+        {
+          "id": "non_js_languages",
+          "template": "others",
+          "matchTags": [
+            "languages"
           ]
         },
         {
@@ -670,71 +781,76 @@ export default {
           ]
         },
         {
-          "id": "browsers",
-          "template": "others",
-          "matchTags": [
-            "browsers"
-          ]
-        },
-        {
-          "id": "non_js_languages",
+          "id": "form_factors",
           "template": "multiple",
           "options": [
             {
-              "id": "php"
+              "id": "desktop"
             },
             {
-              "id": "ruby"
+              "id": "smartphone"
             },
             {
-              "id": "python"
+              "id": "feature_phone"
             },
             {
-              "id": "go"
+              "id": "tablet"
             },
             {
-              "id": "rust"
+              "id": "smart_watch"
             },
             {
-              "id": "java"
+              "id": "tv"
             },
             {
-              "id": "c_cplusplus"
+              "id": "gaming_console"
             },
             {
-              "id": "objective_c"
+              "id": "screen_reader"
             },
             {
-              "id": "scala"
+              "id": "print"
             },
             {
-              "id": "swift"
+              "id": "keyboard_only"
             },
             {
-              "id": "csharp"
+              "id": "testing_tools"
             },
             {
-              "id": "dotnet"
-            },
-            {
-              "id": "haskell"
-            },
-            {
-              "id": "ocaml"
-            },
-            {
-              "id": "dart"
-            },
-            {
-              "id": "kotlin"
+              "id": "vision_simulator"
             }
           ]
         },
         {
-          "id": "non_js_languages",
-          "template": "others",
-          "matchTags": [
-            "languages"
+          "id": "tool_evaluation",
+          "year": 2021,
+          "template": "bracket",
+          "options": [
+            {
+              "id": "learning_curve_documentation"
+            },
+            {
+              "id": "momentum_popularity"
+            },
+            {
+              "id": "user_base_size"
+            },
+            {
+              "id": "developer_experience_tooling"
+            },
+            {
+              "id": "performance_user_experience"
+            },
+            {
+              "id": "creator_team"
+            },
+            {
+              "id": "accessibility_features"
+            },
+            {
+              "id": "community_inclusivity"
+            }
           ]
         }
       ]
@@ -743,6 +859,42 @@ export default {
       "id": "resources",
       "slug": "resources",
       "questions": [
+        {
+          "id": "first_steps",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "books"
+            },
+            {
+              "id": "videos"
+            },
+            {
+              "id": "courses_free"
+            },
+            {
+              "id": "courses_paid"
+            },
+            {
+              "id": "school"
+            },
+            {
+              "id": "podcasts"
+            },
+            {
+              "id": "bootcamp"
+            },
+            {
+              "id": "on_the_job"
+            },
+            {
+              "id": "mentoring"
+            },
+            {
+              "id": "self_directed"
+            }
+          ]
+        },
         {
           "id": "blogs_news_magazines",
           "template": "multiple",
@@ -776,6 +928,12 @@ export default {
             },
             {
               "id": "front_end_front"
+            },
+            {
+              "id": "frontend_horse"
+            },
+            {
+              "id": "frontend_focus"
             },
             {
               "id": "js_weekly"
@@ -832,7 +990,7 @@ export default {
               "id": "levelup"
             },
             {
-              "id": "wesbos"
+              "id": "wes_bos"
             },
             {
               "id": "frontendmasters"
@@ -851,6 +1009,9 @@ export default {
             },
             {
               "id": "newline"
+            },
+            {
+              "id": "web_dev"
             }
           ]
         },
@@ -955,6 +1116,16 @@ export default {
             "people",
             "sites"
           ]
+        },
+        {
+          "id": "people",
+          "year": 2021,
+          "template": "others",
+          "matchTags": [
+            "people",
+            "sites",
+            "youtube"
+          ]
         }
       ]
     },
@@ -971,27 +1142,88 @@ export default {
           "template": "opinion"
         },
         {
-          "id": "js_over_used_online",
-          "template": "opinion"
-        },
-        {
-          "id": "enjoy_building_js_apps",
-          "template": "opinion"
-        },
-        {
-          "id": "would_like_js_to_be_main_lang",
-          "template": "opinion"
-        },
-        {
           "id": "js_ecosystem_changing_to_fast",
           "template": "opinion"
         },
         {
-          "id": "missing_from_js",
+          "id": "js_pain_points",
+          "year": 2021,
+          "template": "bracket",
+          "options": [
+            {
+              "id": "browser_interoperability"
+            },
+            {
+              "id": "animations"
+            },
+            {
+              "id": "state_management"
+            },
+            {
+              "id": "form_handling"
+            },
+            {
+              "id": "performance_issues"
+            },
+            {
+              "id": "responsive_design"
+            },
+            {
+              "id": "form_elements_styling"
+            },
+            {
+              "id": "performance_issues"
+            }
+          ]
+        },
+        {
+          "id": "js_pain_points",
+          "year": 2021,
           "sectionSlug": "opinions_others",
-          "template": "others_textarea",
+          "template": "others",
           "matchTags": [
-            "missing_features"
+            "css_pain_points",
+            "css_missing_features"
+          ]
+        },
+        {
+          "id": "currently_missing_from_js",
+          "year": 2021,
+          "optionsIntlId": "features",
+          "template": "bracket",
+          "options": [
+            {
+              "id": "static_typing"
+            },
+            {
+              "id": "standard_library"
+            },
+            {
+              "id": "pattern_matching"
+            },
+            {
+              "id": "pipe_operator"
+            },
+            {
+              "id": "decorators"
+            },
+            {
+              "id": "browser_support"
+            },
+            {
+              "id": "immutable_data_structures"
+            },
+            {
+              "id": "functions"
+            }
+          ]
+        },
+        {
+          "id": "currently_missing_from_js",
+          "sectionSlug": "opinions_others",
+          "template": "others",
+          "matchTags": [
+            "js_missing_features"
           ]
         },
         {
@@ -1010,6 +1242,36 @@ export default {
       "id": "user_info",
       "slug": "user_info",
       "questions": [
+        {
+          "id": "age",
+          "template": "single",
+          "options": [
+            {
+              "id": "range_less_than_10"
+            },
+            {
+              "id": "range_10_18"
+            },
+            {
+              "id": "range_18_24"
+            },
+            {
+              "id": "range_25_34"
+            },
+            {
+              "id": "range_35_44"
+            },
+            {
+              "id": "range_45_54"
+            },
+            {
+              "id": "range_55_64"
+            },
+            {
+              "id": "range_more_than_65"
+            }
+          ]
+        },
         {
           "id": "years_of_experience",
           "template": "single",
@@ -1092,45 +1354,23 @@ export default {
           ]
         },
         {
-          "id": "job_title",
+          "id": "higher_education_degree",
           "template": "single",
-          "allowother": true,
           "options": [
             {
-              "id": "cto"
+              "id": "no_degree"
             },
             {
-              "id": "front_end_developer"
+              "id": "yes_related"
             },
             {
-              "id": "full_stack_developer"
-            },
-            {
-              "id": "back_end_developer"
-            },
-            {
-              "id": "web_developer"
-            },
-            {
-              "id": "web_designer"
+              "id": "yes_unrelated"
             }
           ]
         },
         {
-          "id": "javascript_proficiency",
-          "template": "proficiency"
-        },
-        {
-          "id": "css_proficiency",
-          "template": "proficiency"
-        },
-        {
-          "id": "backend_proficiency",
-          "template": "proficiency"
-        },
-        {
-          "id": "how_did_user_find_out_about_the_survey",
-          "template": "text"
+          "id": "country",
+          "template": "country"
         },
         {
           "id": "gender",
@@ -1147,17 +1387,15 @@ export default {
               "id": "non_binary"
             },
             {
-              "id": "prefer_not_to_say"
+              "id": "not_listed"
             }
           ]
         },
         {
           "id": "race_ethnicity",
           "template": "multiple",
+          "allowother": true,
           "options": [
-            {
-              "id": "biracial"
-            },
             {
               "id": "black_african"
             },
@@ -1180,8 +1418,45 @@ export default {
               "id": "south_asian"
             },
             {
+              "id": "south_east_asian"
+            },
+            {
               "id": "white_european"
+            },
+            {
+              "id": "not_listed"
             }
+          ]
+        },
+        {
+          "id": "disability_status",
+          "year": 2021,
+          "template": "multiple",
+          "allowother": true,
+          "options": [
+            {
+              "id": "visual_impairments"
+            },
+            {
+              "id": "hearing_impairments"
+            },
+            {
+              "id": "mobility_impairments"
+            },
+            {
+              "id": "cognitive_impairments"
+            },
+            {
+              "id": "not_listed"
+            }
+          ]
+        },
+        {
+          "id": "disability_status",
+          "year": 2021,
+          "template": "others",
+          "matchTags": [
+            "disabilities"
           ]
         },
         {
@@ -1189,57 +1464,13 @@ export default {
           "template": "text"
         },
         {
-          "id": "industry_sector",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "ecommerce"
-            },
-            {
-              "id": "news_media"
-            },
-            {
-              "id": "healthcare"
-            },
-            {
-              "id": "finance"
-            },
-            {
-              "id": "programming_tools"
-            },
-            {
-              "id": "socialmedia"
-            },
-            {
-              "id": "marketing_tools"
-            },
-            {
-              "id": "education"
-            },
-            {
-              "id": "real_estate"
-            },
-            {
-              "id": "entertainment"
-            },
-            {
-              "id": "government"
-            },
-            {
-              "id": "consulting"
-            }
-          ]
+          "id": "twitter_username",
+          "year": 2021,
+          "template": "text"
         },
         {
-          "id": "industry_sector",
-          "template": "others",
-          "matchTags": [
-            "industry_sectors"
-          ]
-        },
-        {
-          "id": "country",
-          "template": "country"
+          "id": "how_did_user_find_out_about_the_survey",
+          "template": "text"
         }
       ]
     }
