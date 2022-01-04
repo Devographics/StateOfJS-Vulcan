@@ -95,23 +95,23 @@ outline:
 
   ### TOOLS ###
 
-  - id: javascript_flavors
-    template: tool
-    slug: tools
-    questions:
-      - id: typescript
-      - id: reason
-      - id: elm
-      - id: clojurescript
-      - id: purescript
-      - id: javascript_flavors
-        intlId: tools.other_tools
-        template: project
-        sectionSlug: tools_others
-      - id: javascript_flavors
-        intlId: tools.happiness
-        sectionSlug: happiness
-        template: happiness
+  # - id: javascript_flavors
+  #   template: tool
+  #   slug: tools
+  #   questions:
+  #     - id: typescript
+  #     - id: reason
+  #     - id: elm
+  #     - id: clojurescript
+  #     - id: purescript
+  #     - id: javascript_flavors
+  #       intlId: tools.other_tools
+  #       template: project
+  #       sectionSlug: tools_others
+  #     - id: javascript_flavors
+  #       intlId: tools.happiness
+  #       sectionSlug: happiness
+  #       template: happiness
 
   - id: front_end_frameworks
     template: tool
@@ -128,6 +128,8 @@ outline:
       - id: litelement
       - id: stimulus
       - id: solid
+        year: 2021
+      - id: htmx
         year: 2021
       - id: front_end_frameworks
         intlId: tools.other_tools
@@ -178,6 +180,8 @@ outline:
       # - id: egg
       - id: redwood
         year: 2021
+      - id: astro
+        year: 2021
 
       # - id: sails
       # - id: feathers
@@ -211,6 +215,8 @@ outline:
       - id: testing_library
       - id: playwright
       - id: webdriverio
+      - id: vitest
+        year: 2021
       # - id: enzyme
       - id: testing
         intlId: tools.other_tools
@@ -221,39 +227,39 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  # - id: graphics_animation
-  #   template: tool
-  #   slug: tools
-  #   questions:
-  #     # charts
-  #     - id: echarts
-  #     - id: chartjs
-  #     - id: d3
-  #     # - id: recharts
-  #     # - id: visx
-  #     # - id: nivo
+  - id: graphics_animation
+    template: tool
+    slug: tools
+    questions:
+      # charts
+      - id: echarts
+      - id: chartjs
+      - id: d3
+      # - id: recharts
+      - id: visx
+      - id: nivo
 
-  #     # drawing/3D
-  #     - id: threejs
-  #     - id: pixijs
-  #     - id: fabricjs
+      # drawing/3D
+      - id: threejs
+      - id: pixijs
+      - id: fabricjs
 
-  #     # animation
-  #     - id: animejs
-  #     - id: lottie
-  #     - id: greensock
-  #     - id: popmotion
-  #     # - id: motion
-  #     # - id: velocity
+      # animation
+      - id: animejs
+      - id: lottie
+      - id: greensock
+      - id: popmotion
+      # - id: motion
+      # - id: velocity
 
-  #     - id: graphics_animation
-  #       intlId: tools.other_tools
-  #       template: project
-  #       sectionSlug: tools_others
-  #     - id: graphics_animation
-  #       intlId: tools.happiness
-  #       template: happiness
-  #       sectionSlug: happiness
+      - id: graphics_animation
+        intlId: tools.other_tools
+        template: project
+        sectionSlug: tools_others
+      - id: graphics_animation
+        intlId: tools.happiness
+        template: happiness
+        sectionSlug: happiness
 
   - id: build_tools
     template: tool
@@ -329,6 +335,7 @@ outline:
           - id: jquery
           - id: rxjs
           - id: axios
+          - id: d3
       - id: libraries
         template: project
 
@@ -338,12 +345,15 @@ outline:
           - id: npm
           - id: yarn
           - id: pnpm
+            year: 2021
           - id: babel
           - id: lerna
           - id: prettier
           - id: eslint
           - id: nvm
           - id: 'n'
+          - id: nx
+          - id: zx
       - id: utilities
         template: project
 
@@ -369,21 +379,64 @@ outline:
       # - id: package_registries
       #   template: others
 
-      - id: text_editors
+      # - id: text_editors
+      #   template: multiple
+      #   options:
+      #     - id: visual_studio
+      #     - id: sublime_text
+      #     - id: atom
+      #     - id: vim
+      #     - id: emacs
+      #     - id: webstorm
+      #     - id: nova
+      #     - id: phpstorm
+      #     - id: notepad
+      # - id: text_editors
+      #   template: others
+      #   matchTags: [text_editors]
+
+      - id: javascript_flavors
         template: multiple
         options:
-          - id: visual_studio
-          - id: sublime_text
-          - id: atom
-          - id: vim
-          - id: emacs
-          - id: webstorm
-          - id: nova
-          - id: phpstorm
-          - id: notepad
-      - id: text_editors
+          - id: typescript
+          - id: reason
+          - id: rescript
+          - id: flow
+          - id: elm
+          - id: clojurescript
+          - id: purescript
+          - id: coffeescript
+          - id: imba
+      - id: javascript_flavors
         template: others
-        matchTags: [text_editors]
+        matchTags: [languages]
+
+      - id: non_js_languages
+        template: multiple
+        options:
+          - id: php
+          - id: ruby
+          - id: python
+          - id: go
+          - id: rust
+          - id: java
+          - id: c_cplusplus
+          - id: objective_c
+          - id: scala
+          - id: swift
+          - id: csharp
+          - id: dotnet
+          - id: haskell
+          - id: ocaml
+          - id: dart
+          - id: kotlin
+          - id: elixir
+          - id: bash
+          - id: clojure
+          - id: elm
+      - id: non_js_languages
+        template: others
+        matchTags: [languages]
 
       - id: browsers
         template: multiple
@@ -405,38 +458,57 @@ outline:
           - id: ucbrowser
           - id: opera
           - id: polypane
-      - id: browsers
-        template: others
-        matchTags: [browsers]
 
-      - id: non_js_languages
+      - id: form_factors
         template: multiple
         options:
-          - id: php
-          - id: ruby
-          - id: python
-          - id: go
-          - id: rust
-          - id: java
-          - id: c_cplusplus
-          - id: objective_c
-          - id: scala
-          - id: swift
-          - id: csharp
-          - id: dotnet
-          - id: haskell
-          - id: ocaml
-          - id: dart
-          - id: kotlin
-      - id: non_js_languages
-        template: others
-        matchTags: [languages]
+          - id: desktop
+          - id: smartphone
+          - id: feature_phone
+          - id: tablet
+          - id: smart_watch
+          - id: tv
+          - id: gaming_console
+          - id: screen_reader
+          - id: print
+          - id: keyboard_only
+          - id: testing_tools
+          - id: vision_simulator
+
+        # option 1 : stored as [first option, second option, winning option] for each round
+      # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
+      - id: tool_evaluation
+        year: 2021
+        template: bracket
+        options:
+          - id: learning_curve_documentation # is a tool is easy to learn?
+          - id: momentum_popularity # does it have a lot of hype?
+          - id: user_base_size # is it a well-established option?
+          - id: developer_experience_tooling # does it provide a good developer experience?
+          - id: performance_user_experience # does it provide a good user experience?
+          - id: creator_team # is it backed by a well-known/well-funded team?
+          - id: accessibility_features # does it implement accessibility features well?
+          - id: community_inclusivity # does it have a good community?
 
   ### RESOURCES ###
 
   - id: resources
     slug: resources
     questions:
+
+      - id: first_steps
+        template: multiple
+        options:
+          - id: books
+          - id: videos
+          - id: courses_free
+          - id: courses_paid
+          - id: school
+          - id: podcasts
+          - id: bootcamp
+          - id: on_the_job
+          - id: mentoring
+          - id: self_directed
 
       - id: blogs_news_magazines
         template: multiple
@@ -451,6 +523,8 @@ outline:
           - id: daily_js
           - id: echo_js
           - id: front_end_front
+          - id: frontend_horse
+          - id: frontend_focus
           - id: js_weekly
           - id: bestofjs
           - id: overreacted
@@ -470,13 +544,14 @@ outline:
           - id: freecodecamp
           - id: codecademy
           - id: levelup
-          - id: wesbos
+          - id: wes_bos
           - id: frontendmasters
           - id: pluralsight
           - id: designcode
           - id: udemy
           - id: egghead
           - id: newline
+          - id: web_dev
       - id: sites_courses
         template: others
         matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
@@ -513,6 +588,11 @@ outline:
         template: others
         matchTags: [podcasts, people, sites]
 
+      - id: people
+        year: 2021
+        template: others
+        matchTags: [people, sites, youtube]
+
   ### OPINIONS ###
 
   - id: opinions
@@ -523,19 +603,50 @@ outline:
         template: opinion
       - id: building_js_apps_overly_complex
         template: opinion
-      - id: js_over_used_online
-        template: opinion
-      - id: enjoy_building_js_apps
-        template: opinion
-      - id: would_like_js_to_be_main_lang
-        template: opinion
+      # - id: js_over_used_online
+      #   template: opinion
+      # - id: enjoy_building_js_apps
+      #   template: opinion
+      # - id: would_like_js_to_be_main_lang
+      #   template: opinion
       - id: js_ecosystem_changing_to_fast
         template: opinion
 
-      - id: missing_from_js
+      - id: js_pain_points
+        year: 2021
+        template: bracket
+        options:
+          - id: browser_interoperability
+          - id: animations
+          - id: state_management
+          - id: form_handling
+          - id: performance_issues
+          - id: responsive_design
+          - id: form_elements_styling
+          - id: performance_issues
+      - id: js_pain_points
+        year: 2021
         sectionSlug: opinions_others
-        template: others_textarea
-        matchTags: [missing_features]
+        template: others
+        matchTags: [css_pain_points, css_missing_features]
+
+      - id: currently_missing_from_js
+        year: 2021
+        optionsIntlId: features
+        template: bracket
+        options: 
+          - id: static_typing
+          - id: standard_library
+          - id: pattern_matching
+          - id: pipe_operator
+          - id: decorators
+          - id: browser_support
+          - id: immutable_data_structures
+          - id: functions # TODO: clarify this
+      - id: currently_missing_from_js
+        sectionSlug: opinions_others
+        template: others
+        matchTags: [js_missing_features]
 
       - id: state_of_the_web
         template: happiness
