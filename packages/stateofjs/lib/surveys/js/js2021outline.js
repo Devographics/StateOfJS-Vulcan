@@ -237,7 +237,7 @@ export default {
           "year": 2021
         },
         {
-          "id": "blitzjs",
+          "id": "blitz",
           "year": 2021
         },
         {
@@ -316,6 +316,56 @@ export default {
       ]
     },
     {
+      "id": "mobile_desktop",
+      "template": "tool",
+      "slug": "tools",
+      "questions": [
+        {
+          "id": "electron"
+        },
+        {
+          "id": "reactnative"
+        },
+        {
+          "id": "nativeapps"
+        },
+        {
+          "id": "cordova"
+        },
+        {
+          "id": "ionic"
+        },
+        {
+          "id": "capacitor"
+        },
+        {
+          "id": "nwjs"
+        },
+        {
+          "id": "expo"
+        },
+        {
+          "id": "quasar"
+        },
+        {
+          "id": "tauri",
+          "year": 2021
+        },
+        {
+          "id": "mobile_desktop",
+          "intlId": "tools.other_tools",
+          "template": "project",
+          "sectionSlug": "tools_others"
+        },
+        {
+          "id": "mobile_desktop",
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
+        }
+      ]
+    },
+    {
       "id": "build_tools",
       "template": "tool",
       "slug": "tools",
@@ -377,52 +427,156 @@ export default {
       ]
     },
     {
-      "id": "mobile_desktop",
-      "template": "tool",
-      "slug": "tools",
+      "id": "tooling",
+      "slug": "tools_others",
       "questions": [
         {
-          "id": "electron"
+          "id": "utilities",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "babel"
+            },
+            {
+              "id": "prettier"
+            },
+            {
+              "id": "eslint"
+            },
+            {
+              "id": "nvm"
+            },
+            {
+              "id": "n"
+            },
+            {
+              "id": "nx"
+            },
+            {
+              "id": "zx",
+              "year": 2021
+            },
+            {
+              "id": "volta",
+              "year": 2021
+            }
+          ]
         },
         {
-          "id": "reactnative"
+          "id": "utilities",
+          "template": "project"
         },
         {
-          "id": "nativeapps"
+          "id": "runtimes",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "browser_environment"
+            },
+            {
+              "id": "node"
+            },
+            {
+              "id": "deno"
+            },
+            {
+              "id": "chakracore"
+            },
+            {
+              "id": "hermes"
+            },
+            {
+              "id": "service_workers",
+              "year": 2021
+            },
+            {
+              "id": "serverless_workers",
+              "year": 2021
+            }
+          ]
         },
         {
-          "id": "cordova"
+          "id": "runtimes",
+          "template": "others",
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
         },
         {
-          "id": "ionic"
+          "id": "package_management",
+          "year": 2021,
+          "template": "multiple",
+          "options": [
+            {
+              "id": "npm"
+            },
+            {
+              "id": "pnpm"
+            },
+            {
+              "id": "yarn"
+            }
+          ]
         },
         {
-          "id": "capacitor"
+          "id": "package_management",
+          "year": 2021,
+          "template": "project"
         },
         {
-          "id": "nwjs"
+          "id": "package_registries",
+          "year": 2021,
+          "template": "multiple",
+          "options": [
+            {
+              "id": "npm"
+            },
+            {
+              "id": "github"
+            },
+            {
+              "id": "jspm"
+            },
+            {
+              "id": "private_registry"
+            }
+          ]
         },
         {
-          "id": "expo"
+          "id": "package_registries",
+          "year": 2021,
+          "template": "project"
         },
         {
-          "id": "quasar"
+          "id": "monorepo_tools",
+          "year": 2021,
+          "template": "multiple",
+          "options": [
+            {
+              "id": "rush"
+            },
+            {
+              "id": "turborepo"
+            },
+            {
+              "id": "yarn"
+            },
+            {
+              "id": "lerna"
+            },
+            {
+              "id": "npm"
+            },
+            {
+              "id": "nx"
+            }
+          ]
         },
         {
-          "id": "tauri",
-          "year": 2021
-        },
-        {
-          "id": "mobile_desktop",
-          "intlId": "tools.other_tools",
-          "template": "project",
-          "sectionSlug": "tools_others"
-        },
-        {
-          "id": "mobile_desktop",
-          "intlId": "tools.happiness",
-          "template": "happiness",
-          "sectionSlug": "happiness"
+          "id": "monorepo_tools",
+          "year": 2021,
+          "template": "project"
         }
       ]
     },
@@ -469,6 +623,9 @@ export default {
             },
             {
               "id": "d3"
+            },
+            {
+              "id": "stdlib"
             }
           ]
         },
@@ -477,92 +634,18 @@ export default {
           "template": "project"
         },
         {
-          "id": "utilities",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "npm"
-            },
-            {
-              "id": "yarn"
-            },
-            {
-              "id": "pnpm",
-              "year": 2021
-            },
-            {
-              "id": "babel"
-            },
-            {
-              "id": "lerna"
-            },
-            {
-              "id": "prettier"
-            },
-            {
-              "id": "eslint"
-            },
-            {
-              "id": "nvm"
-            },
-            {
-              "id": "n"
-            },
-            {
-              "id": "nx"
-            },
-            {
-              "id": "zx",
-              "year": 2021
-            }
-          ]
-        },
-        {
-          "id": "utilities",
-          "template": "project"
-        },
-        {
-          "id": "runtimes",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "browser_environment"
-            },
-            {
-              "id": "node"
-            },
-            {
-              "id": "deno"
-            },
-            {
-              "id": "chakracore"
-            },
-            {
-              "id": "hermes"
-            }
-          ]
-        },
-        {
-          "id": "runtimes",
-          "template": "others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
-        },
-        {
           "id": "javascript_flavors",
+          "year": 2021,
           "template": "multiple",
           "options": [
+            {
+              "id": "javascript"
+            },
             {
               "id": "typescript"
             },
             {
               "id": "reason"
-            },
-            {
-              "id": "rescript",
-              "year": 2021
             },
             {
               "id": "flow"
@@ -580,13 +663,16 @@ export default {
               "id": "coffeescript"
             },
             {
-              "id": "imba",
-              "year": 2021
+              "id": "rescript"
+            },
+            {
+              "id": "imba"
             }
           ]
         },
         {
           "id": "javascript_flavors",
+          "year": 2021,
           "template": "others",
           "matchTags": [
             "languages"
@@ -652,6 +738,9 @@ export default {
             },
             {
               "id": "elm"
+            },
+            {
+              "id": "julia"
             }
           ]
         },
@@ -1090,31 +1179,28 @@ export default {
           "template": "bracket",
           "options": [
             {
-              "id": "browser_interoperability"
-            },
-            {
-              "id": "animations"
-            },
-            {
               "id": "state_management"
             },
             {
-              "id": "form_handling"
+              "id": "architecture"
             },
             {
-              "id": "performance_issues"
+              "id": "consuming_packages"
             },
             {
-              "id": "browser_apis"
+              "id": "debugging"
+            },
+            {
+              "id": "dependencies"
             },
             {
               "id": "async_code"
             },
             {
-              "id": "managing_imports"
+              "id": "writing_modules"
             },
             {
-              "id": "dates"
+              "id": "date_management"
             }
           ]
         },
@@ -1150,13 +1236,13 @@ export default {
               "id": "decorators"
             },
             {
-              "id": "browser_support"
-            },
-            {
               "id": "immutable_data_structures"
             },
             {
-              "id": "better_functional_programming"
+              "id": "better_date_management"
+            },
+            {
+              "id": "observable"
             }
           ]
         },

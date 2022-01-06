@@ -215,7 +215,7 @@ outline:
         year: 2021
       - id: eleventy
         year: 2021
-      - id: blitzjs
+      - id: blitz
         year: 2021
       - id: remix
         year: 2021
@@ -417,6 +417,7 @@ outline:
           - id: rush
           - id: turborepo
           - id: yarn
+          - id: yalc
           - id: lerna
           - id: npm
           - id: nx
@@ -454,7 +455,7 @@ outline:
         year: 2021
         template: multiple
         options:
-          - id: javascript
+          - id: plain_javascript
           - id: typescript
           - id: reason
           - id: flow
@@ -483,7 +484,6 @@ outline:
           - id: scala
           - id: swift
           - id: csharp
-          # - id: dotnet
           - id: haskell
           - id: ocaml
           - id: dart
@@ -492,6 +492,7 @@ outline:
           - id: bash
           - id: clojure
           - id: elm
+          - id: julia
       - id: non_js_languages
         template: others
         matchTags: [languages]
