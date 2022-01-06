@@ -8,30 +8,28 @@ prettySlug: state-of-js
 hashtag: StateOfJS
 shareUrl: https://stateofjs.com
 # resultsUrl: https://2021.stateofjs.com/
-name: 'State of JavaScript'
+name: "State of JavaScript"
 year: 2021
 status: 1 # closed
-imageUrl: 'stateofjs2021.png'
+imageUrl: "stateofjs2021.png"
 bgColor: rgb(34, 36, 41)
 textColor: rgb(224, 228, 228)
 linkColor: rgb(65, 199, 199)
 hoverColor: rgb(254, 106, 106)
 outline:
+  ######################################################
+  #########              FEATURES              #########
+  ######################################################
 
-######################################################
-#########              FEATURES              #########
-######################################################
-
-# For each question in this section, possible answers are:
-# - Never heard of it
-# - Know about it
-# - Have used it
+  # For each question in this section, possible answers are:
+  # - Never heard of it
+  # - Know about it
+  # - Have used it
 
   - id: language
     template: feature
     slug: features
     questions:
-
       # removed in 2021
       # - id: async_await
       # - id: promises
@@ -78,7 +76,6 @@ outline:
     template: feature
     slug: features
     questions:
-
       # removed in 2021
       # - id: local_storage
       # - id: webvr
@@ -116,16 +113,16 @@ outline:
       - id: pwa
       - id: wasm
 
-######################################################
-#########                TOOLS               #########
-######################################################
+  ######################################################
+  #########                TOOLS               #########
+  ######################################################
 
-# For each question in this section, possible answers are:
-# - Never heard of it
-# - Have heard, but not interested
-# - Have heard, and interested in learning
-# - Have used, but wouldn't use again
-# - Have used, and would use again
+  # For each question in this section, possible answers are:
+  # - Never heard of it
+  # - Have heard, but not interested
+  # - Have heard, and interested in learning
+  # - Have used, but wouldn't use again
+  # - Have used, and would use again
 
   # removed in 2021
   # - id: javascript_flavors
@@ -350,14 +347,89 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-######################################################
-#########             OTHER TOOLS            #########
-######################################################
+  ######################################################
+  #########               TOOLING              #########
+  ######################################################
+
+  - id: tooling
+    slug: tools_others
+    questions:
+      - id: utilities
+        template: multiple
+        options:
+          - id: babel
+          - id: prettier
+          - id: eslint
+          - id: nvm
+          - id: "n"
+          - id: nx
+          - id: zx
+            year: 2021
+          - id: volta
+            year: 2021
+      - id: utilities
+        template: project
+
+      - id: runtimes
+        template: multiple
+        options:
+          - id: browser_environment
+          - id: node
+          - id: deno
+          - id: chakracore
+          - id: hermes
+          - id: service_workers
+            year: 2021
+          - id: serverless_workers
+            year: 2021
+      - id: runtimes
+        template: others
+        matchTags: [libraries, other]
+
+      - id: package_management
+        year: 2021
+        template: multiple
+        options:
+          - id: npm
+          - id: pnpm
+          - id: yarn
+      - id: package_management
+        year: 2021
+        template: others
+
+      - id: package_registries
+        year: 2021
+        template: multiple
+        options:
+          - id: npm
+          - id: github
+          - id: jspm
+          - id: private_registry
+      - id: package_registries
+        year: 2021
+        template: others
+
+      - id: monorepo_tools
+        year: 2021
+        template: multiple
+        options:
+          - id: rush
+          - id: turborepo
+          - id: yarn_workspaces
+          - id: lerna
+          - id: npm_workspaces
+          - id: nx
+      - id: monorepo_tools
+        year: 2021
+        template: project
+
+  ######################################################
+  #########             OTHER TOOLS            #########
+  ######################################################
 
   - id: other_tools
     slug: tools_others
     questions:
-
       - id: libraries
         template: multiple
         options:
@@ -376,79 +448,22 @@ outline:
       - id: libraries
         template: project
 
-      - id: utilities
-        template: multiple
-        options:
-          - id: npm
-          - id: yarn
-          - id: babel
-          - id: lerna
-          - id: prettier
-          - id: eslint
-          - id: nvm
-          - id: 'n'
-          - id: nx
-          - id: rush
-            year: 2021
-          - id: pnpm
-            year: 2021
-          - id: zx
-            year: 2021
-          - id: volta
-            year: 2021
-      - id: utilities
-        template: project
-
-      - id: monorepo_tools
-        template: multiple
-        options:
-          - id: rush
-          - id: turborepo
-          - id: yarn_workspaces
-          - id: lerna
-          - id: npm_workspaces
-          - id: nx
-      - id: monorepo_tools
-        template: project
-
-      - id: runtimes
-        template: multiple
-        options: 
-            - id: browser_environment
-            - id: node
-            - id: deno
-            - id: chakracore
-            - id: hermes
-      - id: runtimes
-        template: others
-        matchTags: [libraries, other]
-
-      - id: package_registries
-        template: multiple
-        options: 
-            - id: npm
-            - id: github
-            - id: jspm
-            - id: private_registry
-      - id: package_registries
-        template: others
-
       - id: javascript_flavors
+        year: 2021
         template: multiple
         options:
           - id: javascript
           - id: typescript
           - id: reason
-          - id: rescript
-            year: 2021
           - id: flow
           - id: elm
           - id: clojurescript
           - id: purescript
           - id: coffeescript
+          - id: rescript
           - id: imba
-            year: 2021
       - id: javascript_flavors
+        year: 2021
         template: others
         matchTags: [languages]
 
@@ -529,14 +544,13 @@ outline:
           - id: accessibility_features # does it implement accessibility features well?
           - id: community_inclusivity # does it have a good community?
 
-######################################################
-#########             RESOURCES              #########
-######################################################
+  ######################################################
+  #########             RESOURCES              #########
+  ######################################################
 
   - id: resources
     slug: resources
     questions:
-
       - id: first_steps
         template: multiple
         options:
@@ -634,14 +648,13 @@ outline:
         template: others
         matchTags: [people, sites, youtube]
 
-######################################################
-#########              OPINIONS              #########
-######################################################
+  ######################################################
+  #########              OPINIONS              #########
+  ######################################################
 
   - id: opinions
     slug: opinions
     questions:
-
       # removed in 2021
       # - id: js_over_used_online
       #   template: opinion
@@ -665,7 +678,7 @@ outline:
           - id: architecture
           - id: consuming_packages
           - id: debugging
-          - id: performance_issues
+          - id: dependencies
           - id: async_code
           - id: writing_modules
           - id: date_management
@@ -679,7 +692,7 @@ outline:
         year: 2021
         optionsIntlId: features
         template: bracket
-        options: 
+        options:
           - id: static_typing
           - id: standard_library
           - id: pattern_matching
@@ -700,14 +713,13 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-######################################################
-#########            DEMOGRAPHICS            #########
-######################################################
+  ######################################################
+  #########            DEMOGRAPHICS            #########
+  ######################################################
 
   - id: user_info
     slug: user_info
     questions:
-
       - id: age
         template: single
         options:
@@ -755,7 +767,7 @@ outline:
 
       - id: higher_education_degree
         template: single
-        options: 
+        options:
           - id: no_degree
           - id: yes_related
           - id: yes_unrelated
@@ -797,7 +809,7 @@ outline:
           - id: mobility_impairments
           - id: cognitive_impairments
           - id: not_listed
-          
+
       - id: disability_status
         year: 2021
         template: others
@@ -809,6 +821,6 @@ outline:
       - id: twitter_username
         year: 2021
         template: text
-        
+
       - id: how_did_user_find_out_about_the_survey
         template: text
