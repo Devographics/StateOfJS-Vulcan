@@ -291,6 +291,31 @@ outline:
   #       template: happiness
   #       sectionSlug: happiness
 
+  - id: mobile_desktop
+    template: tool
+    slug: tools
+    questions:
+      - id: electron
+      - id: reactnative
+      - id: nativeapps
+      - id: cordova
+      - id: ionic
+      - id: capacitor
+      - id: nwjs
+      - id: expo
+      - id: quasar
+      - id: tauri
+        year: 2021
+      - id: mobile_desktop
+        intlId: tools.other_tools
+        template: project
+        sectionSlug: tools_others
+      - id: mobile_desktop
+        intlId: tools.happiness
+        template: happiness
+        sectionSlug: happiness
+
+
   - id: build_tools
     template: tool
     slug: tools
@@ -319,30 +344,6 @@ outline:
         template: project
         sectionSlug: tools_others
       - id: build_tools
-        intlId: tools.happiness
-        template: happiness
-        sectionSlug: happiness
-
-  - id: mobile_desktop
-    template: tool
-    slug: tools
-    questions:
-      - id: electron
-      - id: reactnative
-      - id: nativeapps
-      - id: cordova
-      - id: ionic
-      - id: capacitor
-      - id: nwjs
-      - id: expo
-      - id: quasar
-      - id: tauri
-        year: 2021
-      - id: mobile_desktop
-        intlId: tools.other_tools
-        template: project
-        sectionSlug: tools_others
-      - id: mobile_desktop
         intlId: tools.happiness
         template: happiness
         sectionSlug: happiness
@@ -395,7 +396,7 @@ outline:
           - id: yarn
       - id: package_management
         year: 2021
-        template: others
+        template: project
 
       - id: package_registries
         year: 2021
@@ -407,7 +408,7 @@ outline:
           - id: private_registry
       - id: package_registries
         year: 2021
-        template: others
+        template: project
 
       - id: monorepo_tools
         year: 2021
@@ -415,9 +416,9 @@ outline:
         options:
           - id: rush
           - id: turborepo
-          - id: yarn_workspaces
+          - id: yarn
           - id: lerna
-          - id: npm_workspaces
+          - id: npm
           - id: nx
       - id: monorepo_tools
         year: 2021
@@ -445,6 +446,7 @@ outline:
           - id: rxjs
           - id: axios
           - id: d3
+          - id: stdlib
       - id: libraries
         template: project
 
@@ -698,9 +700,10 @@ outline:
           - id: pattern_matching
           - id: pipe_operator
           - id: decorators
-          - id: browser_support
           - id: immutable_data_structures
           - id: better_date_management
+          - id: observable
+
       - id: currently_missing_from_js
         sectionSlug: opinions_others
         template: others
