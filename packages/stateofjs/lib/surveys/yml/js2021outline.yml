@@ -1,11 +1,4 @@
-# the survey outline
-
-# First level: blocks
-# Second level: questions (will use the block's question template if no template is specified)
-
 ---
-### FEATURES ###
-
 slug: js2021
 normalizationId: stateofjs
 context: state_of_js
@@ -25,28 +18,37 @@ linkColor: rgb(65, 199, 199)
 hoverColor: rgb(254, 106, 106)
 outline:
 
-  # - id: syntax
-  #   template: feature
-  #   slug: features
-  #   questions:
+######################################################
+#########              FEATURES              #########
+######################################################
+
+# For each question in this section, possible answers are:
+# - Never heard of it
+# - Know about it
+# - Have used it
 
   - id: language
     template: feature
     slug: features
     questions:
-      - id: proxies
+
+      # removed in 2021
       # - id: async_await
       # - id: promises
       # - id: decorators
-      - id: promise_all_settled
-      - id: dynamic_import
       # - id: destructuring
       # - id: spread_operator
       # - id: arrow_functions
+
+      - id: proxies
+      - id: promise_all_settled
+      - id: dynamic_import
       - id: nullish_coalescing
       - id: optional_chaining
       - id: private_fields
       - id: big_int
+
+      # new in 2021
       - id: numeric_separators
         year: 2021
       - id: string_replace_all
@@ -62,6 +64,7 @@ outline:
       - id: top_level_await
         year: 2021
 
+  # removed in 2021
   # - id: data_structures
   #   template: feature
   #   slug: features
@@ -75,19 +78,24 @@ outline:
     template: feature
     slug: features
     questions:
-      - id: service_workers
+
+      # removed in 2021
       # - id: local_storage
+      # - id: webvr
+      # - id: fetch
+
+      - id: service_workers
       - id: intl
       - id: web_audio
       - id: webgl
       - id: web_animations
       - id: webrtc
       - id: web_speech
-      # - id: webvr
       - id: websocket
-      # - id: fetch
       - id: custom_elements
       - id: shadow_dom
+
+      # new in 2021
       - id: page_visibility
         year: 2021
       - id: broadcast_channel
@@ -108,19 +116,18 @@ outline:
       - id: pwa
       - id: wasm
 
-  # - id: patterns
-  #   template: pattern
-  #   slug: patterns
-  #   questions:
-  #     - title: Object-Oriented Programming
-  #       id: object_oriented_programming
-  #     - title: Functional Programming
-  #       id: functional_programming
-  #     - title: Reactive Programming
-  #       id: reactive_programming
+######################################################
+#########                TOOLS               #########
+######################################################
 
-  ### TOOLS ###
+# For each question in this section, possible answers are:
+# - Never heard of it
+# - Have heard, but not interested
+# - Have heard, and interested in learning
+# - Have used, but wouldn't use again
+# - Have used, and would use again
 
+  # removed in 2021
   # - id: javascript_flavors
   #   template: tool
   #   slug: tools
@@ -154,8 +161,6 @@ outline:
       - id: stimulus
       - id: solid
         year: 2021
-      # - id: htmx
-      #   year: 2021
       - id: front_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -165,6 +170,7 @@ outline:
         template: happiness
         sectionSlug: happiness
 
+  # removed in 2021
   # - id: datalayer
   #   template: tool
   #   slug: tools
@@ -192,16 +198,20 @@ outline:
     template: tool
     slug: tools
     questions:
-      - id: express
-      - id: nextjs
+      # removed in 2021
       # - id: koa
       # - id: meteor
+      # - id: hapi
+
+      - id: express
+      - id: nextjs
       - id: nuxt
       - id: gatsby
       - id: nest
       - id: strapi
       - id: fastify
-      # - id: hapi
+
+      # new in 2021
       - id: redwood
         year: 2021
       - id: astro
@@ -214,6 +224,7 @@ outline:
         year: 2021
       - id: sveltekit
         year: 2021
+
       - id: back_end_frameworks
         intlId: tools.other_tools
         template: project
@@ -239,7 +250,6 @@ outline:
       - id: webdriverio
       - id: vitest
         year: 2021
-      # - id: enzyme
       - id: testing
         intlId: tools.other_tools
         template: project
@@ -249,6 +259,7 @@ outline:
         template: happiness
         sectionSlug: happiness
 
+  # under consideration for 2022?
   # - id: graphics_animation
   #   template: tool
   #   slug: tools
@@ -291,19 +302,21 @@ outline:
       - id: parcel
       - id: gulp
       - id: rollup
-      # - id: fusebox
       - id: browserify
       - id: tsc
       - id: rome
       - id: snowpack
       - id: swc
       - id: esbuild
+
+      # new in 2021
       - id: vite
         year: 2021
       - id: wmr
         year: 2021
       - id: turborepo
         year: 2021
+
       - id: build_tools
         intlId: tools.other_tools
         template: project
@@ -337,7 +350,9 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  ### OTHER TOOLS ###
+######################################################
+#########             OTHER TOOLS            #########
+######################################################
 
   - id: other_tools
     slug: tools_others
@@ -366,8 +381,6 @@ outline:
         options:
           - id: npm
           - id: yarn
-          - id: pnpm
-            year: 2021
           - id: babel
           - id: lerna
           - id: prettier
@@ -375,9 +388,27 @@ outline:
           - id: nvm
           - id: 'n'
           - id: nx
+          - id: rush
+            year: 2021
+          - id: pnpm
+            year: 2021
           - id: zx
             year: 2021
+          - id: volta
+            year: 2021
       - id: utilities
+        template: project
+
+      - id: monorepo_tools
+        template: multiple
+        options:
+          - id: rush
+          - id: turborepo
+          - id: yarn_workspaces
+          - id: lerna
+          - id: npm_workspaces
+          - id: nx
+      - id: monorepo_tools
         template: project
 
       - id: runtimes
@@ -392,35 +423,20 @@ outline:
         template: others
         matchTags: [libraries, other]
 
-      # - id: package_registries
-      #   template: multiple
-      #   options: 
-      #       - id: npm
-      #       - id: github
-      #       - id: jspm
-      #       - id: private_registry
-      # - id: package_registries
-      #   template: others
-
-      # - id: text_editors
-      #   template: multiple
-      #   options:
-      #     - id: visual_studio
-      #     - id: sublime_text
-      #     - id: atom
-      #     - id: vim
-      #     - id: emacs
-      #     - id: webstorm
-      #     - id: nova
-      #     - id: phpstorm
-      #     - id: notepad
-      # - id: text_editors
-      #   template: others
-      #   matchTags: [text_editors]
+      - id: package_registries
+        template: multiple
+        options: 
+            - id: npm
+            - id: github
+            - id: jspm
+            - id: private_registry
+      - id: package_registries
+        template: others
 
       - id: javascript_flavors
         template: multiple
         options:
+          - id: javascript
           - id: typescript
           - id: reason
           - id: rescript
@@ -500,8 +516,6 @@ outline:
           - id: testing_tools
           - id: vision_simulator
 
-        # option 1 : stored as [first option, second option, winning option] for each round
-      # e.g. [[0,5,5], [3,6,3], [1,7,1], [2,4,2], [5,3,5], [1,2,1], [5,1,1]]
       - id: tool_evaluation
         year: 2021
         template: bracket
@@ -515,7 +529,9 @@ outline:
           - id: accessibility_features # does it implement accessibility features well?
           - id: community_inclusivity # does it have a good community?
 
-  ### RESOURCES ###
+######################################################
+#########             RESOURCES              #########
+######################################################
 
   - id: resources
     slug: resources
@@ -618,22 +634,26 @@ outline:
         template: others
         matchTags: [people, sites, youtube]
 
-  ### OPINIONS ###
+######################################################
+#########              OPINIONS              #########
+######################################################
 
   - id: opinions
     slug: opinions
     questions:
 
-      - id: js_moving_in_right_direction
-        template: opinion
-      - id: building_js_apps_overly_complex
-        template: opinion
+      # removed in 2021
       # - id: js_over_used_online
       #   template: opinion
       # - id: enjoy_building_js_apps
       #   template: opinion
       # - id: would_like_js_to_be_main_lang
       #   template: opinion
+
+      - id: js_moving_in_right_direction
+        template: opinion
+      - id: building_js_apps_overly_complex
+        template: opinion
       - id: js_ecosystem_changing_to_fast
         template: opinion
 
@@ -641,14 +661,14 @@ outline:
         year: 2021
         template: bracket
         options:
-          - id: browser_interoperability
-          - id: animations
           - id: state_management
-          - id: form_handling
+          - id: architecture
+          - id: consuming_packages
+          - id: debugging
           - id: performance_issues
-          - id: browser_apis
           - id: async_code
-          - id: managing_imports
+          - id: writing_modules
+          - id: date_management
       - id: js_pain_points
         year: 2021
         sectionSlug: opinions_others
@@ -667,7 +687,7 @@ outline:
           - id: decorators
           - id: browser_support
           - id: immutable_data_structures
-          - id: functions # TODO: clarify this
+          - id: better_date_management
       - id: currently_missing_from_js
         sectionSlug: opinions_others
         template: others
@@ -680,7 +700,9 @@ outline:
         template: happiness
         sectionSlug: happiness
 
-  ### DEMOGRAPHICS ###
+######################################################
+#########            DEMOGRAPHICS            #########
+######################################################
 
   - id: user_info
     slug: user_info

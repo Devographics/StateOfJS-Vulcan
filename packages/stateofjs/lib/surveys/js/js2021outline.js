@@ -27,9 +27,6 @@ export default {
           "id": "proxies"
         },
         {
-          "id": "decorators"
-        },
-        {
           "id": "promise_all_settled"
         },
         {
@@ -1111,10 +1108,13 @@ export default {
               "id": "browser_apis"
             },
             {
-              "id": "form_elements_styling"
+              "id": "async_code"
             },
             {
-              "id": "performance_issues"
+              "id": "managing_imports"
+            },
+            {
+              "id": "dates"
             }
           ]
         },
@@ -1156,7 +1156,7 @@ export default {
               "id": "immutable_data_structures"
             },
             {
-              "id": "functions"
+              "id": "better_functional_programming"
             }
           ]
         },
