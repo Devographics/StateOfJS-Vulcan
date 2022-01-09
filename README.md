@@ -2,6 +2,18 @@
 
 Built with Vulcan.js
 
+## Get started
+
+```sh
+nvm use
+meteor npm i
+meteor npm run start
+```
+
+"/account" to access the login/signup form.
+Create a first user.
+First user will automatically be an admin (`isAdmin: true` in the database)
+
 ## Sample `settings.json`
 
 - You can remove the `XXX` part of each key if you want to use that particular service.

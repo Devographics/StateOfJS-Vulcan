@@ -8,7 +8,7 @@ vulcan:i18n-en-us
 
 ############ Accounts Packages ############
 
-accounts-password@2.1.0
+accounts-password@2.2.0
 # accounts-twitter
 # accounts-facebook
 
@@ -21,4 +21,4 @@ vulcan:debug
 vulcan:i18n
 
 # mdg:meteor-apm-agent
-vulcan:newsletter
+# vulcan:newsletter
