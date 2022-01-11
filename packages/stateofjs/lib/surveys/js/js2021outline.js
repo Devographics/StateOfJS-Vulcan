@@ -409,10 +409,6 @@ export default {
           "year": 2021
         },
         {
-          "id": "turborepo",
-          "year": 2021
-        },
-        {
           "id": "build_tools",
           "intlId": "tools.other_tools",
           "template": "project",
@@ -427,156 +423,54 @@ export default {
       ]
     },
     {
-      "id": "tooling",
-      "slug": "tools_others",
+      "id": "monorepo_tools",
+      "template": "tool",
+      "slug": "tools",
+      "year": 2021,
       "questions": [
         {
-          "id": "utilities",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "babel"
-            },
-            {
-              "id": "prettier"
-            },
-            {
-              "id": "eslint"
-            },
-            {
-              "id": "nvm"
-            },
-            {
-              "id": "n"
-            },
-            {
-              "id": "nx"
-            },
-            {
-              "id": "zx",
-              "year": 2021
-            },
-            {
-              "id": "volta",
-              "year": 2021
-            }
-          ]
+          "id": "rush",
+          "year": 2021
         },
         {
-          "id": "utilities",
-          "template": "project"
+          "id": "turborepo",
+          "year": 2021
         },
         {
-          "id": "runtimes",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "browser_environment"
-            },
-            {
-              "id": "node"
-            },
-            {
-              "id": "deno"
-            },
-            {
-              "id": "chakracore"
-            },
-            {
-              "id": "hermes"
-            },
-            {
-              "id": "service_workers",
-              "year": 2021
-            },
-            {
-              "id": "serverless_workers",
-              "year": 2021
-            }
-          ]
+          "id": "yarn_workspaces",
+          "year": 2021
         },
         {
-          "id": "runtimes",
-          "template": "others",
-          "matchTags": [
-            "libraries",
-            "other"
-          ]
+          "id": "yalc",
+          "year": 2021
         },
         {
-          "id": "package_management",
-          "year": 2021,
-          "template": "multiple",
-          "options": [
-            {
-              "id": "npm"
-            },
-            {
-              "id": "pnpm"
-            },
-            {
-              "id": "yarn"
-            }
-          ]
+          "id": "lerna",
+          "year": 2021
         },
         {
-          "id": "package_management",
-          "year": 2021,
-          "template": "project"
+          "id": "npm_workspaces",
+          "year": 2021
         },
         {
-          "id": "package_registries",
-          "year": 2021,
-          "template": "multiple",
-          "options": [
-            {
-              "id": "npm"
-            },
-            {
-              "id": "github"
-            },
-            {
-              "id": "jspm"
-            },
-            {
-              "id": "private_registry"
-            }
-          ]
+          "id": "pnpm",
+          "year": 2021
         },
         {
-          "id": "package_registries",
-          "year": 2021,
-          "template": "project"
+          "id": "nx",
+          "year": 2021
         },
         {
           "id": "monorepo_tools",
-          "year": 2021,
-          "template": "multiple",
-          "options": [
-            {
-              "id": "rush"
-            },
-            {
-              "id": "turborepo"
-            },
-            {
-              "id": "yarn"
-            },
-            {
-              "id": "lerna"
-            },
-            {
-              "id": "npm"
-            },
-            {
-              "id": "nx"
-            }
-          ]
+          "intlId": "tools.other_tools",
+          "template": "project",
+          "sectionSlug": "tools_others"
         },
         {
           "id": "monorepo_tools",
-          "year": 2021,
-          "template": "project"
+          "intlId": "tools.happiness",
+          "template": "happiness",
+          "sectionSlug": "happiness"
         }
       ]
     },
@@ -634,13 +528,84 @@ export default {
           "template": "project"
         },
         {
+          "id": "utilities",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "babel"
+            },
+            {
+              "id": "prettier"
+            },
+            {
+              "id": "eslint"
+            },
+            {
+              "id": "nvm"
+            },
+            {
+              "id": "n"
+            },
+            {
+              "id": "zx",
+              "year": 2021
+            },
+            {
+              "id": "volta",
+              "year": 2021
+            },
+            {
+              "id": "verdaccio",
+              "year": 2021
+            }
+          ]
+        },
+        {
+          "id": "utilities",
+          "template": "project"
+        },
+        {
+          "id": "runtimes",
+          "template": "multiple",
+          "options": [
+            {
+              "id": "browser_environment"
+            },
+            {
+              "id": "node"
+            },
+            {
+              "id": "deno"
+            },
+            {
+              "id": "chakracore"
+            },
+            {
+              "id": "hermes"
+            },
+            {
+              "id": "service_workers",
+              "year": 2021
+            },
+            {
+              "id": "serverless_workers",
+              "year": 2021
+            }
+          ]
+        },
+        {
+          "id": "runtimes",
+          "template": "others",
+          "matchTags": [
+            "libraries",
+            "other"
+          ]
+        },
+        {
           "id": "javascript_flavors",
           "year": 2021,
           "template": "multiple",
           "options": [
-            {
-              "id": "javascript"
-            },
             {
               "id": "typescript"
             },
@@ -749,105 +714,6 @@ export default {
           "template": "others",
           "matchTags": [
             "languages"
-          ]
-        },
-        {
-          "id": "browsers",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "edge"
-            },
-            {
-              "id": "chrome"
-            },
-            {
-              "id": "safari"
-            },
-            {
-              "id": "firefox"
-            },
-            {
-              "id": "internet_explorer_11"
-            },
-            {
-              "id": "internet_explorer_8_9_10"
-            },
-            {
-              "id": "opera_mini"
-            },
-            {
-              "id": "safari_ios"
-            },
-            {
-              "id": "chrome_ios"
-            },
-            {
-              "id": "chrome_android"
-            },
-            {
-              "id": "firefox_android"
-            },
-            {
-              "id": "samsung_internet"
-            },
-            {
-              "id": "vivaldi"
-            },
-            {
-              "id": "brave"
-            },
-            {
-              "id": "ucbrowser"
-            },
-            {
-              "id": "opera"
-            },
-            {
-              "id": "polypane"
-            }
-          ]
-        },
-        {
-          "id": "form_factors",
-          "template": "multiple",
-          "options": [
-            {
-              "id": "desktop"
-            },
-            {
-              "id": "smartphone"
-            },
-            {
-              "id": "feature_phone"
-            },
-            {
-              "id": "tablet"
-            },
-            {
-              "id": "smart_watch"
-            },
-            {
-              "id": "tv"
-            },
-            {
-              "id": "gaming_console"
-            },
-            {
-              "id": "screen_reader"
-            },
-            {
-              "id": "print"
-            },
-            {
-              "id": "keyboard_only"
-            },
-            {
-              "id": "testing_tools"
-            },
-            {
-              "id": "vision_simulator"
-            }
           ]
         },
         {
@@ -1185,13 +1051,13 @@ export default {
               "id": "architecture"
             },
             {
-              "id": "consuming_packages"
+              "id": "finding_packages"
             },
             {
               "id": "debugging"
             },
             {
-              "id": "dependencies"
+              "id": "managing_dependencies"
             },
             {
               "id": "async_code"
@@ -1217,7 +1083,6 @@ export default {
         {
           "id": "currently_missing_from_js",
           "year": 2021,
-          "optionsIntlId": "features",
           "template": "bracket",
           "options": [
             {

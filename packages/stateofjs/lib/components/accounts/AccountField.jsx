@@ -58,7 +58,7 @@ export class AccountsField extends PureComponent {
       <div className={className} style={{ marginBottom: '10px' }}>
         <FloatingLabel controlId={id} label={hint} className="mb-3">
           <Form.Control
-            id={id}
+            // id={id}
             type={type}
             onChange={onChange}
             placeholder={hint}
