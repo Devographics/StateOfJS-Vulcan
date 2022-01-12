@@ -11,11 +11,11 @@ const Support = () => (
         <img src="/images/google.png" alt="Google" />
       </a>
     </div>
-    <div className="support-item">
+    {/* <div className="support-item">
       <a href="https://makeitfable.com/">
         <img src="/images/fable.png" alt="Fable" />
       </a>
-    </div>
+    </div> */}
   </div>
 );
 

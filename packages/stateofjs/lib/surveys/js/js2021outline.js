@@ -17,6 +17,16 @@ export default {
   "textColor": "rgb(224, 228, 228)",
   "linkColor": "rgb(65, 199, 199)",
   "hoverColor": "rgb(254, 106, 106)",
+  "credits": [
+    {
+      "id": "shawn_wang",
+      "role": "survey_design"
+    },
+    {
+      "id": "mark_erikson",
+      "role": "survey_design"
+    }
+  ],
   "outline": [
     {
       "id": "language",
