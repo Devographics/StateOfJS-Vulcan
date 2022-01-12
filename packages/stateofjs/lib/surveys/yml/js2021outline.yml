@@ -8,9 +8,9 @@ prettySlug: state-of-js
 hashtag: StateOfJS
 shareUrl: https://stateofjs.com
 # resultsUrl: https://2021.stateofjs.com/
-name: "State of JavaScript"
+name: "State of JavaScript 2021/2022"
 year: 2021
-status: 1 # closed
+status: 2 # preview/open/closed
 imageUrl: "stateofjs2021.png"
 bgColor: rgb(34, 36, 41)
 textColor: rgb(224, 228, 228)

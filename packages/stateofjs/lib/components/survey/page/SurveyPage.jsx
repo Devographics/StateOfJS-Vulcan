@@ -30,7 +30,7 @@ const SurveyPageWrapper = (props, { intl }) => {
             <SurveyMessage survey={survey} />
 
             <h1 className="survey-image">
-              <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
+              <img src={`/surveys/${imageUrl}`} alt={`${name}`} />
             </h1>
             <div className="survey-page-block">
               <SurveyIntro survey={survey} />

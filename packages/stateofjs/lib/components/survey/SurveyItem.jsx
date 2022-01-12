@@ -23,7 +23,7 @@ const SurveyItem = ({ survey, currentUser }) => {
   const history = useHistory();
   const [errors, setErrors] = useState();
 
-  const { slug, name, year, imageUrl, status } = survey;
+  const { slug, name, imageUrl, status } = survey;
   const currentSurveyResponse = currentUser && currentUser.responses.find((r) => r.surveySlug === slug);
 
   // prefilled data
@@ -53,7 +53,7 @@ const SurveyItem = ({ survey, currentUser }) => {
           <img src={`/surveys/${imageUrl}`} alt={name} />
         </div>
         <h3 className="survey-name">
-          {name} {year}
+          {name}
         </h3>
         <div className="survey-action">
           {currentSurveyResponse && !isEmpty(currentSurveyResponse) ? (

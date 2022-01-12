@@ -9,7 +9,7 @@ export default {
   "hashtag": "StateOfCSS",
   "shareUrl": "https://stateofcss.com",
   "resultsUrl": "https://2021.stateofcss.com/",
-  "name": "State of CSS",
+  "name": "State of CSS 2021",
   "year": 2021,
   "status": 3,
   "imageUrl": "stateofcss2021.png",

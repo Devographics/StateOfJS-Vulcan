@@ -4,7 +4,6 @@ import EntityLabel from '../../common/EntityLabel';
 import { Components } from 'meteor/vulcan:core';
 import { intlShape } from 'meteor/vulcan:i18n';
 
-
 const FormLabel = ({ questionId, label, layout, path, year }, { intl }) => {
   const labelProps = layout === 'horizontal' ? { column: true, sm: 3 } : {};
   const entityProps = {
@@ -23,7 +22,7 @@ const FormLabel = ({ questionId, label, layout, path, year }, { intl }) => {
         <EntityLabel {...entityProps} />
         {year === 2021 && (
           <span className="question-label-new" title={intl.formatMessage({ id: 'general.newly_added' })}>
-            {year}
+            <Components.FormattedMessage id="general.new" />
           </span>
         )}
       </Form.Label>

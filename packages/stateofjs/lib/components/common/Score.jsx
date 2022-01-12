@@ -36,7 +36,7 @@ const FeatureItem = ({entity, showComma}) => {
       <TagName
         className="score-feature-name"
         {...(mdnUrl && {
-          href: `https://developer.mozilla.org${mdnUrl}`,
+          href: mdnUrl,
           target: '_blank',
           rel: 'norefferer',
         })}>
@@ -53,7 +53,7 @@ const Score = ({ response, survey }, { intl }) => {
   const { knowledgeRanking } = response;
   const { known, total, score, unknownFields } = getKnowledgeScore(response, survey);
   const knowledgeRankingFromTop = knowledgeRanking;
-  const { imageUrl, name, year, shareUrl, hashtag } = survey;
+  const { name, shareUrl, hashtag } = survey;
 
   const text = intl.formatMessage({ id: 'thanks.share_score_message' }, { score, name, shareUrl, hashtag });
 

@@ -31,6 +31,7 @@ const contexts = [
   'state_of_css_2021_survey',
   'state_of_js',
   'state_of_js_2020_survey',
+  'state_of_js_2021_survey',
 ];
 
 export const fetchLocales = async () => {

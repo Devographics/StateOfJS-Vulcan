@@ -7,8 +7,8 @@ import { intlShape } from 'meteor/vulcan:i18n';
 
 
 const ShareSite = ({ survey }, { intl }) => {
-  const { name, year, hashtag, shareUrl: link } = survey;
-  const surveyName = `${name} ${year}`;
+  const { name, hashtag, shareUrl: link } = survey;
+  const surveyName = `${name}`;
   const values = { surveyName, link };
   const title = intl.formatMessage({ id: 'general.share_subject' }, values);
   const body = intl.formatMessage({ id: 'general.share_text' }, values);

@@ -30,12 +30,12 @@ const Thanks = () => {
   }
 
   const survey = surveys.find((s) => s.slug === response.survey.slug);
-  const { imageUrl, name, year } = survey;
+  const { imageUrl, name } = survey;
 
   return (
     <div className="contents-narrow thanks">
       <h1 className="survey-image survey-image-small">
-        <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
+        <img src={`/surveys/${imageUrl}`} alt={`${name}`} />
       </h1>
       <Score response={response} survey={survey} />
       <div>

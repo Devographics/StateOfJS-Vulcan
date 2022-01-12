@@ -9,18 +9,18 @@ import LocaleSelector from '../common/LocaleSelector';
 import Translators from '../common/Translators';
 
 const SurveyItem = ({ survey }) => {
-  const { imageUrl, name, year, resultsUrl } = survey;
+  const { imageUrl, name, resultsUrl } = survey;
   return (
     <div>
       <div className="survey-item">
         <div className="survey-image">
           <Link className="survey-link" to={getSurveyPath({ survey, home: true })}>
             <span className="survey-image-inner">
-              <img src={`/surveys/${imageUrl}`} alt={`${name} ${year}`} />
+              <img src={`/surveys/${imageUrl}`} alt={`${name}`} />
             </span>
             <span className="survey-name">
               <span>
-                {name} {year}
+                {name}
               </span>
             </span>
           </Link>

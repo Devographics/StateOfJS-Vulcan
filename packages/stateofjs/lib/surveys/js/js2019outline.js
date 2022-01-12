@@ -9,7 +9,7 @@ export default {
   "hashtag": "StateOfJS",
   "shareUrl": "https://stateofjs.com",
   "resultsUrl": "https://2019.stateofjs.com/",
-  "name": "State of JavaScript",
+  "name": "State of JavaScript 2019",
   "year": 2019,
   "status": 3,
   "imageUrl": "stateofjs2019.png",

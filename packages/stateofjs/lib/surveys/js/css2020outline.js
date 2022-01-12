@@ -10,7 +10,7 @@ export default {
   "hashtag": "StateOfCSS",
   "shareUrl": "https://stateofcss.com",
   "resultsUrl": "https://2020.stateofcss.com/",
-  "name": "State of CSS",
+  "name": "State of CSS 2020",
   "year": 2020,
   "status": 3,
   "imageUrl": "stateofcss2020.png",
