@@ -105,6 +105,16 @@
       margin: 0;
     }
   }
+  .form-note{
+    // background: var(--bg-color-light);
+    // padding: $spacing/2;
+    margin-top: $spacing/2;
+    color: var(--text-color-dark);
+    font-size: $small-font;
+    p:last-child {
+      margin: 0;
+    }
+  }
   .form-submit-actions {
     display: flex;
     justify-content: space-between;

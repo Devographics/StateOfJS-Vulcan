@@ -134,6 +134,7 @@
 .section-nav-heading {
   font-size: $large-font;
   margin-bottom: $spacing;
+  line-height: 1.5;
   @include small-medium {
     text-align: center;
   }
