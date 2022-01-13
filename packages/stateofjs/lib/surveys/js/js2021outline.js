@@ -819,9 +819,6 @@ export default {
               "id": "sitepoint"
             },
             {
-              "id": "david_walsh"
-            },
-            {
               "id": "devto"
             },
             {
@@ -844,12 +841,6 @@ export default {
             },
             {
               "id": "bestofjs"
-            },
-            {
-              "id": "overreacted"
-            },
-            {
-              "id": "kentcdodds"
             },
             {
               "id": "alligator"

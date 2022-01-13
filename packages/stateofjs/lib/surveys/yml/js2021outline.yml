@@ -583,12 +583,17 @@ outline:
       - id: blogs_news_magazines
         template: multiple
         options:
+
+          #  removed in 2021 (personal blogs)
+          # - id: david_walsh
+          # - id: overreacted
+          # - id: kentcdodds
+
           - id: css_tricks
           - id: a_list_apart
           - id: smashing_magazine
           - id: codrops
           - id: sitepoint
-          - id: david_walsh
           - id: devto
           - id: daily_js
           - id: echo_js
