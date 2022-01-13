@@ -35,6 +35,10 @@ outline:
     template: feature
     slug: features
     questions:
+
+      # - id: features_intro
+      #   template: help
+
       # removed in 2021
       # - id: async_await
       # - id: promises
@@ -152,6 +156,10 @@ outline:
     template: tool
     slug: tools
     questions:
+
+      # - id: tools_intro
+      #   template: help
+
       - id: react
       - id: vuejs
       - id: angular
@@ -602,8 +610,6 @@ outline:
           - id: frontend_focus
           - id: js_weekly
           - id: bestofjs
-          - id: overreacted
-          - id: kentcdodds
           - id: alligator
           - id: medium
       - id: blogs_news_magazines

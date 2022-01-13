@@ -13,6 +13,7 @@ import { statuses } from '../constants.js';
 import Users from 'meteor/vulcan:users';
 
 import Bracket from '../../components/forms/Brackets.jsx';
+import Help from '../../components/forms/Help.jsx';
 import { data } from 'autoprefixer';
 
 /*
@@ -240,6 +241,9 @@ export const templates = {
         optional: true,
       },
     },
+  }),
+  help: () => ({
+    input: Help,
   }),
 };
 
