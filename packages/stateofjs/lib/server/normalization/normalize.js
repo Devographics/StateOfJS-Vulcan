@@ -1,6 +1,6 @@
 import countries from './countries';
 import {
-  encrypt,
+  createHash,
   cleanupValue,
   normalize,
   normalizeSource,
@@ -102,7 +102,7 @@ export const normalizeResponse = async ({
     
     */
     if (response.email) {
-      set(normResp, 'user_info.hash', encrypt(response.email));
+      set(normResp, 'user_info.hash', createHash(response.email));
     }
 
     /*
@@ -280,7 +280,7 @@ export const normalizeResponse = async ({
         info.user_info.email = response.email;
       }
       PrivateResponses.upsert({ responseId: response._id }, info);
-      set(normResp, 'user_info.hash', encrypt(response.email));
+      set(normResp, 'user_info.hash', createHash(response.email));
     }
 
     // console.log(JSON.stringify(normResp, '', 2));
