@@ -12682,3 +12682,13 @@
   description: >-
     The Aurelia 1 framework entry point, bringing together all the required
     sub-modules of Aurelia.
+- id: mol
+  name: $mol
+  github: hyoo-ru/mam_mol
+  homepage: 'https://mol.hyoo.ru/'
+  description: fastest reactive micro-modular smallest flexible lazy progressive web app framework
+- id: mam
+  name: MAM
+  npm: mam
+  github: hyoo-ru/mam
+  description: Mam owns language Agnostic Modules
