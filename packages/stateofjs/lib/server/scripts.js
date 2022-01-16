@@ -2,7 +2,7 @@ import Responses from '../modules/responses/collection';
 import NormalizedResponses from '../modules/normalized_responses/collection';
 import surveys from '../surveys';
 import { normalizeResponse } from './normalization/normalize';
-import { getEntities, encrypt } from './normalization/helpers';
+import { getEntities, createHash } from './normalization/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 // import Users from 'meteor/vulcan:users';
 import {
@@ -347,7 +347,7 @@ export const generateEmailHash = async () => {
     if (i % 100 === 0) {
       console.log(`// Generated ${i}/${count} email hashes…`);
     }
-    const hash = encrypt(response.user_info.email);
+    const hash = createHash(response.user_info.email);
     NormalizedResponses.update(
       { _id: response._id },
       { $set: { 'user_info.hash': hash } }
