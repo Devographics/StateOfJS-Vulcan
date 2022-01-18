@@ -7,20 +7,17 @@ import sortBy from 'lodash/sortBy';
 
 /*
 
-Encrypt text
+Creating Hash from Emails
 
 */
-const encryptionKey = process.env.ENCRYPTION_KEY || getSetting('encriptionKey');
-export const encrypt = (text) => {
-  const cipher = crypto.createCipheriv(
-    'aes-256-cbc',
-    Buffer.from(encryptionKey),
-    'stateofjsstateof'
-  );
-  let encrypted = cipher.update(text);
-  encrypted = Buffer.concat([encrypted, cipher.final()]);
-
-  return encrypted.toString('hex');
+const hashSalt = Buffer.from(
+  process.env.HASH_SALT || getSetting('hashSalt') || process.env.ENCRYPTION_KEY || getSetting('encriptionKey')
+);
+export const createHash = text => {
+  const hash = crypto.createHash('sha512-256WithRSAEncryption')
+  hash.update(hashSalt);
+  hash.update(text);
+  return hash.digest('hex');
 };
 
 /*
