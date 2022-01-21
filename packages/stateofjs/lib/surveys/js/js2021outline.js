@@ -34,6 +34,10 @@ export default {
       "slug": "features",
       "questions": [
         {
+          "id": "features_intro",
+          "template": "help"
+        },
+        {
           "id": "proxies"
         },
         {
@@ -163,6 +167,10 @@ export default {
       "template": "tool",
       "slug": "tools",
       "questions": [
+        {
+          "id": "tools_intro",
+          "template": "help"
+        },
         {
           "id": "react"
         },

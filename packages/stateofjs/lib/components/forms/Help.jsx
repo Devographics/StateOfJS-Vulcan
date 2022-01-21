@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import {Components} from 'meteor/vulcan:core';
+import { Components } from 'meteor/vulcan:core';
+import { intlShape } from 'meteor/vulcan:i18n';
 
-const Help = ({ intlKeys }) => {
+const Help = ({ intlKeys }, { intl }) => {
   return (
     <div className="form-help">
-      <Components.FormattedMessage id={intlKeys[0]} md={true}/>
-      <ReactMarkdown rehypePlugins={[rehypeRaw]}><Components.FormattedMessage id={intlKeys[0]} md={true}/></ReactMarkdown>
+      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{intl.formatMessage({ id: intlKeys[0] })}</ReactMarkdown>
     </div>
   );
 };
 
+Help.contextTypes = {
+  intl: intlShape,
+};
 
-export default Help
+export default Help;

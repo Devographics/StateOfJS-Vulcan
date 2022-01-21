@@ -22,6 +22,13 @@
       padding: $spacing;
     }
   }
+  .form-component-Help {
+    background: var(--bg-color-light);
+    border: 0;
+    :last-child {
+      margin: 0;
+    }
+  }
   .form-label-heading {
     margin-bottom: $spacing/2;
   }
@@ -39,7 +46,7 @@
     code {
       font-size: $medium-font;
     }
-    .entity-label{
+    .entity-label {
       // white-space: nowrap;
     }
     .question-label-new {
@@ -105,7 +112,7 @@
       margin: 0;
     }
   }
-  .form-note{
+  .form-note {
     // background: var(--bg-color-light);
     // padding: $spacing/2;
     margin-top: $spacing/2;
@@ -203,11 +210,11 @@
   resize: vertical;
 }
 
-.form-floating > label{
+.form-floating > label {
   color: var(--text-color-inverted);
 }
 
-.rbt-token-remove-button{
+.rbt-token-remove-button {
   border: none;
   background: none;
 }
