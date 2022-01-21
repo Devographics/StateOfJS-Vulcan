@@ -16,6 +16,7 @@ import AdminNormalization from '../components/admin/AdminNormalization';
 import AdminSurveys from '../components/admin/AdminSurveys';
 import AdminResponses from '../components/admin/AdminResponses';
 import AdminUsers from '../components/admin/AdminUsers';
+import AdminProjects from '../components/admin/AdminProjects';
 
 const adminAccessOptions = {
   groups: ['admins'],
@@ -23,13 +24,15 @@ const adminAccessOptions = {
 
 const routes = [
 { name: 'home', path: '/', component: Surveys },
-{ name: 'account', path: '/account', component: AccountPage },
+
+// { name: 'user', path: '/users/:slug', component: UserPage },
 
 { name: 'adminStats', path: '/admin/stats', component: AdminStats, access: adminAccessOptions },
 { name: 'adminNormalization', path: '/admin/normalization', component: AdminNormalization, access: adminAccessOptions },
 { name: 'adminSurveys', path: '/admin/surveys', component: AdminSurveys, access: adminAccessOptions },
 { name: 'adminResponses', path: '/admin/responses', component: AdminResponses, access: adminAccessOptions },
 { name: 'adminUsers', path: '/admin/users', component: AdminUsers, access: adminAccessOptions },
+{ name: 'adminProjects', path: '/admin/projects', component: AdminProjects, access: adminAccessOptions },
 
 { name: 'privacypolicy', path: '/privacy-policy', component: PrivacyPolicy },
 

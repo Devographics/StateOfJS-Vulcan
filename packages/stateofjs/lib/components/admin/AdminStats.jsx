@@ -12,6 +12,16 @@ const statsQuery = `query StatsQuery {
 }
 `;
 
+function downloadObjectAsJson(exportObj, exportName) {
+  var dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
+  var downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute('href', dataStr);
+  downloadAnchorNode.setAttribute('download', exportName + '.json');
+  document.body.appendChild(downloadAnchorNode); // required for firefox
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+}
+
 const AdminStats = () => {
   const { loading, data = {} } = useQuery(gql(statsQuery));
   if (loading) {
@@ -34,6 +44,41 @@ const AdminStats = () => {
           successCallback={(result) => {
             console.log(result);
             alert('Responses normalized');
+          }}
+        />
+        <Components.MutationButton
+          label="Get User Data"
+          mutationOptions={{
+            name: 'getUserData',
+            args: { email: 'String!' },
+          }}
+          submitCallback={() => {
+            const email = prompt('Email:');
+            if (email) {
+              return { mutationArguments: { email } };
+            }
+          }}
+          successCallback={(result) => {
+            const data = result.data.getUserData;
+            downloadObjectAsJson(data, `${data.email}_data`);
+          }}
+        />
+        <Components.MutationButton
+          label="Purge User Data"
+          mutationOptions={{
+            name: 'purgeUserData',
+            args: { email: 'String!' },
+          }}
+          submitCallback={() => {
+            const email = prompt('Email:');
+            if (email) {
+              return { mutationArguments: { email } };
+            }
+          }}
+          successCallback={(result) => {
+            const data = result.data.getUserData;
+            downloadObjectAsJson(data, `${data.email}_data`);
+            alert(`Data for email ${data.email} purged!`);
           }}
         />
       </div>

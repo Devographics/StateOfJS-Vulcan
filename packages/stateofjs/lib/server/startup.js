@@ -26,13 +26,15 @@ export const getEntitiesData = async () => {
 };
 
 Meteor.startup(async function () {
-  if (runScripts) {
-    if (environment === 'development') {
-      await convertAllYAML();
-      await logAllRules();
-    }
 
-    await loadProjects();
+  if (environment === 'development') {
+    await convertAllYAML();
+    await logAllRules();
+  }
+
+  await loadProjects();
+  
+  if (runScripts) {
 
     // for some reason JSON arrays are of the form: { '0': 'testScript', '1': 'testScript2' },
     // convert it to regular array first to make things easier

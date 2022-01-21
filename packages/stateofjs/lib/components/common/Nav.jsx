@@ -41,6 +41,10 @@ const adminNavContents = [
     label: 'Normalization',
     to: '/admin/normalization',
   },
+  {
+    label: 'Projects',
+    to: '/admin/projects',
+  },
   // {
   //   label: 'Normalized Responses',
   //   to: '/admin/normalized-responses',

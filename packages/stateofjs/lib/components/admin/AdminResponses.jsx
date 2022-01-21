@@ -18,6 +18,12 @@ const NormalizedData = ({ document }) => {
   ) : null;
 };
 
+const User = ({ document }) => (
+  <Components.ModalTrigger label={document.user.displayName} size="xl">
+    <Components.Card document={document.user} />
+  </Components.ModalTrigger>
+);
+
 const Completion = ({ document }) => <span>{document.completion}%</span>;
 
 const AdminResponses = () => (
@@ -43,7 +49,7 @@ const AdminResponses = () => (
         { name: 'surveySlug', label: 'Survey', filterable: true },
         // 'aboutyou_youremail',
         // 'isSynced',
-        'user',
+        { name: 'user', component: User },
         { name: 'data', component: ResponseData },
         { name: 'normalizedData', label: 'Normalized', component: NormalizedData },
       ]}

@@ -22,6 +22,25 @@ export const createHash = text => {
 
 /*
 
+Encrypt text
+NOTE: NOT SECURE! DO NOT USE unless it's for processing older existing data
+
+*/
+const encryptionKey = process.env.ENCRYPTION_KEY || getSetting('encriptionKey');
+export const encrypt = (text) => {
+  const cipher = crypto.createCipheriv(
+    'aes-256-cbc',
+    Buffer.from(encryptionKey),
+    'stateofjsstateof'
+  );
+  let encrypted = cipher.update(text);
+  encrypted = Buffer.concat([encrypted, cipher.final()]);
+
+  return encrypted.toString('hex');
+};
+
+/*
+
 Clean up values to remove 'none', 'n/a', etc.
 
 */

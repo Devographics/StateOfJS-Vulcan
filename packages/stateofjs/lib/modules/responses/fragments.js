@@ -48,6 +48,7 @@ registerFragment(/* GraphQL */ `
       _id
       displayName
       pagePath
+      email
     }
 
   }
