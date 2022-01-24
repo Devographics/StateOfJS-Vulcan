@@ -4,7 +4,7 @@ import { normalizeResponse } from './normalize';
 
 const limit = 800;
 
-// every 10 min, normalize 200 unnormalized responses
+// every x min, normalize *limit* unnormalized responses
 export const normalizeJob = async ({ entities, rules }) => {
   const startAt = new Date();
   const unnormalizedResponses = Responses.find(

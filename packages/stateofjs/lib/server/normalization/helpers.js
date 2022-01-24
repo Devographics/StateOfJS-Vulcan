@@ -11,10 +11,13 @@ Creating Hash from Emails
 
 */
 const hashSalt = Buffer.from(
-  process.env.HASH_SALT || getSetting('hashSalt') || process.env.ENCRYPTION_KEY || getSetting('encriptionKey')
+  process.env.HASH_SALT ||
+    getSetting('hashSalt') ||
+    process.env.ENCRYPTION_KEY ||
+    getSetting('encriptionKey')
 );
-export const createHash = text => {
-  const hash = crypto.createHash('sha512-256WithRSAEncryption')
+export const createHash = (text) => {
+  const hash = crypto.createHash('sha512-256WithRSAEncryption');
   hash.update(hashSalt);
   hash.update(text);
   return hash.digest('hex');
@@ -113,7 +116,7 @@ Extract matching tokens from a string
 const enableLimit = false;
 const lowStringLimit = 150;
 const highStringLimit = 190;
-const extractTokens = async (rawString, rules) => {
+const extractTokens = async (rawString, rules, verbose = false) => {
   const stringLimit = enableLimit
     ? rules.length > 50
       ? lowStringLimit
@@ -140,7 +143,7 @@ const extractTokens = async (rawString, rules) => {
     let scanStartIndex = 0;
 
     // add count to prevent infinite looping
-    while (scanCompleted !== true && count < 400) {
+    while (scanCompleted !== true && count < 1000) {
       count++;
       const stringToScan = rawString.slice(scanStartIndex);
       const match = stringToScan.match(pattern);
@@ -214,12 +217,12 @@ Normalize a string value
 (Can be limited by tags)
 
 */
-export const normalize = async (value, allRules, tags) => {
+export const normalize = async (value, allRules, tags, verbose) => {
   const rules = tags
     ? allRules.filter((r) => intersection(tags, r.tags).length > 0)
     : allRules;
 
-  return await extractTokens(value, rules);
+  return await extractTokens(value, rules, verbose);
 };
 
 /*
@@ -307,20 +310,25 @@ Generate normalization rules from entities
 export const generateEntityRules = (entities) => {
   const rules = [];
   entities.forEach((entity) => {
-    const { id, patterns, tags, twitterName } = entity;
-    // we match the separator group 0 to 2 times to account for double spaces,
-    // double hyphens, etc.
-    const separator = '( |-|_|.){0,2}';
+    const { id, patterns, tags, twitterName, exact = false } = entity;
 
-    // 1. replace "_" by separator
-    const idPatternString = id.replaceAll('_', separator);
-    const idPattern = new RegExp(idPatternString, 'i');
-    rules.push({
-      id,
-      pattern: idPattern,
-      tags,
-    });
+    if (exact) {
+      const exactPattern = new RegExp(id, 'i');
+      rules.push({ id, pattern: exactPattern, tags });
+    } else {
+      // we match the separator group 0 to 2 times to account for double spaces,
+      // double hyphens, etc.
+      const separator = '( |-|_|.){0,2}';
 
+      // 1. replace "_" by separator
+      const idPatternString = id.replaceAll('_', separator);
+      const idPattern = new RegExp(idPatternString, 'i');
+      rules.push({
+        id,
+        pattern: idPattern,
+        tags,
+      });
+    }
     // note: the following should not be needed because all entities
     // should already follow the foo_js/foo_css format
     // // 2. replace "js" at the end by separator+js

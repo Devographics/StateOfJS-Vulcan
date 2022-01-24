@@ -12,9 +12,12 @@ import last from 'lodash/last';
 import NormalizedResponses from '../../modules/normalized_responses/collection';
 import Responses from '../../modules/responses/collection';
 import PrivateResponses from '../../modules/private_responses/collection';
+import EmailHashes from '../../modules/email_hashes/collection.js';
+
 import { getSurveyBySlug } from '../../modules/surveys/helpers';
 import { logToFile } from 'meteor/vulcan:core';
 import isEmpty from 'lodash/isEmpty';
+import { ulid } from 'ulidx';
 
 const replaceAll = function (target, search, replacement) {
   return target.replace(new RegExp(search, 'g'), replacement);
@@ -69,11 +72,12 @@ export const normalizeResponse = async ({
   rules,
   log = false,
   fileName: _fileName,
+  verbose = false,
 }) => {
   try {
-
-    // console.log(`// Normalizing document ${response._id}…`);
-
+    if (verbose) {
+      console.log(`// Normalizing document ${response._id}…`);
+    }
     const normResp = {};
     const privateFields = {};
     const normalizedFields = [];
@@ -98,11 +102,20 @@ export const normalizeResponse = async ({
 
     /*
   
-    2. Generate email hash
+    2. Handle email
     
     */
     if (response.email) {
-      set(normResp, 'user_info.hash', createHash(response.email));
+      const emailHash = createHash(response.email);
+      const hashDoc = EmailHashes.findOne({ hash: emailHash });
+      let emailUlid;
+      if (hashDoc) {
+        emailUlid = hashDoc.ulid;
+      } else {
+        emailUlid = ulid();
+        EmailHashes.insert({ hash: emailHash, ulid: emailUlid });
+      }
+      set(normResp, 'user_info.ulid', emailUlid);
     }
 
     /*
@@ -148,21 +161,23 @@ export const normalizeResponse = async ({
                 );
               }
               try {
-
-                // console.log(
-                //   `// Normalizing key "${fieldName}" with value "${value}"…`
-                // );
-
+                if (verbose) {
+                  console.log(
+                    `// Normalizing key "${fieldName}" with value "${value}" and tags ${matchTags.toString()}…`
+                  );
+                }
                 const normTokens = await normalize(
                   cleanValue,
                   allRules,
-                  matchTags
+                  matchTags,
+                  verbose
                 );
 
-                // console.log(
-                //   `  -> Normalized values: ${JSON.stringify(normTokens)}`
-                // );
-
+                if (verbose) {
+                  console.log(
+                    `  -> Normalized values: ${JSON.stringify(normTokens)}`
+                  );
+                }
                 if (log) {
                   if (normTokens.length > 0) {
                     normTokens.forEach(async (token) => {
@@ -268,6 +283,8 @@ export const normalizeResponse = async ({
   
     7. Store identifying info in a separate collection
     
+    // TODO: rethink this?
+
     */
     if (!isEmpty(privateFields)) {
       const info = {
@@ -280,7 +297,6 @@ export const normalizeResponse = async ({
         info.user_info.email = response.email;
       }
       PrivateResponses.upsert({ responseId: response._id }, info);
-      set(normResp, 'user_info.hash', createHash(response.email));
     }
 
     // console.log(JSON.stringify(normResp, '', 2));

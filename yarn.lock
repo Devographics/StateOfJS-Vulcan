@@ -6306,6 +6306,11 @@
   dependencies:
     "language-subtag-registry" "~0.3.2"
 
+"layerr@^0.1.2":
+  "integrity" "sha512-ob5kTd9H3S4GOG2nVXyQhOu9O8nBgP555XxWPkJI0tR0JeRilfyTp8WtPdIJHLXBmHMSdEq5+KMxiYABeScsIQ=="
+  "resolved" "https://registry.npmjs.org/layerr/-/layerr-0.1.2.tgz"
+  "version" "0.1.2"
+
 "levn@^0.4.1":
   "integrity" "sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ=="
   "resolved" "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz"
@@ -9714,6 +9719,18 @@
   "integrity" "sha512-JhS3hmcVaXlp/xSo3PKY5R0JqKs5M3IV+exdLHW99qKvKivPO4Z8qbej6mte17SOPqAOVMjt/XGgWacnFSzM3g=="
   "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.14.1.tgz"
   "version" "3.14.1"
+
+"ulid@^2.3.0":
+  "integrity" "sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw=="
+  "resolved" "https://registry.npmjs.org/ulid/-/ulid-2.3.0.tgz"
+  "version" "2.3.0"
+
+"ulidx@^0.3.0":
+  "integrity" "sha512-Qvpa2xAzS6fBUpiqHSHWvn6XiSLCAPyNDDz035vsEWmUoXRqC4c9JySLIfdBuK0N1xGBxng6GHDOZgyNQfxAHg=="
+  "resolved" "https://registry.npmjs.org/ulidx/-/ulidx-0.3.0.tgz"
+  "version" "0.3.0"
+  dependencies:
+    "layerr" "^0.1.2"
 
 "unbox-primitive@^1.0.1":
   "integrity" "sha512-tZU/3NqK3dA5gpE1KtyiJUrEB0lxnGkMFHptJ7q6ewdZ8s12QrODwNbhIJStmJkd1QDXa1NRA8aF2A1zk/Ypyw=="

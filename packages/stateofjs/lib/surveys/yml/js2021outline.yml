@@ -488,7 +488,7 @@ outline:
       - id: javascript_flavors
         year: 2021
         template: others
-        matchTags: [languages]
+        matchTags: [javascript_flavors, libraries]
 
       - id: non_js_languages
         template: multiple
@@ -587,6 +587,9 @@ outline:
           - id: on_the_job
           - id: mentoring
           - id: self_directed
+      - id: first_steps
+        template: others
+        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: blogs_news_magazines
         template: multiple
@@ -672,7 +675,7 @@ outline:
       - id: people
         year: 2021
         template: others
-        matchTags: [people, sites, youtube]
+        matchTags: [people, youtube]
 
   ######################################################
   #########              OPINIONS              #########

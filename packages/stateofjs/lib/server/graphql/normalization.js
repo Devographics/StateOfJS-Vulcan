@@ -7,6 +7,7 @@ import get from 'lodash/get';
 import Responses from '../../modules/responses/collection.js';
 import NormalizedResponses from '../../modules/normalized_responses/collection.js';
 import { normalizeResponse } from '../normalization/normalize';
+import Users from 'meteor/vulcan:users';
 
 /*
 
@@ -14,15 +15,15 @@ Normalization
 
 */
 const normalizeIds = async (root, args, { currentUser }) => {
-  // if (!Users.isAdmin(currentUser)) {
-  //   throw new Error('You cannot perform this operation');
-  // }
+  if (!Users.isAdmin(currentUser)) {
+    throw new Error('You cannot perform this operation');
+  }
   const results = [];
   const { ids } = args;
   const responses = Responses.find({ _id: { $in: ids } }).fetch();
   for (const document of responses) {
     const { _id } = document;
-    const normalization = await normalizeResponse({ document });
+    const normalization = await normalizeResponse({ document, verbose: true });
     const { result, normalizedFields } = normalization;
     results.push({ normalizedId: result._id, _id, normalizedFields });
   }

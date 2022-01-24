@@ -20,8 +20,8 @@ const allCrons = async () => {
 };
 
 new CronJob(
-  '0 * * * *', // run every hour
-  // '*/1 * * * *', // run every N min
+  // '0 * * * *', // run every hour
+  '*/5 * * * *', // run every N min
   Meteor.bindEnvironment(function () {
     allCrons();
   }),

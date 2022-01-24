@@ -658,7 +658,8 @@ export default {
           "year": 2021,
           "template": "others",
           "matchTags": [
-            "languages"
+            "javascript_flavors",
+            "libraries"
           ]
         },
         {
@@ -805,6 +806,18 @@ export default {
             {
               "id": "self_directed"
             }
+          ]
+        },
+        {
+          "id": "first_steps",
+          "template": "others",
+          "matchTags": [
+            "courses",
+            "people",
+            "youtube",
+            "sites",
+            "newsletters",
+            "socialmedia"
           ]
         },
         {
