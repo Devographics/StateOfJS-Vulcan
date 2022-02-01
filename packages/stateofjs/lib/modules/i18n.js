@@ -92,6 +92,10 @@ export const locales = [
     id: 'ro-RO',
     label: 'Română',
   },
+  {
+    id: 'hu-HU',
+    label: 'Magyar',
+  },
 ];
 
 // export const convertStrings = (stringFile) => {
