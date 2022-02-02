@@ -273,9 +273,13 @@ export const normalizeResponse = async ({
     
     */
     const normSource = await normalizeSource(normResp, allRules, survey);
-    if (normSource) {
+    if (normSource.raw) {
       set(normResp, 'user_info.source.raw', normSource.raw);
+    }
+    if (normSource.id) {
       set(normResp, 'user_info.source.normalized', normSource.id);
+    }
+    if (normSource.pattern) {
       set(normResp, 'user_info.source.pattern', normSource.pattern.toString());
     }
 

@@ -14,7 +14,10 @@ const normalizationQuery = `query NormalizationQuery($surveySlug: String, $field
 
 const getNormalizableFields = (survey) => {
   const allQuestions = survey.outline.map((o) => o.questions).flat();
-  return allQuestions.filter((q) => q.template === 'others');
+  const fields = allQuestions.filter((q) => q.template === 'others');
+  // // also add source
+  fields.push({ id: 'source', fieldName: 'common__user_info__source'})
+  return fields;
 };
 
 const AdminNormalization = () => {

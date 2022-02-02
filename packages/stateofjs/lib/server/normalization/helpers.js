@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import intersection from 'lodash/intersection';
 import uniqBy from 'lodash/uniqBy';
 import sortBy from 'lodash/sortBy';
+import compact from 'lodash/compact';
 
 /*
 
@@ -143,22 +144,27 @@ const extractTokens = async (rawString, rules, verbose = false) => {
     let scanStartIndex = 0;
 
     // add count to prevent infinite looping
-    while (scanCompleted !== true && count < 1000) {
+    while (scanCompleted !== true && count < 400) {
       count++;
       const stringToScan = rawString.slice(scanStartIndex);
       const match = stringToScan.match(pattern);
       if (match !== null) {
-        tokens.push({
-          id,
-          pattern: pattern.toString(),
-          match: match[0],
-          length: match[0].length,
-          rules: rules.length,
-          range: [
-            scanStartIndex + match.index,
-            scanStartIndex + match.index + match[0].length,
-          ],
-        });
+        const includesToken = tokens.includes((t) => t.id === id);
+        if (!includesToken) {
+          // make sure we don't add an already-matched token more than one time
+          // for example if someone wrote "React, React, React"
+          tokens.push({
+            id,
+            pattern: pattern.toString(),
+            match: match[0],
+            length: match[0].length,
+            rules: rules.length,
+            range: [
+              scanStartIndex + match.index,
+              scanStartIndex + match.index + match[0].length,
+            ],
+          });
+        }
         scanStartIndex += match.index + match[0].length;
       } else {
         scanCompleted = true;
@@ -292,7 +298,7 @@ export const normalizeSource = async (normResp, allRules, survey) => {
     } else if (normReferrer) {
       return { ...normReferrer, raw: rawRef };
     } else {
-      return;
+      return { raw: compact([rawSource, rawFindOut, rawRef]).join(', ') };
     }
   } catch (error) {
     console.log(

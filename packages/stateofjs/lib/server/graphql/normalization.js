@@ -41,8 +41,13 @@ Normalization Debugging
 const surveyNormalization = async (root, { surveySlug, fieldName }) => {
   const [initialSegment, sectionSegment, fieldSegment, ...restOfPath] =
     fieldName.split('__');
-  const rawFieldPath = `${sectionSegment}.${fieldSegment}.others.raw`;
-  const normalizedFieldPath = `${sectionSegment}.${fieldSegment}.others.normalized`;
+  let rawFieldPath = `${sectionSegment}.${fieldSegment}.others.raw`;
+  let normalizedFieldPath = `${sectionSegment}.${fieldSegment}.others.normalized`;
+  if (fieldSegment === 'source') {
+    // treat source field differently because it doesn't have "others"
+    rawFieldPath = 'user_info.source.raw';
+    normalizedFieldPath = 'user_info.source.normalized';
+  }
   const query = {
     surveySlug,
     [rawFieldPath]: { $exists: true },
