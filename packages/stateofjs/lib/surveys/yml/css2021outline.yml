@@ -379,7 +379,7 @@ outline:
 
       - id: first_steps
         template: others
-        matchTags: [css_first_steps, courses, people, youtube, sites, newsletters, socialmedia]
+        matchTags: [first_steps, courses, people, youtube, sites, newsletters, socialmedia]
 
       - id: blogs_news_magazines
         template: multiple

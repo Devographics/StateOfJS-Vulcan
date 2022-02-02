@@ -10,7 +10,7 @@ shareUrl: https://stateofjs.com
 # resultsUrl: https://2021.stateofjs.com/
 name: "State of JavaScript 2021/2022"
 year: 2021
-status: 2 # preview/open/closed
+status: 3 # preview/open/closed
 imageUrl: "stateofjs2021.png"
 bgColor: rgb(34, 36, 41)
 textColor: rgb(224, 228, 228)
@@ -589,7 +589,7 @@ outline:
           - id: self_directed
       - id: first_steps
         template: others
-        matchTags: [courses, people, youtube, sites, newsletters, socialmedia]
+        matchTags: [first_steps, courses, podcasts, people, youtube, sites, newsletters, socialmedia]
 
       - id: blogs_news_magazines
         template: multiple
@@ -715,7 +715,7 @@ outline:
         year: 2021
         sectionSlug: opinions_others
         template: others
-        matchTags: [css_pain_points, css_missing_features]
+        matchTags: [js_pain_points]
 
       - id: currently_missing_from_js
         year: 2021

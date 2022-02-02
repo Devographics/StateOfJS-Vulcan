@@ -11,7 +11,7 @@ export default {
   "shareUrl": "https://stateofjs.com",
   "name": "State of JavaScript 2021/2022",
   "year": 2021,
-  "status": 2,
+  "status": 3,
   "imageUrl": "stateofjs2021.png",
   "bgColor": "rgb(34, 36, 41)",
   "textColor": "rgb(224, 228, 228)",
@@ -812,7 +812,9 @@ export default {
           "id": "first_steps",
           "template": "others",
           "matchTags": [
+            "first_steps",
             "courses",
+            "podcasts",
             "people",
             "youtube",
             "sites",
@@ -1039,7 +1041,6 @@ export default {
           "template": "others",
           "matchTags": [
             "people",
-            "sites",
             "youtube"
           ]
         }
@@ -1098,8 +1099,7 @@ export default {
           "sectionSlug": "opinions_others",
           "template": "others",
           "matchTags": [
-            "css_pain_points",
-            "css_missing_features"
+            "js_pain_points"
           ]
         },
         {

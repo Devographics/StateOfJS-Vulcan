@@ -787,7 +787,7 @@ export default {
           "id": "first_steps",
           "template": "others",
           "matchTags": [
-            "css_first_steps",
+            "first_steps",
             "courses",
             "people",
             "youtube",
