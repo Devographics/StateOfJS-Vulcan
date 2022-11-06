@@ -1,0 +1,34 @@
+locale: es-419
+translations:
+  ###########################################################################
+  # General
+  ###########################################################################
+
+  ###########################################################################
+  # Features
+  ###########################################################################
+
+  - key: features.learn_more
+    t: Conocer Más (MDN)
+  - key: features.mdn_link
+    t: MDN
+  - key: features.caniuse_link
+    t: CanIUse
+  - key: features.specification_link
+    t: Especificación W3C
+
+  ###########################################################################
+  # Tools & Methodologies
+  ###########################################################################
+
+  # general
+  - key: tools.links
+    t: Links
+  - key: tools.github_link
+    t: GitHub
+  - key: tools.github_stars
+    t: estrellas
+  - key: tools.homepage_link
+    t: Página Principal
+  - key: tools.npm_link
+    t: NPM
