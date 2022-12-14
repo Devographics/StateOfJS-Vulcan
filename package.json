@@ -56,7 +56,7 @@
     "deepmerge": "^4.2.2",
     "dot-object": "^2.1.4",
     "escape-string-regexp": "^4.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "flat": "^5.0.2",
     "graphql": "15.5.1",
     "graphql-anywhere": "4.2.7",
